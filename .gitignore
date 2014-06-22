@@ -1,3 +1,5 @@
+### This is a copy of TeX.gitignore ###
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -97,4 +99,7 @@ sympy-plots-for-*.tex/
 # xindy
 *.xdy
 
+### and these are my own wishes ###
+# emacs backups
+*~
 

@@ -1,0 +1,119 @@
+\section{Generic hyperplane arrangements}
+
+\subsection{Existence of weakly generic arrangements in $\field{q}^n$ with given Poincaré polynomial}
+
+Let $\cA$ be an arrangement of hyperplanes in $V=K^n$ and $\cL(\cA):=\{\bigsetmeet \cH:\cH\setleq \cA\}$ the associated lattice, where for $X,Y\in\cL(\cA)$ we define $X\meet Y:=\bigsetmeet\{Z\in\cL(\cA):X,Y\setleq Z\}$ and $X\join Y:= X\setmeet Y$.
+Moreover, we assign to $\cL(\cA)$ the rank function $r:\cL(\cA)\to \ints$ where $X\mapsto \codim X$ for $X\neq \emptyset$ and $r(\emptyset):=-1$.
+It is then an interesting question, which restrictions on the lattice $\cL(\cA)$ arise from the structure of the space $K^n$ (especially when $K$ is finite). We want to discuss this question for a special type of arrangements.
+
+We need the following definitions.
+
+\begin{definition}[unique representation of lattice elements] 
+    Let $L$ be a lattice with $0$ (minimal element). Then $X\in L$ is called uniquely representable if it can uniquely be written as the join of atoms.
+\end{definition}
+
+\begin{remark}
+    If $X\in\cL(\cA)$ is uniquely representable and $Y\leq X$ then is also uniquely representable. 
+\end{remark}
+
+\begin{definition}[weakly generic arrangement]
+    Let $\cA$ be an arrangement such that any element $X\in\cL(\cA)\setminus\set{\emptyset}$ is uniquely representable. Then $\cA$ is called \keyword{weakly generic}.
+\end{definition}
+
+\begin{definition}
+    Let $\cA$ be an arrangement and $X\in\cL(\cA)$, then denote by $\cA^X$ the restricted arrangement on $X$, i.e. $\cA^X:=\set{X\setmeet H:\codim_X(X\setmeet H)=1}$.
+\end{definition}
+
+A fact, which is also obvious is that a lattice $\cL$ is the lattice $\cL(\cA)$ for an arrangement $\cA$ in $K^n$ if and only it is embedded in $\Sub_{\aff}(V)$ (by a rank preserving map). However, it turns out to be very difficult to decide this for a given lattice.
+We now drop some information and breafly discuss the above question for a weakly generic arrangement $\cA$ in $K^n$ with given \person{Poincaré} polynomial.
+
+%% ended here editing
+
+\subsection{Some combinatorial facts about weakly generic arrangements}
+
+In this section we generalize some combinatorial results by \person{Zaslavsky} about the number of components of the complement $\cM(\cA)=:\cM_0(\cA)$ and its analogue in the discrete case.
+
+\begin{lemma}[point numbers of the strata $\cM_m$ of arrangements in finite vector spaces]
+    Let $\cA$ be a weakly generic arrangement in $\field{q}^n$. Then it holds that
+    $$
+        \abs{\cM_m(\cA)}= q^{n-m}\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
+    $$
+    where $\cM(\cA)$ denotes the $m$-th stratum ($m\geq 0$)
+    $$        \cM(\cA):=\bigsetjoin\{X\in\cL(\cA)\lgand r(X)=m\}\setminus\bigsetjoin\{X\in\cL(\cA):r(X)=m+1\}\text{.}
+    $$
+    For $m=0$ the arrangement does not have to be weakly generic (\person{Zaslavsky}'s result \cite{zas}).
+\end{lemma}
+
+The proof of this fact is just based on \person{Möbius} inversion
+
+\begin{proof}
+    We start with $m=0$.
+    As $\bigsetjoin_{X\in\cL(\cA)}{\cM_0(\cA^X)}=\field{q}^n$ (where $\cA^X$ denotes the restriction of $\cA$ on $X$) and the union is disjoint we have that (for $Y\in\cL(\cA)$)
+  $$
+      \sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{\abs{\cM_0(\cA^X)}}=q^{n-r(Y)}\text{.}
+  $$
+  Möbius inversion reveals
+  $$
+      \sum_{X\in\cL(\cA)}{\mu(V,Y)q^{n-r(Y)}} = q^n\pi(\cA,-q^{-1}) = \abs{\cM_0(\cA)}\text{.}
+  $$
+  This is essentially a result analogue to the lemma proved by \person{Zaslavsky} in~\cite{zas}. Note that we did not use that $\cA$ is weakly generic.
+  For the case $m>0$ we obtain
+  $$
+      \abs{\cM_m(\cA)}=\sum_{\substack{X\in\cL(\cA)\\ r(X)=m}}{\abs{\cM_0(\cA^X)}}=\sum_{\substack{X\in\cL(\cA)\\ r(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y)q^{n-r(Y)}}}\text{.}
+  $$
+  Now, we use the fact (which can be easily shown by induction) that for a weakly generic arrangement $\cA$ we have $\mu(X,Y)={(-1)}^{r(X)-r(Y)}$ and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above (interchanging the sums and counting the elements $X$ above $Y$).
+  $$\eqalign{
+      \abs{\cM_m(\cA)}
+      & = q^n\sum_{Y\in\cL(\cA)}{{(-1)}^{m-r(Y)}\binom{r(Y)}{m}q^{-r(Y)}}\cr
+      & = q^n\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
+  }
+  $$
+  which finishes the proof.
+\end{proof}
+
+For the sake of completeness, we shall give the real analogue of that last fact
+
+\begin{lemma}[number of connected components of the stratum $\cM_m(\cA)$ of an arrangement] Let $\cA$ be a weakly generic arrangement in $\reals^n$. Then it holds that
+    $$
+        \frac{\pi^{(m)}(\cA,1)}{m!}=\abs{\comp(\cM_m(\cA))}\text{.}
+    $$
+    For $m=0$ the arrangement does not have to be weakly generic (see~\cite{zas}).
+\end{lemma}
+
+Here, the proof is analogous.
+
+\begin{proof}
+    Starting with $m=0$, \person{Euler}'s formula gives (for $Y\in\cL(\cA)$)
+    $$
+        \sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{(-1)^{r(Y)-r(X)}\abs{\comp(\cM_0(\cA^X))}}=1=\chi(\reals^{n-r(Y)})\text{.}
+  $$
+  \person{Möbius} inversion delivers
+  $$
+    \sum_{X\in\cL(\cA)}{\mu(V,X)(-1)^{r(Y)}} = \pi(\cA,1) = \abs{\comp(\cM_0(\cA))}\text{.}
+  $$
+  For $m>0$, the proof is identical with the last one
+  $$\eqalign{
+      \abs{\comp(\cM_m(\cA))} &=\sum_{\substack{X\in\cL(\cA)\\ r(X)=m}}{\abs{\comp(\cM_0(\cA^X))}}\cr
+      & = \sum_{\substack{X\in\cL(\cA)\cr r(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y){(-1)}^{r(X)-r(Y)}}}.
+  }
+  $$
+  Now, use that $\mu(X,Y)={(-1)}^{r(X)-r(Y)}$ if $\cA$ is weakly generic and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above
+  $$
+  \eqalign{
+      \abs{\comp(\cM_m(\cA))}
+      & =\sum_{Y\in\cL(\cA)}{\binom{r(Y)}{m}}\cr
+      & = \frac{\pi^{(m)}(\cA,1)}{m!}
+      }
+  $$
+  finishing the proof.
+\end{proof}
+
+\begin{remark}
+    An alternative proof of the last two lemmas can be given via deletion restriction theorem and the identity $\pi(\cA,t)=\pi(\cA',t)+t\pi(\cA'',t)$. The $m$-th derivative of this last identity behaves analogue to some recurrence relations of the above numbers for $(\cA,\cA',\cA'')$ a generic triple of arrangements.
+\end{remark}
+
+\begin{corollary}
+    Let $\cA$ be a weakly generic arrangement in $\field{q}^n$. Then it holds that $\pi(\cA,t)=\pi_q(\cA,t+q^{-1})$ for a polynomial $\pi_q(\cA,t)$ with positive coefficients.
+\end{corollary}
+
+This corollary gives a partial answer to our question, but its statement only uses the lattice structure and is careless about the nature of the sets of that lattice (as linear subspaces). It turns out that this answer is not very sharp in some cases.

@@ -1,0 +1,54 @@
+\documentclass[a4paper,twoside]{article}% twoside is important for distinction of parity of sides
+%%
+\input{../Config/math.tex}
+\usepackage{makeidx}
+\usepackage{blindtext}
+\usepackage{mathenv}
+%\usepackage{showframe}% to show the frames of the page layout
+\usepackage[inner=3cm,outer=2cm]{geometry} %left=4cm,right=2cm would be equivalent
+
+% data of document
+\title{On arcs and the main conjecture on MDS codes}
+\author{Jakob Schneider}
+\date{April 15, 2014}
+
+\makeindex
+\begin{document}
+\pagestyle{plain}
+\maketitle
+
+\clearpage
+%\pagenumbering{roman} % problem here
+\pagenumbering{roman}
+\tableofcontents
+\pagestyle{headings}
+\clearpage
+\input{prelim}
+%\input{prelim_ex}
+\clearpage
+\pagenumbering{arabic}
+% \mainmatter%
+\input{combcons}
+%\input{combcons1}
+\input{mdsmainconj}
+%\input{mdsmainconj_ex}
+\input{generichyperplanearr}
+%\input{generichyperplanearrold}
+\input{reedsolomon}
+\input{mdsmainconjnleqp}
+%\input{mds-specpolynom.tex}
+%\inupt{mds-segrelemmalatproof.tex}
+\input{mdsmainconjknesgraph.tex}
+%\input{mdsmainconjcharzero.tex}
+
+\printindex%%%
+\bibliographystyle{acm}
+\bibliography{math}
+
+\end{document}
+
+%
+%%% Local variables:
+%%% mode: latex
+%%% TeX-command-default: "LatexMk"
+%%% End:

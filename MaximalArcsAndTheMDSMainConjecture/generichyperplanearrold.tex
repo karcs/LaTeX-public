@@ -1,0 +1,180 @@
+
+\subsection{Translational pertubations of arrangements}
+
+Next, we study what happens if one modifies the hyperplanes $H$ of an arrangement $\cA$ by translations $\{\theta_H\}_{H\in\cA}$ such that the new arrangement is closer to a weakly generic one.
+
+At first we need some definitions
+
+\begin{definition}[translational pertubation of an arrangement]
+    Let $\cA$ and $\cB$ be arrangements. We say that $\cB$ is
+    \emph{translational pertubation} of $\cA$ via the family of translations $\{\theta_H\}_{H\in\cA}$ if $H^{\phi_H}$ are the (distinct) hyperplanes of $\cB$ ($H\in\cA$).
+\end{definition}
+
+\begin{definition}[pure pertubation]
+    Let $\cB$ be a translational pertubation of the arrangement $\cA$ via the tranlations $\{\theta_H\}_{H\in\cA}$. We say that $\cB$ is a \emph{pure pertubation} of $\cA$ via $\{\theta_H\}_{H\in\cA}$ if it holds that if 
+    $$
+    X = \bigjoin\{H_i^{\theta_{H_i}}:i=1,\ldots,l\} = \bigjoin\{J_i^{\theta_{J_i}}:i=1,\ldots,m\}\in\cL(\cB)
+  $$ has two representations in atoms then 
+  $$
+      \bigjoin\{H_i:i=1,\ldots,l\}=\bigjoin\{J_i:i=1,\ldots,m\}\in\cL(\cA)\text{.}
+  $$
+\end{definition}
+
+\begin{remark}
+    If $\cB$ is a pure translational perturbation of $\cA$ via $\{\theta_H\}_{H\in\cA}$ then there is a unique epimorphism $\phi:\cL(\cB)\to\cL(\cA)$ which satisfies $H^{\theta_H}\mapsto H$. First, note that the uniqueness follows from the fact that $\phi$ is defined on atoms of $\cB$. To see that $\phi$ exists,
+    pick $X\in\cL(\cA)$ such that $X=\bigjoin\{H_i^{\theta_{H_i}}:i=1,\ldots,l\}$. Then it must hold that $\phi(X)=\bigjoin\{H_i:i=1,\ldots,l\}$. The above definition ensures that this last equation is also a definition (this is basically the notion of the homomorphism theorem).
+    We call $\phi:\cB\to\cA$ the natural map with respect to the pertubation via $\{\theta_H\}_{H\in\cA}$. 
+\end{remark}
+
+\begin{definition}[universal translational perturbation]
+    etc.
+\end{definition}
+
+The following lemma shows that the question of the existence of a universal translational pertubation in infinite vector spaces has a simple answer.
+
+\begin{lemma}[existence of universal translational perturbations in infinite vector spaces]
+    If $\cA$ is an arrangement in some $F$-vector space $V$ such that $\card{V}=\infty$ a universal translational perturbation $\cA^{\tpert}$
+\end{lemma}
+
+\begin{proof}
+    There are only finitely many points 
+\end{proof}
+
+---TO BE CONTINUED
+
+
+When $\cA$ is an arrangement in a finite vector space, it is a very difficult problem to say if $\cA^{\tpert}$ exists.
+
+\subsection{Generic and central generic arrangements}
+
+As previously mentioned the connection between generic and central generic arrangements is that any central generic arrangement is the cone of a generic one and conversely any generic arrangement can be obtained deconing a central generic arrangement (which is somehow an analogue of the relation between affine and projective space).
+
+Now let $\cA$ be a generic arrangement of $n$ hyperplanes in the $l$-dimensional vector space $V$ and let $\cone{\cA}$ the corresponding central generic arrangement.
+
+For our purposes the \person{Poincaré} polynomials of these arrangements are of special interest.
+In the case of the generic arrangement $\cA$ one has $\mu(X)=(-1)^{r(X)}$ for $X\in L(\cA)$ and the sets $\{X\in L(\cA):r(X)=k\}$ have the cardinality $\binom{n}{k}$. Thus one obtains
+$$
+  \pi(\cA,t)=\sum_{k=0}^n{\binom{n}{k}t^k}\text{.}
+$$
+
+By the above and a well-known fact it follows for the corresponding central generic arrangement that
+$$
+  \pi(\cone{\cA},t)=(1+t)\pi(\cA,t)=(1+t)\sum_{k=0}^n{\binom{n}{k}t^k}\text{.}
+$$
+
+% some stuff that did not make that much sense
+
+% \begin{definition}[degradation] Let $\cA}$ be an arrangement and $X\in L(\cA})$. %Then define the \emph{degradation} of $X$ as $d(X):=\abs{\{H\in\cA}:X\geq H\}}-r(X)$. %Moreover, for $c\in \cC}_m(\cA})$ define $d(c):=d(\aff(c))$.
+% \end{definition}
+
+% \begin{remark} 
+%   The degradation 'measures' the difference of the number of hyperplanes containing $X$ in %$\cA}$ and the essential number of hyperplanes to generate $X$. Of course $X$ is uniquely %representable if and only if $d(X)=0$
+% \end{remark}
+
+\subsection{Usage of the generalizing statement for the discrete case}
+
+We will now apply these nice results to the problem of the existence of generic arrangements.
+
+To check whether certain triples $(q,l,n)$ can be excluded we want to check whether the values of the expressions for the number of points in $C_m(\cA)$ make sense.
+
+The \person{Poincaré} polynomial of a generic arrangement in $GF(q)^l$ of $n$ hyperplanes is given by
+
+$$
+  \pi(\cA,t)=\sum_{i=0}^l{\binom{n}{i}t^i}\text{.}
+$$
+
+As this type of polynomials will be the subject of consideration for the next lines we define
+
+$$
+  P_i^j(t):=\sum_{k=0}^i{\binom{j}{k}t^k}\text{.}
+$$
+
+If $\cA$ is a generic arrangement corresponding to the triple $(q,l,n)$ (where $l<n$, otherwise it is boring) then any subarrangement consisting of $\tilde{n}$ hyperplanes is also generic (and of the type $(q,l,\tilde{n})$ where $\tilde{n}\leq n$). Let $\tilde{\cA}$ be any such subarrangement of $\cA$ with $r(\tilde{\cA})=\tilde{n}$ (number of hyperplanes as $\tilde{A}$ is generic). Then the identities
+
+$$
+  0 \leq \abs{C_m(\tilde{\cA})} \leq q^l \text{ for } 0\leq m\leq\tilde{n}\text{.}
+$$
+
+must hold for $\tilde{n}=0,\ldots,n$. Translating this to the \person{Poincaré} polynomials one gets the necessary conditions
+
+\begin{align}
+  0\leq q^{l-m}\frac{\pi^{(m)}(\tilde{\cA},-q^{-1})}{m!} \leq q^l \text{ for } 0\leq m\leq\min\{l,\tilde{n}\}
+\end{align}
+
+where $\tilde{n}=0,\ldots,n$. It is now obvious that the first inequality implies the second ($\leq q^l$) as
+
+$$
+  \sum_{m=0}^{\tilde{n}}{q^{l-m}\frac{\pi^{(m)}(\tilde{\cA},-q^{-1})}{m!}}=\pi(\tilde{\cA},0)q^l=q^l
+$$
+
+and thus if all summands are greater or equal to zero, each of them must satisfy the second inequality. Another important fact is that
+
+$$
+  \pi^{(m)}(\tilde{\cA},-q^{-1})=\tilde{n}\cdots(\tilde{n}-m+1)P_{l-m}^{\tilde{n}-m}(t)
+$$
+for $m=0,\ldots,\min\{\tilde{n},l\}$. Moreover, one can omit the cases where $\tilde{n}\leq n$ because then $P_{l-m}^{\tilde{n}-m}(-q^{-1})=(1-q^{-1})^{\tilde{n}-m}>0$ for $m=0\ldots,\tilde{n}$.
+
+Thus rewrite the condition for $q$ as
+
+$$
+  P_i^j(q^{-1})\geq 0 \text{ for } j=l+1,\ldots,n \text{ and } j-i\leq n-l\text{.}
+$$
+
+We will see that these inequalities are equivalent with $q\geq l-n+1$.
+
+At first an easy fact about $P_i^j$
+
+\begin{lemma}
+  Let $j>i\geq 0$ ($j>1$) then $P_i^j$ is monotone on $[0,1]$ and has a single zero in $(0,1)$ if $i$ is odd.
+  If $i$ is even, $P_i^j$ is strictly positive on $[0,1]$.
+\end{lemma}
+
+\begin{proof}
+  The proof is simple and happens by induction on $i$. For $i=0$ the statement is obvious as $P_0^j(t)=1>0$.
+
+  Assume the statement holds for all $i<k$. 
+  \paragraph{Case where $k$ is odd:}
+  Then for $P_k^j$ we have $P_k^j(0)=1$ and
+  $$
+    P_k^j(1)=\sum_{\nu=0}^{\frac{k-1}{2}}{\left(\binom{j}{2\nu}-\binom{j}{2\nu+1}\right)}
+  $$
+  Now, if $k\leq \ceil{j/2}$ all summands are non-positive and the first is negative as $j>1$. In the opposite case, we use that $P_k^j(1)=-(-1)^jP_{j-k-1}^j(1)$. By induction hypothesis we have that $\sgn(P_{j-k}^j(1))=(-1)^{j-k-1}$. Thus obtain $P_k^j(1)=-(-1)^j(-1)^{j-k-1}=(-1)^k$ as desired. Moreover, by induction hypothesis $P_k^j$ is strictly decreasing as $\frac{d}{d t}P_k^j(t)=-jP_{k-1}^{j-1}(t)<0$. Thus $P_k^j$ has a single zero in $(0,1)$.
+  
+  \paragraph{Case where $k$ is even:} In this case we have that $P_k^j(0)=1>0$ and $P_k^j(1)>0$ (by similar argument as in the previous case). Assume $P_k^j$ attains its minimum in $\xi\in(0,1)$ (otherwise we are done as it is positive on $0$ and $1$. Then its derivative $\frac{d}{d t}P_k^j(\xi)=-jP_{k-1}^{j-1}(\xi)=0$. It is obvious that
+
+  $$
+    P_k^j(t)=\sum_{\nu=0}^k{\binom{j}{\nu}(-t)^\nu}=\sum_{\nu=0}^{k-1}{\binom{j-1}{\nu}(-t)^\nu}-t\sum_{\nu=0}^{k-1}{\binom{j-1}{\nu}(-t)^\nu}+\binom{n-1}{k-1}(-t)^k
+  $$
+
+  from which we deduce that $P_k^j(\xi)=\binom{n-1}{k-1}(-\xi)^k>0$. Thus we are done with the proof.
+\end{proof}
+
+Using this lemma, it is now clear that we are searching for the smallest zero $\xi$ of the polynomials $P_i^j$ for $j=l+1,\ldots,n$ and $j-i\leq n-l$ in $[0,1]$ where we can drop the even $i$ as the corresponding polynomials have no zeros in this interval. 
+
+Next, we find some monotony among these zeros.
+
+\begin{lemma}
+  Let $\xi\in(0,1)$ and $j>i\geq 0$ and $i$ be odd such that $P_i^j(\xi)=0$. Then $P_{i+2}^j(\xi)>0$ and thus the unique zero of $P_{i+2}^j$ must be greater than $\xi$.
+\end{lemma}
+
+\begin{proof}
+  Write $P_i^j$ as
+  $$
+    P_i^j(t)=\sum_{\nu=0}^{\frac{i-1}{2}}{t^{2\nu}\left(\binom{j}{2\nu}-\binom{j}{2\nu+1}t\right)}\text{.}
+  $$
+  Note when $t\in[0,1]$ the summands $t^{2\nu}\left(\binom{j}{2\nu}-\binom{j}{2\nu+1}t\right)$ negative if and only if $t>\frac{2\nu+1}{j-2\nu}$ or equivalently $\nu<\frac{jt-1}{2(t+1)}$. Thus if $P_i^j(\xi)=0$ we must have $P_{i+2}^j(\xi)>0$ as then the index $\nu$ is already 'to big'.
+  This proves (with the previous lemma) that the unique zero of $P_{i+2}^j$ is greater than $\xi$.
+\end{proof}
+
+Thus it follows that the smallest zero among the the polynomials $P_i^j$ for $j=l+1,\ldots,n$, $j-i\leq n-l$ in $[0,1]$ is $\frac{1}{n-l+1}$ (the zero of $P_1^{n-l+1}$).
+
+Our final result is now
+
+\begin{lemma} Let $\cA$ be a generic arrangement corresponding to the triple $(q,l,n)$. Then $q\leq n-l+1$. Similarly, if $\cA$ is a central generic arrangement and $l\geq 2$ then the same inequality holds.
+\end{lemma}
+
+\begin{proof}
+  The proof was already given.
+\end{proof}
+
+---------------------------------------END OLD STUFF--------------------------------------------------------------------------

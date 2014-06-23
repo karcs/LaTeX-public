@@ -1,0 +1,78 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\reels}{\mathbb{R}}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\upto}{\uparrow}
+\newcommand{\downto}{\downarrow}
+\renewcommand{\i}{\boldsymbol{i}}
+
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\prob}{\mathbb{P}}
+%\newcommand{\otherwise}{\text{ otherwise }
+\begin{document}
+
+
+\section{Task 1}
+
+Let $(\alpha_n)_{n\in\nats}$ a complex valued sequence such that its generating series $A(z):=\sum_{n\in\nats}{\alpha_n z^n}$ has radius of convergence $\rho>0$. Furthermore, assume $|A(z)-\alpha_0|<1$ for $z\in\complex,|z|<\rho$. Prove that the series $(\beta_n)_{n\in\nats}$ defined by 
+
+\begin{equation}
+\beta_n:=\sum_{\substack{(n_1,\ldots,n_k)\in(\nats\setminus\{0\})^k\\ \sum_{i=1}^k{n_i}=n, k\geq 0}}{\prod_{i=1}^k{\alpha_{n_i}}}
+\end{equation}
+
+define a generating function $B(z)=\sum_{n\in\nats}{\beta_n z^n}$ which has the same radius of convergence (in the above definition $k=0$ is seen as $\beta_0=1$).
+
+\section{Solution 1}
+
+The sequence as defined implies $B(z)$ to satisfy the identity
+
+\begin{equation}
+B(z)=\sum_{n\in\nats}{(A(z)-\alpha_0)^n}
+\end{equation}
+
+This series can only converge absolutely if $|A(z)-\alpha_0|<1$. Thus its radius of convergence is equal to $\rho$.
+
+\paragraph{Remark.} Omitting the bound for $A(z)-\alpha_0$ for $z\in\complex, |z|<1$ one the statement is false. For example take $A(z)=\frac{1}{1-z}$. Then one gets by elementary computation $B(z)=\frac{1}{2(1-2z)}+\frac{1}{2}$.
+
+\section{Task 2}
+
+Let $(X_i)_{i\in\nats}$ be random variables such that $X_i\sim(1-p(i))\delta_0+p(i)\delta_1$ where $p:\nats\to[0,1]$.
+
+Randomly, select such sequence $X=(X_i)_{i\in\nats}$. Then define $(a_i)_{i\in\nats}$ as
+\begin{equation}
+a_i:=\min\{n\in\nats:i\leq|\{j\in\nats:j\leq n,X_j=1\}|\}\text{.}
+\end{equation}
+How big is the probability that $(a_i)_{i\in\nats}$ contains arithmetic progressions of length $s$? For the case $p(i)=1/i$?
+
+(1) At first we compute the partial fraction decomposition of the function
+\begin{equation}
+f(x)=\sum_{i=0}^\infty{\prod_{j=0}^{s-1}{\frac{1}{x+(i+j)m}}}
+\end{equation}
+This is done by residuum calculation
+\begin{align}
+\Res_{-mk}{f(x)} & = \frac{1}{m^{s-1}}\sum_{i=\max\{0,k-s+1\}}^{k}{\prod_{\substack{j=0\\ i+j\neq k}}^{s-1}{\frac{1}{i+j-k}}}\\
+& = \begin{cases} 
+0 &: k\geq s-1\\
+\frac{1}{m^{s-1}}\sum\limits_{i=0}^{k}{\prod\limits_{\substack{j=0\\ i+j\neq k}}^{s-1}{\frac{1}{i+j-k}}} &: \text{otherwise}
+\end{cases}
+\end{align}
+Thus we get as partial fraction decomposition
+\begin{equation}
+f(x)=\sum_{i=0}^\infty{\prod_{j=0}^{s-1}{\frac{1}{x+(i+j)m}}}=\frac{1}{m^{s-1}}\sum_{k=0}^{s-2}{\left(\sum\limits_{i=0}^{k}{\prod\limits_{\substack{j=0\\ i+j\neq k}}^{s-1}{\frac{1}{i+j-k}}}\right)\frac{1}{x+mk}}\text{.}
+\end{equation}
+Now to compute the probability that $(a_i)_{i\in\nats}$ contains an arithmetic sequence of length $s$ and step size $m$ we have to run $x$ through $1,\ldots,m$ (therefore we computed the above term which gives the an upper bound probability for an arithmetic sequence of length $s$ and step size $m$ and starting element $\geq x$ which has the same congruence class as $x$ mod $m$). We obtain (where $A_{m,s}$ denotes the event of the occurrence of a an arithmetic progression of length $s$ and step size $m$ in $(a_i)_{i\in\nats}$) by subadditivity
+\begin{equation}
+\prob(A_{m,s})\leq\frac{1}{m^{s-1}}\sum_{k=0}^{s-2}{\left(\sum\limits_{i=0}^{k}{\prod\limits_{\substack{j=0\\ i+j\neq k}}^{s-1}{\frac{1}{i+j-k}}}\right)\left(\sum_{x=1}^m\frac{1}{x+mk}\right)}\text{.}
+\end{equation}
+And finally we get
+\begin{equation}
+\prob(A_s)
+\end{equation}
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\title{On Functions of Bounded Variation}
+\author{Jakob Schneider}
+\input{math.tex}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+It is a very interesting subject to generalize or weaken the property of a function being differentiable. It is a well known theorem that functions from $\reals$ to $\reals$ of locally bounded variation are almost everywhre differentiable. We will comment on this thing a bit.
+
+\begin{theorem}[Vitali's Covering Lemma]
+Let $\mathcal{B}$ be a collection of closed non-degenerate balls in the $\reals$-metric\footnote{that is the metric is real valued} space $(X,d)$ with uniformly bounded radii. Then for $\varepsilon>0$ there exists a subcollection $\mathcal{B}'$ of $\mathcal{B}$ of pairwise disjoint balls such that $\union\rho_{3+\varepsilon}[\mathcal{B}']\supset\union\mathcal{B}$ where $\rho_\alpha$ maps a ball to a ball with the same center but scaled with $\alpha$.
+\end{theorem}
+
+\begin{proof}
+Let $R$ be an upper bound of the radii. Let us write $r(B)$ for the radius of a ball $B$ (and consider $r$ as a map from the balls\footnote{or more generally bounded sets} to the reals).
+The idea of the proof is to construct a maximal subcollection which satisfies the desired properties. Consider the following partition of $\mathcal{B}$:
+
+\begin{equation}
+\mathcal{B} = \union_{k\in\nats_0}{\mathcal{B}\intersect{r^{-1}\left(C\left(1+\frac{\varepsilon}{2}\right)^{-(k+1)},C\left(1+\frac{\varepsilon}{2}\right)^{-k}\right]}}\text{.}
+\end{equation}
+
+Let us denote these sets by $\mathcal{B}_k$ for $f\in\nats_0$. We now 'inductively' choose a maximal disjoint subcollection $\mathcal{C}$ in the following manner.
+\begin{itemize}
+\item Assume we have chosen some subcollections $\mathcal{C}_i$ of $\mathcal{B}_i$ for $i<k$ ($k\in\nats_0$) such that $\union_{i<k}{\mathcal{C}_i}$ is a maximal disjoint subcollection of $\union_{i<k}{\mathcal{B}_i}$.
+\item Then chose $\mathcal{C}_k$ such that $\union_{i\leq k}{\mathcal{C}_i}$ is a maximal disjoint subcollection of $\union_{i\leq k}{\mathcal{B}_i}$.
+\end{itemize}
+This procedure is possible due to Zorn's lemma.
+We finally get $\mathcal{C}=\union_{k\in\nats_0}{\mathcal{C}_k}$. Now to prove the desired property, assume that there is a ball $B\in\mathcal{B}$ with $B\not\subset\union\mathcal{C}$. Then $B$ must lie in some $\mathcal{B}_k$ 
+($k\in\nats_0$). Thus due to maximality there exists $C\in\mathcal{C}_k$ such that $B\intersect C\neq \emptyset$. 
+Now pick points $p\in B\setminus C, q\in B\intersect C$ and let $o$ be the center of $C$. We then have by triangle inequality 
+\begin{equation}
+d(o,p)\leq d(o,q)+d(q,p)\leq r(C)+2r(B)\leq r(C)(3+\varepsilon)
+\end{equation}
+where the last is due to the fact that $B,C\in\mathcal{B}_k$.
+\end{proof}
+
+\begin{remark}
+The value $3+\varepsilon$ is best possible.
+\end{remark}
+
+\begin{remark}
+If $X$ is $\sigma$-finite and non-degenerate balls have measure greater than zero the constructed collection is countable.
+\end{remark}
+
+\begin{theorem}[Vitali's Covering Theorem]
+Let $\mathcal{B}$ be a collection of closed non-degenerate balls in the metric space $(X,d)$ such that if $b\in\union\mathcal{B}$ then for $\varepsilon>0$ there exists a ball $B\in\mathcal{B}$ with $r(B)<\varepsilon$ and $b\in B$. Let a Borel-measure be assigned on $X$. Then there exists a disjoint subcollection $\mathcal{C}$ fo $\mathcal{B}$ such that $\union\mathcal{B}\setminus\union\mathcal{C}$ has locally finite measure.
+\end{theorem}
+
+
+
+\end{document}

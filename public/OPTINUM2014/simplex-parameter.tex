@@ -1,0 +1,60 @@
+    \hfill{05.06.2014}
+
+    Zuletzt betrachteten wir das Problem
+
+    $$
+    c^\top x \to \min \textrm{ bei } Ax\geq b, x\geq 0 \eqno{(P(b))}
+    $$
+    als eine vom Parameter $b$ abhängige lineare Optimierungsaufgabe.
+    Dabei hingen der zulässige Bereich $G(b)$, sowie der Minimalwert $f_{\min}(b)$ von $b$ ab, es kann also $G:\reals^n\to\Sub \reals^n$ als Mengenwertige Funktion interpretiert werden.
+
+    Es kann nun eine Aussage über die Gestalt der Menge $B$ aller $b\in\reals^n$, für die die Aufgabe keinen leeren Bereich hat, getroffen werden.
+    
+    \begin{lemma}
+        Die Menge $B\setleq \reals^n$ der Stellen $b\in\reals^n$, sodass $G(b)\neq \emptyset$ ist konvex.
+    \end{lemma}
+
+    \begin{proof}
+        Seien $b_1,b_2\in B$, dann gibt es $x_i \in G(b_i)$ für $i=1,2$, Also
+        $$
+        Ax_i\geq b_i,\ x_i\geq 0
+        $$
+        Damit gilt, dass $\lambda_1 x_1 + \lambda_2 x_2\in G(\lambda_1 b_1+\lambda_2 b_2)$, wie man direkt überprüft.
+    \end{proof}
+
+    Falls nun Entartung derart auftritt, dass für einen Wert $\hat b\in B$ die Aufgabe unlösbar aufgrund der Unbeschränktheit der Zielfunktion von unten ist, dann gilt dies schon für alle $b\in B$, wei das folgende Lemma verdeutlicht.
+    
+    \begin{lemma}\label{lementaB}
+        Sei ein $\hat b\in B$ mit $f_{\min}(\hat b)=-\infty$. Dann gilt $f_{\min}(b)=-\infty$ für alle $b\in B$.
+    \end{lemma}
+
+    \begin{proof}
+        Aus $f_{\min}(\hat b)=-\infty$ folgt, dass $P(\hat b)$ unlösbar ist. Wegen Folgerung 3.5 ist dann das duale Problem ($D(\hat b)$)
+        $$
+        d=b^\top\to\max\ \textrm{bei}\ A^\top u\leq c,\ u\geq 0
+        $$
+        auch unlösbar ist mit $G_D(\hat b)=\emptyset$. Es gilt $G_D(\hat b)=G_D=\emptyset$ für alle $b\in B$. Also folgt $f_{\min}(b)=-\infty$ für alle $b\in B$.
+    \end{proof}
+
+    Das Lemma \autoref{lementaB} beschreibt eine Entartungssituation --- im regulären Falle gilt:
+
+    \begin{lemma}
+        Sei $f_{\min}(\hat b)> -\infty$ für ein $\hat b\in B$. Dann ist $f_{\min}:B\to \reals$ konvexe Funktion und es gilt
+        $$
+        f_{\min}(b)\geq f_{\min}(\hat b)+u^{\ast}(b-\hat b)
+        $$
+        für alle $b\in B$. Ist $u^\ast$ eine Lösung von ($D(\hat b)$).
+    \end{lemma}
+
+    Eine Verschärfung ergibt sich wie folgt:
+
+    Ist $x^\ast=x^\ast(\hat b)$ eine nichtentartete Basislösung (Ecke von $G(\hat b)$), so ist die Optimalwertfunktion $f_{\min}$ an der Stelle $b$ differenzierbar mit
+    $$
+    \pderive{f_{\min}}{b_j} = u^\ast_j
+    $$
+    für $j=1,\ldots,n$.
+
+    \begin{example}
+        Ein Betrieb möchte seinen Gewinn $c^\top x \to \max$ maximieren, bei Restriktionen $Ax\leq b$, $x\geq 0$. Dabei ist der Einsatz der Resourcen $b$ variabel (über eine Zeitraum). Dual ergibt sich dann $b^\top \to \min$ bei $A^\top u\geq c$ und $u\geq 0$.
+        Falls der Einsatz der Resource $b_j$ nun um eine Einheit erhöht wird, so ist der $u^\ast_j$ der `Schattenpreis' der Resource $b_j$ (d.h., wenn $b_j$ weniger kostet, lohnt es sich zu investieren).
+    \end{example}

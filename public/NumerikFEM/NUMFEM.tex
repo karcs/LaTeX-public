@@ -1,0 +1,143 @@
+\documentclass[8pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\input{../Config/math.tex}
+\begin{document}
+\title{On the existence of certain generic and weakly generic arrangements in $\field_q^d$}
+\author{Jakob Schneider}
+\date{\today}
+\maketitle
+
+Let $K$ be a geometric $n$-dimensional simplicial complex embedded in $\reals^n$ triangulating the domain $\Omega$ to solve the boundary value problem
+\begin{align}
+-\Delta u &= f\\
+\rest{u}_{\bound{\Omega}} &= 0\text{.}
+\end{align}
+Using linear FEM we calculate
+\begin{align}
+\inprod{\nabla{\phi_u}}{\nabla{\phi_v}}=\begin{cases} 0 &: \{u,v\}\not\in K\\
+\beta_{uv} &: \{u,v\}\in K^{(2)}\\
+\alpha_u &: u=v
+\end{cases}\text{.}
+\end{align}
+Using barycentric coordinates in the $n$-simplex $\sigma\in K^{(n)}$ one gets
+\begin{equation}
+z=\sum_{u\in\sigma}{\frac{\det(z-\sigma\setminus\{u\})}{\det(u-\sigma\setminus\{u\})}u}=\sum_{u\in\sigma}{\lambda^u_{\sigma}(z)u}
+\end{equation}
+by interpolation of the identity. If $\{u,v\}\in K^{(2)}$ we get
+\begin{align}
+\beta_{uv}=\sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\int_{\sigma}{\nabla{\phi_u}\nabla{\phi_v}}}=\sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\int_{\sigma}{\nabla{\lambda^u_{\sigma}(z)}\nabla{\lambda^v_{\sigma}(z)}}\d{z}}\text{.}
+\end{align}
+Calculating the summands reveals
+\begin{align}
+\beta_{uv} & = \sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\int_{\sigma}{\sum_{i=1}^n{\lambda^u_{\sigma}(e_i)\lambda^v_{\sigma}(e_i)}}\d{z}}
+= \sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\vol(\sigma)\sum_{i=1}^n{\lambda^u_{\sigma}(e_i)\lambda^v_{\sigma}(e_i)}}\\
+& = \sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\frac{{(n-1)!}^2\vol(\sigma\setminus\{u\})\vol(\sigma\setminus\{v\})\inprod{\nu_{\sigma}(\sigma\setminus\{u\})}{\nu_{\sigma}(\sigma\setminus\{v\})}}{{n!}^2\vol(\sigma)}}\\
+& = \sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\frac{\vol(\sigma\setminus\{u\})\vol(\sigma\setminus\{v\})\inprod{\nu_{\sigma}(\sigma\setminus\{u\})}{\nu_{\sigma}(\sigma\setminus\{v\})}}{n^2\vol(\sigma)}}\text{.}
+\end{align}
+where $\nu_{\sigma}(\tau)$ denotes the outer unit normal vector of the face $\tau$ with respect to $\sigma$.
+Now, observe that $\inprod{\nu_{\sigma}(\sigma\setminus\{u\})}{\nu_{\sigma}(\sigma\setminus\{v\})}=-\cos{\angle(\sigma\setminus\{u\},\sigma\setminus\{v\})}$ (the angle between the faces which is $<\pi$). Moreover, it is true that $\frac{n\vol(\sigma)}{\vol(\sigma\setminus\{u\})}=\vol(\{u,v\})\sin{\angle(\{u,v\},\sigma\setminus\{u\})}$ (and the analog identity for $v$ holds as well). Inserting this in the equation gives
+\begin{align}
+\beta_{uv} &= -\frac{1}{\vol(\{u,v\})^2}\sum_{\substack{\sigma\in K^{(n)}\\ \{u,v\}\subseteq \sigma}}{\frac{\vol(\sigma)\cos{\angle(\sigma\setminus\{u\},\sigma\setminus\{v\})}}{\sin{\angle(\{u,v\},\sigma\setminus\{u\})}\sin{\angle(\{u,v\},\sigma\setminus\{v\})}}}\text{.}
+\end{align}
+For the case $n=2$ this formula simplifies by using that for $\{u,v,w\}\in K^{(2)}$
+\begin{align}
+2\vol(\{u,v,w\}) &= \vol(\{u,w\})\vol(\{v,w\})\sin{\angle(\{u,w\},\{v,w\})}\\
+ &= \vol(\{u,v\})^2\frac{\sin{\angle(\{u,v\},\{u,w\})}\sin{\angle(\{u,v\},\{v,w\})}}{\sin{\angle(\{u,w\},\{v,w\})}}.
+\end{align}
+The result is then
+\begin{align}
+\beta_{uv} &= -\frac{1}{2}\sum_{w\in K^{(0)}:\{u,v,w\}\in K^{(2)}}{\frac{\cos{\angle(\{u,w\},\{v,w\})}}{\sin{\angle(\{u,w\},\{v,w\})}}}\\
+&= -\frac{1}{2}\sum_{w\in K^{(0)}:\{u,v,w\}\in K^{(2)}}{\cot{\angle(\{u,w\},\{v,w\})}}\text{.}
+\end{align}
+This last sum has at most two summands (depending on if $\{u,v\}$ lies
+in the boundary).
+
+\begin{definition}[weakly diagonally dominant matrix] Let
+  $A=(a_{ij})_{i,j=1,\ldots,n}\in\field^{n\times n}$ where $\field\in\{\reals,\complex\}$ then
+  $M$ is called \emph{weakly diagonally dominant} if
+\begin{align}
+\abs{a_{ii}}
+ &\geq \sum_{\substack{j=1\\ j\neq i}}^n{\abs{a_{ij}}}
+\end{align}
+and the inequality is strict for at least one $j\in\{1,\ldots,n\}$.
+\end{definition}
+
+\begin{lemma}[regularity of irreducible weakly diagonally dominant matrices]
+Let $A\in \field^{n\times n}$ be a weakly diagonally dominant
+irreducible matrix
+where $\field\in\{\reals,\complex\}$ then $A$ is regular. 
+\end{lemma}
+
+\begin{proof}
+Assume $Ax=0$ and choose $i\in\{1,\ldots,n\}$ such that $\abs{x_i}=\max\{\abs{x_j}:j=1,\ldots,n\}$. Then we have
+that
+\begin{align}
+\sum_{j=1}^n{a_{ij}x_j}=0
+\end{align}
+together with the fact that $A$ is weakly diagonally dominant implying that
+\begin{align}
+\abs{a_{ii}x_i} 
+ &\geq \sum_{\substack{j=1\\ j\neq
+     i}}^n{\abs{a_{ij}x_i}} = \sum_{\substack{j=1\\ j\neq
+     i}}^n{\abs{a_{ij}x_j}}\\
+ &\geq \abs{\sum_{\substack{j=1\\ j\neq
+     i}}^n{a_{ij}x_j}} = \abs{a_{ii}x_i}
+\end{align}
+whence all the inequalities must reach equality. If $x_i=0$ it follows
+that $x_j=0$ for $j\in\{1,\ldots,n\}$ and thus $x=0$. Otherwise, we may
+divide the above by $\abs{x_i}$. If $a_{ii}=0$ then it follows that
+$a_{ij}=0$ as $A$ is weakly diagonally dominant. But then we have that
+$A[\lin\{\uvect_j:(j=1,\ldots,n)\lgand j\neq
+i\}]\subseteq\lin\{\uvect_j:(j=1,\ldots,n)\lgand (j\neq i)\}$ from which it would
+follow that $A$ is reducible. Thus $a_{ii}\neq 0$. From this it
+follows that for each $j$ for which $a_{ij}\neq 0$ we have
+$\abs{x_i}=\abs{x_j}$.
+
+Choosing a new $i\in\{1,\ldots,n\}$ for which
+$\abs{x_i}=\max\{\abs{x_j}:j=1,\ldots,n\}$ we can spread these
+equalities to reach by the assumption that $A$ is irreducible such that
+$\abs{x_i}=\abs{x_j}$ for all $i,j\in\{1,\ldots,n\}$ (this is
+basically interpreting $A$ as a weighted adjacency matrix of graph).
+However, recalling the above inequalities we then notice that
+\begin{align}
+\abs{a_{ii}}=\sum_{\substack{j=1\\ j\neq i}}^n{\abs{a_{ij}}}
+\end{align}
+for all $i\in\{1,\ldots,n\}$ (as we assume $x_i\neq 0$) contradicting the fact that $A$ is weakly
+diagonally dominant. Thus $x_i=0$ for all $i\in\{1,\ldots,n\}$ showing
+that $x=0$. Thus $A$ is regular.
+\end{proof}
+
+\begin{lemma}[$M$-matrix criterion for weakly diagonally dominant
+  matrices]
+Let $A\in \reals^{n\times n}$ be a weakly diagonally dominant
+irreducible matrix such that $a_{ij}\leq 0$ for $i,j\in\{1,\ldots,n\}$
+and $i\neq j$. Then $A$ is an $M$-matrix. 
+\end{lemma}
+
+\begin{proof}
+Choose $x\in \field^n$ such that
+$Ax\leq 0$ and choose $i\in\{1,\ldots,n\}$ such that
+$x_i=\max\{x_j:j=1,\ldots,n\}$. We then obtain using that $A$ is
+weakly diagonally dominant and satisfies the additional condition in
+the lemma and assuming that $x_i> 0$
+\begin{align}
+-\sum_{\substack{j=1\\ j\neq i}}^n{a_{ij}x_j} 
+ &\geq a_{ii}x_i\\
+ &\geq -\sum_{\substack{j=1\\ j\neq i}}^n{a_{ij}x_j}
+\end{align}
+implying that all inequalities must reach equality. We can
+divide by $x_i$ to get that for each
+$j\in\{1,\ldots,n\}\setminus\{i\}$ where $a_{ij}\neq 0$ that
+$x_j=x_i$. As $A$ is irreducible this process reaches all
+$j\in\{1,\ldots,n\}$ (by repeatedly choosing a new $i$ with
+$x_i=\max\{x_j:j=1,\ldots,n\}$). Thus we get that $x$ must be a positive multiple of $v=(1,\ldots,1)$. But in this case, plugging in
+the vector $v$ yields by $A$ being weakly diagonally dominant a vector
+$Av>0$ (i.e. with at least one non-zero coordinate) contradicting the
+assumption. Thus we have that $x_i\leq 0$ for all $i\in\{1,\ldots,n\}$
+and thus $x\leq 0$. Hence, $A$ is inverse monotone and together with
+the additional assumption it is an $M$-matrix. 
+\end{proof}
+\end{document}

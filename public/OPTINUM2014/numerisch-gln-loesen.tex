@@ -1,0 +1,87 @@
+\section{Numerisches Lösen nichtlinearer Gleichungen}
+
+\subsection{Einführung und Wiederholung}
+
+Viele Modelle physikalscher Prozesse führen auf nichtlineare Gleichungen.
+
+\begin{example}
+    Allgemeines Polynom $n$-ten Grades $a_nX^n+\cdots a_0=0$. Die Nullstellen sind für $n\geq 5$ nicht mehr in Radikalen ausdrückbar, aber nach dem Fundamentalsatz der Algebra hat das Polynom in $\complex$ genau fünf Nullstellen (mit Vielfachheit).
+\end{example}
+
+\begin{example}
+    \emph{Hexapod-Steward-Plattform:} Es gibt sechs Freiheitsgrade, um ein lokales Koordinatensystem beliebig zu platzieren (3 Verschiebungen, 3 Drehungen).
+    Sechs Beine mit Längen $l_{ij}$.
+    Gesucht sind die $l_{ij}$ mit denen $(u,v,w)$ mit Drehungen $(\alpha,\beta,\gamma)$ erreicht wird. 
+    \begin{figure}%% todo
+        \centering
+        
+        \caption{Darstellung}
+    \end{figure}
+    
+    \emph{Mathematisches Modell:} Drehmatrizen
+    $$
+    \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & \cos\alpha & \sin\alpha\\
+        0 & -\sin\alpha & \cos\alpha
+    \end{pmatrix},\
+    \begin{pmatrix}
+        \cos\beta & 0 & \sin\beta\\
+        0 & 1 & 0\\
+        -\sin\beta & 0 & \cos\beta
+    \end{pmatrix},\
+    \begin{pmatrix}
+        \cos\gamma & \sin\gamma & 0\\
+        -\sin\gamma & \cos\gamma & 0\\
+        0 & 0 & 1
+    \end{pmatrix}
+    $$
+    Umrechnen des lokalen Koordinatensystems (ohne Translationen)
+    $$
+    \begin{pmatrix}
+        e_x & e_y & e_z
+    \end{pmatrix}
+    =
+    \underbrace{T_{\alpha}T_{\beta}T_{\gamma}}_{T(\alpha,\beta,\gamma)}
+    \begin{pmatrix}
+        e_{\xi} & e_{\eta} & e_{\delta}
+    \end{pmatrix}
+    $$
+    und
+    $$
+    Q_j=r+T(\alpha,\beta,\gamma)\tilde q_j,
+    $$
+    wobei $\tilde q_j=
+    \begin{pmatrix}
+        \xi_j & \eta_j & \delta_j
+    \end{pmatrix}
+    $.
+    Verbinden des Fußpunktes $P_i$ durch $Q_j$ mit Beinen der Länge $l_{ij}$:
+    $$
+    l_{ij}^2={\abs{P_i Q_j}}^2={\norm{p_i-(r+T(\alpha,\beta,\gamma))\tilde q_j}}^2.
+    $$
+    Nun $x=
+    \begin{pmatrix}
+        u & v & w & x & y & z
+    \end{pmatrix}$, $y={(l_{ij})}{1\leq i\leq j\leq 3}$ und $F(x,y)=0$ für gegebene $P_i$ und $Q_j$. Bestimme dann $x(y)$ (direkte Aufgabe) bzw. $y(x)$ (trivial).
+\end{example}
+
+\begin{theorem}[Satz über implizite Funktion]
+    $F(X,Y)=0$, $F(X_0,Y_0)=0$, $F_X(X_0,Y_0)$ regulär, dann existiert (so $F$ stetig differenzierbare Funktion ist) eine lokale Auflösung $X=X(Y)$ um $(X_0,Y_0)$.
+\end{theorem}
+
+Auf den Beweis mit dem \person{Banach}'schen Fixpunktsatz verzichten wir hier.
+
+\begin{example}
+    \emph{Euler implizit:} $y'=f(y)$, $y(0)=y_0$. Dann liefert mit
+    $$
+    \frac{y^{n+1}-y^n}{h_n}=f(y^{n+1})
+    $$
+    die Zahl $y^n$ eine Approximation von $y(t_n)$. Falls $f$ nichtlinear ist, so ist das Auflösen obiger Gleichung im Allgemeinen nur numerisch möglich.
+
+    Wenn wir annehmen, dass $f(x)=Ax+b$ affin linear ist, ergibt sich
+    $$
+    (I-hA)y^{n+1}=y^n+hb
+    $$
+    auf äquidistantem Gitter. Obige Matrix ist invertierbar für hinreichend kleine $h$.
+\end{example}

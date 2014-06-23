@@ -219,7 +219,8 @@
 % ===== Category theory concepts =====================================================
 
 \newcommand{\Ob}{\mathop\mathrm{Ob}}
-\newcommand{\Mor}{\mathop\mathrm{Mor}}
+\newcommand{\Mor}{\mathop\mathrm{Mor}\nolimits}
+\newcommand{\Hom}{\mathop\mathrm{Hom}}
 
 \newcommand{\ccoprod}{\bigsqcup}
 \newcommand{\cprod}{\bigsqcap}
@@ -231,6 +232,7 @@
 
 % Define sets
 \newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Top}{\mathbf{Top}}
 % Define set-builder operator (equivalent to gen for algebras)
 \newcommand{\set}[1]{\left\{#1\right\}}
 % define interval operator: o - open, c - closed
@@ -314,14 +316,13 @@
 %% argument in equatoin
 \def\arg{\bullet}
 
-% groups and algebras
-\newcommand{\Con}{\mathop\mathrm{Con}}
-\newcommand{\Sub}{\mathop\mathrm{Sub}}
-\newcommand{\Hom}{\mathop\mathrm{Hom}}
-\newcommand{\Aut}{\mathop\mathrm{Aut}}
-\newcommand{\Out}{\mathop\mathrm{Out}}
-\newcommand{\End}{\mathop\mathrm{End}}
-\newcommand{\id}{\mathop\mathrm{id}}
+% groups and algebras and categories
+\newcommand{\Con}{\mathop\mathrm{Con}\nolimits}
+\newcommand{\Sub}{\mathop\mathrm{Sub}\nolimits}
+\newcommand{\Aut}{\mathop\mathrm{Aut}\nolimits}
+\newcommand{\Out}{\mathop\mathrm{Out}\nolimits}
+\newcommand{\End}{\mathop\mathrm{End}\nolimits}
+\newcommand{\id}{\mathop\mathrm{id}\nolimits}
 \newcommand{\rk}{\mathop\mathrm{rk}} % rank of a group module/ lattice
 \newcommandx{\con}[1][1=\empty]{\ifx#1\empty{\mathop{\mathrm{con}}}\else{\mathop{\mathrm{con}}\left(#1\right)}\fi}
 \newcommand{\leftsemidirprod}[1][]{\mathbin{\ifx&#1&\ltimes\else{\ltimes_{#1}}\fi}}
@@ -470,7 +471,8 @@
 \newcommand{\rest}[1]{\left. #1\right\vert}		% restriction of a function to a set / also used as restriction in other terms like differential expressions / evaluation of a function
 \newcommand{\rto}[3][]{#2\ifx&#1&\rightarrow\else\stackrel{#1}{\rightarrow}\fi#3}
 \renewcommand{\to}{\rightarrow}							% arrow between domain and image
-\newcommand{\dom}{\mathop\mathrm{dom}}					% domain of a function
+\newcommand{\dom}{\mathop\mathrm{dom}\nolimits}					% domain of a function
+\newcommand{\codom}{\mathop{\mathrm{dom}^\ast}\nolimits}
 \newcommand{\im}{\mathop\mathrm{im}}						% image of a function
 \newcommand{\compose}{\circ}							% compose two functions
 \newcommand{\cont}{\mathop\mathrm{C}}					% continuous functions from a domain into the reels or complex numbers 

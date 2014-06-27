@@ -31,6 +31,28 @@ A tabbar only showing the hidden windows of the current ws.
 
 \paragraph{Useful.} Notify and send utility.
 
+\subsection{XMonad within Gnome}
+
+For xmonad to start automatically on login you need an {\tt applications/xmonad.desktop} file on your system. If your distro doesn't provide it, create the following file:
+
+{\tt
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Xmonad
+Exec=xmonad
+NoDisplay=true
+X-GNOME-WMName=Xmonad
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false
+}
+and put it in either {\tt /usr/share/applications/xmonad.desktop} (global version) or in {\tt /.local/share/applications/xmonad.desktop} (local version --- for current user only).
+
+Your display manager must also be able to find the xmonad executable. If you are not using your distro package manager to install xmonad, for best results configure your build to install xmonad to a location in the system environment like /usr/local/bin/.
+
+http://www.haskell.org/haskellwiki/Xmonad/Using_xmonad_in_Gnome#Tweak_Gnome_to_work_better_with_Xmonad
+
 \section{Emacs}
 
 \paragraph{Install packages.}

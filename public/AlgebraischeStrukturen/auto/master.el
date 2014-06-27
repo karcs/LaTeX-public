@@ -13,8 +13,6 @@
      "rel-clo-cyc"
      "rel-clo-asc-ch"
      "rel-clo-fin-low-neigh")
-    (TeX-add-symbols
-     "preserves")
     (TeX-run-style-hooks
      "booktabs"
      "tikz"

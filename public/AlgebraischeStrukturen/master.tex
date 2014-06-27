@@ -1,5 +1,5 @@
 \documentclass{book}
-
+%% 25.06.14
 \input{../Config/german.tex}
 \usepackage[de]{mathenv}
 \input{../Config/math.tex}
@@ -94,9 +94,9 @@ Wir kommen nun zu einem der wichtigsten Resultate über Klone auf endlichen Meng
 \end{remark}
 
 Also ergibt sich
-\def\preserves{\rhd}% TODO : change this
+%
 \begin{corollary}
-    Sei $A$ endlich. Eine Menge $F\setleq \cO_A$ ist vollständig genau dann, wenn für jede Relation $\sigma\in{\rho(A)}^{\sim}$ eine Funktion $f_\sigma\in F$ mit $f_\sigma\preserves\sigma$ (was zu $f_\sigma\not\in \Pol\sigma$ äquivalent ist), existiert.
+    Sei $A$ endlich. Eine Menge $F\setleq \cO_A$ ist vollständig genau dann, wenn für jede Relation $\sigma\in{\rho(A)}^{\sim}$ eine Funktion $f_\sigma\in F$ mit $f_\sigma\congt\sigma$ (was zu $f_\sigma\not\in \Pol\sigma$ äquivalent ist), existiert.
 \end{corollary}
 
 Für einzelne Funktionen noch einfacher
@@ -187,11 +187,11 @@ Offenbar gilt:
     $$
     C_\cM := \Clo\set{f_M:M\in\cM}.
     $$
-    Zeige, dass $C_\cM\neq C_{\cM'}$ für zwei verschiedene nichttriviale Teilmengen $\cM,\cM'\setleq \Sub(A\setminus\set{0,1})$.
+    Zeige, dass $C_\cM\neq C_{\cM'}$ für zwei verschiedene nichttriviale Teilmengen $\cM,\cM'\setleq \Sub(A\setminus\set{0,1})\setminus\set\emptyset$.
 \end{exercise}
-
+%
 \begin{solution}
-    Die Komposition zweier charakteristischer Funktionen $\chi_M, \chi_{M'}$ ist immer konstant $0$ falls $M,M'\setleq A\setminus\set{0,1}$. Daher ist es unmöglich, dass $\chi_M'\in\Clo(\cM)$, falls $M'\not\in\cM$.
+    Die Komposition zweier charakteristischer Funktionen $\chi_M, \chi_{M'}$ ist immer konstant $0$ falls $M,M'\setleq A\setminus\set{0,1}$. Daher ist es unmöglich, dass $\chi_M'\in\Clo(\cM)$, falls $\emptyset\setgt M'\not\in\cM$.
 \end{solution}
 
 \begin{exercise}
@@ -769,6 +769,70 @@ Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
 \begin{remark}
     Man sagt zu kovarianter Funktor auch oft nur Funktor und ein kontravarianter ist dasselbe wie ein Funktor $\dual\cC\to\cD$ (besser ist es im algebraischen Sinne einen kontravarianten Funktor als Antifunktor zu bezeichen).
 \end{remark}
+
+\section{Übung 5}
+
+\begin{exercise}
+    Sei $f\in\cO_A$ nicht-trivial.
+    \begin{tasks}
+            \item Zeige, dass $\Clo(f)$ minimal ist, wenn $f$ eine Retraktion oder Permutationen primer Ordnung ist.
+            \item Zeige, dass $f(x,y,z)=x+y+z$ einen minimalen Klon erzeugt.
+            \item Gib ein Beispiel für eine Funktion $f$ mit $\Clo(f)$ nicht minimal
+        \begin{tasks}
+                \item $f$ ist binäre idempotente Funktion an.
+                \item $f$ ist Majoritätsfunktion
+                \item $f$ ist Semiprojektion.
+        \end{tasks}
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Es reicht für alle $g\in{\Clo(f)}^{(1)}\setminus\cJ_A$ zu zeigen, dass $f\in\Clo(g)$ gilt. Es ist $\Clo(f)=\set{f^n:n\geq 0}$, für eine Retraktion ist dies also $\set{f,1_A}$ und für eine Permutationen primer Ordnung $\set{1_A,f,\ldots,f^{p-1}}$. Aus den nichttrivialen Elementen davon lasst sich jedoch immer $f$ zurückgewinnen, da $\ints/p\ints$ ein Körper ist (i.b.~für $p=2$).
+            \item Für $f(x,y,z)=x+y+z$ lässt sich per Terminduktion zeigen, dass $\Clo(f)=\set{g\in A\to A: g(x_0,\ldots,x_{2n})=\sum_{i=0}^{2n}x_i}$ ($n\geq 0$). Damit lässt sich aus jedem nicht-trivialen $g$ wieder $f$ zurückgewinnen können.
+        \item Wir wählen $\card A=3$.
+    \begin{tasks} 
+            \item Definiere $f_1(x,y)$ durch $f_1(x,x):=x$ und $f_(1,2):=1$, $f(x,y):=0$ sonst. Definiere $f_0(x,y)$ durch $f_0(x,x):=x$ und $f_0(x,y):=0$ sonst, dann ist $f_0(x,y)=f_1(f_1(x,y),f_1(y,x))$, aber $f_0$ erzeugt nicht $f_1$. Wir finden eine Relation die von $f_0$ und nicht $f_1$ bewahrt wird. Dazu wählt man $\sigma=\set{(0,0),(1,1),(1,2)}$. Diese ist offensichtlich von $f_0$ bewahrt, aber
+        $$
+        f_1
+        \begin{pmatrix}
+            1 & 2 & 0 \\
+            1 & 0 & 0
+        \end{pmatrix}=
+        \begin{pmatrix}
+            1 \\
+            0
+        \end{pmatrix}\not\in\sigma
+        $$
+            \item Für Majoritätsfunktionen nimmt man z.B.~ $m_0(x,y,z):=0$ falls $\card{\set{x,y,z}}=3$ und sonst was die Majorität vorschreibt. Weiter setze $m_1(x,y,z):=m_0(x,y,z)$ falls $(x,y,z)\neq (0,1,2)$. Dann gilt $m_0(x,y,z)=m_1(m_1(x,y,z),m_1(y,z,x),m_1(z,x,y))$. Umgekehrt erzeugt $m_0$ aber $m_1$ wieder nicht. Wieder ist $\sigma$ eine geignete Relation, die von $m_0$, aber nicht von $m_1$ bewahrt wird.
+            \item Sei $s_0(x_1,x_2,x_3)$ die Semi-Projektion mit $s_0(x_1,x_2,x_3)0$ falls $\card{\set{x_1,x_2,x_3}}=3$ und $s_0(x_1,x_2,x_3)=x_1$ sonst. Sei $s_1(x,y,z)=s_0(x,y,z)$ falls $(x,y,z)\neq(0,1,2)$, dort sei $s_1(0,1,2)=1$. Es ist dann $s_0(x,y,z)=s_1(s_1(x_1,x_2,x_3),s_1(x_1,x_3,x_2),x_3)$ (denn es ist klarerweise Semiprojektion, und falls $x,y,z$ paarweise verschieden sieht man auch leicht, dass die Gleichheit stimmt). Andererseits wird $s_1$ nicht von $s_0$ erzeugt.
+        Als unterscheidende Relation wählen wir hier $\gamma=\set{(0,0),(1,1),(2,0),(0,1)}$, diese wird wieder von $s_0$ bewahrt und nicht von $s_1$.
+    \end{tasks}
+    \end{tasks}
+\end{solution}
+
+% 5.3
+\begin{exercise}
+    Sei $A$ endlicht, $Q\setleq \cR_A$ eine Menge von Relationen und $C:=\Pol Q$.
+    \begin{tasks}
+            \item Zeige $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_n):n\in\nats_+})$.
+        \item Sei $Q$ endlich. Zeige, dass $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_{n0})})$ mit $n_0:=\max\set{\card\sigma : \sigma\in Q}$.
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Es gilt $Clo(Q)=\Inv\Pol Q=\Inv C\setgeq \set{\Gamma_C(\chi_n):n\in\nats_+}$. Um die umgekehrte Inklusion zu zeigen: Es gilt für alle $\sigma\in\Clo Q=\Inv C$, $\card\sigma=n$: $\sigma\in\Clo(\set{\Gamma_C(\chi_n)})$. Damit ist auch die zweite Teilaufgabe gezeigt.
+        Genauer: wir zeigen, dass sich $\sigma$ aus $\Gamma_C(\chi_n)$ durch Umordnen und Streichen von Zeilen ergibt. Ohne Einschränkung kann also angenommen werden, dass $\sigma$ nur unterschiedliche Zeilen enthält. Da $\card\sigma=n$ gibt es in $\chi_n$ $m$ Zeilen, die mit den Zeilen $\sigma$ übereinstimmen.
+        \item Nach erster Teilaufgabe.
+    \end{tasks}
+\end{solution}
+
+\begin{remark}
+    Es gilt $\Clo(f)$ ist minimal, genau dann wenn für alle $g\in\Clo(f)\setminus\cJ_A$ gilt, dass $f\in\Clo(g)$. 
+\end{remark}
+
+
 \end{document}
 
 

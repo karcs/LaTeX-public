@@ -350,7 +350,7 @@ Bei $\epsilon_1=0$ bleibt nur der BEC über, bei $\epsilon_2=0$ nur der BSC.
         \end{tasks}
         mit $\epsilon=\epsilon_1\epsilon_2$. Gesamtkapazität berechnet sich nach derselben Formel
         $$
-        C_{\ges} = \log_2(1+\epsilon{(1-\epsilon)}^{\frac{1-\epsilon}{\epsilon}}
+        C_{\text{ges}} = \log_2(1+\epsilon{(1-\epsilon)}^{\frac{1-\epsilon}{\epsilon}})
         $$
         und
         $$
@@ -358,4 +358,110 @@ Bei $\epsilon_1=0$ bleibt nur der BEC über, bei $\epsilon_2=0$ nur der BSC.
         $$
         Der Gesamtkanal ist wieder ein $Z$-Kanal mit Parameter $\epsilon=\epsilon_1\epsilon_2$.
 \end{solution}
+
+\hfill{26.06.14}
+% 31
+\begin{exercise}
+    
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Der Erwartungswert der Zufallsgröße ist $0$, da die Verteilung symmetrisch um $0$ ist, d.h. $f(x)=\frac 1 a\left(1-\abs{\frac x a}\right)$. Die Varianz bestimmen wir, indem wir $E({(X-E(X))}^2)$ berechnen, dann erhalten wir also
+        $$
+        \int_{-a}^a{\frac {x^2} a\left(1-\abs{\frac x a}\right)}\diff x = 2a^2\int_0^1{y^2(1-y)}\diff y =\frac {a^2} 6. 
+        $$
+            \item Gegeben ist eine Zufallsgröße $X$ mit und $Y=g(X)$ mit $f_X$ Dichte von $X$ und $f_Y$ Dichte von $Y$. Es sei $g(x)=\exp(x/a)$. Der Transformationssatz für Dichten besagt:
+        $$
+        f_Y(y)=\frac{f_X(g^{-1}(y))}{\abs{g'(g^{-1}(y))}}
+        $$
+        Ableitung ist dann $g'(x)=\frac 1 a \exp(x/a)$, Umkehrfunktion $g^{-1}(y)=a\log(y)$ ($y\in (0,\infty)$). Träger von $Y$ ist $\bar{g(-a,a)}=[e^{-1},e]$. Also für $y\in[e^{-1},e]$ gilt:
+        $$
+        f_Y(y)=\frac{\frac 1 a\left(1-\abs{\frac{a\log(y)}{a}}\right)}{\frac 1 a\exp\left(\frac{a\log(y)}{a}\right)}
+        $$
+        insgesamt
+        $$
+        f_Y(y)=
+        \begin{cases}
+            \frac 1 y\left(1-\abs{\log(y)}\right) &: y\in [e^{-1},e]\\
+            0 &: \text{sonst}
+        \end{cases}
+        $$
+            \item Es ist
+        \begin{align*}
+            h(X) &
+            =-\int_{-\infty}^\infty{\log_2(f_X(x))f_X(x)}\\
+            &
+            = -\int_{-a}^a{\frac 1 a\left(1-\abs{\frac x a}\right)\log_2\left(\frac 1 a\left(1-\abs{\frac x a}\right)\right)}\\
+            &
+            = 2a^2\int_{y=1/a}^0{y\log_2(y)}\diff y\\
+            &
+            = \rest{\frac{-2a^2}{\log(2)}\left(y^2\left(\frac{\log(y)}{4}-\frac 1 4\right)\right)}_{1/a}^0\\
+            & = \log_2(\sqrt e a)
+        \end{align*}
+    \end{tasks}
+\end{solution}
+
+\begin{solution}
+    Die Dichten von $X$ und $Y$ sind wie folgt gegeben durch
+    $$
+    f_X(x)=\frac 1 {\sqrt{2\pi\sigma_X^2}}\exp(-{(\frac x {\sigma_X})}^2)
+        $$ und $f_Y$ analog.
+        Dann ist
+        \begin{align*}
+            D(X||Y) &= \int_{-\infty}^\infty{f_X(x)\log_2\left(\frac{f_X(x)}{f_Y(x)}\right)}\diff x\\
+            & = \int_{-\infty}^\infty{\frac 1 {\sqrt{2\pi\sigma_X^2}}\exp\left(-\frac 1 2{\left(\frac x {\sigma_X}\right)}^2\right)\log_2\left(\sqrt{\frac{\sigma_Y^2}{\sigma_X^2}}\exp\left(-\frac 1 2\left(\frac 1 {\sigma_X^2}-\frac 1 {\sigma_Y^2}\right)x^2\right)\right)}\diff x\\
+            & =
+            \frac 1 2\log_2\left(\frac{\sigma_Y^2}{\sigma_X^2}\right)E(X)+\frac 1{\log(2)}\frac 1 2\left(\frac 1 {\sigma_Y^2}-\frac 1 {\sigma_X^2}\right)V(X)\\
+            & = \frac 1 {2\log(2)}\left(2\log\left(\frac{\sigma_Y}{\sigma_X}\right)+\left(\frac{\sigma_X^2}{\sigma_Y^2}-1\right)\right)
+        \end{align*}
+\end{solution}
+
+% 33
+\begin{solution}
+    Wir haben $Z_1:=X_1+Y$, $Z_2:=X_2+Y$, $Z_1$ ist normalverteilt, denn die Summe normalverteilter Zufallsgrößen ist normalverteilt. $E(Z_1)=E(X_1)+E(Y)=0+0=0$ und die Varianz ist $V(Z_1)=V(X_1)+V(Y)=\sigma_1^2+\sigma_Y^2$, da $X_1, Y$ unkorreliert (da unabhängig).
+    Entsprechend ist $E(Z_2)=0$ und $V(Z_2)=\sigma_2^2+\sigma_Y^2$.
+    \begin{tasks}
+            \item Mit Aufgabe 32 erhalten wir:
+        $$
+        D(X_1+Y||X_2+Y)=\frac 1 {2\log(2)}\left(\log\left(\frac{\sigma_2^2+\sigma_Y^2}{\sigma_1^2+\sigma_Y^2}\right)+\frac{\sigma_1^2+\sigma_Y^2}{\sigma_2^2+\sigma_Y^2}-1\right)
+        $$
+            \item Es gilt $D(X_1||X_2)\geq D(X_1+Y||X_2+Y)$, da
+        $$
+        \log\left(\frac{b+x}{a+x}\right)+\frac{a+x}{b+x}-1
+        $$
+        monoton fallend in $x$ ist.
+        Die Ableitung ist
+        $$
+        \frac{a+x}{b+x}\frac{a-b}{{(a+x)}^2}+\frac{b-a}{{(b+x)}^2} = \frac{a-b}{b+x}\left(\frac1 {a+x}-\frac 1 {b+x}\right)=\frac{-{(b-a)}^2}{ {(b+x)}^2(a+x)}<0
+        $$
+    \end{tasks}
+    \begin{remark}
+        Durch additive Störung werden die Verteilungen der Zufallsgrößen $X_1$ und $X_2$ ähnlicher, daher $D(\arg || \arg)$ kleiner.
+    \end{remark}
+\end{solution}
+
+% 34
+\begin{solution}
+    Äquivalentes Modell: $\tilde Z = Z_1+Z_2$, $\tilde Z$ normalverteilt, und $Y=X+\tilde Z$.
+    \begin{tasks}
+            \item $E(\tilde Z)=E(Z_1)+E(Z_2)=0$ und $V(\tilde Z)=V(Z_1)+V(Z_2)=\sigma_1^2+\sigma_2^2$ (da $Z_1$ und $Z_2$ unabhängig sind.
+        $X$ und $(Z_1,Z_2)$ sind unabhängig, also Modell \person{Gauß}-Kanal (Hintereinanderschaltung von zwei \person{Gauß}-Kanälen).
+        $$
+        \max_{E(X^2)\leq P}{I(X;Y)} = \max_{E(X^2)\leq P}{I(X;X+Z)} = \frac 1 2\log_2\left(1+\frac{P}{\sigma_1^2+\sigma_2^2})
+            $$ nach der Formel für die Informationskapazität des \person{Gauß}-Kanals (§3.51).
+                \item Es ergibt sich
+            \begin{align*}
+                V(\tilde Z) &= V(Z_1)+2C(Z_1,Z_2)+V(Z_2)\\
+                &=\sigma_1^2+2\alpha\sigma_1\sigma_2+\sigma_2^2
+            \end{align*}
+            Wieder muss in die Formel für die Transinformation eingesetzt werden.
+        \end{tasks}
+\end{solution}
 \end{document}
+
+
+
+
+
+

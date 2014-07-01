@@ -18,5 +18,6 @@
      "simplex-parameter"
      "transportproblem"
      "GanzzahligeOptimierung"
-     "uebung-5")))
+     "uebung-5"
+     "optimierungsprobleme_ueber_graphen")))
 

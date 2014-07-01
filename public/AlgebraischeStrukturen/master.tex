@@ -832,7 +832,123 @@ Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
     Es gilt $\Clo(f)$ ist minimal, genau dann wenn für alle $g\in\Clo(f)\setminus\cJ_A$ gilt, dass $f\in\Clo(g)$. 
 \end{remark}
 
+\hfill{30.06.2014}
 
+Weiter mit Kerkbold:
+
+\begin{example}[Identitätsfunktor]
+    Dieser Funktor $1_{\cC}$ tut $x\to x$ für Morphismen und Objekte.    
+\end{example}
+
+\begin{example}[Potenzmengenfunktor]
+    Der Potenzmengenfunktor $\Sub:\Set\to\dual\Set$ bildet eine Menge $X\mapsto\Sub X$ ab und die Morphismen $f\to \Sub f$ mit $\Sub f A = f^{-1} A$ kontravariant.
+\end{example}
+
+\begin{example}[Vergissfunktor]
+    Ein Vergissfunktor bildet eine `algebraische' Kategorie auf die zugrundeliegenden Mengen und Mengenabbildungen ab.
+\end{example}
+
+\begin{definition}[voll und treu]
+    Sei $F:\cC\to\cD$ ein Funktor, dann heißt $F$ \keyword{treu}, wenn für alle $X,Y\in\cC$ der Funktor $F$ die Morphismen $X\to_{\cC} Y$ injektiv auf $FX\to_{\cD} FY$ ab.
+    Falls $F$ die analoge Eigenschaft hat mit `surjektiv' and der Stelle von `ìnjektiv', dann heißt $F$ voll.
+\end{definition}
+
+\begin{definition}
+    Ein Funktor heißt \keyword{wesentlich surjektiv}, falls $F$ einen Repräsentanten aus jeder Isomorphieklasse trifft.
+\end{definition}
+
+Natürlich lassen sich obige Definitionen auch auf kontravariante Funktoren erweitern, indem man diese wie gewohnt als kovariante Funktoren interpretiert.
+
+\begin{example}
+    Der Identitätsfunktor hat alle der obigen Eigenschaften.
+\end{example}
+
+\begin{example}
+    Der Potenzmengenfunktor ist nicht voll, treu und nicht wesentlich surjektiv.
+\end{example}
+
+\begin{example}
+    Ein Vergissfunktor ist meistens nicht voll, treu und wesentlich surjektiv (diskrete Topologie).
+\end{example}
+
+\begin{remark}
+    Ein treuer Funktor $V\in \cC\to\Set$ ermöglicht, sich die Objekte der Kategorie $\cC$ als Mengen und die Morphismen als Mengenabbildungen vorzustellen. Man nennt $\cC$ dann auch konkret.
+\end{remark}
+
+\begin{definition}[konkrete Kategorie]
+    Eine \keyword{konkrete Kategorie} ist ein Paar $(\cC,V)$ mit $\cC$ eine Kategorie und $V\in\cC\to\Set$ treu. Gibt es zu einer Kategorie $\cC$ einen treuen Funktor nach $\Set$, so heißt $\cC$ auch \keyword{konkretisierbar}.
+\end{definition}
+
+\begin{example}
+    $\Top$ zusammen mit dem Vergissfunktor ist eine konkrete Kategorie.
+\end{example}
+
+\begin{remark}
+    In der Praxis wird der Vergissfunktor, wenn er offensichtlich ist, oft weggelassen und die Kategorie selbst konkret genannt.
+\end{remark}
+
+Natürliche Transformationen bringen Funktoren miteinander in Verbindung.
+
+\begin{definition}
+    Seien $F, G:\cC\to\cD$ Funktoren. Eine natürliche Transformation von $F$ nach $G$, geschrieben $\tau:F\to G$ ist eine Familie von Morphismen ${(\tau_X)}_{X\in\cC}$, $\tau_X:FX\to GX$ die natürlich ist in $X$. Das heißt, dass
+    $$
+    \tau_X (Gf) = (Ff) \tau_Y,
+    $$
+    für alle $X,Y\in\cC$ und $f\in X\to Y$.
+\end{definition}
+
+\begin{quotation}
+    `I didn't invent categories to study functors, I invented them to study natural transformations.' (\person{Sounders MacLane})
+\end{quotation}
+
+\begin{definition}
+    Eine natürliche Transformation ${(\tau_X)}_{X\in\cC}$ heißt \keyword{natürliche Äquivalenz}, falls alle $\tau_X$ Isomorphismen sind ($X\in\cC$). Zwei Funktoren heißen äquivalent, wenn es zwischen ihnen eine natürliche Äquivalenz gibt.
+\end{definition}
+
+\begin{definition}
+    Sind $\cC, \cD$ Kategorien und $F:\cC\to\cD$, $G:\cD\to\cC$ Funktoren,
+    $\epsilon:1_\cC\to GF$ und $\eta:1_\cD\to FG$ natürliche Äquivalenzen, so heißt $(F,G,\epsilon,\eta)$ Äquivalenz zwischen $\cC$ und $\cD$.
+    Existiert zwischen zwei Kategorien eine Äquivalenz, so heißen diese \keyword{äquivalent}.
+\end{definition}
+
+\begin{remark}
+    Zwei Kategorien $\cC, \cD$ sind äquivalent, genau dann wenn ein voller treuer und wesentlicher Funktor $F:\cC\to\cD$ existiert. Ein solcher bewahrt alle Konzepte, die alle Konzepte, die nicht zwischen isomorphen Objekten unterscheidet.
+\end{remark}
+
+\begin{definition}
+    Eine Eigenschaft/Konzept heißt \keyword{evil}, wenn sie nicht invariant unter Äquivalenz ist.
+\end{definition}
+
+\section{Dualität}
+
+\begin{quotation}
+    ``An important general theme that has manifestations in almost every area of mathematics.'' (Princeton Companion to Mathematics)
+\end{quotation}
+
+Schon bekannt ist $\dual \cC$ als duale Kategorie zu $\cC$. Dadurch bekommt jede Kategorientheoretische Konstruktion ein duales Gegenstrück in $\dual\cC$.
+
+\begin{definition}
+    $C\in\cC$ heißt Koprodukt von ${(X_i)}_{i\in I}$, wenn eine Familie von sogenannten Injektionsmorphismen $(\iota_i:X_i\to C)$ existiert, sodass für alle $Y\in C$, $g_i:X_i\to Y$ ein eindeutiges $u:C\to Y$ existiert, sodass $\iota_i u = g_i$ für alle $i\in I$.
+    $u$ heißt Kotupling.
+\end{definition}
+
+\begin{remark}
+    Notationsmäßig: $X_1\cotimes\cdots\cotimes X_n$ ist das Koprodukt von $X_1,\ldots,X_n$ und $g_1\cotuple\cdots\cotuple g_n$ das Kotupling. $X^{\cotimes n}$ die Kopotenz.
+\end{remark}
+
+\begin{example}
+    Das Koprodukt in $\Set$ ist die disjunkte Vereinigung.
+\end{example}
+
+\begin{remark}
+    Eine kategorientheoretische Aussage gilt genau dann, wenn die dualisierte Aussage in der dualen Kategorie gilt.
+\end{remark}
+
+Dieses Prinzip liefert immer zwei Ergebnisse zum Preis von einem.
+
+\begin{example}
+    Produkte und Koprodukte sind bis auf Isomorphie eindeutig.
+\end{example}
 \end{document}
 
 

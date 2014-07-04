@@ -949,6 +949,132 @@ Dieses Prinzip liefert immer zwei Ergebnisse zum Preis von einem.
 \begin{example}
     Produkte und Koprodukte sind bis auf Isomorphie eindeutig.
 \end{example}
+
+\hfill{02.07.2014}
+
+Weiter mit Kerkbold:
+
+Es ist klar, dass eine auf abstrakter Ebene stattfindende Dualisierung keine Vereinfachung von Beweisen erreichen kann.
+Es ist nämlich $\dual \cC$ nur die abstrakte Umkehrung von $\cC$. Es kann jedoch von Vorteil sein, eine zu $\dual \cC$ äquivalente Kategorie zu betrachten.
+
+\begin{definition}[duale Äquivalenz]
+    Eine Kategorie $\cD$ heißt dual äquivalent zu $\cC$, falls $\cD$ äquivalent zu $\dual \cC$ äquivalent ist. Alternativ definiert man eine duale Äuivalenz als ein Quadrupel $(D,E,\epsilon,\eta)$ mit $D:\cC\to\cD$ und $E:\cD\to\cC$ kontravariante Funktoren und $\epsilon : 1_{\cC} \to DE $, $\eta : 1_{\cD} \to ED $ natürliche Isomorphismen. 
+\end{definition}
+
+\begin{remark}
+    Dies ist natürlich auch gleichwertig mit $\cC$ und $\dual \cD$ äquivalent.
+\end{remark}
+
+\begin{remark}
+    Zwei Kategorien $\cC$ und $\cD$ sind genau dann dual äquivalent, wenn es einen vollen, treuen kontravarianten Funktor $F:\cD\to\cC$ gibt.
+\end{remark}
+
+Da alle nicht-evil Eigenschaften von einer Äquivalenz bewahrt werden, werden sie durch eine duale Äquivalenz dualisiert.
+
+Man kann also $\cD$ betrachten, um Informationen über $\cC$ zu erhalten.
+
+Beispiele dafür werden wir in Übung 6 sehen.
+
+\section{\person{Lawvere} Theorien}
+
+\begin{definition}[natürliche Zahlen]
+    Sei $\nats$ die Kategorie der natürlichen Zahlen, d.h. Objekte sind alle Mengen
+    $\set{0,\ldots,n-1}$
+    für $n\in\nats$ und als Morphismen wählt man alle Mengenabbildungen.
+\end{definition}
+
+\begin{remark}
+    Die Kategorie ist klein und ihr eigenes Skelett. Also sind Produkte und Koprodukte eindeutig bestimmt (nicht nur bis auf Isomorphie).
+\end{remark}
+
+Es ist klar, dass das Produkt von ${(n_i)}_{i\in I}$ genau $\prod_{i\in I}{n_i}$ und das Koprodukt genau $\sum_{i\in I}{n_i}$ ist.
+
+\begin{definition}[kleine Kategorie]
+    Eine Kategorie heißt \keyword{klein}, falls die Objektklasse eine Menge ist.
+\end{definition}
+
+\begin{example}
+    $\nats$ ist klein, $\Set$ und $\Top$ sind aber nicht klein.
+\end{example}
+
+\begin{definition}[Elemente]
+    Die Elemente der Menge $T\to_{\cC} X$ heißen $T$-wertige Punkte von $X$. Die Klasse
+    $$
+    E(X)\defeq\bigsetjoin_{Y\in \cC}{Y\to_{\cC} X} 
+    $$
+    heißt die Klasse der (verallgemeinerten) Elemente von $X$.
+\end{definition}
+
+\begin{definition}
+    Ein Funktor $F:\cC\to \cD$ bewahrt Produkte, falls gilt:
+    Falls $P$ Produkt von ${(X_i)}_{i\in I}$ mit Projektionsmorphismen ${(\pi_i)}_{i\in I}$ in $\cC$, dann ist $FP$ ein Produkt von ${(FX_i)}_{i\in I}$ mit Projektionsmorphismen ${(F\pi_i)}_{i\in I}$
+\end{definition}
+
+\begin{remark}
+    Bewahrt ein Funktor $F:\cC\to\cD$ Produkte und ist $f_1\tuple \cdots \tuple f_n$ das Tupling von $f_1,\ldots,f_n$ in $\cC$, dann ist $F(f_1\tuple\cdots\tuple f_n)$ das Tupling von $Ff_1, \ldots, Ff_n$.
+\end{remark}
+
+\begin{theorem}
+    Sei $\cC$ eine kleine Kategorie. Dann ist der Funktor
+    $$
+    V : \cC \to \Set,\ X \mapsto E(X),\ X\to_{\cC} Y \mapsto Vu : E(X)\to E(Y)
+    $$
+    mit
+    $$
+    \phi\mapsto \phi u,
+    $$
+    treu, injektiv auf Objekten und bewahrt Produkte.    
+\end{theorem}
+
+\begin{proof}
+    $E(X)$ ist tatsächlich eine Menge, da $\cC$ klein ist. Es ist $V$ ein Funktor, da
+    $$
+    V(1_X)=1_{E(X)},
+    $$
+    $$
+    V(vu)(\phi)=\phi v u = \phi(Vv Vu).
+    $$
+    $V$ ist injektiv auf Objekten $E(X)=E(Y)$, denn $1_X\in E(X)=E(Y)$ also $X = Y$.
+    $V$ ist treu, da $Vu_1=Vu_2$ impliziert, dass $(Vu_1)1_X=u_1=(Vu_2)1_X=u_2$.
+    Bewahrten von Produkten --- in Übung 6.
+\end{proof}
+
+\begin{remark}
+    Dieser Satz wird häufig als kategorientheoretische Version des Satzes von \person{Cayley} verstanden.
+\end{remark}
+
+\begin{definition}
+    Ein Funktor $F$ heißt identisch auf Objekten, wenn $F$ als Abbildung zwischen den Objekten von $\cC$ und $\cD$ die Identität ist. 
+\end{definition}
+
+\begin{definition}[\person{Lawvere-Theorie}]
+    Eine \person{Lawvere}-Theorie ist eine kleine Kategorie $\cL$ mit endlichen Produkten, sodass es einen Produktbewahrenden Funktor $I:\dual\nats \to \cL$, der identisch auf Objekten ist.
+\end{definition}
+
+\begin{remark}
+    Die Objekte einer \person{Lawvere}-Theorie sind also $0,1,2,3,\ldots$, sodass $n$ die $n$-Potenz von $1$ ist (im kategorientheoretischen Sinne).
+\end{remark}
+
+\begin{definition}
+    Sei $\cC$ Kategorie und $\cL$ eine \person{Lawvere}-Theorie. Ein \keyword{Modell} von $\cL$ in $\cC$ ist ein Produktbewahrenden Funktor $M:\cL\to\cC$ 
+\end{definition}
+
+Was hat dies überhaupt mit Klonen zu tun, fragen wir uns?
+
+\begin{proposition}
+    Sei $A$ eine Menge. Eine Teilmenge $\cC\setleq \cO_A$ ist ein Klon genau dann, wenn es eine \person{Lawvere}-Theorie $\cL$ gibt und ein Modell $M:\cL\to\Set$ gibt, sodass $Mn=A^n$ und $\cC^{(n)}=\set{Mf:f\in n\to_{\cL} 1}$ ($n\in\nats_+$). 
+\end{proposition}
+
+\begin{proof}
+    $\implies$: Sei $\cC$ ein Klon. Definiere $\cL$ durch $\Ob(\cL)=\Ob(\nats)$ und
+    $$
+    n\to_{\cL} m:=\set{f_1\tuple\cdots\tuple f_m:f_i\in\cC^{(n)}}
+    $$
+    bzw. $0\to_{\cL} m:=\set{\emptyset}$ (leere Abbildung), sowie der Funktionenkomposition als Komposition in $\cL$. Das macht $\cL$ zur \person{Lawvere}-Theorie (bedenke $\pi_1^n,\ldots,\pi^n_n\in n\to_{\cL} 1$. Die Behauptung folgt mit $M:\cL\to\Set$, $n\mapsto A^n$, $f\mapsto A^n$.
+    %% hier weiter
+\end{proof}
+
+
 \end{document}
 
 

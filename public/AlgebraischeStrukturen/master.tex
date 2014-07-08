@@ -47,7 +47,7 @@ Wir kommen nun zu einem der wichtigsten Resultate über Klone auf endlichen Meng
 \begin{definition}
     Seien $\sigma_1,\sigma_2\in \cR_A^{(2)}$. Dann setze
     $$
-    \sigma_2\compose\sigma_1:=\set{(a_1,a_2)\in A^2:\exists b\in A:(a_1,b)\in\sigma_1\lgand (b,a_2)\in\sigma_2}
+    \sigma_2\compose\sigma_1:=\set{(a_1,a_2)\in A^2}[\exists b\in A:(a_1,b)\in\sigma_1\lgand (b,a_2)\in\sigma_2]
     $$
 \end{definition}
 
@@ -61,7 +61,7 @@ Wir kommen nun zu einem der wichtigsten Resultate über Klone auf endlichen Meng
 \begin{remark}
     Sei $A$ endlich. Für je zwei verschiedene Relationen $\sigma, \sigma'\in\cL(A)$ gilt $\Pol(\sigma)\neq \Pol(\sigma')$ (was äquivalent ist zu $\Clo(\sigma)\neq\Clo(\sigma')$) mit Ausnahme von $2$ Fällen:
     \begin{statements}
-            \item $\sigma,\sigma'\in o(A)$ und $\sigma^{-1}=\sigma'=\set{(a_2,a_1)\in A^2:(a_1,a_2)\in \sigma}$
+            \item $\sigma,\sigma'\in o(A)$ und $\sigma^{-1}=\sigma'=\set{(a_2,a_1)\in A^2}[(a_1,a_2)\in \sigma]$
             \item $\sigma,\sigma'\in p(A)$ und $\exists i\in \nats:\sigma'=\sigma^i=\underbrace{\sigma\compose \cdots \compose\sigma}_{\textrm{$i$-mal}}$.
     \end{statements}
 \end{remark}
@@ -185,7 +185,7 @@ Offenbar gilt:
     $$
     die charakteristische Funktion auf $M$ und für $\cM\setleq\Sub A$ sei
     $$
-    C_\cM := \Clo\set{f_M:M\in\cM}.
+    C_\cM := \Clo\set{f_M}[M\in\cM].
     $$
     Zeige, dass $C_\cM\neq C_{\cM'}$ für zwei verschiedene nichttriviale Teilmengen $\cM,\cM'\setleq \Sub(A\setminus\set{0,1})\setminus\set\emptyset$.
 \end{exercise}
@@ -198,8 +198,8 @@ Offenbar gilt:
     Zeigen Sie das Lemma aus der Vorlesung:
     Sei $C\leq \cO_A$ Klon, $k\in\nats_+$, $\sigma\in R_A^{(k)}$. Dann
     \begin{statements}
-            \item $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n):r_1,\ldots,r_n\in\sigma,f\in C^{(n)},n\in\nats^+}$.
-        \item Falls $\sigma=\set{r_1,\ldots,r_n}$, dann $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n):f\in C^{(n)}}$.
+            \item $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n)}[r_1,\ldots,r_n\in\sigma,f\in C^{(n)},n\in\nats^+]$.
+        \item Falls $\sigma=\set{r_1,\ldots,r_n}$, dann $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n)}[f\in C^{(n)}]$.
     \end{statements}
 \end{exercise}
 
@@ -497,7 +497,7 @@ Ein Verallgemeinerung von Majoritätsfunktionen liefert
 \begin{proof}
     Sei $\cC:=\gen{\cF}_{\Clo}$ und $m\in\cC^{(d+1)}$ eine near-unanimity-Funktion. Klar ist, dass $\gen{\cF}_{\Clo}=\Pol\Inv\cF\setleq\Pol(\Inv\cF)^{(d)}$. Also sei $f\in\Pol{(\Inv\cF)}^{(d)}$. Zu zeigen ist $f\in \cC$. Sei $f$ $n$-stellig. Definiere dann
     $$
-    \cM :=\set{B\setleq A^n:\exists g\in\gen{\cF}_{\Clo}^{(n)}:\rest{f}_{B}=\rest{g}_{B}}.
+    \cM :=\set{B\setleq A^n}[\exists g\in\gen{\cF}_{\Clo}^{(n)}:\rest{f}_{B}=\rest{g}_{B}].
     $$
     Es reicht aus, dass $A^n\in\cM$, denn dann ist $f=g\in\cC$. Dazu zeigen wir $B\in\cM$ für alle $B\setleq A^n$ durch Induktion nach $\card B=:k$.
     Für $k\leq d$ gilt
@@ -541,12 +541,12 @@ f
 $$
 Nach einem vorhergehenden Lemma gilt
 $$
-\Gamma_{\cC}(\sigma_B)=\set{g():g\in \cC^{(n)}}
+\Gamma_{\cC}(\sigma_B)=\set{g()}[g\in \cC^{(n)}]
 $$
 Also existiert $g\in\cC^{(n)}$, sodass $\rest{f}_B=\rest{g}_B$. Somit $B\in\cM$.
 
 \emph{Induktionsschritt:} Sei $k\geq d+1$ und die Behauptung für alle $B'\leq A^n$ mit $\card B=k$ gezeigt. Sei $\card B = k+1$ und seien $r_1,\ldots,r_{d+1}\in B$ paarweise verschieden. Für $i\in\set{1,\ldots,d+1}$ definiere $B_i:=B\setminus\set{r_i}$. Nach Induktionsvoraussetzung existieren $g_1,\ldots,g_{d+1}\in\cC$, sodass $\rest{f}_{B_i}=\rest{g_i}_{B_i}$ für alle $i\in\set{1,\ldots,d+1}$. Setze $g:=m(g_1,\ldots,g_{d+1})$ Wir zeigen $\rest{f}_B=\rest{g}_{B}$. Sei $x\in B$. Wegen $\card B = k+1$, $B_i\setleq B$ und $\card{B_i} = k$ ist $x\in B_i$ für alle bis auf höchstens ein $i\in\set{1,\ldots,d+1}$.
-O.B.d.A.~$x\in \bigsetmeet\set{B_i:i=1,\ldots,d}$. Dann gilt
+O.B.d.A.~$x\in \bigsetmeet\set{B_i}[i=1,\ldots,d]$. Dann gilt
 \begin{align*}
     g(x) &= m(g_1(x),\ldots,g_d(x),g_{d+1}(x))\\
     &= f(x),
@@ -595,7 +595,7 @@ Abschließende Frage zu minimalen Klonen: Enthält jeder Klon $\cC\neq \cJ_A$ ei
 
 \begin{proof}
     Die Äquivalenz der ersten beiden Aussagen und die Implikation \theref{rel-clo-fin-gen} nach \theref{rel-clo-asc-ch} gehen wie für Funktionenklone.
-    Um \theref{rel-clo-fin-gen} nach \theref{rel-clo-cyc} zu zeigen, kann man einfach das kartesische Produkt der Relationen verwenden. Für \theref{rel-clo-fin-gen} nach \theref{rel-clo-fin-low-neigh}: Sei $Q$ ein endliches Erzeugendensystem, setze $\cC:=\Pol\cR=\Pol Q$ und $n_0:=\max\set{\card\sigma:\sigma\in Q}$. Dann gilt nach Übungsaufgabe, dass $\cR = \Clo Q = \Clo \Gamma_{\cC}(\chi_{n_0})$ ($\chi_{n_0}$ die Abzisse). Sei nun $\cT$ unterer Nachbar von $\cR$ in $\dual \cL_A$ und $\cH:=\Pol \cT$. Offenbar $\Gamma_C(\chi_{n_0})\not\in\cR$, denn sonst $\cR\leq \cT$. Weiter gilt:
+    Um \theref{rel-clo-fin-gen} nach \theref{rel-clo-cyc} zu zeigen, kann man einfach das kartesische Produkt der Relationen verwenden. Für \theref{rel-clo-fin-gen} nach \theref{rel-clo-fin-low-neigh}: Sei $Q$ ein endliches Erzeugendensystem, setze $\cC:=\Pol\cR=\Pol Q$ und $n_0:=\max\set{\card\sigma}[\sigma\in Q]$. Dann gilt nach Übungsaufgabe, dass $\cR = \Clo Q = \Clo \Gamma_{\cC}(\chi_{n_0})$ ($\chi_{n_0}$ die Abzisse). Sei nun $\cT$ unterer Nachbar von $\cR$ in $\dual \cL_A$ und $\cH:=\Pol \cT$. Offenbar $\Gamma_C(\chi_{n_0})\not\in\cR$, denn sonst $\cR\leq \cT$. Weiter gilt:
     $$
 \Gamma_{H^{(n_0)}}(\chi_{n_0})=\Gamma_H(\chi_{n_0})\neq\Gamma_C(\chi_{n_0})=\Gamma_C^{(n_0)}(\chi_{n_0}),
 $$
@@ -631,7 +631,7 @@ Also folgt direkt
     Sie $A$ endlich und $\cC\setleq \cO_A$ Klon. Folgende Aussagen sind äquivalent:
     \begin{statements}
             \item Der Klon $\cC$ ist endlich relational.
-            \item Jede absteigende Kette $\cC_0\setgeq \cC_1\setgeq \cdots$ mit $\cC=\bigsetmeet\set{\cC_i:i\in I}$ bricht ab.
+            \item Jede absteigende Kette $\cC_0\setgeq \cC_1\setgeq \cdots$ mit $\cC=\bigsetmeet\set{\cC_i}[i\in I]$ bricht ab.
             \item Im Verband $\cL_A$ gibt es nur endlich viele obere Nachbarn von $\cC$ und jeder klon $\cB>\cC$ enthält einen dieser oberen Nachbarn.
     \end{statements}
 \end{corollary}
@@ -726,7 +726,7 @@ Also folgt direkt
 \begin{remark}
     Alle Produkte einer Familie von Objekten ${(X_i)}_{i\in I}$ sind, sofern sie existieren, zueinander isomorph. In der Praxis betreibt man meistens ein bestimmtes Objekt als das Produkt von ${(X_i)}_{i\in I}$. In $\Set$ beispielsweise, das kartesische Produkt
     $$
-    \prod_{i\in I}{X_i}:=\set{\alpha\in I\to\bigsetjoin_{i\in I}{X_i}: \forall i\in I:\alpha(i)\in X_i}
+    \prod_{i\in I}{X_i}:=\set{\alpha\in I\to\Setjoin_{i\in I}{X_i}}[\forall i\in I:\alpha(i)\in X_i]
     $$
     mit den Projektionsmorphismen
     $$
@@ -788,8 +788,8 @@ Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
 
 \begin{solution}
     \begin{tasks}
-            \item Es reicht für alle $g\in{\Clo(f)}^{(1)}\setminus\cJ_A$ zu zeigen, dass $f\in\Clo(g)$ gilt. Es ist $\Clo(f)=\set{f^n:n\geq 0}$, für eine Retraktion ist dies also $\set{f,1_A}$ und für eine Permutationen primer Ordnung $\set{1_A,f,\ldots,f^{p-1}}$. Aus den nichttrivialen Elementen davon lasst sich jedoch immer $f$ zurückgewinnen, da $\ints/p\ints$ ein Körper ist (i.b.~für $p=2$).
-            \item Für $f(x,y,z)=x+y+z$ lässt sich per Terminduktion zeigen, dass $\Clo(f)=\set{g\in A\to A: g(x_0,\ldots,x_{2n})=\sum_{i=0}^{2n}x_i}$ ($n\geq 0$). Damit lässt sich aus jedem nicht-trivialen $g$ wieder $f$ zurückgewinnen können.
+            \item Es reicht für alle $g\in{\Clo(f)}^{(1)}\setminus\cJ_A$ zu zeigen, dass $f\in\Clo(g)$ gilt. Es ist $\Clo(f)=\set{f^n}[n\geq 0]$, für eine Retraktion ist dies also $\set{f,1_A}$ und für eine Permutationen primer Ordnung $\set{1_A,f,\ldots,f^{p-1}}$. Aus den nichttrivialen Elementen davon lasst sich jedoch immer $f$ zurückgewinnen, da $\ints/p\ints$ ein Körper ist (i.b.~für $p=2$).
+            \item Für $f(x,y,z)=x+y+z$ lässt sich per Terminduktion zeigen, dass $\Clo(f)=\set{g\in A\to A}[g(x_0,\ldots,x_{2n})=\sum_{i=0}^{2n}x_i]$ ($n\geq 0$). Damit lässt sich aus jedem nicht-trivialen $g$ wieder $f$ zurückgewinnen können.
         \item Wir wählen $\card A=3$.
     \begin{tasks} 
             \item Definiere $f_1(x,y)$ durch $f_1(x,x):=x$ und $f_(1,2):=1$, $f(x,y):=0$ sonst. Definiere $f_0(x,y)$ durch $f_0(x,x):=x$ und $f_0(x,y):=0$ sonst, dann ist $f_0(x,y)=f_1(f_1(x,y),f_1(y,x))$, aber $f_0$ erzeugt nicht $f_1$. Wir finden eine Relation die von $f_0$ und nicht $f_1$ bewahrt wird. Dazu wählt man $\sigma=\set{(0,0),(1,1),(1,2)}$. Diese ist offensichtlich von $f_0$ bewahrt, aber
@@ -816,7 +816,7 @@ Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
     Sei $A$ endlicht, $Q\setleq \cR_A$ eine Menge von Relationen und $C:=\Pol Q$.
     \begin{tasks}
             \item Zeige $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_n):n\in\nats_+})$.
-        \item Sei $Q$ endlich. Zeige, dass $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_{n0})})$ mit $n_0:=\max\set{\card\sigma : \sigma\in Q}$.
+        \item Sei $Q$ endlich. Zeige, dass $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_{n0})})$ mit $n_0:=\max\set{\card\sigma}[\sigma\in Q]$.
     \end{tasks}
 \end{exercise}
 
@@ -832,8 +832,389 @@ Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
     Es gilt $\Clo(f)$ ist minimal, genau dann wenn für alle $g\in\Clo(f)\setminus\cJ_A$ gilt, dass $f\in\Clo(g)$. 
 \end{remark}
 
+\hfill{30.06.2014}
 
+Weiter mit Kerkbold:
+
+\begin{example}[Identitätsfunktor]
+    Dieser Funktor $1_{\cC}$ tut $x\to x$ für Morphismen und Objekte.    
+\end{example}
+
+\begin{example}[Potenzmengenfunktor]
+    Der Potenzmengenfunktor $\Sub:\Set\to\dual\Set$ bildet eine Menge $X\mapsto\Sub X$ ab und die Morphismen $f\to \Sub f$ mit $\Sub f A = f^{-1} A$ kontravariant.
+\end{example}
+
+\begin{example}[Vergissfunktor]
+    Ein Vergissfunktor bildet eine `algebraische' Kategorie auf die zugrundeliegenden Mengen und Mengenabbildungen ab.
+\end{example}
+
+\begin{definition}[voll und treu]
+    Sei $F:\cC\to\cD$ ein Funktor, dann heißt $F$ \keyword{treu}, wenn für alle $X,Y\in\cC$ der Funktor $F$ die Morphismen $X\to_{\cC} Y$ injektiv auf $FX\to_{\cD} FY$ ab.
+    Falls $F$ die analoge Eigenschaft hat mit `surjektiv' and der Stelle von `ìnjektiv', dann heißt $F$ voll.
+\end{definition}
+
+\begin{definition}
+    Ein Funktor heißt \keyword{wesentlich surjektiv}, falls $F$ einen Repräsentanten aus jeder Isomorphieklasse trifft.
+\end{definition}
+
+Natürlich lassen sich obige Definitionen auch auf kontravariante Funktoren erweitern, indem man diese wie gewohnt als kovariante Funktoren interpretiert.
+
+\begin{example}
+    Der Identitätsfunktor hat alle der obigen Eigenschaften.
+\end{example}
+
+\begin{example}
+    Der Potenzmengenfunktor ist nicht voll, treu und nicht wesentlich surjektiv.
+\end{example}
+
+\begin{example}
+    Ein Vergissfunktor ist meistens nicht voll, treu und wesentlich surjektiv (diskrete Topologie).
+\end{example}
+
+\begin{remark}
+    Ein treuer Funktor $V\in \cC\to\Set$ ermöglicht, sich die Objekte der Kategorie $\cC$ als Mengen und die Morphismen als Mengenabbildungen vorzustellen. Man nennt $\cC$ dann auch konkret.
+\end{remark}
+
+\begin{definition}[konkrete Kategorie]
+    Eine \keyword{konkrete Kategorie} ist ein Paar $(\cC,V)$ mit $\cC$ eine Kategorie und $V\in\cC\to\Set$ treu. Gibt es zu einer Kategorie $\cC$ einen treuen Funktor nach $\Set$, so heißt $\cC$ auch \keyword{konkretisierbar}.
+\end{definition}
+
+\begin{example}
+    $\Top$ zusammen mit dem Vergissfunktor ist eine konkrete Kategorie.
+\end{example}
+
+\begin{remark}
+    In der Praxis wird der Vergissfunktor, wenn er offensichtlich ist, oft weggelassen und die Kategorie selbst konkret genannt.
+\end{remark}
+
+Natürliche Transformationen bringen Funktoren miteinander in Verbindung.
+
+\begin{definition}
+    Seien $F, G:\cC\to\cD$ Funktoren. Eine natürliche Transformation von $F$ nach $G$, geschrieben $\tau:F\to G$ ist eine Familie von Morphismen ${(\tau_X)}_{X\in\cC}$, $\tau_X:FX\to GX$ die natürlich ist in $X$. Das heißt, dass
+    $$
+    \tau_X (Gf) = (Ff) \tau_Y,
+    $$
+    für alle $X,Y\in\cC$ und $f\in X\to Y$.
+\end{definition}
+
+\begin{quotation}
+    `I didn't invent categories to study functors, I invented them to study natural transformations.' (\person{Sounders MacLane})
+\end{quotation}
+
+\begin{definition}
+    Eine natürliche Transformation ${(\tau_X)}_{X\in\cC}$ heißt \keyword{natürliche Äquivalenz}, falls alle $\tau_X$ Isomorphismen sind ($X\in\cC$). Zwei Funktoren heißen äquivalent, wenn es zwischen ihnen eine natürliche Äquivalenz gibt.
+\end{definition}
+
+\begin{definition}
+    Sind $\cC, \cD$ Kategorien und $F:\cC\to\cD$, $G:\cD\to\cC$ Funktoren,
+    $\epsilon:1_\cC\to GF$ und $\eta:1_\cD\to FG$ natürliche Äquivalenzen, so heißt $(F,G,\epsilon,\eta)$ Äquivalenz zwischen $\cC$ und $\cD$.
+    Existiert zwischen zwei Kategorien eine Äquivalenz, so heißen diese \keyword{äquivalent}.
+\end{definition}
+
+\begin{remark}
+    Zwei Kategorien $\cC, \cD$ sind äquivalent, genau dann wenn ein voller treuer und wesentlicher Funktor $F:\cC\to\cD$ existiert. Ein solcher bewahrt alle Konzepte, die alle Konzepte, die nicht zwischen isomorphen Objekten unterscheidet.
+\end{remark}
+
+\begin{definition}
+    Eine Eigenschaft/Konzept heißt \keyword{evil}, wenn sie nicht invariant unter Äquivalenz ist.
+\end{definition}
+
+\section{Dualität}
+
+\begin{quotation}
+    ``An important general theme that has manifestations in almost every area of mathematics.'' (Princeton Companion to Mathematics)
+\end{quotation}
+
+Schon bekannt ist $\dual \cC$ als duale Kategorie zu $\cC$. Dadurch bekommt jede Kategorientheoretische Konstruktion ein duales Gegenstrück in $\dual\cC$.
+
+\begin{definition}
+    $C\in\cC$ heißt Koprodukt von ${(X_i)}_{i\in I}$, wenn eine Familie von sogenannten Injektionsmorphismen $(\iota_i:X_i\to C)$ existiert, sodass für alle $Y\in C$, $g_i:X_i\to Y$ ein eindeutiges $u:C\to Y$ existiert, sodass $\iota_i u = g_i$ für alle $i\in I$.
+    $u$ heißt Kotupling.
+\end{definition}
+
+\begin{remark}
+    Notationsmäßig: $X_1\cotimes\cdots\cotimes X_n$ ist das Koprodukt von $X_1,\ldots,X_n$ und $g_1\cotuple\cdots\cotuple g_n$ das Kotupling. $X^{\cotimes n}$ die Kopotenz.
+\end{remark}
+
+\begin{example}
+    Das Koprodukt in $\Set$ ist die disjunkte Vereinigung.
+\end{example}
+
+\begin{remark}
+    Eine kategorientheoretische Aussage gilt genau dann, wenn die dualisierte Aussage in der dualen Kategorie gilt.
+\end{remark}
+
+Dieses Prinzip liefert immer zwei Ergebnisse zum Preis von einem.
+
+\begin{example}
+    Produkte und Koprodukte sind bis auf Isomorphie eindeutig.
+\end{example}
+
+\hfill{02.07.2014}
+
+Weiter mit Kerkbold:
+
+Es ist klar, dass eine auf abstrakter Ebene stattfindende Dualisierung keine Vereinfachung von Beweisen erreichen kann.
+Es ist nämlich $\dual \cC$ nur die abstrakte Umkehrung von $\cC$. Es kann jedoch von Vorteil sein, eine zu $\dual \cC$ äquivalente Kategorie zu betrachten.
+
+\begin{definition}[duale Äquivalenz]
+    Eine Kategorie $\cD$ heißt dual äquivalent zu $\cC$, falls $\cD$ äquivalent zu $\dual \cC$ äquivalent ist. Alternativ definiert man eine duale Äuivalenz als ein Quadrupel $(D,E,\epsilon,\eta)$ mit $D:\cC\to\cD$ und $E:\cD\to\cC$ kontravariante Funktoren und $\epsilon : 1_{\cC} \to DE $, $\eta : 1_{\cD} \to ED $ natürliche Isomorphismen. 
+\end{definition}
+
+\begin{remark}
+    Dies ist natürlich auch gleichwertig mit $\cC$ und $\dual \cD$ äquivalent.
+\end{remark}
+
+\begin{remark}
+    Zwei Kategorien $\cC$ und $\cD$ sind genau dann dual äquivalent, wenn es einen vollen, treuen kontravarianten Funktor $F:\cD\to\cC$ gibt.
+\end{remark}
+
+Da alle nicht-evil Eigenschaften von einer Äquivalenz bewahrt werden, werden sie durch eine duale Äquivalenz dualisiert.
+
+Man kann also $\cD$ betrachten, um Informationen über $\cC$ zu erhalten.
+
+Beispiele dafür werden wir in Übung 6 sehen.
+
+\section{\person{Lawvere} Theorien}
+
+\begin{definition}[natürliche Zahlen]
+    Sei $\nats$ die Kategorie der natürlichen Zahlen, d.h. Objekte sind alle Mengen
+    $\set{0,\ldots,n-1}$
+    für $n\in\nats$ und als Morphismen wählt man alle Mengenabbildungen.
+\end{definition}
+
+\begin{remark}
+    Die Kategorie ist klein und ihr eigenes Skelett. Also sind Produkte und Koprodukte eindeutig bestimmt (nicht nur bis auf Isomorphie).
+\end{remark}
+
+Es ist klar, dass das Produkt von ${(n_i)}_{i\in I}$ genau $\prod_{i\in I}{n_i}$ und das Koprodukt genau $\sum_{i\in I}{n_i}$ ist.
+
+\begin{definition}[kleine Kategorie]
+    Eine Kategorie heißt \keyword{klein}, falls die Objektklasse eine Menge ist.
+\end{definition}
+
+\begin{example}
+    $\nats$ ist klein, $\Set$ und $\Top$ sind aber nicht klein.
+\end{example}
+
+\begin{definition}[Elemente]
+    Die Elemente der Menge $T\to_{\cC} X$ heißen $T$-wertige Punkte von $X$. Die Klasse
+    $$
+    E(X)\defeq\Setjoin_{Y\in \cC}{Y\to_{\cC} X} 
+    $$
+    heißt die Klasse der (verallgemeinerten) Elemente von $X$.
+\end{definition}
+
+\begin{definition}
+    Ein Funktor $F:\cC\to \cD$ bewahrt Produkte, falls gilt:
+    Falls $P$ Produkt von ${(X_i)}_{i\in I}$ mit Projektionsmorphismen ${(\pi_i)}_{i\in I}$ in $\cC$, dann ist $FP$ ein Produkt von ${(FX_i)}_{i\in I}$ mit Projektionsmorphismen ${(F\pi_i)}_{i\in I}$
+\end{definition}
+
+\begin{remark}
+    Bewahrt ein Funktor $F:\cC\to\cD$ Produkte und ist $f_1\tuple \cdots \tuple f_n$ das Tupling von $f_1,\ldots,f_n$ in $\cC$, dann ist $F(f_1\tuple\cdots\tuple f_n)$ das Tupling von $Ff_1, \ldots, Ff_n$.
+\end{remark}
+
+\begin{theorem}
+    Sei $\cC$ eine kleine Kategorie. Dann ist der Funktor
+    $$
+    V : \cC \to \Set,\ X \mapsto E(X),\ X\to_{\cC} Y \mapsto Vu : E(X)\to E(Y)
+    $$
+    mit
+    $$
+    \phi\mapsto \phi u,
+    $$
+    treu, injektiv auf Objekten und bewahrt Produkte.    
+\end{theorem}
+
+\begin{proof}
+    $E(X)$ ist tatsächlich eine Menge, da $\cC$ klein ist. Es ist $V$ ein Funktor, da
+    $$
+    V(1_X)=1_{E(X)},
+    $$
+    $$
+    V(vu)(\phi)=\phi v u = \phi(Vv Vu).
+    $$
+    $V$ ist injektiv auf Objekten $E(X)=E(Y)$, denn $1_X\in E(X)=E(Y)$ also $X = Y$.
+    $V$ ist treu, da $Vu_1=Vu_2$ impliziert, dass $(Vu_1)1_X=u_1=(Vu_2)1_X=u_2$.
+    Bewahrten von Produkten --- in Übung 6.
+\end{proof}
+
+\begin{remark}
+    Dieser Satz wird häufig als kategorientheoretische Version des Satzes von \person{Cayley} verstanden.
+\end{remark}
+
+\begin{definition}
+    Ein Funktor $F$ heißt identisch auf Objekten, wenn $F$ als Abbildung zwischen den Objekten von $\cC$ und $\cD$ die Identität ist. 
+\end{definition}
+
+\begin{definition}[\person{Lawvere-Theorie}]
+    Eine \person{Lawvere}-Theorie ist eine kleine Kategorie $\cL$ mit endlichen Produkten, sodass es einen Produktbewahrenden Funktor $I:\dual\nats \to \cL$, der identisch auf Objekten ist.
+\end{definition}
+
+\begin{remark}
+    Die Objekte einer \person{Lawvere}-Theorie sind also $0,1,2,3,\ldots$, sodass $n$ die $n$-Potenz von $1$ ist (im kategorientheoretischen Sinne).
+\end{remark}
+
+\begin{definition}
+    Sei $\cC$ Kategorie und $\cL$ eine \person{Lawvere}-Theorie. Ein \keyword{Modell} von $\cL$ in $\cC$ ist ein Produktbewahrenden Funktor $M:\cL\to\cC$ 
+\end{definition}
+
+Was hat dies überhaupt mit Klonen zu tun, fragen wir uns?
+
+\begin{proposition}
+    Sei $A$ eine Menge. Eine Teilmenge $\cC\setleq \cO_A$ ist ein Klon genau dann, wenn es eine \person{Lawvere}-Theorie $\cL$ gibt und ein Modell $M:\cL\to\Set$ gibt, sodass $Mn=A^n$ und $\cC^{(n)}=\set{Mf:f\in n\to_{\cL} 1}$ ($n\in\nats_+$). 
+\end{proposition}
+
+\begin{proof}
+    \begin{implications}
+            \item[$\implies$:] 
+        Sei $\cC$ ein Klon. Definiere $\cL$ durch $\Ob(\cL)=\Ob(\nats)$ und
+        $$
+        n\to_{\cL} m:=\set{f_1\tuple\cdots\tuple f_m:f_i\in\cC^{(n)}}
+        $$
+        bzw. $0\to_{\cL} m:=\set{\emptyset}$ (leere Abbildung), sowie der Funktionenkomposition als Komposition in $\cL$. Das macht $\cL$ zur \person{Lawvere}-Theorie (bedenke $\pi_1^n,\ldots,\pi^n_n\in n\to_{\cL} 1$. Die Behauptung folgt mit $M:\cL\to\Set$, $n\mapsto A^n$, $f\mapsto A^n$.
+        %% hier weiter 07.07.2014 weiter mit Kerkbold
+            \item[$\impliedby$:] Sei $\cL$ eine \person{Lawvere}-Theorie und $M:\cL\to\Set$ Modell mit $M(n)=A^n$ für alle $n\in\nats_+$. Zu zeigen ist $\cC\setleq\cO_A$ mit $\cC^{(n)}:=\set{M(f)}[f\in\cL(n,1)]$ ist ein Klon. Da $M$ ein Produkt bewahrt, ist jedes der $\pi^n_i\in\cC^{(n)}$ bild eines Projektionsmorphismus von $n$ nach $1$ in $\cL$. Also $\pi^n_i\in\cC^{(n)}$ für alle $i\in\set{1,\ldots,n}$.
+
+        Sei nun $f\in\cC^{(n)}$, $f_1,\ldots,f_n\in\cC^{(k)}$. Zu zeigen ist $f(f_1,\ldots,f_n)\in\cC^{(k)}$. Nach Voraussetzung existiert $g\in\cL(n,1)$ und $g_1,\ldots,g_n\in\cL(k,1)$ mit $M(g)=f$ und $M(g_i)=f_i$. Nun aber
+        \begin{align*}
+            f(f_1,\ldots,f_n) &= f\compose(f_1\tuple\cdots\tuple f_n)=M\compose M(g_1)\tuple\cdots\tuple M(g_n)\\
+            &= M(g)\compose M(g_1\tuple\cdots\tuple g_n)\\
+            &= M(g\compose(g_1\tuple\cdots\tuple g_n))\in\cC^{(k)}
+        \end{align*}
+    \end{implications}
+\end{proof}
+
+Mit anderen Worten: Modelle von \person{Lawvere}-Theorien in $\Set$ sind gerade Klone.
+
+\begin{theorem}
+    Jede \person{Lawvere}-Theorie hat ein Modell in $\Set$.
+\end{theorem}
+
+\begin{proof}
+    Per Definition ist $\cL$ klein, also existiert nach einem vorhergehenden Satz ein Produkte bewahrender Funktor $M\in\cL\to\Set$.
+\end{proof}
+
+\begin{remark}
+    D.h.~\person{Lawvere}-Theorien fassen Klone abstrakt bzw.~Klone sind konkrete Realisierungen von \person{Lawvere}-Theorien in $\Set$.
+    Parallele: Gleicher Zusammenhang wie zwischen Gruppen und Permutationsgruppen.
+\end{remark}
+
+Auch in der universellen Algebra hat man sich über Abstraktion von Klonen Gedanken gemacht.
+
+\begin{definition}[\person{Cohn} 1965, genauer \person{Walter Taylor}]
+    Ein \keyword{abstrakter Klon} besteht aus einer Menge $C_n$ für jedes $n\in\nats$,
+    einem $n$-stelligen Operationssymbol $\pi^n_i$ für alle $i,n\in\nats$, $i\in\set{1,\ldots,n}$, einem $k$-stelligen Operationssymbol $g(g_1,\ldots,f_n)$ für jedes $g\in\cC_n$ und $f_1,\ldots,f_n\in\cC_k$, sodass
+    \begin{statements}
+            \item $(g_1,\ldots,g_n))(f_1,\ldots,f_m)=f(g_1(f_1,\ldots,f_m),\ldots,g_n(f_1,\ldots,f_m))$
+            \item $\forall i\in\set{1,\ldots,n}:\pi^n_i(f_1,\ldots,f_n)=f_i$
+            \item $f(\pi_1^n,\ldots,\pi^n_n)=f$
+    \end{statements}
+\end{definition}
+
+\begin{remark}
+    Angesehen von der Existenz $0$-stelliger Operationssymbole ist die Definition äquivalent zu der einer \person{Lawvere}-Theorie (die obigen Eigenschaften formulieren die Eigenschaften des Tuplings)
+\end{remark}
+
+\section{Klone in Kategorien}
+
+\newenvironment{question}{\begin{center}}{\end{center}}
+\newenvironment{answer}{\begin{center}}{\end{center}}
+
+\begin{question}
+    ``Hat es Vorteile Klone kategoriell zu bregreifen?''
+\end{question}
+
+Ab jetzt immer: $\cC$ Kategorie und $A\in\cC$ Objekt mit ausgezeichneten Potenzen. $A^n$ ($n\in\nats_+$), die paarweise verschieden sind.
+$$
+\cO_A^{(n)} \defeq A^n\to_{\cC} A\text{ ($n\in\nats$)}
+$$
+$$
+\cO_A \defeq \Setjoin_{n\in\nats_+}{\cO_A^{(n)}}
+$$
+
+Für $\cF\setleq\cO_A$, $n\in\nats_+$ setze $\cF^{(n)}:=\cF\setmeet\cO^{(n)}_A$.
+
+\begin{definition}[\person{D. Masulovic}]
+    Eine Teilmenge $\cC\setleq\cO_A$ heißt \keyword{Klon} (über $A$), geschrieben $\cC\setleq\cO_A$ falls
+    \begin{statements}
+            \item $\forall n\in\nats_+,i\in\set{1,\ldots,n}:\pi_i^n\in\cC$
+        \item $\forall f\in\cC^{(n)},f_1,\ldots,f_n\in\cC^{(k)}:f\compose(f_1\tuple\cdots\tuple f_n)\in\cC^{(k)}$
+    \end{statements}
+\end{definition}
+
+\begin{remark}
+    Für $\cC=\Set$ ist das exakt die klassische Definition eines Klons. Jetzt aber: Definition auch in anderen Kategorien benutzbar.
+\end{remark}
+
+Analog zu Proposition --- gilt:
+
+\begin{proposition}
+    $\cC\setleq\cO_A$ ist Klon genau dann, wenn eine \person{Lawvere}-Theorie $\cL$ und ein Modell $M:\cL\to\cC$ mit $M(n)=A^n$ und $\cC^{(n)}=\set{M(f)}[f\in\cL(n,1)]$ für alle $n\in\nats_+$ existiert.
+\end{proposition}
+
+\begin{definition}
+    Bezeichne mit $\cL_A$ den Verband aller Klone über $A$ (mit $\setleq$).
+\end{definition}
+
+\begin{question}
+    ``Warum sollte man für klassische Klontheorie Klone in Kategorien verschieden von $\Set$ betrachten?''
+\end{question}
+
+\begin{answer}
+    ``Weil man dann Äuivalenzen und Dualisierungen nutzen kann.''
+\end{answer}
+
+Ab jetzt immer: $\cX$ Kategorie und $X\in\cX$ mit ausgezeichneten Kopotenzen $X^{\cotimes n}$ ($n\in\nats_+$), die paarweise verschieden sind. $\cO_X^{(n)}:=X\to X^{\cotimes n}$, $\cO_X:=\Setjoin_{n\in\nats_+}{\cO_X^{(n)}}$. Für $G\setleq\cO_X,n\in\nats_+: G^{(n)}:=G\setmeet\cO_X^{(n)}$.
+
+\begin{definition}
+    Eine Teilmenge $\cC\setleq\cO_X$ heißt \keyword{dualer Klon} (über $X$), geschrieben $\cC\leq\cO_X$, falls
+    \begin{statements}
+            \item $\forall n\in\nats_+,i\in\set{1,\ldots,n}:\iota_i^n\in\cC$
+        \item $\forall g\in\cC^{(n)},g_1,\ldots,g_n\in\cC^{(k)}:(g_1\cotuple\cdots\cotuple g_n)\compose g\in\cC^{(k)}$
+    \end{statements}
+\end{definition}
+
+\begin{definition}
+    Bezeichne mit $\cL_X$ dne Verband aller dualen Klone über $X$.
+\end{definition}
+
+\begin{question}
+    ``Sei $(D,E,\epsilon,\eta)$ duale Äquivalenz zwischen $\cC$ und $\cX$ mit $X=D(A)$. Falls $\cC$ Klon über $A$ ist, ist dann $D(C)$ ein dualer Klon über $X$.''
+\end{question}
+
+\begin{answer}
+    ``Es gibt noch ein technisches Problem: $D(A^{\times n})$ ist zwar isomorph zu $X^{\cotimes n}$, aber nicht unbedingt gleich.'' 
+\end{answer}
+
+\begin{lemma}
+    Es existiert eine eindeutig bestimmte Familie von Isomorphismen $(\eta_n:D(A^{\times n}\to X^{\cotimes n})_{n\in\nats}$ so, dass das folgende Diagramm für alle $n\in\nats_+$, $i\in\set{1,\ldots,n}$ kommutiert:
+    $$
+    \iota_i=D(\pi_i^n)\eta_n
+    $$
+    und $\eta_n={(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_i))}^{-1}$.
+\end{lemma}
+
+\begin{proof}
+    Sei $n\in\nats_+$. $D(A^{\times n})$ zusammen mit ${(D(\pi^n_i))}_{i\in\set{1,\ldots,n}}$ ist Koprodukt von ${(D(A))}_{i\in\set{1,\ldots,n}}$, also $\exists !\eta_n: D(A)\to X^{\cotimes n}$, $\eta_n\compose D(\pi^n_i)=\iota_i^n$.
+    Noch zu zeigen: ${(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))}^{-1}=\eta_n$. Wir haben $\eta_n\compose(D(\pi^n_1)\cutuple\cdots\cotuple D(\pi^n_n))=(\eta_n\compose D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))=(\iota^n_1\cotuple\cdots\cotuple\iota^n_n)=\id_{A^n}$ und $(D(\pi^n_1\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n\compose D(\pi^n_i)=D(\pi^n_i)$, für alle $i\in\set{1,\ldots,n}$. Wegen der Koprodukteigenschaft kann es nur einen Morphismus $\nu:D(A^n)\to D(A^n)$ mit $\nu\compose D(\pi^n_i)=D(\pi^n_i)$ für alle $i\in\set{1,\ldots,n}$ geben. Also $\id_{D(A^{\times n})}=(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n$. 
+\end{proof}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

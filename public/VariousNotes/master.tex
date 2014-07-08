@@ -24,7 +24,7 @@
 \date{\today}
 \maketitle
 \label{a}
-%\autoref{a}
+%\autoref{a}%
 
 \section{Lattices and posets}
 
@@ -493,11 +493,15 @@ Another interesting general result concerning congruences modulo $p$ of the last
 \begin{theorem}[Sylow subgroups]
     Let $G$ be a finite group of order $n=mp^e$ with $p$ prime $e,m\in\nats$ and $p\not\divides m$.
     Then the number of $p$-Sylow-subgroups $S_{p^e}(G)$ satisfies
-    \begin{align*}
-        \card{S_{p^e}(G)} &\cong 1 \mod p\label{p-sylow-cong}\\
-        \card{S_{p^e}(G)} &\divides m\label{p-sylow-div}\\
-        \card{S_{p^e}(G)} &= \card{G/\normalisor[G]{P}}\label{p-sylow-nor},
-    \end{align*}
+    $$
+    \card{S_{p^e}(G)} \cong 1 \mod p\label{p-sylow-cong}
+    $$
+    $$
+    \card{S_{p^e}(G)} \divides m\label{p-sylow-div}
+    $$
+    $$
+    \card{S_{p^e}(G)} = \card{G/\normalisor[G]{P}}\label{p-sylow-nor},
+    $$
     where $P\in S_{p^e}$.    
     Moreover, they are all conjugate to each other.
 \end{theorem}
@@ -508,7 +512,7 @@ Another interesting general result concerning congruences modulo $p$ of the last
     By \textsc{Lucas}' theorem we have that $\binom{mp^e}{p^e}\cong\binom{m}{1} \mod p$ proving the first fact.
     \end{description}
 \end{proof}
-
+%
 
     
 \subsection{Group actions}
@@ -853,10 +857,10 @@ In most cases we deal with polynomials when talking about partial fractions.
     $$
 \end{proof}
 
+
 \begin{lemma}
     Let $X$ be a topological space and $\cC(X)$ be the topological space defined by $\cC(X):=\set{Y\setleq X:Y\text{ is compact}}$ equipped with the topology $\tau_{\cC(X)}:=\set{\set{x\in\cC(X):x\setleq U}:U\in\tau_X}$.
 \end{lemma}
-
 
 \textbf{TEST:}
 

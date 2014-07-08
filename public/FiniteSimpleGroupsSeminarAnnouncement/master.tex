@@ -1,6 +1,10 @@
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{tikz-cd}
 \input{../Config/german.tex}
+%
+\usepackage{geometry}
+\geometry{a4paper,left=3mm,right=3mm, top=1cm, bottom=2cm}
 
 \pagestyle{empty}
 
@@ -17,8 +21,8 @@ Desweiteren wird ein Großteil des Stoffes konkrete Beispiele (Gruppen) sein. Im
 basieren (aus dem wir wahrscheinlich nur einen Bruchteil schaffen werden).
 
 \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.4\textwidth]{FSG.jpg}
+   \centering
+   \includegraphics[width=0.4\textwidth]{FSG.jpg}
 \end{figure}
 
 \paragraph{Gestaltung:} Optimal wäre es, wenn die Teilnehmer die Arbeitsgruppe selbst durch eigene Vorträge beleben würden.
@@ -30,5 +34,57 @@ Grundsätzlich soll die Vermittlung des Stoffes jedoch derart konzipiert sein, d
     Jakob Schneider  
 \end{flushright}
 
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+
+\begin{tikzpicture}
+    \draw (0,0) node (A) {$B\cap C$};
+    \draw (17,0) node (A') {$A\cap D$};
+    \draw (8.5,-3.5) node (B){$(B\cap C)(A\cap D)$};
+    \draw (2.5,-4.5) node (C) {$B$};
+    \draw (14.5,-4.5) node (C') {$D$};
+    \draw (4,-4.6) node (D) {$B(A\cap D)$};
+    \draw (13,-4.6) node (D') {$(B\cap C)D$};
+    \draw (8.5,-7) node (E) {$A\cap C$};
+    \draw (4.5,-10) node (F) {$B(A\cap C)$};
+    \draw (12.5,-10) node (F') {$(A\cap C)D$};
+    \draw (4,-11.8) node (G) {$A$};
+    \draw (13,-11.8) node (G') {$C$};
+    \begin{pgfonlayer}{bg}
+        \path [fill=yellow] (A) to [out=10,in=140] (B) to [out=-170,in=15] (D) to [out=180,in=-10] (C) to [out=140,in=-65] (A);
+        \path [fill=yellow] (A') to [out=170,in=40] (B) to [out=-10,in=165] (D') to [out=0,in=-170] (C') to [out=40,in=-115] (A');
+        \path [fill=yellow] (8.5,-3.5) to [out=-170,in=15] (D) to [out=-130,in=110] (F) to [out=-100,in=80] (G) to [out=40,in=-115] (F) to [out=65,in=0] (E) [out=90, in=-90] (8.5,-3.5);
+        \path [fill=yellow] (A') to [out=170,in=40] (B) to [out=-10,in=165] (D') to [out=0,in=-170] (C') to [out=40,in=-115] (A');
+    \end{pgfonlayer}
+    \path
+    [out=10] (A) edge [in=140] (B)
+    [out=170] (A') edge [in=40] (B)
+    [out=-65] (A) edge [in=140] (C)
+    [out=-115] (A') edge [in=40] (C')
+    [out=-10] (C) edge [in=180] (D)
+    [out=-170] (C') edge [in=0] (D')
+    [out=-170] (B) edge [in=15] (D)
+    [out=-10] (B) edge [in=165] (D')
+    [out=-90] (B) edge [in=90] (E)
+    [out=-130] (D) edge [in=110] (F)
+    [out=-50] (D') edge [in=70] (F')
+    [out=-110] (E) edge [in=20] (F)
+    [out=-70] (E) edge [in=160] (F')
+    [out=-100] (F) edge [in=80] (G)
+    [out=-80] (F') edge [in=100] (G');    
+
+    
+\end{tikzpicture}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+

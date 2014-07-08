@@ -36,6 +36,33 @@
 
 % w: http://milde.users.sourceforge.net/LUCR/Math/math-font-selection.xhtml
 
+\newcommand{\uA}{\underline{A}}
+\newcommand{\uB}{\underline{B}}
+\newcommand{\uC}{\underline{C}}
+\newcommand{\uD}{\underline{D}}
+\newcommand{\uE}{\underline{E}}
+\newcommand{\uF}{\underline{F}}
+\newcommand{\uG}{\underline{G}}
+\newcommand{\uH}{\underline{H}}
+\newcommand{\uI}{\underline{I}}
+\newcommand{\uJ}{\underline{J}}
+\newcommand{\uK}{\underline{K}}
+\newcommand{\uL}{\underline{L}}
+\newcommand{\uM}{\underline{M}}
+\newcommand{\uN}{\underline{N}}
+\newcommand{\uO}{\underline{O}}
+\newcommand{\uP}{\underline{P}}
+\newcommand{\uQ}{\underline{Q}}
+\newcommand{\uR}{\underline{R}}
+\newcommand{\uS}{\underline{S}}
+\newcommand{\uT}{\underline{T}}
+\newcommand{\uU}{\underline{U}}
+\newcommand{\uV}{\underline{V}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\uX}{\underline{X}}
+\newcommand{\uY}{\underline{Y}}
+\newcommand{\uZ}{\underline{Z}}
+
 % ===== Set quick commands for math letters ================================================================
 % calagraphic letters (only upper case available; standard)
 \newcommand{\cA}{\mathcal{A}}
@@ -234,7 +261,17 @@
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Top}{\mathbf{Top}}
 % Define set-builder operator (equivalent to gen for algebras)
-\newcommand{\set}[1]{\left\{#1\right\}}
+%\newcommand{\set}[2][\empty]{\ifx#1\empty\left\{1\right\}\else\left\{2\right\}_{#1}\fi}% to change
+\makeatletter
+\def\set#1{\@ifnextchar[{\@setwithclause#1}{\@setwithoutclause#1}}
+\def\@setwithclause#1[#2]{\left\{#1:#2\right\}}
+\def\@setwithoutclause#1{\left\{#1\right\}}
+
+
+\def\seq#1{\@ifnextchar[{\@seqwithclause#1}{\@seqwithoutclause#1}}
+\def\@seqwithclause#1[#2]{\left(#1:#2\right)}
+\def\@seqwithoutclause#1{\left(#1\right)}
+\makeatother
 % define interval operator: o - open, c - closed
 \newcommand{\intervalcc}[2]{\left[#1,#2\right]}
 \newcommand{\intervalco}[2]{\left[#1,#2\right)}
@@ -413,12 +450,11 @@
 % set operations %
 %%%%%%%%%%%%%%%%%%
 
-\newcommand{\intersect}{\cap}			% intersect to sets
 \newcommand{\setjoin}{\cup}				% join two sets
 \newcommand{\setmeet}{\cap}                     % intersect to sets
-\newcommand{\bigsetjoin}{\bigcup}			% the union of sets ... subscripts to be added
+\newcommand{\Setjoin}{\bigcup}			% the union of sets ... subscripts to be added
 \newcommand{\distunion}{\dot{\bigcup}}	% disjoint union of sets ... subscripts to be added
-\newcommand{\bigsetmeet}{\bigcap}		% intersection of sets
+\newcommand{\Setmeet}{\bigcap}		% intersection of sets
 \newcommand{\powerset}[1][]{\ifx&#1&\mathcal{P}\else\mathcal{P}_{#1}\fi}		% powerset ... to be customized
 \newcommand{\card}[1]{\left|#1\right|}
 
@@ -507,6 +543,8 @@
 \newcommand{\iso}{\oldcong}
 
 \def\cong{\equiv}
+\def\equiv{\Leftrightarrow}
+\def\implies{\Rightarrow}
 \newcommand{\base}[2]{\left[#2\right]_{#1}}                                   % base n expansion of some number
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % matrices and linear operators %
@@ -549,18 +587,19 @@
 %%%%% test
 \newcommand{\distjoin}{\mathaccent\cdot\cup}	% to be modified (name)
 \newcommand{\cl}{\mathop\mathrm{cl}}				% topological closure
+\newcommand{\N}{\mathrm{N}} % topological neighbourhood
 \newcommand{\sphere}{\mathbb{S}} % n-sphere
 \newcommand{\ball}{\mathbb{B}} % n-ball
 \newcommand{\bound}{\partial}
-\newcommand{\bigmeet}{\mathop\mathrm{\bigwedge}}
-\newcommand{\bigjoin}{\mathop\mathrm{\bigvee}}
+\newcommand{\Meet}{\mathop\mathrm{\bigwedge}}
+\def\Join{\mathop\mathrm{\bigvee}}
 \newcommandx{\rchar}[1][1=\empty]{\mathop\mathrm{char}\brackets{#1}}              % characteristic of a ring
 \newcommand{\lgor}{\vee}                               % logical
 \newcommand{\lgand}{\wedge}
 \newcommand{\codim}{\mathop\mathrm{codim}}
 \newcommand{\row}{\mathop\mathrm{row}}
 \newcommand{\cone}{\mathop\mathrm{cone}}
-\newcommand{\comp}{\mathop\mathrm{comp}}
+\newcommand{\cpt}{\mathop\mathrm{cpt}}
 \newcommand{\proj}{\mathrm{P}}
 \def\PG{\mathrm{PG}}           % projective space
 \newcommand{\meet}{\wedge}

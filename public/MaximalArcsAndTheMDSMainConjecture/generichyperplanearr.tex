@@ -2,7 +2,7 @@
 
 \subsection{Existence of weakly generic arrangements in $\field{q}^n$ with given Poincaré polynomial}
 
-Let $\cA$ be an arrangement of hyperplanes in $V=K^n$ and $\cL(\cA):=\{\bigsetmeet \cH:\cH\setleq \cA\}$ the associated lattice, where for $X,Y\in\cL(\cA)$ we define $X\meet Y:=\bigsetmeet\{Z\in\cL(\cA):X,Y\setleq Z\}$ and $X\join Y:= X\setmeet Y$.
+Let $\cA$ be an arrangement of hyperplanes in $V=K^n$ and $\cL(\cA):=\{\Setmeet \cH:\cH\setleq \cA\}$ the associated lattice, where for $X,Y\in\cL(\cA)$ we define $X\meet Y:=\Setmeet\{Z\in\cL(\cA):X,Y\setleq Z\}$ and $X\join Y:= X\setmeet Y$.
 Moreover, we assign to $\cL(\cA)$ the rank function $r:\cL(\cA)\to \ints$ where $X\mapsto \codim X$ for $X\neq \emptyset$ and $r(\emptyset):=n+1$.
 It is then an interesting question, which restrictions on the lattice $\cL(\cA)$ arise from the structure of the space $K^n$ (especially when $K$ is finite). We want to discuss this question for a special type of arrangements.
 
@@ -39,7 +39,7 @@ In this section we generalize some combinatorial results by \person{Zaslavsky} a
         \abs{\cM_m(\cA)}= q^{n-m}\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
     $$
     where $\cM(\cA)$ denotes the $m$-th stratum ($m\geq 0$)
-    $$        \cM(\cA):=\bigsetjoin\{X\in\cL(\cA)\lgand r(X)=m\}\setminus\bigsetjoin\{X\in\cL(\cA):r(X)=m+1\}\text{.}
+    $$        \cM(\cA):=\Setjoin\{X\in\cL(\cA)\lgand r(X)=m\}\setminus\Setjoin\{X\in\cL(\cA):r(X)=m+1\}\text{.}
     $$
     For $m=0$ the arrangement does not have to be weakly generic (\person{Zaslavsky}'s result \cite{zas}).
 \end{lemma}
@@ -48,7 +48,7 @@ The proof of this fact is just based on \person{Möbius} inversion
 
 \begin{proof}
     We start with $m=0$.
-    As $\bigsetjoin_{X\in\cL(\cA)}{\cM_0(\cA^X)}=\field{q}^n$ (where $\cA^X$ denotes the restriction of $\cA$ on $X$) and the union is disjoint we have that (for $Y\in\cL(\cA)$)
+    As $\Setjoin_{X\in\cL(\cA)}{\cM_0(\cA^X)}=\field{q}^n$ (where $\cA^X$ denotes the restriction of $\cA$ on $X$) and the union is disjoint we have that (for $Y\in\cL(\cA)$)
   $$
       \sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{\abs{\cM_0(\cA^X)}}=q^{n-r(Y)}\text{.}
   $$

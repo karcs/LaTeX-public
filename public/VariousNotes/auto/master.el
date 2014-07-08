@@ -27,9 +27,7 @@
      "csvdel"
      "checknextarg"
      "iso"
-     "arg"
-     "c"
-     "a")
+     "arg")
     (TeX-run-style-hooks
      "mathenv"
      "mathtools"

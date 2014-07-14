@@ -36,6 +36,33 @@
 
 % w: http://milde.users.sourceforge.net/LUCR/Math/math-font-selection.xhtml
 
+\newcommand{\uA}{\underline{A}}
+\newcommand{\uB}{\underline{B}}
+\newcommand{\uC}{\underline{C}}
+\newcommand{\uD}{\underline{D}}
+\newcommand{\uE}{\underline{E}}
+\newcommand{\uF}{\underline{F}}
+\newcommand{\uG}{\underline{G}}
+\newcommand{\uH}{\underline{H}}
+\newcommand{\uI}{\underline{I}}
+\newcommand{\uJ}{\underline{J}}
+\newcommand{\uK}{\underline{K}}
+\newcommand{\uL}{\underline{L}}
+\newcommand{\uM}{\underline{M}}
+\newcommand{\uN}{\underline{N}}
+\newcommand{\uO}{\underline{O}}
+\newcommand{\uP}{\underline{P}}
+\newcommand{\uQ}{\underline{Q}}
+\newcommand{\uR}{\underline{R}}
+\newcommand{\uS}{\underline{S}}
+\newcommand{\uT}{\underline{T}}
+\newcommand{\uU}{\underline{U}}
+\newcommand{\uV}{\underline{V}}
+\newcommand{\uW}{\underline{W}}
+\newcommand{\uX}{\underline{X}}
+\newcommand{\uY}{\underline{Y}}
+\newcommand{\uZ}{\underline{Z}}
+
 % ===== Set quick commands for math letters ================================================================
 % calagraphic letters (only upper case available; standard)
 \newcommand{\cA}{\mathcal{A}}
@@ -234,7 +261,14 @@
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Top}{\mathbf{Top}}
 % Define set-builder operator (equivalent to gen for algebras)
-\newcommand{\set}[1]{\left\{#1\right\}}
+%\newcommand{\set}[2][\empty]{\ifx#1\empty\left\{1\right\}\else\left\{2\right\}_{#1}\fi}% to change
+\makeatletter
+\def\set#1{\@ifnextchar[ {\@set#1}{\@set#1[\empty]}}
+\def\@set#1[#2]{\ifx#2\empty\left\{#1\right\}\else\left\{#1:#2\right\}\fi}
+
+\def\seq#1{\@ifnextchar[{\@seq#1}{\@seq#1[\empty]}}
+\def\@seq#1[#2]{\left(#1:#2\right)}
+\makeatother
 % define interval operator: o - open, c - closed
 \newcommand{\intervalcc}[2]{\left[#1,#2\right]}
 \newcommand{\intervalco}[2]{\left[#1,#2\right)}
@@ -254,8 +288,8 @@
 \newcommand{\setgeq}{\supseteq}
 \newcommand{\setgt}{\supset}
 \newcommand{\setlt}{\subset}
-\newcommand{\conleq}{\lhdeq}
-\newcommand{\congeq}{\rhdeq}
+\newcommand{\conleq}{\trianglelefteq}
+\newcommand{\congeq}{\trianglerighteq}
 \newcommand{\conlt}{\lhd}
 \newcommand{\congt}{\rhd}
 \newcommand{\defeq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu=}}
@@ -431,6 +465,12 @@
 \newcommand{\dirplus}{\oplus}				% direct add for groups and spaces
 \newcommand{\inprod}[2]{\left\langle #1,#2 \right\rangle}
 
+% lattices
+\newcommand\Meet{\mathop\mathrm{\bigwedge}}
+\renewcommand\Join{\mathop\mathrm{\bigvee}}
+\newcommand\meet{\wedge}
+\newcommand\join{\vee}
+
 \newcommand{\tuple}{\meet}
 \newcommand{\cotuple}{\join}
 
@@ -505,6 +545,8 @@
 \newcommand{\iso}{\oldcong}
 
 \def\cong{\equiv}
+\def\equiv{\Leftrightarrow}
+\def\implies{\Rightarrow}
 \newcommand{\base}[2]{\left[#2\right]_{#1}}                                   % base n expansion of some number
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % matrices and linear operators %
@@ -547,22 +589,19 @@
 %%%%% test
 \newcommand{\distjoin}{\mathaccent\cdot\cup}	% to be modified (name)
 \newcommand{\cl}{\mathop\mathrm{cl}}				% topological closure
+\newcommand{\N}{\mathrm{N}} % topological neighbourhood
 \newcommand{\sphere}{\mathbb{S}} % n-sphere
 \newcommand{\ball}{\mathbb{B}} % n-ball
 \newcommand{\bound}{\partial}
-\newcommand{\bigmeet}{\mathop\mathrm{\bigwedge}}
-\newcommand{\bigjoin}{\mathop\mathrm{\bigvee}}
 \newcommandx{\rchar}[1][1=\empty]{\mathop\mathrm{char}\brackets{#1}}              % characteristic of a ring
 \newcommand{\lgor}{\vee}                               % logical
 \newcommand{\lgand}{\wedge}
 \newcommand{\codim}{\mathop\mathrm{codim}}
 \newcommand{\row}{\mathop\mathrm{row}}
 \newcommand{\cone}{\mathop\mathrm{cone}}
-\newcommand{\comp}{\mathop\mathrm{comp}}
+\newcommand{\cpt}{\mathop\mathrm{cpt}}
 \newcommand{\proj}{\mathrm{P}}
 \def\PG{\mathrm{PG}}           % projective space
-\newcommand{\meet}{\wedge}
-\newcommand{\join}{\vee}
 \newcommand{\col}{\mathop\mathrm{col}}
 \newcommand{\vol}{\mathop\mathrm{vol}\nolimits}
 %arrangements

@@ -2,6 +2,8 @@
  (lambda ()
     (TeX-add-symbols
      "brackets"
+     "set"
+     "seq"
      "struct"
      "originaltimes"
      "Ric"
@@ -27,5 +29,7 @@
      "Loc"
      "oldcong"
      "cong"
+     "equiv"
+     "implies"
      "PG")))
 

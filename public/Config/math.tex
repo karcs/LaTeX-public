@@ -249,7 +249,7 @@
 
 \let\originaltimes\times%
 \renewcommand{\times}{\mathbin{\sqcap}}
-\newcommand\settimes{\originaltimes}
+\newcommand\setprod{\originaltimes}
 \newcommand{\setleq}{\subseteq}
 \newcommand{\setgeq}{\supseteq}
 \newcommand{\setgt}{\supset}
@@ -290,7 +290,7 @@
 % Define rings
 \newcommand{\rg}{\mathrm{rg}} %rank of a matrix
 \newcommand{\Rg}[1][\empty]{\if\empty{#1}{\mathbf{Rg}}\else{\mathbf{Rg}_{#1}}}
-\edef\units#1{#1^{\settimes}}
+\edef\units#1{#1^{\setprod}}
 \def\dual#1{#1^{\ast}}
 
 %% redefine the command \P to produce the projective functor in math mode
@@ -413,13 +413,11 @@
 % set operations %
 %%%%%%%%%%%%%%%%%%
 
-\newcommand{\intersect}{\cap}			% intersect to sets
-\newcommand{\setjoin}{\cup}				% join two sets
-\newcommand{\setmeet}{\cap}                     % intersect to sets
-\newcommand{\bigsetjoin}{\bigcup}			% the union of sets ... subscripts to be added
-\newcommand{\distunion}{\dot{\bigcup}}	% disjoint union of sets ... subscripts to be added
-\newcommand{\bigsetmeet}{\bigcap}		% intersection of sets
-\newcommand{\powerset}[1][]{\ifx&#1&\mathcal{P}\else\mathcal{P}_{#1}\fi}		% powerset ... to be customized
+\newcommand{\setjoin}{\cup}% join two sets
+\newcommand{\setmeet}{\cap}% intersect to sets
+\newcommand{\Setjoin}{\bigcup}% the union of sets
+\newcommand{\Setmeet}{\bigcap}% intersection of sets
+\newcommand{\set}[1][]{\ifx&#1&\mathcal{P}\else\mathcal{P}_{#1}\fi}		% powerset ... to be customized
 \newcommand{\card}[1]{\left|#1\right|}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

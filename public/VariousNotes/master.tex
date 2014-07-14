@@ -47,7 +47,7 @@
 %
 \begin{remark}
     Here closed intervals are already closed under intersection since it holds for antitone \person{Galois}-connections that
-    $$\bigsetmeet_{i\in I}{A_i^{\meet}}={\left(\bigsetjoin_{i\in I}{A_i}\right)}^{\meet} \textrm{ and } \bigsetmeet_{i\in I}{A_i^{\join}}={\left(\bigsetjoin_{i\in I}{A_i}\right)}^{\join}.$$
+    $$\bigsetmeet_{i\in I}{A_i^{\meet}}={\left(\Setjoin_{i\in I}{A_i}\right)}^{\meet} \textrm{ and } \bigsetmeet_{i\in I}{A_i^{\join}}={\left(\Setjoin_{i\in I}{A_i}\right)}^{\join}.$$
 \end{remark}
 
 // analogue between complete lattice and PID
@@ -55,7 +55,7 @@
 \begin{lemma}[bounds for the limit point of a sequence]
     Let $N:=\net[i\in I]{a_i}$ be a net in a poset $P$. Then any accumulation point $a$ of $N$ it holds that
     $$
-    a\in {\left(\bigsetjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}^{\join}\setmeet{\left(\bigsetmeet_{i\in I}\set{a_j}_{j \geq i}^{\join}\right)}^{\meet}
+    a\in {\left(\Setjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}^{\join}\setmeet{\left(\bigsetmeet_{i\in I}\set{a_j}_{j \geq i}^{\join}\right)}^{\meet}
     $$
     and if $P$ is a complete lattice, this can be written as
     $$
@@ -69,7 +69,7 @@
     Thus we have that
     $$
     a\in \bigsetmeet_{i\in I}{\set{a_j}_{j \geq i}^{\meet\join}}\setmeet\bigsetmeet_{i\in I}\set{a_j}_{j \geq i}^{\join\meet}=
-    {\left(\bigsetjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}^{\join}\setmeet{\left(\bigsetmeet_{i\in I}\set{a_j}_{j \geq i}^{\join}\right)}^{\meet},
+    {\left(\Setjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}^{\join}\setmeet{\left(\bigsetmeet_{i\in I}\set{a_j}_{j \geq i}^{\join}\right)}^{\meet},
     $$
     or respectively for the complete lattice case
     $$
@@ -80,11 +80,11 @@
 \begin{definition}[limes superior and inferior]
     Let $N:=\net[i\in I]{a_i}$ be a net in a poset $P$. When there exists elements $\check{N},\hat{N}\in P$ such that
     $$
-    \sup{\left(\bigsetjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}=\hat{N}
+    \sup{\left(\Setjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}=\hat{N}
     $$
     or
     $$
-    \inf{\left(\bigsetjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}=\check{N}
+    \inf{\left(\Setjoin_{i\in I}{\set{a_j}_{j \geq i}^{\meet}}\right)}=\check{N}
     $$
     then $\hat{N}$ is called \keyword{limes superior} and denoted by $\limsup{N}$ and $\check{N}$ is called \keyword{limes inferior} and denoted by $\liminf{N}$.
 \end{definition}
@@ -116,7 +116,7 @@ Now we introduce the notion of a topological lattice
 \begin{proof}
     We only prove the first statement, the second following by duality.
     
-    Let $a$ an accumulation point of $N$. Then $a$ is an upper bound of $\set{a_i}_{i\in I}$ for otherwise there would exist an $i\in I$ such that $a_i\not\leq a$ implying that $P\setminus \set{a_i}^{\join}$ is a neighbourhood of $a$ not containing a point of $\net[j\geq i]{a_j}$ contradicting the assumption that $a$ is an accumulation point of $N$. Moreover, if there exists an $a'<a$ which is also an upper bound of $\set{a_i}_{i\in I}$ then $P\setminus\set{a'}^{\meet}$ is an open neighbourhood of $a$ not containing a point of $N$. Thus, if $\lim{N}$ exists it must be the supremum of $N$. Conversely, if the supremum of $N$ exists, it must be its limit. This can be seen from as follows. Assume there is an open neighbourhood $U$ of $\sup{N}$ which seperates it from $N$. Then by reducing to the base of topology of the \person{Galois} topology we can assume that $U=P\setminus(\bigsetjoin_{i=1}^n{A_i^{\meet}}\setjoin\bigsetjoin_{i=1}^m{B_i^{\join}})$. When there is an $i\in I$ and $j\in\set{1,\ldots,m}$ such that $a_i\in B_j^{\join}$ then $\sup{N}\in U$. So we may assume that $m=0$. On the other hand, it is easy to see that the sets $A_i^{\meet}\setmeet\set{a_i}_{i\in I}$ are totally ordered by inclusion since $N$ is non-decreasing. Thus there is an $i\in\set{1,\ldots,n}$ such that $\set{a_i}_{i\in I}\setleq A_i^{\meet}$. But then $\sup{N}\in A_i^{\meet}$ by definition of the supremum.
+    Let $a$ an accumulation point of $N$. Then $a$ is an upper bound of $\set{a_i}_{i\in I}$ for otherwise there would exist an $i\in I$ such that $a_i\not\leq a$ implying that $P\setminus \set{a_i}^{\join}$ is a neighbourhood of $a$ not containing a point of $\net[j\geq i]{a_j}$ contradicting the assumption that $a$ is an accumulation point of $N$. Moreover, if there exists an $a'<a$ which is also an upper bound of $\set{a_i}_{i\in I}$ then $P\setminus\set{a'}^{\meet}$ is an open neighbourhood of $a$ not containing a point of $N$. Thus, if $\lim{N}$ exists it must be the supremum of $N$. Conversely, if the supremum of $N$ exists, it must be its limit. This can be seen from as follows. Assume there is an open neighbourhood $U$ of $\sup{N}$ which seperates it from $N$. Then by reducing to the base of topology of the \person{Galois} topology we can assume that $U=P\setminus(\Setjoin_{i=1}^n{A_i^{\meet}}\setjoin\Setjoin_{i=1}^m{B_i^{\join}})$. When there is an $i\in I$ and $j\in\set{1,\ldots,m}$ such that $a_i\in B_j^{\join}$ then $\sup{N}\in U$. So we may assume that $m=0$. On the other hand, it is easy to see that the sets $A_i^{\meet}\setmeet\set{a_i}_{i\in I}$ are totally ordered by inclusion since $N$ is non-decreasing. Thus there is an $i\in\set{1,\ldots,n}$ such that $\set{a_i}_{i\in I}\setleq A_i^{\meet}$. But then $\sup{N}\in A_i^{\meet}$ by definition of the supremum.
 \end{proof}
 
 
@@ -160,7 +160,7 @@ Now we introduce the notion of a topological lattice
 Here, I assemble some notes on various interesting subjects.
 
 \begin{definition}[preorder]
-    A preorder on a set $S$ is a relation $\leq\setleq S^{\settimes2}$ satisfying the following properties.
+    A preorder on a set $S$ is a relation $\leq\setleq S^{\setprod2}$ satisfying the following properties.
     \begin{statements}
             \item \emph{Transitivity} If $a\leq b\leq c$ then $a\leq c$.
             \item \emph{Reflexivity} It holds that $\id_S\setleq \leq$. 
@@ -232,8 +232,8 @@ Then it holds that
 The set $S$ can be written as
 \begin{eqnarray*}
     S
-    &=& \bigsetjoin_{y\in[a,b]}\set{x\in[a,b]:x<y \lgand f(x)<f(y)}\\
-    &=& \bigsetjoin_{y\in[a,b]}(\set{x\in[a,b):x<y\}\setmeet\{x\in[a,b):f(x)<f(y)})
+    &=& \Setjoin_{y\in[a,b]}\set{x\in[a,b]:x<y \lgand f(x)<f(y)}\\
+    &=& \Setjoin_{y\in[a,b]}(\set{x\in[a,b):x<y\}\setmeet\{x\in[a,b):f(x)<f(y)})
 \end{eqnarray*}
 which is open as a union of finite intersection of open sets.
 To prove the second claim, let $a',b'\in [a,b]$ such that
@@ -300,7 +300,7 @@ For more general relations, we note these relational sets by $R_a$
 A binary relation $R\subset \prod_{i\in I}{A_i}$ is called \new{separating}
 or \new{identifying} in $A_j$ if an object of $A_j$ is identified by its relational
 behavior. That is, for $a,b\in A_j$ the equality
-$\pi_j^{-1}(a)\intersect R=\pi_j^{-1}(b)\intersect R$ implies $a=b$
+$\pi_j^{-1}(a)\setmeet R=\pi_j^{-1}(b)\setmeet R$ implies $a=b$
 where $\pi_j$ is the projection from the product $\prod_{i\in
   I}{A_i}$ onto the $j$-th factor.
 \end{definition}
@@ -432,7 +432,7 @@ In the case $K=\reals$ we get that $f(x)^2=f(x^2)$ showing that $f$ is continuou
 \begin{solution}[\ref{3-cycl-an}]
     It is clear that for $n\geq 3$ as $A_n$ acts transitively. Let $\gen{c_i:i\in I}=A_n$ where $c_i$ are the $3$-cycles. Then for $n\geq 4$ the following condition must be satisfied by the $c_i$ ($i\in I$) for otherwise $\gen{c_i:i\in I}$ would not be transitive.
 
-    For all subsets $I'\leq I$ such that $M:=\bigsetjoin_{i\in I'}{\spt{c_i}}\subset n$ there exists $j\in I\setminus I'$ such that $\spt{c_j}\setmeet M\neq \emptyset$ and $\spt{c_j}\not\subseteq M$.
+    For all subsets $I'\leq I$ such that $M:=\Setjoin_{i\in I'}{\spt{c_i}}\subset n$ there exists $j\in I\setminus I'$ such that $\spt{c_j}\setmeet M\neq \emptyset$ and $\spt{c_j}\not\subseteq M$.
 
     This implies inductively that $\card{\bigsetmeet_{i\in I'}{\spt{c_i}}}\leq 3+2(i-1)$. Thus it follows that $1+2\card{I}\geq n$ must hold. We claim that any set $\set{c_i:i\in I}$ satisfying the above condition necessary for transitity of the action of $\gen{c_i:i\in I}$ generates $A_n$.
     \paragraph{Case 1.}
@@ -455,7 +455,7 @@ In the case $K=\reals$ we get that $f(x)^2=f(x^2)$ showing that $f$ is continuou
 \end{theorem}
 
 \begin{proof}
-    $G$ acts on the set $\cP$ of $p^e$-element subsets of $G$ by right multiplication. One then obtains for some $P\in\cP$ that $\bigsetjoin{P[\stab[G]{P}]}=P$ is a disjoint union of right cosets of $\stab[G]{P}$ yielding that $\stab[G]{P}\divides\card{P}=p^e$. Moreover, $P\in \cP$ is a subgroup of $G$ if and only if $\stab[G]{P}$ has order $p^e$.
+    $G$ acts on the set $\cP$ of $p^e$-element subsets of $G$ by right multiplication. One then obtains for some $P\in\cP$ that $\Setjoin{P[\stab[G]{P}]}=P$ is a disjoint union of right cosets of $\stab[G]{P}$ yielding that $\stab[G]{P}\divides\card{P}=p^e$. Moreover, $P\in \cP$ is a subgroup of $G$ if and only if $\stab[G]{P}$ has order $p^e$.
     This can be shown by the following.
 
     If $P$ is a subgroup then $\stab[G](P)=P$ since by the previous argument $\stab[P]\subseteq P$ and $P$ stabilizes itself.
@@ -737,7 +737,7 @@ In most cases we deal with polynomials when talking about partial fractions.
 \section{Ordered monoids and metric spaces}
 
 \begin{definition}[ordered monoid]
-    A structure $A=\struct{M,1,\cdot,\leq}$ where $\struct{M,1,\cdot}$ is a monoid and $\leq\setleq M\settimes M$ is an order being compatible with the multiplication, i.e.
+    A structure $A=\struct{M,1,\cdot,\leq}$ where $\struct{M,1,\cdot}$ is a monoid and $\leq\setleq M\setprod M$ is an order being compatible with the multiplication, i.e.
     $$
     \leq \in \Inv(\cdot)
     $$
@@ -753,7 +753,7 @@ In most cases we deal with polynomials when talking about partial fractions.
 \end{definition}
 
 \begin{lemma}[representation of the generated ideal]
-    Let $B\setleq A$ a set. Then the upright ideal generated by $B$ is $\bigsetjoin_{n\in\nats}{{(AB)}^n}$.
+    Let $B\setleq A$ a set. Then the upright ideal generated by $B$ is $\Setjoin_{n\in\nats}{{(AB)}^n}$.
 \end{lemma}
 
 \begin{lemma}[first homomorphism theorem for upright monoids]
@@ -774,7 +774,7 @@ In most cases we deal with polynomials when talking about partial fractions.
 \end{remark}
 
 \begin{definition}[$A$-metric space]
-    An $A$-metric space where $A$ is an upright abelian monoid is a structure $M=\struct{S,d}$ where $S$ is a structure which bases on $\Set$ and $d:S\settimes S\to A$ satisfies
+    An $A$-metric space where $A$ is an upright abelian monoid is a structure $M=\struct{S,d}$ where $S$ is a structure which bases on $\Set$ and $d:S\setprod S\to A$ satisfies
     \begin{align}
         d(a,b) &\leq d(a,c)+d(c,b),\\
         d(a,b) &=d(b,a),\\
@@ -784,7 +784,7 @@ In most cases we deal with polynomials when talking about partial fractions.
 \end{definition}
 
 \begin{lemma}[Lebesgue]
-    Let $K$ be a compact $A$-metric space and $\cU$ be an open cover of $K$, i.e. $\bigsetjoin\cU=K$. Then there exists an $\epsilon>0$ such that for any $k\in K$ the ball $\ball_{\epsilon}(k)$ lies entirely in some set $U\in \cU$.
+    Let $K$ be a compact $A$-metric space and $\cU$ be an open cover of $K$, i.e. $\Setjoin\cU=K$. Then there exists an $\epsilon>0$ such that for any $k\in K$ the ball $\ball_{\epsilon}(k)$ lies entirely in some set $U\in \cU$.
 \end{lemma}
 
 \begin{proof}

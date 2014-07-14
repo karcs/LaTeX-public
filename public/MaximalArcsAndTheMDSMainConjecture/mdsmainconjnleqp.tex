@@ -47,7 +47,7 @@ Now we are able to state the lemma.
     Thus we have that
     \begin{align*}
         \frac{P_1(x_2)P_2(x_3)P_3(x_1)}{P_2(x_1)P_3(x_2)P_1(x_3)} &= \frac{T_{X\setjoin\set{x_1}}(x_2)T_{X\setjoin\set{x_2}}(x_3)T_{X\setjoin\set{x_3}}(x_1)}{T_{X\setjoin\set{x_2}}(x_1)T_{X\setjoin\set{x_3}}(x_2)T_{X\setjoin\set{x_1}}(x_3)}\\
-        & \quad\settimes\prod_{\substack{i,j\in\set{1,2,3}\\ i<j}}\prod_{a\in\cA\setminus X'}{\frac{\det(x_i,x_j,X,a)}{\det(x_j,x_i,X,a)}}\\
+        & \quad\setprod\prod_{\substack{i,j\in\set{1,2,3}\\ i<j}}\prod_{a\in\cA\setminus X'}{\frac{\det(x_i,x_j,X,a)}{\det(x_j,x_i,X,a)}}\\
         & = {(-1)}^3=-1.
     \end{align*}
     Since $\cA\setminus X'$ has $\card{\cA}-n=q-1-t$ elements, the last two products evaluate to ${(-1)}^{3(q-1-t)}={(-1)}^t$.
@@ -71,7 +71,7 @@ Later we will do some calculations with the polynomials $T_Y$ for $Y\in\binom{\c
     where each $A_i$ is written in the order $\leq$
     ($i=1,\ldots,n$). Moreover, by $\sgn(A_1,\ldots,A_n)$ we mean
     the sign of the permutation which corresponds to the tuple $(A_1,\ldots,A_n)$
-    where the identity is given by $(\bigsetjoin_{i=1}^n{A_i})$. To abbreviate notation, for $A_i$ a singleton we just write its
+    where the identity is given by $(\Setjoin_{i=1}^n{A_i})$. To abbreviate notation, for $A_i$ a singleton we just write its
     element without curly brackets.  
     This convention shall be used in the following.
 \end{remark}
@@ -123,11 +123,11 @@ Later we will do some calculations with the polynomials $T_Y$ for $Y\in\binom{\c
     \begin{align*}
         \bar{\lambda}(u,v)\bar{\lambda}(v,w)\bar{\lambda}(w,u) 
  & = \left(\frac{\sgn(X^1,x_1,X^2,X^3,X^4,x_2)}{\sgn(X^1,X^2,x_2,X^3,X^4,x_1)}\right)^{t+1}              \\
- & \quad\settimes \left(\frac{\sgn(X^1,X^2,x_2,X^3,X^4,x_3)}{\sgn(X^1,X^2,X^3,x_3,X^4,x_2)}\right)^{t+1} \\
- & \quad\settimes \left(\frac{\sgn(X^1,X^2,X^3,x_3,X^4,x_1)}{\sgn(X^1,x_1,X^2,X^3,X^4,x_3)}\right)^{t+1} \\
+ & \quad\setprod \left(\frac{\sgn(X^1,X^2,x_2,X^3,X^4,x_3)}{\sgn(X^1,X^2,X^3,x_3,X^4,x_2)}\right)^{t+1} \\
+ & \quad\setprod \left(\frac{\sgn(X^1,X^2,X^3,x_3,X^4,x_1)}{\sgn(X^1,x_1,X^2,X^3,X^4,x_3)}\right)^{t+1} \\
  & = {(-1)}^{((|X^3|+|X^4|)+(|X^2|+1+|X^3|+|X^4|))(t+1)}                                                 \\
- & \quad\settimes {(-1)}^{(|X^4|+(|X^3|+1+|X^4|)(t+1)}                                                   \\
- & \quad\settimes {(-1)}^{((|X^2|+|X^3|+1+|X^4|)+|X^4|)(t+1)}                                            \\
+ & \quad\setprod {(-1)}^{(|X^4|+(|X^3|+1+|X^4|)(t+1)}                                                   \\
+ & \quad\setprod {(-1)}^{((|X^2|+|X^3|+1+|X^4|)+|X^4|)(t+1)}                                            \\
  & = {(-1)}^{t+1}
 \end{align*}
 
@@ -325,9 +325,9 @@ curves.
     $$
     \sum_{a\in A}{P(A\setminus\set{a})\frac{\det(b,A\setminus\set{a})}{\det(a,A\setminus\set{a})}{\det(x,A\setminus\set{a})}^{-1}} = 0\quad (b\in B).\label{mds-class-n-leq-p-keysys}
     $$
-    We could also have written $\dual a(b)$ (where $\dual a$ means an element of the dual basis of $A$) for the fraction showing that the matrix $M\in \field{q}^{B\settimes A}$ defined by
+    We could also have written $\dual a(b)$ (where $\dual a$ means an element of the dual basis of $A$) for the fraction showing that the matrix $M\in \field{q}^{B\setprod A}$ defined by
     $$
-    M:={(m_{ab})}_{(a,b)\in A\settimes B},\quad
+    M:={(m_{ab})}_{(a,b)\in A\setprod B},\quad
     m_{ab} := \frac{\det(b,A\setminus\set{a})}{\det(a,A\setminus\set{a})}
     $$
     has full rank as its rows are just the coordinate vectors of the $b\in B$ with respect to the basis $A$.%
@@ -336,7 +336,7 @@ curves.
     $$
     \gamma:{(\units{\field{q}})}^n\to{(\units{\field{q}})}^n
     $$
-    where ${(\units{\field{q}})}^n:=\field{q}^n\setminus\bigsetjoin_{a\in A}{\gen{A\setminus\set{a}}_{\lin}}$ and
+    where ${(\units{\field{q}})}^n:=\field{q}^n\setminus\Setjoin_{a\in A}{\gen{A\setminus\set{a}}_{\lin}}$ and
     $$
     \sum_{a\in A}{\lambda_a a}\mapsto \sum_{a\in A}{\lambda_a^{-1} a}
     $$
@@ -370,7 +370,7 @@ curves.
         0 & = \sum_{\substack{C'\setleq C                                                                       \\
                 \card{C'}=r}}
         {\sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}} \\
-          & \quad\settimes\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}                                  \\
+          & \quad\setprod\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}                                  \\
                   \setjoin(C\setminus C')\setjoin E}}
           {{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}
 \end{align*}
@@ -387,10 +387,10 @@ curves.
     This yields (distinguishing whether $a\in C'$ or not and analogously for $b$, the terms where $a\in C'$ on the LHS and $b\in C'$ on the RHS whipe out) 
     \begin{align*}
  & \sum_{\substack{C'\setleq C                                                                   \\ \card{C'}=r}}\sum_{\tau\setleq m-1}{{(-1)}^{\card{\tau}}P(\bar{A}_{\tau}\setjoin \bar{B}_{m\setminus\tau}\setjoin\set{b}\setjoin C'\setjoin D)}\\
- & \quad\settimes\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin\set{a}\setjoin \bar{B}_{\tau} \\ \setjoin(C\setminus C')\setjoin E}}{{\det(z,\bar{A}_{\tau}\setjoin \bar{B}_{m\setminus\tau}\setjoin\set{b}\setjoin C'\setjoin D)}^{-1}}\\
+ & \quad\setprod\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin\set{a}\setjoin \bar{B}_{\tau} \\ \setjoin(C\setminus C')\setjoin E}}{{\det(z,\bar{A}_{\tau}\setjoin \bar{B}_{m\setminus\tau}\setjoin\set{b}\setjoin C'\setjoin D)}^{-1}}\\
  & = \sum_{\substack{C'\setleq C                                                               \\
          \card{C'}=r}}\sum_{\tau\setleq m-1}{{(-1)}^{\card{\tau}}P(\bar{A}_{\tau}\setjoin\set{a}\setjoin \bar{B}_{m\setminus\tau}\setjoin C'\setjoin D)}\\
- & \quad\settimes\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin \bar{B}_{\tau}\setjoin\set{b} \\\setjoin(C\setminus C')\setjoin D}}{{\det(z,\bar{A}_{\tau}\setjoin\set{a}\setjoin \bar{B}_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}.
+ & \quad\setprod\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin \bar{B}_{\tau}\setjoin\set{b} \\\setjoin(C\setminus C')\setjoin D}}{{\det(z,\bar{A}_{\tau}\setjoin\set{a}\setjoin \bar{B}_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}.
     \end{align*}
     Rearranging this to one side proves the induction.
 \end{proof}
@@ -429,7 +429,7 @@ Applying the above corollary to the condition $\card\cA=q+2$, i.e. $t=n-3$ leads
     For the induction step we pick $d\in D$ and $g\in G$, $f\in F$, assume the hypothesis to be proven for $s-1$ and apply this to our sets $A$, $B$, $C$, $D\setminus\set d$, $E$, $F\setminus\set f$, $G\setminus\set g\setjoin\set f$
     $$
     \eqalign{%
-  0 &= \sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\prod_{w\in D\setminus\set d}{\det(w,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\cr &\quad \settimes\det(g,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin F\setjoin G}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}}.
+  0 &= \sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\prod_{w\in D\setminus\set d}{\det(w,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\cr &\quad \setprod\det(g,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin F\setjoin G}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}}.
 }%
 $$
 Now, we bring in the interpolation formula for the determinants as given in \autoref{mds-tan-poly-interpol-det}. Multiplying the above by
@@ -439,7 +439,7 @@ $$
 and summing over $g\in G\setjoin\set f$ gives (by interpolation of determinants)
 $$
     \eqalign{%
-  0 &= -\sgn(d,G\setjoin\set f\setjoin C)\det(G\setjoin\set f\setjoin C)\sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\prod_{w\in D\setminus\set d}{\det(w,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\cr &\quad \settimes\det(d,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin F\setjoin G}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}},
+  0 &= -\sgn(d,G\setjoin\set f\setjoin C)\det(G\setjoin\set f\setjoin C)\sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\prod_{w\in D\setminus\set d}{\det(w,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\cr &\quad \setprod\det(d,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin F\setjoin G}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}},
 }%
 $$
 where we can forget the $\sgn$ and $\det$ at the beginning to see that we are done with the induction step. Of course, the above argument does only work for $s=\card D\leq\card A=n-p$, i.e. $\card G\leq 2(n-p)$.

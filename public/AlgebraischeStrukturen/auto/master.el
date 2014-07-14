@@ -1,5 +1,8 @@
 (TeX-add-style-hook "master"
  (lambda ()
+    (LaTeX-add-environments
+     "question"
+     "answer")
     (LaTeX-add-labels
      "elem-ab-p-group"
      "semi-proj-unique-proj"

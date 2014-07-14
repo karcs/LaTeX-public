@@ -54,7 +54,7 @@ Wir kommen nun zu einem der wichtigsten Resultate über Klone auf endlichen Meng
 \begin{remark}
     Ist $R\setleq \cR_A$ Relationenkon, so ist $R$ abgeschlossen gegen $\compose$, denn
     $$
-    \sigma_2\compose\sigma_1=\pi_{14}(\sigma_1\settimes\sigma_2\setmeet A\settimes \Delta_A\settimes A).
+    \sigma_2\compose\sigma_1=\pi_{14}(\sigma_1\setprod\sigma_2\setmeet A\setprod \Delta_A\setprod A).
     $$
 \end{remark}
 
@@ -687,7 +687,7 @@ Also folgt direkt
 \end{example}
 
 \begin{example}[Geordnete Mengen als Kategorie]
-    Eine geordnete Menge $M$ mit Ordnung $\leq\setleq M\settimes M$ lässt sich auch als Kategorie auffassen, indem man die Elemente von $M$ als Objekte der Kategorie auffasst und die Morphismen $a\to b$ definiert als, $a\to b:=\set{(a,b)}\intersect\leq$ ($a,b\in M$).
+    Eine geordnete Menge $M$ mit Ordnung $\leq\setleq M\setprod M$ lässt sich auch als Kategorie auffassen, indem man die Elemente von $M$ als Objekte der Kategorie auffasst und die Morphismen $a\to b$ definiert als, $a\to b:=\set{(a,b)}\setmeet\leq$ ($a,b\in M$).
 \end{example}
 
 \begin{remark}
@@ -1169,7 +1169,7 @@ Ab jetzt immer: $\cX$ Kategorie und $X\in\cX$ mit ausgezeichneten Kopotenzen $X^
 
 \begin{definition}
     Eine Teilmenge $\cC\setleq\cO_X$ heißt \keyword{dualer Klon} (über $X$), geschrieben $\cC\leq\cO_X$, falls
-    \begin{statements}
+    \begin{statements}%
             \item $\forall n\in\nats_+,i\in\set{1,\ldots,n}:\iota_i^n\in\cC$
         \item $\forall g\in\cC^{(n)},g_1,\ldots,g_n\in\cC^{(k)}:(g_1\cotuple\cdots\cotuple g_n)\compose g\in\cC^{(k)}$
     \end{statements}
@@ -1197,24 +1197,163 @@ Ab jetzt immer: $\cX$ Kategorie und $X\in\cX$ mit ausgezeichneten Kopotenzen $X^
 
 \begin{proof}
     Sei $n\in\nats_+$. $D(A^{\times n})$ zusammen mit ${(D(\pi^n_i))}_{i\in\set{1,\ldots,n}}$ ist Koprodukt von ${(D(A))}_{i\in\set{1,\ldots,n}}$, also $\exists !\eta_n: D(A)\to X^{\cotimes n}$, $\eta_n\compose D(\pi^n_i)=\iota_i^n$.
-    Noch zu zeigen: ${(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))}^{-1}=\eta_n$. Wir haben $\eta_n\compose(D(\pi^n_1)\cutuple\cdots\cotuple D(\pi^n_n))=(\eta_n\compose D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))=(\iota^n_1\cotuple\cdots\cotuple\iota^n_n)=\id_{A^n}$ und $(D(\pi^n_1\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n\compose D(\pi^n_i)=D(\pi^n_i)$, für alle $i\in\set{1,\ldots,n}$. Wegen der Koprodukteigenschaft kann es nur einen Morphismus $\nu:D(A^n)\to D(A^n)$ mit $\nu\compose D(\pi^n_i)=D(\pi^n_i)$ für alle $i\in\set{1,\ldots,n}$ geben. Also $\id_{D(A^{\times n})}=(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n$. 
+    Noch zu zeigen: ${(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))}^{-1}=\eta_n$. Wir haben $\eta_n\compose(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))=(\eta_n\compose D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))=(\iota^n_1\cotuple\cdots\cotuple\iota^n_n)=\id_{A^n}$ und $(D(\pi^n_1\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n\compose D(\pi^n_i)=D(\pi^n_i)$, für alle $i\in\set{1,\ldots,n}$. Wegen der Koprodukteigenschaft kann es nur einen Morphismus $\nu:D(A^n)\to D(A^n)$ mit $\nu\compose D(\pi^n_i)=D(\pi^n_i)$ für alle $i\in\set{1,\ldots,n}$ geben. Also $\id_{D(A^{\times n})}=(D(\pi^n_1)\cotuple\cdots\cotuple D(\pi^n_n))\compose\eta_n$. 
 \end{proof}
+
+\hfill{09.07.2014}
+
+Prüfung: Funktionen erzeugen sich nicht gegenseitig, Funktionen bilden einen Klon
+
+\begin{example}
+    Sei $f_1(x_1,x_2,x_3)=x_1\lgand(\cdots)$, $f_1(x_1,x_2,x_3)=\bar x_1\lgor(\cdots)$ 
+\end{example}
+
+Dann gilt $f_2\not\in\Clo(f_1)$, da $\sigma=\set{0}$ durch $f_1$ aber nicht durch $f_2$ bewahrt wird.
+
+Falls $A$ endlich dann $\Clo F=\Pol\Inv F$.
+
+Eine andere denkbare Aufgabe ist zu zeigen, dass ein Klon nicht minimal ist.
+
+\begin{example}
+    Sei $f(x_1,\ldots,x_5)=0$ falls $x_1=x_2$ und $x_3$ sonst. Ist $\Clo(f)$ minimal. $c_0\in\Clo f$. Da $f(x,x,x,x,x)=0$. $f$ ist aber nicht wesentlich einstellig. Oder argumentiere
+    mit $\sigma=\set{(0,0),(1,0),(1,1)}$.
+\end{example}
+
+Sei $f:\nats^3\to\nats$ $(x,y,z)\mapsto x+y+z$. Warum erzeugt $g:\nats^2\to\nats$ $(x,y)\to x+y$ nicht $f$? Da $f$ die ungeraden Zahlen bewahrt.
+
+Ein Zettel Vorder- und Rückseite für alles zusammen.
+
+Multiple Choice Teil und drei kleine Beweise.
+
+\section{Übung Blatt 6}
+
+% 6.2
+\begin{solution}
+    $u$ Monomorphismus heißt $vu=v'u\implies v=v'$ und Epi heißt $uv'=uv\implies v=v'$. Isomorphismus heißt $ab=ba=1$ für ein $b$.
+\end{solution}
+
+\hfill{14.07.14}
+%
+Der Funktor $E$ ist doch nicht Produktbewahrend, entgegen vorheriger Annahmen.
+
+Wiederholung $A^{\times n}\to A$ und $D(A)=X\to D(A^{\cotimes n})=n X$.
+
+\begin{definition}
+    Die Abbildung $\arg^\partial:\cO_A\to\bar \cO_X$ definiert durch $f^\partial:=\eta_n\compose D(f)$ für $f\in\cO_A^{(n)}$ heißt \keyword{Klondualität} zu $D$. Für $F\setleq \cO_A$ setze $F^\partial \defeq\set{f^\partial}[f\in F]$
+\end{definition}
+
+\begin{lemma}
+    Sei $B\in \cC$, $k,n\in\nats_+$ und $f_1,\ldots,f_n:B\to A$, dann
+    \begin{statements}
+            \item $\arg^\partial:\cO_A\to\bar\cO_X$ ist eine Bijektion
+            \item $D(f_1\cotuple \cdots\cotuple f_n)=D(f_1)\tuple\cdots\tuple D(f_n)\compose \eta_n$
+            \item ${(\pi_i^n)}^\partial=\iota_i^n$ und ${(f\compose(f_1\cotuple\cdots\cotuple f_n))}^{\partial}=f_1^\partial\tuple \cdots \tuple f^\partial_n\compose f^\partial$.
+            \item $\cC$ Klon über $A$ genau dann wenn $\cC^\partial$ dualer Klon über $X$.
+        \item $\arg^\partial$ ist die einzige Abbildung von $\cO_A$ nach $\bar\cO_X$, die die Eigenschaften (I)-(IV) hat.
+    \end{statements}
+\end{lemma}
+
+\begin{proof}
+    $D$ ist voll und treu, $\eta_n$ ist Isomorphismus für alle $n\in\nats_+$. Also ist $f\mapsto \eta_n\compose D(f):\cO_A^{(n)}\to\bar\cO^{(n)}_X$ für alle $n\in\nats_+$ bijektiv. Also auch $\arg^\partial:\cO_A\to\bar\cO_X$ bijektiv. (II) wegen Lemma 5.57 haben wir $D(f_i)=D(\pi^n_i\compose(f_1\cotuple\cdots\cotuple f_n))=D(f_1\cotuple\cdots\cotuple f_n)\compose D(\pi^n_i)=D(f_1\cotuple\cdots\cotuple f_n)\compose \eta_n^{-1}\iota_i^n$ (nach Lemma) für alle $i\in\set{1,\ldots,n}$. Also $D(f_1)\tuple\cdots\tuple D(f_n)=(D(f_1\cotuple\cdots\cotuple f_n)\compose \eta_n^{-1}\iota_1^n)\tuple\cdots\tuple(D(f_1\cotuple\cdots\cotuple f_n)\compose \eta_n^{-1}\iota_n^n)$ also gleich $D(f_1\cotuple\cdots \cotuple f_n)\compose \eta_n^{-1}\compose 1_X=D(f_1\cotuple\cdots\cotuple f_n)\compose \eta^{-1}_n$.
+        \item Wegen Lemma 5.57 gitl $(\pi^n_i)^{\partial}=\eta_n\compose D(\pi^n_i)$. Weiterhin erhalten wir nach (II)
+    $$
+    {(f\compose(f_1\cotuple\cdots\cotuple f_n))}^{\partial}=\eta_k\compose D(f\compose(f_1\cotuple\cdots\cotuple f_n)) = \cdots = (f_1^\partial\tuple\cdots\tuple f_n)\compose f^{\partial}.
+    $$
+    (IV) folgt aus (II). (V) folgt aus Eindeutigkeit von ${(\eta_n)}_{n\in\nats_+}$.
+\end{proof}
+
+\begin{theorem}
+    $\cL_A\iso\bar\cL_X$, wobei ein Isomorphismus durch $\cC\mapsto\cC^\partial$ gegeben ist.
+\end{theorem}
+
+Gibt es für Klone in Kategorien eine Version von $\Pol$-$\Inv$.
+
+Idee: Relationen $\sigma\setleq A^n$ auf Morphismenmengen nach $A$ verallgemeinern.
+
+\begin{definition}
+    Sei $B\in\cC$. Eine Relation vom Typ $B$ auf $A$ ist eine Teilmenge von $B\to_{\cC} A$.
+    $$
+    \cR_A^{(B)}\defeq\Sub(B\to_{\cC} A)
+    $$
+\end{definition}
+
+\begin{definition}
+    Sei $\sigma\in\cR_A^{(B)}$, $f\in\cO_A^{(n)}$. $f\congeq \sigma\defequiv \forall r_1,\ldots,r_n\in\sigma:f\compose(r_1\cotuple\cdots\cotuple r_n)\in\sigma$.
+\end{definition}
+
+\begin{example}
+    Für $\cC=\\Set$ und $B=k=\set{0,\ldots,k-1}$ entsprich dies der Definition von $f\conleq \sigma$ wie am Anfang der Vorlesung eingeführt.
+\end{example}
+
+\begin{question}
+    Welche Objekte $B$ verwendet man als Typ für Relationen?
+\end{question}
+
+\begin{answer}
+    Kann man sich aussuchen.
+\end{answer}
+
+\begin{definition}
+    Eine \keyword{Typklasse} ist eine nichtleere Teilklasse $T\setleq \cC$ in der je zwei verschiedene Objekte nicht isomorph sind.
+\end{definition}
+
+\begin{definition}
+    Sei $T\setleq \cC$ Typklasse setze
+    $$
+    \cR^T_A\defeq\Setjoin_{B\in T}{\cR{(B)}_A}.
+    $$
+    $\cR_A^T$ heißt \keyword{Klasse der Relationen zu Typklasse $T$ auf $A$}. Für $\cR\setleq\cR_A^T$ und $B\in\cT$
+    $$
+    \cR^{(B)}=\cR\setmeet\cR_A^{(B)}.
+    $$
+    Ab jetzt stets $T\setleq\cC$ Typklasse.
+\end{definition}
+
+%% Prüfung am 05.08 um 10:00 Uhr
+
+\begin{definition}
+    Eine Klasse $\cR\setleq\cR_A^T$ heißt \keyword{Relationenklon der Typklasse $T$} auf $A$ geschrieben $\cR\leq\cR_A^T$ falls
+    \begin{statements}
+            \item $\emptyset\in\cR$.
+            \item $\cR$ abgeschlossen unter allgemeiner Superposition, d.h.~forall $I$ (Indexmenge), Objekte $C\in\cC$, $B\in T$, Familien ${(\sigma_i\in\cR^{(B_i)})}_{i\in I}$ und Morphismen $\phi:B\to C$ ist die Relation
+        $$
+        \Meet_{{(\phi_i)}_{i\in I}}^{\phi}{{(\sigma_i)}_{i\in I}}\defeq\set{r\compose \phi}[\forall i\in I: r\compose\phi_i\in\sigma_i,r\in\C\to_{\cC} A]
+            $$
+            wieder in $\cR$.
+    \end{statements}
+\end{definition}
+
+\begin{example}
+    Falls $\cC=\Set$, $A\in\Set$, $T\in\nats_+$, dann stimmt diese Definition mit der Klassischen Definition eines Relationenklons überein.
+\end{example}
+
+\begin{example}
+    Definiert man $T$ als die Menge der Kardinalzahlen erhält man unendlich-stellige Relationen.
+\end{example}
+
+Relationen(klone) (in der Literatur vor allem von \person{Rosenberg} betrachtet).
+
+Klar: $\cR^T_A$ ist Relationenklon und Schnitt von Relationklonen ist wieder Relationenklon.
+
+Also können wir definieren:
+
+\begin{definition}
+    Für $\cR\setleq\cR^T_A$ bezeichne mit $\Clo^T(\cR)$ den kleinsten Relationenklon der Typlklasse $T$ auf $A$ der $\cR$ enthält. Bezeichne mit $\dual \cL^T_A$ den Verband aller Relationenklone der Typklasse $T$ auf $A$.
+\end{definition}
+
+\begin{remark}
+    Der kleinste Klon in $\dual{\cL_A^T}$ ist $\Clo^T\emptyset$. Für $\cC=\Set$, $T=\nats_+$ handelt es sich dabei um den Klon aller trivialen Relationen.
+\end{remark}
+
+\begin{definition}
+    Wir definieren die Operatoren $\Inv^T_A:\Sub(\cO_A)\to\Sub(\cR_A^T)$, $\Pol_A^T:\Sub(\cR_A^T)\to\Sub(\cO_A)$ durch $\Inv_A^T F\defeq\set{\sigma\in\cR_A^T}[\forall f\in F:f\congeq \sigma]$ und $\Pol_A^T F\defeq\set{\sigma\in\cO_A^T}[\forall \sigma\in F:f\congeq \sigma]$. Für $B\in\cC$ und $n\in\nats_+$ sei
+    $$
+    \Inv_A^{(B)} F\defeq\set{\sigma\in\cR_A^{(B)}}[\forall fin F: f\conleq \sigma]
+    $$
+    und
+    $$
+    \Pol_A^{(n)} R\defeq \Pol_A R\setmeet \cO_A^{(n)}.
+    $$
+\end{definition}
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

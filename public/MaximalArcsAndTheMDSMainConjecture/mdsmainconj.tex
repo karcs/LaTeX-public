@@ -155,8 +155,8 @@ It is now easy to characterize linear MDS codes via their checkmatrix
     Let $\cC$ be an $(n,k,d)$-linear code. Then the following are equivalent
     \begin{statements}
             \item\label{mds} $\cC$ is MDS.
-            \item\label{mds-chkmtrx} A check matrix $C \in K^{(n-k)\settimes n}$ has the property that any maximal square submatrix of it is regular.
-            \item\label{mds-gmtrx} A generator matrix $G \in K^{k\settimes n}$ has the property that any maximal square submatrix is regular.
+            \item\label{mds-chkmtrx} A check matrix $C \in K^{(n-k)\setprod n}$ has the property that any maximal square submatrix of it is regular.
+            \item\label{mds-gmtrx} A generator matrix $G \in K^{k\setprod n}$ has the property that any maximal square submatrix is regular.
             \item\label{mds-dual} The dual code $\dual \cC$ is MDS.
     \end{statements}
 \end{lemma}
@@ -166,7 +166,7 @@ It is now easy to characterize linear MDS codes via their checkmatrix
             \item[$\autoref{mds}\equival\autoref{mds-chkmtrx}$:]
         The property of $\cC$ that $d(\cC)=d=n-k+1$ is equivalent translates to the property of a check matrix $C$ of $\cC$ that any $d-1=n-k$ of its columns are linearly independent (as $c\in\cC\equival Cc=0$).
             \item[$\autoref{mds}\equival\autoref{mds-gmtrx}$:]
-        The property of $\cC$ that $d(\cC)=n-k+1$ is equivalent to the property of a generatormatrix $G$ of $\cC$ that the coordinate representation of any non-trivial linear combination of the rows of $G$ contains at least $d=n-k+1$ non-zero entries --- that is any $k\settimes k$ submatrix of $G$ is regular.
+        The property of $\cC$ that $d(\cC)=n-k+1$ is equivalent to the property of a generatormatrix $G$ of $\cC$ that the coordinate representation of any non-trivial linear combination of the rows of $G$ contains at least $d=n-k+1$ non-zero entries --- that is any $k\setprod k$ submatrix of $G$ is regular.
             \item[$\autoref{mds}\equival\autoref{mds-dual}$:]
         A generator matrix of $\cC$ is a check matrix of $\dual\cC$ and vice versa. By the last two equivalences $\cC$ and $\dual\cC$ can only be MDS codes at the same time. 
     \end{implications}
@@ -188,7 +188,7 @@ There is a very simple connection between this type of matrix and another type o
 We briefly demonstrate the connection between these two types of matrices.
 
 \begin{lemma}[connection between principally and totally regular matrices]
-    Let $C:=(A|B)\in R^{m\settimes n}$ be some matrix over a commutative ring $R$ and $m\leq n$ where $A\in R^{m\settimes m}$.
+    Let $C:=(A|B)\in R^{m\setprod n}$ be some matrix over a commutative ring $R$ and $m\leq n$ where $A\in R^{m\setprod m}$.
     Then the following two are equivalent.
     \begin{statements}
             \item $C$ is principally regular.
@@ -197,7 +197,7 @@ We briefly demonstrate the connection between these two types of matrices.
 \end{lemma}
 
 \begin{proof}
-    When $C$ is principally regular then $A$ is invertible so that $A^{-1}C$ is also principally regular. Now let $k\leq \min\set{m,n-m}$. Choosing $k$-sets $I\setleq m$ and $J\setleq n\setminus m$ we can check the matrix $\rest{A^{-1}C}_{m\settimes (m\setminus I\setjoin J)}$ for regularity which is easily seen using \person{Laplace}'s formula for determinants to be equivalent to the fact that $\rest{A^{-1}B}_{I\settimes J}$ is regular.
+    When $C$ is principally regular then $A$ is invertible so that $A^{-1}C$ is also principally regular. Now let $k\leq \min\set{m,n-m}$. Choosing $k$-sets $I\setleq m$ and $J\setleq n\setminus m$ we can check the matrix $\rest{A^{-1}C}_{m\setprod (m\setminus I\setjoin J)}$ for regularity which is easily seen using \person{Laplace}'s formula for determinants to be equivalent to the fact that $\rest{A^{-1}B}_{I\setprod J}$ is regular.
 \end{proof}
 
 \subsection{Connections}

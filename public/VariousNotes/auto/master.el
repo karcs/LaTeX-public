@@ -26,11 +26,15 @@
      '("newdecl" 2)
      "csvdel"
      "checknextarg"
+     "com"
+     "a"
+     "b"
+     "set"
+     "abc"
      "iso"
      "arg")
     (TeX-run-style-hooks
      "mathenv"
-     "mathtools"
      "blindtext"
      "xparse"
      "makeidx"

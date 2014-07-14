@@ -263,14 +263,11 @@
 % Define set-builder operator (equivalent to gen for algebras)
 %\newcommand{\set}[2][\empty]{\ifx#1\empty\left\{1\right\}\else\left\{2\right\}_{#1}\fi}% to change
 \makeatletter
-\def\set#1{\@ifnextchar[{\@setwithclause#1}{\@setwithoutclause#1}}
-\def\@setwithclause#1[#2]{\left\{#1:#2\right\}}
-\def\@setwithoutclause#1{\left\{#1\right\}}
+\def\set#1{\@ifnextchar[ {\@set#1}{\@set#1[\empty]}}
+\def\@set#1[#2]{\ifx#2\empty\left\{#1\right\}\else\left\{#1:#2\right\}\fi}
 
-
-\def\seq#1{\@ifnextchar[{\@seqwithclause#1}{\@seqwithoutclause#1}}
-\def\@seqwithclause#1[#2]{\left(#1:#2\right)}
-\def\@seqwithoutclause#1{\left(#1\right)}
+\def\seq#1{\@ifnextchar[{\@seq#1}{\@seq#1[\empty]}}
+\def\@seq#1[#2]{\left(#1:#2\right)}
 \makeatother
 % define interval operator: o - open, c - closed
 \newcommand{\intervalcc}[2]{\left[#1,#2\right]}
@@ -291,8 +288,8 @@
 \newcommand{\setgeq}{\supseteq}
 \newcommand{\setgt}{\supset}
 \newcommand{\setlt}{\subset}
-\newcommand{\conleq}{\lhdeq}
-\newcommand{\congeq}{\rhdeq}
+\newcommand{\conleq}{\trianglelefteq}
+\newcommand{\congeq}{\trianglerighteq}
 \newcommand{\conlt}{\lhd}
 \newcommand{\congt}{\rhd}
 \newcommand{\defeq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu=}}
@@ -469,6 +466,12 @@
 \newcommand{\dirplus}{\oplus}				% direct add for groups and spaces
 \newcommand{\inprod}[2]{\left\langle #1,#2 \right\rangle}
 
+% lattices
+\newcommand\Meet{\mathop\mathrm{\bigwedge}}
+\renewcommand\Join{\mathop\mathrm{\bigvee}}
+\newcommand\meet{\wedge}
+\newcommand\join{\vee}
+
 \newcommand{\tuple}{\meet}
 \newcommand{\cotuple}{\join}
 
@@ -591,8 +594,6 @@
 \newcommand{\sphere}{\mathbb{S}} % n-sphere
 \newcommand{\ball}{\mathbb{B}} % n-ball
 \newcommand{\bound}{\partial}
-\newcommand{\Meet}{\mathop\mathrm{\bigwedge}}
-\def\Join{\mathop\mathrm{\bigvee}}
 \newcommandx{\rchar}[1][1=\empty]{\mathop\mathrm{char}\brackets{#1}}              % characteristic of a ring
 \newcommand{\lgor}{\vee}                               % logical
 \newcommand{\lgand}{\wedge}
@@ -602,8 +603,6 @@
 \newcommand{\cpt}{\mathop\mathrm{cpt}}
 \newcommand{\proj}{\mathrm{P}}
 \def\PG{\mathrm{PG}}           % projective space
-\newcommand{\meet}{\wedge}
-\newcommand{\join}{\vee}
 \newcommand{\col}{\mathop\mathrm{col}}
 \newcommand{\vol}{\mathop\mathrm{vol}\nolimits}
 %arrangements

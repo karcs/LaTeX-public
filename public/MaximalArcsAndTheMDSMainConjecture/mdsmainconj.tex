@@ -1,4 +1,4 @@
-\section{The MDS main conjecture}
+\section{The MDS main conjecture}\label{sec-mds-connections}
 
 In this section being the core part of this thesis, we come to a very interesting open problem which is formulated in coding theory, finite projective geometry, the theory of hyperplane arrangements and matroid theory.
 
@@ -8,7 +8,7 @@ We now introduce another concept which coincides with the one of a $(k,m)$-arc (
 
 \begin{definition}[projective arc]
     A set $\cA\setleq \P(K^n)$ is called a \keyword{projective arc} if no $n$ points of $\cA$ lie in a common hyperplane (if we aim to emphasize the number of points in $\cA$ we call it a $k$-arc when $\card\cA=k$).
-    A set $\cA'\setleq K^n$ such that $\cA:=\set{\gen a:a\in\cA'}$ is a projective arc and $\gen a\neq\gen b$ for $a,b\in\cA'$ is called an \keyword{representation} of the arc $\cA$.
+    A set $\cA'\setleq K^n$ such that $\cA\defeq\set{\gen a}[a\in\cA']$ is a projective arc and $\gen a\neq\gen b$ for $a,b\in\cA'$ is called an \keyword{representation} of the arc $\cA$.
     Analogously, a set $\cA\setleq K^n$ is called an \keyword{affine arc} if any $n+1$ points are affinely independent.
 \end{definition}
 
@@ -28,7 +28,7 @@ Apart from the `duality principle' for maximal $(k,m)$-arcs there is another dua
     as the projection to the summand $a$.
     Choose a basis $\cB$ of $\ker \pi$. Then
     $$
-    \cA'':=\set{\sum_{b\in\cB}{(\pi_a b)b}:a\in\cA'}
+    \cA''\defeq\set{\sum_{b\in\cB}{(\pi_a b)b}}[a\in\cA']
     $$
     is a representation of a projective arc $\dual\cA$ in $\ker \pi \iso K^{\card\cA -n}$.
     This is called the \keyword{dual arc} of $\cA$.
@@ -59,7 +59,7 @@ a contradiction. This shows that any $\card\cA-n$ elements of $\cA''$ are linear
 This duality principle is completely analogous to the duality principle for MDS codes (see \autoref{lincode-dual}).
 
 A simple fact which is implied by the above is the following
-
+%%
 \begin{corollary}\label{mds-ngeqq}
     Let $\cA$ be a projective arc in $\P(\field{q}^n)$ where $q\leq n$. Then $\card\cA\leq n+1$ and all maximal examples with respect to cardinality are $\PGL$-equivalent to $\set{\gen{e_1},\ldots,\gen{e_n},\gen{e_1+\cdots+e_n}}$.
 \end{corollary}
@@ -103,18 +103,18 @@ Recall the following definitions
 \begin{definition}[minimum weight and \person{Hamming} distance]
     The \keyword{\person{Hamming} distance} $d_H$ is a metric on $K^n$ given by
     $$
-    d_H(a,b):=\card{\set{i\in n:a_i\neq b_i}}
+    d_H(a,b)\defeq\card{\set{i\in n}[a_i\neq b_i]}
     $$
     for $a,b\in K^n$ where the $a_i$ and $b_i$ denote the coordinates of $a$ and $b$ in the canonical basis.
     Similarly, we define
     $$
-    w_H(a):=d_H(a,0)
+    w_H(a)\defeq d_H(a,0)
     $$
     as the \person{Hamming} distance to zero and call it the \keyword{weight} of $a$.
     Moreover, the \keyword{\person{Hamming} weight} or \keyword{minimum weight} of an $(n,k)$-linear code is the minimum \person{Hamming} distance between two of its points.
     This is
     $$
-    d(\cC):=\min\set{w_H(c):c\in\cC\setminus\set{0}}.
+    d(\cC)\defeq \min\set{w_H(c)}[c\in\cC\setminus\set{0}].
     $$
     An $(n,k)$-linear code with \person{Hamming} weight $d$ is also denoted as an $(n,k,d)$-linear code.
 \end{definition}
@@ -146,7 +146,7 @@ A very important concept for linear codes and especially for MDS codes is \keywo
 
 \begin{definition}[dual code]\label{lincode-dual}
     %% K^{n\ast} typo
-    Let $\cC\leq K^n$ be a linear code of dimension $k$. The \keyword{dual code} $\dual\cC$ of $\cC$ is defined as $\dual\cC:=\set{c^{\ast}\in K^{n\ast}:c^{\ast}c=0}$. Here $K^{n\ast}$ is equipped with the dual basis of $x_1,\ldots,x_n$ (where ${(x_i)}_{i=1}^n$ is the standard basis of $K^n$).
+    Let $\cC\leq K^n$ be a linear code of dimension $k$. The \keyword{dual code} $\dual\cC$ of $\cC$ is defined as $\dual\cC\defeq\set{c^{\ast}\in K^{n\ast}}[c^{\ast}c=0]$. Here $K^{n\ast}$ is equipped with the dual basis of $x_1,\ldots,x_n$ (where ${(x_i)}_{i=1}^n$ is the standard basis of $K^n$).
 \end{definition}
 
 It is now easy to characterize linear MDS codes via their checkmatrix
@@ -188,7 +188,7 @@ There is a very simple connection between this type of matrix and another type o
 We briefly demonstrate the connection between these two types of matrices.
 
 \begin{lemma}[connection between principally and totally regular matrices]
-    Let $C:=(A|B)\in R^{m\settimes n}$ be some matrix over a commutative ring $R$ and $m\leq n$ where $A\in R^{m\settimes m}$.
+    Let $C\defeq(A|B)\in R^{m\settimes n}$ be some matrix over a commutative ring $R$ and $m\leq n$ where $A\in R^{m\settimes m}$.
     Then the following two are equivalent.
     \begin{statements}
             \item $C$ is principally regular.
@@ -207,7 +207,7 @@ It turns out, that there is a (up to projective equivalence) `one-to-one' corres
 
 We already saw how MDS codes and principally or totally regular matrices are related.
 To draw the connection to projective arcs we interprete the one-dimensional subspaces of the columns of a check matrix $C$ of an MDS code $\cC\leq K^n$ ($\dim\cC=k$) as elements of the projective space $\proj(\col C)\iso \P(K^{d-1})$ (as $d=n-k+1$). This gives us an arc of size $n$ (we can also construct $H(\mathcal{C})$ from that arc).
-Starting from a $k$-arc $\cA$ in $\P(K^n)$ we can get a central generic arrangement $\cB$ of hyperplanes by interpreting the elements of $\cA$ as (non-zero) linear functionals $\cF$ in $K^{n\ast}$ (which can be chosen up to scalar factor). Then $\cB:=\set{\ker f:f\in \cF}$ is the associated central generic arrangement.
+Starting from a $k$-arc $\cA$ in $\P(K^n)$ we can get a central generic arrangement $\cB$ of hyperplanes by interpreting the elements of $\cA$ as (non-zero) linear functionals $\cF$ in $K^{n\ast}$ (which can be chosen up to scalar factor). Then $\cB\defeq\set{\ker f}[f\in \cF]$ is the associated central generic arrangement.
 Finally, we can get an (affine) generic arrangement from a non-empty central generic one by a deconing construction. If $P_{\cA}(X_0,\ldots,X_{n-1})=\prod{\cF}\in\field{q}[X_0,\ldots,X_{n-1}]$ is the defining polynomial of $\cA$ with respect to the basis $x_0,\ldots,x_{n-1}$ (i.e. $P_\cA(\dual x_0,\ldots,\dual x_{n-1})=\prod_{H\in\cA}{l_H}$ where $\ker l_H =H$) and $\ker \dual x_0\in\cA$ then the affine generic arrangement $\cA^{\aff}$ arising from that by deconing $\mathcal{A}$ has defining polynomial $P_{\cA^{\aff}}(X_1,\ldots,X_{n-1})=P_{\cA}(1,X_1,\ldots,X_{n-1})$ with respect to the basis $x_1,\ldots,x_{n-1}$ of $\pi_{(1,\ldots,n-1)}\field{q}^n$ (that is the intersection of the hyperplanes in $\mathcal{A}$ with the one given by $x_0=1$).
 
 \begin{conjecture}[main conjecture on MDS codes, projective arcs, generic arrangements in $\field{q}^n$]

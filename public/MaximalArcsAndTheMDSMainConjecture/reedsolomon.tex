@@ -1,5 +1,4 @@
-
-\section{Extended \person{Reed-Solomon}-Codes and normal rational curves}
+\section{Extended \person{Reed-Solomon}-Codes and normal rational curves}\label{sec-reedsolomon}
 
 In this section we discuss the most popular (probably) maximal examples of the MDS main conjecture in the case where $\cA\setleq \P(K^n)$ for $n\geq 3$ and $K$ a field with $n\leq\card K$.
 
@@ -37,6 +36,7 @@ A natural question is weather a normal rational curve is a complete arc.
     l=\sum_{j=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha')\right)x_i^{\ast}}
     $$
     since its coefficients in $\dual e_i$ can be interpreted as the corresponding coefficients of a homogeneous polynomial in two variables of degree $n-1$. But this polynomial must have as zeros all elements of $A$ (as the assumption on the form $l$ delivers) which are $n-2$. Hence, there is another zero $\alpha'=\gen{(\alpha'_1,\alpha'_2)}\in\proj{K^2}$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_1,\alpha'_2)}\in H\setmeet\cA=\proj f(A)$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).
+    
 \end{proof}
 
 In the sense of the proof of this lemma, we make the following definition.
@@ -66,7 +66,7 @@ Henceforth, we assume that $\cA$ is an incomplete normal rational curve.
 $$
 But the intersection of the kernels of the $l_A$ contains the extending point $\hat{a}\neq 0$. Hence, 
 $$
-\dim\gen[\lin]{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}=n-\dim\bigmeet_{\substack{A\setleq\proj{K^2}\\ \card A=n-2}}{\ker{l_A}}\leq n-1.
+\dim\gen[\lin]{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}=n-\dim\Meet_{\substack{A\setleq\proj{K^2}\\ \card A=n-2}}{\ker{l_A}}\leq n-1.
 $$
 On the other hand, we can choose an $(n-1)$-set $B\setleq \proj{K^2}$ and directly verify that the system of polynomials $p_A$ where $A\setleq B$, $\card{A'}=n-2$ is linearly independent by the interpolation formula
 $$
@@ -207,11 +207,11 @@ And if the last column is in $\ker{f}$ then the corresponding coefficient $f_n$ 
 We call this representation of a classical arc introduced in this section the \keyword{\person{Vandermonde}-representation}.
 
 \paragraph{Extended \person{Cauchy}-matrices.}% good
-
+%
 In the last paragraph we saw that the arcs corresponding to extended \person{Reed-Solomon}-codes can be represented as a \keyword{normal rational curve} admitting a representation
 $$ C = \set{\begin{pmatrix} 1 \\
             \vdots            \\
-            z^{n-1}\end{pmatrix}\in\field{q}^n:z\in \field{q}}\setjoin
+            z^{n-1}\end{pmatrix}\in\field{q}^n}[z\in \field{q}]\setjoin
     \set{\begin{pmatrix} 0    \\
             \vdots            \\
             1\end{pmatrix}}\textrm{.} $$

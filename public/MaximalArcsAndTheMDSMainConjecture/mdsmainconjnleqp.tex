@@ -1,3 +1,5 @@
+\section{The proof of the MDS main conjecture for $n\leq 2p-2$}\label{sec-msd-nleq2p-2}
+
 In the following we aim to present the results of the two papers~\cite{ball2011mdsmainconjI} and~\cite{ball2012mdsmainconjII} simplifying some aspects of the proofs.
 
 \subsection{\person{Segre}'s lemma of tangents}%
@@ -235,9 +237,7 @@ The second idea is to interpolate the determinants themselves
 Now, the idea is to play with the interpolation identities to reach a
 contradiction in the case where $t\leq n-3$ (i.e. $\card{\cA}\geq q+2$).
 
-\paragraph{First attempt.}
-
-The proof of the main conjecture for MDS codes of \person{Ball} and \person{de Beule} for the case where
+\paragraph{First attempt.} The proof of the main conjecture for MDS codes of \person{Ball} and \person{de Beule} for the case where
 $n\leq p=\rchar[\field{q}]$ that any arc $\cA$ in $\field{q}^n$ satisfies $\abs{\cA}\leq q+1$ and is equivalent to a normal rational
 curve, mainly bases on the following key result which can be derived elementarily from the interpolation of tangent polynomials.
 
@@ -362,7 +362,7 @@ curves.
     The argument can also be used to prove that the cardinality of an arc in $\P(\field{q}^n)$ ($n\leq p$) can at most become $q+1$ (similarly to \autoref{mds-bound-n-leq-p}).
 \end{remark}
 
-\paragraph{Second attempt.} In this paragraph we try to prove the same result for $n\leq 2p-2$ and will bring in the interpolation of determinants.
+\paragraph{Second attempt.} In this paragraph we prove the same result for $n\leq 2p-2$ and will bring in the interpolation of determinants. A classification of $(q+1)$-arcs is not given.
 
 \begin{lemma}[\person{Ball}'s \& \person{de Beule}'s $ABCDE$ lemma]
     Let $\cA$ be an arc in $\field{q}^n$ ($p=\rchar{\field{q}}$) with $n>p$ and $0< r\leq p-1$ and $0\leq m\leq \min\set{n-1-r,t+2}$. Moreover, let $A$, $B$, $C$, $D$ and $E$ be disjoint subsets of $\cA$ with $\card A=\card B=m$, $\card C=t+2-m$, $\card D=n-1-r-m$, $\card E=r-1$ and let there be given bijections $m\to A$ and $m\to B$ such that $A_\tau, B_\tau$ denote the images of $\tau\setleq m$. Then it holds that

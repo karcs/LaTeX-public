@@ -31,6 +31,5 @@
      "cong"
      "equiv"
      "implies"
-     "Join"
      "PG")))
 

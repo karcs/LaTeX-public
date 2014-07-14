@@ -1,9 +1,46 @@
-\section{Preliminaries}
+\section*{Preliminaries}
 %\addcontentsline{toc}{section}{Preliminaries}
 
-In this thesis we aim to consider several subsets of finite projective spaces admitting certain `independence relations'.
+The topic of this thesis first came to my mind when I set up my three hard drives to work together as a RAID\footnote{redundant array of independent disks}. Although the linear code behind this so-called RAID5 level is of extreme simplicity, the principle itself (i.e.~the notion of optimal redundancy\footnote{beeing more precise we would have to say `optimal redundancy with respect to capacity}) turns out to admit highly interesting mathematical aspects.
 
-\subsection{Notation conventions}
+The notion behind optimal redundancy in a RAID consisting of $n$ hard drives but storing only the information of $k$ hard drives ($k\leq n$) is as follows. Whenever $l\leq n-k$ hard drives stop to work the computer shall still be able to recover the information from the remaining $n-l$ ones. Actually, this means that any $k$ hard drives carry the full information and thus it is somehow `ideally distributed' among the hard drives.
+
+Certainly, there are mainy mathematical treatments of the above problem --- but the simplest among these seems to be the concept of MDS codes. Here, we associate to any of the $n$ hard drives a row in the generator matrix of and $(n,k)$ MDS code (i.e.~the \person{Hamming} weight of the code is $n-k-1$). The statement that the whole information can be recovered from any $k$ hard drives then translates to the property of the generator matrix that any $k\settimes k$-submatrix of it is regular.
+
+Of course, one could consider the above over an arbitrary ring, but for the sake of simplicity of calculation it is self-evident to restrict oneself to a field. Moreover, computers especially like finite fields when processing `digital' data and certainly fields of charactaristic two are most natural to use.
+
+Now, having agreed on the finite field $\field q$ of $q$ elements, we can ask which ratios $k/n$ we can attain. 
+Regrettably, as it often seems to be the case --- small charactaristic does complicate this problem a lot.
+
+The conjecture arrising from this last question is the so-called `MDS main conjecture' which was first stated in 1955 by \person{Beniamino Segre} and remains open until today.
+
+However, an astonishing new result contributing to the answer of this problem was published by \person{Simeon Ball} and \person{Jean De Beule} in 2010 which gives an affirmative answer to this question in the case of prime fields. In particular, the methods used in this paper~\cite{ball2011mdsmainconjI} (and in the subsequent paper~\cite{ball2012mdsmainconjII}) are of completely elementary nature. We will simplify some `technical aspects' of the proofs given in these two papers and present them appropriately to the reader \see{sec-msd-nleq2p-2}.
+
+This section can also be seen as the core part of the thesis.
+
+The structure of the thesis is as follows:
+% TODO: section label adjust
+In \autoref{sec-combcons} we start with some elementary combinatorial considerations of some sets in finite projective geometry which are somehow related to the concept of projective arcs and are natural to consider in this context (these are $(k,m)$-arcs and hyperovals).
+In \autoref{sec-mds-connections} we introduce the concept of a \emph{projective arc} and draw connections to some `equivalent concepts'. At the end of this section we formulate the MDS main conjecture for these different concepts.
+The following section presents some results which hold in a somehow more general context related to the combinatorial aspects of so-called \emph{generic} and \emph{weakly generic} hyperplane arrangements which are closely related to MDS codes as we will have seen in the previous section. The results presented here are some simple generalizations of some results of \person{Zaslavsky} in~\cite{zas}.
+
+In \autoref{sec-reedsolomon} we present the most common class of $(q+1)$-arcs and their coding theoretic version.
+Especially, we construct the most relevant representations of these (i.e.~generator matrices).
+
+In this thesis we aim to consider several subsets of finite projective spaces admitting certain `independence relations'. Moreover, we investigate whether these are complete in some cases.
+
+The subsequent section forms --- as we already mentioned --- the core part of the thesis presenting the proof (and classification of $(q+1)$-arcs) of the MDS main conjecture for $n\leq p$ and $n\leq 2p-2$ (without classification) given by \person{Simeon Ball} and \person{Jean De Beule} which is in my oppinion of unobtrusive elegance.
+
+Lastly, we draw some connections to the \person{Kneser}-graphs of type $\KG(2n-3,n-2)$ which offer the possibility of an alternative proof of the conjecture for the case ($n\leq p$) by looking carefully at the interpolation system of tangent polynomials. Although, this connection is not mentioned anywhere I found it suitable to mention at this point, but of course we cannot classify the $(q+1)$-arcs using this argument.
+
+There are many aspects related to the topic which are not discussed here --- especially when posing the question of maximal arcs in a more topological context (i.e.~in characteristic zero) and also some results I rediscovered which admit a closer relation to the contents of this thesis. However, it is clear that these would certainly have broken the bounds and self-containedness of this thesis.
+
+\begin{flushright}
+    Jakob Schneider,\\
+    14.07.2014
+\end{flushright}
+
+\subsection*{Notation conventions}
 %\addcontentsline{toc}{subsection}{Notation conventions}
 
 We want to introduce several notation conventions used throughout the thesis.

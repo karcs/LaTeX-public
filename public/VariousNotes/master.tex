@@ -30,16 +30,16 @@
 \def\com#1{\@ifnextchar[{\a#1}{\b#1}}
 \def\a#1[#2]{Hallo}
 \def\b#1{Tschüss #1}
-\def\set#1{\@ifnextchar[ {\@setwithclause#1}{\@setwithclause#1[\empty]}}
-\def\@setwithclause#1[#2]{\ifx#2\empty\left\{#1\right\}\else\left\{#1:#2\right\}\fi}
-\def\@setwithoutclause#1{\left\{#1\right\}}
-\def\abc{abc}
-\makeatother
 %
 $$
 \set{sdfsdf}
 $$
 \section{Filtered spaces}
+%%
+$$
+\Mor[a]{\arg_1}{\arg_2}
+\End[A]A
+$$
 
 \begin{definition}
     A filtered space $X$ is a structure with operators $N$ such that each $x\in X$ gets assigned to a filter $\rest{N}_x X$ which is a subset of $\Sub X$, where any filter element contains $x$.
@@ -601,7 +601,7 @@ False:
     \begin{implications}
             \item[$\ref{sact-prim}\equival\ref{nor-act-tr}$:]
         Let $N\conleq G$ and let $G$ act on $\Omega$ primitively via $\phi:G\to\Aut(\Omega)$. Then $G$ acts on $\Omega/N$ via $G\to G/N\to \Aut(\Omega/N)$. Thus it follows that $\Omega/N=\Omega$ or $\Omega/N=\set{\set{\omega}}[\omega\in \Omega]$ as $G$ acts primitively on $\Omega$. In the first case we have that $N$ acts transitively on $\Omega$ and in the second case we have that $N=1$ since for all $n\in N$ it then holds that $\alpha(n)=\id_{\Omega}$ which implies by primitivity of the action of $G$ (i.e. injectivity of $\alpha$) that $N=1$.
-        Conversely, if $\Omega/\sim\subseteq \powerset{\Omega}$ is a system of imprimitivity, then we have $G\to \Aut(\Omega)\to\Aut(\Omega/\sim)$ where the last arrow is induced by the natural projection map $\pi:\Omega\to\Omega/\sim$ with $\omega\mapsto \omega/\sim$. But as $\sim$ is not a trivial congruence we have that $\Aut(\pi)$ has as a kernel a normal subgroup $N\conleq \Aut(\Omega)$ with $1< N< \Aut(\Omega)$. Thus $1<N\meet \im(\alpha)\conleq \im(\alpha)$.
+        Conversely, if $\Omega/\sim\subseteq \Sub{\Omega}$ is a system of imprimitivity, then we have $G\to \Aut(\Omega)\to\Aut(\Omega/\sim)$ where the last arrow is induced by the natural projection map $\pi:\Omega\to\Omega/\sim$ with $\omega\mapsto \omega/\sim$. But as $\sim$ is not a trivial congruence we have that $\Aut(\pi)$ has as a kernel a normal subgroup $N\conleq \Aut(\Omega)$ with $1< N< \Aut(\Omega)$. Thus $1<N\meet \im(\alpha)\conleq \im(\alpha)$.
         To be continued.
 
         

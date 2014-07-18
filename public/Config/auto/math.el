@@ -2,6 +2,9 @@
  (lambda ()
     (TeX-add-symbols
      "brackets"
+     "Ob"
+     "Mor"
+     "End"
      "set"
      "seq"
      "struct"

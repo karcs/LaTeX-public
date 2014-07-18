@@ -29,8 +29,6 @@
      "com"
      "a"
      "b"
-     "set"
-     "abc"
      "iso"
      "arg")
     (TeX-run-style-hooks

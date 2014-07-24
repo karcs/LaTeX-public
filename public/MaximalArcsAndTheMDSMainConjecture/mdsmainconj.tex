@@ -8,7 +8,7 @@ We now introduce another concept which coincides with the one of a $(k,m)$-arc (
 
 \begin{definition}[projective arc]
     A set $\cA\setleq \P(K^n)$ is called a \keyword{projective arc} if no $n$ points of $\cA$ lie in a common hyperplane (if we aim to emphasize the number of points in $\cA$ we call it a $k$-arc when $\card\cA=k$).
-    A set $\cA'\setleq K^n$ such that $\cA\defeq\set{\gen a}[a\in\cA']$ is a projective arc and $\gen a\neq\gen b$ for $a,b\in\cA'$ is called an \keyword{representation} of the arc $\cA$.
+    A set $\cA'\setleq K^n$ such that $\cA\defeq\set{\gen a}[a\in\cA']$ is a projective arc and $\gen a\neq\gen b$ for $a,b\in\cA'$ is called a \keyword{representation} of the arc $\cA$.
     Analogously, a set $\cA\setleq K^n$ is called an \keyword{affine arc} if any $n+1$ points are affinely independent.
 \end{definition}
 
@@ -48,7 +48,7 @@ As $\cB$ is linearly independent, we have that
 $$
 \left(\sum_{a\in\cA}{\lambda_a\pi_a}\right)b=0
 $$
-for all $b\in\cB$ --- that is $\ker\pi\setleq \ker{\sum_{a\in\cA}{\lambda_a\pi_a}}$. But any element of $c\in\ker \pi$ must either be zero or at least $n+1$ summands $\pi_a c$ of it do not vanish ($a\in \cA'$). As $\card\cA>n$ we have $\ker\pi\neq 0$ and it follows that $\lambda_a\neq 0$ for at least $\card\cA-n+1$ elements $a\in\cA'$. Assume the contrary, that $\lambda_a\neq 0$ for $a\in A\setleq \cA'$ with $\card A\leq \card\cA-n$. Then choose an $(n+1)$-subset $B$ of $\cA'$ such that $B\setmeet A=\set{c}$ and a non-trivial linear combination $\sum_{b\in B}{\mu_b b}=0$ with $\lambda_b\neq 0$ for $b\in B$.
+for all $b\in\cB$ --- that is $\ker\pi\setleq \ker{\sum_{a\in\cA}{\lambda_a\pi_a}}$. But any element of $c\in\ker \pi$ must either be zero or at least $n+1$ summands $\pi_a c$ of it do not vanish ($a\in \cA'$). As $\card\cA>n$ we have $\ker\pi\neq 0$ and it follows that $\lambda_a\neq 0$ for at least $\card\cA-n+1$ elements $a\in\cA'$. Assume the contrary, that $\lambda_a\neq 0$ for $a\in A\setleq \cA'$ with $\card A\leq \card\cA-n$. Then choose an $(n+1)$-subset $B$ of $\cA'$ such that $B\setmeet A=\set{c}$ and a non-trivial linear combination $\sum_{b\in B}{\mu_b b}=0$ with $\mu_b\neq 0$ for $b\in B$.
 This implies that $\dirsum_{b\in B}{\mu_b b}\in\ker \pi$ and
 $$
 \left(\sum_{a\in A}{\lambda_a\pi_a}\right)\left(\dirsum_{b\in B}{\mu_b b}\right)=\lambda_c\mu_c\neq 0, 
@@ -59,22 +59,22 @@ a contradiction. This shows that any $\card\cA-n$ elements of $\cA''$ are linear
 This duality principle is completely analogous to the duality principle for MDS codes (see \autoref{lincode-dual}).
 
 A simple fact which is implied by the above is the following
-%%
+%
 \begin{corollary}\label{mds-ngeqq}
-    Let $\cA$ be a projective arc in $\P(\field{q}^n)$ where $q\leq n$. Then $\card\cA\leq n+1$ and all maximal examples with respect to cardinality are $\PGL$-equivalent to $\set{\gen{e_1},\ldots,\gen{e_n},\gen{e_1+\cdots+e_n}}$.
+    Let $\cA$ be a projective arc in $\P(\field{q}^n)$ where $q\leq n$. Then $\card\cA\leq n+1$ and all maximal examples with respect to cardinality are $\PGL$-equivalent to $\set{\gen{e_0},\ldots,\gen{e_{n-1}},\gen{e_0+\cdots+e_{n-1}}}$.
 \end{corollary}
 
 \begin{proof}
     Assume that $\cA$ is a projective arc in $\P(\field{q}^n)$ of cardinality $n+2$. Then $\dual\cA$ has the same cardinality in is a projective arc in $\P(\field{q}^2)$ --- thus $\card{\dual\cA}\leq q+1$ (as there are only $q+1$ one-dimensional linear subspaces of $\field{q}^2$). This implies $\card\cA=n+2\leq q+1$ so $n<q$.
     The second claim follows from the fact that $\PGL(K^n)$ acts sharply transitive on the $(n+1)$-tuples in general linear position.
-    We breefly demonstrate this. Let ${(a_i)}_{i=0}^n$ and ${(b_i)}_{i=0}^n$ be in general linear position. We may assume then that $a_n=\sum_{i=0}^{n-1}{\lambda_i a_i}$ and $b_n=\sum_{i=1}^{n-1}{\mu_i b_i}$ ($\lambda_i,\nu_i\in \units K$, $i=1,\ldots,n-1$).
-    A preimage $A\in\GL(K^n)$ of an element $B\in\PGL(K^n)$ which sends $\gen{a_i}$ to $\gen{b_i}$ must map $a_i$ to $\nu_i b_i$ ($\nu_i\in \units K$, $i=0,\ldots,n$). By linearity of $A$ it follows from
+    We briefly demonstrate this. Let $\seq{a_i}_{i=0}^n$ and $\seq{b_i}_{i=0}^n$ be in general linear position. We may assume then that $a_0=\sum_{i=1}^n{\lambda_i a_i}$ and $b_0=\sum_{i=1}^n{\mu_i b_i}$ ($\lambda_i,\nu_i\in \units K$, $i=1,\ldots,n$).
+    A preimage $A\in\GL(K^n)$ of an element $B\in\PGL(K^n)$ which sends $\gen{a_i}$ to $\gen{b_i}$ must map $a_i$ to $\nu_i b_i$ ($\nu_i\in \units K$, $i=\range 0 n$). By linearity of $A$ it follows from
     $$
-    Aa_n=A\left(\sum_{i=0}^{n-1}{\lambda_i a_i}\right)=\nu_n b_n=\nu_n\left(\sum_{i=0}^{n-1}{\mu_i b_i}\right)=\sum_{i=0}^{n-1}{\lambda_i\nu_i b_i}
+    Aa_0=A\left(\sum_{i=1}^n{\lambda_i a_i}\right)=\nu_0 b_0=\nu_0\left(\sum_{i=1}^n{\mu_i b_i}\right)=\sum_{i=1}^n{\lambda_i\nu_i b_i}
     $$
-    that $\nu_i=\nu_n\frac{\mu_i}{\lambda_i}$ for $i=0,\ldots,n-1$. Thus $A$ is defined up to scalar factor $\nu_n\in \units K$ so $B$ exists uniquely.
+    that $\nu_i=\nu_0\frac{\mu_i}{\lambda_i}$ for $i=1,\ldots,n$. Thus $A$ is defined up to scalar factor $\nu_0\in \units K$ so $B$ exists uniquely.
 \end{proof}
-
+%%
 \subsection{Generic hyperplane arrangements}
 
 We start by introducing a new concept.
@@ -85,7 +85,7 @@ We start by introducing a new concept.
 \end{definition}
 
 \begin{remark}
-    It is then clear that the concept of a central generic arrangement is the same as the concept of an arc in $\proj(\dual V)$.
+    It is then clear that the concept of a central generic arrangement is the same as the concept of an arc in $\proj(\dual V)$ via the map associating a linear form with its kernel.
 \end{remark}
 
 \subsection{Linear codes and the \person{Singleton} bound}
@@ -97,7 +97,7 @@ Recall the following definitions
 \end{definition}
 
 \begin{definition}
-    Let $\cC\leq K^n$ be a linear code. A \keyword{generator matrix} $G$ of $\cC$ is a matrix having as its columns the coordinate vectors of a basis of $\cC$ (with respect to the canonical basis of $K^n$). A \keyword{check matrix} $C$ of $\cC$ is a fully ranked matrix having as its kernel the coordinate vectors of $\cC$.
+    Let $\cC\leq K^n$ be a linear code. A \keyword{generator matrix} $G$ of $\cC$ is a matrix having as its rows the coordinate vectors of a basis of $\cC$ (with respect to the canonical basis of $K^n$). A \keyword{check matrix} $C$ of $\cC$ is a fully ranked matrix having as its kernel the coordinate vectors of $\cC$.
 \end{definition}
 
 \begin{definition}[minimum weight and \person{Hamming} distance]
@@ -121,7 +121,7 @@ Recall the following definitions
 
 We are interested in special linear codes called MDS codes. To see from where they arise, consider the following lemma.
 
-\begin{lemma}[Singleton bound]
+\begin{lemma}[\person{Singleton} bound]
     Let $\cS\setleq \field{q}^n$ such that any two distinct points of $\cS$ have at least hamming distance $d$. Then
     $$
     \card{\cS}\leq q^{n-d+1}.
@@ -139,17 +139,16 @@ We are interested in special linear codes called MDS codes. To see from where th
 This motivates the definition of MDS codes
 
 \begin{definition}[linear MDS code]
-    A linear $(n,k,d)$-code $\mathcal{C}$ is called \keyword[maximum distance separable code]{maximum distance separable} or \keyword{MDS code} if the singleton bound is fulfilled with equality, i.e. $k=n-d+1$. 
+    A linear $(n,k,d)$-code $\mathcal{C}$ is called \keyword[maximum distance separable code]{maximum distance separable} or $(n,k)$-\keyword{MDS code} if the singleton bound is fulfilled with equality, i.e. $k=n-d+1$. 
 \end{definition}
 
 A very important concept for linear codes and especially for MDS codes is \keyword{duality}.
 
 \begin{definition}[dual code]\label{lincode-dual}
-    %% K^{n\ast} typo
-    Let $\cC\leq K^n$ be a linear code of dimension $k$. The \keyword{dual code} $\dual\cC$ of $\cC$ is defined as $\dual\cC\defeq\set{c^{\ast}\in K^{n\ast}}[c^{\ast}c=0]$. Here $K^{n\ast}$ is equipped with the dual basis of $x_1,\ldots,x_n$ (where ${(x_i)}_{i=1}^n$ is the standard basis of $K^n$).
+    Let $\cC\leq K^n$ be a linear code of dimension $k$. The \keyword{dual code} $\dual\cC$ of $\cC$ is defined as $\dual\cC\defeq\set{c^{\ast}\in \dual{K^n}}[c^{\ast}c=0]$. Here $\dual{K^n}$ is equipped with the dual basis of $e_0,\ldots,e_{n-1}$ (where $\seq{e_i}_{i=0}^{n-1}$ is the standard basis of $K^n$).
 \end{definition}
 
-It is now easy to characterize linear MDS codes via their checkmatrix
+It is now easy to characterize linear MDS codes via their associated matrices.
 
 \begin{lemma}[characterization of MDS codes]\label{mdschar}
     Let $\cC$ be an $(n,k,d)$-linear code. Then the following are equivalent
@@ -164,7 +163,7 @@ It is now easy to characterize linear MDS codes via their checkmatrix
 \begin{proof}
     \begin{implications}
             \item[$\autoref{mds}\equival\autoref{mds-chkmtrx}$:]
-        The property of $\cC$ that $d(\cC)=d=n-k+1$ is equivalent translates to the property of a check matrix $C$ of $\cC$ that any $d-1=n-k$ of its columns are linearly independent (as $c\in\cC\equival Cc=0$).
+        The property of $\cC$ that $d(\cC)=d=n-k+1$ translates to the property of a check matrix $C$ of $\cC$ that any $d-1=n-k$ of its columns are linearly independent (as $c\in\cC\equival Cc=0$).
             \item[$\autoref{mds}\equival\autoref{mds-gmtrx}$:]
         The property of $\cC$ that $d(\cC)=n-k+1$ is equivalent to the property of a generatormatrix $G$ of $\cC$ that the coordinate representation of any non-trivial linear combination of the rows of $G$ contains at least $d=n-k+1$ non-zero entries --- that is any $k\setprod k$ submatrix of $G$ is regular.
             \item[$\autoref{mds}\equival\autoref{mds-dual}$:]
@@ -188,7 +187,7 @@ There is a very simple connection between this type of matrix and another type o
 We briefly demonstrate the connection between these two types of matrices.
 
 \begin{lemma}[connection between principally and totally regular matrices]
-    Let $C\defeq(A|B)\in R^{m\setprod n}$ be some matrix over a commutative ring $R$ and $m\leq n$ where $A\in R^{m\setprod m}$.
+    Let $C\defeq(A|B)\in R^{m\setprod n}$ be some matrix over a ring $R$ and $m\leq n$ where $A\in R^{m\setprod m}$.
     Then the following two are equivalent.
     \begin{statements}
             \item $C$ is principally regular.
@@ -197,7 +196,7 @@ We briefly demonstrate the connection between these two types of matrices.
 \end{lemma}
 
 \begin{proof}
-    When $C$ is principally regular then $A$ is invertible so that $A^{-1}C$ is also principally regular. Now let $k\leq \min\set{m,n-m}$. Choosing $k$-sets $I\setleq m$ and $J\setleq n\setminus m$ we can check the matrix $\rest{A^{-1}C}_{m\setprod (m\setminus I\setjoin J)}$ for regularity which is easily seen using \person{Laplace}'s formula for determinants to be equivalent to the fact that $\rest{A^{-1}B}_{I\setprod J}$ is regular.
+    When $C$ is principally regular then $A$ is invertible so that $A^{-1}C$ is also principally regular. Now let $k\leq \min\set{m,n-m}$. Choosing $k$-sets $I\setleq m$ and $J\setleq n\setminus m$ we can check the matrix $\rest{A^{-1}C}_{m\setprod (m\setminus I\setjoin J)}$ for regularity which is easily seen to be equivalent to the fact that $\rest{A^{-1}B}_{I\setprod J}$ is regular.
 \end{proof}
 
 \subsection{Connections}
@@ -206,27 +205,27 @@ We start by drawing some connections between some objects related to this last q
 It turns out, that there is a (up to projective equivalence) `one-to-one' correspondance between the following concepts.
 
 We already saw how MDS codes and principally or totally regular matrices are related.
-To draw the connection to projective arcs we interprete the one-dimensional subspaces of the columns of a check matrix $C$ of an MDS code $\cC\leq K^n$ ($\dim\cC=k$) as elements of the projective space $\proj(\col C)\iso \P(K^{d-1})$ (as $d=n-k+1$). This gives us an arc of size $n$ (we can also construct $H(\mathcal{C})$ from that arc).
-Starting from a $k$-arc $\cA$ in $\P(K^n)$ we can get a central generic arrangement $\cB$ of hyperplanes by interpreting the elements of $\cA$ as (non-zero) linear functionals $\cF$ in $K^{n\ast}$ (which can be chosen up to scalar factor). Then $\cB\defeq\set{\ker f}[f\in \cF]$ is the associated central generic arrangement.
-Finally, we can get an (affine) generic arrangement from a non-empty central generic one by a deconing construction. If $P_{\cA}(X_0,\ldots,X_{n-1})=\prod{\cF}\in\field{q}[X_0,\ldots,X_{n-1}]$ is the defining polynomial of $\cA$ with respect to the basis $x_0,\ldots,x_{n-1}$ (i.e. $P_\cA(\dual x_0,\ldots,\dual x_{n-1})=\prod_{H\in\cA}{l_H}$ where $\ker l_H =H$) and $\ker \dual x_0\in\cA$ then the affine generic arrangement $\cA^{\aff}$ arising from that by deconing $\mathcal{A}$ has defining polynomial $P_{\cA^{\aff}}(X_1,\ldots,X_{n-1})=P_{\cA}(1,X_1,\ldots,X_{n-1})$ with respect to the basis $x_1,\ldots,x_{n-1}$ of $\pi_{(1,\ldots,n-1)}\field{q}^n$ (that is the intersection of the hyperplanes in $\mathcal{A}$ with the one given by $x_0=1$).
+To draw the connection to projective arcs we interprete the one-dimensional subspaces of the columns of a check matrix $C$ of an $(n,k)$-MDS code over $K$ as elements of the projective space $\P(\col C)\iso \P(K^{d-1})$ (as $d=n-k+1$). This gives us an arc of size $n$.
+Starting from a $k$-arc $\cA$ in $\P(K^n)$ we can get a central generic arrangement $\cB$ of hyperplanes by interpreting the elements of $\cA$ as (non-zero) linear functionals $\cF$ in $\dual{K^n}$ (which can be chosen up to scalar factor). Then $\cB\defeq\set{\ker f}[f\in \cF]$ is the associated central generic arrangement.
+Finally, we can get an (affine) generic arrangement from a non-empty central generic one by a deconing construction. If $P_{\cA}(\range{X_0}{X_{n-1}})=\prod{\cF}\in\field{q}[X_0,\ldots,X_{n-1}]$ is the defining polynomial of $\cA$ with respect to the basis $\range{x_0}{x_{n-1}}$ (i.e. $P_\cA(\range{\dual x_0}{\dual x_{n-1}})=\prod_{H\in\cA}{l_H}$ where $\ker l_H =H$) and $\ker \dual x_0\in\cA$ then the affine generic arrangement $\cA^{\aff}$ arising from that by deconing $\mathcal{A}$ has defining polynomial $P_{\cA^{\aff}}(X_1,\ldots,X_{n-1})=P_{\cA}(1,X_1,\ldots,X_{n-1})$ with respect to the basis $x_1,\ldots,x_{n-1}$ of $\pi_{(1,\ldots,n-1)}\field{q}^n$ (that is the intersection of the hyperplanes in $\mathcal{A}$ with the one given by $x_0=1$).
 
 \begin{conjecture}[main conjecture on MDS codes, projective arcs, generic arrangements in $\field{q}^n$]
   Let $m(n,q)$ be the minimum of all integers $m$ such that $\card\cA\leq m$ for any arc $\cA$ in a projective space of dimension $n$ and order $q$ then
   $$
     m(n,q)=\begin{cases}
       n+2 :& n \geq q\\
-      q+2 :& n<q \lgand n\in\{2,q-1\} \lgand 2\divides q\\
+      q+2 :& n\in\{2,q-1\} \lgand 4\divides q\\
       q+1 :& \otherwise
     \end{cases}.
     $$
 \end{conjecture}
 
 \begin{remark}%%%
-    We fully proved the conjecture for $n\geq q$ (see \autoref{mds-ngeqq}) characterizing the sets $\cA$ of maximal cardinality. For $n=2$ it is (as we have shown) a consequence of \autoref{kmarc-size} and \autoref{kmarc-dual} und the classification of sets $\cA$ of maximal cardinality in the case of even $q$ or non-Desarguian planes seems to be very difficult. In the case where $q$ is odd and the plane is Desarguian, we will see that these sets $\cA$ are precisely non-singular conics (this will be a consequence of \autoref{mds-class-n-leq-p}).
+    We fully proved the conjecture for $n\geq q$ (see \autoref{mds-ngeqq}) characterizing the sets $\cA$ of maximal cardinality. For $n=2$ it is (as we have shown) a consequence of \autoref{kmarc-size} and \autoref{kmarc-dual} und the classification of sets $\cA$ of maximal cardinality in the case of even $q$ or non-Desarguian planes seems to be very difficult. In the case where $q$ is odd and the plane is Desarguian, we will see that these sets $\cA$ are precisely non-singular conics (this will be a consequence of \autoref{mds-class-n-leq-p}). 
 \end{remark}
 
 \begin{remark}\label{mds-mainconjotherobj}
-    Equivalently, $m(n,q)-1$ is the minimum of integers $m'$ such that for all generic hyperplane arrangements $\cB$ in $\field{q}^n$ it holds that $\card{\cB}\leq m'$ or $m(k-1,q)$ is minimal among all $m''$ such that all linear MDS $(n,k)$-codes $\cC$ over $\field{q}$ satisfy $n\leq m''$.
+    Equivalently, $m(n,q)-1$ is the minimum of integers $m'$ such that for all generic hyperplane arrangements $\cB$ in $\field{q}^n$ it holds that $\card{\cB}\leq m'$ or $m(k-1,q)$ is minimal among all $m''$ such that all linear MDS $(n,k)$-codes $\cC$ over $\field{q}$ satisfy $n\leq m''$. This can easily be seen from the connections we have drawn.
 \end{remark}
 
 %\begin{proof}[\autoref{mds-mainconjotherobj}]% BUG

@@ -5,6 +5,7 @@
      "Ob"
      "Mor"
      "End"
+     "range"
      "set"
      "seq"
      "struct"

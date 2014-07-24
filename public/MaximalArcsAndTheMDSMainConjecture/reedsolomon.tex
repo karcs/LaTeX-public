@@ -7,7 +7,7 @@ In this section we discuss the most popular (probably) maximal examples of the M
 \begin{definition}[normal rational curve]\label{norratcurve}
     A \keyword{normal rational curve} is the image of the projective map $\proj{f}:\proj{K^2}\to\proj{K^n}$ where $f$ is given by
     $$
-    (X_1,X_2) \mapsto (X_1^{n-1},X_1^{n-1}X_2,\ldots,X_1X_2^{n-1},X_2^{n-1})
+    (X_0,X_1) \mapsto (X_0^{n-1},X_0^{n-1}X_1,\ldots,X_0 X_1^{n-1},X_1^{n-1})
     $$
     modulo $\PGammaL$.
 \end{definition}
@@ -15,30 +15,29 @@ In this section we discuss the most popular (probably) maximal examples of the M
 A natural question is weather a normal rational curve is a complete arc.
 
 \begin{definition}[notation for polynomial coefficients]
-    For a polynomial $p\in R[X_1,\ldots,X_m]$ write $[X_1^{e_1}\cdots X_m^{e_m}]p$ for the coefficient which is in front of the monomial $X_1^{e_1}\cdots X_n^{e_n}$ in $p$.
+    For a polynomial $p\in R[X_0,\ldots,X_{m-1}]$ write $[X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}]p$ for the coefficient which is in front of the monomial $X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}$ in $p$.
 \end{definition}
 
 \begin{definition}[projective zeros]
-    Let $p\in K[X_1,X_2]$ be a homogeneous polynomial. We say that $z\in\proj{K^2}$ is a projective zero of $p$ if $z=\gen{(\alpha,\beta)}$ such that $p(\alpha,\beta)=0$. 
+    Let $p\in K[X_0,X_1]$ be a homogeneous polynomial. We say that $z\in\P(K^2)$ is a projective zero of $p$ if $z=\gen{(\alpha,\beta)}$ such that $p(\alpha,\beta)=0$. 
 \end{definition}
 
 \begin{lemma}[description of $(n-2)$-secant hyperplanes of a normal rational curve]\label{norrattandesc}
-    The hyperplanes $\cH$ intersecting a normal rational curve $\cA=\im\proj{f}\setleq \proj{K^n}$ in the representation of \autoref{norratcurve} in exactly the points of an $(n-2)$-set $\proj{f}(A)$ ($A$ is the corresponding $(n-2)$-set of preimages in $\proj K^2$) are given as the kernels of the linear forms 
+    The hyperplanes $\cH$ intersecting a normal rational curve $\cA=\im\proj{f}\setleq \proj{K^n}$ in the representation of \autoref{norratcurve} in exactly the points of an $(n-2)$-set $\proj{f}(A)$ ($A$ is the corresponding $(n-2)$-set of preimages in $\P(K^2)$) are given as the kernels of the linear forms 
     $$
-    l_{A,\alpha}:\doteq\sum_{i=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\det(X,\alpha)\prod_{a\in A}{\det(X,a)}\right)\dual e_i}
+    l_{A,\alpha}:\doteq\sum_{i=0}^{n-1}{[X_0^i X_1^{n-1-i}]\left(\det(X,\alpha)\prod_{a\in A}{\det(X,a)}\right)\dual e_i}
     $$
-    where $\alpha\in A$ and ${(e_i)}_{i=1}^n$ denotes the standard basis of $K^n$ and ${(\dual e_i)}_{i=1}^n$ its dual basis.  
+    where $\alpha\in A$ and $\seq{e_i}_{i=0}^{n-1}$ denotes the standard basis of $K^n$ and $\seq{\dual e_i}_{i=0}^{n-1}$ its dual basis and $X=(X_0,X_1)$.  
 \end{lemma}
 
 \begin{proof}
     It is clear that the $l_{A,\alpha}(f(a_1,a_2))=0$ if and only if $\gen{(a_1,a_2)}\in A$. On the other hand, any linear form $l$ which has as a kernel a hyperplane $H$ with $H\setmeet\cA=A$ must be of the form
     $$
-    l=\sum_{j=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha')\right)x_i^{\ast}}
+    l=\sum_{j=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha')\right)\dual e_i}
     $$
-    since its coefficients in $\dual e_i$ can be interpreted as the corresponding coefficients of a homogeneous polynomial in two variables of degree $n-1$. But this polynomial must have as zeros all elements of $A$ (as the assumption on the form $l$ delivers) which are $n-2$. Hence, there is another zero $\alpha'=\gen{(\alpha'_1,\alpha'_2)}\in\proj{K^2}$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_1,\alpha'_2)}\in H\setmeet\cA=\proj f(A)$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).
-    
+    since its coefficients in $\dual e_i$ can be interpreted as the corresponding coefficients of a homogeneous polynomial in two variables of degree $n-1$. But this polynomial must have as zeros all elements of $A$ (as the assumption on the form $l$ delivers) which are $n-2$. Hence, there is another zero $\alpha'=\gen{(\alpha'_1,\alpha'_2)}\in\P(K^2)$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_1,\alpha'_2)}\in H\setmeet\cA=\proj f(A)$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).    
 \end{proof}
-
+%% here is work TODO
 In the sense of the proof of this lemma, we make the following definition.
 Henceforth, we assume that $\cA$ is an incomplete normal rational curve.
 

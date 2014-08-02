@@ -38,6 +38,7 @@
     \def\@definitionname{Definition}
     \def\@conjecturename{Conjecture}
     \def\@problemname{Problem}
+    \def\@conventionname{Convention}
     
     % smaller environments
     \def\@statementname{Statement}
@@ -76,6 +77,7 @@
     \def\@definitionname{Definition}
     \def\@conjecturename{Vermutung}
     \def\@casename{Fall}
+    \def\@conventionname{Konvention}
     
     % kleinere Matheumgebungen
     \def\@statementname{Aussage}
@@ -399,6 +401,9 @@
 
 %% conclusion environment
 \newmathenvironment{conclusion}{\@conclusionname}[section]
+
+%% convention
+\newmathenvironment{convention}{\@conventionname}[section]
 
 %% proposition environment
 \newmathenvironment{proposition}{\@propositionname}[section]

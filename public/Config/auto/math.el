@@ -1,6 +1,7 @@
 (TeX-add-style-hook "math"
  (lambda ()
     (TeX-add-symbols
+     "RHS"
      "brackets"
      "Ob"
      "Mor"
@@ -20,6 +21,8 @@
      "dual"
      "parsymb"
      "P"
+     "Vec"
+     "Aff"
      "otherwise"
      "bar"
      "arg"
@@ -29,6 +32,7 @@
      "mus"
      "newelement"
      "KG"
+     "cogen"
      "Clo"
      "Loc"
      "oldcong"

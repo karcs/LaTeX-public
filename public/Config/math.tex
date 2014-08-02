@@ -64,6 +64,7 @@
 \newcommand{\uY}{\underline{Y}}
 \newcommand{\uZ}{\underline{Z}}
 
+\def\RHS{right hand side}
 % ===== Set quick commands for math letters ================================================================
 % calagraphic letters (only upper case available; standard)
 \newcommand{\cA}{\mathcal{A}}
@@ -270,8 +271,8 @@
 \def\@range#1[#2]#3{\ifx#2\empty#1,\ldots,#3\else#1,\stackrel{#2}{\ldots},#3\fi}
 
 % set builder notation
-\def\set#1{\@ifnextchar[ {\@set#1}{\@set#1[\empty]}}
-\def\@set#1[#2]{\ifx#2\empty\left\{#1\right\}\else\left\{#1\left|#2\right.\right\}\fi}
+\def\set#1{\@ifnextchar[ {\@set{#1}}{\@set{#1}[\empty]}}
+\def\@set#1[#2]{\ifx#2\empty\left\{#1\right\}\else\left\{#1:#2\right\}\fi}
 
 % sequence or net notation
 \def\seq#1{\@ifnextchar[{\@seq#1}{\@seq#1[\empty]}}
@@ -302,6 +303,7 @@
 \newcommand{\conlt}{\lhd}
 \newcommand{\congt}{\rhd}
 \newcommand{\defeq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu=}}
+\newcommand{\eqdef}{\mathrel{=\mkern-1.2mu\mathrel{\mathop:}}}
 \newcommand{\defdoteq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu\doteq}}
 \newcommand{\defequiv}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu\Leftrightarrow}}
 \newcommand{\eq}{=}
@@ -353,7 +355,8 @@
 % Define modules over a group or ring
 \newcommand{\Mod}[1]{\mathbf{Mod}_{#1}}
 % Define vector space over a field
-\renewcommand{\Vec}[1]{\mathbf{Vec}_{#1}}%
+\def\Vec{\mathbf{Vec}}%
+\def\Aff{\mathbf{Aff}}
 
 % when cases
 \def\otherwise{\textrm{otherwise}}
@@ -372,12 +375,12 @@
 \def\arg{\bullet}
 
 % groups and algebras and categories
-\newcommand{\Con}{\mathop\mathrm{Con}\nolimits}
-\newcommand{\Sub}{\mathop\mathrm{Sub}\nolimits}
-\newcommand{\Aut}{\mathop\mathrm{Aut}\nolimits}
-\newcommand{\Out}{\mathop\mathrm{Out}\nolimits}
-\newcommand{\id}{\mathop\mathrm{id}\nolimits}
-\newcommand{\rk}{\mathop\mathrm{rk}} % rank of a group module/ lattice
+\newcommand{\Con}{\mathop{\mathrm{Con}}\nolimits}
+\newcommand{\Sub}{\mathop{\mathrm{Sub}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Out}{\mathop{\mathrm{Out}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rk}}\nolimits} % rank of a group module/ lattice
 \newcommandx{\con}[1][1=\empty]{\ifx#1\empty{\mathop{\mathrm{con}}}\else{\mathop{\mathrm{con}}\left(#1\right)}\fi}
 \newcommand{\leftsemidirprod}[1][]{\mathbin{\ifx&#1&\ltimes\else{\ltimes_{#1}}\fi}}
 \newcommand{\rightsemidirprod}[1][]{\ifx#1\empty\rtimes\else{\rtimes_{#1}}\fi}
@@ -459,7 +462,7 @@
 \newcommand{\setmeet}{\cap}% intersect to sets
 \newcommand{\Setjoin}{\bigcup}% the union of sets
 \newcommand{\Setmeet}{\bigcap}% intersection of sets
-\newcommand{\card}[1]{\left|#1\right|}
+\newcommand{\card}[1]{\left\vert{#1}\right\vert}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % composition operations of structures %
@@ -538,6 +541,7 @@
 \newcommand{\stab}[1][]{\if&#1{\mathop\mathrm{stab}}&\else{\mathop\mathrm{stab}_{#1}}\fi}					% the stabilizer ... subscripts to be added
 \newcommand{\orb}[1][]{\ifx&#1&\mathrm{orb}\else\mathrm{orb}_{#1}\fi} 					% orbit ... subscrit to be added (group)
 \newcommand{\gen}[2][\empty]{\ifx#1\empty{\left\langle#2\right\rangle}\else{\left\langle#2\right\rangle_{#1}}\fi}					% generate ... kind of hull operator ---- to be thought of !!!!!!!
+\def\cogen#1{\left\rangle#1\right\langle}
 
 \def\Clo{\mathrm{Clo}}
 \def\Loc{\mathrm{Loc}}

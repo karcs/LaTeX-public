@@ -3,6 +3,7 @@
     (LaTeX-add-labels
      "sec-reedsolomon"
      "norratcurve"
+     "norratcurve-arc"
      "norrattandesc"
      "char-incomp-nor-rat-curve"
      "norrat-incomp"

@@ -2,6 +2,7 @@
  (lambda ()
     (LaTeX-add-labels
      "sec-msd-nleq2p-2"
+     "segre-tangent-lemma-orig"
      "mds-segre-simplified"
      "tang-pol-eval"
      "mds-tan-poly-interpol-det"

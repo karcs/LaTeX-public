@@ -22,5 +22,6 @@
      "generichyperplanearr"
      "reedsolomon"
      "mdsmainconjnleqp"
-     "mdsmainconjknesgraph")))
+     "mdsmainconjknesgraph"
+     "summary")))
 

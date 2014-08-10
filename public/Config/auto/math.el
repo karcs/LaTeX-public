@@ -36,6 +36,7 @@
      "Clo"
      "Loc"
      "oldcong"
+     "oldequiv"
      "cong"
      "equiv"
      "implies"

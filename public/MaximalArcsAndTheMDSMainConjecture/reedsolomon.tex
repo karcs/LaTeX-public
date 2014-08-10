@@ -1,6 +1,10 @@
-\section{Extended \person{Reed-Solomon}-Codes and normal rational curves}\label{sec-reedsolomon}
+\section{Extended \person{Reed-Solomon}-Codes and normal rational curves}%
+\makeatletter%
+\def\@currentlabel{Section \thesection}%
+\makeatother% TODO better section command
+\label{sec-reedsolomon}
 
-In this section we discuss the most popular (probably) maximal examples of the MDS main conjecture in the case where $\cA\setleq \P K^n$ for $n\geq 3$ and $K$ a field with $n\leq\card K$.
+In this section we discuss the most popular (probably) maximal examples of the MDS main conjecture in the case where $\cA\setleq \P K^n$ is an arc for $n\geq 3$ and $K$ a field with $n\leq\card K$.
 
 \subsection{Normal rational curves}
 
@@ -16,8 +20,8 @@ In this section we discuss the most popular (probably) maximal examples of the M
 For the rest of this section the symbol $f$ denotes the above mapping.    
 \end{convention}
 
-A natural question is weather a normal rational curve is a complete arc.
-An obvious fact is that it is in fact a projective arc.
+A natural question is whether a normal rational curve is a complete arc.
+An obvious fact is that it is indeed a projective arc.
 
 \begin{definition}[projective zeros]
     Let $p\in K[X_0,X_1]$ be a homogeneous polynomial. We say that $z\in\P K^2$ is a projective zero of $p$ if $z=\gen{(z_0,z_1)}$ such that $p(z_0,z_1)=0$. 
@@ -30,13 +34,13 @@ An obvious fact is that it is in fact a projective arc.
 \begin{proof}
     Let $l=\sum_{i=0}^{n-1}{\lambda_i \dual e_i}$ be an arbitrary linear form. Then the equation
     $$
-    lf(X_0,X_1)=\sum_{i=0}^{n-1}{\lambda_i X_0^{n-1}X_1^{n-1-i}}
+    lf(X_0,X_1)=\sum_{i=0}^{n-1}{\lambda_i X_0^{i}X_1^{n-1-i}}
     $$
-    is a homogenous polynomial of degree $n-1$ in two variables and thus has at most $n-1$ projective zeros. Thus $\ker l\setmeet \im\P f$ consists of at most $n-1$ points.
+    is a homogeneous polynomial of degree $n-1$ in two variables and thus has at most $n-1$ projective zeros. Thus $\ker l\setmeet \im\P f$ consists of at most $n-1$ points.
 \end{proof}
 
 \begin{notation}[polynomial coefficients]
-    For a polynomial $p\in R[X_0,\ldots,X_{m-1}]$ write $[X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}]p$ for the coefficient which is in front of the monomial $X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}$ in $p$.
+    For a polynomial $p\in R[X_0,\ldots,X_{m-1}]$ we write $[X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}]p$ for the coefficient which is in front of the monomial $X_0^{e_0}\cdots X_{m-1}^{e_{m-1}}$ in $p$.
 \end{notation}
 
 \begin{lemma}[description of $(n-2)$-secant hyperplanes of a normal rational curve]\label{norrattandesc}
@@ -52,15 +56,15 @@ An obvious fact is that it is in fact a projective arc.
     $$
     l=\sum_{j=0}^{n-1}{[X_0^i X_1^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha')\right)\dual e_i}
     $$
-    since its coefficients in $\dual e_i$ can be interpreted as the corresponding coefficients of a homogeneous polynomial in two variables of degree $n-1$. But this polynomial must have as zeros all elements of $A$ (as the assumption on the form $l$ delivers) which are $n-2$. Hence, there is another zero $\alpha'=\gen{(\alpha'_0,\alpha'_1)}\in\P K^2$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_0,\alpha'_1)}\in H\setmeet\cA=\proj f(A)$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).    
+    since its coefficients in $\dual e_i$ can be interpreted as the corresponding coefficients of a homogeneous polynomial in two variables of degree $n-1$. But this polynomial must have all $(n-2)$ elements of $A$ as its zeros (as the assumption on the form $l$ delivers). Hence, there is another zero $\alpha'=\gen{(\alpha'_0,\alpha'_1)}\in\P K^2$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_0,\alpha'_1)}\in H\setmeet\cA=\proj f(A)$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).    
 \end{proof}
 %% here is work TODO
 In the sense of the proof of this lemma, we make the following definition.
 Henceforth, we assume that $\cA$ is an incomplete normal rational curve.
 
 \begin{definition}[associated polynomials and linear forms for incomplete normal rational curves]
-    Assume the normal rational curve $\cA\setleq \proj{K^n}=\proj{V}$ can be extended to a $(q+2)$-arc $\hat{\cA}:=\cA\setjoin\set{\hat{a}}$ by a point $\hat a$, then for each $(n-2)$-set $A\setleq\proj{K^2}$ there exists a hyperplane $H_A:=\gen{(\proj f)A,\hat{a}}$ and $H_A\setmeet \hat{\cA}=\proj f(A)\setjoin\set{\hat{a}}$. Choose $l_A\in\dual V$ such that $\ker{l_A}=H_A$ and call it \keyword{associated linear form of $A'$}.
-    Define $p_A:=\sum_{i=0}^{n-1}{l_A(e_i)X_0^{n-1-i}X_1^i}$ and call it \keyword{associated polynomial of $A$}.
+    Assume the normal rational curve $\cA\setleq \proj{K^n}=\proj{V}$ can be extended to a $(q+2)$-arc $\hat{\cA}:=\cA\setjoin\set{\hat{a}}$ by a point $\hat a$. Then for each $(n-2)$-set $A\setleq\proj{K^2}$ there exists a hyperplane $H_A:=\gen{\P f(A),\hat{a}}$ and $H_A\setmeet \hat{\cA}=\proj f(A)\setjoin\set{\hat{a}}$. Choose $l_A\in\dual V$ such that $\ker{l_A}=H_A$ and call it an \keyword[associated linear form]{associated linear form of $A$}.
+    Define $p_A:=\sum_{i=0}^{n-1}{l_A(e_i)X_0^{n-1-i}X_1^i}$ and call it an \keyword[associated polynomial]{associated polynomial of $A$}.
 \end{definition}
 
 \begin{remark}
@@ -84,16 +88,16 @@ Henceforth, we assume that $\cA$ is an incomplete normal rational curve.
     $$
 \dim{P}=\dim\gen{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}_{\Sub\dual V}.
 $$
-But the intersection of the kernels of the $l_A$ contains the extending point $\hat{a}\neq 0$. Hence, 
+But the intersection of the kernels of the $l_A$'s contains the extending point $\hat{a}\neq 0$. Hence, 
 $$
 \dim\gen{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}_{\Sub \dual V}=n-\dim\Meet_{\substack{A\setleq\proj{K^2}\\ \card A=n-2}}{\ker{l_A}}\leq n-1.
 $$
 
-On the other hand, we can choose an $(n-1)$-set $B\setleq \proj{K^2}$ and directly verify that the system of polynomials $p_A$ where $A\setleq B$, $\card{A}=n-2$ is linearly independent by the interpolation formula
+On the other hand, we can choose an $(n-1)$-set $B\setleq \proj{K^2}$ and directly verify that the system of polynomials $p_A$, where $A\setleq B$, $\card{A}=n-2$, is linearly independent by the interpolation formula
 $$
-\left(\sum_{\substack{A\setleq B\\ \card{A}=n-2}}{\lambda_A p_A}\right)(a)=\lambda_{B\setminus\set{a}}p_{B\setminus\set{a}}(a)
+\left(\sum_{\substack{A\setleq B\\ \card{A}=n-2}}{\lambda_A p_A}\right)(a)=\lambda_{B\setminus\set{a}}p_{B\setminus\set{a}}(a).
 $$
-showing that the linear combination must be trivial if it evaluates to zero (since $p_{B\setminus\set{a}}(a)\neq 0$).
+This proves the linear combination to be trivial if it evaluates to zero (since $p_{B\setminus\set{a}}(a)\neq 0$).
 Thus,
 $$
 \dim{P}=\dim\gen{l_{A}\in V^{\ast}:A\setleq \proj{K^2},\card{A'}=n-2}_{\Sub \dual V}=n-1.
@@ -116,47 +120,40 @@ $$
 We thus arrive at a much more `algebraic' version of the assumption. 
 
 \begin{lemma}\label{char-incomp-nor-rat-curve}
-    The following two are equivalent
+    Let $n\leq \card K -1$. The following two are equivalent.
     \begin{statements}
             \item A normal rational curve in $\P K^n$ is incomplete.\label{norrat-incomp}
-            \item There is an $(n-1)$-dimensional subspace of the space $P_{n-1}$ of homogeneous polynomials of degree $n-1$ containing no splitting separable polynomials.\label{subspace-without-sep-spl-poly}
+            \item There is an $(n-1)$-dimensional subspace $P$ of the space $P_{n-1}$ of homogeneous polynomials of degree $n-1$ containing no splitting separable polynomials.\label{subspace-without-sep-spl-poly}
     \end{statements}
 \end{lemma}
 
 \begin{proof}
-    We have just shown that \autoref{norrat-incomp} implies \autoref{subspace-without-sep-spl-poly}. Conversely, if there is a subspace $P$ as described in \autoref{subspace-without-sep-spl-poly}, then it intersects in a one-dimensional subspace with each subspace $P_A:=P_1\prod_{a\in A}{\det(X,a)}$ (for $A\setleq \P K^2$ an $(n-2)$-set) --- the intersection must be at least one-dimensional as $\dim P +\dim P_A=n$, and is dimension at most one since otherwise there would be a splitting separable polynomial in $P\setmeet P_A=P_A$ since $\card A + 1 = n-1\leq \card K+1$.
+    We have just shown that \autoref{norrat-incomp} implies \autoref{subspace-without-sep-spl-poly}. Conversely, if there is a subspace $P$ as described in \autoref{subspace-without-sep-spl-poly}, then it intersects in a one-dimensional subspace with each subspace $P_A:=P_1\prod_{a\in A}{\det(X,a)}$ (for $A\setleq \P K^2$ an $(n-2)$-set) --- the intersection must be one-dimensional as $\dim P +\dim P_A=n+1$ and $P\join P_A=P_{n-1}$ since $P_A$ contains a splitting separable polynomial as $n-2\leq \card K$. Hence we may define $p_A$ via $\gen{p_A}=P_A\setmeet P$ and $l_A\defdoteq\sum_{i=0}^{n-1}{([X_0^i X_1^{n-1-i}]p_A)\dual e_i}$. One derives that the hyperplanes $H_A\defeq\ker l_A$ contain only the points $\P f(A)$ of $\cA$ and intersect in a unique point $\hat a$ which extends $\cA$.
 \end{proof}
 
-
-The next fact we want to prove is that a normal rational curve is complete in more than half of the expected cases.
-For this we need the following elementary facts
+Furthermore, we want to prove that a normal rational curve is complete in more than half of the expected cases.
+For this we need the following elementary facts.
 
 \begin{lemma}
     Let $Q\leq P_2$ be of codimension one. Then if $Q$ is not of the form $Q=P_1\det(X,\alpha)$ for some $\alpha\in\P K^2$ the following statements hold.
     \begin{statements}
             \item If $\rchar K = 2$, then either $Q=P_1^2$ (i.e. $Q$ consists entirely of squares) or $Q$ contains one square, $\frac{\card K} 2$ splitting separable polynomials and the same number of irreducible polynomials (up to scalar factor).
-        \item If $\rchar K \neq 2$ then $Q$ contains $1\pm 1$ squares, $\frac{\card K \mp 1} 2$ splitting separable polynomials and the same number of irreducible polynomials.
+        \item If $\rchar K \neq 2$, then $Q$ contains $1\pm 1$ squares, $\frac{\card K \mp 1} 2$ splitting separable polynomials and the same number of irreducible polynomials.
     \end{statements}
 \end{lemma}
 
 \begin{proof}
     \begin{statements}
-            \item If $\P Q$ contains two distinct squares, then it is clearly $P_1^2$ (since they already span a two-dimensional space). Otherwise, the kernel of the map $[X_0X_1]:P_2\to K$ intersects with $Q$ in a one-dimensional space (showing that $Q$ contains a square). The intersection of $Q$ with $P_1\det(X,\alpha)$ ($\alpha\in \P K^2$) is always of dimension one, since $Q\meet P_1\det(X,\alpha)<Q$ and $\dim (Q\meet P_1\det(X,\alpha))\geq \dim Q+\dim (P_1\det(X,\alpha))-\dim (Q\join P_1\det(X,\alpha))=2+2-3$. Thus there are $\frac{\card K} 2$ splitting separable polynomials in $\P Q$, on square and $\frac{\card K} 2$ irreducible ones.
-            \item Assume $Q$ contains two squares. Choosing appropriate coordinates, we may assume that these are $X_0^2$ and $X_1^2$. But then any linear combination $\mu X_0^2+\lambda X_1^2$ ($\lambda,\mu\in\units K$) cannot be a square since $(\mu X_0^2+\lambda X_1^2)\meet (2\mu X_0+2\lambda X_1)\divides X_0-X_1$ since
-        $$
-        \mu X_0^2+\lambda X_1^2-2^{-1}X_0(2\mu X_0+2\lambda X_1)=-\lambda X_1(X_0-X_1),
-        $$
-        $$
-        \mu X_0^2+\lambda X_1^2-2^{-1}X_1(2\mu X_0+2\lambda X_1)=\mu X_0(X_0-X_1),
-        $$
-        and the greatest common divisor of these two is $X_0-X_1$ (up to units). But ${(X_0-X_1)}^2=X_0^2-2X_0X_1+X_1^2\not\in Q$ since $2\neq 0$.
-        Moreover, if $Q$ contains one square, say $X_0^2$ and is not of the form $P_1\det(C,\alpha)$, then it contains a polynomial $aX_0^2+bX_0X_1+X_1^2$ which can be completed to a second square by adding $\left(\frac{b^2} 4 -a\right)X_0^2$.
+            \item If $\P Q$ contains two distinct squares, then it is clearly $P_1^2$ (since they already span a two-dimensional space). Otherwise, the kernel of the map $[X_0X_1]:P_2\to K$ intersects with $Q$ in a one-dimensional space (showing that $Q$ contains a square). The intersection of $Q$ with $P_1\det(X,\alpha)$ ($\alpha\in \P K^2$) is always of dimension one, since $Q\meet P_1\det(X,\alpha)<Q$ and $\dim (Q\meet P_1\det(X,\alpha))= \dim Q+\dim (P_1\det(X,\alpha))-\dim (Q\join P_1\det(X,\alpha))\geq 2+2-3$. Thus there are $\frac{\card K} 2$ splitting separable polynomials in $\P Q$, one square and $\frac{\card K} 2$ irreducible ones.
+            \item Assume $Q$ contains two squares. Choosing appropriate coordinates, we may assume that these are $X_0^2$ and $X_1^2$. But then any linear combination $\mu X_0^2+\lambda X_1^2$ ($\lambda,\mu\in\units K$) cannot be a square since then $\mu X_0^2+\lambda X_1^2={(\alpha X_0 +\beta X_1)}^2=\alpha^2 X_0^2+2\alpha\beta X_0X_1 + \beta^2X_1$ implying that $\alpha\beta=0$ which leads to $\mu=0$ or $\lambda=0$.
+        Moreover, if $Q$ contains one square, say $X_0^2$, and is not of the form $P_1\det(X,\alpha)$, then it contains a polynomial $aX_0^2+bX_0X_1+X_1^2$ which can be completed to a second square by adding $\left(\frac{b^2} 4 -a\right)X_0^2$.
     \end{statements}
+    Hence we are done.
 \end{proof}
 
 \begin{remark}
-    It is easy to see that for $K=\field{q}$ and $q$ even there exists exactly $q + 1$ subspaces of codimension one in $P_2$ of type $P_1\det(X,\alpha)$, one subspace of type $P_1^2$ and $q^2-1$ subspaces containing only one square.
-    When $q$ is odd, there are $q+1$ such subspaces of type $P_1\det(X,\alpha)$, $\binom {q+1} 2$ subspaces with two squares and $\binom q 2$ subspaces without square.  
+    It is easy to see that for $K=\field{q}$ and $q$ even there exist exactly $q + 1$ subspaces of codimension one in $P_2$ of type $P_1\det(X,\alpha)$, one subspace of type $P_1^2$ and $q^2-1$ subspaces containing only one square.
+    When $q$ is odd, there are $q+1$ such subspaces of type $P_1\det(X,\alpha)$ as well as $\binom {q+1} 2$ subspaces with two squares and $\binom q 2$ subspaces without square.  
 \end{remark}
 
 \begin{lemma}
@@ -186,7 +183,7 @@ For this we need the following elementary facts
     if $\rchar K\neq 2$.
 
     If $\rchar K = 2$ we need to pick $A$ and $B$ such that the cases 
-    $z_A=z_B$ and $\set{z_A}=A\setminus B$, $\set{z_B}=B\setminus A$ do not occur. So assume the second case occurs, then choose an $(n-2)$-set $D\setleq\P K^2$ such that $D\setmeet B$ is an $(n-3)$-set which contains $z_B$ (i.e.~$D\setmeet B\not\eq C$; here we need that $4\leq n$ since $1\leq\card{\set{z_B}}\leq\card{D\setmeet B}$). Define $A':=B$ and $B':=D$, then $A'$ and $B'$ cannot be of the second case by the choice of $D$. If these sets are of the first case, then $p_B$ and $p_D$ have the same zero of order two $z_B$ and so $\gen{p_B,p_D}=P_1(p_B\meet p_D)$ contains a polynomial $p_{B\setmeet D\setjoin\set{z_A}}$ (with the same zero of order two). Now, $A'':=A$ and $B'':=B\setmeet D\setjoin\set{z_A}$ are sets avoiding the two bad cases since there double zeros are $z_A$ and $z_B$ (which are distinct by assumption) and $z_A\in B''$.
+    $z_A=z_B$ and $\set{z_A}=A\setminus B$, $\set{z_B}=B\setminus A$ do not occur. So assume the second case occurs, then choose an $(n-2)$-set $D\setleq\P K^2$ such that $D\setmeet B$ is an $(n-3)$-set which contains $z_B$ (i.e.~$D\setmeet B\not\eq C$; here we need that $4\leq n$, since $1\leq\card{\set{z_B}}\leq\card{D\setmeet B}=n-3$). Define $A':=B$ and $B':=D$, then $A'$ and $B'$ cannot be of the second case by the choice of $D$. If these sets are of the first case, then $p_B$ and $p_D$ have the same zero of order two $z_B$ and so $\gen{p_B,p_D}=P_1(p_B\meet p_D)$ contains a polynomial $p_{B\setmeet D\setjoin\set{z_A}}$ (with the same zero of order two). $A'':=A$ and $B'':=B\setmeet D\setjoin\set{z_A}$ are sets avoiding the two bad cases since there double zeros are $z_A$ and $z_B$ (which are distinct by assumption) and $z_A\in B''$.
     Assuming that $A$ and $B$ are appropriately chosen it is simple to verify that the space $\P\gen{p_A/(p_A\meet p_B),p_B/(p_A\meet p_B)}$ (of homogeneous quadratic polynomials) contains one square, $\frac{\card K} 2$ splitting separable polynomials and $\frac{\card K} 2$ irreducible polynomials.
     This yields the inequality
     $$
@@ -195,7 +192,7 @@ For this we need the following elementary facts
     completing the proof.
 \end{proof}
 
-The proof of this last fact seems to be so simple, but although there are much better bounds for $n$ --- which I also rediscovered --- it is not known to me, that the completeness of normal rational curves is established.
+The proof of this last fact seems to be simple, but although there are much better bounds for $n$ --- which I also rediscovered --- it is not known to me, that the completeness of normal rational curves is established.
 We omit to present a proof of these other bounds since they are also not very satisfactory and the proof would be rather sophisticated.
 
 %TODO: continue
@@ -245,15 +242,14 @@ is a \keyword{\person{Vandermonde} matrix} in the case it does not contain the l
 $$
     \det U = \prod_{i<j}{(\nu_{k_i}-\nu_{k_j})}
 $$%
-which is not zero as all $\nu_k$ are distinct. In the other case, the determinant is also non-zero, as one notes by applying \person{Laplace}'s formula to the last column. Basically, it is immediately clear that any $n$ column vectors of the above matrix are linearly independent by \autoref{norratcurve-arc} but we just wanted to point out another way to see this.
+which is not zero as all $\nu_k$ are distinct. In the other case, the determinant is also non-zero, as one notes by applying \person{Laplace}'s formula to the last column. Actually, it is immediately clear that any $n$ column vectors of the above matrix are linearly independent by \autoref{norratcurve-arc} but we just wanted to point out another way to see this.
 
 The representation $V$ of a classical arc introduced in this section is called \keyword{\person{Vandermonde} representation} and $G_V$ is called extended \person{Vandermonde} matrix in the sequence of elements $\seq{\range{\nu_0}{\nu_{q-1}}}$.
-It is a generator matrix of the \keyword{extended \person{Reed-Solomon} code}.
+It is a generator matrix of the \keyword{extended \person{Reed-Solomon} code}\footnote{Basically, there are many possibilities to introduce \person{Reed-Solomon} codes and mostly the definitions do coincide only up to $\units{\field{q}}\wr S_m$-equivalence where $m$ is the length of the code --- here $m=\card K+1$.}
 
 \paragraph{Extended \person{Cauchy} matrices.}% good
 %
-In the last paragraph we saw that the arcs corresponding to extended \person{Reed-Solomon} codes are precisely normal rational curves.
-We want to construct another type of generator matrix from a normal rational curve (so that the corresponding code will be $\units{\field{q}}\wr S_n$-equivalent to the extended \person{Reed-Solomon} code).
+In the last paragraph we saw that the arcs corresponding to extended \person{Reed-Solomon} codes are precisely normal rational curves. We want to construct another type of generator matrix from a normal rational curve (so that the corresponding code will be $\units{\field{q}}\wr S_n$-equivalent to the extended \person{Reed-Solomon} code).
 The first step is to realize that 
 $$ C' \defeq \set{
     \begin{pmatrix} P_0(z)             \\
@@ -266,23 +262,23 @@ $$ C' \defeq \set{
 is a representation of a normal rational curve (since it is obviously $\PGL$-equivalent to the `one' given in \autoref{norratcurve} by the mapping $f$) where $P_i=\sum_{j=0}^{n-1}{p_i^j X^j}$ ($i=0,\ldots,n-1$) form a basis of the polynomials of degree $k\leq n-1$. Now we pick the first $n$ distinct elements $\nu_0,\ldots,\nu_{n-1}\in\field{q}$ and set
 $$ P_i := \prod_{\substack{j=0\\ j\neq i}}^{n-1}{(X-\nu_j)}\in\field{q}[X]\text{.} $$
 %% TODO buggy \set with [ in first argument
-Then it is immediately clear that the $P_i$ are linearly independent since $\frac 1 {\prod_{j\not\eq i}{(\nu_i-\nu_j)}}P_i$ form a \person{Lagrange} basis with respect to the points $\nu_i$ ($i=0,\ldots,n-1$). The point $\gen{e_{\infty}}$ corresponding to the preimage $\infty$ now evaluates to
-$$ e_{\infty} = \begin{pmatrix} 1\\ \vdots\\ 1\end{pmatrix} = \sum_{i=0}^{n-1}{e_i}$$
-To abbreviate notation we set
+It is then immediately clear that the $P_i$ are linearly independent, since $\frac 1 {\prod_{j\not\eq i}{(\nu_i-\nu_j)}}P_i$ form a \person{Lagrange} basis with respect to the points $\nu_i$ ($i=0,\ldots,n-1$). The point $\gen{e_{\infty}}$ corresponding to the preimage $\infty$ now evaluates to
+$$ e_{\infty} = \begin{pmatrix} 1\\ \vdots\\ 1\end{pmatrix} = \sum_{i=0}^{n-1}{e_i}.$$
+To abbreviate notation we also set
 $$
 P(z)\defeq\begin{pmatrix} P_0(z)\\ \vdots\\ P_{n-1}(z)\end{pmatrix}\textrm{.}
 $$
 
 Starting from the representation $C'$ and scaling all vectors $P(\nu_i)$ of the representation ($i=\range 0 {n-1}$) by
 $$ \prod_{\substack{j=0\\ j\neq i}}^{n-1}{\frac{1}{\nu_i-\nu_j}}\textrm{,} $$
-the vectors $P(z)$ ($z\in\set{\nu_i}[i=n,\ldots,q-1]$) by 
-$$ \prod_{j=0}^{n-1}{\frac{1}{z-\nu_j}} $$
+the vectors $P(\nu_i)$ ($i=\range n {q-1}$) by 
+$$ \prod_{j=0}^{n-1}{\frac{1}{\nu_i-\nu_j}} $$
 and leaving $e_{\infty}=\sum_{i=0}^{n-1}{e_i}$ fixed we get a representation
 $$
-C = \set{e_1,\ldots,e_n,\sum_{i=1}^n{e_i}}\setjoin\set{\begin{pmatrix} \frac{1}{z-\nu_0} \\ \vdots\\ \frac{1}{z-\nu_{n-1}}\end{pmatrix}}[z\in\set{\nu_i}_{i=n}^{q-1}]
+C = \set{e_1,\ldots,e_n,\sum_{i=1}^n{e_i}}\setjoin\set{\begin{pmatrix} \frac{1}{\nu_i-\nu_0} \\ \vdots\\ \frac{1}{\nu_i-\nu_{n-1}}\end{pmatrix}}[i=\range n {q-1}]
 $$
 
-of a curve being $\PGL$-equivalent to the initial representation.
+of a curve being $\PGL$-equivalent to the initial curve.
 However, writing down the generator matrix of the corresponding MDS code (in a `natural order') we obtain
 $$ G_C =
     \begin{pmatrix}
@@ -292,5 +288,5 @@ $$ G_C =
         0      & \cdots & 0      & 1      & 1      & \frac{1}{\nu_n-\nu_{n-1}} & \cdots & \frac{1}{\nu_{q-1}-\nu_{n-1}}
     \end{pmatrix} $$
 
-which contains a \keyword{\person{Cauchy} matrix}. Hence, we call the representation $C$ of a classical arc the \keyword{\person{Cauchy} representation}. The matrix consisting of the columns of index $n$ till $q$ (starting from zero) is called \keyword{extended \person{Cauchy} matrix} in the sequences $\range{\nu_0}{\nu_{n-1}}$ and $\seq{\range{\nu_n}{\nu_{q-1}}}$ (which is a totally regular matrix).\label{cauchy-rep}
+which contains a \keyword{\person{Cauchy} matrix}. Hence, we call the representation $C$ of a classical arc the \keyword{\person{Cauchy} representation}. The matrix consisting of the columns of index $n$ till $q$ (starting from zero) is called \keyword{extended \person{Cauchy} matrix} in the sequences $\seq{\range{\nu_0}{\nu_{n-1}}}$ and $\seq{\range{\nu_n}{\nu_{q-1}}}$ (which is a totally regular matrix).\label{cauchy-rep}
 

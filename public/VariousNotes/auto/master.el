@@ -29,6 +29,8 @@
      "com"
      "a"
      "b"
+     "sectionn"
+     "Sum"
      "iso"
      "arg")
     (TeX-run-style-hooks

@@ -555,7 +555,8 @@
 \let\oldcong\cong%
 \newcommand{\iso}{\oldcong}
 
-\def\cong{\equiv}
+\let\oldequiv\equiv%
+\def\cong{\oldequiv}
 \def\equiv{\Leftrightarrow}
 \def\implies{\Rightarrow}
 \newcommand{\base}[2]{\left[#2\right]_{#1}}                                   % base n expansion of some number
@@ -602,6 +603,8 @@
 \newcommand{\cl}{\mathop\mathrm{cl}}				% topological closure
 \newcommand{\N}{\mathrm{N}} % filter of neighbourhoods
 \renewcommand{\C}{\mathrm{C}} % convergent nets
+\newcommand{\comp}{\mathop{\mathrm{comp}}} % components
+
 
 \newcommand{\sphere}{\mathbb{S}} % n-sphere
 \newcommand{\ball}{\mathbb{B}} % n-ball

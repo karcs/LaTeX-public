@@ -5,6 +5,8 @@
      "handbookincgeokmarcs"
      "zas"
      "ball1997maxkmarcs"
-     "ball2011mdsmainconjI"
-     "ball2012mdsmainconjII")))
+     "ball2012setsI"
+     "ball2012setsII"
+     "orlik1992arrangements"
+     "knesevals")))
 

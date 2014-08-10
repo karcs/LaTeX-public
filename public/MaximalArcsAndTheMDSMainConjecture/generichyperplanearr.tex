@@ -1,4 +1,12 @@
 \section{Generic hyperplane arrangements}
+\makeatletter%
+\def\@currentlabel{Section \thesection}%
+\makeatother% TODO better section command
+\label{sec-gen-hyperplane-arr}
+
+In the following we examine some combinatorial properties of generic and weakly generic hyperplane arrangements.
+These lead to the somehow obvious bound for a projective arc in $\P \field{q}^n$ that $\card\cA\leq q+n-1$ by a simple counting argument, however the results we present can be seen as a (simple) generalization of results by \person{Zaslavsky} about the number of components of the complement $\cM(\cA)=:\cM_0(\cA)$ of a real arrangement of hyperplanes $\cA$ and its analogue in the discrete case.
+Moreover, I found it suitable to point out the connection between the topic of hyperplane arrangements and projective arcs.
 
 \subsection{Existence of weakly generic arrangements in $\field{q}^n$ with given Poincaré polynomial}
 
@@ -9,7 +17,7 @@ It is then an interesting question, which restrictions on the lattice $\cL(\cA)$
 We need the following definitions.
 
 \begin{definition}[unique representation of lattice elements] 
-    Let $L$ be a lattice with $0$ (minimal element). Then $X\in L$ is called uniquely representable if it can uniquely be written as the join of atoms.
+    Let $L$ be a lattice with $0$ (minimal element). Then $X\in L$ is called \keyword{uniquely representable} if it can uniquely be written as the join of atoms.
 \end{definition}
 
 \begin{remark}
@@ -21,14 +29,16 @@ We need the following definitions.
 \end{definition}
 
 \begin{definition}
-    Let $\cA$ be an arrangement and $X\in\cL(\cA)$, then denote by $\cA^X$ the restricted arrangement on $X$, i.e. $\cA^X:=\set{X\setmeet H:\codim_X(X\setmeet H)=1}$.
+    Let $\cA$ be an arrangement and $X\in\cL(\cA)$, then denote by $\cA^X$ the restricted arrangement on $X$, i.e. $\cA^X:=\set{X\setmeet H}[\codim_X(X\setmeet H)=1]$.
 \end{definition}
 
-A fact, which is also obvious is that a lattice $\cL$ is the lattice $\cL(\cA)$ for an arrangement $\cA$ in $K^n$ if and only it is embedded in $\Sub_{\aff}(V)$ (by a rank preserving map). However, it turns out to be very difficult to decide this for a given lattice.
-We now drop some information and breafly discuss the above question for a weakly generic arrangement $\cA$ in $K^n$ with given \person{Poincaré} polynomial.
+A fact, which is also obvious is that a lattice $\cL$ is the lattice $\cL(\cA)$ for an arrangement $\cA$ in $K^n$ if and only it is embedded in $\Sub_{\Aff}V$ (by a rank preserving map). However, it turns out to be very difficult to decide this for a given lattice.
+We now drop some information and briefly discuss the above question for a weakly generic arrangement $\cA$ in $K^n$ with given \person{Poincaré} polynomial.
+
+Therefore, it becomes necessary to introduce the following concepts.
 
 \begin{definition}[\person{Möbius} function]
-    Let $P$ be a poset and $I:P\setprod P\to \ints$ be its incidence function, i.e.
+    Let $P$ be a poset and $I:P\setprod P\to \ints$ be its \keyword{incidence function}, i.e.
     $$
     I(X,Y)\defeq
     \begin{cases}
@@ -36,72 +46,74 @@ We now drop some information and breafly discuss the above question for a weakly
         0 &:\otherwise
     \end{cases}
     $$
-    then the \person{Möbius} function is the inverse matrix of $I$, i.e.
+    then the \keyword{\person{Möbius} function} is the inverse matrix of $I$, i.e.
     $$
-    \sum_{Z\in P}{I(X,Z)\mu(Z,Y)}=\delta_{XY}.
+    \sum_{Z\in P}{\mu(X,Z)I(Z,Y)}=\sum_{Z\leq Y}{\mu(X,Z)}=\delta_{XY}.
     $$
 \end{definition}
 
+\begin{remark}
+    The fact that the \person{Möbius} function always exists is due to the fact that any ordering can be embedded in a total ordering so that $\seq{I(X,Y)}_{X,Y}$ can be written as a upper unitriangular matrix. Thus $\mu(X,X)=1$ and $\mu(X,Y)=0$ if $X\not\leq Y$.
+\end{remark}
+
 \begin{definition}[\person{Poincaré} polynomial]
-    Let $\cA$ be a hyperplane arrangement. The \person{Poincaré} polynomial of $\cA$ is defined by
+    Let $\cA$ be a hyperplane arrangement. The \keyword{\person{Poincaré} polynomial} of $\cA$ is defined by
     $$
-    \pi(\cA,t)\defeq\sum_{X\in\cL(A)\setminus\set{\emptyset}}{\mu_{\cA}(X)t^{\rk X}}
+    \pi(\cA,t)\defeq\sum_{X\in\cL(A)\setminus\set{\emptyset}}{\mu_{\cA}(X){(-t)}^{\rk X}}
     $$
     where $\mu_\cA(X)\defeq\mu_\cA(V,X)$ is the \person{Möbius} function of the poset $\cL(\cA)$.
 \end{definition}
+
 
 %% ended here editing
 
 \subsection{Some combinatorial facts about weakly generic arrangements}
 
-In this section we generalize some combinatorial results by \person{Zaslavsky} about the number of components of the complement $\cM(\cA)=:\cM_0(\cA)$ and its analogue in the discrete case.
-
 \begin{lemma}[point numbers of the strata $\cM_m$ of arrangements in finite vector spaces]
-    Let $\cA$ be a weakly generic arrangement in $\field{q}^n$. Then it holds that
+    Let $\cA$ be a weakly generic arrangement in $\field{q}^n$. Then we have
     $$
-        \abs{\cM_m(\cA)}= q^{n-m}\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
+        \card{\cM_m(\cA)}= q^{n-m}\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
     $$
-    where $\cM(\cA)$ denotes the $m$-th stratum ($m\geq 0$)
-    $$        \cM(\cA):=\Setjoin\{X\in\cL(\cA)\lgand \rk(X)=m\}\setminus\Setjoin\{X\in\cL(\cA):\rk(X)=m+1\}\text{.}
+    where $\cM_m(\cA)$ denotes the $m$-th stratum ($m\geq 0$)
+    $$        \cM_m(\cA):=\Setjoin\{X\in\cL(\cA)\lgand \rk(X)=m\}\setminus\Setjoin\{X\in\cL(\cA):\rk(X)=m+1\}\text{.}
     $$
-    For $m=0$ the arrangement does not have to be weakly generic (\person{Zaslavsky}'s result \cite{zas}).
+    For $m=0$ the arrangement does not have to be weakly generic (\person{Zaslavsky}'s result in~\cite{zas}).
 \end{lemma}
 
-The proof of this fact is just based on \person{Möbius} inversion
+The proof of this fact is just based on \person{Möbius} inversion.
 
 \begin{proof}
     We start with $m=0$.
     As $\Setjoin_{X\in\cL(\cA)}{\cM_0(\cA^X)}=\field{q}^n$ (where $\cA^X$ denotes the restriction of $\cA$ on $X$) and the union is disjoint we have that (for $Y\in\cL(\cA)$)
   $$
-      \sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{\abs{\cM_0(\cA^X)}}=q^{n-\rk(Y)}\text{.}
+  \sum_{\substack{X\in\cL(\cA)\\ Y\leq X}}{\card{\cM_0(\cA^X)}}=\sum_{X\in\cL(\cA)}{I(Y,X)\card{\cM_0(\cA^X)}}=q^{n-\rk(Y)}\text{.}
   $$
-  Möbius inversion reveals
+  \person{Möbius} inversion reveals
   $$
-      \sum_{X\in\cL(\cA)}{\mu(V,Y)q^{n-\rk(Y)}} = q^n\pi(\cA,-q^{-1}) = \abs{\cM_0(\cA)}\text{.}
+      \sum_{X\in\cL(\cA)}{\mu(V,Y)q^{n-\rk(Y)}} = q^n\pi(\cA,-q^{-1}) = \card{\cM_0(\cA)}\text{.}
   $$
   This is essentially a result analogue to the lemma proved by \person{Zaslavsky} in~\cite{zas}. Note that we did not use that $\cA$ is weakly generic.
   For the case $m>0$ we obtain
   $$
-      \abs{\cM_m(\cA)}=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\abs{\cM_0(\cA^X)}}=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y)q^{n-\rk(Y)}}}\text{.}
-  $$
-  Now, we use the fact (which can be easily shown by induction) that for a weakly generic arrangement $\cA$ we have $\mu(X,Y)={(-1)}^{\rk(X)-\rk(Y)}$ and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above (interchanging the sums and counting the elements $X$ above $Y$).
+      \card{\cM_m(\cA)}=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\card{\cM_0(\cA^X)}}=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y)q^{n-\rk(Y)}}}\text{,}
+      $$
+      where $\mu_{\cA^X}$ is the \person{Möbius} function of the restricted arrangement. Now, we use the fact (which can be easily shown by induction) that for a weakly generic arrangement $\cA$ we have $\mu(X,Y)={(-1)}^{\rk(X)-\rk(Y)}$ and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above (interchanging the sums and counting the elements $X$ lying below $Y$).
   $$\eqalign{
-      \abs{\cM_m(\cA)}
-      & = q^n\sum_{Y\in\cL(\cA)}{{(-1)}^{m-\rk(Y)}\binom{\rk(Y)}{m}q^{-\rk(Y)}}\cr
-      & = q^n\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
+      \card{\cM_m(\cA)}
+      & = q^{n-m}\sum_{Y\in\cL(\cA)}{{(-1)}^{m-\rk(Y)}\binom{\rk(Y)}{m}q^{m-\rk(Y)}}\cr
+      & = q^{n-m}\frac{\pi^{(m)}(\cA,-q^{-1})}{m!}
   }
   $$
-  which finishes the proof.
+  Here, we use that $\rk(Y)$ and $\rk(X)=m$ is equal to the number of atoms (i.e.~hyperplanes) whose join is $Y$ or $X$, respectively. This ends the proof.
 \end{proof}
 
-For the sake of completeness, we shall give the real analogue of that last fact
-
-\newcommand{\comp}{\mathop{\mathrm{comp}}}
+For the sake of completeness, we shall give the real analogue of that last fact.
 
 \begin{lemma}[number of connected components of the stratum $\cM_m(\cA)$ of an arrangement] Let $\cA$ be a weakly generic arrangement in $\reals^n$. Then it holds that
     $$
-        \frac{\pi^{(m)}(\cA,1)}{m!}=\abs{\comp(\cM_m(\cA))}\text{.}
+    \frac{\pi^{(m)}(\cA,1)}{m!}=\card{\comp(\cM_m(\cA))},
     $$
+    where $\comp(\cM_m(\cA))$ denotes the components of the $m$-th stratum.
     For $m=0$ the arrangement does not have to be weakly generic (see~\cite{zas}).
 \end{lemma}
 
@@ -110,22 +122,23 @@ Here, the proof is analogous.
 \begin{proof}
     Starting with $m=0$, \person{Euler}'s formula gives (for $Y\in\cL(\cA)$)
     $$
-        \sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{(-1)^{\rk(Y)-\rk(X)}\abs{\comp(\cM_0(\cA^X))}}=1=\chi(\reals^{n-\rk(Y)})\text{.}
+    \eqalign{\sum_{\substack{X\in\cL(\cA)\\ X\geq Y}}{{(-1)}^{\rk(Y)-\rk(X)}\card{\comp(\cM_0(\cA^X))}} &=\sum_{X\in\cL(\cA)}{I(Y,X){(-1)}^{\rk(Y)-\rk(X)}\card{\comp(\cM_0(\cA^X))}}=1\cr
+        &=\chi(\reals^{n-\rk(Y)}).}
   $$
   \person{Möbius} inversion delivers
   $$
-    \sum_{X\in\cL(\cA)}{\mu(V,X)(-1)^{\rk(Y)}} = \pi(\cA,1) = \abs{\comp(\cM_0(\cA))}\text{.}
+    \sum_{Y\in\cL(\cA)}{\mu(V,Y){(-1)}^{\rk(Y)}} = \pi(\cA,1) = \card{\comp(\cM_0(\cA))}\text{.}
   $$
   For $m>0$, the proof is identical with the last one
   $$\eqalign{
-      \abs{\comp(\cM_m(\cA))} &=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\abs{\comp(\cM_0(\cA^X))}}\cr
-      & = \sum_{\substack{X\in\cL(\cA)\cr \rk(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y){(-1)}^{\rk(X)-\rk(Y)}}}.
+      \card{\comp(\cM_m(\cA))} &=\sum_{\substack{X\in\cL(\cA)\\ \rk(X)=m}}{\card{\comp(\cM_0(\cA^X))}}\cr
+      & = \sum_{\substack{X\in\cL(\cA)\cr \rk(X)=m}}{\sum_{Y\in\cL(\cA^X)}{\mu_{\cA^X}(X,Y){(-1)}^{m-\rk(Y)}}}.
   }
   $$
-  Now, use that $\mu(X,Y)={(-1)}^{\rk(X)-\rk(Y)}$ if $\cA$ is weakly generic and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above
+  Using that $\mu(X,Y)={(-1)}^{\rk(X)-\rk(Y)}$ if $\cA$ is weakly generic and as restrictions of weakly generic arrangements are again weakly generic, we obtain from the above
   $$
   \eqalign{
-      \abs{\comp(\cM_m(\cA))}
+      \card{\comp(\cM_m(\cA))}
       & =\sum_{Y\in\cL(\cA)}{\binom{\rk(Y)}{m}}\cr
       & = \frac{\pi^{(m)}(\cA,1)}{m!}
       }
@@ -134,7 +147,7 @@ Here, the proof is analogous.
 \end{proof}
 
 \begin{remark}
-    An alternative proof of the last two lemmas can be given via deletion restriction theorem and the identity $\pi(\cA,t)=\pi(\cA',t)+t\pi(\cA'',t)$. The $m$-th derivative of this last identity behaves analogue to some recurrence relations of the above numbers for $(\cA,\cA',\cA'')$ a generic triple of arrangements.
+    An alternative proof of these last two lemmas can be given via deletion restriction theorem and the identity $\pi(\cA,t)=\pi(\cA',t)+t\pi(\cA'',t)$. The $m$-th derivative of this last identity behaves analogue to some recurrence relations of the above numbers for $(\cA,\cA',\cA'')$ a generic triple of arrangements. For more information on this consult~\cite{orlik1992arrangements}.
 \end{remark}
 
 \begin{corollary}
@@ -142,3 +155,15 @@ Here, the proof is analogous.
 \end{corollary}
 
 This corollary gives a partial answer to our question, but its statement only uses the lattice structure and is careless about the nature of the sets of that lattice (as linear subspaces). It turns out that this answer is not very sharp in some cases.
+
+In particular, when we apply this to a generic arrangement $\cA$ in $\field{q}^n$ which has \person{Poincaré} polynomial
+$$
+\pi(\cA,t)=\sum_{i=0}^{n}{\binom{\card{\cA}}{i} t^i}
+$$
+we get for $m=n-1$ that
+$$
+\frac{\pi^{(n-1)}(\cA,-q^{-1})}{(n-1)!}=\binom{\card\cA}{n}\binom{n}{n-1}{(-q)}^{-1}+\binom{\card\cA}{n-1}\geq 0
+$$
+which leads to $\card\cA\leq q+n-1$.
+
+This corresponds to a very obvious bound for projective arcs as we will see in \autoref{sec-msd-nleq2p-2}. Better bounds cannot be derived with this simple idea (as the reader might verify by checking the other inequalities which can be derived from the previous lemmas).

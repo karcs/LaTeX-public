@@ -29,7 +29,6 @@
      "com"
      "a"
      "b"
-     "sectionn"
      "Sum"
      "iso"
      "arg")

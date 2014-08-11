@@ -39,6 +39,8 @@
     \def\@conjecturename{Conjecture}
     \def\@problemname{Problem}
     \def\@conventionname{Convention}
+    \def\@notationname{Notation}
+    \def\@genassumptionsname{General assumptions}
     
     % smaller environments
     \def\@statementname{Statement}
@@ -63,7 +65,7 @@
 
 % german
 \DeclareOption{de}{
-    % große Matheumgebungen
+    % Matheumgebungen
     \def\@theoremname{Satz}
     \def\@remarkname{Bemerkung}
     \def\@conclusionname{Zusammenfassung}
@@ -78,6 +80,9 @@
     \def\@conjecturename{Vermutung}
     \def\@casename{Fall}
     \def\@conventionname{Konvention}
+    \def\@notationname{Notation}
+    \def\@genassumptionsname{Generalvoraussetzung}
+    
     
     % kleinere Matheumgebungen
     \def\@statementname{Aussage}
@@ -121,6 +126,8 @@
 %%%%%%%%%%%%%%%%%%%
 %%% main commands %
 %%%%%%%%%%%%%%%%%%%
+
+
 
 %%%%%%%%%%%%%%%%%%%%%
 %% LIST OPERATIONS %%
@@ -299,6 +306,13 @@
 %%% define titlepage
 
 %%% define section, subsection, paragraph and subparagraph appearance
+\newcounter{chapter}
+\def\chapter#1{\stepcounter{chapter}\cleardoublepage\medskip\noindent {\bf\Huge Chapter \thechapter}\par}
+\def\section#1{\stepcounter{section}\medskip\noindent {\bf\LARGE\thesection\hspace{\labelsep}#1\par}}
+\def\subsection#1{\stepcounter{subsection}\medskip\noindent {\bf\large\thesubsection\ #1\par}}
+%\def\section#1{\stepcounter{section}\medskip\noindent {\bf\large\thesection\ #1\par}}
+
+
 \def\pagename{\@pagename}
 \def\pageabbrev{\@pageabbrev}
 
@@ -380,6 +394,8 @@
     }%
 }
 
+%\expandafter\def\expandafter\section\expandafter{\section \def\@currentlabel{section}}
+
 %% print context (prints the relevant context of a reference)
 
 
@@ -404,6 +420,12 @@
 
 %% convention
 \newmathenvironment{convention}{\@conventionname}[section]
+
+\newmathenvironment{genassumptions}{\@genassumptionsname}[section]
+\def\genassumptionsheadertext{\genassumptionsname}
+
+%% notation
+\newmathenvironment{notation}{\@notationname}[section]
 
 %% proposition environment
 \newmathenvironment{proposition}{\@propositionname}[section]

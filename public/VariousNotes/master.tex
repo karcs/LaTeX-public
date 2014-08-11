@@ -25,18 +25,21 @@
 \maketitle
 \label{a}
 %\autoref{a}%
-
+%%
 \makeatletter
 \def\com#1{\@ifnextchar[{\a#1}{\b#1}}
 \def\a#1[#2]{Hallo}
 \def\b#1{Tschüss #1}
-%
+
 $$
 \set{sdfsdf}
 $$
+%%%%$
+\chapter{Hallo}%
 \section{Complex analysis}
-\def\sectionn#1. #2\par{\medskip\noindent {\bf\LARGE #1. #2\par}}
-\sectionn 2.3. Hallo
+
+\subsection{Hallo}
+
 \def\Sum#1\from#2\to#3{\sum_{#2}^{#3}{#1}}
 %\def\Sum#1\over#2{\sum_{#2}{#1}}
 $$

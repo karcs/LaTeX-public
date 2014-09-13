@@ -17,7 +17,8 @@
 \makeindex
 \input{../Config/math.tex}
 \usepackage{mathenv}
-%\usepackage{nath}
+\usepackage{layer}
+% $%%%\usepackage{nath}
 \begin{document}
 \title{Various Notes}
 \author{Jakob Schneider}
@@ -25,7 +26,7 @@
 \maketitle
 \label{a}
 %\autoref{a}%
-%%
+%%%%%%%%%%%%%%%%%
 \makeatletter
 \def\com#1{\@ifnextchar[{\a#1}{\b#1}}
 \def\a#1[#2]{Hallo}
@@ -34,10 +35,14 @@
 $$
 \set{sdfsdf}
 $$
-%%%%$
+%%%%%%
 \chapter{Hallo}%
-\section{Complex analysis}
+\section{Complex analysis}%$%%%$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$%$$%%$%%%%
+%%
 
+\newcount\x
+\x=3
+\romannumeral\x%%%
 \subsection{Hallo}
 
 \def\Sum#1\from#2\to#3{\sum_{#2}^{#3}{#1}}

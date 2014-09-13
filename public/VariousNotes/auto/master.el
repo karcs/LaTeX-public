@@ -24,6 +24,7 @@
      '("newusedecl" ["argument"] 1)
      '("gobblenext" 1)
      '("newdecl" 2)
+     "x"
      "csvdel"
      "checknextarg"
      "com"
@@ -33,6 +34,7 @@
      "iso"
      "arg")
     (TeX-run-style-hooks
+     "layer"
      "mathenv"
      "blindtext"
      "xparse"

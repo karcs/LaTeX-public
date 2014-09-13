@@ -1,0 +1,104 @@
+%%
+%% This is file `sections.sty',
+
+\ProvidesPackage{layer}[2014/06/11 v0.1]
+
+%%%%%%%%%%%%%%%%%%%
+% PACKAGE OPTIONS %
+%%%%%%%%%%%%%%%%%%%
+
+%% declare options
+
+%% language
+% english (default)
+\DeclareOption{en}{
+    \def\chapter@name{Chapter}
+    \def\section@name{Section}
+    \def\subsection@name{Subsection}
+    \def\paragraph@name{Paragraph}
+    \def\subparagraph@name{Subparagraph}
+}
+
+% german
+\DeclareOption{de}{
+    % Abschnitte im Hauptteil eines Buches
+    \def\chapter@name{Kapitel}
+    \def\section@name{Abschnitt}
+    \def\subsection@name{Unterabschnitt}
+    \def\paragraph@name{Absatz}
+    \def\subparagraph@name{Unterabsatz}
+}
+
+%% declare default settings
+\ExecuteOptions{en}
+
+%% terminate option processing
+\ProcessOptions\relax
+
+%%%
+%%% COUNTERS
+%%%
+
+% getter for number of a counter (setter should not be needed in document)
+% function to set the counter style with \counter being the current counter
+\def\counterformat#1#2{\expandafter\def\csname counter@#1@format\endcsname{#2}}
+
+% increment counter (increases counter \counter@#1 by 1)
+\def\incrementcounter#1{%
+    \expandafter\advance\csname counter@#1\endcsname by 1%
+}%
+% reset counter function (sets counter \counter@#1 to zero)
+\def\resetcounter#1{%
+    \csname counter@#1\endcsname=0%
+}%
+% new counter function
+\def\newcounter#1{%
+    \expandafter\newcount\csname counter@#1\endcsname%
+    \resetcounter{#1}%
+    % get the formatted counter #1 function
+    \expandafter\def\csname the#1\endcsname{% 
+        \expandafter\let\expandafter\counter\csname counter@#1\endcsname%
+        \csname counter@#1@format\endcsname%
+    }%
+}%
+
+\def\newlayer#1#2{
+    % introduce new counter for the layer
+    \newcounter{#1}
+    % layer command
+    \expandafter\def\csname #1\endcsname##1{%
+        \incrementcounter{#1}%
+        \begingroup%
+        \def\counter{\csname the#1\endcsname}
+        \def\title{##1}
+        \csname layer@#1@format\endcsname%
+        \endgroup%
+    }%
+}%
+% define a function for the layer format
+\def\layerformat#1#2{%
+    \expandafter\def\csname layer@#1@format\endcsname{#2}%
+}%
+
+% new layer : chapter
+\newlayer{chapter}{Chapter}%
+% new layer : section
+\newlayer{section}{Section}%
+% set counter format
+\counterformat{chapter}{\the\counter}
+\counterformat{section}{\the\counter}
+% set layer format for section
+\layerformat{section}{%
+    %\medskip\noindent {\bf\Large\counter\hspace{\labelsep}\title}%
+    \par%
+}%
+\layerformat{chapter}{%
+    \medskip\noindent {\bf\huge\counter\hspace{\labelsep}\title}%
+    \vspace{\parskip}%
+}%
+
+\endinput
+
+%%% Local Variables: 
+%%% mode: latex
+%%% End: 

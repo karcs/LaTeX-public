@@ -5,10 +5,11 @@
 %\usepackage[utf8]{inputenc} % utf8 char set as input (e.g. for " and umlauts)
 %\usepackage[ngerman]{babel} % this is needed for umlauts
 %\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
-\usepackage{etoolbox}
+%\usepackage{etoolbox}
 \usepackage{makeidx}
 \usepackage{xparse}
 \usepackage{blindtext}
+%\usepackage{MnSymbol}
 % \usepackage{nath}
 %\usepackage{mathtools}
 % for mathclap
@@ -18,39 +19,95 @@
 \input{../Config/math.tex}
 \usepackage{mathenv}
 \usepackage{layer}
-% $%%%\usepackage{nath}
+%\usepackage{amssymb} % for arrows
+%other packages : extpfeil
+%\usepackage{diagrams}
+% $%%%\usep$ackage{nath}
 \begin{document}
 \title{Various Notes}
 \author{Jakob Schneider}
 \date{\today}
 \maketitle
 \label{a}
-%\autoref{a}%
+%\autoref{a}%%
 %%%%%%%%%%%%%%%%%
 \makeatletter
 \def\com#1{\@ifnextchar[{\a#1}{\b#1}}
 \def\a#1[#2]{Hallo}
 \def\b#1{Tschüss #1}
+%%%%%%%%%%%%%%%%%%%%% from amssymb
+\def\onto{\twoheadrightarrow} %epi
+\def\into{\rightarrowtail} %mono
 
-$$
-\set{sdfsdf}
-$$
-%%%%%%
-\chapter{Hallo}%
-\section{Complex analysis}%$%%%$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$%$$%%$%%%%
-%%
+\chapter{Grundlagen}
 
-\newcount\x
-\x=3
-\romannumeral\x%%%
+Zunächst führen wir den Begriff der Gruppe nocheinmal ein
+
+\begin{definition}[Gruppe]
+    Eine Gruppe $G$ ist eine Struktur $\Grp=\struct{\compose,^{-1},1}$
+\end{definition}
+
+
+
+
+\chapter{Permutationsgruppen und lineare Gruppen}
+
+\section{Primitive und mehrfach transitive Permutationsgruppen}
+
+\section{...}
+
+\section{Primitive Permutationsgruppen mit abelschen Normalteilern}
+
+\begin{lemma}
+    Sei $A$ abelsche transitive Untergruppe von $\Aut \Omega$ ($\Omega:\Set$), dann ist der Zentralisator von $A$ in $\Aut \Omega$
+    gleich $A$ selbst und $A$ agiert regulär auf $\Omega$.
+\end{lemma}
+
+\def\centralizer{\mathrm C}
+
+\begin{proof}
+    Da $A$ abelsch ist, gilt $A\into\xleftarrow{}\leftarrow\leftarrow\centralizer_{\Aut\Omega} A$. Weiterhin stellt man fest, dass $\centralizer A$ frei
+    agiert, denn falls für $c\in \centralizer A$ gilt $\omega^c=\omega$ für ein $\omega\in\Omega$, dann folgt für $\rho\in\Omega$ wegen Transitivität von $A$ die
+    Existenz eines $a\in A$ mit $\omega^a=\rho$, also $\rho^c=\omega^{ac}=\omega^{ca}=\rho$. Also $c=1_{\Aut \Omega}$. Damit folgt,
+    dass $\centralizer A$ sowohl transitiv (da $A$ transitiv agiert), als auch frei agiert. Somit $A=\centralizer A$, denn für ein
+    Element $c\in\centralizer A$ mit $\omega^c=\rho$ gibt es mindestens ein $a\in A$ mit derselben Eigenschaft, dann gilt aber
+    $a=c$, wegen Freiheit. 
+\end{proof}
+
+\begin{lemma}[Struktur charakteristisch einfacher Gruppen]
+    Sei $G$ charakteristisch einfach mit minimalem Normalteiler $N$. Dann ist $G\iso N^{\prod\kappa}$.
+\end{lemma}
+
+\begin{proof}
+    Betrachte das orbit $O\defeq \orb_{\Aut G} N$ von $N$ unter Automorphismen von $G$. Die davon erzeugt Gruppe $H\defeq \gen O$
+    liegt charakteristisch in $G$ und $1<N\geq H$ zeigt $H=G$. Weiterhin schneiden sich je zwei veschiedene Elemente $N_1,N_2\in O$
+    trivial, also $[N_1,N_2]\leq N_1\meet N_2=1$. Damit ist $G$ eine Potenz von $N$. Zu zeigen bleibt noch, dass $N$ einfach
+    ist. Jeder Normalteiler von $N$ ist aber auch ein Normalteiler von $G$ (da $G$ Potenz von $N$ ist), also folgt, wegen
+    Minimalität von $N$, dass ein solcher entweder $1$ oder $N$ selbst ist, also ist $N$ einfach. 
+\end{proof}
+
+\begin{theorem}[Galois]
+    Sei $G$ eine Gruppe mit primitiver Aktion auf $\Omega$ mit minimalem Normalteiler $N$. Ist $N$ auflösbar, so gilt:
+    \begin{statements}
+            \item $N$ agiert regulär und ist elementar-abelsch.
+            \item $G=N\stab_G \omega$ für jedes $\omega\in\Omega$ und $N\meet\stab_G\omega=1$.
+            \item $N$ ist der einzige minimale Normalteiler.
+            \item $\stab_G \omega$ hat keine $p$-Gruppe als Normalteiler.
+        \item Ist $G$ auflösbar, so sind alle Komplemente von $N$ konjugiert zueinander in $G$.
+    \end{statements}
+\end{theorem}
+
+\chapter{Hallo}
+
+\section{Complex analysis}
+
 \subsection{Hallo}
-
+\par%
 \def\Sum#1\from#2\to#3{\sum_{#2}^{#3}{#1}}
-%\def\Sum#1\over#2{\sum_{#2}{#1}}
+%% \def\Sum#1\over#2{\sum_{#2}{#1}}
 $$
 \Sum 3 \from i=1 \to 4
 $$
-
 \begin{lemma}
 Let $\seq{a_n}_{n\in\nats}$ be a sequences of non-negative numbers such that
 $$
@@ -1020,31 +1077,31 @@ where $\cproj_i\compose\cincl\nolimits_j=\pi_i\compose\iota_j=\delta_{ij}$
 %$\intervaloo{a}{n}\intervaloo{.}{.}\interval$
 \printindex
 
-\makeatletter
-\newcommand{\newdecl}[2]{\csgdef{decl@#1}{#2}}% Creates a declaration
-\newcommand{\csvdel}{}% Delimiter used in CSV representation
-\newcommand{\newusedecl}[2][,]{% Use a declaration
-  \renewcommand{\csvdel}{\renewcommand{\csvdel}{#1\,}}% Delay \csvdel one cycle.
-  \csname decl@#2\endcsname(\checknextarg}
-\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenext}{}}% Check if another "argument" exists
-\newcommand{\gobblenext}[1]{\csvdel#1aaa\@ifnextchar\bgroup{\gobblenext}{)}}% Gobble next "argument"
-\makeatother
+%\makeatletter
+%\newcommand{\newdecl}[2]{\csgdef{decl@#1}{#2}}% Creates a declaration
+%\newcommand{\csvdel}{}% Delimiter used in CSV representation
+%\newcommand{\newusedecl}[2][,]{% Use a declaration
+%  \renewcommand{\csvdel}{\renewcommand{\csvdel}{#1\,}}% Delay \csvdel one cycle.
+%  \csname decl@#2\endcsname(\checknextarg}
+%\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenext}{}}% Check if another "argument" exists
+%\newcommand{\gobblenext}[1]{\csvdel#1aaa\@ifnextchar\bgroup{\gobblenext}{)}}% Gobble next "argument"
+%\makeatother
 % declare some interface routines
-\newdecl{foo}{FOO}
-\newdecl{bar}{BAR}
+%\newdecl{foo}{FOO}
+%\newdecl{bar}{BAR}
 
 
-\newusedecl{foo}{p1}{p2}{p3}\par
-\newusedecl{bar}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}
-  {p1}{p2}{p3}{p4}\par
-\newusedecl[;]{foo}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}
-\DeclareDocumentCommand \foo { O{} m }{$Hallo^{#1}_{#2}$}
-\foo{fdg}{a1}
+%\newusedecl{foo}{p1}{p2}{p3}\par
+%\newusedecl{bar}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}
+%  {p1}{p2}{p3}{p4}\par
+%\newusedecl[;]{foo}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}{p1}{p2}{p3}{p4}
+%\DeclareDocumentCommand \foo { O{} m }{$Hallo^{#1}_{#2}$}
+%\foo{fdg}{a1}
 sd
 
 %\test[s]
-\def\arg#1{\cdot^{\small #1}}
-$\small\homl[\arg{1}] {(345+354)}^{435}$
+%\def\arg#1{\cdot^{\small #1}}
+%$\small\homl[\arg{1}] {(345+354)}^{435}$
 
 \paragraph{Test.} \blindtext
 \end{document}

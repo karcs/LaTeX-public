@@ -21,25 +21,20 @@
      "quot-field"
      "max-id")
     (TeX-add-symbols
-     '("newusedecl" ["argument"] 1)
-     '("gobblenext" 1)
-     '("newdecl" 2)
-     "x"
-     "csvdel"
-     "checknextarg"
      "com"
      "a"
      "b"
+     "onto"
+     "into"
+     "centralizer"
      "Sum"
-     "iso"
-     "arg")
+     "iso")
     (TeX-run-style-hooks
      "layer"
      "mathenv"
      "blindtext"
      "xparse"
      "makeidx"
-     "etoolbox"
      ""
      "latex2e"
      "art10"

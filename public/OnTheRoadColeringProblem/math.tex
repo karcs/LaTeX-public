@@ -1,0 +1,100 @@
+% My personal maths package
+
+%\bibliography{Bibliography.bib}
+\usepackage{amssymb,amsthm,amsmath,amsfonts}
+
+%\usepackage{mathabx} % more and nicer symbols symbols
+
+%\usepackage{mathabx} % more and nicer symbols symbols
+% MEINE PACKAGES!!!!!!
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+
+% importing various types of grapics
+
+\usepackage{epsfig}  		% For postscript
+\usepackage{epic,eepic}       % For epic and eepic output from xfig
+
+
+% The following is very useful in keeping track of labels while writing
+%\usepackage[notcite]{showkeys}
+
+%textwidth ...
+\setlength{\textwidth}{14cm}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture} 
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newtheorem{note}[theorem]{Note}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% common algebraic objects
+\newcommand{\reals}{\mathbb{R}}  % The real numbers
+\newcommand{\nats}{\mathbb{N}} % The natural numbers
+\newcommand{\ints}{\mathbb{Z}} % The integers
+\newcommand{\rats}{\mathbb{Q}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\DeclareMathOperator{\cardinals}{Cn}
+
+
+% new operators and relations
+
+% setproduct
+\newcommand{\setprod}{\bigtimes}
+\newcommand{\dirprod}{\bigotimes} % direct product for vector spaces
+\newcommand{\dirtimes}{\otimes}
+\newcommand{\dirsum}{\bigoplus} % direct sum for vector spaces
+\newcommand{\dirplus}{\oplus}
+\newcommand{\rest}[1]{\left. #1\right\vert}
+\DeclareMathOperator{\vecspace}{vec} % forgetful functor to vector spaces
+\DeclareMathOperator{\ord}{ord} % forgetful functor to partial orders
+\DeclareMathOperator{\lex}{lex}
+\renewcommand{\mod}{\text{mod }}
+\newcommand{\lcm}{\text{lcm}}
+
+%\renewcommand{\to}{\rightarrow}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\renewcommand{\impliedby}{\Leftarrow}
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\equival}{\Leftrightarrow}
+\newcommand{\intersect}{\cap}
+\newcommand{\unify}{\cup}
+\newcommand{\union}{\bigcup}
+\newcommand{\distunion}{\dot{\bigcup}}
+\newcommand{\intersection}{\bigcap}
+%\newcommand{\setminus}{\char`\\}
+\newcommand{\level}{\boldsymbol{l}}
+\newcommand{\restrict}{\vert}
+\newcommand{\compose}{\circ}
+\DeclareMathOperator{\conv}{conv} % convex hull
+\DeclareMathOperator{\lin}{lin} % linear hull
+\DeclareMathOperator{\aff}{aff}
+\DeclareMathOperator{\img}{im}
+\renewcommand{\int}{\text{int}} % interior
+\newcommand{\module}[1]{\left| #1\right|}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Eig}{Eig}
+\renewcommand{\i}{\boldsymbol{i}}
+\newcommand{\e}{\boldsymbol{e}}
+\DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\trans}{T} % transponse matrix
+\DeclareMathOperator{\stab}{stab} % stabilizer
+\DeclareMathOperator{\orb}{orb} % stabilizer
+\newcommand{\generate}[1]{\langle #1\rangle}
+%\DeclareMathOperator{\Re}{Re}
+%\DeclareMathOperator{\Im}{Im}
+%\DeclareMathOperator{\ord}{ord} % order

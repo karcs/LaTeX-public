@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper,twoside]{article}% twoside is important for distinction of parity of sides
+\input{../Config/math.tex}
+\usepackage{makeidx}
+\usepackage{mathenv}
+\usepackage{calligra} % for dedication
+\usepackage{graphics} % for tu dresden logo
+\usepackage{url}%
+\usepackage{booktabs}%
+\usepackage{setspace}%
+\usepackage{emptypage} % for emptypages when cleardoublepage is called
+\usepackage[inner=3cm,outer=2cm]{geometry} %left=4cm,right=2cm would be equivalent
+
+\makeindex
+\begin{document}
+\input{titlepage}
+\input{dedication}
+\input{statutorydeclaration}
+\input{acknowledgement}
+\pagenumbering{roman}
+\tableofcontents
+\pagestyle{headings}
+\cleardoublepage
+\input{prelim}
+%\input{prelim_ex}
+\cleardoublepage
+\pagenumbering{arabic}
+% \mainmatter%
+\input{combcons}%
+%\input{combcons1}
+\input{mdsmainconj}
+%\input{mdsmainconj_ex}%
+\input{generichyperplanearr}
+%\input{generichyperplanearrold}
+\input{reedsolomon}
+\input{mdsmainconjnleqp}
+%\input{mds-specpolynom.tex}
+\input{mdsmainconjknesgraph.tex}
+%\input{mdsmainconjcharzero.tex}
+\input{summary}
+\cleardoublepage%
+% CHANGE PLAIN STYLE
+% BACKUP PLAIN STYLE
+\makeatletter
+\let\ps@plainorig\ps@plain
+\makeatother
+\makeatletter
+\let\ps@plain\ps@headings
+\makeatother
+\pagestyle{plain}
+\printindex
+%\input{mds-segrelemmaaltproof.tex}
+% REVERT PLAIN STYLE
+\makeatletter
+\let\ps@plain\ps@plainorig
+\makeatother
+\cleardoublepage%
+\pagestyle{headings}
+\bibliographystyle{acm}
+\bibliography{math}
+
+\end{document}
+
+
+%%% Local variables:
+%%% mode: latex
+%%% TeX-command-default: "LatexMk"
+%%% End:

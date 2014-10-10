@@ -1,0 +1,133 @@
+\section{Ganzzahlige Optimierung}
+
+\subsection{Die Methode `Branch and Bound' (BaB)}
+
+\paragraph{Grundprinzipien:}
+
+Aufgabenstellung ist es $f\to \min$ bei $x\in G$ mit $G$ endlich. Zum Beispiel betrachte das Rucksackproblem $\sum_{i=1}^n{c_ix_i}\to\max$, $G:=\set{x\in\reals^n_{\geq 0}:\sum_{i=1}^n{x_i}\leq l, x_i\in\nats}$.
+
+\subparagraph{Vorgehensweise} (dabei sei ein `aktuell bestes' $\bar x\in G$ bekannt) ist die schrittweise Zerlegung in disjunkte Teilmengen $G',G''$ mit $G'\setjoin G''=G$, $G'\setmeet G''=\emptyset$.
+Verzweigung (branch): Gewinnung von unteren Schranken auf den erzeugten Teilmengen durch einfache Hilfsaufgaben (d.h $d(G')\leq f(x)$ für alle $x\in G'$).
+
+Danach verfährt man rekursiv (man erhält einen `Aufsplittungsbaum').
+
+Im weiteren Verlauf braucht \emph{nicht} weiter verzweigt zu werden, wenn einer der folgenden Fälle eintritt:
+\begin{casebycase}
+        \item $G'=\emptyset$.
+        \item $d(G')>f(\bar x)$
+        \item $d (G'')=f(\bar x)$ und $\bar x\in G''$
+\end{casebycase}
+
+\begin{definition}
+    Das Problem $z(x)\to\min$ bei $x\in Q$ (1.1), heißt Relaxation zum Problem
+    $f(x)\to\min$, bei $x\in G$ (1.2), falls gilt $G\setleq Q$, $z(x)\leq f(x)$ für alle $x\in G$.
+\end{definition}
+
+\begin{lemma}[hinreichendes Optimalitätskriterium]
+    Es sei $\hat x\in Q$ Lösung von (1.1). Gilt $\tilde x\in G$ und $z(\tilde x)=f(\tilde x)$, dann ist $\tilde x$ Lösung von (1.2).
+\end{lemma}
+
+Möglich ist
+\begin{itemize}
+        \item lineare Optimierungsaufgabe ohne Ganzzahligkeitsforderung 
+        \item Straf-Ersatzprobleme
+        \item duale Probleme 
+\end{itemize}
+
+\paragraph{Anwendung von `Branch and Bound' in der ganzzahligen Optimierung}
+
+\emph{Der Algorithmus von Land/Doig/Dakin:} Gegeben sei die Aufgabe
+$$
+z(x)=c^{\top}x\to\min \text{ bei } Ax=b,x\geq 0 \text{ und }x\in\ints \eqno{(1.3)}
+$$
+
+Sei ein optimales Tableau für (1) erreicht.
+$$
+\begin{matrix}
+    & x_N(=0) & \\
+    \midrule
+    x_B & P & p \\
+    z & q^{\top} & q_0    
+\end{matrix}\quad\text{ bei } (x_b,x_n)=(p,0)\eqno{(1.4)}
+$$
+$p\geq 0$, $q\geq 0$. Falls $p\in\nats_+^m$, dann löst $(p,0)$ die Aufgabe (2). $p_i\not\in\nats$, dann Verzweigung in $G'$:$x_i\leq \floor{p_i}$, $x\in G$ und $G''$:$x_i\geq \floor{p_i}+1$, Danach
+
+($1_1$) (1) mit $x_i\leq\floor{p_i}$
+
+($1_2$) (1) mit $x_i\geq\floor{p_i}+1$,
+
+$x_i+s_i=\floor{p_i}$.
+
+% 26. Juni 2014
+
+
+
+Beim Algorithmus von Land/Doig/Dakin: Einfügen neuer Restriktionen:
+\begin{enumerate}
+\item $x_i \leq [p_i] \Rightarrow s = [p_i] -x_i = [p_i] -p_i - \sum P_{ij} x_j$
+\item $x_i \geq [p_i] +1 \Rightarrow s = x_i -[p_i] -1= p_i -[p_i] -1 \pm \sum P_{ij} x_j$
+\end{enumerate}
+
+
+\paragraph{BaB beim Rundreiseproblem (Travelling Salesman Problem)}
+Aufgabenstellung: Gegeben sind $n$ Städte, bekannte Kosten $c_{i,j} \geq 0$ (Start bei $i = 1$). Man bestimme von einem Startpunkt ausgehend eine kostenoptimierte Tour, in der jede Stadt genau eimal erreicht wird.
+\begin{align}\label{eq:tsp}
+z = \sum_{k = 1}^n c_{i_k i_{k+1}} \rightarrow \min \qquad (i_1, i_2, \dots , i_n) \in \P (1,2, \dots, n)i_{1+n} = i_1 = 1  
+\end{align}
+Zulässiger Bereich endlich: $(n+1)!$ Rundreisen.
+
+\subparagraph{Bemerkung} Falls $c_{ij} \neq c_{ji}$ wird das Problem \emph{The windy chinese postman problem} genannt. 
+
+
+Äquivalente Formulierung: \eqref{eq:tsp} ist äquivalent zu 
+\begin{enumerate}
+\item  $$
+\sum_{i= 1}^n \sum_{j= 1}^n c_{ij} x_{ij} \rightarrow \min \\
+\sum_j x_{ij} = 1 \forall i\\
+\sum_i x_{ij} = 1 \forall j
+$$
+\item $x_{ij} \in \{0,1\}$
+\item keine Subtouren erlaubt
+\end{enumerate}
+
+\paragraph{1D-Zuschnittsproblem (informativ)}
+
+Aufgabe: Rohmaterial der Länge $L$
+
+Benötigt: $m$ Teile der Länge $l_i \leq L$ für $i = 1, \dots, m$ mit benötigter Stückzahl $s_1 \in \ints_+$.
+
+Modell:
+\begin{enumerate}
+\item Generiere alle Zuschnittvarianten $a_j = (a_1^j, \dots, a_m^j) \in \ints_+^m$ mit $$\sum_{i = 1}^m a_l^j l_i \leq L \; , j = 1, \dots, n$$
+
+(zum Beispiel $a^i = e_i$) mit $n>>m$.
+
+$x_j \in \ints_+$ ist die verwendete Anzahl von Zuschnittsvarianten.
+
+
+(ZP):
+$
+\sum x_j \rightarrow \min \text{ mit } \sum_{j = 1}^n a_i^j x_j \geq s_i, \; x_j \geq 0, \; j = 1, \dots, n
+$
+
+Sinnvolle Vorgehensweise: Ausgehend von aktueller Basislösung generiere eine neue 'bestmögliche' Varianten anhand der aktuellen Optimalitätsindikatoren. 
+
+Das Problem der Spaltengenerierung
+
+$s := \set{a^j} \subset \rats^m$ mit $|s| = n>>m$. Das Problem 
+
+$ c^Tx = \sum c_jx_j$ bei $\sum a^j x_j = b$ mit $x_j \geq 0$, $j = 1, \dots, n$.
+Spezieller Zuschnitt $c = 1$, $b = (s_1, \dots s_n)^T$
+
+Sei nun $J_B$ bekannt mit $(a^j)$, $j \in J_B$ linear unabhängig.
+
+O.B.d.A. sei $J_B = \set{1, \dots, m}$, $B := (a^1, \dots, a^m)$, ($\exists B^{-1}$)
+
+Lineare Optimierungsaufgabe für reduzierte Kosten: $c_N - c_B^T B^{-1}N$ mit $j \in J_N$
+
+Daraus wird eine 'Richtungssuchaufgabe' $c_j -c_B^TB^{-1}a^j \rightarrow \min$ bei $a^j \in s, \sum a_i^j l_i \leq L$.
+
+Speziell für den Zuschnitt:
+
+$1-(1, \dots, 1)^T B^{-1}a \rightarrow \min$ bei $$\sum_{i = 1}^ma_il_i \leq L,$$ $a_i \in \ints_+$ (Rucksackproblem).
+\end{enumerate}

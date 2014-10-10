@@ -1,0 +1,366 @@
+\documentclass{article}
+\usepackage{amssymb,amsthm,amsmath,amsfonts}
+
+%\usepackage{mathabx} % more and nicer symbols symbols
+
+%\usepackage{mathabx} % more and nicer symbols symbols
+% MEINE PACKAGES!!!!!!
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+
+%tikz
+%\usepackage{tikz}
+
+% importing various types of grapics
+
+\usepackage{epsfig}  		% For postscript
+\usepackage{epic,eepic}       % For epic and eepic output from xfig
+
+
+% The following is very useful in keeping track of labels while writing
+%\usepackage[notcite]{showkeys}
+
+%textwidth ...
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{conjecture}[theorem]{Conjecture} 
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newtheorem{note}[theorem]{Note}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% common algebraic objects
+\newcommand{\reels}{\mathbb{R}}  % The real numbers
+\newcommand{\nats}{\mathbb{N}} % The natural numbers
+\newcommand{\ints}{\mathbb{Z}} % The integers
+\newcommand{\field}{\mathbb{F}}
+
+
+% new operators and relations
+
+% setproduct
+\newcommand{\setprod}{\bigtimes}
+\newcommand{\dirprod}{\bigotimes} % direct product for vector spaces
+\newcommand{\dirtimes}{\otimes}
+\newcommand{\dirsum}{\bigoplus} % direct sum for vector spaces
+\newcommand{\dirplus}{\oplus}
+\newcommand{\rest}[1]{\left. #1\right\vert}
+\DeclareMathOperator{\vecspace}{vec} % forgetful functor to vector spaces
+\DeclareMathOperator{\ord}{ord} % forgetful functor to partial orders
+\DeclareMathOperator{\lex}{lex}
+\DeclareMathOperator{\trans}{T}
+\renewcommand{\mod}{\text{mod }}
+\newcommand{\lcm}{\text{lcm}}
+
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\renewcommand{\impliedby}{\Rightarrow}
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\equival}{\Leftrightarrow}
+\newcommand{\intersect}{\cap}
+\newcommand{\unify}{\cup}
+\newcommand{\union}{\bigcup}
+%\newcommand{\setminus}{\char`\\}
+\newcommand{\level}{\boldsymbol{l}}
+
+
+
+\begin{document}
+
+\title{On the Road Coloring Problem}
+\author{Jakob Schneider \& Sebastian Manecke}
+
+\maketitle
+
+\begin{abstract}
+We review Trahtmans proof of the Road Coloring Conjecture published in 2009.
+\end{abstract}
+
+\section{Introduction}
+
+% Generated with LaTeXDraw 2.0.8
+% Mon Jun 10 15:33:16 CEST 2013
+
+Let $G$ be a finite, strongly connected, directed graph where all vertices have the same out-degree $k\in\nats$. Let $\Sigma$ be the alphabet containing the letters $1, \ldots, k$. A synchronizing coloring (also known as a collapsible coloring) in $G$ is a labeling of the edges in $G$ with letters from $\Sigma$ such that 
+\begin{enumerate}
+\item each vertex has exactly one outgoing edge with a given label and
+\item for every vertex $v$ in the graph, there exists a word $s$ over $\Sigma$ such that all paths in $G$ corresponding to $s$ terminate at $v$.
+\end{enumerate}
+
+For such a coloring to exist at all, it is necessary that $G$ be aperiodic. The road coloring theorem states that aperiodicity is also sufficient for such a coloring to exist. Therefore, the road coloring problem can be stated briefly as:
+
+\begin{conjecture}
+Every finite strongly connected aperiodic directed graph of uniform out-degree has a synchronizing coloring.
+\end{conjecture}
+
+\begin{figure}[hbt]
+\centering
+\input{AGWgraph1.tex}
+\caption{AGW graph with synchronizing word $r^5$.}
+\end{figure}
+
+This paper adapts the (ingenious) proof presented by Trahtman published in 2009 (see \cite{Tr07}). It adds upon his work in explaining some details left in his proof, some of which were referenced to \cite{Fr90} while others were expected as base knowledge of the reader.
+
+
+
+\section{Preliminaries}
+
+At first we want to establish some notation. 
+
+\begin{definition}[strongly connected, aperiodic]
+A directed graph $G=(V,E)$ is called \emph{strongly connected} if any two vertices $u,v\in V$ are joined by a directed path. We call $G$ \emph{aperiodic} if the $\gcd$ of the lengths of its circles is one.
+\end{definition}
+
+At this point we want to mention that the property of strongly connectedness is equivalent to the property of the adjacency matrix $A$ of $G$ that for any $i,j\in\{1,\ldots,|V|\}$ there exists $n\in\nats$ such that $(A^n)_{ij}>0$. This can be seen easily by recalling that $A^n$ just counts the number of paths of length $n$ from one vertex to another.
+
+% The property of $G$ being \emph{aperiodic} is equivalent to the following one. There is no partition of $V$ in non-empty sets $V_i$ ($i=1,\ldots,l$ where $l>1$) such that every edge starting from $V_i$ ends in $V_{i+1}$ ($\mod l$). 
+
+Another equivalent formulation of aperiodicty is that if there exists $n\in\nats$ such that $(A^n)_{ij}>0$ then there exists $n_0\in\nats$ such that $(A^n)_{ij}>0$ for all $n\geq n_0$.
+
+\begin{definition}
+An AGW graph is a \emph{strongly connected}, \emph{aperiodic} directed finite graph which is $k$-regular for some $k\in\nats$.
+\end{definition}
+
+Combining both properties (or equivalent formulations for the adjacency matrix, respectively) implies that the adjacency matrix $A$ of an AGW graph admits a strictly positive natural power $A^n$ (for some $n\in\nats$). This property is often called \emph{primitive} with respect to matrices as well as to graphs.  
+
+Hereafter $G=(V,E)$ is an AGW graph, $A$ the adjacency matrix of $G$ and $k$ its out-degree.
+
+\paragraph{The case $k=1$.} This case is trivial but we shall do the short argument here (any coloring is the trivial coloring). Let $G$ be an AGW graph with out-degree $k=1$. Let $C$ be a circle in $G$ of maximal length. If $G=C$ then $C$ must be the trivial circle with one vertex as $G$ is acyclic. In the opposite case $G$ is not strongly connected (it consists of at least two disjoint cycles). Thus $G$ is the trivial graph with one vertex. 
+
+\section{Weights}
+We want to introduce the concept of weights of vertices.
+
+\begin{definition}
+Let $u$ be a left eigenvector of eigenvalue $k$ with natural entries of the adjacency matrix $A$ of an AGW graph $G$, then we define the weight $w(v_i)$ as the $i$-th component of $u$ (w.l.o.g. we may assume that these entries have $\gcd$ one). For a subset $L \subset V$ we define $w(L):=\sum_{v\in S}{w(v)}$.
+\end{definition}
+
+The existence of such eigenvector can easily be seen from the fact that $A$ is primitive. A more precise explanation is given in the following theorem.
+
+\begin{theorem}
+Let $k\geq 2$\footnote{This shall also be assumed for the rest of the paper as the case $k=1$ is trivial as mentioned in the preliminaries.}. All of the eigenvalues $\lambda$ of the adjacency matrix $A$ lie in the interval $[-k,k]$ and especially $k$ is an eigenvalue of $A$ of algebraic multiplicity one with an integer-valued positive left and right eigenvector, where the right eigenvector trivially is a multiple of $(1,\ldots,1)^{\trans}$.\footnote{Actually, such weights can be found for any strongly connected graph, as Perron-Frobenius' theorem works for positive irreducible operators (which are the corresponding adjacency matrices).}
+\end{theorem}
+
+\begin{proof}
+One directly notices that $\norm{A}_\infty=k$ implying that for all eigenvalues $\lambda$ we have $|\lambda|\leq k$. The rest is just applying Perron-Frobenius' theorem.
+\end{proof}
+
+Again we need to introduce some notation conventions. Let $ L \subset V$ be a set of vertices of the colored AGW graph $G$ and $s$ be a word of $\Sigma^*$. Then we denote by $Ls$ the set of vertices which are reached from the vertices of $L$ by a $s$-path.
+
+The papers we are referring to are mainly dealing with the following two concepts.
+
+\begin{definition}[$F$-maximal set]
+An \emph{$F$-maximal set} set $L$ is a subset of $V$ where $w(L)$ is maximal under the condition that $|Ls|=1$ for some word $s\in\Sigma^*$. This last condition is also called \emph{contractible}.
+\end{definition}
+
+\begin{definition}[$F$-clique]
+An $F$-clique is a set of the form $Vs$ where $s\in \Sigma^*$ such that every pair of $Vs$ is not \emph{synchronizable}, i.e. for all $u,v\in Vs$ and $t\in \Sigma^*$ we have $ut\neq vt$. Such pairs we also call \emph{deadlocks}.
+\end{definition}
+
+The first important step for the solution of the problem is now given by the following 
+
+\begin{theorem}[Partition into $F$-maximal sets, Friedman]\footnote{This theorem does also hold for strongly connected graphs.}
+The graph $G$ has a partition into $F$-maximal sets.
+\end{theorem}
+
+Friedman actually proved this theorem for $k=2$. But his proof works as well for the general case.
+
+\begin{proof}
+Let $L$ be an $F$-maximal set. Then by the definition of the weight, the following identity holds for the backward images of $L$.
+
+\begin{equation}
+\sum_{s\in\Sigma}{w(Ls^{-1})}=kw(L)
+\end{equation} 
+
+From this identity one observes that all the sets $Ls^{-1}$ ($s\in\Sigma$) must be $F$-maximal sets, because they are contractible (as $L$ is) and must all have the same weight as $L$ does. Now, if $L=V$ we are done. Otherwise, let $r$ be a synchronizing word of $L$ and $v_0\in V$ the vertex such that $Lr=\{v_0\}$. Furthermore, pick $v\in V\setminus L$. By strongly connectedness there is some word $w$ such that $v_0w=v$. Then consider the $F$-maximal sets $Lw^{-1}r^{-1}=:\tilde{L}$ and $L$ (the first one has this property by successive application of inverses of single letters). Then 
+it is obvious that $|Lrwr|=|\tilde{L}rwr|=1$. Furthermore, these both sets cannot be synchronized to the same vertex, since $Lr=\tilde{L}rwr =\{v_0\}$ and thus otherwise we would have $v_0wr=vr=v_0$ which would imply $v\in v_0r^{-1}=L$, a contradiction\footnote{This argument uses strict positivity of weights. Otherwise we could only say $L\subset v_0r^{-1}$.}. From this, one deduces that $L$ and $\tilde{L}$ are disjoint. Continuing the argument inductively, one obtains the desired partition.
+\end{proof}
+
+A second important theorem is also of significant importance for the proof of the conjecture. It is stated by Trahtman.
+
+At first we need the following
+
+\begin{definition}
+A pair $u,v\in V$ is called \emph{stable} if for any word $w\in \Sigma^*$ the pair $uw, vw\in V$ is synchronizable.
+\end{definition} 
+
+It is clear, that \emph{stability} defines a congruence relation on the set $V$. Let us denote this relation by $\rho$.  
+
+\begin{theorem}[Quotient graph, Trahtman]
+The graph $G/\rho$ is an AGW graph. 
+\end{theorem}\label{theo1}
+
+The proof of the theorem is obvious and is omitted\footnote{Circles and paths remain, although they might get 'glued' somewhere}. While this theorem is quiet natural and clear by the definition of $\rho$, it is a very strong tool in the proof, because it ensures that the existence of one single stable pair of vertices in an AGW graph implies (inductively) the existence of a synchronizing coloring.
+
+We now continue with a lemma on $F$-cliques.
+
+\begin{lemma}[Equal cardinality of $F$-cliques, Trahtman]\label{lem1}\footnote{This lemma also holds for strongly connected graphs.}
+Let $w$ be the weight of an $F$-maximal set of $G$. Then any $F$-clique $Vs$ is of cardinality $w(V)/w$. Moreover, if $F_1, \ldots F_l$ is a partition of $V$ into $F$-maximal sets then $|F_i\intersect Vs|=1$ (forall $i=1,\ldots,l$).
+\end{lemma}
+
+The proof is mainly based on Friedmans theorem.
+
+\begin{proof}
+Let $Vs$ be an $F$-clique ($s\in\Sigma^*$). The first thing we note is that for any $F$-maximal set $F$ we have $|F\intersect Vs|\leq 1$, because otherwise $Vs$ would contain a synchronizable pair. Thus we have $|Vs|\leq w(V)/w$ (number of $F$-maximal sets. Besides, for any $v\in Vs$ we have
+\begin{equation}
+w(vs^{-1})\leq w \label{eq1}
+\end{equation}
+by the definition of $F$-maximal sets. Furthermore, we have the following identity
+\begin{equation}
+w(V)=\sum_{v\in Vs}{w(vs^{-1})}\label{eq2}
+\end{equation}
+Plugging (\ref{eq1}) into equation (\ref{eq2}) gives
+\begin{equation}
+w(V)\leq |Vs|w
+\end{equation}
+from which (together with the other inequality) we obtain the desired result $|Vs|=w(V)/w$. The second fact mentioned follows easily.
+\end{proof}
+
+The next lemma is an easy one.
+
+\begin{lemma}\label{lem2}
+For any $F$-clique $Vs$ and any word $w\in \Sigma^*$ the set $Vsw$ is an $F$-clique. Moreover, any vertex $v$ belongs to some $F$-clique.
+\end{lemma}
+
+\begin{proof}
+Just use the stability of the binary relation to be deadlock. The second fact is an easy consequence of strongly connectedness.
+\end{proof}
+
+The next lemma is essential for the final proof and is based on the idea to prove the existence of a stable couple.
+
+\begin{lemma}\label{lem3}
+Assume $G$ via some coloring has no stable couples. Let $A$ and $B$ be distinct $F$-cliques ($|A|=|B|>1$). Then $|A\setminus B|=|B\setminus A|>1$.
+\end{lemma}
+
+\begin{proof}
+Assume $|A\setminus B|=|B\setminus A|=1$ (the cardinalities are equal by Lemma (\ref{lem1}). Then pick $u\in A\setminus B$ and $v\in B\setminus A$. By condition these two form no stable couple. Thus we find $s\in\Sigma^*$ such that the pair $(us,vs)$ is deadlock. Thus we see immediately that $(A\unify B)s$ must also be an $F$-clique which contradicts Lemma (\ref{lem1}).\footnote{Attention. If $|A\setminus B|\geq 2$ one cannot use the same argument repetitively (twice), because it is not assured that a pair $(u's,v's)$ is unstable for $u'=A\setminus B\setminus\{u\}$ and $v'=B\setminus A\setminus\{v\}$ are unstable ($s\in\Sigma^*$ chosen for $u$ and $v$ as above).}
+\end{proof}
+
+
+
+Finally, we end up the preparation with an easy one for which we need the following
+
+\begin{definition}
+Let $B=\{e_1,\ldots,e_k\}\subset E$ a set of $k$ edges starting from a vertex $u$ and ending in $v\in V$. Then we call $B$ a bunch.
+\end{definition}
+
+\begin{lemma}\label{lem4}
+Let $G$ have a vertex $v$ with two incoming bunches. Then $G$ has a stable couple.
+\end{lemma}
+
+\begin{proof}
+The two starting vertices of the two incoming bunches are obvioulsy stable.
+\end{proof}
+
+\section{Spanning subgraphs, trees and cycles}
+
+This section gives the main part of the proof. For the understanding of this, the reader is allowed to forget everything about the weights of the graph $G$. They were only a mean to proof the facts about $F$-cliques and $F$-maximal sets.
+
+At first we need some terminology.
+
+\begin{definition}[Spanning subgraph]
+Let $R$ be a subgraph of $G$. We call $R$ a \emph{spanning subgraph} of $G$ if the vertex sets of $R$ and $G$ coincide and every vertex of $R$ has out-degree one.\footnote{If $G$ is colored then any monochromatic subgraph is a spanning subgraph. Moreover, for any spanning subgraph there exists such coloring.}
+\end{definition}
+
+\begin{definition}[Rooted tree]
+A graph $T$ of the spanning subgraph $R$ is called a \emph{rooted tree} of $R$ if $T$ is a maximal tree of $R$ having no edges with cycles of $R$ in common and its root in a cycle of $R$.
+\end{definition}
+
+\begin{definition}[Level of a vertex]
+Let $T$ be a rooted tree in a spanning subgraph $R$ and $v\in V$. Then the \emph{level} of $v$ is defined as the length of the path from $v$ to the root of $T$ and is denoted by $\level(v)$. Furthermore let $\smash{\level(T) := \displaystyle\max_{v \in T} \level(v)}$  
+\end{definition}
+
+From these three definitions it should be clear that any spanning subgraph $R$ of $G$ can be uniquely partitioned into disjoint cycles and rooted trees. The level for each vertex $v\in V$ is then defined by the particular tree in which $v$ lies. If $v$ is member of a cycle, then its level is 0.
+
+In the following, if nothing different is stated, we use the same symbols as in the definitions.
+
+Considering such partitioned spanning subgraph $R$ of $G$ the following lemma should be trivial.
+
+\begin{lemma}[%Connection of $F$-cliques and $n$-level vertices
+]\label{lem5}
+Let all edges of $R$ have the same color $c$ and let $Vs$ be an $F$-clique then we have $|\level^{-1}[n]\intersect Vs|\leq 1$ ($s\in\Sigma^*$). 
+\end{lemma}
+
+\begin{proof}
+If $\level^{-1}[n]\intersect Vs$ had more than one member, $Vs$ would contain a synchronizable pair (synchronizing word is $c^n$). 
+\end{proof}
+
+For the rest of the section let us assume, that $G$ has more than one vertex.\footnote{This case is sufficiently trivial.}
+
+\begin{lemma}[%Making a new spanning subgraph from a bad one
+]\label{lem6}
+Let $R$ be some spanning subgraph of $G$ consisting only of disjoint cycles. Then there is another spanning subgraph $R'$ of $G$ with exactly one vertex of maximal level.
+\end{lemma}
+
+\begin{proof}
+If $R$ is a single cycle then $R$ has (not necessarily distinct) vertices $u,v,w\in V$ such that $u\rightarrow w\in E_G$, $u\rightarrow v\in E_R$\footnote{In this proof we use the subscripts to indicate to which subgraph vertices belong.} and $v\neq w$\footnote{Here we use $k\geq 2$ and the fact that if all edges of $G$ would belong to bunches then we could assign any coloring to $G$ and deal with it like $k=1$.}. We then may take the new spanning subgraph $R'=(V_R,E_R\setminus\{u\rightarrow v\}\unify\{u\rightarrow u\})$.
+
+In the second case, where $R$ is not a single cycle we may apply the same argument.
+In the end we have a single tail (that is a tree which is a path) rooted in $w$ and thus a single vertex of maximal length.
+
+\begin{figure}[htb]
+\centering
+\input{AGWgraph2.tex}
+\caption{The graphs $R$ (red) and $R'$ (blue) as constructed.}
+\end{figure}
+\end{proof}
+
+The rest of the proof is ugly for guys who dislike dealing with 'pointers'.
+
+\begin{lemma}\label{lem7}
+Every AGW graphs without two incoming bunches has a spanning subgraph such that all of its vertices of maximal level belong to one non-trivial tree.
+\end{lemma}
+\begin{proof}
+
+For this proof we utilize severe case-by-case analysis. Denote by $C_1$, \ldots, $C_n$ the cycles of a spanning subgraph $R$ with the trees $T_{i,1}$, \ldots, $T_{i,l_i}$ on the cycle $C_i$ and $l_i \leq |C_i|$. To be more precise let $R$ be a spanning subgraph for which the sum of the number of vertices in each cycle $\sum |C_i|$ is maximal.\\
+Let us further name some important parts of $R$. Let $T$ be a tree of maximal level $L = \level(T) > 0$, i.e. $\level(T) \geq \level(T_{i, j})$ for all $i$, $j$ and $C$ the corresponding cycle. In addition let $p \in T$ have the level $L$, the root vertex of $T$ be denoted by $r$ with $C$ having a vertex $c$ and an edge $c \rightarrow r$ and $b$ be the vertex on the path $a \rightarrow \ldots \rightarrow b \rightarrow r$ which points to $r$. With $G$ being strongly connected, there exists also an edge $a \rightarrow p$, which is not in $R$. \\
+
+
+Throughout the proof we want to check, if we can create a new spanning subgraph satisfying the conditions by changing some of the edges of $R$. The edges which are subject to change are $a \rightarrow p$, $b \rightarrow r$ and $c \rightarrow r$. As $L$ is the maximal level, it is sufficient to construct a tree with level $L+1$ (or greater) in one circle.\\
+
+First we want to see what happens if we include $a \rightarrow p$ in our spanning subgraph $R$ and delete the edge $a \rightarrow x \in R$, (which exists as $a$ has out-degree one). If $a \notin T \unify C$ then $T$ is enlarged to a tree with a level greater then $L$ (as $\level(a) = L + 1$), so the new tree with root $r$ includes every vertex with maximal level, else if $a \in T$ a new cycle (of length greater or equal to one) is added to $R$, which contradicts the construction of $R$ as subgraph with maximal number of vertices in cycles. So we can assume in further considerations that $a \in C$. There is a new cycle $C' = a \rightarrow p \rightarrow \ldots \rightarrow b \rightarrow r \rightarrow \ldots \rightarrow a$. Note that if we exchange $a \rightarrow x$ with $a \rightarrow p$ in $R$, we remove the cycle $C$ from $R$ and add $C'$ (without touching any other cycle). By construction of $R$, the number of vertices in $C'$ is lesser or equal to the number of vertices in the cycle $C$. Both cycles have a common 
+path from $r$ to $a$, so we can conclude, that the path $a \rightarrow x \rightarrow \ldots \rightarrow c \rightarrow r$ (of length $L' + 1$) in $C$ is longer then or equally long as the path $a \rightarrow p \rightarrow \ldots \rightarrow b \rightarrow r$ of length $L + 1$ in $T$, thus $L' \geq L$. If $L' > L$, then $C'$ has a tree of length $L'$, so by exchanging $C$ with $C'$ we have a new spanning subgraph with the desired properties. So we can assume that $L = L'$.\\
+
+Now we want to examine the case when we replace $b \rightarrow r$ by another edge $b \rightarrow r'$, $r \neq r'$, (we consider the case that were is no such edge, i.e. that there is a bunch from $b$ to $r$ in the last case). Of course, if $b$ has an outgoing edge to a vertex of another tree $T_{i,j}$ (for some $i$, $j$), which is not the root of the tree, we would end up having a single tree which contains every vertex of maximum length. If $b$ has an edge to a vertex in a circle $C_i$, we can combine both methods of changing the outgoing edges of $a$ and $b$ to construct a new spanning subgraph. As previously showed, there is an edge $a \rightarrow x$ in $C$ and an edge $a \rightarrow p$ in $G$. So if $b$ has an outgoing edge to a vertex $r'$ of $C_i$, we can change edges, such that $C_i$ has a tree with the path $x \rightarrow \ldots \rightarrow c \rightarrow r \rightarrow \ldots \rightarrow a \rightarrow p \rightarrow \ldots \rightarrow b \rightarrow r'$, which contains a path of length $L + 1$ ($a \rightarrow p \rightarrow \ldots \rightarrow b \rightarrow r$).\\
+
+The case that $b$ has an outgoing edge to a vertex in $T$ contradicts the definition of $R$ as seen above. So finnally we must consider whether $b$ has an edge to a vertex $r'$ in C. As we had seen previously the path $a \rightarrow x \rightarrow \ldots\ldots \rightarrow c \rightarrow p$ is of length $L + 1$, we can use the same argumentation that either the path $a \rightarrow x \rightarrow \ldots r'$ is of length $L + 1$ or we can find a new spanning subgraph which meet the requirements. But as these paths are both part of the cycle $C$, we see that $r = r'$, contradiction.\\
+
+In the last case we can assume that were is a bunch from the vertex $b$ to the vertex $r$. As were are no two incoming bunches in $r$, there is an edge $c \rightarrow r''$, $r \neq r''$. If $r'' \in T$, we could replace $C$ by a new cycle of greater length, contradicting maximality of $R$. If $r'' \notin C \unify T$, we add a path of length greater then $L$ to another cycle or tree, which would in return have all vertices of maximal level, so $r'' \in C$. There is a path from $r''$ to $r$ in $C$, which leads to the observation, that there is a new circle $C''$ containing edges from $C$ and the edge $r \rightarrow r''$. As $r \notin C''$ the shortest path (in $C$) from $r$ to a vertex of $C''$ is of non-zero length, thus the tree of $C''$ which contains $T$ has a maximal level greater then $L$, proving the claim.
+\end{proof}
+
+The last part is now the final theorem.
+
+\begin{theorem}\label{theo3}
+The graph $G$ always has a coloring with a stable couple.
+\end{theorem}
+
+\begin{proof}
+We see immediately that by Lemma \ref{lem4} $G$ has a stable couple, if it contains a vertex with two incoming bunches. In the other case, Lemma \ref{lem7} ensures that $G$ has a spanning subgraph $R$ with all vertices of maximal (positive) level belonging to one tree of $R$. Let $\mathcal{C} = \union{C_i}$ be the set of all vertices from cycles of $R$, ($C_i$ is defined as in Lemma \ref{lem7}). We want to color all edges in $R$ with one color (for example $c \in \sigma$). It is not of importance how every other edge is colored. In regard of Lemma \ref{lem2}, there is a non-empty intersection between the set of vertices of maximal level $N$ and some $F$-clique $F$. By reviewing \ref{lem5}, we observe that $|F \intersect N| = 1$. The word $c^{L - 1} \in \Sigma^{*}$ (with $L$ as the level of the vertices of $N$) translates $F$ to another $F$-clique $F'$ of the same size. With $L$ being the maximal level of all vertices it follows, that $F' \setminus \mathcal{C}$ contains exactly one vertex (i.e. $F' \setminus  
+\mathcal{C} = (F \intersect N) c^{L-1})$), as every vertex of $V \setminus N$ is mapped to $\mathcal{C}$. From this we see, that $|N c^{L-1} \intersect F'| = | F' \setminus \mathcal{C}| = 1$ and $|\mathcal{C} \intersect F'| = |F'| - 1$.\\
+
+Let $m = \lcm (|C_1|, \ldots, |C_n|)$ be the least common multiple of the lengths of all cycles, so for $v \in \mathcal{C}$ we have $v c^m = v$. We conclude, that for the $F$-clique $F'' := F' c^m$ holds $F'' \subseteq \mathcal{C}$ and $\mathcal{C} \intersect F' = F' \intersect F''$. It follows that $F'$ and $F''$ have $|F'| - 1$ common vertices, which contradicts Lemma \ref{lem3}, if the examined coloring has no stable couple.
+\end{proof}
+
+\begin{corollary}
+Any AGW graph is synchronizable.
+\end{corollary}
+\begin{proof}
+Let $G$ be the smallest counter-example. Then the number of vertices is greater then one, as a graph with one vertex is obviously synchronizable. Then we see from Theorem \ref{theo3} that there exists a stable couple, with that we have a non-trivial congruence class of more than one element. Therefore $G$ has at least one further vertex then $G / \rho$, which in return has a synchronizing coloring and implies that $G$ also has a synchronizing coloring.
+\end{proof}
+
+\bibliographystyle{unsrt} 
+\bibliography{mybib}
+
+\end{document}

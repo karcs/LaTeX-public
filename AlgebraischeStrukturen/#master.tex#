@@ -1,0 +1,839 @@
+\documentclass{book}
+%% 25.06.14
+\input{../Config/german.tex}
+\usepackage[de]{mathenv}
+\input{../Config/math.tex}
+\usepackage{tikz}
+\usepackage{booktabs}
+
+\begin{document}
+\title{Einführung in die Klontheorie}
+\author{Sebastian Kerkhoff}
+\pagestyle{empty}
+\maketitle
+\clearpage
+
+\begin{definition}\label{elem-ab-p-group}
+    Eine elementar-abelsche $p$-Gruppe ist eine $p$-Gruppe, in der für alle $x\neq 0$ gilt:
+    $\ord x = p$.
+\end{definition}
+
+\begin{remark}
+    Das heißt eine solche Gruppe muss bis auf Isomorphie mit $\dirsum_{i\in I}{\ints/p\ints}$. übereinstimmen.
+\end{remark}
+
+\hfill{02.06.2014}
+
+Vorläufiger Prüfungstermin wird heute auf den 05.08.2014 um 10 Uhr festgelegt.
+
+Wir kommen nun zu einem der wichtigsten Resultate über Klone auf endlichen Mengen.
+
+\begin{theorem}[\person{Rosenberg}s Charakterisierung der maximalen Klone auf endlichen Mengen]
+    Sei $A$ endlich. $\card{A}\geq 2$. Die maximalen Klone auf $A$ sind genau die Klone der Form $\Pol\sigma$ mit
+    $$
+    \sigma\in o(A)\setjoin p(A)\setjoin e(A)\setjoin a(A)\setjoin c(A)\setjoin r(A).
+    $$
+    Wir bezeichnen letztere Menge als $\cL(A)$.
+\end{theorem}
+
+\begin{proof}
+    \person{Ivo Rosenberg} zeigte 1965:
+    \begin{enumerate}
+            \item $\Clo(\sigma)$ ist minimaler Relationenklon für jede Relation $\sigma\in\rho(A)$ (nicht zu schwer, technisch).
+            \item Sonst gibt es keine minimalen Relationenklone (sehr schwierig).
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    Seien $\sigma_1,\sigma_2\in \cR_A^{(2)}$. Dann setze
+    $$
+    \sigma_2\compose\sigma_1:=\set{(a_1,a_2)\in A^2:\exists b\in A:(a_1,b)\in\sigma_1\lgand (b,a_2)\in\sigma_2}
+    $$
+\end{definition}
+
+\begin{remark}
+    Ist $R\setleq \cR_A$ Relationenkon, so ist $R$ abgeschlossen gegen $\compose$, denn
+    $$
+    \sigma_2\compose\sigma_1=\pi_{14}(\sigma_1\settimes\sigma_2\setmeet A\settimes \Delta_A\settimes A).
+    $$
+\end{remark}
+
+\begin{remark}
+    Sei $A$ endlich. Für je zwei verschiedene Relationen $\sigma, \sigma'\in\cL(A)$ gilt $\Pol(\sigma)\neq \Pol(\sigma')$ (was äquivalent ist zu $\Clo(\sigma)\neq\Clo(\sigma')$) mit Ausnahme von $2$ Fällen:
+    \begin{statements}
+            \item $\sigma,\sigma'\in o(A)$ und $\sigma^{-1}=\sigma'=\set{(a_2,a_1)\in A^2:(a_1,a_2)\in \sigma}$
+            \item $\sigma,\sigma'\in p(A)$ und $\exists i\in \nats:\sigma'=\sigma^i=\underbrace{\sigma\compose \cdots \compose\sigma}_{\textrm{$i$-mal}}$.
+    \end{statements}
+\end{remark}
+
+\begin{definition}
+    Sei $A$ endlich. Auf einer Menge von Relationen $R$ definieren wir eine Äquivalenzrelation durch
+    $$
+    \sigma\sim\sigma',
+    $$
+    falls
+    $$
+    \Pol\sigma = \Pol\sigma'.
+    $$
+    Setze
+    $$
+    \tilde\rho(A):={\rho(A)}^{\sim}={o(A)}^{\sim}\setjoin {p(A)}^{\sim}\setjoin e(A)\setjoin a(A)\setjoin c(A)\setjoin r(A),
+    $$
+    wobei $R^{\sim}$ ein Repräsentantensystem von $R/\sim$ bezeichnet.
+\end{definition}
+
+\begin{remark}
+    Die Anzahl $\mu(k)=\card{{\rho(A)}^{\sim}}$ der maximalen Klone auf einer $k$-elementigen Menge wächst sehr rasch.
+%\begin{table}
+%%    \centering
+%    \begin{tabular}{cccccccc}
+%        k & 2 & 3 & 4 & 5 & 6 & 7\\
+%        \mu(k) & 5 & \cdot & 82 & 643 & 15182 & 7848984
+%    \end{tabular}
+%\end{table}
+\end{remark}
+
+Also ergibt sich
+%
+\begin{corollary}
+    Sei $A$ endlich. Eine Menge $F\setleq \cO_A$ ist vollständig genau dann, wenn für jede Relation $\sigma\in{\rho(A)}^{\sim}$ eine Funktion $f_\sigma\in F$ mit $f_\sigma\congt\sigma$ (was zu $f_\sigma\not\in \Pol\sigma$ äquivalent ist), existiert.
+\end{corollary}
+
+Für einzelne Funktionen noch einfacher
+
+\begin{proposition}
+    Sie $A$ endlich. Eine Funktion ist \person{Sheffer}-funktion, falls $f\not\in\Pol\sigma$ für jede Relation $\sigma\in e(A)\setjoin p(A)\setjoin {c(A)}^{(1)}$ gilt.
+\end{proposition}
+
+\begin{proof}
+    Man kann zeigen, dass eine Funktion, die keine Relation aus $e(A)\setjoin p(A)\setjoin{c(A)}^{(1)}$ bewahrt auch keine Relationen aus $\rho(A)$ bewahrt.
+\end{proof}
+
+Interessanterweise kennt man die minimalen Klone auf endlichen Mengen nicht. Es gibt jedoch einige Teilergebnisse.
+
+Zur Erinnerung: Ein Klon $C\leq \cO_A$ ist minimal genau dann, wenn $\Clo(f)=C$ für alle nichttrivialen $f\in C$ und $C\neq J_A$.
+
+\begin{definition}
+    Sei $f\in\cO_A^{(n)}$, dann heißt es minimal, falls $\Clo(f)$ minimal ist und jedes $g\in\Clo(f)\setminus \cJ_A$ mindestens $n$-wertig ist.
+\end{definition}
+
+Offenbar gilt:
+
+\begin{remark}
+    $C$ ist minimal genau dann, wenn es eine minimale Funktion $f$ gibt mit $\Clo(f)=C$.
+\end{remark}
+
+\begin{definition}
+    Sei $f\in\cO_A^{(n)}$ ($n\geq 2$), $i,j\in \set{1,\ldots,n}$, $i<j$. Setze
+    $$
+    f_{i=j}(x_1,\ldots,x_{n-1})=f(x_1,\ldots,x_{j-1},x_i,x_{j+1},\ldots,x_{n-1}),
+    $$
+    es entsteht $f_{i=j}$ also durch Identifikation der $i$-ten und $j$-ten Variable.
+\end{definition}
+
+\begin{example}
+    Es ist $f_{1=3}=(x_1,x_2,x_3)=f(x_1,x_2,x_1,x_3)$ und
+    $f_{2=4}=(x_1,x_2,x_3)=f(x_1,x_2,x_3,x_2)$
+\end{example}
+
+\begin{proposition}
+    Sei $f\in\cO_A^{(n)}$ minimal ($n\geq 2$). Dann ist $f_{i=j}$ für alle $i,j$ trivial.
+\end{proposition}
+
+\begin{proof}
+    Es gilt $f_{i=j}\in{\Clo(f)}^{(n-1)}=\cJ_A^{(n-1)}$, da $f$ minimal ist.
+\end{proof}
+
+\begin{definition}[Semiprojektion]
+    Eine Funktion $f\in\cO_A^{(n)}$ heißt Semiprojektion, d.h. es existiert ein $i\in\set{1,\ldots,n}$, sodass $\card{\set{x_1,\ldots,x_n}}<n$ impliziert, dass $f(x_1,\ldots,x_n)=x_i$.
+\end{definition}
+
+\begin{remark}
+    Dies ist äquivalent dazu, dass $f_{i=j}=\pi_i^{(n-1)}$ ist (für dasselbe $i$).
+\end{remark}
+
+\begin{lemma}[\person{Swierczkowski}]\label{semi-proj-unique-proj}
+    Sei $f\in\cO_A^{(n)}$ und $n\geq 4$. Falls $f_{i=j}$ für alle $i<j$ eine Projektion ist, dann ist $f$ eine Semiprojektion (d.h. $f_{i=j}$ ist für $i<j$ konstant).
+\end{lemma}
+
+\begin{proof}
+    Für $A$ einelementig ist die Behauptung trivial. Sei also $\card{A}\geq 2$.
+    \emph{Fall 1:} Es existiert ein $i\in\set{1,\ldots,n}$, sodass
+    $$
+    \forall x,y\in A: f(y,\ldots,y,\underbrace{x}_{\textrm{$i$-te Stelle}},y,\ldots,y)=x
+    $$
+    O.b.d.A. sein $i=1$, also $\forall x,y\in A:f(x,y,\ldots,y)=x$.
+    Für alle $i,j\in\set{2,\ldots,n}$ mit $i<j$ muss $f_{i=j}$ Projektion sein. Wegen der letzten Gleichung gilt: $f_{i=j}=\pi_1^{(n-1)}$. Damit insbesondere auch
+    $$
+    f_{1=2}(x_1,x_2,x_2,x_4,\ldots,x_{n-1})=f_{3=4}(x_1,x_1,x_2,x_4,\ldots,x_{n-1})
+    $$
+    was gleich ist mit
+  
+    TODO zu ENDE TIPPEN
+\end{proof}
+
+\section{Übung 4}\hfill 04.06.2014
+
+\begin{exercise}
+    Sei $A$ eine Menge. Für $M\setleq A$ sei
+    $$
+    \chi_M(x):=
+    \begin{cases}
+        1 &: \textrm{falls $x\in M$}\\
+        0 &: \textrm{sonst}
+    \end{cases}
+    $$
+    die charakteristische Funktion auf $M$ und für $\cM\setleq\Sub A$ sei
+    $$
+    C_\cM := \Clo\set{f_M:M\in\cM}.
+    $$
+    Zeige, dass $C_\cM\neq C_{\cM'}$ für zwei verschiedene nichttriviale Teilmengen $\cM,\cM'\setleq \Sub(A\setminus\set{0,1})\setminus\set\emptyset$.
+\end{exercise}
+%
+\begin{solution}
+    Die Komposition zweier charakteristischer Funktionen $\chi_M, \chi_{M'}$ ist immer konstant $0$ falls $M,M'\setleq A\setminus\set{0,1}$. Daher ist es unmöglich, dass $\chi_M'\in\Clo(\cM)$, falls $\emptyset\setgt M'\not\in\cM$.
+\end{solution}
+
+\begin{exercise}
+    Zeigen Sie das Lemma aus der Vorlesung:
+    Sei $C\leq \cO_A$ Klon, $k\in\nats_+$, $\sigma\in R_A^{(k)}$. Dann
+    \begin{statements}
+            \item $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n):r_1,\ldots,r_n\in\sigma,f\in C^{(n)},n\in\nats^+}$.
+        \item Falls $\sigma=\set{r_1,\ldots,r_n}$, dann $\Gamma_C(\sigma)=\set{f(r_1,\ldots,r_n):f\in C^{(n)}}$.
+    \end{statements}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+        \item $\Gamma_C(\sigma)$ war definiert als die kleinste Relationen, die $\sigma$ enthält und fon $C$ bewahrt wird ($C\rhd \Gamma_C(\sigma)$). Einerseits müssen alle Tupel $f(r_1,\ldots,r_n)$ dann in $\Gamma_C(\sigma)$ liegen, denn $\sigma\setleq\Gamma_C(\sigma)$ und $C\rhd \Gamma_C(\sigma)$ nach Definition.
+    Andererseits ist die auf diese Weise erhaltene Relation aber auch von $C$ bewahrt, denn sind $f_i(r^i_1,\ldots,r^i_{n_i})$ in der erzeugten Relation für $i=1,\ldots,m$, so ist auch
+
+    $$
+    g(f_1(r^1_1,\ldots,r^1_{n_1}),\ldots,f_m(r^m_1,\ldots,r^m_{n_m}))\in\Gamma_C(\sigma),
+    $$
+    denn wir können es als Funktionskompositoin von $g$ mit
+    $$f_i(\pi^{\coprod_{i=1}^m\set{n_i}}_{(i,1)},\ldots,\pi^{\coprod_{i=1}^m\set{n_i}}_{(i,n_i)})$$
+    angewendet auf das große Tupel $(r^1_1,\ldots,r^1_{n_1},\ldots,r^m_1,\ldots,r^m_{n_m})$ auffassen. Also ist diese Konstruktion für $\Gamma_C(\sigma)$ korrekt.
+        \item Im Falle, dass $\sigma$ endlich ist, reduzieren sich die Ausdrücke in der Mengenklammer wie angegeben, denn würden wir eine Funktion mit Stelligkeit größer als $\card{\sigma}=n$ auf ein Tupel aus $\sigma$ anwenden, so könnten wir diesen Ausdruck ebensogut als eine $n$-stellige Funktion angewendet auf alle Tupel aus $\sigma$ schreiben, indem wir doppelt auftretende Variablen durch geeignete Projektionen ersetzen.
+    Analoges geht, wenn man weniger als $n$ Tupel einsetzt.
+    \end{tasks}
+\end{solution}
+
+\begin{exercise}
+    Sei $\mu(k)$ die Anzahl der maximalen Klone auf einer $k$-elementigen Menge. Bestimme $\mu(3)$.
+\end{exercise}
+
+\begin{solution}
+Zähle die Relationen in dem Charakterisierungssatz.
+$$\card{o(A)^{\sim}}=3$$
+sind die strikten Ordnungsrelationen (modulo Permutationen). Derer gibt es $3$.
+$$\card{p(A)^{\sim}}=1$$
+Permutationen mit lauter gleichen $p$-Zyklen modulo Iteration. Derer gibt es $(012)$ und $(021)$ diese sind aber jeweils das Quadrat der anderen.
+
+$$\card{e(A)^{\sim}}$$
+Äquivalenzrelationen modulo Permutationen, dies ist die Anzahl der Partitionen auf $3$ Elementen. Dies sind $3$.
+$$\card{c(A)}=9$$
+der zentralsymmetrischen Relationen. Derer gibt es
+$$\set{0},\set{1},\set{2}, \set{0,1}, \set{0,2}, \set{1,2},$$ zweistellige $$\set{(0,0),(1,1),(2,2),(0,1),(0,2),(1,0),(2,0)}$$
+und die beiden anagen Relationen mit zentralen Elementen $1$ und $2$, dreistellige solcher Relationen gibt es nicht, denn alle Tupel mit zwei gleichen Komponenten sind enthalten und noch ein zentrales Element, sodass man nur die volle Relation erhält.    
+Schließlich ergibt sich noch
+$$
+\card{a(A)}=1,
+$$
+denn es gibt nur eine geeignete Gruppenstruktur auf $A$ als $\ints/ 3\ints$.
+Es gibt also insgesamt $18$.
+\end{solution}
+
+\subsection{Quiz}
+
+\begin{exercise}
+Was enthält jeder Klon?
+\begin{tasks}
+        \item Prorektoren
+        \item Projektionen $\bullet$
+        \item Promotionen
+        \item Prezessionen
+\end{tasks}
+
+\end{exercise}
+
+\begin{exercise}
+Was beschrieb \person{Emil L. Post} vollständig?
+\begin{tasks}
+    \item Den Lehrplan von Sommersemester 2014
+    \item \person{Rosenberg}s Charakterisierung der maximalen Klone auf endlichen Mengen
+    \item Den Klonverband auf 2-elementigen Mengen
+    \item die Veränderung des Fußballs durch Bosmon-Urteil    
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Welche Boolesche Funktion ist nicht idempotent?
+
+\begin{tasks}
+\item Negation $\neg$
+\item Und $\lgand$
+\item Oder $\lgor$
+\item zweistellige Projektion auf die zweite Koordinate $\pi^{(2)}_1$    
+\end{tasks}
+\end{exercise}
+
+
+\begin{exercise}
+    Welcher dieser Booleschen Klone ist nicht minimal?
+    \begin{tasks}
+            \item $\Clo(+)$
+            \item $\Clo(\lgor)$
+            \item $\Clo(\neg)$
+            \item $\Clo(\lgand)$
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Sei $f$ \person{Sheffer}sch. Was ist falsch?
+    \begin{tasks}
+            \item $f$ ist in keinem maximalen Klon enthalten.
+            \item $\Clo(f)$ ist der volle Klone.
+            \item $f$ bewahrt jede Relation.
+            \item $f$ ist in keinem minimalen Klon enthalten.
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Welche Kardinalität hat der Klonverband auf den natürlichen Zahlen?
+    \begin{tasks}
+            \item Die Potenzmenge der Potenzmenge der reellen Zahlen?
+            \item Die der Menge der reellen Zahlen.
+            \item Die der Menge der natürlichen Zahlen.
+            \item Die der Potenzmenge der reellen Zahlen. $\bullet$
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Sei $C$ ein minimaler Klon auf einer endlichen Menge, was ist falsch?
+    \begin{tasks}
+            \item Jede Funktoin in $C$ erzeugt $C$. $\bullet$
+            \item $\Inv C$ ist ein maximaler Relationenklon.
+            \item $C$ wird von einer einzigen Funktion erzeugt.
+            \item $C$ hat nur den trivialen Klon als echten Unterklon.
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Sei $f$ eine mindestens zweistellige minimale Funktion. Was gilt?
+    \begin{tasks}
+            \item $f$ ist eine Semiprojektion.
+            \item $f(x,\ldots,x,y)=f(y,x,\ldots,x)$.
+            \item $f$ ist idempotent. $\bullet$
+            \item $f(x,\ldots,x,y)=x$.
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Wie viele $3$-reguläre Relationen gibt es auf einer $3$-elementigen Menge?
+    \begin{tasks}
+            \item 0
+            \item 1 $\bullet$
+            \item unendlich viele
+            \item 3
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Welche der folgenden Funktionen kann weggenommen werden, sodass die übrigen im gleichen maximalen Klon enhalten sind?
+    \begin{tasks}
+            \item $c_0$
+            \item $x\mapsto 2x \mod k$
+            \item $(x,y)\mapsto\min(x,y)$
+            \item $(x,y)\mapsto\min(x,y)+1$ $\bullet$ (\person{Sheffer}-Funktion)
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Welche der folgenden Aussagen stimmt für alle Funktionenmengen $F$ auf einer beliebigen Menge $A$?
+    \begin{tasks}
+            \item $\Inv\Pol F=\Clo\Inv F$.
+            \item $\Clo(F)=\Pol\Inv F$.
+            \item $\Pol\Inv F$ ist Klon.
+            \item $\Loc F$ ist in $F$ enhalten.
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Welche der folgenden Aussagen über den Klonverband auf den natürlichen Zahlen ist wahr?
+    \begin{tasks}
+        \item Er hat abzählbar Höhe und Breite.
+        \item Er hat überabzahlbare Höhe und breite in der Mächtigkeit von $\Sub^2 \nats$.
+        \item Er hat überabzählbare Höhe und überabzählbare Breite.
+        \item Er hat abzählbare Höhe und überabzählbare Breite. $\bullet$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Sei $A$ einelementig. Was ist wahr?
+    \begin{tasks}
+            \item Jeder Klon auf $A$ ist minimal.
+            \item Es gibt einen maximalen, minimalen Klon.
+            \item Es gibt nur endlich viele operatoinen auf $A$.
+            \item Für jedes $n>0$ gibt für jedes $n>0$ genau eine $n$-stellige \person{Sheffer}-Funktion. $\bullet$
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Welche der folgenden Funktionen ist minimal?
+    \begin{tasks}
+            \item $f(x,y,z)=x+y \mod 3$
+            \item $f(x,y,z)=x+y+z \mod 3$
+            \item $f(x,y,z)=\max\set{x,y,z}$ (ist nicht minimal, $f(x,x,y)$)
+            \item $f(x)=2x \mod 3$ $\bullet$
+    \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+    Wie viele maximale Klone gibt es auf $\set{0,1,2}$?
+    \begin{tasks}
+            \item 15
+            \item 18 $\bullet$
+            \item 16
+            \item unendlich viele
+    \end{tasks}
+\end{exercise}
+
+\hfill{16.06.2014}
+
+Zuletzt hatten wir bemerkt, dass für $n\geq 4$ und $f\in\cO_A^{(n)}$ und $f$ minimal, dann ist $f$ Semiprojektion.
+
+Damit ist klar:
+\begin{corollary}
+    Sei $A$ endlich. Dann gibt es nur endlich viele minimale Klone auf $A$.
+\end{corollary}
+
+\begin{proof}
+    Nach \autoref{semi-proj-unique-proj} ist jedes minimale $f\in\cO_A^{(n)}$ mit $n\geq 4$ eine Semiprojektion. Für $n>\card A$ ist jede $n$-stellige Semiprojektion schon eine Projektion. Also sind alle minimalen Funktionen maximal $\card A$-stellig. Also gibt es nur endlich viele.
+\end{proof}
+
+Was ist mit minimalen $n$-stelligen Funktionen für $n\in\set{1,2,3}$.
+
+\begin{definition}
+    Es heißt $f\in \cO_A^{(1)}$ \keyword{Retraktion}, falls $f^2=f$. Weiter heißt $f\in\cO_A^{(1)}$ \keyword{Permutation der Ordnung $n$}, falls $f^n=\id$ (und $n$ minimal mit dieser Eigenschaft). Eine Funktion $f\in\cO^{(3)}$ heißt \keyword{Majoritätsfunktion}, falls für alle $x,y\in A$ und $f(x,x,y)=f(x,y,x)=f(y,x,x)=x$ und \keyword{Minorätsfunktion}, falls $f(x,x,y)=f(x,y,x)=f(y,x,x)=y$ ebenfalls für alle $x,y\in A$. 
+\end{definition}
+
+\begin{lemma}\label{class-gen-maj-fun}
+    Sei $f\in\cO_A^{(3)}$ eine Majoritätsfunktion. Dann ist jedes $g\in\cO_A^{(3)}$ mit $\gen[\Clo]{g}=\gen[\Clo]{f}$ wieder eine Majoritätsfunktion. 
+\end{lemma}
+
+\begin{proof}
+    Per Terminduktion. Übungsaufgabe.
+\end{proof}
+
+\begin{theorem}[\person{Rosenberg}'s Klassifizierungstheorem für minimale Klone\footnote{auch unter dem Namen RCT geläufig}, 1986]
+    Sei $f\in\cO_A$ minimal. Dann ist $f$ entweder
+    \begin{statements}
+            \item\label{case-1} eine $1$-stellige Retraktion oder Permutationen von Primzahlordnung,
+            \item\label{case-2} eine $2$-stellige idempotente Funktion,
+            \item\label{case-3} eine ($3$-stellige) Majoritätsfunktion,
+            \item\label{case-4} eine ($3$-stellige) Minorätsfunktion $f(x,y,z)=x+y+z$, wobei $(A,+,0)$ elementar-abelsche $2$-Gruppe (vgl.\ \autoref{elem-ab-p-group}),% elementarabelsche p-Gruppe
+            \item\label{case-5} eine Semiprojektion mit $n\geq 3$.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    \paragraph{Eine Vorüberlegung:} Sei $f$ minimal ist $f$ nicht-trivial.
+
+    \paragraph{Fall 1: Sei $n=1$.} Angenommen $f$ ist weder Retraktion noch Permutationen, dann gilt $f\not\in\gen[\Clo]{f^2}\setleq\gen[\Clo]{f}$. Also ist $f$ nicht minimal. Sei nun $f$ eine Permutationen der Ordnung $q\neq 1$. Sei $p$ ein Primteiler von $q$. Falls $p\neq q$, dann $f\not\in\gen[\Clo]{f^p}\setleq\gen[\Clo]{f}$, also $f$ nicht minimal.
+
+    \paragraph{Fall 2: Sei $n\geq 2$.} 
+    Wäre $f$ nicht idempotent, dann wäre die einstellige Operation $g(x)=f(x,\ldots,x)\in\gen{f}_{\Clo}$ nicht-trivial.
+    Sei also $n=3$. Es ist dann für alle $i,j\in\set{1,2,3}$, $i<j$ eine Projektion. Wir erhalten $8$ Fälle:
+    $$
+    \begin{matrix}
+        \textrm{Fall}&  & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\
+        f(x,x,y) & = & x & x & x & y & x & y & y & y\\
+        f(x,y,x) & = & x & x & y & x & y & x & y & y\\
+        f(y,x,x) & = & x & y & x & x & y & y & x & y
+    \end{matrix}
+    $$
+    Im Falle (1) ist $f$ Majoritätsfunktion und im Falle (8) Minorätsfunktion.
+    Wir zeigen jetzt: Die Fälle (5), (6), (7) können nicht auftreten. Definiere
+    \begin{align*}
+        f_5(x,y,z) &:= f(x,y,f(x,y,z)),\\    
+        f_6(x,y,z) &:= f(x,f(x,y,z),z),\\
+        f_7(x,y,z) &:= f(f(x,y,z),y,z).    
+    \end{align*}
+    Es ist offensichtlich $f_5,f_6,f_7\in\gen{f}_{\Clo}$. Weiterhin sind $f_5,f_6,f_7$ Majoritätsfunktionen. Nach \autoref{class-gen-maj-fun} folgt nun aber, dass $f\not\in\gen{f_5}_{\Clo},\gen{f_6}_{\Clo},\gen{f_7}_{\Clo}$, da $f$ keine Majoritätsfunktion ist.
+    Also ist für den Fall $n=3$ nur noch zu zeigen, dass wenn $f$ eine Minorätsfunktion ist, dann existiert eine elementar-abelsche $2$-Gruppenstruktur auf $A$, sodass $f(x,y,z)=x+y+z$. Dieser Beweis sei hier dem Leser überlassen. Für $n\geq 4$ folgt der Rest direkt aus \autoref{semi-proj-unique-proj}.
+\end{proof}
+
+\begin{remark}%% fix cases --> reference incorrect (buggy)
+    Die Fälle \autoref{case-1} und \autoref{case-4} garantieren Minimalität, die anderen nicht. Viel mehr weis man nicht.
+\end{remark}
+
+\begin{conclusion}
+    Für $\card A=2$ sind alle $7$ minimale Klone bekannt.
+    Für $\card A=3,4$ sind diese ebenfalls bekannt ($n=3$: \person{B. Csakany}), in letzterem Falle existiert nur ein Computerbeweis (\person{Schöltzel}).
+    Für $n\geq 5$ ist das Problem offen (für die Fälle \autoref{case-2},\autoref{case-3}, \autoref{case-5}).%% buggy : seite wird immer angezeigt
+\end{conclusion}
+
+\begin{remark}
+    Besonders erstaunlich: Fall \autoref{case-3} offen, obwohl man für Majoritätsfunktionen $f$ nach \autoref{class-gen-maj-fun} nur $f\in\gen{m}_{\Clo}$ für alle Majoritätsfunktionen $m\in\gen{f}_{\Clo}$ prüfen muss.
+\end{remark}
+
+Ein Verallgemeinerung von Majoritätsfunktionen liefert
+
+\begin{definition}
+    Für $m\in\cO_A^{(d)}$ $d\geq 3$ heißt \keyword{near-unanimity-Funktion} falls
+    $$
+    \forall x,y\in A: m(x,\ldots,x,y)=x, \ldots m(y,x\ldots,x)=x.
+    $$
+\end{definition}
+
+\begin{theorem}[Baker-Pixley Theorem]
+    Sei $A$ endlich und $\cF\setleq \cO_A$, sodass $\gen{\cF}_{\Clo}$ eine $(d+1)$-stellige near-unanimity-Funktion enthält. Dann gilt
+    $$
+    \gen{\cF}_{\Clo}=\Pol((\Inv \cF)^{(d)}).
+    $$
+\end{theorem}
+
+\begin{proof}
+    Sei $\cC:=\gen{\cF}_{\Clo}$ und $m\in\cC^{(d+1)}$ eine near-unanimity-Funktion. Klar ist, dass $\gen{\cF}_{\Clo}=\Pol\Inv\cF\setleq\Pol(\Inv\cF)^{(d)}$. Also sei $f\in\Pol{(\Inv\cF)}^{(d)}$. Zu zeigen ist $f\in \cC$. Sei $f$ $n$-stellig. Definiere dann
+    $$
+    \cM :=\set{B\setleq A^n:\exists g\in\gen{\cF}_{\Clo}^{(n)}:\rest{f}_{B}=\rest{g}_{B}}.
+    $$
+    Es reicht aus, dass $A^n\in\cM$, denn dann ist $f=g\in\cC$. Dazu zeigen wir $B\in\cM$ für alle $B\setleq A^n$ durch Induktion nach $\card B=:k$.
+    Für $k\leq d$ gilt
+    $$
+    B = \set{
+        \begin{pmatrix}
+            r_1^1\\
+            \vdots\\
+            r_n^1
+        \end{pmatrix},\ldots,
+        \begin{pmatrix}
+            r_1^d\\
+            \vdots\\
+            r_n^d
+        \end{pmatrix}
+}.
+$$
+Sei
+$$
+\sigma_B = \set{        \begin{pmatrix}
+            r_1^1\\
+            \vdots\\
+            r_d^1
+        \end{pmatrix},\ldots,
+        \begin{pmatrix}
+            r_n^1\\
+            \vdots\\
+            r_n^d
+        \end{pmatrix}
+}.
+$$
+Wegen $\sigma_B\setleq\Gamma_{\cF}(\sigma_B)\in{(\Inv\cF)}^{(d)}$. Dann ist
+$$
+f
+\begin{pmatrix}
+    r_1^1 & \cdots & r_n^1\\
+    \vdots & \ddots & \vdots\\
+    r_1^d & \cdots & r_n^d
+\end{pmatrix}
+\in\Gamma_{\cC}(\sigma_b)=\Gamma_{\cF}(\sigma_B).
+$$
+Nach einem vorhergehenden Lemma gilt
+$$
+\Gamma_{\cC}(\sigma_B)=\set{g():g\in \cC^{(n)}}
+$$
+Also existiert $g\in\cC^{(n)}$, sodass $\rest{f}_B=\rest{g}_B$. Somit $B\in\cM$.
+
+\emph{Induktionsschritt:} Sei $k\geq d+1$ und die Behauptung für alle $B'\leq A^n$ mit $\card B=k$ gezeigt. Sei $\card B = k+1$ und seien $r_1,\ldots,r_{d+1}\in B$ paarweise verschieden. Für $i\in\set{1,\ldots,d+1}$ definiere $B_i:=B\setminus\set{r_i}$. Nach Induktionsvoraussetzung existieren $g_1,\ldots,g_{d+1}\in\cC$, sodass $\rest{f}_{B_i}=\rest{g_i}_{B_i}$ für alle $i\in\set{1,\ldots,d+1}$. Setze $g:=m(g_1,\ldots,g_{d+1})$ Wir zeigen $\rest{f}_B=\rest{g}_{B}$. Sei $x\in B$. Wegen $\card B = k+1$, $B_i\setleq B$ und $\card{B_i} = k$ ist $x\in B_i$ für alle bis auf höchstens ein $i\in\set{1,\ldots,d+1}$.
+O.B.d.A.~$x\in \bigsetmeet\set{B_i:i=1,\ldots,d}$. Dann gilt
+\begin{align*}
+    g(x) &= m(g_1(x),\ldots,g_d(x),g_{d+1}(x))\\
+    &= f(x),
+\end{align*}
+da in allen bis auf eine Komponente $f(x)$ steht. Also $\rest{g}_B=\rest{f}_B$.
+\end{proof}
+
+\begin{corollary}
+    Sei $A$ endlich.
+    \begin{statements}
+            \item Für jedes $d\geq 2$ gibt es nur endlich viele Klone $\cC\leq \cO_A$, die eine $(d+1)$-stellige near-unanimity-Funktion enthalten.
+            \item Enthält ein Klon $\cC\leq \cO_A$ eine near-unanimity-Funktion, so ist $\cC$ endlich erzeugt.
+    \end{statements}
+\end{corollary}
+
+\begin{proof}
+    \begin{statements}
+            \item Nach dem Satz von Baker-Pixley gibt es für jeden Klon $\cC$ mit $(d+1)$-stelliger near-unanimity-Funktion eine Menge $R$ von $d$-stelligen Relationen, mit $\cC=\Pol R$ (nämlich $R:={(\Inv C)}^{(d)}$). Daher gibt es nur endlich viele solcher Klone, da es nur endlich viele $d$-stellige Relationen auf $A$ gibt.
+            \item Sei $m$ eine $(d+1)$-stellige near-unanimity-Funktion und $\cC$ ein Klon mit $m\in\cC$. Angenommen $\cC$ sei nicht endlich erzeugt, dann enthält die Kette $\gen{\cC^{(d+1)}}\leq \gen{\cC^{(d+2)}} \leq \cdots$ unendlich viele Klone, die alle $m$ enthalten, was eine Widerspruch zur vorhergehenden Aussage ist.
+    \end{statements}
+\end{proof}
+
+\begin{remark}
+    Folgende Anschlussfragen sind naheliegend. Falls $d\geq 2$:
+    \begin{statements}%%% define new environment questions (problems)
+            \item Wie viele Klone $\cC\leq\cO_A$ gibt es die eine $(d+1)$-stellige near-unanimity-Funktion enthalten?
+            \item Was ist die kleinste Zahl $k$, sodass sich jeder Klon $C$ mit $(d+1)$-stelliger near-unanimity-Funktion durch $k$-stellige Operationen erzeugen lässt?
+    \end{statements}
+    Bekannte Teillösungen sind:
+    \begin{statements}
+            \item Nur für Majoritätsfunktionen betrachtet ($d=2$). Für $\card A=2$ gibt es genau 19 Klone mit Majoritätsfunktion (\person{Post}). Für $\card A=3$: (mit Computerhilfe) Es gibt hier genau 1.918.040 Klone mit Majoritätsfunktion. 
+            \item Sie $\lambda_d(n)$ die kleinste Zahl $k$, sodass jeder Klon $\cC\leq \cO_A$ mit $\card A=n$ von seinem $k$-stelligen Teil erzeugt wird, falls er eine near-unanimity-Funktion enthält. Dann $\lambda_2(3)=3$, $\lambda_2(n)=n(n-2)$ ($n\geq 5$, \person{Lakser}, 1989). Und $\lambda_d(n)={(n-1)}^d-1$ für $n\geq (d-1)2^d+1$ (\person{S. Kerkhoff}, 2011). $\lambda_2(3)=5$, $\lambda_2(4)=8$ (\person{S. Kerkhoff}, \person{Zhuk}, 2014).
+\end{statements}
+Abschließende Frage zu minimalen Klonen: Enthält jeder Klon $\cC\neq \cJ_A$ einen minimalen Klon.
+\end{remark}
+
+\begin{theorem}
+    Sei $A$ endlich und $\cR\leq\cR_A$ ein Relationenklon. Folgende Aussagen sind äquivalent:
+    \begin{statements}
+            \item\label{rel-clo-fin-gen} $\cR$ ist endlich erzeugt.
+            \item\label{rel-clo-cyc} $\cR$ ist zyklisch.
+            \item\label{rel-clo-asc-ch} Jede aufsteigende Kette von Relationenklonen in $\cR$ bricht ab.
+            \item\label{rel-clo-fin-low-neigh} Im Verband $\dual \cL_A$ gibt es nur endlich viele untere Nachbarn von $\cR$ und jeder Relationenklon $\cS < \cR$ ist in einem dieser unteren Nachbarn enthalten.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    Die Äquivalenz der ersten beiden Aussagen und die Implikation \theref{rel-clo-fin-gen} nach \theref{rel-clo-asc-ch} gehen wie für Funktionenklone.
+    Um \theref{rel-clo-fin-gen} nach \theref{rel-clo-cyc} zu zeigen, kann man einfach das kartesische Produkt der Relationen verwenden. Für \theref{rel-clo-fin-gen} nach \theref{rel-clo-fin-low-neigh}: Sei $Q$ ein endliches Erzeugendensystem, setze $\cC:=\Pol\cR=\Pol Q$ und $n_0:=\max\set{\card\sigma:\sigma\in Q}$. Dann gilt nach Übungsaufgabe, dass $\cR = \Clo Q = \Clo \Gamma_{\cC}(\chi_{n_0})$ ($\chi_{n_0}$ die Abzisse). Sei nun $\cT$ unterer Nachbar von $\cR$ in $\dual \cL_A$ und $\cH:=\Pol \cT$. Offenbar $\Gamma_C(\chi_{n_0})\not\in\cR$, denn sonst $\cR\leq \cT$. Weiter gilt:
+    $$
+\Gamma_{H^{(n_0)}}(\chi_{n_0})=\Gamma_H(\chi_{n_0})\neq\Gamma_C(\chi_{n_0})=\Gamma_C^{(n_0)}(\chi_{n_0}),
+$$
+denn  die rechte Seite ist in $\Inv\cH=\Pol\Inv\cT=\Clo \cT=\cT$ enthalten. Also existiert $f_{\cT}\in \cH^{(n_0)}\setminus\cC^{(n_0)}$ und somit
+$$
+\cC<\Clo(\cC\setjoin\set{f_{\cT}})\setleq \cH.
+    $$
+    Es gilt sogar $\Clo(\cC\setjoin\set{f_{\cT}})=\cH$, denn $\cH=\Pol\cT$ ist oberer Nachbar von $\cC=\Pol\cR$ in $\cL_A$ (\person{Galois}-Dualität).
+    Also ist jeder obere Nachbar von $\cC$ und damit jeder untere Nachbar von $\cR$ eindeutig durch eine Funktion $\cF_{\cT}\in\cO^{(n_0)}$ und davon gibt es nur endlich viele.
+    Der zweite Teil folgt analog zum Beweis für Funktionenklone.
+\end{proof}
+
+Also folgt direkt
+
+\begin{definition}
+    Ein Klon $\cC\setleq \cO_A$ heißt relational endlich, falls es eine endliche Menge $Q\setleq \cR_A$ mit $\cC=\Pol Q$ gibt.
+\end{definition}
+
+\begin{example}
+    \begin{itemize}
+            \item Wegen $\cO_A=\Pol\emptyset$ ist $\cO_A$ relational endlich.
+            \item Ist $A$ endlich, so ist nach dem \person{Baker}-\person{Pixley}-Prinzip jeder Klon mit near-unanimity-Funktion relational endlich.
+            \item Es gilt $\Pol
+        \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1
+        \end{pmatrix}=\cJ_A$ (vgl. Übungsaufgabe). Also ist der triviale Klon auch relational endlich (das heißt es gibt nur endlich viele minimale Klone --- was wir schon wussten).
+    \end{itemize}    
+\end{example}
+
+\begin{corollary}
+    Sie $A$ endlich und $\cC\setleq \cO_A$ Klon. Folgende Aussagen sind äquivalent:
+    \begin{statements}
+            \item Der Klon $\cC$ ist endlich relational.
+            \item Jede absteigende Kette $\cC_0\setgeq \cC_1\setgeq \cdots$ mit $\cC=\bigsetmeet\set{\cC_i:i\in I}$ bricht ab.
+            \item Im Verband $\cL_A$ gibt es nur endlich viele obere Nachbarn von $\cC$ und jeder klon $\cB>\cC$ enthält einen dieser oberen Nachbarn.
+    \end{statements}
+\end{corollary}
+
+\begin{proof}
+    Folgt aus dem entsprechenden Satz für Relationenklone und $\Pol$-$\Inv$-Verbindung.
+\end{proof}
+
+\begin{corollary}
+    Jeder Klon $\cC\neq\cJ_A$ enthält einen minimalen Klon.
+\end{corollary}
+
+\begin{proof}
+    $\cJ_A$ ist relational endlich also folgt die Behauptung mit dem vorhergehenden Korollar.
+\end{proof}
+
+%5. Kapitel
+\chapter{Abstrakte Klone \& \person{Lawvere}-Theoreien}
+
+\section{Grundlagen der Kategorientheorie}
+
+\emph{Literatur:} Category Theory, \person{Steve Awodey}.
+
+\begin{definition}[Kategorie]
+    Eine Kategorie $\cC$ besteht aus
+    \begin{itemize}
+            \item einer Klasse $\Ob(\cC)$ von Objekten,
+            \item einer Menge $\Mor_{\cC}(X,Y)$ von Morphismen für jedes Paar von Objekten $(X,Y)\in{\Ob(\cC)}^2$,
+            \item einer partiellen binären Operation $\compose$, genannt \keyword{Komposition} auf der Klasse aller Morphismen, sodass
+        $$
+        u\in\Mor_{\cC}(X,Y),v\in\Mor_{\cC}(Y,Z)\implies v\compose u\in\Mor_{\cC}(X,Z).
+        $$
+        Weiterhin seien die Morphismenmengen zwischen verschiedenen Objektpaaren disjunkt.
+        Für jedes $X\in\Ob(\cC)$ existiert ein Morphismus $\id_X\in\Mor_{\cC}(X,X)$, sodass
+        $$
+        \id_X\compose u=u=u\compose \id_Y
+        $$
+        für alle $u\in\Mor_{\cC}(Y,X)$.
+        Außerdem soll die Komposition $\compose$ assoziativ sein, d.h. $w\compose(v\compose u)=(w\compose v)\compose u$.
+    \end{itemize}
+\end{definition}
+
+\begin{remark}
+    Wir schreiben im Folgenden immer $c\in\cC$ statt $c\in\Ob(\cC)$ und $b\in A\to_{\cC} B$ für $b\in\Mor_{\cC}(A,B)$ (Assoziativität schreibt sich dann als $(A\to_\cC B)(B\to_\cC C)\setleq A\to_\cC C$). Wenn die zugrundeliegende Kategorie klar ist, wird der Index $\cC$ weggelassen. Eine andere Schreibweise für die Komposition ist auch erklärt durch $ab:=b\compose a$.
+\end{remark}
+
+\begin{example}[Kategorie der Mengen]
+    Die Kategorie $\Set$, die Kategorie der Mengen (als Objekte), Morphismen (alle Abbildungen), Komposition (wie üblich).
+\end{example}
+
+\begin{example}[Kategorie der topologischen Räume]
+    Die Objekte sind hier die topologischen Räume und stetige Abbildungen sind die Morphismen.
+\end{example}
+
+\begin{example}[Geordnete Mengen als Kategorie]
+    Eine geordnete Menge $M$ mit Ordnung $\leq\setleq M\settimes M$ lässt sich auch als Kategorie auffassen, indem man die Elemente von $M$ als Objekte der Kategorie auffasst und die Morphismen $a\to b$ definiert als, $a\to b:=\set{(a,b)}\intersect\leq$ ($a,b\in M$).
+\end{example}
+
+\begin{remark}
+    Objekte einer Kategorie müssen keine Mengen oder mathematische Strukturen sein. Sie können Objekte im abstrakten Sinne sein. Ebenso können Morphismen nur Pfeile sein, von denen man einzig und allein weiß, wie sie mit anderen Pfeilen via Komposition in Verbindung stehen.
+\end{remark}
+
+\begin{definition}[Isomorphismus]
+    Sei $u\in X\to Y$, dann heißt $u$ Isomorphismus, falls es ein $v$ gibt mit $uv=\id_{\dom u}$, $vu=\id_{\codom v}$.
+\end{definition}
+
+\begin{definition}[duale Kategorie]
+    Die \keyword{duale Kategorie} $\dual\cC$ ist wie folgt definiert:
+    $$
+    \Ob(\cC)=\Ob(\dual\cC),
+    $$
+    $$
+    X\to_{\dual\cC} Y:=Y\to_{\cC} X,
+    $$
+    $$
+    u\compose_{\dual\cC} v:=v\compose_{\cC} u\text{ (oder $\dual v\dual u:=\dual{(uv)}$)}.
+    $$
+\end{definition}
+%
+\begin{quotation}
+    ``\person{Mac Lane}'s definition was revolutionary'' \person{Peter Freyd}
+\end{quotation}
+
+\begin{definition}
+    Sei ${(X_i)}_{i\in I}$ eine Familie von Objekten, dann heißt $P$ ein Produkt von dieser Familie, wenn es Projektionsmorphismen ${(\pi_i:P\to X_i)}_{i\in I}$ gilt, sodass für alle $Q\in\cC$ und ${(f_i:Q\to X_i)}_{i\in I}$ genau einen Morphismus $u:Q\to P$ gibt, sodass $u\pi_i=f_i$ für alle $i\in I$. Der Morphismus $u$ heißt \keyword{Tupling} von ${(f_i)}_{i\in I}$.
+\end{definition}
+
+\begin{remark}
+    Wir schreiben $X_1\times\cdots\times X_n$ für das (bis auf Isomorphie bestimmte) Produkt von ${(X_i)}_{i\in I}$, $f_1\tuple\cdots\tuple f_n$ für das Tupling von ${(f_i)}_{i\in\set{1,\ldots,n}}$ und $X^{\times n}$ für des $n$-fache Produkt von $X$ mit sich selbst.
+\end{remark}
+
+\begin{remark}
+    Alle Produkte einer Familie von Objekten ${(X_i)}_{i\in I}$ sind, sofern sie existieren, zueinander isomorph. In der Praxis betreibt man meistens ein bestimmtes Objekt als das Produkt von ${(X_i)}_{i\in I}$. In $\Set$ beispielsweise, das kartesische Produkt
+    $$
+    \prod_{i\in I}{X_i}:=\set{\alpha\in I\to\bigsetjoin_{i\in I}{X_i}: \forall i\in I:\alpha(i)\in X_i}
+    $$
+    mit den Projektionsmorphismen
+    $$
+    \pi_j:\prod_{i\in I}{X_i}\to X_j;\ \alpha\mapsto \alpha(i)
+    $$
+    als das Produkt bezeichnet.
+\end{remark}
+
+\begin{example}
+    Alles was in irgendwo im Studium als Produkt von Strukturen auftaucht ist (fast immer) ein Produkt in diesem Sinne.
+\end{example}
+
+\begin{example}
+    Besonders interessant sind Produkte in $\Top$ (siehe Übung 6).%
+\end{example}
+
+\begin{example}
+    In der Kategorie $\cC_{(M,\leq)}$, die eine geordnete Menge $M$ als Kategorie auffasst, ist das Produkt einfach das Infimum.
+\end{example}
+
+Funktoren bringen (verschieden) Kategorien miteinander in Verbindung
+
+\begin{quotation}
+    ``Category theory is better described as the theory of functors'' (\person{Peter Freyd})
+\end{quotation}
+
+\begin{definition}
+    Seien $\cC, \cD$ Kategorien. Ein \keyword{kovarianter Funktor} $F:\cC\to\cD$ bildet jedes $X\in \cC$ auf ein Objekt $F(X)\in\cD$ und jedes $u\in X\to_{\cC}Y$ auf einen Morphismus $F(u)\in F(X)\to_{\cD} F(Y)$ ab, sodass gilt
+    \begin{properties}
+            \item Für alle $X\in\cC$ gilt $F(1_X)=1_{F(X)}$.
+            \item Für alle $u\in X\to_{\cC} Y, v\in Y\to_{\cC} Z$ gilt $F(uv)=F(u)F(v)$.
+    \end{properties}
+    Ein \keyword{kontravarianter Funktor} $D:\cC\to \cD$ bildet jedes $X\in \cC$ auf ein $D(X)\in \cD$ ab und jedes $u\in X\to Y$ auf ein $D(u)\in D(Y)\to D(X)$ ab, sodass gilt
+    \begin{properties}
+            \item Für alle $X\in\cC$ gilt $F(1_X)=1_{F(X)}$.
+            \item Für alle $u\in X\to_{\cC} Y, v\in Y\to_{\cC} Z$ gilt $F(uv)=F(v)F(u)$.
+    \end{properties}
+\end{definition}
+
+\begin{remark}
+    Man sagt zu kovarianter Funktor auch oft nur Funktor und ein kontravarianter ist dasselbe wie ein Funktor $\dual\cC\to\cD$ (besser ist es im algebraischen Sinne einen kontravarianten Funktor als Antifunktor zu bezeichen).
+\end{remark}
+
+\section{Übung 5}
+
+\begin{exercise}
+    Sei $f\in\cO_A$ nicht-trivial.
+    \begin{tasks}
+            \item Zeige, dass $\Clo(f)$ minimal ist, wenn $f$ eine Retraktion oder Permutationen primer Ordnung ist.
+            \item Zeige, dass $f(x,y,z)=x+y+z$ einen minimalen Klon erzeugt.
+            \item Gib ein Beispiel für eine Funktion $f$ mit $\Clo(f)$ nicht minimal
+        \begin{tasks}
+                \item $f$ ist binäre idempotente Funktion an.
+                \item $f$ ist Majoritätsfunktion
+                \item $f$ ist Semiprojektion.
+        \end{tasks}
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Es reicht für alle $g\in{\Clo(f)}^{(1)}\setminus\cJ_A$ zu zeigen, dass $f\in\Clo(g)$ gilt. Es ist $\Clo(f)=\set{f^n:n\geq 0}$, für eine Retraktion ist dies also $\set{f,1_A}$ und für eine Permutationen primer Ordnung $\set{1_A,f,\ldots,f^{p-1}}$. Aus den nichttrivialen Elementen davon lasst sich jedoch immer $f$ zurückgewinnen, da $\ints/p\ints$ ein Körper ist (i.b.~für $p=2$).
+            \item Für $f(x,y,z)=x+y+z$ lässt sich per Terminduktion zeigen, dass $\Clo(f)=\set{g\in A\to A: g(x_0,\ldots,x_{2n})=\sum_{i=0}^{2n}x_i}$ ($n\geq 0$). Damit lässt sich aus jedem nicht-trivialen $g$ wieder $f$ zurückgewinnen können.
+        \item Wir wählen $\card A=3$.
+    \begin{tasks} 
+            \item Definiere $f_1(x,y)$ durch $f_1(x,x):=x$ und $f_(1,2):=1$, $f(x,y):=0$ sonst. Definiere $f_0(x,y)$ durch $f_0(x,x):=x$ und $f_0(x,y):=0$ sonst, dann ist $f_0(x,y)=f_1(f_1(x,y),f_1(y,x))$, aber $f_0$ erzeugt nicht $f_1$. Wir finden eine Relation die von $f_0$ und nicht $f_1$ bewahrt wird. Dazu wählt man $\sigma=\set{(0,0),(1,1),(1,2)}$. Diese ist offensichtlich von $f_0$ bewahrt, aber
+        $$
+        f_1
+        \begin{pmatrix}
+            1 & 2 & 0 \\
+            1 & 0 & 0
+        \end{pmatrix}=
+        \begin{pmatrix}
+            1 \\
+            0
+        \end{pmatrix}\not\in\sigma
+        $$
+            \item Für Majoritätsfunktionen nimmt man z.B.~ $m_0(x,y,z):=0$ falls $\card{\set{x,y,z}}=3$ und sonst was die Majorität vorschreibt. Weiter setze $m_1(x,y,z):=m_0(x,y,z)$ falls $(x,y,z)\neq (0,1,2)$. Dann gilt $m_0(x,y,z)=m_1(m_1(x,y,z),m_1(y,z,x),m_1(z,x,y))$. Umgekehrt erzeugt $m_0$ aber $m_1$ wieder nicht. Wieder ist $\sigma$ eine geignete Relation, die von $m_0$, aber nicht von $m_1$ bewahrt wird.
+            \item Sei $s_0(x_1,x_2,x_3)$ die Semi-Projektion mit $s_0(x_1,x_2,x_3)0$ falls $\card{\set{x_1,x_2,x_3}}=3$ und $s_0(x_1,x_2,x_3)=x_1$ sonst. Sei $s_1(x,y,z)=s_0(x,y,z)$ falls $(x,y,z)\neq(0,1,2)$, dort sei $s_1(0,1,2)=1$. Es ist dann $s_0(x,y,z)=s_1(s_1(x_1,x_2,x_3),s_1(x_1,x_3,x_2),x_3)$ (denn es ist klarerweise Semiprojektion, und falls $x,y,z$ paarweise verschieden sieht man auch leicht, dass die Gleichheit stimmt). Andererseits wird $s_1$ nicht von $s_0$ erzeugt.
+        Als unterscheidende Relation wählen wir hier $\gamma=\set{(0,0),(1,1),(2,0),(0,1)}$, diese wird wieder von $s_0$ bewahrt und nicht von $s_1$.
+    \end{tasks}
+    \end{tasks}
+\end{solution}
+
+% 5.3
+\begin{exercise}
+    Sei $A$ endlicht, $Q\setleq \cR_A$ eine Menge von Relationen und $C:=\Pol Q$.
+    \begin{tasks}
+            \item Zeige $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_n):n\in\nats_+})$.
+        \item Sei $Q$ endlich. Zeige, dass $\Clo(Q)=\Clo(\set{\Gamma_C(\chi_{n0})})$ mit $n_0:=\max\set{\card\sigma : \sigma\in Q}$.
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Es gilt $Clo(Q)=\Inv\Pol Q=\Inv C\setgeq \set{\Gamma_C(\chi_n):n\in\nats_+}$. Um die umgekehrte Inklusion zu zeigen: Es gilt für alle $\sigma\in\Clo Q=\Inv C$, $\card\sigma=n$: $\sigma\in\Clo(\set{\Gamma_C(\chi_n)})$. Damit ist auch die zweite Teilaufgabe gezeigt.
+        Genauer: wir zeigen, dass sich $\sigma$ aus $\Gamma_C(\chi_n)$ durch Umordnen und Streichen von Zeilen ergibt. Ohne Einschränkung kann also angenommen werden, dass $\sigma$ nur unterschiedliche Zeilen enthält. Da $\card\sigma=n$ gibt es in $\chi_n$ $m$ Zeilen, die mit den Zeilen $\sigma$ übereinstimmen.
+        \item Nach erster Teilaufgabe.
+    \end{tasks}
+\end{solution}
+
+\begin{remark}
+    Es gilt $\Clo(f)$ ist minimal, genau dann wenn für alle $g\in\Clo(f)\setminus\cJ_A$ gilt, dass $f\in\Clo(g)$. 
+\end{remark}
+
+
+\end{document}
+
+
+

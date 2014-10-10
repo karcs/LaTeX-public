@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Symbols}{1}
+\contentsline {section}{\numberline {2}Introduction}{2}
+\contentsline {subsection}{\numberline {2.1}Some definitions around polytopes}{2}
+\contentsline {subsection}{\numberline {2.2}The idea of the proof}{3}
+\contentsline {subsection}{\numberline {2.3}Irreducible and primitive operators}{6}
+\contentsline {section}{\numberline {3}The theorem}{6}
+\contentsline {section}{\numberline {4}Collecting some ideas}{7}
+\contentsline {subsection}{\numberline {4.1}Proof of existence.}{7}
+\contentsline {subsection}{\numberline {4.2}The map $\rho $}{7}
+\contentsline {subsection}{\numberline {4.3}The $\rho $-invariant polytope (or simplex) $\mathaccentV {tilde}07E{B}$}{9}
+\contentsline {paragraph}{The degraded case.}{9}
+\contentsline {subsection}{\numberline {4.4}The case $T$ being regular.}{10}
+\contentsline {paragraph}{The case $\tau $ being itself a cycle.}{10}
+\contentsline {paragraph}{The general case.}{10}
+\contentsline {section}{\numberline {5}Some final lemmas}{11}
+\contentsline {section}{\numberline {6}The proof}{12}
+\contentsline {paragraph}{Algebraic multiplicity one.}{12}
+\contentsline {paragraph}{Strict maximum.}{12}
+\contentsline {paragraph}{Symmetry properties of $\sigma (T)$.}{13}
+\contentsline {section}{\numberline {7}Connection between finite-dimensional operators and weighted adjacency matrices of graphs}{13}
+\contentsline {paragraph}{A little exercise.}{14}
+\contentsline {subparagraph}{Task.}{14}
+\contentsline {section}{\numberline {8}An appetizer at the end: The spectral radius of the infinite $d$-regular tree}{14}
+\contentsline {paragraph}{The example.}{15}
+\contentsline {section}{\numberline {9}Interesting papers that inspired me.}{16}

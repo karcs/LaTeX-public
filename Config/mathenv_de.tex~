@@ -1,0 +1,69 @@
+% math environments in german language
+
+\newcounter{theoremcounter}
+%\renewcommand{\thefpcounter}{\thechapter.\arabic{fpcounter}}
+%\renewcommand{\thefpcounter}{\thesection.\arabic{fpcounter}}
+\renewcommand{\thetheoremcounter}{\arabic{theoremcounter}}
+
+% theorem environment
+% parameters
+\newcommand{\theoremheaderstyle}{\bf}
+\newcommand{\theoremname}{Satz}
+\newcommand{\theorembodystyle}{
+    % appearance in references
+    %\renewcommand\theenumi{\@roman\c@enumi}
+    \renewcommand{\theenumi}{(\Roman{enumi})}
+    %\renewcommand\theenumi{\@roman\c@enumii}
+    \renewcommand{\theenumii}{(\roman{enumii})}
+    % appearance in enumerate
+    \renewcommand{\labelenumi}{\theenumi}
+    \renewcommand{\labelenumi}{\theenumii}
+    \it}
+
+%\renewcommand*\descriptionlabel[1]{\hspace\labelsep\normalfont #1}
+
+\newenvironment{theorem}[1][]{
+\refstepcounter{theoremcounter}
+\begin{trivlist}\item[\hskip\labelsep{\theoremheaderstyle\theoremname\space\thetheoremcounter\ifx&#1&\else{\space(#1)}\fi.}]\theorembodystyle}{\end{trivlist}}
+
+% proof environment
+% parameters 
+\newcommand{\proofname}{Beweis}             % 'proof' word
+\newcommand{\proofof}{von}                  % proof 'of' word
+\newcommand{\proofheaderstyle}{\it}         % style of the header
+\newcommand{\proofheaderskip}{\space}         % how to skip proofheader (par or space)
+\newcommand{\proofbodystyle}{\normalfont}   % style of the body
+\newcommand{\proofmark}{$\square$}          % qed mark at the end
+
+% if no argument is passed, just write 'Proof.' otherwise 'Proof of ... .'
+\newenvironment{proof}[1][]{\par\noindent{\proofheaderstyle\proofname\ifx&#1&\else{\space\proofof\space#1}\fi.\proofheaderskip}\proofbodystyle}{\hfill\proofmark}
+
+%\newtheorem{theorem}{Satz}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Korallar}
+%\newtheorem{conjecture}[theorem]{Vermutung}
+ 
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Beispiel}
+ 
+%\newtheorem{note}[theorem]{Anmerkung}
+
+%\theoremstyle{remark}
+%\newtheorem{remark}[theorem]{Bemerkung}
+
+\newenvironment{remark}{Bemerkung.}{}
+
+\newcounter{definitioncounter}[section]
+\renewcommand{\thedefinitioncounter}{\arabic{section}.\arabic{definitioncounter}}
+
+\newcommand{\definitionname}{Definition}
+\newcommand{\definitionheaderfont}{\bfseries}
+\newcommand{\definitionheaderskip}{\space}
+\newcommand{\definitionvspacebefore}{.5em}
+\newcommand{\definitionvspaceafter}{.5em}
+
+\newenvironment{definition}[1][]{\refstepcounter{definitioncounter}\vspace{\definitionvspacebefore}\par\noindent       {\definitionheaderfont\definitionname\space\thedefinitioncounter\ifx&#1\else\space(#1)\fi.}\definitionheaderskip}{\par\vspace{\definitionvspaceafter}}
+
+\newenvironment{lemma}{Lemma.}{}

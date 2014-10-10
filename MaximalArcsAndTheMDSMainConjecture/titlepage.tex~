@@ -1,0 +1,46 @@
+\pagestyle{empty}
+\begin{titlepage}
+
+\begin{center}
+
+% upper part of titlepage
+    \includegraphics{tud_logo.pdf}\\
+    \vspace{1cm}
+    {\LARGE\sc Department of Mathematics\\
+        \vspace{0.3cm}
+        Bachelor's Thesis (B.Sc.)}\\
+    \vspace{0.5cm}
+% title
+\vspace{2cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\HRule \\[0.4cm]
+{ \huge \bfseries On projective arcs, the main conjecture on MDS codes and related topics}\\[0.4cm]
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Jakob \textsc{Schneider}\\
+{\small (* January 26, 1994, in Peine, Germany)}
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Prof.~Dr.~Ulrich \textsc{Brehm}\\
+{\small (Institute of Geometry)} 
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Unterer Teil der Seite
+{\large August 8, 2014}\\
+{\small (date of submission)}
+
+\end{center}
+
+\end{titlepage}
+\cleardoublepage

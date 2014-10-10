@@ -1,0 +1,33 @@
+\documentclass[a4paper,twoside]{article}% twoside is important for distinction of parity of sides
+%%%%
+\input{../Config/math.tex}
+\usepackage{makeidx}
+\usepackage{blindtext}
+\usepackage{mathenv}
+%\usepackage{showframe}% to show the frames of the page layout
+\usepackage[inner=3cm,outer=2cm]{geometry} %left=4cm,right=2cm would be equivalent
+
+% data of document
+\title{Topology}
+\author{Jakob Schneider}
+\date{April 15, 2014}
+
+\makeindex
+\begin{document}
+\pagestyle{plain}
+\maketitle
+
+\clearpage
+%\pagenumbering{roman} % problem here
+\pagenumbering{roman}
+\tableofcontents
+\pagestyle{headings}
+%\clearpage
+% preliminaries
+\clearpage
+
+%\printindex%%%
+%\bibliographystyle{acm}
+%\bibliography{math}
+
+\end{document}

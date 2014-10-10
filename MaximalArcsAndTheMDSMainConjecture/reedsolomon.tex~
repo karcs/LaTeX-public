@@ -1,0 +1,260 @@
+
+\section{Extended \person{Reed-Solomon}-Codes and normal rational curves}
+
+In this section we discuss the most popular (probably) maximal examples of the MDS main conjecture in the case where $\cA\setleq \P(K^n)$ for $n\geq 3$ and $K$ a field with $n\leq\card K$.
+
+\subsection{Normal rational curves}
+
+\begin{definition}[normal rational curve]\label{norratcurve}
+    A \keyword{normal rational curve} is the image of the projective map $\proj{f}:\proj{K^2}\to\proj{K^n}$ where $f$ is given by
+    $$
+    (X,Y) \mapsto (X^{n-1},X^{n-1}Y,\ldots,XY^{n-1},Y^{n-1})
+    $$
+    modulo $\PGammaL$.
+\end{definition}
+
+A natural question is weather a normal rational curve is a complete arc.
+We anwer this question as it was conjectured till now.
+
+\begin{definition}[notation for polynomial coefficients]
+    For a polynomial $p\in R[X_1,\ldots,X_m]$ write $[X_1^{e_1}\cdots X_m^{e_m}]p$ for the coefficient which is in front of the monomial $X_1^{e_1}\cdots X_n^{e_n}$ in $p$.
+\end{definition}
+
+\begin{definition}
+    Let $p\in K[X,Y]$ be a homogenous polynomial. We say that $z\in\proj{K^2}$ is a projective zero of $p$ if $z=\gen{(\alpha,\beta)}$ such that $p(\alpha,\beta)=0$. 
+\end{definition}
+
+\begin{lemma}[discription of $(n-2)$-secant hyperplanes of a normal rational curve]\label{norrattandesc}
+    The hyperplanes $\cH$ intersecting a normal rational curve $\cA=\im\proj{f}\setleq \proj{K^n}$ in the affine representation of \autoref{norratcurve} in exactly the points of an $(n-2)$-set $\im\proj{f}(A)$ ($A$ is the corresponding $(n-2)$-set of preimages in $\proj K^2$) are given as the kernels of the linear forms 
+    $$
+    l_{A,\alpha}:\doteq\sum_{i=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha)\right)x_i^{\ast}}
+    $$
+    where $\alpha\in A$ and ${(x_i)}_{i=1}^n$ denotes the standard basis of $K^n$ and ${(x_i^{\ast})}_{i=1}^n$ its dual basis.  
+\end{lemma}
+
+\begin{proof}
+    It is clear that the $l_{A,\alpha}(f(a_1,a_2))=0$ if and only if $\gen{(a_1,a_2)}\in A$. Moreover, any other linear form $l$ which has as a kernel a hyperplane $H$ with $H\setmeet\cA=A$ must be of the form
+    $$
+    l=\sum_{j=0}^{n-1}{[X_1^i X_2^{n-1-i}]\left(\prod_{a\in A}{\det(X,a)}\det(X,\alpha')\right)x_i^{\ast}}
+    $$
+    since its coefficients in $x_i^{\ast}$ can be interpreted as the corresponding coefficients of a homogenous polynomial in two variables of $(n-1)$-th degree. But this polynomial must have as zeros all elements of $A$ (as the assumption on the form $l$ delivers) which are $n-2$. Hence, there is another zero $\alpha'=\gen{(\alpha'_1,\alpha'_2)}\in\proj{K^2}$ since the polynomial factors into linear polynomials. Since then $\gen{f(\alpha'_1,\alpha'_2)}\in H\setmeet\cA=(\proj f) A$ we must have $\alpha'\in A$ (clearly $\proj f$ is injective).
+\end{proof}
+
+In the sense of the proof of this lemma, we make the following definition.
+Henceforth, we assume that $\cA$ is an incomplete normal rational curve.
+
+\begin{definition}[associated polynomials and linear forms for incomplete normal rational curves]
+    Assume the normal rational curve $\cA\setleq \proj{K^n}$ can be extended to a $(q+2)$-arc $\hat{\cA}:=\cA\setjoin\set{\hat{a}}$ by a point $\hat{a}$, then for each $(n-2)$-set $A\setleq\proj{K^2}$ there exists a hyperplane $H_A:=\gen{(\proj f)A,\hat{a}}$ and $H_A\setmeet \hat{\cA}=(\proj f)A\setjoin\set{\hat{a}}$. Choose $l_A\in V^{\ast}$ such that $\ker{l_A}=H_A$ and call it the \keyword{associated linear form of $A'$}.
+    Define $p_A:=\sum_{i=0}^{n-1}{l_A(x_i)X_1^{n-1-i}X_2^i}$ and call it the \keyword{associated polynomial of $A$}.
+\end{definition}
+
+\begin{remark}
+    The polynomials $p_A$ are precisely the polynomials which are used to construct the forms $l_{A,\alpha}$ in the proof of \autoref{norrattandesc}. Thus $p_A$ factors completely into $n-1$ linear factors and has the elements of $A$ as a projective zeros (with one zero of order two).
+\end{remark}
+
+We now aim to show that a normal rational curve cannot be extended apart from the case the MDS main conjecture predicts ($n=3$, $q$ even).
+
+\begin{definition}
+    Define $P^k$ as the subspace of $K[X_1,X_2]$ of homogenous polynomials of degree $k$.
+\end{definition}
+
+\begin{lemma}
+    The space $P:=\gen[\lin]{p_A\in P^{n-1}:A\setleq \proj{K^2},\card A=n-2}$ is of dimension $n-1$.
+\end{lemma}
+
+\begin{proof}
+    The map $\phi:V^{\ast}\to P^{n-1}$ mapping associated linear forms to associated polynomials given by $l\mapsto \sum_{i=0}^{n-1}{l(x_i)X_1^{n-1-i}X_2^i}$ is clearly linear and an isomorphism (the inverse is $p\mapsto\sum_{i=0}^{n-1}{([X_1^i X_2^{n-1-i}]p)x_i^{\ast}}$ as used in the proof of \autoref{norrattandesc}). Thus,
+    $$
+\dim{P}=\dim\gen[\lin]{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}.
+$$
+But the intersection of the kernels of the $l_A$ contains the extending point $\hat{a}\neq 0$. Hence, 
+$$
+\dim\gen[\lin]{l_A\in V^{\ast}:A\setleq \proj{K^2},\card A=n-2}=n-\dim\bigmeet_{\substack{A\setleq\proj{K^2}\\ \card A=n-2}}{\ker{l_A}}\leq n-1.
+$$
+On the other hand, we can choose an $(n-1)$-set $B\setleq \proj{K^2}$ and directly verify that the system of polynomials $p_A$ where $A\setleq B$, $\card{A'}=n-2$ is linearly independent by the interpolation formula
+$$
+\left(\sum_{\substack{A\setleq B\\ \card{A}=n-2}}{\lambda_A p_A}\right)(a)=\lambda_{B\setminus\set{a}}p_{B\setminus\set{a}}(a)
+$$
+showing that the linear combination must be trivial if it evaluates to zero (since $p_{B\setminus\set{a}}(a)\neq 0$).
+Thus,
+$$
+\dim{P}=\dim\gen[\lin]{l_{A'}\in V^{\ast}:A'\setleq \proj{K^2},\card{A'}=n-2}=n-1.
+$$
+\end{proof}
+
+\begin{lemma}
+    The space $P$ does not contain a non-zero separable polynomial wich splits in $\proj{K^2}$.
+\end{lemma}
+
+\begin{proof}
+    Assume there is such polynomial $p$ with a set of $n-1$ zeros $B$.
+    As we have seen in the proof of the previous lemma, the set $\set{p_A:A\setleq B,\card A=n-2}$ forms a basis of $P$. Thus we can interpolate $p$ by
+    $$
+    p=\sum_{a\in A}{p(a)\frac{p_{A\setminus\set{a}}}{p_{A\setminus\set{a}}(a)}}=0.
+    $$
+    A contradiction.
+\end{proof}
+
+We thus arrive at a much more ``algebraic'' version of the assumption. 
+
+\begin{lemma}
+    The following two are equivalent
+    \begin{statements}
+            \item A normal rational curve in $\proj (K^n)$ is incomplete.
+            \item There is an $(n-1)$-dimensional subspace of the space $P_{n-1}$ of homogenous polynomials of $(n-1)$-th degree containing no splitting separable polynomials.
+    \end{statements}
+\end{lemma}
+
+\begin{proof}
+    Clear.
+\end{proof}
+
+//correct this
+
+\begin{lemma}
+    Let $V\leq K[X,Y]$ be an $(k-1)$-dimensional subspace of the space of homogenous polynomials of $k$-th degree such that the greatest common divisor of all polynomials of $V$ is one.
+    Then for each $(k-1)$-tuple $(l_i)_{i=1}^k$ of linear polynomials in $X$ and $Y$ $p\in K[X,Y]$ of $(k-1)$-th degree there exists a unique polynomial $q\in V$ (up to scalar factor) such that $p\divides q$.
+\end{lemma}
+
+\begin{proof}
+    Let $P_l\leq K[X,Y]$ be the space of homogenous polynomials of $l$-the degree, then $pP_1$ and $V$ are a $2$-dimensional and a $(k-1)$-dimensional subspaces of $P_k$ which intersect at least in a one dimensional subspace of $V$. On the other hand, 
+\end{proof}
+
+Using this last fact we can thus make the following definition.
+
+\begin{definition}
+    Let $p,q\in K[X,Y]$ be coprime homogenous non-zero polynomials of second degree. Define a map
+    $\tau:\proj{K^2}\to\proj{K^2}$ which maps an element $a=\gen{(\alpha,\beta)}$ to the element $b=\gen{(\delta,\gamma)}$ such that $\gen{(\delta,\gamma)}$ is the second (projective) zero of the (projectively) unique polynomial $r$ with $r(\alpha,\beta)=0$.
+\end{definition}
+
+\begin{remark}
+    By homogenity, this definition does make sense.
+\end{remark}
+
+\begin{lemma}
+    The following statements about $\tau$ hold:
+    \begin{statements}
+            \item Let $\rchar{K}=2$ and let the \person{Frobenius} map $x\mapsto x^2$ be surjective (this holds e.g. when $K$ is finite). Then the map $\tau$ has exactly one fixed point or $\tau=\id_K$.
+            \item If $\rchar{K}\neq 2$ then $\tau$ has zero or two fixed points.
+            \item $\tau^2=\id_K$.
+    \end{statements}
+\end{lemma}
+
+\begin{proof}
+    \begin{statements}
+        \item First, let $\rchar{K}=2$. Then we can there exists a non-trivial linear combination $r:=\lambda p +\mu q$ such $[XY]r=0$ (this can be chosen form $([XY]q) p-([XY]p) q$ and (if both already have the desired property) $p$, $q$). Thus we have that $r$ is a square namely
+    $$r={\left({([X^2]r)}^{\frac{1}{2}}X+{([Y^2]r)}^{\frac{1}{2}}\right)}^2$$
+    since the \person{Frobenius} map $x\mapsto x^2$ is bijective by assumption. So in we can identify $a:=\gen{\left({([X^2]r)}^{\frac{1}{2}},{([Y^2]r)}^{\frac{1}{2}}\right)}$ as a fixed point of $\tau$.
+    Assuming that there are two fixed points of $\tau$ implies the existence of two linearly independent squares $r,s\in\gen[\lin]{p,q}$. Thus we see that any linear combination $\lambda r+\mu s={(\lambda^{\frac{1}{2}} r^{\frac{1}{2}}+\mu^{\frac{1}{2}} s^{\frac{1}{2}})}^2$ is a square, again by surjectivity of the \person{Frobenius} map. This proves that $\tau=\id_K$.
+        \item Assume there are linearly independent square polynomials $r,s\in\gen{p,q}$. Using an appropriate change of coordinates and rescaling them we may then assume that $r=X^2$ and $s=Y^2$ so any linear combination $r+\lambda s$ which factors as $(X-\alpha Y)(X-\alpha'Y)$ must satisfy $\alpha+\alpha'=0$ so if $\alpha=\alpha'$ it follows (since $\rchar{K}\neq 2$) that $\alpha=0$ showing that the only square among these is $r$ itself.
+    The same argument applies for linear combinations $\lambda r+s$. Thus $r$ and $s$ are the only two squares.
+    On the other hand, if $\gen{p,q}$ contains one square $r$ then we can change coordinates to say w.l.o.g. that $r=X^2$. Since otherwise $p$ and $q$ would not be coprime, there must exist a polynomial $s\in\gen{p,q}$ coprime to $r$ and scaling it we acheave that $[Y^2]s=1$. We can then complete $s$ to the square
+    $$
+    \left(\frac{{([XY]s)}^2}{4}-[X^2]s\right)r+s,
+    $$
+    which is coprime to $r$.
+    \item Since $\tau$ interchanges the zeros of reducible quadratic polynomials, it is clearly of order 2 (and thus a bijection).
+\end{statements}
+This finishes the proof.
+\end{proof}
+
+\begin{remark}
+    In the case of odd characteristic, $\tau$ is fixed point free if and only if after an appropriate change of coordinates it holds that $p=XY$ and $q=X^2+\lambda Y^2)$ and $\lambda$ is not a square. This is left as an exercise to the reader. 
+\end{remark}
+
+\begin{lemma}[bla]
+
+\end{lemma}
+
+\begin{proof}
+    Take an $(n-2)$-set $A$ of $\proj{K}$ and let $a$ be the double zero of $p_A$. 
+\end{proof}
+
+\subsection{Related matrices}
+
+\paragraph{Extended \person{Vandermonde}-matrices.}
+Denote the elements of $\field{q}$ by $a_i$ ($i=1,\ldots,q$) and define a matrix $V$ by
+$$
+V :=
+\begin{pmatrix}
+    1      & \cdots & 1      & 0      \\
+    a_1    & \cdots & a_q    & 0      \\
+    \vdots & \ddots & \vdots & \vdots \\
+    a_1^n  & \cdots & a_q^n  & 1
+\end{pmatrix}\textrm{.}
+$$
+One then checks easily that $V$ has the property that any $n$ distinct column vectors are linearly independent since such a matrix
+
+$$
+\tilde V :=
+\begin{pmatrix}
+    1             & \cdots & 1       \\
+    a_{k_1}       & \cdots & a_{k_n} \\
+    \vdots        & \ddots & \vdots  \\
+    a_{k_1}^{n-1} & \cdots & a_{k_n}^{n-1} 
+\end{pmatrix}
+$$
+is a \keyword{\person{Vandermonde}-matrix} in the case it does not contain the last vector having determinant
+$$
+    \det{\tilde V} = \prod_{i<j}{(a_{k_i}-a_{k_j})}
+$$
+which is not zero as all $a_k$ are distinct. In the other case, the determinant is also non-zero, as one notes by applying \person{Laplace}'s formula to the last column.
+
+That same fact can also be seen via the observation that any polynomial $P\in\field{q}[X]$ of degree at most $n-1$ has at most $n-1$ zeros, so any non-zero linear form $f:\field{q}^n\to\field{q}$ has at most $n-1$ of the first $q$ columns of $V$ in its kernel.
+And if the last column is in $\ker{f}$ then the corresponding coefficient $f_n$ in the coordinate representation $f=\sum_{i=1}^n{f_i e_i^{\ast}}$ is zero, so $f$ contains at most $n-2$ of the first $q$ column vectors of $V$.
+
+We call this representation of a classical arc introduced in this section the \keyword{\person{Vandermonde}-representation}.
+
+\paragraph{Extended \person{Cauchy}-matrices.}% good
+
+In the last paragraph we saw that the arcs corresponding to extended \person{Reed-Solomon}-codes can be represented as a \keyword{normal rational curve} admitting a representation
+$$ C = \set{\begin{pmatrix} 1 \\
+            \vdots            \\
+            z^{n-1}\end{pmatrix}\in\field{q}^n:z\in \field{q}}\setjoin
+    \set{\begin{pmatrix} 0    \\
+            \vdots            \\
+            1\end{pmatrix}}\textrm{.} $$
+We want to construct another type of matrix representation for these codes.
+The first step is to realize that the curve $C$ is $\PGL$-equivalent to some curve $\tilde{C}$ with affine representation
+$$ C' = \set{
+    \begin{pmatrix} P_1(z)             \\
+        \vdots                         \\
+        P_n(z)\end{pmatrix}\in\field{q}^n:z\in \field{q}}
+\setjoin\set{\begin{pmatrix} p_1^{n-1} \\
+        \vdots                         \\
+        p_n^{n-1}\end{pmatrix}} $$
+where $P_i=\sum_{j=0}^{n-1}{p_i^j X^j}$ ($i=1,\ldots,n$) form a basis of the polynomials of degree $k\leq n-1$. Now we pick $n$ distinct elements of $\field{q}$ and set
+$$ P_i := \prod_{\substack{j=1\\ j\neq i}}^n{\frac{X-\nu_j}{\nu_i-\nu_j}}\in\field{q}[X]\textrm{.} $$
+
+Then it is immediately clear that the $P_i$ are linearly independent since they form a \person{Lagrange}-basis with respect to the points $\nu_i$ ($i=1,\ldots,n$). The point $\gen{\hat{e}}$ corresponding to the preimage $\infty$ now evaluates to
+$$ e = 
+    \begin{pmatrix}
+        \prod\limits_{j\neq 1}{\frac{1}{\nu_1-\nu_j}}\\
+        \vdots               \\
+        \prod\limits_{j\neq n}{\frac{1}{\nu_n-\nu_j}}
+    \end{pmatrix}\textrm{.} $$
+
+Now we may consider the curve with representation
+$$ \set{\begin{pmatrix} P_1(z)\\ \vdots\\ P_n(z)\end{pmatrix}:z\in\field{q}}\setjoin\set{v} $$
+and its image under the linear mapping given by matrix representation $A:={\diag(v_1,\ldots,v_n)}^{-1}$.
+To abbreviate notation we now write $P(z)$ for
+$$ \begin{pmatrix} P_1(z)\\ \vdots\\ P_n(z)\end{pmatrix}\textrm{.} $$
+
+Scaling all vectors $AP(\nu_i)$ ($i=1,\ldots,n$) by
+$$ \prod_{\substack{j=1\\ j\neq i}}^n{\frac{1}{\nu_i-\nu_j}}\textrm{,} $$
+the vectors $AP(z)$ ($z\not\in\set{\nu_i:i=1,\ldots,n}$) by 
+$$ \prod_{j=1}^n{\frac{1}{z-\nu_j}} $$
+and leaving $Av$ fixed we get an representation
+$$ C'' = \set{e_1,\ldots,e_n,\sum_{i=1}^n{e_i}}\setjoin\set{\begin{pmatrix} \frac{1}{z-\nu_1} \\ \vdots\\ \frac{1}{z-\nu_n}\end{pmatrix}:z\in\field{q}\setminus\set{\nu_i:i=1,\ldots,n}} $$
+
+of a curve being $\PGL$-equivalent to the initial representation.
+However, writing down the generator matrix of the corresponding MDS-code we obtain
+$$ G =
+    \begin{pmatrix}
+        1      & 0      & \cdots & 0      & 1      & \frac{1}{\nu_{n+1}-\nu_1} & \cdots & \frac{1}{\nu_q-\nu_1} \\
+        0      & \ddots & \ddots & \vdots & \vdots & \vdots                & \ddots & \vdots            \\
+        \vdots & \ddots & \ddots & 0      & \vdots & \vdots                & \ddots & \vdots            \\
+        0      & \cdots & 0      & 1      & 1      & \frac{1}{\nu_{n+1}-\nu_n} & \cdots & \frac{1}{\nu_q-\nu_n}
+    \end{pmatrix} $$
+
+which contains a \keyword{\person{Cauchy}-matrix}. Hence, we call this representation of a classical arc the \keyword{\person{Cauchy}-representation}. The matrix consisting of the columns of index $n+1$ till $q+1$ is called \keyword{extended \person{Cauchy}-matrix}\label{cauchy-rep}

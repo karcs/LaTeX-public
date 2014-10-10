@@ -1,0 +1,536 @@
+
+\subsection{Related matrices}
+
+\paragraph{Extended \person{Vandermonde}-matrices.}
+Denote the elements of $\field{q}$ by $a_i$ ($i=1,\ldots,q$) and define a matrix $V$ by
+$$
+V :=
+\begin{pmatrix}
+    1      & \cdots & 1      & 0      \\
+    a_1    & \cdots & a_q    & 0      \\
+    \vdots & \ddots & \vdots & \vdots \\
+    a_1^n  & \cdots & a_q^n  & 1
+\end{pmatrix}\textrm{.}
+$$
+One then checks easily that $V$ has the property that any $n$ distinct column vectors are linearly independent since such a matrix
+
+$$
+\tilde V :=
+\begin{pmatrix}
+    1             & \cdots & 1       \\
+    a_{k_1}       & \cdots & a_{k_n} \\
+    \vdots        & \ddots & \vdots  \\
+    a_{k_1}^{n-1} & \cdots & a_{k_n}^{n-1} 
+\end{pmatrix}
+$$
+is a \keyword{\person{Vandermonde}-matrix} in the case it does not contain the last vector having determinant
+$$
+    \det{\tilde V} = \prod_{i<j}{(a_{k_i}-a_{k_j})}
+$$
+which is not zero as all $a_k$ are distinct. In the other case, the determinant is also nonzero, as one notes by applying \person{Laplace}'s formula to the last column.
+
+That same fact can also be seen via the observation that any polynomial $P\in\field{q}[X]$ of degree at most $n-1$ has at most $n-1$ zeros, so any non-zero linear form $f:\field{q}^d\to\field{q}$ has at most $n-1$ of the first $q$ columns of $V$ in its kernel.
+And if the last column is in $\ker{f}$ then the corresponding coefficient $f_n$ in the coordinate representation $f=\sum_{i=1}^n{f_i e_i^{\ast}}$ is zero, so $f$ contains at most $n-2$ of the first $q$ column vectors of $V$.
+
+We call the affine representation of a classical arc introduced in this section the \keyword{\person{Vandermonde}-representation}.
+
+\paragraph{Extended \person{Cauchy}-matrices.}% good
+
+In the last paragraph we saw that the arcs corresponding to extended \person{Reed-Solomon}-codes can be represented as a \keyword{normal rational curve} admitting an affine representation
+$$ C = \set{\begin{pmatrix} 1 \\
+            \vdots            \\
+            z^{n-1}\end{pmatrix}\in\field{q}^n:z\in \field{q}}\setjoin
+    \set{\begin{pmatrix} 0    \\
+            \vdots            \\
+            1\end{pmatrix}}\textrm{.} $$
+We want to construct another type of matrix representation for these codes.
+The first step is to realize that the curve $C$ is $\PGL$-equivalent to some curve $\tilde{C}$ with affine representation
+$$ C' = \set{
+    \begin{pmatrix} P_1(z)             \\
+        \vdots                         \\
+        P_n(z)\end{pmatrix}\in\field{q}^n:z\in \field{q}}
+\setjoin\set{\begin{pmatrix} p_1^{n-1} \\
+        \vdots                         \\
+        p_n^{n-1}\end{pmatrix}} $$
+where $P_i=\sum_{j=0}^{n-1}{p_i^j X^j}$ ($i=1,\ldots,n$) form a basis of the polynomials of degree $k\leq n-1$. Now we pick $n$ distinct elements of $\field{q}$ and set
+$$ P_i := \prod_{\substack{j=1\\ j\neq i}}^n{\frac{X-\nu_j}{\nu_i-\nu_j}}\in\field{q}[X]\textrm{.} $$
+
+Then it is immediately clear that the $P_i$ are linearly independent since they form a \person{Lagrange}-basis with respect to the points $\nu_i$ ($i=1,\ldots,n$). The point $\gen{\hat{e}}$ corresponding to the preimage $\infty$ now evaluates to
+$$ e = 
+    \begin{pmatrix}
+        \prod\limits_{j\neq 1}{\frac{1}{\nu_1-\nu_j}}\\
+        \vdots               \\
+        \prod\limits_{j\neq n}{\frac{1}{\nu_n-\nu_j}}
+    \end{pmatrix}\textrm{.} $$
+
+Now we may consider the curve with affine representation
+$$ \set{\begin{pmatrix} P_1(z)\\ \vdots\\ P_n(z)\end{pmatrix}:z\in\field{q}}\setjoin\set{v} $$
+and its image under the linear mapping given by matrix representation $A:={\diag(v_1,\ldots,v_n)}^{-1}$.
+To abbreviate notation we now write $P(z)$ for
+$$ \begin{pmatrix} P_1(z)\\ \vdots\\ P_n(z)\end{pmatrix}\textrm{.} $$
+
+Scaling all vectors $AP(\nu_i)$ ($i=1,\ldots,n$) by
+$$ \prod_{\substack{j=1\\ j\neq i}}^n{\frac{1}{\nu_i-\nu_j}}\textrm{,} $$
+the vectors $AP(z)$ ($z\not\in\set{\nu_i:i=1,\ldots,n}$) by 
+$$ \prod_{j=1}^n{\frac{1}{z-\nu_j}} $$
+and leaving $Av$ fixed we get an affine representation
+$$ C'' = \set{e_1,\ldots,e_n,\sum_{i=1}^n{e_i}}\setjoin\set{\begin{pmatrix} \frac{1}{z-\nu_1} \\ \vdots\\ \frac{1}{z-\nu_n}\end{pmatrix}:z\in\field{q}\setminus\set{\nu_i:i=1,\ldots,n}} $$
+
+of a curve being $\PGL$-equivalent to the initial representation.
+However, writing down the generator matrix of the corresponding MDS-code we obtain
+$$ G =
+    \begin{pmatrix}
+        1      & 0      & \cdots & 0      & 1      & \frac{1}{\nu_{n+1}-\nu_1} & \cdots & \frac{1}{\nu_q-\nu_1} \\
+        0      & \ddots & \ddots & \vdots & \vdots & \vdots                & \ddots & \vdots            \\
+        \vdots & \ddots & \ddots & 0      & \vdots & \vdots                & \ddots & \vdots            \\
+        0      & \cdots & 0      & 1      & 1      & \frac{1}{\nu_{n+1}-\nu_n} & \cdots & \frac{1}{\nu_q-\nu_n}
+    \end{pmatrix} $$
+
+which contains a \keyword{\person{Cauchy}-matrix}. Hence, we call this affine representation of a classical arc the \keyword{\person{Cauchy}-representation}.\label{cauchy-rep}
+
+\section{$k$-arcs and the main conjecture}
+
+\section{\person{Segre}'s lemma of tangents}
+
+\begin{definition}[tangent polynomials]
+    Let $\cA$ be an arc in $\field{q}^n$. Then for any $(n-2)$-set $X\setleq \cA$ define the tangent polynomial $T_X$ as the product
+    $$
+    T_X:=\prod_{\substack{H\in\Sub(\field{q})\\ \codim{H}=1,\ H\setmeet\cA=X}}{l_H}
+    $$
+    where $l_H$ are linear forms such that $\ker{l_H}=H$. This defines (up to scalar factor from $\units{\field{q}}$) a homogenous polynomial in $n$ variables which is of degree $q+1-(\cA-(n-2))=q-1+n-\card{\cA}=:t$ (by counting the corresponding hyperplanes).
+\end{definition}
+
+The key result, which is used in many proofs of facts about arcs in finite projective space is the following.
+
+\begin{lemma}[\person{Segre}'s lemma of tangents, original]
+  Let $n\geq3$ and $\cA$ be an arc in $\field{q}^n$. Then for pairwise distinct $x_i\in \cA$ ($i=1,2,3$) and $X\setleq \cA\setminus\{x_1,x_2,x_3\}$, $\abs{X}=n-3$ we have
+  $$    T_{X\setjoin\{x_1\}}(x_2)T_{X\setjoin\{x_2\}}(x_3)T_{X\setjoin\{x_3\}}(x_1)=(-1)^{t+1}T_{X\setjoin\{x_2\}}(x_1)T_{X\setjoin\{x_3\}}(x_2)T_{X\setjoin\{x_1\}}(x_3).
+  $$
+\end{lemma}
+
+\begin{proof}
+    Denote by $x_i^{\ast}$ the linear form corresponding to $x_i$ in the dual basis of $\bar{X}:=X\setjoin\set{x_1,x_2,x_3}$.
+    Let $i\in\set{1,2,3}$. Let $\cH_i$ be the set of hyperplanes $H$ containing $\gen{X,x_i}$ but not $x_j$ for $j\neq i$.
+    For each hyperplane $H\in \cH_i$ there are two possibilities:
+
+    \emph{Case 1:} There is an $a\in\cA\setminus\bar{X}$ with $a\in H$. In this case define the linear form
+    $$
+    l_H(x):=\det(x,x_i,X,a)
+    $$
+
+    \emph{Case 2:} Otherwise, $l_H$ is already defined in via the tangent polynomials.
+
+    Now, one may define the polynomial $P_i:=\prod_{H\in \cH_i}{l_H}$ (of degree $q-1$) and one computes that
+    $$
+    P_i(x_j)=T_{X\setjoin\set{x_i}}(x_j)\prod_{a\in\cA\setminus\bar{X}}{\det(x_j,x_i,X,a)}.
+    $$
+    When $\set{1,2,3}\setminus\set{x_i}=\set{j,k}$ it is clear that $P_i(x_j)/P_i(x_k)=-1$ which can be deduced from the fact that the product of all units of a finite field is $-1$ and the observation that all hyperplanes in $\cH_i$ are given by $\ker(x_j^{\ast}+\lambda x_k^{\ast})$ where $\lambda\in\units{\field{q}}$.
+    Thus we have that
+    \begin{align*}
+        \frac{P_1(x_2)P_2(x_3)P_3(x_1)}{P_2(x_1)P_3(x_2)P_1(x_3)} &= \frac{T_{X\setjoin\set{x_1}}(x_2)T_{X\setjoin\set{x_2}}(x_3)T_{X\setjoin\set{x_3}}(x_1)}{T_{X\setjoin\set{x_2}}(x_1)T_{X\setjoin\set{x_3}}(x_2)T_{X\setjoin\set{x_1}}(x_3)}\prod_{\substack{i,j\in\set{1,2,3}\\ i<j}}\prod_{a\in\cA\setminus\bar{X}}{\frac{\det(x_i,x_j,X,a)}{\det(x_j,x_i,X,a)}}\\
+        & = {(-1)}^3=-1.
+    \end{align*}
+    Since $\cA\setminus\bar{X}$ has $\card{\cA}-n=q-1-t$ elements, the last two products evaluate to ${(-1)}^{3(q-1-t)}={(-1)}^t$.
+    This finishes the proof.
+\end{proof}
+
+\begin{lemma}[Segre's lemma of tangents, simplified version]
+
+\end{lemma}
+
+\begin{proof}
+    The (probably) simplest proof is by induction on $\card{\cA}$.
+    For $\card{\cA}=n$ we first choose linear forms $l_H$ for each hyperplane $H\in\Sub(V)$ such that $\ker{l_H}=H$. Then we can define
+    $$
+    T_Y:=\frac{S_Y}{\det(\cdot,Y)}
+    $$
+    where $S_X=\prod_{H\in\Sub(V),Y\setleq H}{l_H}$ is the product of all hyperplanes containing $Y$.
+    Now taking $x_1,x_2,X$ as given in the lemma, we compute that
+    $$
+    dsf
+        $$
+        For the induction step assume that $\card{\cA}\geq n+1$. Set $a:=\min{\cA}$ and define the tangent polynomials $T^{\cA}_Y$ via the tangent polynomials $T^{\cA'}_{Y'}$ ($\cA':=\cA\setminus\set{a}$, $Y\setleq\cA$, $Y'\setleq\cA'$, $\card{Y}=\card{Y'}=n-2$) by
+        $$
+        T^{\cA}_{Y'}:=\frac{T^{\cA'}_{Y'}}{\det(a,Y',\cdot)}
+        $$
+        and
+        $$
+        T^{\cA}_{X'\setjoin\set{a}}:=\prod
+        $$
+        (this is a definition since the symmetric algebra is a UFD).
+\end{proof}
+
+
+Later we will do some calculations with the polynomials $T_Y$ for $Y\in\binom{\cA}{d-2}$. Thus it is desirable to choose the scalar factors in front of each of them in an appropriate way to simplify the calculation.
+
+\begin{corollary}[Simplification of \person{Segre}'s lemma]
+  Let $\cA$ be an arc in $\field{q}^n$ ($n\geq 3$) and $<$ some linear
+  order on $\cA$. Then we can define the tangent polynials $T_Y$
+  ($Y\setleq \cA$, $\abs{Y}=n-2$) such that for all $x_1,x_2,X$ we have
+  $$    \frac{T_{X\setjoin\{x_2\}}(x_1)}{T_{X\setjoin\{x_1\}}(x_2)}=\left(\frac{\sgn(X\setjoin\{x_2\},x_1)}{\sgn(X\setjoin\{x_1\},x_2)}\right)^{t+1}
+  $$
+  where $X\setleq \cA$ has $d-3$ elements and $x_1,x_2\in \cA\setminus X$ are distinct.
+\end{corollary}
+
+\begin{remark}
+  Here, by $(A_1,\ldots,A_n)$ we mean the tuple
+  which is given by writing down the elements of $A_1,\ldots,A_n$
+  where each $A_i$ is written down in the order $<$
+  ($i\in\{1,\ldots,n\}$). Moreover, by $\sgn(A_1,\ldots,A_n)$ we mean
+  the sign of the permutation which corresponds to the tuple $(A_1,\ldots,A_n)$
+  where the identity is given by $(\bigsetjoin_{i=1}^n{A_i})$. To abbreviate notation, for $A_i$ a singleton we just write its
+  element without curly brackets.  
+  This convention shall be used in the following.
+\end{remark}
+
+\begin{proof}
+  We define the directed graph $G=(V,E)$ by $V:=\binom{\cA}{d-2}$ and $E:=\{(u,v)\in V^2:\abs{u\setminus v}=1\}$ (although $E$ as a relation is symmetric, $G$ shall be seen as a directed graph).
+  Moreover, we define a labeling $\lambda:E\to \field{q}^*$. For $(u,v)\in E$ let $u_v\in u\setminus v$ and $v_u\in v\setminus u$ be the elements of the singletons. Then 
+  \begin{equation}
+    \lambda(u,v):=\frac{T_u(v_u)}{T_v(u_v)}\text{.} 
+  \end{equation}
+  Then in the two types of triangles in $G$ we have two different relations that hold.
+  The first type of triangles consists of vertices $u,v,w\in V$ such that $\abs{u\setjoin v\setjoin w}=d-1$.
+  Here it clearly holds that
+  \begin{equation}
+    \lambda(u,v)\lambda(v,w)\lambda(w,u)=1
+  \end{equation}
+  which is simply a tautology when replacing $\lambda$ by its definition.
+  In the second type of triangles consisting of vertices $u,v,w\in V$ such that $\abs{u\setjoin v\setjoin w}=d$ we have
+  \begin{equation}
+    \lambda(u,v)\lambda(v,w)\lambda(w,u)=(-1)^{t+1}
+  \end{equation}
+  which turns out to be just a reformulation of \person{Segre}'s lemma of tangents.
+  Now it is clear, that $\lambda$ is uniquely defined by any restriction $\rest{\lambda}_{E_T}$ where $T(V,E_T)$ is a (directed) rooted spanning tree of $G$ with root $r\in V$ (by the above relations in triangles of $G$ and as $G$ is obviously strongly connected).
+  Moreover, when replacing $T_u$ by $\tilde{T}_u:=\mu T_u$ one just modifies $\lambda$ to $\tilde{\lambda}$ where 
+  \begin{equation}
+    \tilde{\lambda}(v,w)=\begin{cases} 
+      \lambda(v,w) & : u\notin\{v,w\}\\
+      \mu\lambda(v,w) &: v=u\\
+      \mu^{-1}\lambda(v,w) &: w=u
+    \end{cases}\text{.}
+  \end{equation}
+  This idea can be used to modify the tangent polynomials step by step to achieve any values of $\lambda$ among $E_T$.
+  This can be done as follows. Define the sets $V_l:=\{v\in V: \text{the shortest path from } r \text{ to } v \text{ is of length } l\}$ ($l\in\nats$). Since $G$ is finite there is some $L\in\nats$ such that $\{V_l:l\in\{0,\ldots,L\}\}$ is a partition of $V$. Moreover, one notes that the sets $E_l:=\{(u,v)\in E_T:u\in V_{l-1},v\in V_l\}$ for $l=1,\ldots,L$ form a partition of $E_T$. Thus one can modify the labeling $\lambda$ at first on $E_1$ then on $E_2$ etc. As there is no edge in $T$ between the sets $V_m$ and $V_n$ where $\abs{n-m}\geq 2$ this procedure works and one does not destroy former changes on some $E_i$. 
+  This shows that $\lambda$ can be changed to any labeling satisfying the two triangle conditions.
+  At last we check that these are satisfied for the labeling $\bar{\lambda}$ given in the lemma, where for $(u,v)\in E$
+
+  \begin{equation}
+    \bar{\lambda}(u,v):=\left(\frac{\sgn(u,v_u)}{\sgn(v,u_v)}\right)^{t+1}\text{.}
+  \end{equation}
+
+  For a triangle $uvw$ of the first type ($\abs{u\setjoin v\setjoin w}=d-1$) we obtain $v_u=w_u$, $u_v=w_v$, $u_w=v_w$ (with the same notation as before) and thus one gets
+  \begin{align}
+    \bar{\lambda}(u,v)\bar{\lambda}(v,w)\bar{\lambda}(w,u) & =\left(\frac{\sgn(u,v_u)}{\sgn(v,u_v)}\frac{\sgn(v,w_v)}{\sgn(w,v_w)}\frac{\sgn(w,u_w)}{\sgn(u,w_u)}\right)^{t+1}\\
+    & =1\text{.}
+  \end{align}
+  Similarly, for a triangle $uvw$ of the second type ($\abs{u\setjoin v\setjoin w}=d$) one gets the desired identity by the following reasoning. W.l.o.g. we may write $u=X\setjoin\{x_1\}$, $v=X\setjoin\{x_2\}$, $w=X\setjoin\{x_3\}$ for a $(d-3)$-element set $X:=u\setmeet v\setmeet w$ and elements $x_i\in \cA$ ($i=1,2,3$) such that $\{x_1,x_2,x_3\}\setjoin X=u\setjoin v\setjoin w$. Furthermore we may assume that $X^1<x_1<X^2<x_2<X^3<x_3<X^4$, where $X^1,X^2,X^3,X^4$ partitions $X$ (otherwise we interchange the labeling of $u$, $v$ and $w$). Then we may compute
+
+  \begin{align}
+    \bar{\lambda}(u,v)\bar{\lambda}(v,w)\bar{\lambda}(w,u) 
+    & = \left(\frac{\sgn(X^1,x_1,X^2,X^3,X^4,x_2)}{\sgn(X^1,X^2,x_2,X^3,X^4,x_1)}\right)^{t+1}\\
+    & \settimes \left(\frac{\sgn(X^1,X^2,x_2,X^3,X^4,x_3)}{\sgn(X^1,X^2,X^3,x_3,X^4,x_2)}\right)^{t+1}\\
+    & \settimes \left(\frac{\sgn(X^1,X^2,X^3,x_3,X^4,x_1)}{\sgn(X^1,x_1,X^2,X^3,X^4,x_3)}\right)^{t+1}\\
+    & = (-1)^{((|X^3|+|X^4|)+(|X^2|+1+|X^3|+|X^4|))(t+1)}\\
+    & \settimes (-1)^{(|X^4|+(|X^3|+1+|X^4|)(t+1)}\\
+    & \settimes (-1)^{((|X^2|+|X^3|+1+|X^4|)+|X^4|)(t+1)}\\
+    & = (-1)^{t+1}
+  \end{align}
+
+  which finishes the proof.
+\end{proof}
+
+This lemma enables us now to make the following definition
+
+\begin{definition}
+  Let $\cA\setleq\field{q}^n$ be an arc. We say that its tangent polynomials are defined canonically with respect to the linear order $<$ on $\cA$ if they satisfy for all $x_1,x_2,X$ the identity
+  $$
+ \frac{T_{X\setjoin\{x_2\}}(x_1)}{T_{X\setjoin\{x_1\}}(x_2)} = \left(\frac{\sgn(X\setjoin\{x_2\},x_1)}{\sgn(X\setjoin\{x_1\},x_2)}\right)^{t+1}
+  $$
+  where $X\setleq \cA$ has $n-3$ elements and $x_1,x_2\in \cA\setminus X$ are distinct.
+\end{definition}
+
+\begin{remark}
+  This simple but effective trick enables us to prove some results of \person{Ball} and \person{de Beule} avoiding some inconvenient terms to occur.
+  Note that in the above definition the tangent polynomials are still only defined up to scalar factor, but their quotients are fixed.
+  In the following we do only work with the tangent polynomials defined in that manner.
+\end{remark}
+
+\section{The polynomials $Q(X)$ and $P(X)$}
+
+The previous section we discuss some results by \person{Blokhuis} und draw some relations to \person{Ball}'s and \person{de Beule}'s interpolation idea.
+
+\begin{lemma}[Blokhuis]
+  Let $\cA$ be an arc of $\PG(n,\field{q})$ and let $\cA^*$ be the set of lines dual hyperplanes
+  to the points of $\cA$. Let
+  \begin{align*}
+    t:=q+n-\mathcal{\card{\cA}}
+  \end{align*}
+  Then there is a polynomial $Q(X)\in\symalg(\field{q}^{{n+1}*})$ homogeneous in $n+1$ variables of degree 
+  \begin{equation}
+    k:=\begin{cases}
+      t &: 2|q\\
+     2t &: \otherwise 
+       \end{cases}
+  \end{equation}
+  whose zeros include the set $\mathcal{Z}$ of points that lie on exactly $n-1$ hyperplanes of $\cS^*$.
+  Moreover, when $q$ is odd, for each point $z\in \mathcal{Z}$, if $l_z$ is line of $\cS^*$ incident with $z$ then $Q$ mod $l_z$ has a zero of degree $2$ at $z$.
+  When 
+  \begin{equation}
+    \card{\cA}\geq \begin{cases}
+      n+\frac{q}{2} &: 2|q \\
+      n+\frac{2}{3}q &: \otherwise
+  \end{cases}
+  \end{equation}
+  then $Q$ is unique.
+\end{lemma}
+
+In this latter case we call this $Q$ the \person{Segre}-polynomial associated with the arc.
+
+--- TO BE CONTINUED ---
+
+\section{Interpolation formulas}
+
+An elementary but particularly nice idea is to use interpolation
+formulas to capture information about the arc.
+
+There are two basic possibilities to apply interpolation. 
+
+\begin{lemma}[interpolation of the tangent polynomial]
+  Let $\cA$ be an arc in $\field{q}^d$ and $A,B\setleq \cA$ be disjoint subsets with
+  $\abs{A}=t+2$ and $\abs{B}=d-2$. It then holds that
+  \begin{align}
+    \sum_{a\in A}{T_{B}(a)\prod_{z\in A\setminus \{a\}}\det(z,B,a)^{-1}} =0
+  \end{align}
+  or equivalently when the tangent polynomials are defined canonically
+  with respect to the order $<$
+  \begin{align}
+    \sum_{a\in A}{P(\{a\}\setjoin B)\prod_{z\in A\setminus\{a\}}\det(z,\{a\}\setjoin B)^{-1}}=0\text{.}
+  \end{align}
+\end{lemma}
+
+\begin{proof}
+  As $T_B(x+y)=T_B(x)$ for all $x\in\field{q}^d$ and $y\in\lin{B}$ we may
+  interpolate the polynomial $\overline{T}_B(X):=T_{B}(X+\lin{B})$ as a homogenous polynomial of
+  degree $t$ in $\field{q}^d/\lin{B}$. To do this, pick $a\in A$ to get
+  \begin{align}
+    T_B(x)=\sum_{a'\in A\setminus\{a\}}{T_B(a')\prod_{z\in A\setminus\{a,a'\}}{\frac{\det(z,B,x)}{\det(z,B,a')}}}
+  \end{align}
+  since both sides are functions of polynomials in $x$ of degree $t$
+  and both are constant on cosets of $\lin{B}$ and agree on $t+1$
+  linearly independent points of $\field{q}^d/\lin{B}$ (namely $\overline{a}'$
+  for $a'\in A\setminus\{a\}$). Replacing $x$ by $a$ and dividing by
+  $\prod_{z\in A\setminus\{a\}}{\det(z,B,a)}$ one gets 
+  \begin{align}
+    T_B(a)\prod_{z\in  A\setminus\{a\}}{\det(z,B,a)} 
+    &= \det(a',B,a)^{-1}\sum_{a'\in A\setminus\{a\}}{T_B(a')\prod_{z\in A\setminus\{a,a'\}}{\det(z,B,a')^{-1}}}
+  \end{align}
+  which is what we wanted to prove.
+  The second formulation only uses the definition of $P$.
+\end{proof}
+
+The second idea is to interpolate the determinants themselves
+
+\begin{lemma}[interpolation of determinants]
+  Let $A,B,C\setleq \field{q}^d$ such that $\lin(A\setjoin
+  C)=\field{q}^d$, $\abs{A}+\abs{C}=d+1$ and $\abs{B}+\abs{C}=d-1$ and $<$
+  be some linear order on $A$. Then it holds that
+  \begin{align}
+    \sum_{a\in A}{\sgn(a,A\setminus\{a\})\det(a,B,C)\det(A\setminus\{a\},C)}=0\text{.}
+  \end{align}
+  Here, $\sgn$ is taken with respect to $<$.
+\end{lemma}
+
+\begin{proof}
+  Picking $a\in A$ and interpolating $\det(\cdot,B,C)$ as a linear form in
+  $\field{q}^d/\lin{C}$ gives
+  \begin{align*}
+    \det(x,B\setjoin C) 
+    &= \sum_{a'\in A\setminus\{a\}}{\det(a',B,C)\frac{\det(x,A\setminus\{a,a'\},C)}{\det(a',A\setminus\{a,a'\},C)}}
+  \end{align*}
+  which holds as it holds for $x$ an element of the basis $\bar{a}'$ for $a'\in
+  A\setminus\{a\}$ of $\field{q}^d/\lin{C}$. Replacing $x$ by $a$ and
+  rearranging the terms yields
+  \begin{align*}
+    \det(a,B,C)\det(A\setminus\{a\},C)
+    &= 
+    \sum_{a'\in A\setminus\{a\}}{\det(a',B,C)\frac{\det(a,A\setminus\{a,a'\},C)}{\sgn(a',A\setminus\{a,a'\})}}\\
+    &= 
+    \sum_{a'\in A\setminus\{a\}}{\det(a',B,C)\det(A\setminus\{a'\},C)\frac{\sgn(a,A\setminus\{a,a'\})}{\sgn(a',A\setminus\{a,a'\})}}\\
+    &= 
+    -\sum_{a'\in A\setminus\{a\}}{\det(a',B,C)\det(A\setminus\{a'\},C)\frac{\sgn(a',A\setminus\{a'\})}{\sgn(a,A\setminus\{a\})}}
+  \end{align*}
+  which is the desired result.
+\end{proof}
+
+\begin{definition}[abbreviation of tangent polynomial evaluations]\label{tang-pol-eval}
+    Let $\cA$ be an arc in $\field{q}^n$ such that the tangent polynomials $T_Y$ are defined canonically with respect to some linear order $\leq$ on $\cA$. Then we write $P(X):=T_{X\setminus\set{x}}(x)$ where $x$ is the biggest element in  $X$.
+\end{definition}
+
+\subsection{Manipulation of interpolation identities}
+
+Now, the idea is to play with the interpolation identities to reach a
+contradiction in the case where $t\leq n-3$ (i.e. $\card{\cA}\geq q+2$).
+
+\paragraph{First attempt.}
+
+The proof of the mainconjecture for MDS codes of \person{Ball} and \person{de Beule} for the case where
+$d\leq p=\rchar[\field{q}]$ that any arc $\cA$ in $\field{q}^n$ satisfies $\abs{\cA}\leq q+1$ and is equivalent to a normal rational
+curve, mainly bases on the following key result which can be derived elementarily from the interpolation of tangent polynomials.
+
+\begin{lemma}[\person{Ball} \& \person{de Beule}'s $ABC$ lemma]
+  Let $\cA$ be an arc in $\field{q}^d$ ($p=\rchar[\field{q}]$) and let
+  $P(X)$ be the abbreviation as met in \autoref{tang-pol-eval} for the order $\leq$. Let $0\leq
+  r\leq\min\{n,p\}-1$ and $A,B,C\setleq \cA$ disjoint sets such
+  that $\abs{A}+\abs{B}=r+t+1$, $\abs{C}=n-1-r$. Then it holds that
+  \begin{align*}
+    &(-1)^r\sum_{\substack{A'\setleq A\\ \abs{A'}=r}}{P(A'\setjoin C)\prod_{z\in (A\setminus A')\setjoin B}{\det(z,A'\setjoin C)^{-1}}}\\
+    &= \sum_{\substack{B'\setleq B\\ \abs{B'}=r}}{P(B'\setjoin C)\prod_{z\in (B\setminus B')\setjoin A}{\det(z,B'\setjoin C)^{-1}}}\text{.}
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+    The proof happens by induction on $r$. For $r=0$ the statement is a
+    tautology.
+    Now, suppose the lemma is proven for $r-1\geq 0$ and let
+    $r\leq\min\{d,p\}-1$.
+    Moreover, let $A,B,C\setleq \cA$ be disjoint sets such
+    that $\abs{A}+\abs{B}=r+t+1$, $\abs{C}=d-1-r$. Then pick $a\in A$ and
+    apply the lemma for $r-1$ and sets $A\setminus\{a\}$, $B$,
+    $\{a\}\setjoin C$ (w.l.o.g. we may assume that $A$ or $B$ is not empty --- and their roles are symmetric).
+    This yields
+    \begin{align}
+        &{(-1)}^{r-1}\sum_{\substack{A'\setleq A\setminus\{a\}\\ \abs{A'}=r-1}}{P(A'\setjoin\{a\}\setjoin C)\prod_{z\in (A\setminus A')\setjoin B}{\det(z,A'\setjoin\{a\}\setjoin C)^{-1}}}\\
+        &= \sum_{\substack{B'\setleq B\\ \abs{B'}=r-1}}{P(B'\setjoin\{a\}\setjoin C)\prod_{z\in (B\setminus B')\setjoin A\setminus\{a\}}{\det(z,B'\setjoin\{a\}\setjoin C)^{-1}}}\text{.}
+    \end{align}
+    Now, we sum this over $a\in A$ to get
+    \begin{align*}
+    &(-1)^{r-1}r\sum_{\substack{A'\setleq A\\ \abs{A'}=r}}{P(A'\setjoin C)\prod_{z\in (A\setminus A')\setjoin B}{\det(z,A'\setjoin C)^{-1}}}\\
+    &= \sum_{\substack{B'\setleq B\\ \abs{B'}=r-1}}{\sum_{a\in A}{P(B'\setjoin\{a\}\setjoin C)\prod_{z\in (B\setminus B')\setjoin A\setminus\{a\}}{\det(z,B'\setjoin\{a\}\setjoin C)^{-1}}}}\\
+    &= \sum_{\substack{B'\setleq B\\ \abs{B'}=r-1}}{\sum_{a\in A}{P(B'\setjoin\{a\}\setjoin C)\prod_{z\in (B\setminus B'\setjoin A)\setminus\{a\}}{\det(z,B'\setjoin\{a\}\setjoin C)^{-1}}}}\\
+    &= -\sum_{\substack{B'\setleq B\\ \abs{B'}=r-1}}{\sum_{b\in B\setminus B'}{P(B'\setjoin\{b\}\setjoin C)\prod_{z\in(B\setminus B'\setjoin A)\setminus\{b\}}{\det(z,B'\setjoin\{b\}\setjoin C)^{-1}}}}\\
+    &= -r\sum_{\substack{B'\setleq B\\ \abs{B'}=r}}{P(B'\setjoin C)\prod_{z\in (B\setminus B')\setjoin A}{\det(z,B'\setjoin C)^{-1}}}\text{.}
+  \end{align*}
+  Here we used the interpolation of tangent polynomials in the fourth
+  line for the sets $B'\setjoin C$ and $B\setminus B'\setjoin A$ when
+  $r-1\leq\abs{B}$. In the case $\abs{B}< r-1$ the LHS is zero (as it
+  had been zero before).
+  If $r\leq p-1$ it is a unit and we can divide the above by $-r$ to complete
+  the induction.
+\end{proof}
+
+\begin{corollary}[the case $n\leq p$]
+  If $n\leq p$ then $\card{\cA}\leq q+1$.
+\end{corollary}
+
+\begin{proof}
+  Assume that $n\leq p$ and $\card{\cA}\geq q+2$ or equivalently $t=q+n-1-\card{\cA}\leq
+  n-3$. Then apply \person{Ball} \& \person{de Beule}'s $ABC$-lemma with
+  $r=\card{A}=n-1\leq p-1$ and appropriate subsets $B$, $C$ (as $\min\set{n,\card{\cA}-n}\leq\card{\cA}/2$, using the dual arc if necessary we may assume w.l.o.g.\ that $n+t\leq 2n-3\leq\abs{\cA}$). Then
+  we have that $\abs{B}=t+1\leq n-2$ and thus the lemma gives
+  $$
+    {(-1)}^{n-1}P(A)\prod_{z\in B}{{\det(z,A)}^{-1}}=0
+  $$
+  which is a contradiction.
+\end{proof}
+
+\begin{remark}
+  This is as we will see the optimal result using \emph{only} the interpolation
+  of the tangent polynomial.
+\end{remark}
+
+Now in that case the $(q+1)$-arcs can be identified as normal rational
+curves by the following 
+
+\begin{corollary}[classification of $(q+1)$-arcs for $n\leq p$]
+  Let $\cA$ be a $(q+1)$-arc in $\field{q}^d$ where $n\leq
+  p=\rchar[\field{q}]$. Then $\cA$ is a normal rational curve.
+\end{corollary}
+
+\begin{proof}
+    In the case $\card{\cA}=q+1$ we have that $t=n-2$.
+    Again, we apply the $ABC$-lemma for $r=n-1\leq p-1$ and $A\setleq \cA$ with
+    $\card{A}=d$ and appropriate sets $B,C\setleq \cA$ (then
+    $\card{B}=t=n-2<r$ and $C=\emptyset$). This gives us
+    $$ {(-1)}^{n-1}\sum_{\substack{A'\setleq A \\
+                \abs{A'}=n-1}}{P(A')\prod_{z\in (A\setminus A')\setjoin
+                B}{{\det(z,A')}^{-1}}} = 0\textrm{.} $$
+
+        Setting $B_b:=B\setminus\set{b}\setjoin\set{x}$ for some fixed point $x\in \cA$ we get the $n-2$ equations
+        \begin{equation} \sum_{a\in A}{P(A\setminus\set{a})\frac{\det(b,A\setminus\set{a})}{\det(a,A\setminus\set{a})}{\det(x,A\setminus\set{a})}^{-1}} = 0\quad (b\in B).\label{char-karcs-keysys}
+        \end{equation}
+We could also have written $a^{\ast}(b)$ for the fraction showing that the matrix $M\in \field{q}^{B\settimes A}$ defined by $M:={(m_{ab})}_{a\in A,b\in B}$
+    $$ m_{ab} := \frac{\det(b,A\setminus\set{a})}{\det(a,A\setminus\set{a})} $$
+    has full rank as its rows are just the coordinate vectors of the $b\in B$ with respect to the basis $A$.
+    From this it follows that also the matrix $N:=MD$ where $n:=\diag(P(A\setminus\set{a}):a\in A)$ has full rank which is the matrix of the linear system~\ref{char-karcs-keysys}.
+    Thus the kernel of this system has dimension $\card{A}-\card{B}=n-(n-2)=2$ which shows that the image of $x$ for all $x\in \cA\setminus A$ under the map
+    $$\gamma:{(\field{q}^{\ast})}^d\to{(\field{q}^{\ast})}^d$$
+    where ${(\field{q}^{\ast})}^d:=\field{q}^d\setminus\bigsetjoin_{a\in A}{\gen{A\setminus\set{a}}}$ and
+    $$\sum_{a\in A}{\lambda_a a}\mapsto \sum_{a\in A}{\lambda_a^{-1} a}$$
+    must lie on a (projective) line (two dimensional subspace of $\field{q}^d$). Using an appropriate element of $M\in\PGL(d,\field{q})$ which does $\gen{a}\mapsto \gen{a}$ for $a\in A$ and $\gen{\tilde{a}}\mapsto \gen{\sum_{a\in A}{a}}$ for some $\tilde a\in \cA\setminus A$ we may assume w.l.o.g. that $\hat{a}:=\sum_{a\in A}{a}\in \cA$. Set $\hat{A}:=A\setjoin\set{\hat{a}}$ 
+
+    Now, rescaling the $\gamma(x)$ appropriately we get scalars $\alpha_x$ such that
+    $$\alpha_x\gamma(x)=\hat{a}\lambda_x-\check{a}$$
+    where $\check{a}\in\field{q}^d$ and $\lambda_x\in\field{q}$ (for $x\in\cA\setminus \hat{A}$). Using an appropriate map $x\mapsto x+\mu$ ($\mu\in\field{q}$) on $\field{q}$ if necessary, we may assume that $0=\lambda_x$ for some $x\in \cA\setminus \hat{A}$ whence $\check{a}\in {(\field{q}^{\ast})}^d$.
+
+    The line $\lambda\mapsto \hat{a}\lambda+\check{a}$ intersects the $n$ hyperplanes $\gen{A\setminus\set{a}}$ (for $a\in A$) in $n$ distinct points (that is: in the coordinate representation $\check{a}=\sum_{a\in A}{\nu_a a}$ all $\nu_a$ are distinct for $a\in A$). This holds as the assumption that $\nu_{a'}=\nu_{a''}$ for $a',a''\in A$, $a'\neq a''$ leads to the contradiction that $\set{\hat{a},\check{a}}\setjoin A\setminus\set{a',a''}\setleq \cA$ is a linearly dependend $n$-set.
+
+    Thus we see that $\set{\nu_a:a\in A}\setjoin\set{\lambda_x:x\in \cA\setminus\hat{A}}=\field{q}$ is a disjoint union as all $\hat{a}\lambda_x-\check{a}$ have no zero coordinates in the basis $A$. However, considering the set $\hat{A}\setjoin\set{\gamma^{-1}\compose\alpha_x\compose\gamma(x):x\in \cA\setminus\hat{A}}$ we have an affine representation of the same arc which $\cA$ represents which is equivalent to the \person{Cauchy}-representation shown in \autoref{cauchy-rep}.
+\end{proof}
+
+\paragraph{Second attempt.} In this paragraph we try to prove the same result for $n\leq 2p-2$ and will bring in the interpolation of determinants.
+
+\begin{lemma}[\person{Ball}'s \& \person{de Beule}'s $ABCDE$ lemma]
+    Let $\cA$ be an arc in $\field{q}^n$ ($p=\rchar{\field{q}}$) with $n>p$ and $0< r\leq p-1$ and $0\leq m\leq \min\set{n-1-r,t+2}$. Moreover, let $A$, $B$, $C$, $D$ and $E$ be disjoint subsets of $\cA$ with $\card{A}=\card{B}=m$, $\card{C}=t+2-m$, $D=n-1-r-m$, $E=r-1$ and let there be given mappings $m\to A$ and $m\to B$ such that $A_\tau, B_\tau$ denote the images of $\tau\setleq m$. Then it holds that
+    \begin{align}
+        0 & = \sum_{\substack{C'\setleq C                                                                       \\
+                \card{C'}=r}}
+        {\sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}} \\
+          & \quad\settimes\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}                                  \\
+                  \setjoin(C\setminus C')\setjoin E}}
+          {{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+    The proof happens by induction on $m$.
+    We have that $n>p$ so we may apply the $ABC$ lemma for $r\leq p-1$ and sets $A,B,C$ with $\card{A}=t+2$, $\card{B}=r-1$ and $\card{C}=n-1-r>0$.
+    This gives us
+    $$ 0 = \sum_{\substack{A'\setleq A\\\card{A'}=r}}{P(A'\setjoin C)\prod_{z\in (A\setminus A')\setjoin B}{{\det(z,A'\setjoin C)}^{-1}}}. $$
+    This proves the lemma for $m=0$ when replacing $A$ by $C$, $B$ by $E$ and $C$ by $D$.
+
+    For the induction step, assume the lemma holds for $m-1$ and let there be given $A$, $B$, $C$, $D$ and $E$ with $\card{A}=\card{B}=m$, $\card{C}=t+2-m$, $\card{D}=n-1-r$, $\card{E}=r-1-m$. Then pick $a:=a_m\in A$ and $b:=b_m\in B$ and apply the induction hypothesis for $\bar{A}:=A\setminus\set{a}$, $\bar{B}:=B\setminus\set{b}$, $C\setjoin\set{a}$, $D\setjoin\set{b}$, $E$ and $\bar{A}$, $\bar{B}$, $C\setjoin\set{b}$, $D\setjoin\set{a}$, $E$ (and $m-1$), respectively. 
+    This yields (distinguishing whether $a\in C'$ or not and analogously for $b$, the terms where $a\in C'$ on the LHS and $b\in C'$ on the RHS whipe out) 
+    \begin{align}
+ & \sum_{\substack{C'\setleq C                                                                   \\ \card{C'}=r}}\sum_{\tau\setleq m-1}{{(-1)}^{\card{\tau}}P(\bar{A}_{\tau}\setjoin \bar{B}_{m\setminus\tau}\setjoin\set{b}\setjoin C'\setjoin D)}\\
+ & \quad\settimes\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin\set{a}\setjoin \bar{B}_{\tau} \\ \setjoin(C\setminus C')\setjoin E}}{{\det(z,\bar{A}_{\tau}\setjoin \bar{B}_{m\setminus\tau}\setjoin\set{b}\setjoin C'\setjoin D)}^{-1}}\\
+ & = \sum_{\substack{C'\setleq C                                                               \\
+         \card{C'}=r}}\sum_{\tau\setleq m-1}{{(-1)}^{\card{\tau}}P(\bar{A}_{\tau}\setjoin\set{a}\setjoin \bar{B}_{m\setminus\tau}\setjoin C'\setjoin D)}\\
+ & \quad\settimes\prod_{\substack{z\in \bar{A}_{m\setminus\tau}\setjoin \bar{B}_{\tau}\setjoin\set{b} \\\setjoin(C\setminus C')\setjoin D}}{{\det(z,\bar{A}_{\tau}\setjoin\set{a}\setjoin \bar{B}_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}.
+    \end{align}
+    Rearranging this to one side proves the induction.
+\end{proof}
+
+\begin{corollary}
+    When $\card{\cA}=q+2$ and $m=n-1-r\geq n-p$ we have that
+    $$
+  0 = \sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin E}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}}.
+    $$
+\end{corollary}
+
+\begin{corollary}[the case $n\leq 2p-2$]
+    Any arc ...
+\end{corollary}
+
+\begin{proof}
+    We have that
+    \begin{align*}
+          0 &= \sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}\det(e,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}\setjoin E}}{{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C)}^{-1}}.
+      \end{align*}
+      multiplying by $\det()$
+        
+\end{proof}
+    
+\paragraph{The case $n=p+1$.}
+
+% im working here

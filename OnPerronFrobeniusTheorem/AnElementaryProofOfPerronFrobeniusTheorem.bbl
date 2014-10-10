@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{MSSInterFam}
+{\sc Adam~Marcus, Daniel A.~Spielman, N.~S.}
+\newblock Interlacing families i: Bipartite ramanujan graphs of all degrees.
+
+\bibitem{Meyer:2000:MAA:343374}
+{\sc Meyer, C.~D.}, Ed.
+\newblock {\em Matrix Analysis And Applied Linear Algebra}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, PA,
+  USA, 2000.
+
+\bibitem{PerOrdTopVec}
+{\sc Peressini, A.~L.}
+\newblock {\em Ordered Topological Vector Spaces}.
+\newblock Harper \& Row, 1967.
+
+\bibitem{PrTanSchTy}
+{\sc Tan, S. P. . D.~H.}
+\newblock Remarks on the schauder-tychonoff fixed point theorem.
+\newblock {\em Vietnam Journal of Mathematics 2\/} (1999), 127--132.
+
+\bibitem{Tr07}
+{\sc Trahtman, A.~N.}
+\newblock The road coloring problem.
+\newblock {\em CoRR abs/0709.0099\/} (2007).
+
+\bibitem{wikiPerFrob}
+{\sc various}.
+\newblock Perron–frobenius theorem.
+\newblock Website, 2009.
+\newblock Available online at
+  "\url{http://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem}".
+
+\end{thebibliography}

@@ -1,0 +1,69 @@
+\section{Ganzzahlige Optimierung}
+
+\subsection{Die Methode `Branch and Bound' (BaB)}
+
+\paragraph{Grundprinzipien:}
+
+Aufgabenstellung ist es $f\to \min$ bei $x\in G$ mit $G$ endlich. Zum Beispiel betrachte das Rucksackproblem $\sum_{i=1}^n{c_ix_i}\to\max$, $G:=\set{x\in\reals^n_{\geq 0}:\sum_{i=1}^n{x_i}\leq l, x_i\in\nats}$.
+
+\subparagraph{Vorgehensweise} (dabei sei ein `aktuell bestes' $\bar x\in G$ bekannt) ist die schrittweise Zerlegung in disjunkte Teilmengen $G',G''$ mit $G'\setjoin G''=G$, $G'\setmeet G''=\emptyset$.
+Verzweigung (branch): Gewinnung von unteren Schranken auf den erzeugten Teilmengen durch einfache Hilfsaufgaben (d.h $d(G')\leq f(x)$ für alle $x\in G'$).
+
+Danach verfährt man rekursiv (man erhält einen `Aufsplittungsbaum').
+
+Im weiteren Verlauf braucht \emph{nicht} weiter verzweigt zu werden, wenn einer der folgenden Fälle eintritt:
+\begin{casebycase}
+        \item $G'=\emptyset$.
+        \item $d(G')>f(\bar x)$
+        \item $d (G'')=f(\bar x)$ und $\bar x\in G''$
+\end{casebycase}
+
+\begin{definition}
+    Das Problem $z(x)\to\min$ bei $x\in Q$ (1.1), heißt Relaxation zum Problem
+    $f(x)\to\min$, bei $x\in G$ (1.2), falls gilt $G\setleq Q$, $z(x)\leq f(x)$ für alle $x\in G$.
+\end{definition}
+
+\begin{lemma}[hinreichendes Optimalitätskriterium]
+    Es sei $\hat x\in Q$ Lösung von (1.1). Gilt $\tilde x\in G$ und $z(\tilde x)=f(\tilde x)$, dann ist $\tilde x$ Lösung von (1.2).
+\end{lemma}
+
+Möglich ist
+\begin{itemize}
+        \item lineare Optimierungsaufgabe ohne Ganzzahligkeitsforderung 
+        \item Straf-Ersatzprobleme
+        \item duale Probleme 
+\end{itemize}
+
+\paragraph{Anwendung von `Branch and Bound' in der ganzzahligen Optimierung}
+
+\emph{Der Algorithmus von Land/Doig/Dakin:} Gegeben sei die Aufgabe
+$$
+z(x)=c^{\top}x\to\min \text{ bei } Ax=b,x\geq 0 \text{ und }x\in\ints \eqno{(1.3)}
+$$
+
+Sei ein optimales Tableau für (1) erreicht.
+$$
+\begin{matrix}
+    & x_N(=0) & \\
+    \midrule
+    x_B & P & p \\
+    z & q^{\top} & q_0    
+\end{matrix}\quad\text{ bei } (x_b,x_n)=(p,0)\eqno{(1.4)}
+$$
+$p\geq 0$, $q\geq 0$. Falls $p\in\nats_+^m$, dann löst $(p,0)$ die Aufgabe (2). $p_i\nots\in\nats$, dann Verzweigung in $G'$:$x_i\leq \floor{p_i}$, $x\in G$ und $G''$:$x_i\geq \floor{p_i}+1$, Danach
+
+($1_1$) (1) mit $x_i\leq\floor{p_i}$
+
+($1_2$) (1) mit $x_i\geq\floor{p_i}+1$,
+
+$x_i+s_i=\floor{p_i}$.
+
+
+
+
+
+
+
+
+
+

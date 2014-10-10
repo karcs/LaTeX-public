@@ -1,0 +1,148 @@
+\documentclass[10pt,a4paper]{article}
+\input{../Config/math.tex}
+\input{../Config/german.tex}
+
+\begin{document}
+\paragraph{Danksagung.} Ich möchte mich bei Shoji Sayaka für ihre ausgezeichnete Interpretation von Beethovens Violinenkonzert in D-dur (Op. 61) bedanken, welche mir die Stunden ein wenig versüßt hat.
+
+
+\section{Der Satz von Nielson-Schreier}
+
+\paragraph{Einleitung.} In diesem Abschnitt wollen wir die Untergruppen einer freien Gruppe selbst als frei identifizieren.  
+
+\subsection{Wiederholung einiger Begriffe der Graphentheorie}
+
+Zunächst wiederholen wir einige Definitionen
+
+\begin{definition}[Graph]
+    Unter einem \emph{Graphen} verstehen wir in diesem Abschnitt zwei Mengen $V$ (Ecken) und $E$ (Kanten) zusammen mit zwei Abbildungen $\alpha,\omega:E\to V$ ($\alpha(e)$ ist dabei als Anfangsknoten und $\omega(e)$ als Endknoten einer Kante $e\in E$ zu verstehen).
+\end{definition}
+
+\begin{remark}
+    Die Eckenmenge eines Graphen $G$ bezeichnen wir im Weiteren auch mit $V_{G}$ und analog dazu meint $E_{G}$ seine Kanten.
+\end{remark}
+
+\begin{remark}
+    Die obige Definition entspricht jenem Objekt, welches man oft auch als \emph{gerichteten Multigraphen} bezeichnet.
+\end{remark}
+
+Wir wollen nun ein Gruppoid aus einem Graphen heraus definieren, in das die Kanten desselben eingebettet sind, welches wir auch als \emph{Pfadgruppoid} bezeichnen werden.
+
+\begin{definition}[Pfadgruppoid]
+    Sei $G$ ein Graph mit Kanten $E_G$ und Ecken $V_G$. Bezeichne $E_G^{-1}$ eine disjunkte Kopie der Kantenmenge
+    $E_G$ bestehend aus Symbolen $e^{-1}$ für $e\in E_G$ (die formalen Inversen) und weiter sei  
+    \begin{align}
+        ^{-1}:E_G\distjoin E_G^{-1}; e\mapsto e^{-1}, e^{-1}\mapsto e
+    \end{align}
+    Ein \emph{Pfad} $p$ in $G$ ist dann ein Element der Menge $P_G:=V\times (E_G\distjoin E_G^{-1})^{*}\times V$
+    mit der Eigenschaft, dass falls $p=(a,(e_i)_{i=1}^n,b)$ dann $\alpha(e_{i+1})=\omega(e_i)$ ($i=1,\ldots,n-1$)
+    und $\alpha(e_1)=a$, $\omega(e_n)=b$, falls $n>0$, und sonst $a=b$ (hier gelte $M^{*}:=\union_{n\in\nats}{M^n}$ 
+    (\textsc{Kleene}-Stern), weiterhin sei für $e\in E$ die Wert $\alpha(e^{-1})$ als $\omega(e)$ verstanden und analog für $\omega(e^{-1})$). 
+    Im letzteren Falle schreiben wir $p=\epsilon_a=\epsilon_b$ und nennen $p$ den 
+    \emph{leeren} oder \emph{degenerierten Pfad} bei $a$ (bzw. $b$). Ein Pfad $p$ mit $\alpha(p)=a$ und $\omega(p)=b$ heiße \emph{Pfad von $a$ nach $b$} 
+    und falls $a=b$ Schleife bei $a$ (bzw. $b$).
+    Wir setzen nun $\alpha$ und $\omega$ auf $P_G$ fort, indem wir $\alpha=\pi_1$ und $\omega=\pi_3$ (Projektionen $\pi_i$ auf $i$-te Koordinate) setzen.
+    Dabei identifizieren wir die Kante $e\in E_G$ mit $(\alpha(e),e,\omega(e))$ (und auf diese Weise sind die Kanten $E_G$ in $P_G$ eingebettet).
+    Um die Notation kompakt zu halten führen wir keine neuen Symbole für die Fortsetzungen ein. Weiter heißt ein Pfad $p$ \emph{Schleife} bei $v$, 
+    wenn $\alpha(p)=\omega(p)$. Der Pfad $p$ heiße nun \emph{reduziert}, wenn er keine Kanten $e$ und $e^{-1}$ in seiner Kantenfolge hat.
+    Wir definieren nun die partielle Multiplikation $*:Z\subseteq P_G\times P_G\to P_G$ für Pfade $p_1=(a,f_1,b)$ und $p_2=(b,f_2,c)$ durch $(a,f_1f_2,c)$
+    (wobei hier $f_1f_2$ das Konkatenat der Folgen $f_1$ und $f_2$ bezeichnet), dementsprechend sei auch $Z$ definiert. 
+    Weiterhin definieren wir $^{-1}:P_G\to P_G$ durch $(a,f,b)^{-1}:=(b,f^{-1},a)$ 
+    (hierbei bezeichne $f^{-1}$ die Folge $f$ in umgekehrter Reihenfolge angeordnet und alle Symbole $e$ durch $e^{-1}$ ersetzt).  
+\end{definition}
+
+Man sieht leicht ein, dass dann zu jedem Pfad $p$ ein äquivalenter reduzierter Pfad existiert, wobei man unter äquivalent hier den reflexiven, transitiven symmetrischen Abschluss der Relation von Pfaden verstehe, für welche genau die Pfade $p=(a,(e_1,\ldots,e_n),b)$ und $p'=(a,(e_1,\ldots,e_i,e,e^{-1},e_{i+1}\ldots,e_n),b)$ (für $e\in E$ und $i\in\{1,\ldots,n-1\}$) in Beziehung stehen (siehe dazu vorheriger Vortrag zu Fundamentalgruppen von Graphen).
+
+\begin{definition}[Zusammenhang]
+Ein Graph $G$ heißt zusammenhängend, wenn für alle $u,v\in V_G$ ein Pfad von $u$ nach $v$ existiert.
+\end{definition}
+
+\begin{definition}[Baum] Sei $G$ ein Graph, dann ist $G$ ein \emph{Baum}, wenn er zusammenhängend ist und $P_G$ keine nicht-entarteten reduzierten Schleifen enthält (d.h. keine reduzierten Schleifen, die Kanten enthalten).
+\end{definition}
+
+Eine kleine Übung, welche wir hier kurz demonstrieren, ist das folgende
+
+\begin{corollary}[Äquivalente Charakterisierung von Bäumen]
+Die folgenden Aussagen sind für einen Graphen $G$ äquivalent:
+\begin{enumerate}
+    \item $G$ ist Baum,
+    \item für alle $u,v\in V_G$ gibt es einen eindeutigen reduzierten Pfad von $u$ nach $v$,
+    \item jeder endliche Teilgraph mit $n>0$ Ecken hat höchstens $n-1$ Kanten und $G$ ist zusammenhängend.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+    \emph{1. $\Rightarrow$ 2.:} Seien $p=(a,(e_1,\ldots,e_n),b),q=(a,(f_1,\ldots,f_m),b)$ reduzierte Pfade von $u$ nach $v$, dann können wir den Pfad 
+    \[r:=p*q^{-1}=(a,(e_1,\ldots,e_n,f_m^{-1},\ldots,f_1^{-1}),a)\] betrachten. 
+    Da nun $G$ ein Baum ist, muss ein zu $r$ äquivalente reduzierte Pfad eine triviale reduzierte Schleife sein. 
+    Damit sieht man allerdings sofort (mit Induktion), dass $e_{n-i}=f_{m-i}$ für ($i=1,\ldots,\min\{n,m\}-1$ gelten muss und ebenso $n=m$. 
+    Daraus folgt $p=q$. Dies sichert die Eindeutigkeit. Die Existenz eines reduzierten Pfades $p$ von $u$ nach $v$ folgt aus dem Zusammenhang von $G$
+    und sukzessiver Anwendung von Reduktionen.   
+    
+    \emph{2. $\Rightarrow$ 3.:} Ist die zweite Aussage erfüllt, dann ist $G$ natürlich zusammenhängend. Sei weiterhin $H\leq G$ ein induzierter endlicher
+    Untergraph auf minimaler Eckenzahl $n>0$, der mehr als $n-1$ Kanten habe. Es ist unmittelbar ersichtlich, dass dann $n>1$, 
+    denn ein von einer Ecke induzierter Untergraph hat 0 Kanten. Damit können wir aus der Eckenmenge $V_H$ eine Ecke $v$ entfernen sodass der induzierte
+    Untergraph auf $V_G\setminus\{v\}$ die gewünschte Eigenschaft der dritten Aussage hat. Gebe es nun aber innerhalb von $G$ zwei Kanten $e_1,e_2$, 
+    die eine Ecken $u_1,u_2\in E_G\setminus\{v\}$ mit $v$ verbinden, so würde es auch zwei verschiedene reduzierte Pfade von einer Ecke 
+    $u\in E_H\setminus\{v\}$ nach $v$ geben (nämlich indem man jene beiden Kanten (möglicherweise invertiert) an reduzierte Pfade von $u$ nach $u_1$ bzw.
+    $u_2$ anhängt, erstere existieren aufgrund des Zusammenhangs). Damit kann aber auch $H$ höchstens $n-1$ Kanten haben.
+
+    \emph{3. $\Rightarrow$ 1.:} Wenn $G$ der dritten Aussage genügt, so kann es insbesondere keine nicht-triviale reduzierte Schleife enthalten, denn aus
+    einer solchen lässt sich immer ein in $G$ eingebetteter zyklischer Untergraph $C_m$ ($m\in\nats$, $m>0$) gewinnen, der der dritten Aussage 
+    widerspräche. Dies geschieht in folgender Manier: Für die reduzierte Schleife $s=(a,(e_1,\ldots,e_n),a)$ wählt man das $m$ als maximales $i>0$,
+    sodass für alle $1\leq j\leq i-1$ gilt $e_i^{-1}\neq e_{i+1}$. Dann ist der Graph $H$ auf den Kanten $e_1,\ldots,e_m$ eine gewünschte Einbettung des
+    $C_m$ in $G$. Zusammenhang war in beiden Punkten gefordert.  
+\end{proof}
+
+\begin{definition}[Cayley-Graph]
+    Sei $G$ eine Gruppe und $S\subseteq G$. Dann bezeichnen wir mit $\Gamma(G,S)$ den Graphen $F$ der gegeben ist durch die Mengen 
+    $V_F:=G$, $E_F:=\{(g,gs):(g,s)\in G\times S\}$ und die Abbildungen $\alpha,\omega:E_F\to V_F$ mit $\alpha:=\pi_1$, $\omega:=\pi_2$ 
+    (Projektionen auf erste und zweite Koordinate), welche auf das Pfadgruppoid $P_F$ fortgesetzt natürlich der Projektion der ersten und dritten
+    Koordinate entsprechen.
+    Weiterhin definieren wir eine (Kanten-)Färbung des eben definierten \textsc{Cayley}-Graphen 
+    $\lambda:E_F\to G$ durch $\lambda(e):=\alpha(e)^{-1}\omega(e)$, die wir ebenfalls gleich auf das Pfadgruppoid fortgesetzt verstehen (hier entspricht
+    sie der Projektion auf die zweite Koordinate, d.h. der Kantenfolge des Pfades).
+\end{definition}
+
+Wir beginnen mit einem 
+
+\begin{corollary}
+    Sei $\Gamma(G,S)$ der \textsc{Cayley}-Graph einer Gruppe $G$ bezüglich einer Menge $S\subseteq G$. Dann ist $\Gamma(G,S)$ genau dann ein Baum, wenn $G$ frei erzeugt von $S$ ist.
+\end{corollary}
+
+Der Beweis dieser Tatsache basiert lediglich auf stupider Anwendung der Definitionen:
+
+\begin{proof}
+    \emph{$\Leftrightarrow$:} Falls $F:=\Gamma(G,S)$ ein Baum ist, dann finden wir zu zwei beliebigen Punkten $u,v\in V_F$ genau einen reduzierten Pfad
+    $p=(u,(e_i)_{i=1}^n,v)$ mit $\alpha(p)=v$ und $\omega(p)=v$. Übersetzen wir dies zurück in die Gruppe, so erhalten wir für beliebige 
+    Elemente $u,v\in G$ eine eindeutige reduzierte Darstellung von $u^{-1}v$ als Produkt von Elementen von $S$ oder Inversen davon (vgl. Vortrag zu
+    freien Gruppen). Setzen wir $u=e_G$ (neutrales Element von $G$), so ergibt sich, dass $G$ frei erzeugt von $S$ sein muss (wieder vgl. Vortrag zu freien
+    Gruppen). In analoger Weise lässt sich umgekehrt argumentieren (da die Reduktion von Pfaden in $F$ genau der Reduktion von Darstellung von 
+    Elementen von $G$ in Elementen von $S$ entspricht).       
+\end{proof}
+
+\subsection{Das Theorem}
+
+Zum Beweis des anfänglich erwähnten Theorems benötigen wir einige Hilfsaussagen und Definitionen
+
+\begin{definition}[Faktorgraph]
+
+    Sei $F$ ein Graph und $G$ eine Gruppe mit Linksaktion auf $F$. Dann definieren wir den Faktorgraph $\bar{F}:=G\backslash F$ durch 
+    $V_{\bar{F}}:=G\backslash V_F$ (Menge der Eckenorbits), $E_{\bar{F}}:=G\backslash E_F$ (Kantenorbits). Weiterhin werden die entsprechenden Abbildungen $\bar{\alpha},\bar{\omega}:E_{\bar{F}}\to V_{\bar{F}}$ durch $\bar{\alpha}([e]):=[\alpha(e)]$ und $\bar{\omega}([e]):=[\omega(e)]$ (Wohldefiniertheit is unmittelbar nachzuprüfen).
+\end{definition}
+
+\begin{definition}[freie Aktion] Sei $F$ Graph und $G$ eine Gruppe mit Linksaktion auf $F$. Dann heißt diese Aktion \emph{frei}, wenn aus der Existenz eines Elementes $v\in V_G$ mit $gv=v$ oder eines Elemtes $e\in E_G$ mit $ge=e$ folgt, dass $g=e_G$ (neutrales Element von $G$).
+\end{definition}
+
+\begin{lemma}[Hochhebung von Bäumen]
+    Sei $F$ ein Graph mit einer $G$-Linksaktion und $T$ ein Baum in $\bar{F}:=G\backslash F$, $u\in G$, sodass $\pi(s)\in V_T$ und $\pi:\bar{F}\to F$ die natürliche Projektion. 
+    Dann existiert eine Baum $S$ in $F$, sodass $\rest{\pi}_{S}:S\to T$ ein Isomorphismus von Graphen ist. Ist die Aktion frei, so ist die Hochhebung $S$
+    eindeutig.
+\end{lemma}
+
+\begin{proof}
+    Zunächst beweisen wir, dass die Aussage des Lemmas für eine einzelne Kante $\bar{e}\in E_{\bar{F}}$, die mit einer Ecke $\bar{v}\in V_{\bar{F}}$ inzidiert. Sie dazu o.B.d.A. $\bar{\alpha}(\bar{e})=\bar{v}$, da $\pi$ natürliche Abbildung ist, gibt es ein $e\in E_F$, sodass
+    $\bar{e}=$
+
+\end{proof}
+\end{document}

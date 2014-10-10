@@ -1,0 +1,351 @@
+
+\section{Generalized momentum curves}
+
+\begin{definition}[generalized momentum curve]
+    Let $f:\proj{K^2}\to \proj{K^{n+1}}$ be a continuous function such that $f(a_1)\,\ldots,f(a_n)$ are projectively independent when $a_1,\ldots,a_n$ are distinct.
+    Then $f$ is called \keyword{generalized momentum curve}.
+    The affine version preserves affine independence.
+\end{definition}
+
+%\begin{example}
+    The curve $\gen{(x,y)}\mapsto\gen{(x^{n+1},x^ny,\ldots,xy^n,y^{n+1})}$ is a generalized momentum curve.
+    % \end{example}
+
+    If $K$ is an ordered field which is a complete lattice (like $\reals$), we can use facts like the intermediate value theorem, which lead to the fact that
+
+    $$
+    \frac{\sgn(f(a_1),\ldots,f(a_n))}{\sgn(a_1,\ldots,a_n)}=\epsilon
+    $$
+where $\epsilon=\pm 1$ is constant (for otherwise the intermediate value theorem would give a contradiction).
+
+\begin{lemma}
+    Let $c:(0,1)\to K^n$ be an affine generalized momentum curve, then $c$ extends to a continuous curve on $[0,1]$.
+\end{lemma}
+
+// differentiability ??
+
+\begin{proof}
+
+\end{proof}
+
+%In two dimensions we have the following characterization of generalized momentum curves.
+
+\begin{definition}[Convex combinations of $k$ points]
+    Define $\conv_k{A}:=\bigsetjoin\set{\conv{A'}:A'\setleq A\lgand \card{A'}=k}$.
+\end{definition}
+
+\begin{theorem}[\person{Carathéodory}]
+    In $\reals^n$ it holds that $\conv=\conv_{n+1}$.
+\end{theorem}
+
+\begin{definition}
+    Let $g\in K^n$ be an affine vector. Then by $\hat{g}$ we mean its canonical representant in $\proj{K^n}$ which is ${(g\ 1)}^{\trans}$. 
+\end{definition}
+
+
+\begin{lemma}
+    Let $f:I\to\reals^n$ be an affine convex curve (where $I$ is some interval), i.e.
+    $$
+    \det(\hat{f}(a_0),\ldots,\hat{f}(a_n)) \neq 0
+    $$
+    for all distinct $a_0,\ldots,a_n\in I$. Then $\conv{\im{c}}=\conv_n{\im{c}}.$
+\end{lemma}
+
+\begin{proof}
+    W.l.o.g. we may assume that
+    $$
+    \det(\hat{f}(a_0),\ldots,\hat{f}(a_n))>0
+    $$
+    for $a_0 < \cdots < a_n$ ($a_i\in I$ for $i=0,\ldots,n$).
+    Pick a convex combination of $n+1$ points $c:=\sum_{i=0}^n{\lambda_i f(a_i)}$ where $a_0 < \cdots <a_n$, $a_i\in I$, $\lambda_i>0$, $\sum_{i=0}^n{\lambda_i}=1$, $i=0,\ldots,n$. Define a map $g:S\to\reals^{n+1}$ by
+        $$ g_i(\xi_0,\ldots,\xi_n):=\frac{\det(\hat{f}(\xi_0),\ldots,\hat{f}(\xi_{i-1}),\hat{c},\hat{f}(\xi_{i+1}),\ldots,\hat{f}(\xi_n))}{\det(\hat{f}(\xi_0),\ldots,\hat{f}(\xi_n))}.
+        $$
+        where $S:=\set{(\xi_0,\ldots,\xi_n)\in I^n:\xi_0<\ldots<\xi_n}$.
+        Then $g$ is clearly continuous and $g(a_0,\ldots,a_n)=(\lambda_0,\ldots,\lambda_n)$.
+        Moreover, it holds that
+        \begin{align*}
+            \lim_{t\upto 1}{\det(\hat{f}(a_0+(a_1-a_0)t),\hat{c},\hat{f}(a_2),\ldots,\hat{f}(a_n))}
+            &=\det(\hat{f}(a_1),\hat{c},\hat{f}(a_2),\ldots,\hat{f}(a_n))\\
+            &= -\lambda_0\det(\hat{f}(a_0),\ldots,\hat{f}(a_n))<0
+        \end{align*}
+        This shows using intermediate value theorem, that there exists a $b\in(a_0,a_1)$ such that
+        $$\det(\hat{f}(b),\hat{c},\hat{f}(a_2),\ldots,\hat{f}(a_n))=0$$
+        showing that $g_1(b,a_1,\ldots,a_n)=0$ (as $g$ is defined for these values since $b<a_1$).
+        But then we may set $\xi_0:=\sup\set{\xi\in[a_0,b]:g_i(\xi,a_1,\ldots,a_n) > 0,i=0,\ldots,n}$ and $\xi_i:=a_i$ for $i=1,\ldots,n$.
+        Now, it is immediate that the entries $g(\xi_0,\ldots,\xi_n)$ are all nonnegative, since $g$ is continuous, and at least one coordinate must be zero, since otherwise $\xi_0$ would not be the defined supremum $\xi_0\neq b$ since then there would be a zero coordinate, and so we could increase $\xi_0$ slightly by continuity of $g$.
+        But then $c=\sum_{i=0}^n{\mu_i f(\xi_i)}$ lies in $\conv_n{\im{f}}$, where $\mu_i:=g_i(\xi_0,\ldots,\xi_n)$ ($i=0,\ldots,n$).
+\end{proof}
+
+\begin{lemma}[tangent plane]
+    Let $f:I\to \proj{\reals^n}$ be a convex curve. Then for any $a\in I$ there exists a hyperplane $H_a$ which is an accumulation point of the set
+
+    such that $\im{f}\setminus H_a=\im{\rest{f}_{I\setminus\set{a}}}$ and in a neighbourhood of $H_a$ there is always a hyperplane 
+
+    and that for even $n$, the two parts of the curve lie in different halfspaces, and for odd $n$ in the same. We call such a hyperplane a \keyword{tangent plane}.
+    It is unique for almost all points $a\in I$. The map $a\mapsto H_a$ is a convex curve in the dual space.
+\end{lemma}
+
+\begin{proof}
+    At first we prove the existence of $H_a$. By choosing a sequence of tuples of distinct points $\net[k\in\nats]{\xi^k_1,\ldots,\xi^k_{n-1}}$ (where the $\xi$'s are from $\reals$) such that for all $i=1,\ldots,n$ we have $\xi^k_i\to a$ and $\xi^k_1<\cdots<\xi^k_{n-1}$ ($k\to\infty$) we get an accumulation point of $\net[k\in\nats]{\gen{a,\xi^k_1,\ldots,\xi^k_{n-1}}}$ since they live in compact space. Let $\xi$ be a linear functionals whose kernel is an accumulation point this last sequence. Then it clearly holds that for $b<a$ we have $\xi(b)\geq 0$ and for $b>a$ we have $\xi(b){(-1)}^{n-1}\geq 0$ where by continuity of the determinant we have $a\in\ker{\xi}$. Thus $H_a:=\ker{\eta}$ has the desired property.
+\end{proof}
+
+\begin{definition}[discrete \person{Hasse} derivative]
+    Define the \keyword{discrete \person{Hasse} derivative} $D^n{f}:I^n\setminus\set{(a,\ldots,a):a\in I}\to F$ ($n\in\nats$) of a function $f:I\to F$ ($F$ is a field) by
+    $$
+    D^0f=f
+    $$
+    and
+    $$
+    D^n{f}(x_0,\ldots,x_n):=\frac{D^{n-1}{f}(x_0,\ldots,x_{n-1})-D^{n-1}{f}(x_1,\ldots,x_n)}{x_0-x_n}
+    $$
+    for $n\geq 1$.
+\end{definition}
+
+
+\begin{lemma}[differentiation properties]
+    Any affine convex curve $f:I\to \reals^n$ (which is not necessarily continuous) is $n$-times differentiable almost everywhere. 
+\end{lemma}
+
+\begin{proof}
+    Clearly, it holds that
+    $$
+    \frac{1}{\prod_{i>j}{(a_i-a_j)}}\det(f(a_0),\ldots,f(a_n))=\det(D^0{f}(a_0),\ldots,D^n{f}(a_0,\ldots,a_n))
+    $$
+    It is easy to check that
+    \begin{align*}
+        \det(\check{D}^n{f}(\xi_0,\ldots,\xi_n),\hat{f}(\eta_1),\ldots,\hat{f}(\eta_n))
+        & = \sum_{i=0}^{n}{\frac{1}{\prod_{j\neq  i}{(\xi_j-\xi_i)}}\det(\hat{f}(\xi_i),\hat{f}(\eta_1),\ldots,\hat{f}(\eta_n))}\\
+        & > 0
+    \end{align*}
+    for $\xi_0<\eta_1<\cdots<\eta_n<\xi_n$. Setting $N:=\set{\eta_0,\ldots,\eta_n}$ and repeating the previous argument for every $n$-subset of $N$ in place of the $\eta$'s we see that $D^n{f}(\xi_0,\ldots,\xi_n)$ has only positive affine coordinates in the basis $f(\eta_0)-f(\eta_n),\ldots,f(\eta_{n-1})-f(\eta_n)$. That is
+
+\end{proof}
+
+
+
+\section{Real arcs}
+
+In this section we discuss the natural generalization of the MDS main conjecture for the field of real numbers.
+
+\begin{definition}
+    For a real vector space $V$ and vectors $x, d\in V$ with $d\neq 0$ define the open ray which starts form $x$ and travels among the direction $d$ by
+    $$
+    \ray{d}{x}:=\set{x+\lambda d:\lambda>0}
+    $$
+\end{definition}
+
+\begin{definition}[sperical interval]
+    Let there be given an orientation on $\sphere^1$. Then define the intervals $[x,y],(x,y),[x,y),(x,y]\setleq \sphere^1$ as usually
+    by walking along the orientation from $x$ to $y$. They are all not empty by definition (e.g. $(x,x)=\sphere^1\setminus\set{x}$, $[x,x]=\set{x}$ etc.).
+\end{definition}
+
+
+\begin{theorem}[Me]
+    Let $\cA$ be an affine, compact, connected maximal arc in $\P(\reals^n)$. Then $\cA$ is a curve.
+\end{theorem}
+
+BADD:%%%%%%%%
+\begin{proof}
+    \emph{Step 1: Define a function.}
+    Pick a point $a\in\cA$. Define a function $f_a:\sphere^1\to \reals_0^+$ by
+    $$
+    f(x)=\begin{cases}
+        0 :& \ray{x}{a}\setmeet\cA=\emptyset\\
+        \lambda :& \ray{x}{a}\setmeet\cA=\set{a+\lambda x}
+    \end{cases}.
+    $$
+    Then $f$ is welldefined since this ray can at most meet one point of $\cA$ as $\cA$ is an affine arc and $f$ satisfies:
+    $$
+    \lim_{n\to\infty}{f(x_n)}\setleq\set{0,f(x)}
+    $$
+    where $x=\lim_{n\to\infty}{x_n}$. This holds as $f$ is bounded and thus $\net[n\in\nats]{f(x_n)}$ must admit and accumulation point (as $\cA$ is compact and thus bounded, \person{Weierstraß} theorem). Now, as $\cA$ is compact and thus closed, an accumulation point $\lambda>0$ would imply that $a+\lambda x\in \cA$ so $\lambda=f(x)$ (as $\cA$ is an affine arc).
+
+    \emph{Step 2: $f$ has a certain continuity property.}
+    Now, we need to use that $\cA$ is connected and maximal to show that $f$ needs to be continuous from the left or right in each point. Assume that the sequence 
+    $\net[n\in\nats]{f(x_n)}$ has two accumulation points $f(x)>0$ and $0$. Then for all $\epsilon>0$ we find a $\delta>0$ (by equivalence of sequencial continuity and metric or $\epsilon$-$\delta$-continuity) such that for all $y\in\ball_{\delta}(x)$ it holds that $\abs{f(x)-f(y)}<\epsilon$ or $f(y)<\epsilon$.
+    When choosing $\epsilon<f(x)/2$ and assuming there exist values $x^-,x^+\neq x$ with  $x\in(x^-,x^+)\setleq\ball_{\delta}(x)$ such that $f(x^-)$ and $f(x^+)$ lie both in $(0,\epsilon)$ would yield a contradiction to the assumption of connectedness since then 
+    the open sets $U:=\set{a+\lambda y\in\reals^2:y\in (x^-,x^+), \lambda>\epsilon}$ and the interior of its complement would show that $\cA$ is not connected.
+    However, this shows that $\set{y\in\ball_{\delta}(x):f(y)<\epsilon}$ is contained in $(x^-,x]$ or $[x,x^+)$ where $x^-$ and $x^+$ shall be the boundaries of $\ball_{\delta}(x)$.
+    Therefore, we have shown that if the $x_n$ are all contained in one of these last circle intervals, then the limit of $\net[n\in\nats]{f(x_n)}$ does exist and is either $0$ or $f(x)$.
+    
+    \emph{Step 3:} There exists a point $x\in\sphere^1$ where $f(x)>0$. W.l.o.g. assume that $\lim_{y\downto x}{f(y)}=f(x)$ (mirroring $\cA$ if necessary). We then find a (non-empty) maximal interval $I:=(\alpha,\beta)\setleq \sphere^1$ such that $f$ is continuous in $I$ (as there exists the interval $(x,x^+)$ where $f$ is continuous by the above). Now assume that $f$ can be extended continuously to $[\alpha,\beta]$ ($(\alpha,\beta)\setleq[\alpha,\beta]$ since $I$ must be contained in a semicircle).
+    Then if $f(\alpha),f(\beta)>0$ one sees that $C:=\set{a+f(y)y:y\in[\alpha,\beta]}$ is a connected component of $\cA$ since by maximality of $I$ we have $\lim_{y\upto\alpha}{f(y)}=0$ and $\lim_{y\downto\beta}{f(y)}=0$ (otherwise we could extend $I$ by the same argument as before).
+    
+
+    ,$\lim_{y\upto\beta}{f(y)}>0$. This would imply that these limits coincide with $f(\alpha)$ and $f(\beta)$ and that $\lim_{y\upto\alpha}{f(y)}=\lim_{y\downto\beta}{f(y)}=0$ since $I$ is maximal and contained in a semicircle (otherwise $\cA$ would contain three colinear points). But then we see that  is a connected component of $\cA$ by a similar argument as above, so $\cA$ is not connected since $a\in \cA\setminus C$. Contradiction.
+
+    Thus we see that one of the limits $\lim_{y\downto\alpha}{f(y)},\lim_{y\upto\beta}{f(y)}$ equals zero, say w.l.o.g. $\lim_{y\downto\alpha}{f(y)}=0$. Assuming that $\lim_{y\upto\alpha}{f(y)}>0$ and $\lim_{y\upto\beta}{f(y)}=f(\beta)>0$ leads to the same contradiction that $\cA$ is not connected and $C$ is a connected component. The same holds true when $\lim_{y\upto\alpha}{f(y)}>0$, $\lim_{y\upto\beta}{f(y)}=0$ and $\lim_{y\downto\beta}{f(y)}=f(\beta)>0$. 
+\end{proof}
+
+
+\printindex
+
+
+//OLD STUFF
+
+
+\paragraph{First attempt.} The first idea we present does only use the interpolation formula of
+the tangent polynomials and is due to \person{Ball} and
+\person{de Beule}.
+
+\begin{lemma}[\person{Ball} \& \person{de Beule}'s initial lemma]
+  Let $\cA$ be an arc in $\field{q}^d$ ($p=\rchar[\field{q}]$) and let $T_X$
+  ($X\in \cA$, $\card{X}=d-2$) be its tangent polynomials defined canonically with respect to some linear order $<$. Let $0\leq r\leq\min\{d-2,t+1,p-1\}$ and $A,B,C\setleq \cA$ disjoint sets such that $\card{A}=t+2$, $\card{B}=d-2-r$ and $\card{C}=r$. Then it holds that
+  \begin{equation}
+    \sum_{\substack{A'\in\binom{A}{r}\\ a'\in A\setminus A'}}{T_{A'\setjoin B}(a')\prod_{z\in A\setminus (A'\setjoin\{a'\})\setjoin C}\det(z,A'\setjoin B,a')^{-1}}=0\text{.}
+  \end{equation}
+  Moreover, the expression in the sum does only depend on the sets $A'\setjoin\{a'\}\setjoin B$ and $A\setminus (A'\setjoin\{a'\})\setjoin C$.
+\end{lemma}
+
+\begin{proof}
+  At first we prove the second claim. To do this, pick $a''\in A'$ and
+  set $A'':=A'\setminus\{a''\}\setjoin\{a'\}$. Then we have by the
+  definition of the tangent polynomials canonically with respect to $<$ that
+  \begin{equation}
+    T_{A'\setjoin B}(a') = \left(\frac{\sgn(A'\setjoin B,a')}{\sgn(A''\setjoin B,a'')}\right)^{t+1}T_{A''\setjoin B}(a'')\text{.}
+  \end{equation}
+  But for each factor in the product belonging to $A'$, $a'$ we get similarly
+  \begin{equation}
+    \det(z,A'\setjoin B,a')^{-1}=\frac{\sgn(A'\setjoin B,a')}{\sgn(A''\setjoin B,a'')}\det(z,A''\setjoin B,a'')^{-1}\text{.}
+  \end{equation}
+  Thus, as there are $t+1$ factors in the product, it is immediate that 
+  \begin{align*}
+    T_{A'\setjoin B}(a')\prod_{z\in A\setminus (A'\setjoin\{a'\})\setjoin C}\det(z,A'\setjoin B,a')^{-1} = T_{A''\setjoin B}(a'')\prod_{z\in A\setminus (A''\setjoin\{a''\})\setjoin C}\det(z,A''\setjoin B,a'')^{-1}\text{.}
+  \end{align*}
+
+  Now we prove the lemma by induction on $r$. For $r=0$ it is the interpolation lemma.
+  To get the induction to work we assume that the lemma holds for $r\geq 0$ and assume $r+1\leq\min\{d-2,t+1,p-1\}$.
+  Let $A,B,C\setleq \cA$ be disjoint with $\card{A}=t+2$, $\card{B}=d-3-r$ and $\card{C}=r+1$. We then pick $a\in A$ and $c\in C$ and assign the lemma for $r$ to
+  $\tilde{A}:=A\setminus\{a\}\setjoin\{c\}$ and $\tilde{B}:=B\setjoin\{a\}$ and $\tilde{C}:=C\setminus\{c\}$. 
+  This yields by considering the two cases where $c\in A'\setjoin\{a'\}$ and $c\notin A'\setjoin\{a'\}$ (in the former case we may assume $a'=c$ in the sums using the second claim):
+  \begin{align}
+    0 & = (r+1)\sum_{A'\in\binom{\tilde{A}\setminus\{c\}}{r}}{T_{A'\setjoin\tilde{B}}(c)\prod_{z\in \tilde{A}\setminus (A'\setjoin\{b\})\setjoin \tilde{C}}\det(z,A'\setjoin\tilde{B},c)^{-1}}\\
+      & + \sum_{\substack{A'\in\binom{\tilde{A}\setminus\{b\}}{r}\\ a'\in \tilde{A}\setminus\{b\}\setminus A'}}{T_{A'\setjoin\tilde{B}}(a')\prod_{z\in \tilde{A}\setminus (A'\setjoin\{a'\})\setjoin \tilde{C}}\det(z,A'\setjoin\tilde{B},a')^{-1}}\text{.}
+  \end{align}
+  Now, note that we can replace $\tilde{A}\setminus \{c\}$ by $A\setminus\{a\}$ and $\tilde{B}$ by $\{a\}\setjoin B$ in both sums and interchange the roles of $c$ and $a$ in the first sum and $a'$ and $a$ in the second sum (due to the second claim). The whole expression is then
+  \begin{align}
+    0 & = (r+1)\sum_{A'\in\binom{A\setminus\{a\}}{r}}{T_{A'\setjoin B\setjoin\{c\}}(a)\prod_{z\in A\setminus (A'\setjoin \{a\})\setjoin\tilde{C}}{\det(z,A'\setjoin B\setjoin\{c\},a)^{-1}}}\\
+    & + \sum_{A'\distjoin\{a'\}\in\binom{A\setminus\{a\}}{r+1}}{T_{A'\setjoin\{a'\}\setjoin B}(a)\prod_{z\in A\setminus (A'\setjoin\{a'\})\setjoin C}{\det(z,A'\setjoin\{a'\}\setjoin B,a)^{-1}}}\text{.}
+  \end{align}
+
+  Now summing the whole expression over $a\in A$ changes the first sum into $(r+1)$-times the lemma for $r$ and sets $A$, $B\setjoin\{c\}$ and $\tilde{C}$ and thus vanishes by induction. Similarly, the second sum changes into $(r+1)$-times the expression in the lemma for $r+1$ and sets $A$, $B$ and $C$ as there are $r+1$ possibilities to build the ($r+1$)-element set $A'\distjoin\{a'\}$ by $A'$ and $a'$. But as $r+1\leq p-1$, it is a unit mod $p$ and we are done with induction.
+\end{proof}
+
+With this, one deduces
+
+\begin{corollary}[the case $d\leq p$]\label{cor:mdsconjpcase}
+  If $\cA\setleq \field{q}^d$ is an arc and $d\leq p$ where $p=\rchar[\field{q}]$ then $\card{\cA}\leq q+1$.
+\end{corollary}
+
+\begin{proof}
+  Assume the contrary. Then we have an arc of cardinality $q+2$. It follows that $t=d-3\leq p-3$. Thus \person{Ball}'s \& \person{de Beule}'s lemma applies for $r=t+1=d-2$ (using dualisation we can assume $t+d\leq \card{\cA}$). But then we have a sum of $r+1$ equal nonzero summands in the lemma.
+  As $r+1=t+2\leq p-1$ it is a unit und thus we obtain a contradiction
+  (as a product of two units cannot be zero).
+\end{proof}
+
+// BULLSHIT
+\begin{lemma}[the subset-lemma] 
+  Let $\cA$ be an arc in $\field{q}^d$ ($p=\rchar[\field{q}]$) and let
+  $P(X)$ be its \person{Segre}-polynomial with respect to the order
+  $<$. Let $0<r\leq\min\{d,p\}-1$ and $A,B,C\setleq \cA$ disjoint sets
+  such that $\card{A}+\card{B}=r+t+1$, $\card{C}=d-1-r$ then
+  \begin{align}
+    0 &= \sum_{\substack{A'\setleq A, B'\setleq B\\
+        \card{B'}+\card{A'}=r}}{P(A'\setjoin B'\setjoin C)\prod_{z\in
+        (B\setminus B')\setjoin (A\setminus A')}{\det(z,A'\setjoin B'\setjoin C)^{-1}}}
+  \end{align}
+\end{lemma}
+
+\begin{proof}
+  Let $A,B,C\setleq \cA$ disjoint sets such
+  that $\card{A}+\card{B}=r+t+1$, $\card{C}=d-1-r$. Then pick $A''\setleq
+  A$ and apply \person{Ball} \& \person{de Beule}'s $ABC$-lemma to
+  $r-\card{A''}$ and sets $A\setminus A''$, $B$ and $C\setjoin A''$ to
+  obtain
+  \begin{align}
+    &(-1)^{r-\card{A''}}\sum_{\substack{A'\setleq A\setminus A''\\
+        \card{A'}=r-\card{A''}}}{P(A'\setjoin A''\setjoin C)\prod_{z\in
+        (A\setminus (A'\setjoin A''))\setjoin B}{\det(z,A'\setjoin A''\setjoin C)^{-1}}}\\
+    &= \sum_{\substack{B'\setleq B\\
+        \card{B'}=r-\card{A''}}}{P(B'\setjoin A''\setjoin C)\prod_{z\in
+        (B\setminus B')\setjoin (A\setminus A'')}{\det(z,B'\setjoin A''\setjoin C)^{-1}}}\text{.}
+  \end{align} 
+  Summing over $A''\setleq A$ yields (where $s=\card{A''}$ and on the
+  LHS we replace the symbol $A'\setjoin A''$ by $A'$ and on the RHS the
+  symbol $A''$ by $A'$)
+  \begin{align}
+    0 &= \sum_{s=0}^r{(-1)^{r-s}\binom{r}{s}}\settimes\sum_{\substack{A'\setleq A\\ \card{A'}=r}}{P(A'\setjoin C)\prod_{z\in
+        (A\setminus A')\setjoin B}{\det(z,A'\setjoin C)^{-1}}}\\
+    &= \sum_{\substack{A'\setleq A, B'\setleq B\\
+        \card{B'}+\card{A'}=r}}{P(A'\setjoin B'\setjoin C)\prod_{z\in
+        (B\setminus B')\setjoin (A\setminus A')}{\det(z,A'\setjoin B'\setjoin C)^{-1}}}
+  \end{align}
+  for $r>0$, which is what we intended to prove.
+\end{proof}
+UNUSEFUL
+
+// second possibility: decrease $E$ and $C'$ and $C$//
+\begin{lemma}[\person{Ball}'s \& \person{de Beule}'s $ABCDE$ lemma]
+    Let $\cA$ be an arc in $\field{q}^n$ ($p=\rchar{\field{q}}$) with $n>p$ and $r\leq p-1$ and $0\leq m\leq r-1$. Moreover, let $A$, $B$, $C$, $D$ and $E$ be disjoint subsets of $\cA$ with $\card{A}=\card{B}=m$, $\card{C}=t+2-m$, $D=n-1-r$, $E=r-1-m$ and let there be given mappings $m\to A$ and $m\to B$ such that $A_\tau, B_\tau$ denote the images of $\tau\setleq m$. Then it holds that
+    \begin{align}
+        0 & = \sum_{\substack{C'\setleq C                                                                       \\
+                \card{C'}=r-m}}
+        {\sum_{\tau\setleq m}{{(-1)}^{\card{\tau}}P(A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}} \\
+          & \quad\settimes\prod_{\substack{z\in A_{m\setminus\tau}\setjoin B_{\tau}                                  \\
+                  \setjoin(C\setminus C')\setjoin E}}
+          {{\det(z,A_{\tau}\setjoin B_{m\setminus\tau}\setjoin C'\setjoin D)}^{-1}}
+\end{align}
+\end{lemma}
+
+
+\begin{lemma}[the \person{Segre} polynomial]
+  Let $\cA$ be an arc in $\field{q}^d$ and $T_X$ its tangent polynomials
+  defined canonically with respect to some linear order $<$ (for
+  $X\setleq \cA$, $\abs{X}=d-2$). Furthermore, let $d+t-1\leq
+  \abs{\cA}$. Then there exists a unique polynomial $Q(X)\in
+  \symalg(\extpow{d-1}{\field{q}^d)^*}$ such that
+  \begin{enumerate}
+  \item The polynomial $Q(X)$ is homogeneous of degree $t$.
+  \item It holds that $Q(x_1\wedge\ldots\wedge
+    x_{d-1})=T_{x_1,\ldots,x_{d-2}}(x_{d-1})$ for $x_i\in \cA$
+    ($i\in\{1,\ldots,n\}$) and $x_i<x_j$ for $i<j$.
+  \end{enumerate}
+
+  Moreover, $Q(X)$ does not depend on the order $<$ up to scalar factor.
+  The polynomial $P(X)=P(X_1,\ldots,X_{d-1}):=Q(X_1\wedge\ldots\wedge
+  X_{d-1})$ then satisfies
+
+  \begin{enumerate}
+  \item For all $A\setleq \cA$, $\abs{A}=d-1$ and any permutation $\pi\in\symgr{A}$
+    \begin{align}
+      P(A^\pi)=T_{A^\pi\setminus\{a\}}(a)\sgn(A\setminus\{a^{\pi^{-1}}\},a^{\pi^{-1}})^{t+1}\sgn(\pi)^t\text{.}
+    \end{align}
+    where $a$ is the biggest element in $A$.
+  \item The polynomial $P(X)=P(X_1,\ldots,X_{d-1})$ is homogenous of
+    degree $t$ in each component $X_i$.
+  \end{enumerate}
+  Moreover, the polynomial $P(X)$ satisfies $P(a_1,\ldots,a_{d-1})=0$ if
+  $a_1,\ldots,a_{d-1}$ are linear dependent.
+\end{lemma}
+
+\begin{proof}
+  We can construct $\cA$ by the following interpolation idea. Take
+  $B\setleq \cA$ such that $\abs{B}=d+t-1$. Then set
+  \begin{align}
+    \tilde{P}(X):=\sum_{\substack{A'\setleq B\\
+        \abs{A'}=d-1}}{T_{A'\setminus\{\bigjoin{A'}\}}\left(\bigjoin{A'}\right)\prod_{z\in
+        B\setminus A'}{\frac{\det(z,X)}{\det(z,A')}}}\text{.}
+  \end{align}
+  At first we verify that $\tilde{P}$ satisfies the conditions of the
+  lemma. For $A\setleq B$, $\abs{A}=d-1$ and $\pi\in\symgr{A}$, $a$, $a^{\pi^{-1}}$
+  the last element of $(A)$ and $(A^\pi)$, respectively, we get
+  \begin{align}
+    \tilde{P}(A^\pi)
+    &= T_{A^\setminus\{a\}}(a)\sgn(\pi)^t\\
+    &= T_{A^\pi\setminus\{a^{\pi^{-1}}\}}(a^{\pi^{-1}})\sgn(A^\pi\setminus\{a^{\pi^{-1}}\},a^{\pi^{-1}})\sgn(\pi)^t
+  \end{align}
+  as desired. To prove this identity for $A\setleq \cA$, $\abs{A}=d-1$,
+  we argue by induction on $r:=\abs{A\setminus B}$. For $r=0$ we have
+  already proven the claimed identity. Assume it was proven for $r$ and
+  let $\abs{A\setminus B}=r+1$. Then pick $s\in A\setminus B$.
+\end{proof}

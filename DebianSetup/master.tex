@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\begin{document}
+\section{Debian}
+
+\begin{enumerate}
+        \item Make sure \texttt{sudo} is installed. To install it type \texttt{su <RET>} enter your password and type \texttt{apt-get install sudo}. You need to logout with \texttt{exit} and log back in so that changes become active.
+        \item Next, add yourself to the sudoers group \texttt{sudo} by typing \texttt{usermod -aG sudo <user>} when you are in super user mode (type \texttt{su <RET>} before).
+        \item Install the window manager \texttt{xmonad} by typing \texttt{sudo apt-get install xmonad}.
+        \item Upgrade Debian to Debian sid with the following steps.
+    \begin{enumerate}
+            \item Change the file \texttt{/etc/apt/sources.list} appropriately.
+            \item Possibly, when adding things like new iceweasel versions you need to add keyrings e.g. for
+        \texttt{aurora} you need to install the package \texttt{pkg-mozilla-archive-keyring} and for \texttt{debian multimedia} you need \texttt{deb-multimedia-keyring}.
+    \end{enumerate}
+        \item Download graphic drivers if needed (e.g. \texttt{nvidia}). These are normally available in the \texttt{sid} package repository.
+        \item To automount RAID arrays or other hard disks change your \texttt{/etc/fstab} appropriately. For USB automount (when you are not using GNOME or KDE like desktop environments which do that for you) you can install the \texttt{usbmount} package.
+\end{enumerate}
+
+\paragraph{Problems.} When upgrading to Debian sid it might happen that your machine will not boot appropriately when you set up your system with LVM. To avoid this, do not use LVM. 
+
+\section{XMonad}
+
+\paragraph{Notes}
+Changed modules \texttt{LimitWindows}, \texttt{TaskBarDecoration}, \texttt{ResizableTall} (fixed: limited master number decrease).
+To change: other layouts.
+
+\paragraph{Features to add}
+Limited windows with increase and decrease via hidden workspaces which carry all hidden windows of current ws. Wished bahaviour: normal stacking when ws is not full and always removing the currently focused when ws is full and new window is spawned.
+A tabbar only showing the hidden windows of the current ws.
+
+\paragraph{Useful.} Notify and send utility.
+
+\subsection{XMonad within Gnome}
+
+For xmonad to start automatically on login you need an {\tt applications/xmonad.desktop} file on your system. If your distro doesn't provide it, create the following file:
+
+{\tt
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Xmonad
+Exec=xmonad
+NoDisplay=true
+X-GNOME-WMName=Xmonad
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false
+}
+and put it in either {\tt /usr/share/applications/xmonad.desktop} (global version) or in {\tt /.local/share/applications/xmonad.desktop} (local version --- for current user only).
+
+Your display manager must also be able to find the xmonad executable. If you are not using your distro package manager to install xmonad, for best results configure your build to install xmonad to a location in the system environment like /usr/local/bin/.
+
+http://www.haskell.org/haskellwiki/Xmonad/Using_xmonad_in_Gnome#Tweak_Gnome_to_work_better_with_Xmonad
+
+\section{Emacs}
+
+\paragraph{Install packages.}
+\begin{itemize}
+        \item Type \texttt{M-x list-packages} to list packages.
+        \item Search for the package with \texttt{C-s} and \texttt{C-r}
+        \item Install it pressing the \texttt{Install} field.
+        \item Uninstall packages by marking them with \texttt{d} and executing the process by hitting \texttt{x}.
+\end{itemize}
+
+\paragraph{Add abbrevs.} Type \texttt{C-x a l}.
+
+\paragraph{Auto completion.} Install the packages \texttt{auto-complete} and \texttt{auto-complete-auctex} form MELPA.
+
+\paragraph{Reload the config.} Type \texttt{M-x eval buffer}.
+
+
+\end{document}

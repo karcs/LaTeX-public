@@ -1,0 +1,321 @@
+\part{Grundlagen}
+
+\section{Unterobjekte und Quotientenobjekte}
+
+Sei $\bfA$ eine Kategorie. Dann definieren wir den Verband der Unterobjekte $\Sub A$ für jedes Objekt $A:\bfA$ als die
+Isomorphieklassen der Kategorie $\monoto_\bfA A$ (also $\monoto_\bfA A/\isoto$).
+Analog definieren wir den Verband der Quotienten von $A$ als $\Quot A$ durch die Isomorphieklassen von $A\epito_\bfA/\isoto$.
+Die beiden Konzepte sind also genau dual zueinander.
+
+\section{Kerne und Kokerne}
+
+Sei $\phi:A\to_\bfA B$ ein Morphismus. Dann wird die Isomorhpieklasse $\ker \phi$
+$$
+\begin{tikzcd}
+    \ker \phi \arrow{r} & A \arrow{r}{\phi} & B\\
+    C \arrow{ur} \arrow{u}{\exists_1}\arrow{urr}{0} & & \\
+\end{tikzcd}
+$$
+
+\begin{theorem}
+    Sei $\phi:A\to B$ ein Morphismus. Dann sagen wir $\phi$ genügt dem ersten Isomorphiesatz, falls Isomorphieklassen $\im \phi$
+    und $\iota : \im \phi \monoto B$
+    gibt, sodass $\phi = \pi\iota$ 
+\end{theorem}
+
+\section{Produkte und Koprodukte}
+
+Sei $\bfB\monoto\bfA$ eine Unterkategorie. 
+
+
+\section{Gruppenaxiome}
+
+Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{-1},1}$, derart dass folgende Identitäten gelten
+\begin{itemize}
+        \item $(a\compose b)\compose c = a\compose (b\compose c)$ (Assoziativität)
+        \item $a^{-1}\compose a = a\compose a^{-1} = 1$ (Inversenabblildung)
+    \item $a\compose 1 = 1\compose a = a$ (neutrales Element)
+\end{itemize}
+
+\begin{theorem}
+    Hallo
+\end{theorem}
+
+\section{Die \person{Sylow}'schnen Sätze}
+
+Eine natürliche Frage, welche sich aus dem Theorem von \person{Lagrange} ergibt, welche Aussagen über die Anzahl und Art der
+Untergruppen von Ordnung $n$ einer endlichen Gruppe $G$ getroffen werden können.
+Für $n\not\divides \size G$ ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
+ist jene Anzahl im Falle $n\divides \size G$ genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
+Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\Aut m$ sieht, denn wählt man nun $n$ als eine Zyklizität
+erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\Aut m$ dieser Ordnung.
+ist es ob bei einer endlichen Gruppe $G$ der
+
+Tatsächlich lassen sich aber befriedigende Aussagen treffen, falls $n=p^e$ die Potenz einer Primzahl $p$ ist. Diese werden
+gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
+
+\begin{definition}[$p$-Gruppe]
+    Sei $G$ eine Gruppe derart, dass jedes Element $g\in G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
+    Primzahl sei.
+\end{definition}
+
+\begin{remark}
+    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche $p$-Gruppe selbst von
+    Primzahlpotenzordnung $p^e$ ist.
+\end{remark}
+%
+\begin{theorem}[Existenz von $p$-Untergruppen jeder Ordnung]
+    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\set{U\leq G}[\size U=p^e]}$ gilt dann
+    $$
+    N_{p^e} = 1 \mod p
+    $$
+\end{theorem}
+%
+\begin{proof}
+    Wir betrachten die Aktion von $G$ auf den $p^e$-elementigen Untermengen von $\cast G \to \Set$ welche gegeben wird durch
+    elementweise Rechtsmultiplikation. Die Bahnengleichung für diese Aktion wird dann zu
+    $$
+    \size {\binom {\cast G \to \Set} {p^e}} = \sum_i {\size {G/\stab A_i}},
+    $$
+    wobei $A_i$ Repräsentanten der $G$-Bahnen sind.
+    Für $A_i\monoto \cast G \to \Set$, $\size {A_i}=p^e$ gilt allerdings dann $A_i \cast (\stab A_i) \to \Set=A_i$, also ist $A_i$ eine disjunkte
+    Vereinigung von Linksnebenklassen von $\stab A_i$ und mithin $\size {\stab A_i}\divides p^e$. Betrachten wir also obige
+    gleichung modulo $pn$, so folgt
+    $$
+    \binom {p^e n}{p^e} = n N_{p^e} \mod pn, 
+    $$
+    denn alle Terme, in denen $\stab A_i<p^e$ ist in obiger Gleichung entfallen und die übrigen Terme zählen genau für jede
+    $p^e$-elementige Untergruppe von $G$ ihre Linksnebenklassen (derer gibt es $n$).
+    Daraus folgt
+    $$
+    \frac 1 n \binom {p^e n}{p^e} = \binom {p^e n-1} {p^e-1} = N_{p^e} \mod p,
+    $$
+    wobei der Ausdruck auf der Linken Seite gleich 1 ist modulo $p$. Dies sieht man einerseits daran, dass dies für die zyklische
+    Gruppe mit $p^e n$ Elementen gilt, andererseits lässt sich auch das Theorem von \person{Lucas} (TODO : REF) auf den letzten
+    Binomialkoeffizienten anwenden. Wir erhalten dann
+    $$
+    N_{p^e} = \binom {p^e n - 1} {p^e -1} = {\binom {p-1} {p-1}}^e = 1 \mod p.
+    $$
+\end{proof}
+
+{\bfseries\scshape Text}
+
+\begin{theorem}
+    Jede endliche Gruppe $G$ hat $p$-\person{Sylow}-Gruppen. Für jede $p$-Untergruppe $U$ und eine $p$-\person{Sylow}-Gruppe von
+    $G$ gibt es ein Element $g\in G$, sodass $U\monoto P^g$. Insbesondere sind alle $p$-\person{Sylow}-Gruppen konjugiert zueinander
+    und ihre Anzahl ist $\size {G/N_G P}$. 
+\end{theorem}
+
+\section{Die Sätze von \person{Hall}}
+
+Die Sätze von \person{Hall} stellen eine Verallgemeinerung der \person{Sylow}'schen Sätze für auflösbare Gruppen dar.
+
+\begin{theorem}[\person{Hall}'sches Theorem]
+    Sei $G$ auflösbar und $\size G = mn$ mit teilerfremden $m$ und $n$. Dann gilt
+    \begin{statements}
+        \item Sei $U$ eine Untergruppe mit $\size U \divides m$ und $M$ eine Untergruppe der Ordnung $m$, dann gibt es ein $g\in G$
+    sodass $U\leq M^g$.
+        \item Für die Anzahl der Untergruppen der Ordnung $m$ von $G$ gilt:
+    $$
+    N_m = 1 \mod \rad m
+    $$
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    Der Beweis erfolgt per Induktion nach der Anzahl $k$ der Primfaktoren von $m$. Für $k=1$ gilt die Aussage schlicht aufgrund der
+    \person{Sylow}'schen Sätze auch ohne Auflösbarkeit von $G$.
+\end{proof}
+
+\begin{theorem}[\person{Frattini}-Argument]
+    Sie $G$ eine Gruppe und $N\leq_{\Con G} G$. Weiter sei $P$ eine Untergruppe von $N$ derart, dass alle zu $P$ isomorphen
+    Untergruppen in $H$ konjugiert sind (also z.B.~$P$ eine $p$-\person{Sylow}-Gruppe). Dann gilt
+    $G = \normalizer_G P N$.
+\end{theorem}
+
+\begin{proof}
+    Für $g\in G$ ist $P^g$ isomorph zu $P$ und gleichermaßen Untergruppe von $N$, da $N$ normal in $G$ liegt. Also sind $P$ und $P^g$ in $N$
+    konjugiert und es folgt $P^{gn}=P$ für geignetes $n\in N$. Damit ist aber $gn\in \normalizer_G P$ und somit auch $g\in N
+    \normalizer_G P$.
+\end{proof}
+
+\section{Auflösbarkeit von Gruppen}
+
+\begin{definition}[Subnormalenverband, Subnormalenreihe]
+    Ein Unterverband $\bfU$ von $\Sub G$ Subnormalenverband, falls für alle $U\in \bfU$ gilt
+    $U\in\Con \Meet_{V>U}V$. Ist ein solcher Verband isomorph zu einem Unterverband von $\cast \nats \to \Lat$, so nennen wir Ihn
+    eine Subnormalenreihe. 
+\end{definition}
+
+\begin{definition}[Auflösbare Gruppe]
+    Eine Gruppe $G$ heißt \keyword{auflösbar}, falls es einen Subnormalenverband von $G$ gibt, derart, dass
+    $$
+    \Meet_{V>U} V / U\ \textrm{kommutativ}
+    $$
+    für alle $U\in\bf U$. \keyword{endlich auflösbar}\footnote{Dies meint auflösbar im herkömmlichen Sinne.}
+\end{definition}
+
+\begin{definition}[Kommutatoruntergruppe]
+    Seien $A,B\in\Sub G$. Dann bezeichnen wir mit $\commutatorgroup A B\in G$ die \keyword{Kommutatoruntergruppe} von $A$ und $B$.
+\end{definition}
+
+\begin{lemma}
+    Die Kommutatoruntergruppe zweier Untergruppen $A$ und $B$ zeichnet sich durch folgende universelle Eigenschaft aus.
+    $\commutatorgroup A B \in G\in\Con A\join B$.
+\end{lemma}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{definition}[Kommutatorreihe]
+    Wir definieren die \keyword{Kommutatorreihe} $\seq{\commutatorseries G i}_{i\in \nats}$ einer Gruppe $G$ als
+    $$\commutatorseries G 0 \defeq G,\ \commutatorseries G {i+1} \defeq \commutatorgroup {\commutatorseries G i}
+    {\commutatorseries G i} \in G\ (i\in\nats).$$
+    Weiterhin setzen wir $\commutatorseries G \omega \defeq \Meet_{i\in\nats} \commutatorseries G i$ und bezeichnen es als
+    \keyword{perfekten Kern} von $G$.
+\end{definition}
+
+\begin{lemma}
+    Eine Gruppe $G$ ist genau dann endlich auflösbar, falls ihre Kommutatorreihe nach endlich vielen Schritten in $1$ endet.
+    Sie ist genau dann $\omega$-auflösbar, falls ihr perfekter Kern gleich $1$ ist.
+\end{lemma}
+
+\begin{proof}
+    Sei $\bfG$
+\end{proof}
+
+\subsection{Der Satz von \person{Jordan}-\person{Hölder}}
+
+\section{Nilpotenz von Gruppen}
+
+Im folgenden betrachten wir eine Eigenschaft von Gruppen die mit \keyword{Nilpotenz} bezeichnet wird. Sie stellt in gewissem Sinne
+eine Verallgemeinerung der Eigenschaft einer Gruppe dar, kommutativ zu sein.
+
+
+\begin{definition}[Invariantenfilter]
+    Ein \keyword{Invariantensystem} einer Gruppe $G$ ist ein Unterverband von $\Con G$.
+    Eine \keyword{Invariantenreihe} ist eine zu $\nats$ isomorphes Invariantensystem.
+\end{definition}
+
+\begin{definition}[Zentralreihe]
+    Eine Invariantenreihe $\seq{C_i}_{i\in\nats}$ heißt \keyword{Zentralreihe}, wenn $G_i/G_{i+1}$ im Zentrum von $G/G_{i+1}$ liegt.
+    $$
+    \Meet
+    $$
+\end{definition}
+
+\begin{definition}[Untere Zentralreihe $\gamma_i$]
+    Die \keyword{untere Zentralreihe} $\seq{\gamma_i G}_{i\in\nats}$ ist definiert als
+    $$
+    \gamma_0 G= G,\ \gamma_{i+1} G = [G,\gamma_i G]\ (i\in\nats)    
+    $$
+    und insbesondere ist $\seq{\gamma_i}_{i\in I}$ wirklich eine Zentralreihe.
+\end{definition}
+
+\begin{lemma}[charakterisierende Eigenschaft der unteren Zentralreihe]
+    Sei $\seq{C_i}_{i\in\nats}$ eine antitone Zentralreihe einer Gruppe $G$, dann gilt $\gamma_i G\leq C_i$ ($i\geq 0$). 
+\end{lemma}
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ haben wir $\gamma_0 G= G= C_0$. 
+    Für $i\in\nats$ gilt weiterhin $\gamma_{i+1} G = [G,\gamma_i G]\leq [G,C_i]\leq C_{i+1}$ (da $C_i/C_{i+1}\leq \centre
+    (G/C_{i+1})$). Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\seq{\gamma_i G}_{i\in
+        I}$ nachzuweisen.
+    Diese ist jedoch leicht zu überprüfen durch $\gamma_{i+1}=[G, \gamma_i G]\leq \gamma_{i+1}$, also liegt $\gamma_i
+    G/\gamma_{i+1} G$ im Zentrum von $G/\gamma_{i+1} G$.    
+\end{proof}
+
+\begin{definition}
+    Die \keyword{obere Zentralreihe} $\seq{Z_i G}_{i\in\nats}$ ist definiert durch
+    $$
+    Z_0 G = 1,\ Z_{i+1} G/Z_i G = \centre (G/Z_i)\ (i\in\nats). 
+    $$
+\end{definition}
+
+\begin{lemma}[charakterisierende Eigenschaft der oberen Zentralreihe]
+    Sei $\seq{C_i}_{i\in\nats}$ eine monotone Zentralreihe, dann gilt
+    $$
+    G_i\leq Z_i G
+    $$
+    und insbesondere ist $\seq{Z_i G}_{i\in\nats}$ wirklich eine Zentralreihe.
+\end{lemma}
+
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ gilt $Z_0 G = G = C_0$. Für $i\in\nats$ gilt weiterhin $C_{i+1}/C_i\leq\centre (G/C_i)$, was
+    gleichbedeutend ist mit $[C_{i+1},G]\leq C_i$. Damit gilt aber $[C_{i+1},G]\leq Z_i G$ womit andererseits folgt, dass
+    $C_{i+1}\leq Z_{i+1} G$. Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\seq{Z_i
+        G}_{i\in I}$ nachzuweisen. Diese folgt aber nach Definition trivial, denn $Z_{i+1} G/Z_i G=\centre (G/Z_i)\leq\centre(G/Z_i)$.
+\end{proof}
+
+\begin{definition}[Nilpotenz]
+    Eine Gruppe $G$ heißt \keyword{nilpotent}, falls es eine monotone Zentralreihe gibt, die gegen $G$ konvergiert und
+    \keyword{nilpotent}, falls es eine antitone Zentralreihe gibt, die gegen $1$ konvergiert. 
+\end{definition}
+
+\begin{theorem}[Charakterisierung von Nilpotenz]
+    Die folgenden Aussagen sind für eine endliche Gruppe $G$ äquivalent.
+    \begin{statements}
+            \item $G$ ist nilpotent.
+            \item Die untere Zentralreihe endet mit der trivialen Gruppe: $\exists n\in\nats:\gamma_n G = 1$.
+            \item Die obere Zentralreihe von $G$ endet mit $G$: $\exists n\in\nats : Z_n G = G$.
+            \item Für $U\in\Sub G$, $U\neq G$ gilt $U<N_G U$.
+            \item Für $U\in\Sub G$, $U\neq 1$ gilt $[G,U]<U$.
+            \item Jede maximale Untergruppe von $G$ ist normal in $G$.
+            \item $G$ ist das direkte Produkt seine $p$-\person{Sylow}-Gruppe.
+            \item Je zwei Elemente von koprimer Ordnung kommutieren.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    \begin{statements}
+        \item Sei $P$ eine maximale $p$-Untergruppe, dann folgt aus $\normalizer_G P < G$, dass $\normalizer^2_G P = \normalizer_G
+    P$. Also ist $G$ nicht nilpotent.
+    \end{statements}
+\end{proof}
+
+\section{Minimale Normalteiler und charakteristisch einfache Gruppen}
+
+\begin{lemma}[Zusammenspiel  zwischen normal und charakteristisch]\label{nor-char-implies-nor}
+    Sei $C$ charakteristisch in $N$ und $N$ normal in $G$. Dann ist $N$ normal in $G$.
+\end{lemma}
+
+\begin{proof}
+Jede Konjugation (innere Automorphismus) in $G$ lässt $C$ fix, beschränkt sich also zu einem Automorphismus von $N$. Damit lässt
+sie auch $C$ fest, nach Definition von charakteristisch.    
+\end{proof}
+
+\begin{lemma}
+    Sei $N$ ein minimaler Normalteiler einer Gruppe $G$. Dann ist $N$ charakteristisch einfach.
+\end{lemma}
+
+\begin{proof}
+    Sei $1<C$ eine charakteristische Untergruppe von $N$. Dann ist nach \ref{nor-char-implies-nor} auch $C$ normal in $G$. Nach
+    Minimalität von $N$ folgt $N\leq C$ somit also $N=C$. Also ist $N$ charakteristisch einfach.
+\end{proof}
+
+\begin{theorem}[Charakterisierung charakteristisch einfacher Gruppen]
+    Eine Gruppe $G$ mit minimalem Normalteiler $N$ ist genau dann charakteristisch einfach, falls $N$ einfach ist und sie eine Potenz von $N$ ist.
+\end{theorem}
+
+\begin{proof}
+    Sei $G$ charakteristisch einfach und $N$ minimaler Normalteiler. Die Bilder von $N$ unter $\Aut G$ erzeugen eine nicht-triviale
+    charakteristische Untergruppe von $G$, also ganz $G$. Sind weiter $N$ und $M$ zwei solcher Bilder, dann gilt $N = M$ oder
+    $N\meet M = 1$, da $N\meet M\leq N$ ein Normalteiler von $G$ ist. Also folgt für verschiedene $N$ und $M$, dass
+    $\commutatorgroup M N \in G \leq M\meet N = 1$, somit $M$ und $N$ elementweise kommutieren. Damit ist $G$ das Produkt all
+    jener Bilder, da diese --- wie schon erwähnt --- $G$ erzeugen. Weiter muss dann $N$ einfach sein, da jeder Normalteiler $L$ von
+    $N$ aufgrund der Produktdarstellung von $G$, dann auch normal in $G$ liegt.
+
+    Für die Rückrichtung nehmen wir an, dass $G = \product
+    S_i$ mit einfachen Gruppen $S_i$. Dann gilt für jeden
+    Normalteiler $N$ von $G$, dass $N\meet S_i$ ein
+    Normalteiler von $S_i$ ist, also nach Einfachheit von
+    $S_i$ entweder $S_i$ selbst oder $1$. Damit sei $J$
+    definiert als die Indexmenge, sodass $S_j\meet
+    N=S_j$. Dann gilt $N=\product S_j$ 
+\end{proof}
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% TeX-engine: xetex
+%%% TeX-master: "Script-Main"
+%%% End: 

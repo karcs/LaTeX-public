@@ -1,0 +1,5 @@
+PWD /media/Data/Documents/LaTeX Papers/OnTheRoadColeringProblem
+INPUT /usr/share/texlive/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-var/web2c/pdftex/latex.fmt
+INPUT AGWgraph1.tex
+OUTPUT AGWgraph1.log

@@ -1,0 +1,167 @@
+
+\section{A connection to the Kneser graphs $\KG(2n-3,n-2)$}
+
+In this section we want to give an alternative proof of the MDS main conjecture for $n\leq p$ using essentially the same means as before and some known facts about the eigenvalues of Kneser graphs.
+
+We recall the interpolation lemma for the tangent polynomials which states that for disjoint subsets $A,B\setleq \cA$ ($\card{A}=t+2$, $\card{B}=n-2$ and w.l.o.g.~$t+n < \card{\cA}$ using the dualisation argument)
+we have that
+
+$$
+\sum_{a\in A}{P(\set a\setjoin B)\prod_{z\in A\setminus \set a}{\det(z,\set a\setjoin B)}^{-1}}=0\label{mds-tan-poly-interpol}
+$$
+
+(this is \autoref{mds-abc-lemma} for $r=1$). Now, we define the interpolation terms as
+
+$$
+I(C,D):=P(C)\prod_{d\in D}{{\det(d,C)}^{-1}}
+$$
+  
+where $C,D\setleq \cA$, $\card{C}=n-1$, $\card{D}=t+1$.
+If we now rewrite the equation~\theref{mds-tan-poly-interpol} % fix this : use equation environment -> better definition if \label, \autoref, \theref
+one sees that we get a linear system of
+$$
+\binom{\card\cA}{t+2,n-2,\card\cA-n-t}
+$$
+equations in
+$$
+\binom{\card\cA}{t+1,n-1,\card\cA-n-t}
+$$
+variables, namely
+$$% bug : use \text
+\sum_{a\in A}{I(A\setminus\{a\}, B\setjoin\{a\})}=0\text{ for $A\in\binom{\cA}{t+2}$, $B\in\binom{\cA}{n-2}$, $A\setmeet B=\emptyset$}.\label{mds-interpol-sys}
+$$
+Moreover, this system decomposes into $\binom{\card\cA}{n+t}$ independent components on which $A\setjoin B=E$ where $E\in\binom{\cA}{t+n}$ is constant.
+
+Note that for the critical case $t=n-3$ there are the same number of variables as equations.
+We will now show that in this case, each such component can be interpreted as the adjacency matrix of the Kneser graph $\KG(2n-3,n-2)$ and deduce that it is regular when interpreted as a matrix in $\ints/p\ints$ where $p\leq n$ using a fact about the eigenvalues of Kneser graphs.
+
+\begin{lemma}
+    Assume $t=n-3$ (i.e. $\card{\cA}=q+2$).
+    Let $E\in\binom{\cA}{t+n}$. Then the component of the linear system~\theref{mds-interpol-sys}
+    on which $A\setjoin B=E$ is the adjacency matrix of the graph $\KG(2n-3,n-2)$.
+\end{lemma} 
+
+\begin{proof}
+    Let $x_D:=I(D,E\setminus D)$. Then for each $(n-2)$-set $C\setleq E$ there is an equation
+    $$
+    \sum_{D:C\setmeet D=\emptyset}{x_D}=0
+    $$
+    and this is clearly the system $Ax=0$ where $A=(a_{CD})$ is the adjacency matrix of $\KG(2n-3,n-2)$ with
+    $$
+    a_{CD}=
+    \begin{cases}
+        1 &: C\setmeet D=\emptyset\\
+        0 &: \otherwise
+    \end{cases}.
+    $$
+    and $x=(x_D)$.
+\end{proof}
+
+For $n\leq p$ one derives easily a contradiction from this using a well-known fact about the eigenvalues of Kneser graphs.
+
+\begin{lemma}[graph spectrum of Kneser graphs]
+  Let $2k\leq n$. Then the eigenvalues in $\rats$ of the adjacency matrix of the Kneser graph $\KG(n,k)$ are
+  $$
+    \lambda_j:={(-1)}^j\binom{n-k-j}{k-j}
+  $$
+  for $j=0,\ldots,k$ where $\lambda_j$ has geometric and algebraic multiplicity $\binom{n}{j}-\binom{n}{j-1}$.
+\end{lemma}
+
+\begin{proof}
+  Set 
+  $$
+  V_j:=\dirsum_{\substack{A\setleq n\\ \card{A}=j}}{\rats A}
+  $$
+  for $j=0,\ldots,n$.
+  Moreover, define linear mappings $\phi^l_{ij}:V_j\to V_i$ by
+  $$
+  \phi^l_{ij}(B) = \sum_{\substack{A\setleq n\\ \card{A\setmeet B}=l, \card{A}=i}}{A}
+  $$
+  and linear continuation.
+  For these we may compute that
+  \begin{align*}
+      \phi^l_{ij}\compose\phi^m_{jk}(C)
+      &= \sum_{\substack{B\setleq n\\ \card{B\setmeet C}=m, \card{B}=j}}{\sum_{\substack{A\setleq n\\ \card{A\setmeet B}=l, \card{A}=i}}{A}}\\
+      & = \sum_{\substack{A\setleq n\\ \card{A}=i}}{\card{\{B\setleq n: \card{B}=j\lgand\card{A\setmeet B}=l\lgand\card{B\setmeet C}=m\}}{A}}\\
+      & = \sum_{\nu\in\nats}{\sum_{\substack{A\setleq n\\ \card{A}=i, \card{A\setmeet C}=\nu}}{\left(\sum_{\mu=0}^{\nu}{\binom{i-\nu}{l-\mu}\binom{k-\nu}{m-\mu}\binom{\nu}{\mu}\binom{n-i-k+\nu}{j-l-m+\mu}}\right)A}}\\
+      & = \sum_{\nu\in\nats}{\left(\sum_{\mu=0}^{\nu}{\binom{i-\nu}{l-\mu}\binom{k-\nu}{m-\mu}\binom{\nu}{\mu}\binom{n-i-k+\nu}{j-l-m+\mu}}\right)\phi^{\nu}_{ik}(C)}
+  \end{align*}
+  where we distinguish the sets $A$ by the size $\nu$ of $\card{A\setmeet C}$ and then count the sets $B$ which intersect with $A$ and $C$ in the right amount (here $\mu$ is $\card{A\setmeet B\setmeet C}$).
+  This implies the identities
+  $$
+  \phi^j_{ij}\compose\phi^k_{jk} = \binom{i-k}{j-k}\phi^k_{ik},
+  $$
+  $$
+  \phi^i_{ij}\compose\phi^j_{jk} = \binom{k-i}{j-i}\phi^i_{ik},
+  $$
+  and
+  $$
+  \phi^0_{ij}\compose\phi^k_{jk} = \binom{n-i-k}{j-k}\phi^0_{ik}.\label{kglemma:eq1}
+  $$
+  From the first identity we deduce that $\im(\phi^k_{ik})\setleq\im(\phi^j_{ij})$ for $k\leq j\leq i$. Similarly, from the third we get $\im\phi_{ik}^0\setleq\im\phi_{ij}^0$ for $k\leq j\leq n-i$.
+  Moreover, we need the identities
+  $$
+  \phi^j_{ij}=\sum_{k=0}^{j}{{(-1)}^k\phi^0_{ik}\compose\phi^k_{kj}}.\label{kglemma:eq2}
+  $$
+  and
+  $$
+  \phi_{ij}^0=\sum_{k=0}^j{{(-1)}^k\phi_{ik}^k\compose\phi_{kj}^k}.\label{kglemma:eq3}
+  $$
+  The equation~\autoref{kglemma:eq3}
+  follows from \autoref{kglemma:eq2}
+  by composing with the linearization of the duality map $A\mapsto n\setminus A$ from the left and \autoref{kglemma:eq2}
+  can be shown by
+  \begin{align*}
+      \left(\sum_{k=0}^{j}{{(-1)}^k\phi^0_{ik}\compose\phi^k_{kj}}\right)(C)
+      & = \sum_{k=0}^{j}\sum_{\substack{A\setleq n\\ \card{A}=i}}{{(-1)}^k\card{\{B\setleq
+              n:\card{B}=k\lgand  B\setleq C\setminus A\}}A}\\
+      & = \sum_{\substack{A\setleq n\\ \card{A}=i}}{\delta_{\emptyset,C\setminus A}A} = \phi^j_{ij}(C)\text{.}
+  \end{align*}
+  Now \autoref{kglemma:eq2}
+  implies $\im\phi_{ij}^j\setleq\bigsetjoin_{k=0}^j{\im\phi_{ik}^0}=\im\phi_{ij}^0$ ($j\leq n-i$) and \autoref{kglemma:eq3}
+  implies that $\im\phi_{ij}^0\setleq\bigsetjoin_{k=0}^j{\im\phi_{ik}^k}=\im\phi_{ij}^j$ ($j\leq i$) such that $\im\phi_{ij}^0=\im\phi_{ij}^j$ ($j\leq i\leq n-j$).
+  
+  We shall now prove that $\phi^j_{ij}$ is injective if $j\leq i\leq n-j$ which can be done by applying the `dual' equation of \autoref{kglemma:eq2}
+  \begin{align*}
+      \id=\phi^j_{jj}
+      & \stackrel{\autoref{kglemma:eq2}}{=}
+      \sum_{k=0}^{j}{{(-1)}^k\phi^k_{jk}\compose\phi^0_{kj}}\\
+      & \stackrel{\autoref{kglemma:eq1}}{=} \left(\sum_{k=0}^{j}{\frac{{(-1)}^k}{\binom{n-j-k}{i-j}}\phi^k_{jk}\compose\phi^0_{ki}}\right)\compose\phi^j_{ij}\text{.}
+  \end{align*}
+  Thus it is shown that $\phi^j_{ij}$ is an embedding when $j\leq i\leq n-i$. Let $k\leq \floor{n/2}$, then define for $j=0,\ldots,k$ the space $U_i$ as the orthogonal complement of $\im\phi_{k,j-1}^{j-1}$ in $\im\phi_{kj}^j$ (we now that $\im\phi_{k-1,j-1}^{j-1}\setleq\phi_{kj}^j$). We thus have an orthogonal decomposition
+  $$
+  \dirsum_{j=0}^k{U_j}=\im\phi_{k0}^0=V_k,
+  $$
+  which turns out to be the decomposition into eigenspaces $U_j$ of eigenvalue $\lambda_j={(-1)}^j\binom{n-k-j}{k-j}$ and dimension $\binom{n}{j}-\binom{n}{j-1}$.
+
+  The formula for the dimension of $U_j$ follows from the fact that $\phi_{kj}^j$ are embeddings. We are left to prove the eigenspace property.
+
+  So take $u\in U_j$ and write $u=\phi_{kj}^j(v)$. As $j\leq k\leq n-j$ it holds that $\im\phi_{ki}^i=\im\phi_{ki}^0$ for $i=0,\ldots,j-1$ and thus we have by definition of $U_j$
+  $$
+  0=\dual{(\phi_{ki}^0)}\compose\phi_{kj}^j(v)=\phi_{ik}^0\compose\phi_{kj}^j(v)\stackrel{\autoref{kglemma:eq1}}{=}\binom{n-i-j}{k-j}\phi_{ij}^0(v)
+  $$
+  for $i<j$, i.e. $\phi_{ij}^0(v)=0$ (as $k\geq j$, $n-i-k\geq 0$). But dually to the statement about the images we have $\ker\phi_{ij}^0=\ker\phi_{ij}^i$, so $\phi_{ij}^i(v)=0$.
+  Lastly, we have that
+  $$
+  \phi_{kk}^0\compose\phi_{kj}^j\stackrel{\autoref{kglemma:eq1}}{=}\binom{n-k-j}{k-j}\phi_{kj}^0\stackrel{\autoref{kglemma:eq3}}{=}\binom{n-k-j}{k-j}\sum_{i=0}^j{{(-1)}^i\phi_{ki}^i\compose\phi_{ij}^i},
+  $$
+  which gives $\phi_{kk}^0(u)=\binom{n-k-j}{k-j}u$ as desired ($\phi_{kk}^0$ is the adjacency operator of $\KG(n,k)$).
+\end{proof}
+
+From this we get a direct proof of corollary \autoref{cor:mdsconjpcase} as for $d\leq p$ there are no eigenvalues divisible by $p$ and thus the system of equations~\theref{mds-interpol-sys}
+must be a regular matrix in the case $t=n-3$. Thus it would follow that $I(C,D)=0$ for all $C,D\setleq \cA$, $\card C=n-1$, $\card{D}=n-2$ which contradicts the fact that all these expressions must be units in $\field{q}$ (by definition).
+%% false
+It is also possible to do the above argument without the knowledge of the previous lemma. To do this, note that $S_{2n-3}$ acts on the kernel of the adjacency matrix $M$ of $\KG(2n-3,n-2)$ in $\field{q}$ (actually, it is well-known that this is the automorphism group of $\KG(2n-3,n-2)$, but we do not need that either). Assume that $d\leq p$ and that $M$ is singular. Then consider a nontrivial element of its kernel $c$. Summing the images of $c$ under all elements of $S_{2n-3}$ gives a vector which has $(n-1)!(n-2)!$ times the sum of all components of $c$ in each component. By the assumption, this cannot be the zero vector since $(n-1)!(n-2)!$ is a unit mod $p$. But then it follows that $n-1\equiv 0$ mod $p$ (plugging this vector in the equation of $M$) and thus $n>p$ which is a contradiction.   
+
+\begin{remark}
+    Actually, we do not need for a contradiction that the adjacency matrix of $\KG(2n-3,n-2)$ is regular in $\field{q}$ --- we only need that its kernel contains no vector with only non-zero components.
+\end{remark}
+
+
+
+
+
+
+
+
+

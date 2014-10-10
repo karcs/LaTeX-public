@@ -1,0 +1,22 @@
+\section{Preliminaries}
+%\addcontentsline{toc}{section}{Preliminaries}
+
+In this thesis we aim to consider several subsets of finite projective spaces admitting certain `independence relations'.
+
+\subsection{Notation conventions}
+%\addcontentsline{toc}{subsection}{Notation conventions}
+
+We want to introduce several notation conventions used throughout the thesis.
+These are 
+
+\begin{definition}[generalized binomial coefficient]
+    Define the generalized binomial coefficient as
+    $$
+    \binom[q]{n}{k}:= \prod_{i=1}^{k}{\frac{q^n-q^{n-i}}{q^k-q^{k-i}}}.
+    $$
+    This counts the number of $(k-1)$-dimensional projective subspaces of an $(n-1)$-dimensional projective space.
+\end{definition}
+
+When defining a polynomial only up to scalar factor of the underlying field, we write `$\doteq$' instead of `$=$'.
+
+

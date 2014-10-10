@@ -1,0 +1,672 @@
+%%
+%% This is file `prettyref.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% prettyref.dtx  (with options: `style')
+%% 
+%% Copyright (c) 1995 Kevin Ruland
+%% 
+%%
+%% prettyref v3.0
+%%
+%% Copyright 1995,1998.  by Kevin Ruland kevin@rodin.wustl.edu
+%%
+\ProvidesPackage{mathenv}[2014/06/11 v0.1]
+
+%%%%%%%%%%%%%%%%%%%
+% PACKAGE OPTIONS %
+%%%%%%%%%%%%%%%%%%%
+
+%% declare options
+
+%% language
+% english (default)
+\DeclareOption{en}{
+    % big math environments
+    \def\@theoremname{Theorem}
+    \def\@remarkname{Remark}
+    \def\@remarkon{on}
+    \def\@conclusionname{Conclusion}
+    \def\@propositionname{Proposition}
+    \def\@proofname{Proof}
+    \def\@proofof{of}
+    \def\@lemmaname{Lemma}
+    \def\@corollaryname{Corollary}
+    \def\@corollaryof{of}
+    \def\@definitionname{Definition}
+    \def\@conjecturename{Conjecture}
+    \def\@problemname{Problem}
+    
+    % smaller environments
+    \def\@statementname{Statement}
+    \def\@equationname{Equation}
+    \def\@diagramname{Diagram}
+    \def\@chaptername{Chapter}
+    \def\@sectionname{Section}
+    \def\@tablename{Table}
+    \def\@figurename{Figure}
+    % exercises and solutions
+    \def\@exercisename{Exercise}
+    \def\@solutionname{Solution}
+    \def\@solutionof{of}
+    \def\@casename{Case}
+    
+    \def\@examplename{Example}
+    \def\@factname{Fact}
+    % general names
+    \def\@pagename{page}
+    \def\@pageabbrev{p.}
+}
+
+% german
+\DeclareOption{de}{
+    % große Matheumgebungen
+    \def\@theoremname{Satz}
+    \def\@remarkname{Bemerkung}
+    \def\@conclusionname{Zusammenfassung}
+    \def\@remarkon{zu}
+    \def\@proofname{Beweis}
+    \def\@propositionname{Proposition}
+    \def\@proofof{von}
+    \def\@lemmaname{Lemma}
+    \def\@corollaryname{Korollar}
+    \def\@corollaryof{von}
+    \def\@definitionname{Definition}
+    \def\@conjecturename{Vermutung}
+    \def\@casename{Fall}
+    
+    % kleinere Matheumgebungen
+    \def\@statementname{Aussage}
+    \def\@equationname{Gleichung}
+    \def\@diagramname{Diagramm}
+    \def\@chaptername{Kapitel}
+    \def\@sectionname{Abschnitt}
+    \def\@tablename{Tabelle}
+    \def\@figurename{Abbildung}
+    
+    % Aufgaben, Übungen, Lösungen
+    \def\@problemname{Aufgabe}
+    \def\@exercisename{\"Ubung}
+    \def\@solutionname{L\"osung}
+
+    \def\@examplename{Beispiel}
+    \def\@factname{Fakt}
+    % allgemeines
+    \def\@pagename{Seite}
+    \def\@pageabbrev{S.}
+}
+
+%% declare default settings
+\ExecuteOptions{en}
+
+%% terminate option processing
+\ProcessOptions\relax
+
+%% integrate hyperref package
+%\RequirePackage{hyperref}
+%\hypersetup{citebordercolor=[rgb]{0,1,0},
+%filebordercolor=[rgb]{0,.5,.5},
+%linkbordercolor=[rgb]{0,.5,.9},
+%menubordercolor=[rgb]{1,0,0}}
+
+%% various other stuff possible to do
+%%\RequirePackage{framed}
+%%\RequirePackage{framed} problems with nath package
+%%\RequirePackage{xstring,ifthen}
+
+%%%%%%%%%%%%%%%%%%%
+%%% main commands %
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+%% LIST OPERATIONS %%
+%%%%%%%%%%%%%%%%%%%%%
+
+% append token to a list of tokens
+% often you will need \expandafter infront of \app when you want to append a token which is the expansion of a macro
+\def\app#1(to:)#2{\edef#2{#2 \noexpand#1}}% the space after #2 is very important (escape char)
+% split off a token list in a macro
+% fills tail with nothing if #1 is empty
+\def\splitoff#1(head:)#2(tail:)#3{\expandafter\split#1\empty(head:)#2(tail:)#3}
+\def\split#1#2(head:)#3(tail:)#4{\def#3{#1}\ifx#2\empty\def#4{}\else\def#4{#2}\fi}
+
+% pop first element of a list into macro
+\def\pop#1(into:)#2{% resolve this : local variables head, tail
+    \splitoff#1(head:)\head(tail:)\tail%
+    \edef#2{\head}%
+    \edef#1{\tail}%
+}%
+
+% get last element of list
+\def\last#1{%
+    \begingroup% keep things local
+    \def\tail{#1}%
+    \loop%
+    \expandafter\splitoff\tail(head:)\head(tail:)\tail%
+    \unless\ifx\tail\empty%
+    \repeat%
+    \head%
+    \endgroup%
+}%
+
+% pop last element of list
+\def\poplast#1(into:)#2{%
+    \edef\tail{#1}%
+    \def\init{}%
+    \loop%
+    \splitoff\tail(head:)\head(tail:)\tail%
+    \unless\ifx\tail\empty%
+    \expandafter\app\head(to:)\init%
+    \repeat%
+    \edef#1{\init}%
+    \edef#2{\head}%
+}%
+    
+% context differ
+
+\def\diff#1(against:)#2{%
+    \begingroup% keep things local
+    \newif\ifcondition% boolean condition variable for the loop
+    \edef\tempa{#1}%
+    \edef\tempb{#2}%
+    \conditiontrue%
+    \loop% start the diff loop
+    \pop\tempa(into:)\heada%
+    \pop\tempb(into:)\headb%
+    \ifx\heada\empty% if either both are empty or not equal then jump off the loop
+    \ifx\headb\empty%
+    \conditionfalse%
+    \fi%
+    \fi%
+    \unless\ifx\heada\headb%
+    \conditionfalse%
+    \fi
+    \ifcondition%
+    \repeat%
+    \heada\tempa% return the rest of list #1
+    \endgroup%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% CONTEXT %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+%% working
+
+% (global) counter for the depth of context
+\newcounter{contextdepth}
+\setcounter{contextdepth}{0}
+
+% (global) token list storing the context
+\def\context@current{}%
+\def\contextitem@current{}% (global) current item
+
+% no getter/setter is given
+
+% diff context with current context
+\def\diffcontext#1{%
+    \diff#1(against:)\current@context%
+}%
+
+% push to context (as last element)
+% #1 is context item
+% #2 is context
+\def\pushcontextitem#1{%
+    \global\app#1(to:)\context@current%
+}%
+
+% pop from context (last element)
+% #1 is contextitem
+% #2 is context
+\def\popcontextitem#1{%
+    \global\poplast\context@current (into:)#1% pop last element from context copy into macro #1
+}%
+
+% first arg : environment in which the item was pushed
+% second arg : context item formatter
+% third arg : number of environment
+% fourth arg : title
+% third arg : page (style and number
+\def\makecontextitem#1#2#3#4#5{%
+    \csname makecontextitem@#1\endcsname#2#3#4
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CUSTOM WORD SETTINGS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% language setup
+
+%% set words in environments
+%% error message
+\def\@nostringerr#1{\@latex@error{No string '#1' defined. Use \string\setstring\space to do this}\@eha}
+%% getter and setter
+\def\setstring#1#2{\expandafter\gdef\csname string@#1\endcsname{#2}}
+\def\getstring#1{\@ifundefined{string@#1}{\@nostringerr{#1}}{\csname string@#1\endcsname}}
+
+%% document fonts (these are used for specific things in a document, e.g. theorem header)
+
+%% error message
+\def\@nofonterr#1{\@latex@error{No document font '#1' defined. Please use the fonts provided by LaTeX to define a document font}\@eha}
+%% getter and setter
+\def\getfont#1{\@ifundefined{font@#1}{\@nofonterr{#1}}{\csname font@#1\endcsname\expandafter\gdef\csname font@current\endcsname{#1}}}
+\def\setfont#1#2{\expandafter\gdef\csname font@#1\endcsname{#2}}
+
+%%%
+%%% COUNTERS
+%%%
+
+% getter for number of a counter (setter should not be needed in document)
+\def\setcounterstyle#1#2{\expandafter\def\csname style@counter@#1\endcsname{#2}}
+\edef\getcounter#1{\noexpand\csname style@counter@#1\endcsname{\csname counter@#1\endcsname}}% get styled count
+\def\defcounter#1{%
+    \expandafter\newcount\csname counter@#1\endcsname%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% PAGENUMBERING %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+%%% the following latex.ltx code lacks the feature of defining a numberingstyle:
+% for post processing of references it can be necessary to do computations
+% with the counter and then reapply the numberstyle of the reference
+
+%%% From File: ltpageno.dtx
+%\message{page nos.,}
+%\countdef\c@page=0 \c@page=1
+%\def\cl@page{}
+%\def\pagenumbering#1{%
+%  \global\c@page \@ne \gdef\thepage{\csname @#1\endcsname
+%      \c@page}}
+
+%%% reimplementation is
+
+% define the typeset pagenumber '\thepage' as the pagenumberstyle applied to the counter
+\def\thepage{\expandafter\csname @\@pagenumberstyle\endcsname\c@page}
+% create style number
+% first arg: style (arabic, roman, etc.)
+% second arc: number
+\def\stylednumber#1#2{\expandafter\csname @#1\endcsname#2}
+% define the '\pagenumbering' command to reset the page counter and to redefine the % '\@pagenumberstyle variable
+\def\pagenumbering#1{\global\c@page \@ne \def\@pagenumberstyle{#1}}
+% set pagenumbering to roman by default (possibly do this at begin of the document)
+\pagenumbering{arabic}
+
+%%% define titlepage
+
+%%% define section, subsection, paragraph and subparagraph appearance
+\def\pagename{\@pagename}
+\def\pageabbrev{\@pageabbrev}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% math environment %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% first argument : environment name
+% second argument : name to appear in the head of environment (e.g. Theorem)
+% : abbreviation for environment
+% counter to adjust to
+
+\def\newmathenvironment#1#2[#3]{
+    % new counter
+    \newcounter{#1}[#3]%
+    % formatted counter
+    \global\@namedef{the#1}{\arabic{#3}.\arabic{#1}}% TODO : better defaults due to class
+    % name
+    \global\@namedef{#1name}{#2}% setup name of environment to show up
+    % abbreviation
+    \global\@namedef{#1abbrev}{#1}%
+    % vertical space
+    \global\@namedef{#1preskip}{1.3\topsep}% alternative \topsep
+    \global\@namedef{#1postskip}{1.3\topsep}%
+    % header
+    \global\@namedef{#1titlename}{}% introduce new variable for current titlename
+    \global\@namedef{#1headerfont}{\bfseries}%
+    \global\@namedef{#1headertext}{%
+        \@nameuse{#1name}\space%
+        \@nameuse{the#1}%
+        \expandafter\ifx\csname #1titlename\endcsname\empty\else\space(\@nameuse{#1titlename})\fi%
+    }%
+    \global\@namedef{#1headerseparator}{.}% english
+    \global\@namedef{#1headersep}{\labelsep}
+    \global\@namedef{#1header}{%
+        \noindent%
+        {%
+            \@nameuse{#1headerfont}% maybe header icon
+            \@nameuse{#1headertext}%
+            \@nameuse{#1headerseparator}%
+            \hspace{\@nameuse{#1headersep}}% probably better space
+        }%
+    }%
+    % body
+    \global\@namedef{#1bodyfont}{}
+    \global\@namedef{#1body}{%
+        \@nameuse{#1bodyfont}%
+    }%
+    % symbol at the end of environment
+    \global\@namedef{#1endmark}{}%
+    % FROM HERE : LOTS OF THINGS TODO
+    %\@namedef{contextitem@#1}##1##2{\getstring{#1name}\space\csname the#1\endcsname\unless\ifx##2\empty\space(##2)\fi}% first arg is counter, second is title
+    % set reference commands (default: set labelkind and labeltitle)
+    \global\@namedef{#1refcommands}{% TODO : do this better
+        \refstepcounter{#1}%
+        \def\@currentlabel{%
+            \@nameuse{#1name}\space%
+            \@nameuse{the#1}%
+        }%
+        \xdef\@currentlabelname{\csname #1headertext\endcsname}
+    }%
+    \newenvironment{#1}[1][]%
+    {%
+        % push context item on stack
+        \par% enter vmode (for \addvspace)
+        \addvspace{\@nameuse{#1preskip}}% add vertical space before environment
+        \@nameuse{#1refcommands}%
+        \expandafter\def\csname #1titlename\endcsname{##1}%
+        \@nameuse{#1header}%
+        \begingroup%
+        \@nameuse{#1body}%
+    }%
+    {%
+        \ifx\@nameuse{#1endmark}\empty\else{\hfill\@nameuse{#1endmark}}\fi%
+        \endgroup%
+        \par% enter vertical mode (needed for \addvspace)
+        \addvspace{\@nameuse{#1postskip}}% add vertical space after environment
+        % delete context item pushed on stack when entering the environment 
+    }%
+}
+
+%% print context (prints the relevant context of a reference)
+
+
+%%
+%% math environments
+%%
+
+%% TODO: possibility to declare a single problem/exercise or a bunch (via item-like structure)
+
+%% theorem environment
+\newmathenvironment{theorem}{\@theoremname}[section]
+\def\theorembodyfont{\it}%
+
+%% remark environment
+\newmathenvironment{remark}{\@remarkname}[theorem]
+\def\remarkon{\@remarkon}
+\def\theremark{\arabic{remark}}
+\def\remarkheadertext{\remarkname\space\theremark\ifx\remarktitlename\empty\else\space\remarkon\space\remarktitlename\fi}
+
+%% conclusion environment
+\newmathenvironment{conclusion}{\@conclusionname}[section]
+
+%% proposition environment
+\newmathenvironment{proposition}{\@propositionname}[section]
+
+%% proof environment
+\newmathenvironment{proof}{\@proofname}[section]
+\def\proofheaderfont{\itshape}%
+\def\proofof{\@proofof}
+\def\proofheadertext{\proofname\ifx\prooftitlename\empty\else\space\proofof\space\prooftitlename\fi}
+\def\proofendmark{$\square$}
+\def\proofbodyfont{}
+\def\proofbodycommands{\def\paragraph{\@startsection{paragraph}{4}{\z@}
+    {.5ex plus .05ex minus .025ex}{-.66em}{\normalsize\itshape}}%
+\def\subparagraph{\@startsection{subparagraph}{5}{\z@}
+    {.25ex plus .01ex minus .005ex}{-.66em}{\normalsize\itshape}}%
+}
+
+%% lemma environment
+\newmathenvironment{lemma}{\@lemmaname}[section]
+\def\lemmabodyfont{\it}%
+
+%% definition environment
+\newmathenvironment{definition}{\@definitionname}[section]
+
+%% example environment
+\newmathenvironment{example}{\@examplename}[section]
+
+%% fact environment
+\newmathenvironment{fact}{\@factname}[section]
+
+%% conjecture environment
+\newmathenvironment{conjecture}{\@conjecturename}[section]
+
+%% problem environment
+\newmathenvironment{problem}{\@problemname}[section]
+
+%% corollary environment
+\newmathenvironment{corollary}{\@corollaryname}[theorem]
+\def\corollaryof{\@corollaryof}
+\def\thecorollary{\arabic{corollary}}
+
+%% exercise environment
+\newmathenvironment{exercise}{\@exercisename}[section]
+
+%% solutionenvironment (similar to proof environment)
+\newmathenvironment{solution}{\@solutionname}[section]
+\def\solutionof{\@solutionof}
+\def\solutionheaderfont{\proofheaderfont}
+\def\solutionheadertext{\solutionname\ifx\solutiontitlename\empty\else\space\solutionof\space\solutiontitlename\fi}
+\def\solutionbodyfont{\proofbodyfont}
+\def\solutionbodycommands{\proofbodycommands}
+
+%% enumerate style in mathenvs
+
+% with roman numerals for statements environment
+\def\@statementsenumstyle{\def\theenumi{(\Roman{enumi})}\def\theenumii{(\roman{enumii})}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+
+\def\@casebycaseenumstyle{\def\theenumi{\it\@casename \arabic{enumi}.}\def\theenumii{\it\@casename \arabic{enumi}.\arabic{enumii}.}\def\theenumiii{\it\@casename \arabic{enumi}.\arabic{enumii}\arabic{enumiii}.}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+
+% with letters for tasks environment
+\def\@tasksenumstyle{\def\theenumi{(\alph{enumi})}\def\theenumii{\alph{enumii}.}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+
+
+% with a single letter to denote the axioms
+\def\@axiomsenumstyle#1{\def\theenumi{(#1.\Roman{enumi})}\def\theenumii{(#1.\roman{enumii})}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+
+% varied item definition
+% todo
+%\def\@renewitem{\let\@olditem\item{\def\item[##1]{\@olditem\gdef\@currentlabelname{##1}}}}
+
+\newenvironment{statements}{\begingroup%
+    \@statementsenumstyle%
+    \begin{enumerate}%
+    }{%
+    \end{enumerate}\endgroup%
+}%
+\newenvironment{properties}{\begin{enumerate}\@statementsenumstyle}{\end{enumerate}}
+\newenvironment{tasks}{\begin{enumerate}\@tasksenumstyle}{\end{enumerate}}
+\newenvironment{steps}{\begin{enumerate}}{\end{enumerate}}
+\newcounter{casei}
+\def\casebycaselabel#1{{\hspace{\labelsep}\emph{\@casename\space#1.}}}
+\newenvironment{casebycase}{%
+    \let\descriptionlabel\casebycaselabel%
+    \description%
+    \let\olditem\item%
+    \def\item{\stepcounter{casei}\olditem[\arabic{casei}]}%
+}{%
+    \enddescription%
+}% items appear to ugly --- fix this
+% TODO make these better
+\newenvironment{implications}{\def\descriptionlabel##1{##1}%
+    \begin{description}}{\end{description}}%% buggy : original description does not work correctly
+
+% equationnumbering
+\def\theequation{(\arabic{equation})}
+
+
+%%%%%%%%%%%%%%%%
+%% references %%
+%%%%%%%%%%%%%%%%
+
+%amed@default@refformat[#1]#2{\hyperref[#2]{\ifmmode\textrm{\ref*{#2}}\else#1\space\ref*{#2}\if\vcenter\getrefbykeydefault{#2}{name}{}\vcenter\else{\space(\nameref*{#2})}\fi\fi}}
+%\def\@unnamed@default@refformat#1{\hyperref[#1]{\ifmmode\textrm{\ref*{#1}}\else\ref*{#1}\fi}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPROPRIATE REFERENCES %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% reference formats
+% autoref (e.g. section~1.5)
+%\def\@autorefstarformat#1#2#3#4{#3\space#1}
+% nameref (e.g. section~1.5 (title))
+%\def\@autorefformat#1#2#3#4{#3\space#1\space(#4)}
+% default (e.g. 1.5)
+%\def\@refformat#1#2#3#4#5{#1}
+
+%% REFERENCES
+
+% every environment decides on how to format a reference into it --- based upon the environments surrounding it
+
+% selection commands
+\def\@firstoffour#1#2#3#4{#1}
+\def\@secondoffour#1#2#3#4{#2}
+\def\@thirdoffour#1#2#3#4{#3}
+\def\@fourthoffour#1#2#3#4{#4}
+
+% initialize variables
+\def\@currentlabel{}        % e.g. Chapter 5, Lemma 7, Theorem 9
+\def\@currentlabeltitle{}   % e.g. Geometry, Galois-Theory etc.
+\def\@currentlabelcontext{} % e.g. chapter 5, section 3
+\def\label#1{
+    \ifmmode%\stepcounter{equation}\eqno{\theequation}\def\@currentlabel{(\theequation)}
+    \stepcounter{equation}\eqno{\theequation}\def\@currentlabel{\theequation}%
+    \fi%
+    \@bsphack%
+    \protected@write\@auxout{}% current label name, page of label, label context (environments)
+    {\string\newlabel{#1}{{\@currentlabel}{\@currentlabeltitle}{{\@pagenumberstyle}{\the\c@page}}{\@currentlabelcontext}}}
+    \@esphack%
+}%
+
+% get reference data from the aux file to post process it
+% save the data of label #1 in command #2
+% label name
+\def\@currentlabelref#1#2{%
+    \expandafter\let\expandafter#2\csname r@#1\endcsname%
+    \expandafter\expandafter\expandafter\def%
+    \expandafter\expandafter\expandafter#2%
+    \expandafter\expandafter\expandafter{%
+        \expandafter\@firstoffour#2}}%
+
+% page of label
+\def\@pageref#1#2{%
+    \expandafter\let\expandafter#2\csname r@#1\endcsname%
+    \expandafter\expandafter\expandafter\def%
+    \expandafter\expandafter\expandafter#2%
+    \expandafter\expandafter\expandafter{%
+        \expandafter\@thirdoffour#2}%
+    \edef#2{\expandafter\@secondoftwo#2}%
+}% test
+
+% recapture the page numbering style
+\def\@pagenumberstyleref#1#2{%
+    \expandafter\let\expandafter#2\csname r@#1\endcsname%
+    \expandafter\expandafter\expandafter\def%
+    \expandafter\expandafter\expandafter#2%
+    \expandafter\expandafter\expandafter{%
+        \expandafter\@thirdoffour#2}%
+    \edef#2{\expandafter\@firstoftwo#2}%
+}% test
+
+% context of label
+\def\@currentlabelcontextref#1#2{%
+    \expandafter\let\expandafter#2\csname r@#1\endcsname%
+    \expandafter\expandafter\expandafter\def%
+    \expandafter\expandafter\expandafter#2%
+    \expandafter\expandafter\expandafter{%
+        \expandafter\@thirdoffour#2}}%
+
+% context of label
+\def\@currentlabelcontextref#1#2{%
+    \expandafter\let\expandafter#2\csname r@#1\endcsname%
+    \expandafter\expandafter\expandafter\def%
+    \expandafter\expandafter\expandafter#2%
+    \expandafter\expandafter\expandafter{%
+        \expandafter\@fourthoffour#2}}%
+
+%\let\@chapter\@@chapter
+%\def\@chapter{\@@chapter
+%    \let\@currentlabelcontext\@@currentlabelcontext%
+%    \def\@currentlabelcontext{Hallo \@@currentlabelcontext}}
+
+%    \g@addto@macro{\paragraph}{\gdef\@currentlabelkind{paragraph}}
+
+%% costum equation environments (see latex.ltx)
+%\def\equation{$$\refstepcounter{equation}}
+%\def\endequation{\eqno \hbox{\@eqnnum}$$\@ignoretrue}
+%\def\@eqnnum{{\normalfont \theequation}}
+%\def\theequation{(\arabic{equation})}
+
+\def\eqalign#1{\null\,\vcenter{\openup1\jot \m@th
+\ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
+\crcr#1\crcr}}\,}
+
+\AtBeginDocument{
+
+%  page threshold
+%  if on the same double page then do not show page reference othwise show page reference; 
+%  #1 current page and #2 page reference
+\def\@pagerefthreshold{0}
+
+% define double page distance command
+% TODO
+
+\setstring{see}{cf.}
+
+% reference command
+% automated page referencing
+% compute page counter difference and decide based on threshold
+% currentlabelcontextstring --- string to occur in brackets     
+% automated context references
+\newcommand{\autoref}[1]{%   TODO : pages are not referenced correctly
+        \@pageref{#1}{\@@pageref}%
+        \@pagenumberstyleref{#1}{\@@pagenumberstyleref}%
+        \@currentlabelref{#1}{\@@currentlabelref}%
+        \@currentlabelcontextref{#1}{\@@currentlabelcontextref}%
+        \def\@@currentlabelcontextstring{}%
+        \newcount\@tmpa%
+        \newcount\@tmpb%
+        \@tmpa=\@@pageref%
+        \@tmpb=\the\c@page\relax%
+        \advance\@tmpa by 1%
+        \advance\@tmpb by 1%
+        \divide\@tmpa by 2%
+        \divide\@tmpb by 2%
+        \advance\@tmpb by -\@tmpa%
+        \ifnum\@tmpb>\@pagerefthreshold%
+        {%
+        \gdef\@@currentlabelcontextstring{%
+        \pageabbrev~\stylednumber{\@@pagenumberstyleref}{\@@pageref}}%
+        }%
+        \fi%
+        \ifmmode%
+        \textrm{\@@currentlabelref}
+        \else%
+        \ifx\@@currentlabelcontextstring\empty%
+        \@@currentlabelref
+        \else%
+        \@@currentlabelref\space(\@@currentlabelcontextstring)%
+        \fi%
+        \fi%
+    }
+
+    % return only the reference item (number)
+    \DeclareRobustCommand{\theref}[1]{%
+        \@currentlabelref{#1}{\@@currentlabelref}%
+        \@@currentlabelref%
+    }
+
+    
+    % for quick referencing
+    \def\see#1{%
+        (\getstring{see}~\autoref{#1})%
+    }% fix : pages not in brackets TODO
+}%
+
+
+\endinput
+
+%%% Local Variables: 
+%%% mode: latex
+%%% End: 

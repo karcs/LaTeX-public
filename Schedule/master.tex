@@ -1,0 +1,128 @@
+% Vorlage fuer Stundenplaene (von Christina, Sept. 2007)
+% --------------------------------------------------------------
+% 1. Die Veranstaltungen werden mit dem Kommando 
+% \va{Veranstaltungsbezeichnung}{Veranstaltungsart}{Raum}
+% in der unteren Tabelle eingefuegt. 
+%
+% 2. Geht eine Veranstaltung ueber
+% zwei Stunden, so benutze man den Befehl
+% \dzv{...}
+% wobei in den Klammern die Veranstaltung steht (s.o.). Die Zelle der
+% Tabelle unter dieser muss dann frei bleiben. (Zur Erinnerung kann man
+% den Merker |so benutzen.) Ausserdem muss dann eine Zeilenhoehenkorrektur 
+% \hoehe in zwei Zellen aus diesen beiden Zeilen eingefuegt werden. Auf 
+% diesen duerfen die Befehle \dzv{} und \dzvv{} nicht angewendet werden.
+%
+% 3. Um zwei sich ueberschneidenden Veranstaltungen einzutragen, kann man
+% \vaa{Veranstaltung1/ Veranstaltung2}{Art1}{Raum1}{Art2}{Raum2}
+% benutzen. 
+%
+% 4. Gehen diese ueber zwei Stunden, so kann man sie mithilfe von
+% \dzvv{...} 
+% zusammenfassen, Benutzung wie oben. 
+%
+% 5. Die Stundentrennlinien koennen von Spalte1 bis Spalte2 mit 
+% \cline{Spalte1-Spalte2} gezogen werden.
+
+
+
+
+\documentclass[a4paper, landscape]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[right=1cm, left=1cm, top=1.5cm, bottom=1.5cm,noheadfoot]{geometry}
+\usepackage{multirow}
+\usepackage{booktabs}
+%\usepackage{lscape}
+
+\newlength{\spv}
+\setlength{\spv}{0.15\textwidth} % Die Breite der Spalten fuer die Veranstaltungen
+\newlength{\spz}
+\setlength{\spz}{0.05\textwidth} % Die Breite der Spalte fuer die Zeit
+
+\newcommand{\va}[3]{\begin{minipage}{\spv} % Eine Veranstaltung
+		{\vspace{5pt}\begin{center} \hspace{0pt} #1 \\  % Veranstaltung
+					\tiny \hspace{0pt} #2  % Art
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #3}  % Raum
+		\end{center}}
+	\end{minipage}}
+\newcommand{\vaa}[5]{\begin{minipage}{\spv} % Zwei sich ueberschneidende Veranstaltungen
+		{\vspace{5pt}\begin{center} \hspace{0pt} #1 \\  % Veranstaltung1/ Veranstaltung2
+					\tiny \hspace{0pt} #2  % Art1
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #3}\\  % Raum1
+					\tiny \upshape\hspace{0pt} #4  % Art2
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #5}  % Raum2
+		\end{center}}
+	\end{minipage}}
+
+\renewcommand{\k}[1]{} % Kommentar
+\newcommand{\so}{} % heisst: siehe oben, als Kommentar
+
+\newcommand{\hoehe}{\begin{minipage}{\spv}{\vspace{23pt}}\end{minipage}}% Eine Zeilenhoehenkorrektur, 
+					% die in zwei freie Zellen in zwei auf einander folgendnen Zeilen 
+					% eingefuegt werden muss, wenn sich zwei Veranstaltungen ueberschneiden:
+\newcommand{\dzv}[1]{\multirow{2}{*}{#1}} % Blockveranstaltung ueber zwei Stunden
+\newcommand{\dzvv}[1]{\multirow{2}{*}[7pt]{\centering #1}} % Das gleiche, nur fuer Veranstaltungen, 
+					% die sich ueberschneiden
+\newcommand{\dzz}[1]{\multirow{2}{*}{\centering{#1}}} % Zeitblock
+
+\definecolor{grau}{gray}{0.9}
+
+
+\begin{document}
+\pagestyle{empty}
+ %%%% Ueberschrift %%%%
+\begin{center}
+\fcolorbox{black}{grau}{\parbox{0.7\textwidth}{\vspace{-8pt}
+	\begin{center}
+		\textbf{Stundenplan f"ur das SoSe 2014} 
+	\end{center}\vspace{-8pt}}}
+\end{center}
+%%%%%%%
+% Hier beginnt der Stundenplan.
+\begin{tabular}{c|*{5}{|c}}
+   \toprule
+ & \textbf{Montag} & \textbf{Dienstag} & \textbf{Mittwoch} & \textbf{Donnerstag} & \textbf{Freitag} \\
+\midrule \midrule
+	7.30\,-\,9.00	
+ & \va{FSG}{Ü}{Wu5 115}
+ & \va{KAT}{VL}{WIL A120}	
+ & \va{SCHTECH}{VL}{BAR SCHÖ}
+ & \va{}{}{}
+ & \va{NTECH}{Ü}{BAR SCHÖ}                                                                          \\\midrule
+	9.20\,-\,10.50
+ & \va{FSG}{Ü}{Wu5 115}
+ & \va{HASK}{Ü/VL}{INF E042}	
+ & \va{HANA}{VL/Ü}{WIL C129}	
+ & \va{INFTH}{Ü}{GÖR 226H}	
+ & \va{KONGEO}{VL/Ü}{A120}                                                                          \\\midrule
+	11.10\,-\,12.40
+ & \va{FSG}{Ü}{Wu5 115}	
+ & \va{HANA}{VL/Ü}{WIL C129}	
+ & \va{}{}{}
+ & \va{SCHTECH}{Ü}{BAR SCHÖ}	
+ & \va{}{}{}                                                                                        \\\midrule
+	13.00\,-\,15.30	
+ & \va{OPT}{VL}{WIL C129}	
+ & \va{KONGEO}{VL}{WIL A120}	
+ & \va{}{}{}	
+ & \va{}{}{}	
+ & \va{DGEO}{VL}{WIL C129}                                                                          \\\midrule
+	15.50\,-\,16.20
+ & \va{ALGSTR}{VL/Ü}{WIL C133}	
+ & \va{}{}{}	
+ & \va{ALGSTR}{VL/Ü}{WIL C133}	
+ & \va{DGEO}{VL/Ü}{WIL C132}	
+ & \va{RNETZ}{Ü}{WIL C103}                                                                          \\\midrule
+        16.40\,-\,18.10
+ & \va{OL}{}{GG/Nöth. Str.}	
+ & \va{SCPROP}{VL}{WIL A317}	
+ & \va{}{}{}	
+ & \va{DB}{Ü}{WIL C106}	
+ & \va{}{}{}                                                                                        \\
+\bottomrule
+\end{tabular}                                                                                       \\
+% Wenn noch etwas Platz ist, kann man hier einige Hinweise hinschreiben. Sonst koennen sie auch auf der Rueckseite stehen.
+
+\end{document}

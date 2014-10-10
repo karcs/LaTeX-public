@@ -1,0 +1,12 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdftex 2014.10.4)  4 OCT 2014 15:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\input master.tex
+
+! Emergency stop.
+<*> \input master.tex
+                     
+*** (job aborted, file error in nonstop mode)
+
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{ball2012setsI}
+{\sc Ball, S.}
+\newblock On sets of vectors of a finite vector space in which every subset of
+  basis size is a basis.
+\newblock {\em J. Eur. Math. Soc 14}, 3 (2012), 733--748.
+
+\bibitem{ball1997maxkmarcs}
+{\sc Ball, S., Blokhuis, A., and Mazzocca, F.}
+\newblock Maximal arcs in desarguesian planes of odd order do not exist.
+\newblock {\em Combinatorica 17}, 1 (1997), 31--41.
+
+\bibitem{ball2012setsII}
+{\sc Ball, S., and De~Beule, J.}
+\newblock On sets of vectors of a finite vector space in which every subset of
+  basis size is a basis ii.
+\newblock {\em Designs, Codes and Cryptography 65}, 1-2 (2012), 5--14.
+
+\bibitem{handbookincgeokmarcs}
+{\sc Beutelspacher, A.}
+\newblock {\em Handbook of Incidence Geometry}.
+\newblock p.~120.
+
+\bibitem{caullery2014classexchypero}
+{\sc Caullery, F., and Schmidt, K.-U.}
+\newblock On the classification of hyperovals.
+\newblock {\em arXiv preprint arXiv:1403.2880\/} (2014).
+
+\bibitem{orlik1992arrangements}
+{\sc Orlik, P., and Terao, H.}
+\newblock {\em Arrangements of hyperplanes}, vol.~300.
+\newblock Springer, 1992.
+
+\bibitem{knesevals}
+{\sc Wilson, R.}
+\newblock Algebraic techniques in extremal combinatorics, graph theory, and
+  finite geometry, 2011.
+\newblock
+  \url{http://www.math.caltech.edu/~2011-12/2term/ma192b/kneser-evals.pdf}.
+
+\bibitem{zas}
+{\sc Zaslavsky, T.}
+\newblock Facing up to arrangements: face-count formulas for partitions of
+  space by hyperplanes.
+\newblock {\em Memoirs of the American Mathematical Society 1}, 154 (1975).
+
+\end{thebibliography}

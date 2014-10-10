@@ -1,0 +1,120 @@
+\documentclass[8pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\input{../Config/math.tex}
+\begin{document}
+\title{Various Notes}
+\author{Jakob Schneider}
+\date{\today}
+\maketitle
+\section{Preliminaries}
+
+Here, I assemble some notes on various interesting subjects.
+
+\begin{lemma}[Riesz' rising sun lemma]
+Let $f:[a,b]\to\reals$ be a continuous function. Define the \emph{set
+ of shadowed points} $S$ by
+\begin{equation}
+S:=\{x\in [a,b]:\exists y\in[a,b]:(y>x\lgand f(y)<f(x)\}\text{.}
+\end{equation}
+Then it holds that
+\begin{enumerate}
+\item $S$ is open within $[a,b)$. 
+\item If $(a',b')$ is a maximal open interval within $S$ then 
+\begin{enumerate}
+\item$f(a')=f(b')$ if $a'\neq a$.
+\item $f(a')\leq f(b')$ if $a'=a$.
+\item $\forall x\in(a',b'):f(x)<f(b')$. 
+\end{enumerate}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The set $S$ can be written as
+\begin{align}
+S &= \union_{y\in[a,b]}\{x\in[a,b]:x<y \lgand f(x)<f(y)\}\\
+  &= \union_{y\in[a,b]}(\{x\in[a,b):x<y\}\setmeet\{x\in[a,b):f(x)<f(y)\})
+\end{align}
+which is open as a union of finite intersection of open sets.
+To prove the second claim, let $a',b'\in [a,b]$ such that
+$(a',b')\subseteq S$ is a maximal open interval (it may happen that also
+$a'\in S$ if $a'=a$, but $b'\not\in S$ as $S$ is open within $[a,b)$). Now, define
+\begin{equation}
+b'':=\min\{x\in[b',b]:f(x)=\max_{y\in[a'b]}{f(y)}\}\text{.}
+\end{equation}
+(Due to the continuity of $f$ and as $[b',b]$ is compact this minimum exists and equals the
+infimum of the same set.) We show that $b''=b'$. Observe that for
+$x\in[b',b'')$ it holds that $x<b''$ and $f(x)<f(b'')$ from which we
+deduce that $x\in S$ by the definition of $S$.
+Thus it follows that $(a',b')\setjoin[b',b'')=(a',b'')\subseteq S$
+which implies $b''=b'$ as $(a',b')$ is a maximal open interval within
+$S$.
+
+Let $x\in(a',b')$. By the definition of $S$ there exists $y\in(x,b]$
+with $f(x)<f(y)$. Now, using the last fact we have that
+$f(b')=f(b'')>f(y)$ if $y>b'$. Thus, there exists $y\in(x,b']$ such
+that $f(x)<f(y)$. This shows, that $\rest{f}_{[x,b']}$ does not attain its
+maximum in $x$. Now let $z\in[x,b']$ such that
+$f(z)=\max_{y\in[x,b']}{f(y)}$. Then $f(z)=\max_{y\in[z,b']}{f(y)}$
+from which we deduce that $z=b'$ for if $z\in(a',b')$ would lead to a
+contradiction by the last fact. Thus $f(x)<f(b')$.
+
+As $f$ is continuous, it follows that $f(a')\leq f(b')$. If $a<a'$
+then by the maximality of $(a',b')$ we have that $a'\notin S$ from
+which we deduce that $f(a')\geq f(b')$ from the above, which gives $f(a')=f(b')$. 
+\end{proof}
+
+\section{Functions and relations}
+
+\begin{definition}[binary relation]
+Let $A, B\in\Set$. Then we define the \new{Cartesian product} of $A$
+and $B$ as $A\times B = \{(a,b):a\in A\lgand b\in B\}$.
+A \new{binary relation} $R$ between $A$ and $B$ is a subset of $A\times B$.
+\end{definition}
+
+\paragraph{Remarks.}
+\begin{enumerate}
+\item The Cartesian product $A\times B$ is a direct product of $A$ and $B$
+in the categorical sense (thus the notation coincides 'up to
+isomorphism' with the notation for the direct product).
+\item Here, the
+tuple $(a,b)$ is defined as $\{\{a\},\{a,b\}\}$.
+\item For convenience, we abbreviate $(a,b)\in R$ by $aRb$, $\{a\in A:
+  aRb\}$ by $Rb$ and $\{b\in B: aRb\}$ by $aR$.
+\end{enumerate}
+
+\begin{definition}[Composition of binary relations]
+Let $R\subseteq A\times B$ and $S\subseteq B\times C$. Then the
+composition of $R$ and $S$ is defined as $R\compose S = \{(a,c)\in
+A\times C: \exists b\in B: aRbSc\}$.
+\end{definition}
+
+\begin{definition}[antisymmetric]
+A binary relation $R\subset A\times A$ is called \new{antisymmetric}
+if for $a,b\in A$ we have that $aRb$ and $bRa$ imply $a=b$.
+For more general relations, we note these relational sets by $R_a$
+(stabilizer notation).
+\end{definition}
+
+\begin{definition}[identifying or separating relation]
+A binary relation $R\subset \prod_{i\in I}{A_i}$ is called \new{separating}
+or \new{identifying} in $A_j$ if an object of $A_j$ is identified by its relational
+behavior. That is, for $a,b\in A_j$ the equality
+$\pi_j^{-1}(a)\intersect R=\pi_j^{-1}(b)\intersect R$ implies $a=b$
+where $\pi_j$ is the projection from the product $\prod_{i\in
+  I}{A_i}$ onto the $j$-th factor.
+\end{definition}
+
+\paragraph{Remarks}
+\begin{enumerate}
+\item The notion of separating relations appears in many areas
+  (e.g. Hausdorff-spaces, dual pairings etc.).
+\end{enumerate}
+
+
+
+Functions $(f(x),x)$ for the correctness of composition.
+
+\end{document}

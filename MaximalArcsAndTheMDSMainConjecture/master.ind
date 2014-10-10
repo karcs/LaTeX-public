@@ -1,0 +1,92 @@
+\begin{theindex}
+
+  \item $(k,m)$-arc, 1
+  \item $(m,n)$-secant, 1
+  \item $\mathcal  {O}$-polynomial, 4
+  \item $\mathrm  {PGL}$-equivalent, 6
+  \item $\mathrm  {P\Gamma L}$-equivalent, 6
+  \item \textsc  {Cauchy} matrix, 24
+  \item \textsc  {Cauchy} representation, 24
+  \item \textsc  {Hamming} distance, 8
+  \item \textsc  {Hamming} weight, 8
+  \item \textsc  {M\IeC {\"o}bius} function, 14
+  \item \textsc  {Poincar\IeC {\'e}} polynomial, 14
+  \item \textsc  {Vandermonde} matrix, 22
+  \item \textsc  {Vandermonde} representation, 22
+
+  \indexspace
+
+  \item associated linear form, 18
+  \item associated polynomial, 18
+
+  \indexspace
+
+  \item bisecant, 1
+
+  \indexspace
+
+  \item central generic arrangement of hyperplanes, 8
+  \item check matrix, 8
+  \item complete $(k,m)$-arc, 1
+
+  \indexspace
+
+  \item dual arc, 6
+  \item dual code, 9
+  \item duality, 9
+
+  \indexspace
+
+  \item extended \textsc  {Cauchy} matrix, 24
+  \item extended \textsc  {Reed-Solomon} code, 22
+  \item external line, 1
+
+  \indexspace
+
+  \item generator matrix, 8
+  \item generic arrangement of hyperplanes, 8
+
+  \indexspace
+
+  \item hyperoval, 3
+
+  \indexspace
+
+  \item incidence function, 14
+
+  \indexspace
+
+  \item maximal $(k,m)$-arc, 1
+  \item maximum distance separable code, 9
+  \item MDS code, 9
+  \item minimum weight, 8
+
+  \indexspace
+
+  \item normal rational curve, 17
+  \item nucleus, 3
+
+  \indexspace
+
+  \item principally regular matrix, 11
+  \item projective arc, 6
+
+  \indexspace
+
+  \item representation, 6
+
+  \indexspace
+
+  \item tangent, 1
+  \item totally regular matrix, 11
+
+  \indexspace
+
+  \item uniquely representable, 13
+
+  \indexspace
+
+  \item weakly generic, 13
+  \item weight of a vector, 8
+
+\end{theindex}

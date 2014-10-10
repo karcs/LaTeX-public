@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: AnElementaryProofOfPerronFrobeniusTheorem.aux
+The style file: acm.bst
+Database file #1: mybib.bib
+Warning--empty journal in MSSInterFam
+You've used 6 entries,
+            2253 wiz_defined-function locations,
+            566 strings with 4713 characters,
+and the built_in function-call counts, 1358 in all, are:
+= -- 125
+> -- 43
+< -- 0
++ -- 19
+- -- 12
+* -- 76
+:= -- 239
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 22
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 61
+empty$ -- 130
+format.name$ -- 12
+if$ -- 282
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 33
+num.names$ -- 13
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 52
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 1
+while$ -- 13
+width$ -- 7
+write$ -- 61
+(There was 1 warning)

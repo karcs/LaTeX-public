@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+\input{../Config/german.tex}
+\usepackage[uprightgreeks]{kpfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\begin{document}
+
+\pagestyle{empty}
+\oddsidemargin = -40pt
+\headsep = -70pt
+
+\begin{table}
+\large
+\title{Stundenplan Kuno WiSe 2014/2015}
+%\centering{
+Studenplan Kuno WiSe 2014/2015
+%}
+
+\small{Stand: 28. September 2014}
+\vspace{0.5 cm}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ &Montag & Dienstag &Mittwoch & Donnerstag &Freitag \\ \hline
+\multirow{3}{*}{7.30 - 9.00} & &Galoistheorie &&GEOGT &  \\ 
+ & &WIL A124 & &WIL C133 V&\\ 
+ & &Pöschel & &Thom &\\  \hline
+\multirow{3}{*}{9.20 - 10.50} & & &  & &\\ 
+& & & & &\\ 
+& & & & &\\ \hline
+\multirow{3}{*}{11.10 - 12.40}&  & & &  &GEOGT \\
+& & & & &WIL A120\\ 
+&&&  & &Thom\\ \hline
+\multirow{3}{*}{13.00 - 14.30} &AMGEO&AMGEO & &  & \\
+&WIL A124 V&WIL C203 V& & & \\ 
+&Netzer&Netzer &  & &\\\hline 
+\multirow{3}{*}{14.50 - 16.20}&&&DESLOG&&  \\ 
+&&&  Ü& &\\ 
+&&&Baader/Turhan & &\\ \hline
+\multirow{3}{*}{16.40 - 18.10}&ANGALG &DESLOG & &DESLOG/ANGALG &  \\
+ &WIL A124 V & V&&V/C133 V&  \\
+ &Zumbrägel &Baader/Turhan & & {\small {Baader/Turhan/Zumbrägel}}& \\ \hline
+\end{tabular}
+\end{table}
+\vspace{20mm}
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\input{../Config/german.tex}
+\usepackage[de]{mathenv}
+\input{../Config/math.tex}
+\usepackage{tikz}
+\usepackage{booktabs}
+
+\begin{document}
+
+\hfill{03.06.2014}
+
+\end{document}

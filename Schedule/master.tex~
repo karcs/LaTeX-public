@@ -1,0 +1,174 @@
+% Vorlage fuer Stundenplaene (von Christina, Sept. 2007)
+% --------------------------------------------------------------
+% 1. Die Veranstaltungen werden mit dem Kommando 
+% \va{Veranstaltungsbezeichnung}{Veranstaltungsart}{Raum}
+% in der unteren Tabelle eingefuegt. 
+%
+% 2. Geht eine Veranstaltung ueber
+% zwei Stunden, so benutze man den Befehl
+% \dzv{...}
+% wobei in den Klammern die Veranstaltung steht (s.o.). Die Zelle der
+% Tabelle unter dieser muss dann frei bleiben. (Zur Erinnerung kann man
+% den Merker |so benutzen.) Ausserdem muss dann eine Zeilenhoehenkorrektur 
+% \hoehe in zwei Zellen aus diesen beiden Zeilen eingefuegt werden. Auf 
+% diesen duerfen die Befehle \dzv{} und \dzvv{} nicht angewendet werden.
+%
+% 3. Um zwei sich ueberschneidenden Veranstaltungen einzutragen, kann man
+% \vaa{Veranstaltung1/ Veranstaltung2}{Art1}{Raum1}{Art2}{Raum2}
+% benutzen. 
+%
+% 4. Gehen diese ueber zwei Stunden, so kann man sie mithilfe von
+% \dzvv{...} 
+% zusammenfassen, Benutzung wie oben. 
+%
+% 5. Die Stundentrennlinien koennen von Spalte1 bis Spalte2 mit 
+% \cline{Spalte1-Spalte2} gezogen werden.
+
+
+
+
+\documentclass[a4paper]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage{color}
+\usepackage[right=1cm, left=1cm, top=1.5cm, bottom=1.5cm,noheadfoot]{geometry}
+\usepackage{multirow}
+%\usepackage{lscape}
+
+\newlength{\spv}
+\setlength{\spv}{0.15\textwidth} % Die Breite der Spalten fuer die Veranstaltungen
+\newlength{\spz}
+\setlength{\spz}{0.05\textwidth} % Die Breite der Spalte fuer die Zeit
+
+\newcommand{\va}[3]{\begin{minipage}{\spv} % Eine Veranstaltung
+		{\vspace{5pt}\begin{center} \hspace{0pt} #1 \\  % Veranstaltung
+					\tiny \hspace{0pt} #2  % Art
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #3}  % Raum
+		\end{center}}
+	\end{minipage}}
+\newcommand{\vaa}[5]{\begin{minipage}{\spv} % Zwei sich ueberschneidende Veranstaltungen
+		{\vspace{5pt}\begin{center} \hspace{0pt} #1 \\  % Veranstaltung1/ Veranstaltung2
+					\tiny \hspace{0pt} #2  % Art1
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #3}\\  % Raum1
+					\tiny \upshape\hspace{0pt} #4  % Art2
+					\hspace{\fill}	\footnotesize\itshape{\hspace{0pt} #5}  % Raum2
+		\end{center}}
+	\end{minipage}}
+
+\renewcommand{\k}[1]{} % Kommentar
+\newcommand{\so}{} % heisst: siehe oben, als Kommentar
+
+\newcommand{\hoehe}{\begin{minipage}{\spv}{\vspace{23pt}}\end{minipage}}% Eine Zeilenhoehenkorrektur, 
+					% die in zwei freie Zellen in zwei auf einander folgendnen Zeilen 
+					% eingefuegt werden muss, wenn sich zwei Veranstaltungen ueberschneiden:
+\newcommand{\dzv}[1]{\multirow{2}{*}{#1}} % Blockveranstaltung ueber zwei Stunden
+\newcommand{\dzvv}[1]{\multirow{2}{*}[7pt]{\centering #1}} % Das gleiche, nur fuer Veranstaltungen, 
+					% die sich ueberschneiden
+\newcommand{\dzz}[1]{\multirow{2}{*}{\centering{#1}}} % Zeitblock
+
+%%% Alternative Definition mit Dozentennamen %%%
+%\newcommand{\va}[4]{\begin{minipage}{0.17\textwidth}
+%		{\vspace{5pt}\begin{center} \hspace{0pt} #1 \\  % Veranstaltung
+%					\small{\hspace{0pt}#2} \\ % Dozent
+%					\tiny \hspace{0pt} #3  % Art
+%					\hspace{\fill}	\itshape{\hspace{0pt} #4} % Raum
+%		\end{center}}
+%	\end{minipage}}
+\definecolor{grau}{gray}{0.9}
+
+
+\begin{document}
+\sffamily \small
+\pagestyle{empty}
+ %%%% Ueberschrift %%%%
+\begin{center}
+\fcolorbox{black}{grau}{\parbox{0.7\textwidth}{\vspace{-8pt}
+	\begin{center}
+		\textbf{Stundenplan f"ur das WiSe 07/\,08 \it{(f"ur so Leute)}} 
+	\end{center}\vspace{-8pt}}}
+\end{center}
+%%%%%%%
+\framebox{\framebox{
+% Hier beginnt der Stundenplan.
+\begin{tabular}{c|*{5}{|c}} 
+		& \textbf{Montag} & \textbf{Dienstag} & \textbf{Mittwoch} & \textbf{Donnerstag} & \textbf{Freitag}\\
+\hline \hline
+	% 8 bis 9 Uhr
+	\dzz{8\,-\,10}	
+	& \va{}{}{}
+	& \va{}{}{}	
+	& \va{}{}{}
+	& \va{}{}{}
+	& \va{}{}{}\\
+
+\cline{2-6}
+	% 9 bis 10 Uhr
+	& \va{}{}{}
+	& \va{}{}{}	
+	& \va{}{}{}
+	& \va{}{}{}
+	& \va{}{}{}\\
+\cline{1-6}
+	% 10 bis 11 Uhr}
+	\dzz{10\,-\,12}
+	& \va{}{}{}
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{} \\
+\cline{2-6}
+	% 11 bis 12 Uhr	
+	& \va{}{}{}
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{} \\
+\cline{1-6}
+	12\,-\,13	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{} \\
+\cline{1-6}
+	% 13 bis 14 Uhr
+	\dzz{13\,-\,15}
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}
+	& \va{}{}{}	
+	& \va{}{}{} \\
+\cline{2-6}
+	% 14 bis 15 Uhr	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{} \\
+\cline{1-6}
+	% 15 bis 16 Uhr
+	\dzz{15\,-\,17}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}\\
+\cline{2-6}
+	% 16 bis 17 Uhr	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}\\
+\cline{1-6}
+	17\,-\,18	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}	
+	& \va{}{}{}
+	& \va{}{}{} \\
+
+\end{tabular}
+}}\\
+% Wenn noch etwas Platz ist, kann man hier einige Hinweise hinschreiben. Sonst koennen sie auch auf der Rueckseite stehen.
+
+\end{document}

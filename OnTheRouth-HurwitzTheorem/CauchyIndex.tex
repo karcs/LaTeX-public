@@ -1,0 +1,137 @@
+\section{The \textsc{Cauchy} index}
+
+At this point it becomes reasonable to introduce a special parameter for rational functions from $\reels$ to $\reels$
+
+\begin{definition}[\textsc{Cauchy} index] Let $I\subset\reels$ be an open interval and $F:I\setminus P\to \reels$ be a continuous function where $P$ is a finite set of poles of $F$, i.e. for each $p\in P$ we have 
+\begin{equation}
+\lim_{x\upto p}{F(x)}=\pm\infty
+\end{equation}
+and 
+\begin{equation}
+\lim_{x\downto p}{F(x)}=\pm\infty\text{,}
+\end{equation}
+respectively. For $r\in\reels$ one defines the pointwise \textsc{Cauchy} \emph{index} of $F$ as
+\begin{equation}
+\cind_r(F):=\begin{cases}
+1 &: \lim_{x\upto r}{F(x)}=-\infty\wedge \lim_{x\downto r}{F(x)}=\infty\\
+-1 &: \lim_{x\upto r}{F(x)}=\infty\wedge \lim_{x\downto r}{F(x)}=-\infty\\
+0 &: \text{otherwise}
+\end{cases}\text{.}
+\end{equation}
+Then the Cauchy index of $F$ on the interval $I$ is defined as
+\begin{equation}
+\cind(F) := \sum_{r\in I}{I_r(F)}\text{.}
+\end{equation}
+\end{definition}
+
+Starting from this definition it is obvious that the operator $\mathcal{I}$ has several nice properties.
+
+\begin{lemma}
+Let $F:\reels\to\reels$ be rational and non-zero. Then one has 
+\begin{equation}
+\mathcal{I}(F)=-\mathcal{I}(F^{-1})\text{.}
+\end{equation}
+Moreover, if $P,Q\in\reels[X]$ have no common zero then one has 
+\begin{equation}
+\mathcal{I}\left(\frac{P}{Q}\right) = \mathcal{I}\left(\frac{\res(P,Q)}{Q}\right)\text{.}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\textbf{The first statement:} Let $p_1,\ldots,p_l\in\reels\unify\{-\infty,\infty\}$ be the poles of $F$ on the real line ordered by ascending order. Consider the interval $(p_i,p_{i+1})$ for $i\in\{1,\ldots,l-1\}$. If 
+
+\begin{equation}
+\sgn(\lim_{r\downto p_i}{F(r)})=\sgn(\lim_{r\upto p_{i+1}}{F(r)})\label{eq5}
+\end{equation}
+
+then one gets that there must be equally many zeros $r_0$ of $F$ in $(p_i,p_{i+1})$ with $F'(r_0)<0$ as with $F'(r_0)>0$. Thus it directly follows that than
+
+\begin{equation}
+\mathcal{I}_{(p_i,p_{i+1})}(F^{-1})=0\text{.}
+\end{equation}  
+
+In the opposite case where
+
+\begin{equation}
+\sgn(\lim_{r\downto p_i}{F(r)})=-\sgn(\lim_{r\upto p_{i+1}}{F(r)})\label{eq6}
+\end{equation}
+
+one gets analogously that 
+
+\begin{equation}
+\mathcal{I}_{(p_i,p_{i+1})}(F^{-1})=\sgn(\lim_{r\downto p_i}{F(r)})\text{.}
+\end{equation} 
+
+Moreover, we then may compute $\mathcal{I}(F^{-1})$ by
+
+\begin{equation}
+\mathcal{I}(F^{-1}) = \sum_{i=1}^{l-1}{\mathcal{I}_{(p_i,p_{i+1})}(F^{-1})}+\mathcal{I}_\infty(F^{-1})
+\end{equation}
+
+From this consideration it is now clear, that we may assume there are no intervals $(p_i,p_{i+1})$ of the first type. To see this one checks that deleting them does not change $\mathcal{I}(F^{-1})$ and $\mathcal{I}(F)$.
+
+Analogously, we may delete two consecutive intervals of the second type $(p_i,p_{i+1})$ and $(p_{i+1},p_{i+2})$ ($i\in\{1,\ldots,l-2\}$) where one has 
+
+\begin{equation}
+\lim_{r\downto p_{i+1}}{F(r)} = \pm\infty\text{.}
+\end{equation}
+
+These arguments can also be done if one bound of an interval is $\pm\infty$.
+Proceeding this argument, one is left with the case that all intervals are of the second type and that for all $i,j\in\{1,\ldots,l\}$ we have 
+
+\begin{equation}
+\sgn(\lim_{r\downto p_i}{F(r)})=\sgn(\lim_{r\downto p_j}{F(r)}) \wedge \sgn(\lim_{r\upto p_i}{F(r)})=\sgn(\lim_{r\upto p_j}{F(r)})\text{.}
+\end{equation}
+
+It is then a routine matter to check the statement holds true.
+
+\textbf{The second statement} is obvious.
+\end{proof}
+
+\begin{remark}
+One can prove the first statement much faster considering the functions $\omega\mapsto P(\omega)\pm Q(\omega)\i$ where $F=P/Q$. The number of rotations of the curves of these functions in the complex plane around 0 is the same and directly connected with the two \textsc{Cauchy}-indices.
+\end{remark}
+
+\begin{definition}[Generalized \textsc{Sturm} chain]
+Let $I\subset\reels$ be an open interval. A \emph{generalized} \textsc{Sturm} \emph{chain} over $I$ is a finite sequence of continuous functions $(f_i)_{i=0}^n$ such that
+\begin{enumerate}
+	\item The functions $f_i:I\to\reels$ have only finitely many zeros ($i=0,\ldots,n$).
+	\item The function $\sgn{f_n}$ is constant on $I$.
+	\item If $f_i(\xi)=0$ for $\xi\in I$ and $i\in\{1,\ldots,n-1\}$, then $\sgn(f_{i-1})=-\sgn(f_{i+1})$.
+\end{enumerate}
+\end{definition}
+
+%% this one is needed for the next theorem
+
+\begin{definition}[Number of sign changes for a finite sequence]
+Let $(x_i)_{i=0}^n$ be a finite sequence. Let $(x_{i_j})_{j=0}^m$ be a subsequence of $(x_i)_{i=0}^n$ %which contains all non-zero entries of $x$ in the original order (i.e. $i_j$ is increasing)%
+. Then we define the \emph{number of sign changes} of $x=(x_i)_{i=0}^n$ by
+\begin{equation}
+\sgnc(x):=\frac{1}{2}\sum_{i=1}^m{\abs{\sgn(x_{i_j})-\sgn(x_{i_{j-1}})}}\text{.}
+\end{equation}
+\end{definition}
+
+%% the theorem -> connectoin Cauchy Index and gen. Sturm chains
+
+\begin{theorem}[Calculation of the \textsc{Cauchy} index by a generalized \textsc{Sturm} chain]
+Let $I=(a,b)\subset\reels$ be an open interval and $F:I\setminus P\to \reels$ be a continuous function where $P$ is a finite set of poles of $F$, i.e. for each $p\in P$ we have 
+\begin{equation}
+\lim_{x\upto p}{F(x)}=\pm\infty
+\end{equation}
+and 
+\begin{equation}
+\lim_{x\downto p}{F(x)}=\pm\infty\text{,}
+\end{equation}
+respectively. Let $(f_i)_{i=0}^n$ be a generalized \textsc{Sturm} chain such that 
+\begin{equation}
+F(\xi)=\frac{f_1(\xi)}{f_0(\xi)}
+\end{equation}
+for $\xi\in I\setminus P$. Then we have
+\begin{equation}
+\cind(F)=\sgnc(f_i(b))_{i=0}^n-\sgnc(f_i(a))_{i=0}^n\text{.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}

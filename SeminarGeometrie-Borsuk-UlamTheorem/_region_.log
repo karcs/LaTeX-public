@@ -1,0 +1,5070 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=prv_OnBorsukUlamsThoerem 2013.11.17)  17 NOV 2013 15:47
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**&prv_OnBorsukUlamsThoerem _region_.tex
+(./_region_.tex
+LaTeX2e <2011/06/27>
+Babel <3.9g> and hyphenation patterns for 78 languages loaded.
+CUSTOMISED FORMAT. Preloaded files:
+        .
+ article.cls    2007/10/19 v1.4h Standard LaTeX document class
+  size10.clo    2007/10/19 v1.4h Standard LaTeX file (size option)
+inputenc.sty    2008/03/30 v1.1d Input encoding file
+    utf8.def    2008/04/05 v1.1m UTF-8 support for inputenc
+   t1enc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+  ot1enc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+  omsenc.dfu    2008/04/05 v1.1m UTF-8 support for inputenc
+ amsmath.sty    2013/01/14 v2.14 AMS math features
+ amstext.sty    2000/06/29 v2.01
+  amsgen.sty    1999/11/30 v2.0
+  amsbsy.sty    1999/11/29 v1.2d
+  amsopn.sty    1999/12/14 v2.01 operator names
+amsfonts.sty    2013/01/14 v3.01 Basic AMSFonts support
+ amssymb.sty    2013/01/14 v3.01 AMS font symbols
+enumerate.sty    1999/03/05 v3.00 enumerate extensions (DPC)
+    math.tex
+  amsthm.sty    2004/08/06 v2.20
+   color.sty    2005/11/14 v1.0j Standard LaTeX Color (DPC)
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+  pdftex.def    2011/05/27 v0.06d Graphics/color for pdfTeX
+infwarerr.sty    2010/04/08 v1.3 Providing info/warning/error messages (HO)
+ ltxcmds.sty    2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+    umsa.fd    2013/01/14 v3.01 AMS symbols A
+    umsb.fd    2013/01/14 v3.01 AMS symbols B
+        .
+No file _region_.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+(/usr/share/texmf/tex/latex/preview/preview.sty
+Package: preview 2010/02/14 11.87 (AUCTeX/preview-latex)
+
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen112
+)
+(/usr/share/texmf/tex/latex/preview/prauctex.def
+No auxiliary output files.
+
+
+\hbadness=\count101
+\hfuzz=\dimen113
+(/usr/share/texmf/tex/latex/preview/prauctex.cfg))
+(/usr/share/texmf/tex/latex/preview/prfootnotes.def)
+\pr@snippet=\count102
+\pr@box=\box28
+\pr@output=\toks28
+
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen114
+\scratchbox=\box29
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen115
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks30
+)  !name(OnBorsukUlamsThoerem.tex) !offset(-3) 
+! Preview: Snippet 1 started.
+<-><->
+      
+l.22 \section
+             {Das Theorem}
+Not a real error.
+
+Preview: Tightpage -32891 -32891 32891 32891
+! Preview: Snippet 1 ended.(655359+0x26105517).
+<-><->
+      
+l.22 \section{Das Theorem}
+                          
+Not a real error.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+! Preview: Snippet 2 started.
+<-><->
+      
+l.24 \[
+        \Aop^a_b \sum_a^b \]
+Not a real error.
+
+! Preview: Snippet 2 ended.(2022520+0x14051869).
+<-><->
+      
+l.24 \[ \Aop^a_b \sum_a^b \]
+                            
+Not a real error.
+
+[2]
+! Preview: Snippet 3 started.
+<-><->
+      
+l.26 $
+       \Aop^a_b \sum_a^b $
+Not a real error.
+
+! Preview: Snippet 3 ended.(648083+196611x2127784).
+<-><->
+      
+l.26 $ \Aop^a_b \sum_a^b $
+                          
+Not a real error.
+
+[3]
+! Preview: Snippet 4 started.
+<-><->
+      
+l.28 \[
+        \Aop^a_b =\sum^1_b\]
+Not a real error.
+
+! Preview: Snippet 4 ended.(2034170+0x14434160).
+<-><->
+      
+l.28 \[ \Aop^a_b =\sum^1_b\]
+                            
+Not a real error.
+
+[4]
+! Preview: Snippet 5 started.
+<-><->
+      
+l.33 Sei $
+          n\in\nats$. Dann sind die folgend Aussagen wahr und äquivalent:
+Not a real error.
+
+! Preview: Snippet 5 ended.(451470+25623x1667674).
+<-><->
+      
+l.33 Sei $n\in\nats$
+                    . Dann sind die folgend Aussagen wahr und äquivalent:
+Not a real error.
+
+[5]
+! Preview: Snippet 6 started.
+<-><->
+      
+l.35 \item Sei $
+                f:\sphere^n\to \reals^n$ stetig. Dann existiert ein $x\in\sp...
+
+Not a real error.
+
+! Preview: Snippet 6 ended.(455111+127431x3507838).
+<-><->
+      
+l.35 \item Sei $f:\sphere^n\to \reals^n$
+                                         stetig. Dann existiert ein $x\in\sp...
+
+Not a real error.
+
+[6]
+! Preview: Snippet 7 started.
+<-><->
+      
+l.35 ...\to \reals^n$ stetig. Dann existiert ein $
+                                                  x\in\sphere^n$, sodass $f(...
+
+Not a real error.
+
+! Preview: Snippet 7 ended.(451470+25623x1896368).
+<-><->
+      
+l.35 ...stetig. Dann existiert ein $x\in\sphere^n$
+                                                  , sodass $f(x)=f(-x)$.\lab...
+
+Not a real error.
+
+[7]
+! Preview: Snippet 8 started.
+<-><->
+      
+l.35 ...nn existiert ein $x\in\sphere^n$, sodass $
+                                                  f(x)=f(-x)$.\label{0}
+Not a real error.
+
+! Preview: Snippet 8 ended.(491520+163840x3934892).
+<-><->
+      
+l.35 ...t ein $x\in\sphere^n$, sodass $f(x)=f(-x)$
+                                                  .\label{0}
+Not a real error.
+
+[8]
+! Preview: Snippet 9 started.
+<-><->
+      
+l.36 \item Sei $
+                f:\sphere^n\to \reals^n$ stetig und antipodenerhaltend, d.h....
+
+Not a real error.
+
+! Preview: Snippet 9 ended.(455111+127431x3507838).
+<-><->
+      
+l.36 \item Sei $f:\sphere^n\to \reals^n$
+                                         stetig und antipodenerhaltend, d.h....
+
+Not a real error.
+
+[9]
+! Preview: Snippet 10 started.
+<-><->
+      
+l.36 ...s^n$ stetig und antipodenerhaltend, d.h. $
+                                                  f(-x)=-f(x)$ für alle $x\...
+
+Not a real error.
+
+! Preview: Snippet 10 ended.(491520+163840x4444618).
+<-><->
+      
+l.36 ...und antipodenerhaltend, d.h. $f(-x)=-f(x)$
+                                                   für alle $x\in\sphere^n$...
+
+Not a real error.
+
+[10]
+! Preview: Snippet 11 started.
+<-><->
+      
+l.36 ...nerhaltend, d.h. $f(-x)=-f(x)$ für alle $
+                                                  x\in\sphere^n$. Dann hat $...
+
+Not a real error.
+
+! Preview: Snippet 11 ended.(451470+25623x1896368).
+<-><->
+      
+l.36 ...h. $f(-x)=-f(x)$ für alle $x\in\sphere^n$
+                                                  . Dann hat $f$ eine Nullst...
+
+Not a real error.
+
+[11]
+! Preview: Snippet 12 started.
+<-><->
+      
+l.36 ...(x)$ für alle $x\in\sphere^n$. Dann hat $
+                                                  f$ eine Nullstelle.
+Not a real error.
+
+! Preview: Snippet 12 ended.(455111+127431x391398).
+<-><->
+      
+l.36 ...)$ für alle $x\in\sphere^n$. Dann hat $f$
+                                                   eine Nullstelle.
+Not a real error.
+
+[12]
+! Preview: Snippet 13 started.
+<-><->
+      
+l.37 ...ne antipodenerhaltende stetige Abbildung $
+                                                  f:\sphere^n\to\sphere^{n-1}$.
+
+Not a real error.
+
+! Preview: Snippet 13 ended.(533465+127431x4069448).
+<-><->
+      
+l.37 ...ge Abbildung $f:\sphere^n\to\sphere^{n-1}$
+                                                  .
+Not a real error.
+
+[13]
+! Preview: Snippet 14 started.
+<-><->
+      
+l.38 \item Es gibt keine stetige Abbildung $
+                                            f:\ball^n\to\sphere^{n-1}$, welc...
+
+Not a real error.
+
+! Preview: Snippet 14 ended.(533465+127431x4142266).
+<-><->
+      
+l.38 ...tige Abbildung $f:\ball^n\to\sphere^{n-1}$
+                                                  , welche antipodenerhalten...
+
+Not a real error.
+
+[14]
+! Preview: Snippet 15 started.
+<-><->
+      
+l.38 ...re^{n-1}$, welche antipodenerhaltend auf $
+                                                  \bound{\ball^n}$ ist.
+Not a real error.
+
+! Preview: Snippet 15 ended.(455111+0x1177983).
+<-><->
+      
+l.38 ...e antipodenerhaltend auf $\bound{\ball^n}$
+                                                   ist.
+Not a real error.
+
+[15]
+! Preview: Snippet 16 started.
+<-><->
+      
+l.39 \item Sei $
+                \{A_k\}_{k=0}^n$ eine Überdeckung der $\sphere^n$, derart, ...
+
+Not a real error.
+
+! Preview: Snippet 16 ended.(491520+185604x2455334).
+<-><->
+      
+l.39 \item Sei $\{A_k\}_{k=0}^n$
+                                 eine Überdeckung der $\sphere^n$, derart, ...
+
+Not a real error.
+
+[16]
+! Preview: Snippet 17 started.
+<-><->
+      
+l.39 ... $\{A_k\}_{k=0}^n$ eine Überdeckung der $
+                                                  \sphere^n$, derart, dass j...
+
+Not a real error.
+
+! Preview: Snippet 17 ended.(451470+0x720824).
+<-><->
+      
+l.39 ...{k=0}^n$ eine Überdeckung der $\sphere^n$
+                                                  , derart, dass jedes $A_k$...
+
+Not a real error.
+
+[17]
+! Preview: Snippet 18 started.
+<-><->
+      
+l.39 ...kung der $\sphere^n$, derart, dass jedes $
+                                                  A_k$ andipodenehraltend gl...
+
+Not a real error.
+
+! Preview: Snippet 18 ended.(447828+98303x813969).
+<-><->
+      
+l.39 ... der $\sphere^n$, derart, dass jedes $A_k$
+                                                   andipodenehraltend gleich...
+
+Not a real error.
+
+[18]
+! Preview: Snippet 19 started.
+<-><->
+      
+l.39 ... oder abgeschlossen ist, d.h. für jedes $
+                                                  x\in A_k$ gibt es eine Umg...
+
+Not a real error.
+
+! Preview: Snippet 19 ended.(447828+98303x1989513).
+<-><->
+      
+l.39 ...eschlossen ist, d.h. für jedes $x\in A_k$
+                                                   gibt es eine Umgebung $U\...
+
+Not a real error.
+
+[19]
+! Preview: Snippet 20 started.
+<-><->
+      
+l.39 ...r jedes $x\in A_k$ gibt es eine Umgebung $
+                                                  U\in\mathcal{U}(x)\interse...
+
+Not a real error.
+
+! Preview: Snippet 20 ended.(491520+163840x5276818).
+<-><->
+      
+l.39 ...in\mathcal{U}(x)\intersect\mathcal{U}(-x)$
+                                                  , sodass $A_k\intersect U$...
+
+Not a real error.
+
+[20]
+! Preview: Snippet 21 started.
+<-><->
+      
+l.39 ...{U}(x)\intersect\mathcal{U}(-x)$, sodass $
+                                                  A_k\intersect U$ offen ode...
+
+Not a real error.
+
+! Preview: Snippet 21 ended.(447828+98303x2061057).
+<-><->
+      
+l.39 ...\mathcal{U}(-x)$, sodass $A_k\intersect U$
+                                                   offen oder abgeschlossen ...
+
+Not a real error.
+
+[21]
+! Preview: Snippet 22 started.
+<-><->
+      
+l.39 ...tersect U$ offen oder abgeschlossen ist ($
+                                                  \mathcal{U}(x)$ ist hier d...
+
+Not a real error.
+
+! Preview: Snippet 22 ended.(491520+163840x1359508).
+<-><->
+      
+l.39 ...n oder abgeschlossen ist ($\mathcal{U}(x)$
+                                                   ist hier der Filter aller...
+
+Not a real error.
+
+[22]
+! Preview: Snippet 23 started.
+<-><->
+      
+l.39 ... ist hier der Filter aller Umgebungen um $
+                                                  x$). Dann enthält eines d...
+
+Not a real error.
+
+! Preview: Snippet 23 ended.(282168+0x374556).
+<-><->
+      
+l.39 ...st hier der Filter aller Umgebungen um $x$
+                                                  ). Dann enthält eines der...
+
+Not a real error.
+
+[23]
+! Preview: Snippet 24 started.
+<-><->
+      
+l.39 ...ebungen um $x$). Dann enthält eines der $
+                                                  A_j$ ein antipodales Paar....
+
+Not a real error.
+
+! Preview: Snippet 24 ended.(447828+187504x767661).
+<-><->
+      
+l.39 ...gen um $x$). Dann enthält eines der $A_j$
+                                                   ein antipodales Paar.\lab...
+
+Not a real error.
+
+[24]
+! Preview: Snippet 25 started.
+<-><->
+      
+l.40 \item Seien $
+                  \{B_k\}_{k=0}^n$ eine Überdeckung der $\sphere^n$, dann h...
+
+Not a real error.
+
+! Preview: Snippet 25 ended.(491520+185604x2460909).
+<-><->
+      
+l.40 \item Seien $\{B_k\}_{k=0}^n$
+                                   eine Überdeckung der $\sphere^n$, dann h...
+
+Not a real error.
+
+[25]
+! Preview: Snippet 26 started.
+<-><->
+      
+l.40 ... $\{B_k\}_{k=0}^n$ eine Überdeckung der $
+                                                  \sphere^n$, dann hat eine ...
+
+Not a real error.
+
+! Preview: Snippet 26 ended.(451470+0x720824).
+<-><->
+      
+l.40 ...{k=0}^n$ eine Überdeckung der $\sphere^n$
+                                                  , dann hat eine der Mengen...
+
+Not a real error.
+
+[26]
+! Preview: Snippet 27 started.
+<-><->
+      
+l.40 ...er $\sphere^n$, dann hat eine der Mengen $
+                                                  B_j$ Durchmesser 2, d.h. $...
+
+Not a real error.
+
+! Preview: Snippet 27 ended.(447828+187504x773236).
+<-><->
+      
+l.40 ...\sphere^n$, dann hat eine der Mengen $B_j$
+                                                   Durchmesser 2, d.h. $\cl{...
+
+Not a real error.
+
+[27]
+! Preview: Snippet 28 started.
+<-><->
+      
+l.40 ...ine der Mengen $B_j$ Durchmesser 2, d.h. $
+                                                  \cl{B_j}$ enthält ein ant...
+
+Not a real error.
+
+! Preview: Snippet 28 ended.(455111+187504x1355776).
+<-><->
+      
+l.40 ...engen $B_j$ Durchmesser 2, d.h. $\cl{B_j}$
+                                                   enthält ein antipodales ...
+
+Not a real error.
+
+[28]
+
+LaTeX Warning: Reference `1' on page 1 undefined on input line 45.
+
+! Preview: Snippet 29 started.
+<-><->
+      
+l.48 \subsection
+                {Beweis von (\ref{0}) nach (\ref{1})}
+Not a real error.
+
+
+LaTeX Warning: Reference `0' on page 1 undefined on input line 48.
+
+
+LaTeX Warning: Reference `1' on page 1 undefined on input line 48.
+
+! Preview: Snippet 29 ended.(589824+196608x26105517).
+<-><->
+      
+l.48 ...ction{Beweis von (\ref{0}) nach (\ref{1})}
+                                                  
+Not a real error.
+
+[29
+
+]
+! Preview: Snippet 30 started.
+<-><->
+      
+l.50 Man definiert wieder $
+                           f:\sphere^n\to\reals^n$ durch $f(x):=(\dist(x,A_1...
+
+Not a real error.
+
+! Preview: Snippet 30 ended.(455111+127431x3507838).
+<-><->
+      
+l.50 Man definiert wieder $f:\sphere^n\to\reals^n$
+                                                   durch $f(x):=(\dist(x,A_1...
+
+Not a real error.
+
+[30]
+! Preview: Snippet 31 started.
+<-><->
+      
+l.50 ...rt wieder $f:\sphere^n\to\reals^n$ durch $
+                                                  f(x):=(\dist(x,A_1),\ldots...
+
+Not a real error.
+
+! Preview: Snippet 31 ended.(491520+163840x10401485).
+<-><->
+      
+l.50 ...$f(x):=(\dist(x,A_1),\ldots,\dist(x,A_n))$
+                                                  . Dann erhalten wir nach V...
+
+Not a real error.
+
+[31]
+! Preview: Snippet 32 started.
+<-><->
+      
+l.50 ...Dann erhalten wir nach Voraussetzung ein $
+                                                  x\in\sphere^n$ sodass $f(x...
+
+Not a real error.
+
+! Preview: Snippet 32 ended.(451470+25623x1896368).
+<-><->
+      
+l.50 ...wir nach Voraussetzung ein $x\in\sphere^n$
+                                                   sodass $f(x)=f(-x)$. Gilt...
+
+Not a real error.
+
+[32]
+! Preview: Snippet 33 started.
+<-><->
+      
+l.50 ...Voraussetzung ein $x\in\sphere^n$ sodass $
+                                                  f(x)=f(-x)$. Gilt $f_i(x)\...
+
+Not a real error.
+
+! Preview: Snippet 33 ended.(491520+163840x3934892).
+<-><->
+      
+l.50 ...ng ein $x\in\sphere^n$ sodass $f(x)=f(-x)$
+                                                  . Gilt $f_i(x)\neq 0$ für...
+
+Not a real error.
+
+[33]
+! Preview: Snippet 34 started.
+<-><->
+      
+l.50 ...x\in\sphere^n$ sodass $f(x)=f(-x)$. Gilt $
+                                                  f_i(x)\neq 0$ für $i=1,\l...
+
+Not a real error.
+
+! Preview: Snippet 34 ended.(491520+163840x2624812).
+<-><->
+      
+l.50 ...$ sodass $f(x)=f(-x)$. Gilt $f_i(x)\neq 0$
+                                                   für $i=1,\ldots,n$, so m...
+
+Not a real error.
+
+[34]
+! Preview: Snippet 35 started.
+<-><->
+      
+l.50 ...s $f(x)=f(-x)$. Gilt $f_i(x)\neq 0$ für $
+                                                  i=1,\ldots,n$, so muss $x,...
+
+Not a real error.
+
+! Preview: Snippet 35 ended.(432226+127431x3276982).
+<-><->
+      
+l.50 ...$. Gilt $f_i(x)\neq 0$ für $i=1,\ldots,n$
+                                                  , so muss $x,-x\in A_0$ ge...
+
+Not a real error.
+
+[35]
+! Preview: Snippet 36 started.
+<-><->
+      
+l.50 ...i(x)\neq 0$ für $i=1,\ldots,n$, so muss $
+                                                  x,-x\in A_0$ gelten.
+Not a real error.
+
+! Preview: Snippet 36 ended.(447828+127431x3136619).
+<-><->
+      
+l.50 ...für $i=1,\ldots,n$, so muss $x,-x\in A_0$
+                                                   gelten.
+Not a real error.
+
+[36]
+! Preview: Snippet 37 started.
+<-><->
+      
+l.52 Anderenfalls gibt es ein $
+                               i\in \{1,\ldots,n\}$, sodass $f_i(x)=f_i(-x)=...
+
+Not a real error.
+
+! Preview: Snippet 37 ended.(491520+163840x3859526).
+<-><->
+      
+l.52 ...renfalls gibt es ein $i\in \{1,\ldots,n\}$
+                                                  , sodass $f_i(x)=f_i(-x)=0...
+
+Not a real error.
+
+[37]
+! Preview: Snippet 38 started.
+<-><->
+      
+l.52 ...ibt es ein $i\in \{1,\ldots,n\}$, sodass $
+                                                  f_i(x)=f_i(-x)=0$. Falls d...
+
+Not a real error.
+
+! Preview: Snippet 38 ended.(491520+163840x5431669).
+<-><->
+      
+l.52 ...\{1,\ldots,n\}$, sodass $f_i(x)=f_i(-x)=0$
+                                                  . Falls dann $x,-x\not\in ...
+
+Not a real error.
+
+[38]
+! Preview: Snippet 39 started.
+<-><->
+      
+l.52 ...$, sodass $f_i(x)=f_i(-x)=0$. Falls dann $
+                                                  x,-x\not\in A_i$ gilt, so ...
+
+Not a real error.
+
+! Preview: Snippet 39 ended.(455111+127431x3060804).
+<-><->
+      
+l.52 ...)=f_i(-x)=0$. Falls dann $x,-x\not\in A_i$
+                                                   gilt, so gibt es ein $j\i...
+
+Not a real error.
+
+[39]
+! Preview: Snippet 40 started.
+<-><->
+      
+l.52 ...n $x,-x\not\in A_i$ gilt, so gibt es ein $
+                                                  j\in \{0,\ldots,n\}\setmin...
+
+Not a real error.
+
+! Preview: Snippet 40 ended.(491520+163840x5441229).
+<-><->
+      
+l.52 ...es ein $j\in \{0,\ldots,n\}\setminus\{i\}$
+                                                  , sodass $x\in A_j$ (denn ...
+
+Not a real error.
+
+[40]
+! Preview: Snippet 41 started.
+<-><->
+      
+l.52 ...in \{0,\ldots,n\}\setminus\{i\}$, sodass $
+                                                  x\in A_j$ (denn $\{A_k\}_{...
+
+Not a real error.
+
+! Preview: Snippet 41 ended.(447828+187504x1943205).
+<-><->
+      
+l.52 ...dots,n\}\setminus\{i\}$, sodass $x\in A_j$
+                                                   (denn $\{A_k\}_{k=0}^n$ �...
+
+Not a real error.
+
+[41]
+! Preview: Snippet 42 started.
+<-><->
+      
+l.52 ...\setminus\{i\}$, sodass $x\in A_j$ (denn $
+                                                  \{A_k\}_{k=0}^n$ überdeck...
+
+Not a real error.
+
+! Preview: Snippet 42 ended.(491520+185604x2455334).
+<-><->
+      
+l.52 ... sodass $x\in A_j$ (denn $\{A_k\}_{k=0}^n$
+                                                   überdecken $\sphere^n$)....
+
+Not a real error.
+
+[42]
+! Preview: Snippet 43 started.
+<-><->
+      
+l.52 ...A_j$ (denn $\{A_k\}_{k=0}^n$ überdecken $
+                                                  \sphere^n$). Wenn nur $j=0...
+
+Not a real error.
+
+! Preview: Snippet 43 ended.(451470+0x720824).
+<-><->
+      
+l.52 ... $\{A_k\}_{k=0}^n$ überdecken $\sphere^n$
+                                                  ). Wenn nur $j=0$ diese Ei...
+
+Not a real error.
+
+[43]
+! Preview: Snippet 44 started.
+<-><->
+      
+l.52 ...0}^n$ überdecken $\sphere^n$). Wenn nur $
+                                                  j=0$ diese Eigenschaft hat...
+
+Not a real error.
+
+! Preview: Snippet 44 ended.(432226+127431x1508883).
+<-><->
+      
+l.52 ...$ überdecken $\sphere^n$). Wenn nur $j=0$
+                                                   diese Eigenschaft hat, so...
+
+Not a real error.
+
+[44]
+! Preview: Snippet 45 started.
+<-><->
+      
+l.52 ...$ diese Eigenschaft hat, so folgt wieder $
+                                                  x,-x\in A_0$. Also sei o.B...
+
+Not a real error.
+
+! Preview: Snippet 45 ended.(447828+127431x3136619).
+<-><->
+      
+l.52 ...nschaft hat, so folgt wieder $x,-x\in A_0$
+                                                  . Also sei o.B.d.A. $j\neq...
+
+Not a real error.
+
+[45]
+! Preview: Snippet 46 started.
+<-><->
+      
+l.52 ... wieder $x,-x\in A_0$. Also sei o.B.d.A. $
+                                                  j\neq 0$. Dann gilt aber $...
+
+Not a real error.
+
+! Preview: Snippet 46 ended.(455111+127431x1508883).
+<-><->
+      
+l.52 ...$x,-x\in A_0$. Also sei o.B.d.A. $j\neq 0$
+                                                  . Dann gilt aber $f_j(x)=f...
+
+Not a real error.
+
+[46]
+! Preview: Snippet 47 started.
+<-><->
+      
+l.52 ...o sei o.B.d.A. $j\neq 0$. Dann gilt aber $
+                                                  f_j(x)=f_j(-x)=0$ und $x\i...
+
+Not a real error.
+
+! Preview: Snippet 47 ended.(491520+187504x5547573).
+<-><->
+      
+l.52 ...\neq 0$. Dann gilt aber $f_j(x)=f_j(-x)=0$
+                                                   und $x\in A_j$. Wir könn...
+
+Not a real error.
+
+[47]
+! Preview: Snippet 48 started.
+<-><->
+      
+l.52 ...$. Dann gilt aber $f_j(x)=f_j(-x)=0$ und $
+                                                  x\in A_j$. Wir können als...
+
+Not a real error.
+
+! Preview: Snippet 48 ended.(447828+187504x1943205).
+<-><->
+      
+l.52 ...ilt aber $f_j(x)=f_j(-x)=0$ und $x\in A_j$
+                                                  . Wir können also jedenfa...
+
+Not a real error.
+
+[48]
+! Preview: Snippet 49 started.
+<-><->
+      
+l.52 ...o jedenfalls davon ausgehen, dass es ein $
+                                                  l\in\{1,\ldots,n\}$ existi...
+
+Not a real error.
+
+! Preview: Snippet 49 ended.(491520+163840x3842188).
+<-><->
+      
+l.52 ...ausgehen, dass es ein $l\in\{1,\ldots,n\}$
+                                                   existiert mit $\dist(x,A_...
+
+Not a real error.
+
+[49]
+! Preview: Snippet 50 started.
+<-><->
+      
+l.52 ...s ein $l\in\{1,\ldots,n\}$ existiert mit $
+                                                  \dist(x,A_l)=\dist(-x,A_l)...
+
+Not a real error.
+
+! Preview: Snippet 50 ended.(491520+163840x7238998).
+<-><->
+      
+l.52 ...existiert mit $\dist(x,A_l)=\dist(-x,A_l)$
+                                                   und $x\in A_l$.
+Not a real error.
+
+[50]
+! Preview: Snippet 51 started.
+<-><->
+      
+l.52 ...ert mit $\dist(x,A_l)=\dist(-x,A_l)$ und $
+                                                  x\in A_l$.
+Not a real error.
+
+! Preview: Snippet 51 ended.(447828+98303x1868225).
+<-><->
+      
+l.52 ...\dist(x,A_l)=\dist(-x,A_l)$ und $x\in A_l$
+                                                  .
+Not a real error.
+
+[51]
+! Preview: Snippet 52 started.
+<-><->
+      
+l.54 Im dem Falle, dass es eine Umgebung $
+                                          V$ von $x$ und $-x$ gibt, sodass $...
+
+Not a real error.
+
+! Preview: Snippet 52 ended.(447828+0x527929).
+<-><->
+      
+l.54 Im dem Falle, dass es eine Umgebung $V$
+                                             von $x$ und $-x$ gibt, sodass $...
+
+Not a real error.
+
+[52]
+! Preview: Snippet 53 started.
+<-><->
+      
+l.54 Im dem Falle, dass es eine Umgebung $V$ von $
+                                                  x$ und $-x$ gibt, sodass $...
+
+Not a real error.
+
+! Preview: Snippet 53 ended.(282168+0x374556).
+<-><->
+      
+l.54 ...m Falle, dass es eine Umgebung $V$ von $x$
+                                                   und $-x$ gibt, sodass $A_...
+
+Not a real error.
+
+[53]
+! Preview: Snippet 54 started.
+<-><->
+      
+l.54 ...e, dass es eine Umgebung $V$ von $x$ und $
+                                                  -x$ gibt, sodass $A_l\inte...
+
+Not a real error.
+
+! Preview: Snippet 54 ended.(382293+54613x884282).
+<-><->
+      
+l.54 ...dass es eine Umgebung $V$ von $x$ und $-x$
+                                                   gibt, sodass $A_l\interse...
+
+Not a real error.
+
+[54]
+! Preview: Snippet 55 started.
+<-><->
+      
+l.54 ...gebung $V$ von $x$ und $-x$ gibt, sodass $
+                                                  A_l\intersect V$ offen ist...
+
+Not a real error.
+
+! Preview: Snippet 55 ended.(447828+98303x1948782).
+<-><->
+      
+l.54 ...x$ und $-x$ gibt, sodass $A_l\intersect V$
+                                                   offen ist, kann man an $x...
+
+Not a real error.
+
+[55]
+! Preview: Snippet 56 started.
+<-><->
+      
+l.54 ...$A_l\intersect V$ offen ist, kann man an $
+                                                  x$ um $\epsilon>0$ herumsp...
+
+Not a real error.
+
+! Preview: Snippet 56 ended.(282168+0x374556).
+<-><->
+      
+l.54 ..._l\intersect V$ offen ist, kann man an $x$
+                                                   um $\epsilon>0$ herumspie...
+
+Not a real error.
+
+[56]
+! Preview: Snippet 57 started.
+<-><->
+      
+l.54 ...tersect V$ offen ist, kann man an $x$ um $
+                                                  \epsilon>0$ herumspielen u...
+
+Not a real error.
+
+! Preview: Snippet 57 ended.(422343+25623x1467500).
+<-><->
+      
+l.54 ...offen ist, kann man an $x$ um $\epsilon>0$
+                                                   herumspielen und derart e...
+
+Not a real error.
+
+[57]
+! Preview: Snippet 58 started.
+<-><->
+      
+l.54 ...ielen und derart ein antipodales Paar in $
+                                                  A_l$ bekommen. Im andern F...
+
+Not a real error.
+
+! Preview: Snippet 58 ended.(447828+98303x692681).
+<-><->
+      
+l.54 ...n und derart ein antipodales Paar in $A_l$
+                                                   bekommen. Im andern Fall ...
+
+Not a real error.
+
+[58]
+! Preview: Snippet 59 started.
+<-><->
+      
+l.54 ...ekommen. Im andern Fall folgt direkt aus $
+                                                  \dist(-x,A_l)=0=\dist(-x,A...
+
+Not a real error.
+
+! Preview: Snippet 59 ended.(491520+163840x10206312).
+<-><->
+      
+l.54 ...\dist(-x,A_l)=0=\dist(-x,A_l\intersect V)$
+                                                   (da $V$ Umgebung von $-x$...
+
+Not a real error.
+
+[59]
+! Preview: Snippet 60 started.
+<-><->
+      
+l.54 ...-x,A_l)=0=\dist(-x,A_l\intersect V)$ (da $
+                                                  V$ Umgebung von $-x$ ist),...
+
+Not a real error.
+
+! Preview: Snippet 60 ended.(447828+0x527929).
+<-><->
+      
+l.54 ...,A_l)=0=\dist(-x,A_l\intersect V)$ (da $V$
+                                                   Umgebung von $-x$ ist), d...
+
+Not a real error.
+
+[60]
+! Preview: Snippet 61 started.
+<-><->
+      
+l.54 ...x,A_l\intersect V)$ (da $V$ Umgebung von $
+                                                  -x$ ist), dass $-x\in A_l$.
+Not a real error.
+
+! Preview: Snippet 61 ended.(382293+54613x884282).
+<-><->
+      
+l.54 ..._l\intersect V)$ (da $V$ Umgebung von $-x$
+                                                   ist), dass $-x\in A_l$.
+Not a real error.
+
+[61]
+! Preview: Snippet 62 started.
+<-><->
+      
+l.54 ...V)$ (da $V$ Umgebung von $-x$ ist), dass $
+                                                  -x\in A_l$.
+Not a real error.
+
+! Preview: Snippet 62 ended.(447828+98303x2377951).
+<-><->
+      
+l.54 ...$ Umgebung von $-x$ ist), dass $-x\in A_l$
+                                                  .
+Not a real error.
+
+[62]
+! Preview: Snippet 63 started.
+<-><->
+      
+l.56 \section
+             {Zum eigentlichen Vortrag - Das kombinatorische Äquivalent zum...
+
+Not a real error.
+
+! Preview: Snippet 63 ended.(1835007+183500x26105517).
+<-><->
+      
+l.56 ...ombinatorische Äquivalent zum BU-Theorem}
+                                                  
+Not a real error.
+
+[63
+
+]
+! Preview: Snippet 64 started.
+<-><->
+      
+l.63 Die $
+          n$-Sphäre in der $L^1$-Norm ist gegeben durch $\sphere^n_1:=\{x\i...
+
+Not a real error.
+
+! Preview: Snippet 64 ended.(282168+0x393370).
+<-><->
+      
+l.63 Die $n$
+            -Sphäre in der $L^1$-Norm ist gegeben durch $\sphere^n_1:=\{x\i...
+
+Not a real error.
+
+[64]
+! Preview: Snippet 65 started.
+<-><->
+      
+l.63 Die $n$-Sphäre in der $
+                             L^1$-Norm ist gegeben durch $\sphere^n_1:=\{x\i...
+
+Not a real error.
+
+! Preview: Snippet 65 ended.(533465+0x740013).
+<-><->
+      
+l.63 Die $n$-Sphäre in der $L^1$
+                                 -Norm ist gegeben durch $\sphere^n_1:=\{x\i...
+
+Not a real error.
+
+[65]
+! Preview: Snippet 66 started.
+<-><->
+      
+l.63 ...äre in der $L^1$-Norm ist gegeben durch $
+                                                  \sphere^n_1:=\{x\in\reals^...
+
+Not a real error.
+
+! Preview: Snippet 66 ended.(533465+196607x8172719).
+<-><->
+      
+l.63 ...re^n_1:=\{x\in\reals^{n+1}:\norm{x}_1=1\}$
+                                                  .
+Not a real error.
+
+[66]
+! Preview: Snippet 67 started.
+<-><->
+      
+l.66 Anders als die $
+                     \sphere^n$ bildet die $\sphere^n_1$ auch ein kombinator...
+
+Not a real error.
+
+! Preview: Snippet 67 ended.(451470+0x720824).
+<-><->
+      
+l.66 Anders als die $\sphere^n$
+                                bildet die $\sphere^n_1$ auch ein kombinator...
+
+Not a real error.
+
+[67]
+! Preview: Snippet 68 started.
+<-><->
+      
+l.66 Anders als die $\sphere^n$ bildet die $
+                                            \sphere^n_1$ auch ein kombinator...
+
+Not a real error.
+
+! Preview: Snippet 68 ended.(451470+162667x720824).
+<-><->
+      
+l.66 ...s die $\sphere^n$ bildet die $\sphere^n_1$
+                                                   auch ein kombinatorisches...
+
+Not a real error.
+
+[68]
+! Preview: Snippet 69 started.
+<-><->
+      
+l.66 ...torisches Gebilde, nämlich den Rand des $
+                                                  n$-dimensionalen Kreuzpoly...
+
+Not a real error.
+
+! Preview: Snippet 69 ended.(282168+0x393370).
+<-><->
+      
+l.66 ...risches Gebilde, nämlich den Rand des $n$
+                                                  -dimensionalen Kreuzpolyto...
+
+Not a real error.
+
+[69]
+! Preview: Snippet 70 started.
+<-><->
+      
+l.66 ...l welcher als die konvexe Hülle von den $
+                                                  n+1$ Einheitsvektoren und ...
+
+Not a real error.
+
+! Preview: Snippet 70 ended.(422343+54613x1522041).
+<-><->
+      
+l.66 ...lcher als die konvexe Hülle von den $n+1$
+                                                   Einheitsvektoren und ihre...
+
+Not a real error.
+
+[70]
+! Preview: Snippet 71 started.
+<-><->
+      
+l.68 ...logischen Standpunkt aber isomorph (denn $
+                                                  x\mapsto \frac{1}{\norm{x}...
+
+Not a real error.
+
+! Preview: Snippet 71 ended.(553676+373451x3015835).
+<-><->
+      
+l.68 ...rph (denn $x\mapsto \frac{1}{\norm{x}_1}x$
+                                                   ist Homöomorphismus).
+Not a real error.
+
+[71]
+! Preview: Snippet 72 started.
+<-><->
+      
+l.70 Weiterhin besitzt $
+                        \sphere^n_1$ eine kanonische Triangulierung. Entspre...
+
+Not a real error.
+
+! Preview: Snippet 72 ended.(451470+162667x720824).
+<-><->
+      
+l.70 Weiterhin besitzt $\sphere^n_1$
+                                     eine kanonische Triangulierung. Entspre...
+
+Not a real error.
+
+[72]
+! Preview: Snippet 73 started.
+<-><->
+      
+l.70 ...en wir den induzierten Simplizialkomplex $
+                                                  \Sigma_n$ als $\Sigma_n:=\...
+
+Not a real error.
+
+! Preview: Snippet 73 ended.(447828+98303x830050).
+<-><->
+      
+l.70 ...n induzierten Simplizialkomplex $\Sigma_n$
+                                                   als $\Sigma_n:=\{\conv A:...
+
+Not a real error.
+
+[73]
+! Preview: Snippet 74 started.
+<-><->
+      
+l.70 ...zierten Simplizialkomplex $\Sigma_n$ als $
+                                                  \Sigma_n:=\{\conv A: A\sub...
+
+Not a real error.
+
+! Preview: Snippet 74 ended.(491520+163840x16527327).
+<-><->
+      
+l.70 ...pm e_{n+1}\}, a\in A\implies -a\notin A\}$
+                                                  .
+Not a real error.
+
+[74]
+! Preview: Snippet 75 started.
+<-><->
+      
+l.72 ...kanonischerweise eine Triangulierung des $
+                                                  \ball^n_1:=\conv\sphere^n_...
+
+Not a real error.
+
+! Preview: Snippet 75 ended.(451470+162667x3999365).
+<-><->
+      
+l.72 ...ulierung des $\ball^n_1:=\conv\sphere^n_1$
+                                                   (Einheitsball in der $L_1...
+
+Not a real error.
+
+[75]
+! Preview: Snippet 76 started.
+<-><->
+      
+l.72 ...:=\conv\sphere^n_1$ (Einheitsball in der $
+                                                  L_1$-Norm) durch $\Gamma_n...
+
+Not a real error.
+
+! Preview: Snippet 76 ended.(447828+98303x740013).
+<-><->
+      
+l.72 ...onv\sphere^n_1$ (Einheitsball in der $L_1$
+                                                  -Norm) durch $\Gamma_n$ du...
+
+Not a real error.
+
+[76]
+! Preview: Snippet 77 started.
+<-><->
+      
+l.72 ...$ (Einheitsball in der $L_1$-Norm) durch $
+                                                  \Gamma_n$ durch $\Gamma_n:...
+
+Not a real error.
+
+! Preview: Snippet 77 ended.(447828+98303x766335).
+<-><->
+      
+l.72 ...tsball in der $L_1$-Norm) durch $\Gamma_n$
+                                                   durch $\Gamma_n:=\{\conv ...
+
+Not a real error.
+
+[77]
+! Preview: Snippet 78 started.
+<-><->
+      
+l.72 ...n der $L_1$-Norm) durch $\Gamma_n$ durch $
+                                                  \Gamma_n:=\{\conv A: A\sub...
+
+Not a real error.
+
+! Preview: Snippet 78 ended.(491520+163840x16419007).
+<-><->
+      
+l.72 ...,\pm e_n,0\}, a\in A\implies -a\notin A\}$
+                                                  .
+Not a real error.
+
+[78]
+! Preview: Snippet 79 started.
+<-><->
+      
+l.73 Dann ist $
+               \Sigma_{n-1}$ in $\Gamma_n$ eingebettet durch die simpliziale...
+
+Not a real error.
+
+! Preview: Snippet 79 ended.(447828+152917x1500886).
+<-><->
+      
+l.73 Dann ist $\Sigma_{n-1}$
+                             in $\Gamma_n$ eingebettet durch die simpliziale...
+
+Not a real error.
+
+[79]
+! Preview: Snippet 80 started.
+<-><->
+      
+l.73 Dann ist $\Sigma_{n-1}$ in $
+                                 \Gamma_n$ eingebettet durch die simpliziale...
+
+Not a real error.
+
+! Preview: Snippet 80 ended.(447828+98303x766335).
+<-><->
+      
+l.73 Dann ist $\Sigma_{n-1}$ in $\Gamma_n$
+                                           eingebettet durch die simpliziale...
+
+Not a real error.
+
+[80]
+! Preview: Snippet 81 started.
+<-><->
+      
+l.73 ...gebettet durch die simpliziale Abbildung $
+                                                  i:\Sigma_{n-1}\to\Gamma_n$.
+Not a real error.
+
+! Preview: Snippet 81 ended.(447828+152917x4058567).
+<-><->
+      
+l.73 ...iale Abbildung $i:\Sigma_{n-1}\to\Gamma_n$
+                                                  .
+Not a real error.
+
+[81]
+! Preview: Snippet 82 started.
+<-><->
+      
+l.75 ...einer simplizialen antipodalen Abbildung $
+                                                  f:T\to\Gamma_n$ ein kombin...
+
+Not a real error.
+
+! Preview: Snippet 82 ended.(455111+127431x3197298).
+<-><->
+      
+l.75 ...len antipodalen Abbildung $f:T\to\Gamma_n$
+                                                   ein kombinatorisches Resu...
+
+Not a real error.
+
+[82]
+! Preview: Snippet 83 started.
+<-><->
+      
+l.75 ...ombinatorisches Resultat ableiten, wobei $
+                                                  T$ eine antipodalsymmetris...
+
+Not a real error.
+
+! Preview: Snippet 83 ended.(447828+0x473999).
+<-><->
+      
+l.75 ...binatorisches Resultat ableiten, wobei $T$
+                                                   eine antipodalsymmetrisch...
+
+Not a real error.
+
+[83]
+! Preview: Snippet 84 started.
+<-><->
+      
+l.75 ...e antipodalsymmetrische Verfeinerung von $
+                                                  \Sigma_n$ sei (antipodalsy...
+
+Not a real error.
+
+! Preview: Snippet 84 ended.(447828+98303x830050).
+<-><->
+      
+l.75 ...alsymmetrische Verfeinerung von $\Sigma_n$
+                                                   sei (antipodalsymmetrisch...
+
+Not a real error.
+
+[84]
+! Preview: Snippet 85 started.
+<-><->
+      
+l.75 ...alsymmetrisch heißt, dass die Abbildung $
+                                                  x\mapsto -x$ auf $T$ ein s...
+
+Not a real error.
+
+! Preview: Snippet 85 ended.(382293+54613x2278279).
+<-><->
+      
+l.75 ...h heißt, dass die Abbildung $x\mapsto -x$
+                                                   auf $T$ ein simplizialer ...
+
+Not a real error.
+
+[85]
+! Preview: Snippet 86 started.
+<-><->
+      
+l.75 ...�t, dass die Abbildung $x\mapsto -x$ auf $
+                                                  T$ ein simplizialer Isomor...
+
+Not a real error.
+
+! Preview: Snippet 86 ended.(447828+0x473999).
+<-><->
+      
+l.75 ..., dass die Abbildung $x\mapsto -x$ auf $T$
+                                                   ein simplizialer Isomorph...
+
+Not a real error.
+
+[86]
+! Preview: Snippet 87 started.
+<-><->
+      
+l.77 ...genügt es jedoch nur auf den Eckpunkten $
+                                                  T^{(0)}$ zu definieren und...
+
+Not a real error.
+
+! Preview: Snippet 87 ended.(581889+0x1177604).
+<-><->
+      
+l.77 ...es jedoch nur auf den Eckpunkten $T^{(0)}$
+                                                   zu definieren und affin a...
+
+Not a real error.
+
+[87]
+! Preview: Snippet 88 started.
+<-><->
+      
+l.77 ...em an, so sehen wir ein, dass es Simplex $
+                                                  \sigma\in T$ geben muss, d...
+
+Not a real error.
+
+! Preview: Snippet 88 ended.(447828+25623x1672981).
+<-><->
+      
+l.77 ...hen wir ein, dass es Simplex $\sigma\in T$
+                                                   geben muss, derart, dass ...
+
+Not a real error.
+
+[88]
+! Preview: Snippet 89 started.
+<-><->
+      
+l.77 ...x $\sigma\in T$ geben muss, derart, dass $
+                                                  0\in\sigma$.
+Not a real error.
+
+! Preview: Snippet 89 ended.(422343+25623x1526663).
+<-><->
+      
+l.77 ...n T$ geben muss, derart, dass $0\in\sigma$
+                                                  .
+Not a real error.
+
+[89]
+! Preview: Snippet 90 started.
+<-><->
+      
+l.79 Dies tritt aber aufgrund der Struktur von $
+                                                \Gamma_n$ genau dann ein, we...
+
+Not a real error.
+
+! Preview: Snippet 90 ended.(447828+98303x766335).
+<-><->
+      
+l.79 ... aber aufgrund der Struktur von $\Gamma_n$
+                                                   genau dann ein, wenn es e...
+
+Not a real error.
+
+[90]
+! Preview: Snippet 91 started.
+<-><->
+      
+l.79 ...u dann ein, wenn es einen Einheitsvektor $
+                                                  e_j\in\reals^n$ gibt, soda...
+
+Not a real error.
+
+! Preview: Snippet 91 ended.(451470+187504x2212331).
+<-><->
+      
+l.79 ...n es einen Einheitsvektor $e_j\in\reals^n$
+                                                   gibt, sodass $e_j,-e_j\in...
+
+Not a real error.
+
+[91]
+! Preview: Snippet 92 started.
+<-><->
+      
+l.79 ...eitsvektor $e_j\in\reals^n$ gibt, sodass $
+                                                  e_j,-e_j\in\sigma$.
+Not a real error.
+
+! Preview: Snippet 92 ended.(382293+187504x3162563).
+<-><->
+      
+l.79 ...\reals^n$ gibt, sodass $e_j,-e_j\in\sigma$
+                                                  .
+Not a real error.
+
+[92]
+! Preview: Snippet 93 started.
+<-><->
+      
+l.81 ...ektoren im Wertebereich durch die Farben $
+                                                  \{\pm1,\ldots,\pm n\}$ und...
+
+Not a real error.
+
+! Preview: Snippet 93 ended.(491520+163840x3852210).
+<-><->
+      
+l.81 ...h durch die Farben $\{\pm1,\ldots,\pm n\}$
+                                                   und betrachten die Abbild...
+
+Not a real error.
+
+[93]
+! Preview: Snippet 94 started.
+<-><->
+      
+l.81 ...ts,\pm n\}$ und betrachten die Abbildung $
+                                                  f$ nur auf den Eckpunkten ...
+
+Not a real error.
+
+! Preview: Snippet 94 ended.(455111+127431x391398).
+<-><->
+      
+l.81 ...,\pm n\}$ und betrachten die Abbildung $f$
+                                                   nur auf den Eckpunkten $T...
+
+Not a real error.
+
+[94]
+! Preview: Snippet 95 started.
+<-><->
+      
+l.81 ...die Abbildung $f$ nur auf den Eckpunkten $
+                                                  T^{(0)}$, dann ergibt sich...
+
+Not a real error.
+
+! Preview: Snippet 95 ended.(581889+0x1177604).
+<-><->
+      
+l.81 ...ldung $f$ nur auf den Eckpunkten $T^{(0)}$
+                                                  , dann ergibt sich Tuckers...
+
+Not a real error.
+
+[95]
+! Preview: Snippet 96 started.
+<-><->
+      
+l.84 Sei $
+          T$ eine antipodalsymmetrische Verfeinerung von $\Sigma^n$ und $\la...
+
+Not a real error.
+
+! Preview: Snippet 96 ended.(447828+0x473999).
+<-><->
+      
+l.84 Sei $T$
+             eine antipodalsymmetrische Verfeinerung von $\Sigma^n$ und $\la...
+
+Not a real error.
+
+[96]
+! Preview: Snippet 97 started.
+<-><->
+      
+l.84 ...e antipodalsymmetrische Verfeinerung von $
+                                                  \Sigma^n$ und $\lambda(=f^...
+
+Not a real error.
+
+! Preview: Snippet 97 ended.(447828+0x830050).
+<-><->
+      
+l.84 ...alsymmetrische Verfeinerung von $\Sigma^n$
+                                                   und $\lambda(=f^{(0)}):T^...
+
+Not a real error.
+
+[97]
+! Preview: Snippet 98 started.
+<-><->
+      
+l.84 ...etrische Verfeinerung von $\Sigma^n$ und $
+                                                  \lambda(=f^{(0)}):T^{(0)}\...
+
+Not a real error.
+
+! Preview: Snippet 98 ended.(581889+163840x9274170).
+<-><->
+      
+l.84 ...=f^{(0)}):T^{(0)}\to\{\pm1,\ldots,\pm n\}$
+                                                   eine antipodenerhaltende ...
+
+Not a real error.
+
+[98]
+! Preview: Snippet 99 started.
+<-><->
+      
+l.84 ... eine antipodenerhaltende Färbung (d.h. $
+                                                  \lambda(-x)=-\lambda(x)$ f...
+
+Not a real error.
+
+! Preview: Snippet 99 ended.(491520+163840x4426412).
+<-><->
+      
+l.84 ...e Färbung (d.h. $\lambda(-x)=-\lambda(x)$
+                                                   für $x\in T^{(0)}$). Dan...
+
+Not a real error.
+
+[99]
+! Preview: Snippet 100 started.
+<-><->
+      
+l.84 ...ung (d.h. $\lambda(-x)=-\lambda(x)$ für $
+                                                  x\in T^{(0)}$). Dann gibt ...
+
+Not a real error.
+
+! Preview: Snippet 100 ended.(581889+25623x2353148).
+<-><->
+      
+l.84 ...ambda(-x)=-\lambda(x)$ für $x\in T^{(0)}$
+                                                  ). Dann gibt es eine kompl...
+
+Not a real error.
+
+[100]
+! Preview: Snippet 101 started.
+<-><->
+      
+l.84 ...ann gibt es eine komplementäre Kante in $
+                                                  T$, d.h. ein 2-Simplex in ...
+
+Not a real error.
+
+! Preview: Snippet 101 ended.(447828+0x473999).
+<-><->
+      
+l.84 ...n gibt es eine komplementäre Kante in $T$
+                                                  , d.h. ein 2-Simplex in $T...
+
+Not a real error.
+
+[101]
+! Preview: Snippet 102 started.
+<-><->
+      
+l.84 ...äre Kante in $T$, d.h. ein 2-Simplex in $
+                                                  T$ mit Ecken $u,v$, sodass...
+
+Not a real error.
+
+! Preview: Snippet 102 ended.(447828+0x473999).
+<-><->
+      
+l.84 ...re Kante in $T$, d.h. ein 2-Simplex in $T$
+                                                   mit Ecken $u,v$, sodass $...
+
+Not a real error.
+
+[102]
+! Preview: Snippet 103 started.
+<-><->
+      
+l.84 ...$T$, d.h. ein 2-Simplex in $T$ mit Ecken $
+                                                  u,v$, sodass $\lambda(u)=-...
+
+Not a real error.
+
+! Preview: Snippet 103 ended.(282168+127431x1007616).
+<-><->
+      
+l.84 ... d.h. ein 2-Simplex in $T$ mit Ecken $u,v$
+                                                  , sodass $\lambda(u)=-\lam...
+
+Not a real error.
+
+[103]
+! Preview: Snippet 104 started.
+<-><->
+      
+l.84 ...2-Simplex in $T$ mit Ecken $u,v$, sodass $
+                                                  \lambda(u)=-\lambda(v)$.
+Not a real error.
+
+! Preview: Snippet 104 ended.(491520+163840x3883921).
+<-><->
+      
+l.84 ...ken $u,v$, sodass $\lambda(u)=-\lambda(v)$
+                                                  .
+Not a real error.
+
+[104]
+! Preview: Snippet 105 started.
+<-><->
+      
+l.90 Sei $
+          f:\sphere^n_1\to\reals^n$ stetig und antipodenerhaltend. Dann kön...
+
+Not a real error.
+
+! Preview: Snippet 105 ended.(455111+162667x3507838).
+<-><->
+      
+l.90 Sei $f:\sphere^n_1\to\reals^n$
+                                    stetig und antipodenerhaltend. Dann kön...
+
+Not a real error.
+
+[105]
+! Preview: Snippet 106 started.
+<-><->
+      
+l.90 ... einen beliebig feinen Simplizialkomplex $
+                                                  T$ von der Art in Tuckers ...
+
+Not a real error.
+
+! Preview: Snippet 106 ended.(447828+0x473999).
+<-><->
+      
+l.90 ...inen beliebig feinen Simplizialkomplex $T$
+                                                   von der Art in Tuckers Le...
+
+Not a real error.
+
+[106]
+! Preview: Snippet 107 started.
+<-><->
+      
+l.90 ...B. durch baryzentrische Unterteilung von $
+                                                  \Sigma^n$). Wir können da...
+
+Not a real error.
+
+! Preview: Snippet 107 ended.(447828+0x830050).
+<-><->
+      
+l.90 ...baryzentrische Unterteilung von $\Sigma^n$
+                                                  ). Wir können dann die F�...
+
+Not a real error.
+
+[107]
+! Preview: Snippet 108 started.
+<-><->
+      
+l.90 ...Sigma^n$). Wir können dann die Färbung $
+                                                  \lambda:T^{(0)}\to \{\pm1,...
+
+Not a real error.
+
+! Preview: Snippet 108 ended.(581889+163840x6977675).
+<-><->
+      
+l.90 ...$\lambda:T^{(0)}\to \{\pm1,\ldots,\pm n\}$
+                                                   definieren durch
+Not a real error.
+
+[108]
+! Preview: Snippet 109 started.
+<-><->
+      
+l.91 \begin{equation}
+                     
+Not a real error.
+
+! Preview: Snippet 109 ended.(1125034+0x26105517).
+<-><->
+      
+l.93 \end{equation}
+                   
+Not a real error.
+
+[109]
+! Preview: Snippet 110 started.
+<-><->
+      
+l.95 Dann prüft man leicht nach, dass $
+                                        \lambda$ auch antipodenerhaltend ist...
+
+Not a real error.
+
+! Preview: Snippet 110 ended.(455111+0x382295).
+<-><->
+      
+l.95 Dann prüft man leicht nach, dass $\lambda$
+                                                 auch antipodenerhaltend ist...
+
+Not a real error.
+
+[110]
+! Preview: Snippet 111 started.
+<-><->
+      
+l.95 ...d wir erhalten eine komplementäre Kante $
+                                                  (uv)$ in $T$. Lässt man d...
+
+Not a real error.
+
+! Preview: Snippet 111 ended.(491520+163840x1226073).
+<-><->
+      
+l.95 ... erhalten eine komplementäre Kante $(uv)$
+                                                   in $T$. Lässt man die Fe...
+
+Not a real error.
+
+[111]
+! Preview: Snippet 112 started.
+<-><->
+      
+l.95 ...lten eine komplementäre Kante $(uv)$ in $
+                                                  T$. Lässt man die Feinhei...
+
+Not a real error.
+
+! Preview: Snippet 112 ended.(447828+0x473999).
+<-><->
+      
+l.95 ...en eine komplementäre Kante $(uv)$ in $T$
+                                                  . Lässt man die Feinheite...
+
+Not a real error.
+
+[112]
+! Preview: Snippet 113 started.
+<-><->
+      
+l.95 ...iten einer Folge solcher Triangulationen $
+                                                  \{T_m\}_{m\in\nats}$ gegen...
+
+Not a real error.
+
+! Preview: Snippet 113 ended.(491520+163840x2718460).
+<-><->
+      
+l.95 ...cher Triangulationen $\{T_m\}_{m\in\nats}$
+                                                   gegen null gehen, so erh�...
+
+Not a real error.
+
+[113]
+! Preview: Snippet 114 started.
+<-><->
+      
+l.95 ...lt man eine Folge komplementärer Kanten $
+                                                  \{(u_mv_m)\}_{m\in\nats}$,...
+
+Not a real error.
+
+! Preview: Snippet 114 ended.(491520+163840x4035863).
+<-><->
+      
+l.95 ...entärer Kanten $\{(u_mv_m)\}_{m\in\nats}$
+                                                  , die aufgrund der Kompakt...
+
+Not a real error.
+
+[114]
+! Preview: Snippet 115 started.
+<-><->
+      
+l.95 ...nats}$, die aufgrund der Kompaktheit von $
+                                                  \sphere^n_1$ einen Häufun...
+
+Not a real error.
+
+! Preview: Snippet 115 ended.(451470+162667x720824).
+<-><->
+      
+l.95 ...aufgrund der Kompaktheit von $\sphere^n_1$
+                                                   einen Häufungspunkt hat....
+
+Not a real error.
+
+[115]
+! Preview: Snippet 116 started.
+<-><->
+      
+l.95 ...phere^n_1$ einen Häufungspunkt hat. Sei $
+                                                  \{(u'_m,v'_m)\}_{m\in\nats...
+
+Not a real error.
+
+! Preview: Snippet 116 ended.(492688+163840x4327132).
+<-><->
+      
+l.95 ...nkt hat. Sei $\{(u'_m,v'_m)\}_{m\in\nats}$
+                                                   nun also eine konvergente...
+
+Not a real error.
+
+[116]
+! Preview: Snippet 117 started.
+<-><->
+      
+l.95 ...nn kann man o.E. voraussetzen, dass alle $
+                                                  u'_m$ mit demselben $k\in\...
+
+Not a real error.
+
+! Preview: Snippet 117 ended.(492688+162016x872985).
+<-><->
+      
+l.95 ...nn man o.E. voraussetzen, dass alle $u'_m$
+                                                   mit demselben $k\in\{1,\l...
+
+Not a real error.
+
+[117]
+! Preview: Snippet 118 started.
+<-><->
+      
+l.95 ...ussetzen, dass alle $u'_m$ mit demselben $
+                                                  k\in\{1,\ldots,n\}$ gefär...
+
+Not a real error.
+
+! Preview: Snippet 118 ended.(491520+163840x3995560).
+<-><->
+      
+l.95 ... $u'_m$ mit demselben $k\in\{1,\ldots,n\}$
+                                                   gefärbt sind. Damit folg...
+
+Not a real error.
+
+[118]
+! Preview: Snippet 119 started.
+<-><->
+      
+l.95 ...rbt sind. Damit folgt für den Grenzwert $
+                                                  u$ der Folge, dass $f_i(u)...
+
+Not a real error.
+
+! Preview: Snippet 119 ended.(282168+0x375166).
+<-><->
+      
+l.95 ...t sind. Damit folgt für den Grenzwert $u$
+                                                   der Folge, dass $f_i(u) =...
+
+Not a real error.
+
+[119]
+! Preview: Snippet 120 started.
+<-><->
+      
+l.95 ...t für den Grenzwert $u$ der Folge, dass $
+                                                  f_i(u) = 0$, denn $f_i$ is...
+
+Not a real error.
+
+! Preview: Snippet 120 ended.(491520+163840x2625422).
+<-><->
+      
+l.95 ...Grenzwert $u$ der Folge, dass $f_i(u) = 0$
+                                                  , denn $f_i$ ist stetig un...
+
+Not a real error.
+
+[120]
+! Preview: Snippet 121 started.
+<-><->
+      
+l.95 ...t $u$ der Folge, dass $f_i(u) = 0$, denn $
+                                                  f_i$ ist stetig und $f_i(u...
+
+Not a real error.
+
+! Preview: Snippet 121 ended.(455111+127431x539043).
+<-><->
+      
+l.95 ...$ der Folge, dass $f_i(u) = 0$, denn $f_i$
+                                                   ist stetig und $f_i(u_m)\...
+
+Not a real error.
+
+[121]
+! Preview: Snippet 122 started.
+<-><->
+      
+l.95 ... $f_i(u) = 0$, denn $f_i$ ist stetig und $
+                                                  f_i(u_m)\geq 0$, sowie $f_...
+
+Not a real error.
+
+! Preview: Snippet 122 ended.(491520+163840x3123241).
+<-><->
+      
+l.95 ...denn $f_i$ ist stetig und $f_i(u_m)\geq 0$
+                                                  , sowie $f_i(v_m)\leq 0$. ...
+
+Not a real error.
+
+[122]
+! Preview: Snippet 123 started.
+<-><->
+      
+l.95 ...$ ist stetig und $f_i(u_m)\geq 0$, sowie $
+                                                  f_i(v_m)\leq 0$. Weiterhin...
+
+Not a real error.
+
+! Preview: Snippet 123 ended.(491520+163840x3065743).
+<-><->
+      
+l.95 ...d $f_i(u_m)\geq 0$, sowie $f_i(v_m)\leq 0$
+                                                  . Weiterhin folgt daraus a...
+
+Not a real error.
+
+[123]
+! Preview: Snippet 124 started.
+<-><->
+      
+l.95 ...eq 0$. Weiterhin folgt daraus aber schon $
+                                                  f(u)=0$, denn in den gegen...
+
+Not a real error.
+
+! Preview: Snippet 124 ended.(491520+163840x2477777).
+<-><->
+      
+l.95 ...Weiterhin folgt daraus aber schon $f(u)=0$
+                                                  , denn in den gegen $u$ ko...
+
+Not a real error.
+
+[124]
+! Preview: Snippet 125 started.
+<-><->
+      
+l.95 ...s aber schon $f(u)=0$, denn in den gegen $
+                                                  u$ konvergenten Folgen sin...
+
+Not a real error.
+
+! Preview: Snippet 125 ended.(282168+0x375166).
+<-><->
+      
+l.95 ...aber schon $f(u)=0$, denn in den gegen $u$
+                                                   konvergenten Folgen sind ...
+
+Not a real error.
+
+[125]
+! Preview: Snippet 126 started.
+<-><->
+      
+l.95 ...onvergenten Folgen sind alle Komponenten $
+                                                  f_j(u_m),f_j(v_m)$ ($j\neq...
+
+Not a real error.
+
+! Preview: Snippet 126 ended.(491520+187504x4193183).
+<-><->
+      
+l.95 ... sind alle Komponenten $f_j(u_m),f_j(v_m)$
+                                                   ($j\neq i$) betragsmäßi...
+
+Not a real error.
+
+[126]
+! Preview: Snippet 127 started.
+<-><->
+      
+l.95 ...nd alle Komponenten $f_j(u_m),f_j(v_m)$ ($
+                                                  j\neq i$) betragsmäßig k...
+
+Not a real error.
+
+! Preview: Snippet 127 ended.(455111+127431x1406982).
+<-><->
+      
+l.95 ...Komponenten $f_j(u_m),f_j(v_m)$ ($j\neq i$
+                                                  ) betragsmäßig kleiner a...
+
+Not a real error.
+
+[127]
+! Preview: Snippet 128 started.
+<-><->
+      
+l.95 ...$ ($j\neq i$) betragsmäßig kleiner als $
+                                                  f_i(u_m),f_i(v_m)$.
+Not a real error.
+
+! Preview: Snippet 128 ended.(491520+163840x4077279).
+<-><->
+      
+l.95 ...agsmäßig kleiner als $f_i(u_m),f_i(v_m)$
+                                                  .
+Not a real error.
+
+[128]
+! Preview: Snippet 129 started.
+<-><->
+      
+l.97 \section
+             {Jetzt aber wirklich etwas neues.}
+Not a real error.
+
+! Preview: Snippet 129 ended.(655359+0x26105517).
+<-><->
+      
+l.97 \section{Jetzt aber wirklich etwas neues.}
+                                               
+Not a real error.
+
+[129
+
+]
+! Preview: Snippet 130 started.
+<-><->
+      
+l.104 Sei $
+           T$ eine antipodalsymmetrische Verfeinerung von $\Sigma^n$ und $\l...
+
+Not a real error.
+
+! Preview: Snippet 130 ended.(447828+0x473999).
+<-><->
+      
+l.104 Sei $T$
+              eine antipodalsymmetrische Verfeinerung von $\Sigma^n$ und $\l...
+
+Not a real error.
+
+[130]
+! Preview: Snippet 131 started.
+<-><->
+      
+l.104 ... antipodalsymmetrische Verfeinerung von $
+                                                  \Sigma^n$ und $\lambda(=f^...
+
+Not a real error.
+
+! Preview: Snippet 131 ended.(447828+0x830050).
+<-><->
+      
+l.104 ...lsymmetrische Verfeinerung von $\Sigma^n$
+                                                   und $\lambda(=f^{(0)}):T^...
+
+Not a real error.
+
+[131]
+! Preview: Snippet 132 started.
+<-><->
+      
+l.104 ...trische Verfeinerung von $\Sigma^n$ und $
+                                                  \lambda(=f^{(0)}):T^{(0)}\...
+
+Not a real error.
+
+! Preview: Snippet 132 ended.(581889+163840x9456215).
+<-><->
+      
+l.104 ...f^{(0)}):T^{(0)}\to\{\pm1,\ldots,\pm m\}$
+                                                   eine antipodenerhaltende ...
+
+Not a real error.
+
+[132]
+! Preview: Snippet 133 started.
+<-><->
+      
+l.104 ...eine antipodenerhaltende Färbung (d.h. $
+                                                  \lambda(-x)=-\lambda(x)$ f...
+
+Not a real error.
+
+! Preview: Snippet 133 ended.(491520+163840x4426412).
+<-><->
+      
+l.104 ... Färbung (d.h. $\lambda(-x)=-\lambda(x)$
+                                                   für $x\in T^{(0)}$) ohne...
+
+Not a real error.
+
+[133]
+! Preview: Snippet 134 started.
+<-><->
+      
+l.104 ...ng (d.h. $\lambda(-x)=-\lambda(x)$ für $
+                                                  x\in T^{(0)}$) ohne komple...
+
+Not a real error.
+
+! Preview: Snippet 134 ended.(581889+25623x2353148).
+<-><->
+      
+l.104 ...mbda(-x)=-\lambda(x)$ für $x\in T^{(0)}$
+                                                  ) ohne komplementäre Kant...
+
+Not a real error.
+
+[134]
+! Preview: Snippet 135 started.
+<-><->
+      
+l.104 ...entäre Kanten. Dann ist die Anzahl der $
+                                                  +$-alternierenden $n$-Simp...
+
+Not a real error.
+
+! Preview: Snippet 135 ended.(382293+54613x509726).
+<-><->
+      
+l.104 ...täre Kanten. Dann ist die Anzahl der $+$
+                                                  -alternierenden $n$-Simpli...
+
+Not a real error.
+
+[135]
+! Preview: Snippet 136 started.
+<-><->
+      
+l.104 ...n ist die Anzahl der $+$-alternierenden $
+                                                  n$-Simplizes ungerade.
+Not a real error.
+
+! Preview: Snippet 136 ended.(282168+0x393370).
+<-><->
+      
+l.104 ...ist die Anzahl der $+$-alternierenden $n$
+                                                  -Simplizes ungerade.
+Not a real error.
+
+[136]
+! Preview: Snippet 137 started.
+<-><->
+      
+l.107 ... Wir haben müssen noch definieren, was $
+                                                  +$- bzw. $-$-alternierend ...
+
+Not a real error.
+
+! Preview: Snippet 137 ended.(382293+54613x509726).
+<-><->
+      
+l.107 ...ir haben müssen noch definieren, was $+$
+                                                  - bzw. $-$-alternierend be...
+
+Not a real error.
+
+[137]
+! Preview: Snippet 138 started.
+<-><->
+      
+l.107 ... müssen noch definieren, was $+$- bzw. $
+                                                  -$-alternierend bedeutet.
+Not a real error.
+
+! Preview: Snippet 138 ended.(382293+54613x509726).
+<-><->
+      
+l.107 ...üssen noch definieren, was $+$- bzw. $-$
+                                                  -alternierend bedeutet.
+Not a real error.
+
+[138]
+! Preview: Snippet 139 started.
+<-><->
+      
+l.110 ... fast $\epsilon$-alternierende Simplizes]
+                                                  
+Not a real error.
+
+! Preview: Snippet 139 ended.(282168+0x266013).
+<-><->
+      
+l.110 ... fast $\epsilon$-alternierende Simplizes]
+                                                  
+Not a real error.
+
+[139]
+! Preview: Snippet 140 started.
+<-><->
+      
+l.110 ... fast $\epsilon$-alternierende Simplizes]
+                                                  
+Not a real error.
+
+! Preview: Snippet 140 ended.(282168+0x266013).
+<-><->
+      
+l.110 ... fast $\epsilon$-alternierende Simplizes]
+                                                  
+Not a real error.
+
+[140]
+! Preview: Snippet 141 started.
+<-><->
+      
+l.111 Ein $
+           d$-Simplex heißt $\epsilon$-alternierend ($\epsilon=\pm1$), fall...
+
+Not a real error.
+
+! Preview: Snippet 141 ended.(455111+0x341106).
+<-><->
+      
+l.111 Ein $d$
+             -Simplex heißt $\epsilon$-alternierend ($\epsilon=\pm1$), fall...
+
+Not a real error.
+
+[141]
+! Preview: Snippet 142 started.
+<-><->
+      
+l.111 Ein $d$-Simplex heißt $
+                              \epsilon$-alternierend ($\epsilon=\pm1$), fall...
+
+Not a real error.
+
+! Preview: Snippet 142 ended.(282168+0x266013).
+<-><->
+      
+l.111 Ein $d$-Simplex heißt $\epsilon$
+                                       -alternierend ($\epsilon=\pm1$), fall...
+
+Not a real error.
+
+[142]
+! Preview: Snippet 143 started.
+<-><->
+      
+l.111 ...Simplex heißt $\epsilon$-alternierend ($
+                                                  \epsilon=\pm1$), falls sic...
+
+Not a real error.
+
+! Preview: Snippet 143 ended.(422343+54613x1977226).
+<-><->
+      
+l.111 ... $\epsilon$-alternierend ($\epsilon=\pm1$
+                                                  ), falls sich seine Ecken ...
+
+Not a real error.
+
+[143]
+! Preview: Snippet 144 started.
+<-><->
+      
+l.111 ...\epsilon=\pm1$), falls sich seine Ecken $
+                                                  v_0,\ldots,v_d$ so anordne...
+
+Not a real error.
+
+! Preview: Snippet 144 ended.(282168+127431x2691270).
+<-><->
+      
+l.111 ..., falls sich seine Ecken $v_0,\ldots,v_d$
+                                                   so anordnen lassen, dass ...
+
+Not a real error.
+
+[144]
+! Preview: Snippet 145 started.
+<-><->
+      
+l.111 ..._0,\ldots,v_d$ so anordnen lassen, dass $
+                                                  |\lambda(v_0)|<\cdots<|\la...
+
+Not a real error.
+
+! Preview: Snippet 145 ended.(491520+163840x6259342).
+<-><->
+      
+l.111 ...ss $|\lambda(v_0)|<\cdots<|\lambda(v_d)|$
+                                                   und $\sgn(\lambda(v_i))=\...
+
+Not a real error.
+
+[145]
+! Preview: Snippet 146 started.
+<-><->
+      
+l.111 ...lambda(v_0)|<\cdots<|\lambda(v_d)|$ und $
+                                                  \sgn(\lambda(v_i))=\epsilo...
+
+Not a real error.
+
+! Preview: Snippet 146 ended.(541383+163840x5593017).
+<-><->
+      
+l.111 ...$ und $\sgn(\lambda(v_i))=\epsilon(-1)^i$
+                                                  .
+Not a real error.
+
+[146]
+! Preview: Snippet 147 started.
+<-><->
+      
+l.113 Ein $
+           d$-Simplex heißt fast $\epsilon$- alternierend, wenn es nicht al...
+
+Not a real error.
+
+! Preview: Snippet 147 ended.(455111+0x341106).
+<-><->
+      
+l.113 Ein $d$
+             -Simplex heißt fast $\epsilon$- alternierend, wenn es nicht al...
+
+Not a real error.
+
+[147]
+! Preview: Snippet 148 started.
+<-><->
+      
+l.113 Ein $d$-Simplex heißt fast $
+                                   \epsilon$- alternierend, wenn es nicht al...
+
+Not a real error.
+
+! Preview: Snippet 148 ended.(282168+0x266013).
+<-><->
+      
+l.113 Ein $d$-Simplex heißt fast $\epsilon$
+                                            - alternierend, wenn es nicht al...
+
+Not a real error.
+
+[148]
+! Preview: Snippet 149 started.
+<-><->
+      
+l.113 ...nn es nicht alternierend ist, aber eine $
+                                                  \epsilon$-alternierende Fa...
+
+Not a real error.
+
+! Preview: Snippet 149 ended.(282168+0x266013).
+<-><->
+      
+l.113 ...ht alternierend ist, aber eine $\epsilon$
+                                                  -alternierende Facette (al...
+
+Not a real error.
+
+[149]
+! Preview: Snippet 150 started.
+<-><->
+      
+l.113 ... $\epsilon$-alternierende Facette (also $
+                                                  (d-1)$-Seite hat). Man üb...
+
+Not a real error.
+
+! Preview: Snippet 150 ended.(491520+163840x1979503).
+<-><->
+      
+l.113 ...ilon$-alternierende Facette (also $(d-1)$
+                                                  -Seite hat). Man überlegt...
+
+Not a real error.
+
+[150]
+! Preview: Snippet 151 started.
+<-><->
+      
+l.113 ...e hat). Man überlegt sich leicht, dass $
+                                                  \sigma$ dann genau zwei so...
+
+Not a real error.
+
+! Preview: Snippet 151 ended.(282168+0x397994).
+<-><->
+      
+l.113 ... Man überlegt sich leicht, dass $\sigma$
+                                                   dann genau zwei solche Fa...
+
+Not a real error.
+
+[151]
+! Preview: Snippet 152 started.
+<-><->
+      
+l.113 ...n genau zwei solche Facetten hat, falls $
+                                                  \sigma$ keine komplementä...
+
+Not a real error.
+
+! Preview: Snippet 152 ended.(282168+0x397994).
+<-><->
+      
+l.113 ... zwei solche Facetten hat, falls $\sigma$
+                                                   keine komplementäre Kant...
+
+Not a real error.
+
+[152]
+! Preview: Snippet 153 started.
+<-><->
+      
+l.116 ...ark auf dem Prinzip dieser Simplizes in $
+                                                  T$ beruhen, zunächst möc...
+
+Not a real error.
+
+! Preview: Snippet 153 ended.(447828+0x473999).
+<-><->
+      
+l.116 ...k auf dem Prinzip dieser Simplizes in $T$
+                                                   beruhen, zunächst möcht...
+
+Not a real error.
+
+[153]
+! Preview: Snippet 154 started.
+<-><->
+      
+l.116 ...Dies liegt schlicht darin, dass es für $
+                                                  m<n+1$ keine alternierende...
+
+Not a real error.
+
+! Preview: Snippet 154 ended.(422343+54613x2971262).
+<-><->
+      
+l.116 ...iegt schlicht darin, dass es für $m<n+1$
+                                                   keine alternierenden Simp...
+
+Not a real error.
+
+[154]
+! Preview: Snippet 155 started.
+<-><->
+      
+l.116 ... kann. Damit muss im Umkehrschluss dann $
+                                                  T$ eine komplementäre Kan...
+
+Not a real error.
+
+! Preview: Snippet 155 ended.(447828+0x473999).
+<-><->
+      
+l.116 ...ann. Damit muss im Umkehrschluss dann $T$
+                                                   eine komplementäre Kante...
+
+Not a real error.
+
+[155]
+! Preview: Snippet 156 started.
+<-><->
+      
+l.123 ...u können, müssen wir für ein Simplex $
+                                                  \sigma\in T$ aber noch sei...
+
+Not a real error.
+
+! Preview: Snippet 156 ended.(447828+25623x1672981).
+<-><->
+      
+l.123 ...üssen wir für ein Simplex $\sigma\in T$
+                                                   aber noch seine sogenannt...
+
+Not a real error.
+
+[156]
+! Preview: Snippet 157 started.
+<-><->
+      
+l.124 ... zunächst die folgenden Mengen (wieder $
+                                                  \epsilon\in\{\pm1\}$, $d\g...
+
+Not a real error.
+
+! Preview: Snippet 157 ended.(491520+163840x2559770).
+<-><->
+      
+l.124 ...nden Mengen (wieder $\epsilon\in\{\pm1\}$
+                                                  , $d\geq 0$):
+Not a real error.
+
+[157]
+! Preview: Snippet 158 started.
+<-><->
+      
+l.124 ...n Mengen (wieder $\epsilon\in\{\pm1\}$, $
+                                                  d\geq 0$):
+Not a real error.
+
+! Preview: Snippet 158 ended.(455111+89110x1542593).
+<-><->
+      
+l.124 ... (wieder $\epsilon\in\{\pm1\}$, $d\geq 0$
+                                                  ):
+Not a real error.
+
+[158]
+! Preview: Snippet 159 started.
+<-><->
+      
+l.125 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 159 ended.(655360+0x26105517).
+<-><->
+      
+l.127 \end{equation}
+                    
+Not a real error.
+
+[159]
+! Preview: Snippet 160 started.
+<-><->
+      
+l.128 Aufgrund der Art der Triangulierung $
+                                           T$ (als Verfeinerung von $\Sigma_...
+
+Not a real error.
+
+! Preview: Snippet 160 ended.(447828+0x473999).
+<-><->
+      
+l.128 Aufgrund der Art der Triangulierung $T$
+                                              (als Verfeinerung von $\Sigma_...
+
+Not a real error.
+
+[160]
+! Preview: Snippet 161 started.
+<-><->
+      
+l.128 ...riangulierung $T$ (als Verfeinerung von $
+                                                  \Sigma_n$), lässt sich je...
+
+Not a real error.
+
+! Preview: Snippet 161 ended.(447828+98303x830050).
+<-><->
+      
+l.128 ...rung $T$ (als Verfeinerung von $\Sigma_n$
+                                                  ), lässt sich jedem (nich...
+
+Not a real error.
+
+[161]
+! Preview: Snippet 162 started.
+<-><->
+      
+l.128 ...lässt sich jedem (nichtleeren) Simplex $
+                                                  \sigma\in T$ nun eine eind...
+
+Not a real error.
+
+! Preview: Snippet 162 ended.(447828+25623x1672981).
+<-><->
+      
+l.128 ...jedem (nichtleeren) Simplex $\sigma\in T$
+                                                   nun eine eindeutige Hüll...
+
+Not a real error.
+
+[162]
+! Preview: Snippet 163 started.
+<-><->
+      
+l.128 ...rdnen (nämlich die kleinste der Mengen $
+                                                  H^{\epsilon}_d$, in der $\...
+
+Not a real error.
+
+! Preview: Snippet 163 ended.(447828+185604x850354).
+<-><->
+      
+l.128 ... die kleinste der Mengen $H^{\epsilon}_d$
+                                                  , in der $\sigma$ enthalte...
+
+Not a real error.
+
+[163]
+! Preview: Snippet 164 started.
+<-><->
+      
+l.128 ...ste der Mengen $H^{\epsilon}_d$, in der $
+                                                  \sigma$ enthalten ist). Di...
+
+Not a real error.
+
+! Preview: Snippet 164 ended.(282168+0x397994).
+<-><->
+      
+l.128 ... Mengen $H^{\epsilon}_d$, in der $\sigma$
+                                                   enthalten ist). Diese nen...
+
+Not a real error.
+
+[164]
+! Preview: Snippet 165 started.
+<-><->
+      
+l.128 ...ennen wir \emph{Trägerhemisphäre} von $
+                                                  \sigma$.
+Not a real error.
+
+! Preview: Snippet 165 ended.(282168+0x397994).
+<-><->
+      
+l.128 ...ir \emph{Trägerhemisphäre} von $\sigma$
+                                                  .
+Not a real error.
+
+[165]
+! Preview: Snippet 166 started.
+<-><->
+      
+l.130 ...nieren: Wir definieren uns eine Graphen $
+                                                  G$, wobei
+Not a real error.
+
+! Preview: Snippet 166 ended.(447828+0x515276).
+<-><->
+      
+l.130 ...eren: Wir definieren uns eine Graphen $G$
+                                                  , wobei
+Not a real error.
+
+[166]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
+
+! Preview: Snippet 167 started.
+<-><->
+      
+l.132 \item die Ecken $
+                       V$ von $G$ genau diejenigen Simplizes $\sigma$, welch...
+
+Not a real error.
+
+! Preview: Snippet 167 ended.(447828+0x527929).
+<-><->
+      
+l.132 \item die Ecken $V$
+                          von $G$ genau diejenigen Simplizes $\sigma$, welch...
+
+Not a real error.
+
+[167]
+! Preview: Snippet 168 started.
+<-><->
+      
+l.132 \item die Ecken $V$ von $
+                               G$ genau diejenigen Simplizes $\sigma$, welch...
+
+Not a real error.
+
+! Preview: Snippet 168 ended.(447828+0x515276).
+<-><->
+      
+l.132 \item die Ecken $V$ von $G$
+                                  genau diejenigen Simplizes $\sigma$, welch...
+
+Not a real error.
+
+[168]
+! Preview: Snippet 169 started.
+<-><->
+      
+l.132 ... $V$ von $G$ genau diejenigen Simplizes $
+                                                  \sigma$, welche eine der f...
+
+Not a real error.
+
+! Preview: Snippet 169 ended.(282168+0x397994).
+<-><->
+      
+l.132 ...n $G$ genau diejenigen Simplizes $\sigma$
+                                                  , welche eine der folgende...
+
+Not a real error.
+
+[169]
+! Preview: Snippet 170 started.
+<-><->
+      
+l.134 \item $
+             \sigma$ ist $n$-dimensional und alternierend.
+Not a real error.
+
+! Preview: Snippet 170 ended.(282168+0x397994).
+<-><->
+      
+l.134 \item $\sigma$
+                     ist $n$-dimensional und alternierend.
+Not a real error.
+
+[170]
+! Preview: Snippet 171 started.
+<-><->
+      
+l.134 \item $\sigma$ ist $
+                          n$-dimensional und alternierend.
+Not a real error.
+
+! Preview: Snippet 171 ended.(282168+0x393370).
+<-><->
+      
+l.134 \item $\sigma$ ist $n$
+                            -dimensional und alternierend.
+Not a real error.
+
+[171]
+! Preview: Snippet 172 started.
+<-><->
+      
+l.135 \item $
+             \sigma$ ist $(d-1)$-dimensional und $\epsilon$-alternierend und...
+
+Not a real error.
+
+! Preview: Snippet 172 ended.(282168+0x397994).
+<-><->
+      
+l.135 \item $\sigma$
+                     ist $(d-1)$-dimensional und $\epsilon$-alternierend und...
+
+Not a real error.
+
+[172]
+! Preview: Snippet 173 started.
+<-><->
+      
+l.135 \item $\sigma$ ist $
+                          (d-1)$-dimensional und $\epsilon$-alternierend und...
+
+Not a real error.
+
+! Preview: Snippet 173 ended.(491520+163840x1979503).
+<-><->
+      
+l.135 \item $\sigma$ ist $(d-1)$
+                                -dimensional und $\epsilon$-alternierend und...
+
+Not a real error.
+
+[173]
+! Preview: Snippet 174 started.
+<-><->
+      
+l.135 \item $\sigma$ ist $(d-1)$-dimensional und $
+                                                  \epsilon$-alternierend und...
+
+Not a real error.
+
+! Preview: Snippet 174 ended.(282168+0x266013).
+<-><->
+      
+l.135 ...a$ ist $(d-1)$-dimensional und $\epsilon$
+                                                  -alternierend und hat $H^\...
+
+Not a real error.
+
+[174]
+! Preview: Snippet 175 started.
+<-><->
+      
+l.135 ...nal und $\epsilon$-alternierend und hat $
+                                                  H^\epsilon_d$ als Trägerh...
+
+Not a real error.
+
+! Preview: Snippet 175 ended.(447828+185604x850354).
+<-><->
+      
+l.135 ...ilon$-alternierend und hat $H^\epsilon_d$
+                                                   als Trägerhemisphäre (A...
+
+Not a real error.
+
+[175]
+! Preview: Snippet 176 started.
+<-><->
+      
+l.135 ...d$ als Trägerhemisphäre (ACHTUNG: die $
+                                                  \epsilon$'s und $d$'s sind...
+
+Not a real error.
+
+! Preview: Snippet 176 ended.(282168+0x266013).
+<-><->
+      
+l.135 ...ägerhemisphäre (ACHTUNG: die $\epsilon$
+                                                  's und $d$'s sind gleich).
+Not a real error.
+
+[176]
+! Preview: Snippet 177 started.
+<-><->
+      
+l.135 ...isphäre (ACHTUNG: die $\epsilon$'s und $
+                                                  d$'s sind gleich).
+Not a real error.
+
+! Preview: Snippet 177 ended.(455111+0x341106).
+<-><->
+      
+l.135 ...phäre (ACHTUNG: die $\epsilon$'s und $d$
+                                                  's sind gleich).
+Not a real error.
+
+[177]
+! Preview: Snippet 178 started.
+<-><->
+      
+l.136 \item $
+             \sigma$ ist $d$-dimensional und und fast $\epsilon$-alternieren...
+
+Not a real error.
+
+! Preview: Snippet 178 ended.(282168+0x397994).
+<-><->
+      
+l.136 \item $\sigma$
+                     ist $d$-dimensional und und fast $\epsilon$-alternieren...
+
+Not a real error.
+
+[178]
+! Preview: Snippet 179 started.
+<-><->
+      
+l.136 \item $\sigma$ ist $
+                          d$-dimensional und und fast $\epsilon$-alternieren...
+
+Not a real error.
+
+! Preview: Snippet 179 ended.(455111+0x341106).
+<-><->
+      
+l.136 \item $\sigma$ ist $d$
+                            -dimensional und und fast $\epsilon$-alternieren...
+
+Not a real error.
+
+[179]
+! Preview: Snippet 180 started.
+<-><->
+      
+l.136 ...sigma$ ist $d$-dimensional und und fast $
+                                                  \epsilon$-alternierend und...
+
+Not a real error.
+
+! Preview: Snippet 180 ended.(282168+0x266013).
+<-><->
+      
+l.136 ...t $d$-dimensional und und fast $\epsilon$
+                                                  -alternierend und seine Tr...
+
+Not a real error.
+
+[180]
+! Preview: Snippet 181 started.
+<-><->
+      
+l.136 ...ierend und seine Trägerhemisphäre ist $
+                                                  H^\epsilon_d$.
+Not a real error.
+
+! Preview: Snippet 181 ended.(447828+185604x850354).
+<-><->
+      
+l.136 ...ine Trägerhemisphäre ist $H^\epsilon_d$
+                                                  .
+Not a real error.
+
+[181]
+! Preview: Snippet 182 started.
+<-><->
+      
+l.138 \item die Kanten von $
+                            G$ sind nun so zu wählen, dass jede Ecke nach M...
+
+Not a real error.
+
+! Preview: Snippet 182 ended.(447828+0x515276).
+<-><->
+      
+l.138 \item die Kanten von $G$
+                               sind nun so zu wählen, dass jede Ecke nach M...
+
+Not a real error.
+
+[182]
+! Preview: Snippet 183 started.
+<-><->
+      
+l.139 Daher definieren wir, dass zwei Simplizes $
+                                                 \sigma,\tau\in V$ genau dan...
+
+Not a real error.
+
+! Preview: Snippet 183 ended.(447828+127431x2342447).
+<-><->
+      
+l.139 ...r, dass zwei Simplizes $\sigma,\tau\in V$
+                                                   genau dann benachbart sin...
+
+Not a real error.
+
+[183]
+! Preview: Snippet 184 started.
+<-><->
+      
+l.141 \item $
+             \sigma$ Facette von $\tau$ ist (bis auf Vertauschung von $\sigm...
+
+Not a real error.
+
+! Preview: Snippet 184 ended.(282168+0x397994).
+<-><->
+      
+l.141 \item $\sigma$
+                     Facette von $\tau$ ist (bis auf Vertauschung von $\sigm...
+
+Not a real error.
+
+[184]
+! Preview: Snippet 185 started.
+<-><->
+      
+l.141 \item $\sigma$ Facette von $
+                                  \tau$ ist (bis auf Vertauschung von $\sigm...
+
+Not a real error.
+
+! Preview: Snippet 185 ended.(282168+0x360676).
+<-><->
+      
+l.141 \item $\sigma$ Facette von $\tau$
+                                        ist (bis auf Vertauschung von $\sigm...
+
+Not a real error.
+
+[185]
+! Preview: Snippet 186 started.
+<-><->
+      
+l.141 ...on $\tau$ ist (bis auf Vertauschung von $
+                                                  \sigma, \tau$)
+Not a real error.
+
+! Preview: Snippet 186 ended.(282168+127431x1013530).
+<-><->
+      
+l.141 ... (bis auf Vertauschung von $\sigma, \tau$
+                                                  )
+Not a real error.
+
+[186]
+! Preview: Snippet 187 started.
+<-><->
+      
+l.142 \item falls $
+                   \tau$ als Trägerhemisphäre $H^\epsilon_d$ hat, dann ist...
+
+Not a real error.
+
+! Preview: Snippet 187 ended.(282168+0x360676).
+<-><->
+      
+l.142 \item falls $\tau$
+                         als Trägerhemisphäre $H^\epsilon_d$ hat, dann ist...
+
+Not a real error.
+
+[187]
+! Preview: Snippet 188 started.
+<-><->
+      
+l.142 \item falls $\tau$ als Trägerhemisphäre $
+                                                 H^\epsilon_d$ hat, dann ist...
+
+Not a real error.
+
+! Preview: Snippet 188 ended.(447828+185604x850354).
+<-><->
+      
+l.142 ...au$ als Trägerhemisphäre $H^\epsilon_d$
+                                                   hat, dann ist $\sigma$ $\...
+
+Not a real error.
+
+[188]
+! Preview: Snippet 189 started.
+<-><->
+      
+l.142 ...emisphäre $H^\epsilon_d$ hat, dann ist $
+                                                  \sigma$ $\epsilon$-alterni...
+
+Not a real error.
+
+! Preview: Snippet 189 ended.(282168+0x397994).
+<-><->
+      
+l.142 ...�re $H^\epsilon_d$ hat, dann ist $\sigma$
+                                                   $\epsilon$-alternierend (...
+
+Not a real error.
+
+[189]
+! Preview: Snippet 190 started.
+<-><->
+      
+l.142 ...e $H^\epsilon_d$ hat, dann ist $\sigma$ $
+                                                  \epsilon$-alternierend (gl...
+
+Not a real error.
+
+! Preview: Snippet 190 ended.(282168+0x266013).
+<-><->
+      
+l.142 ...ilon_d$ hat, dann ist $\sigma$ $\epsilon$
+                                                  -alternierend (gleiches $\...
+
+Not a real error.
+
+[190]
+! Preview: Snippet 191 started.
+<-><->
+      
+l.142 ...igma$ $\epsilon$-alternierend (gleiches $
+                                                  \epsilon$).
+Not a real error.
+
+! Preview: Snippet 191 ended.(282168+0x266013).
+<-><->
+      
+l.142 ...psilon$-alternierend (gleiches $\epsilon$
+                                                  ).
+Not a real error.
+
+[191]
+! Preview: Snippet 192 started.
+<-><->
+      
+l.146 ... schnell ein, dass sämtlichen Ecken in $
+                                                  G$ Eckengrade 1 oder 2 haben.
+
+Not a real error.
+
+! Preview: Snippet 192 ended.(447828+0x515276).
+<-><->
+      
+l.146 ...chnell ein, dass sämtlichen Ecken in $G$
+                                                   Eckengrade 1 oder 2 haben.
+Not a real error.
+
+[192]
+! Preview: Snippet 193 started.
+<-><->
+      
+l.148 \item Wenn $
+                  \sigma$ Dimension $d-1$ hat und Trägerhemisphäre $H^\eps...
+
+Not a real error.
+
+! Preview: Snippet 193 ended.(282168+0x397994).
+<-><->
+      
+l.148 \item Wenn $\sigma$
+                          Dimension $d-1$ hat und Trägerhemisphäre $H^\eps...
+
+Not a real error.
+
+[193]
+! Preview: Snippet 194 started.
+<-><->
+      
+l.148 \item Wenn $\sigma$ Dimension $
+                                     d-1$ hat und Trägerhemisphäre $H^\eps...
+
+Not a real error.
+
+! Preview: Snippet 194 ended.(455111+54613x1469777).
+<-><->
+      
+l.148 \item Wenn $\sigma$ Dimension $d-1$
+                                          hat und Trägerhemisphäre $H^\eps...
+
+Not a real error.
+
+[194]
+! Preview: Snippet 195 started.
+<-><->
+      
+l.148 ...ension $d-1$ hat und Trägerhemisphäre $
+                                                  H^\epsilon_d$ (also $\epsi...
+
+Not a real error.
+
+! Preview: Snippet 195 ended.(447828+185604x850354).
+<-><->
+      
+l.148 ...hat und Trägerhemisphäre $H^\epsilon_d$
+                                                   (also $\epsilon$-alternie...
+
+Not a real error.
+
+[195]
+! Preview: Snippet 196 started.
+<-><->
+      
+l.148 ...Trägerhemisphäre $H^\epsilon_d$ (also $
+                                                  \epsilon$-alternierend ist...
+
+Not a real error.
+
+! Preview: Snippet 196 ended.(282168+0x266013).
+<-><->
+      
+l.148 ...misphäre $H^\epsilon_d$ (also $\epsilon$
+                                                  -alternierend ist), ist Fa...
+
+Not a real error.
+
+[196]
+! Preview: Snippet 197 started.
+<-><->
+      
+l.148 ...ierend ist), ist Facette von genau zwei $
+                                                  d$-Simplizes, welche beide...
+
+Not a real error.
+
+! Preview: Snippet 197 ended.(455111+0x341106).
+<-><->
+      
+l.148 ...rend ist), ist Facette von genau zwei $d$
+                                                  -Simplizes, welche beide a...
+
+Not a real error.
+
+[197]
+! Preview: Snippet 198 started.
+<-><->
+      
+l.148 ...wei $d$-Simplizes, welche beide auch in $
+                                                  H^\epsilon_d$ liegen müss...
+
+Not a real error.
+
+! Preview: Snippet 198 ended.(447828+185604x850354).
+<-><->
+      
+l.148 ...izes, welche beide auch in $H^\epsilon_d$
+                                                   liegen müssen und beide ...
+
+Not a real error.
+
+[198]
+! Preview: Snippet 199 started.
+<-><->
+      
+l.148 ...$H^\epsilon_d$ liegen müssen und beide $
+                                                  \epsilon$-alternierend ode...
+
+Not a real error.
+
+! Preview: Snippet 199 ended.(282168+0x266013).
+<-><->
+      
+l.148 ...on_d$ liegen müssen und beide $\epsilon$
+                                                  -alternierend oder fast $\...
+
+Not a real error.
+
+[199]
+! Preview: Snippet 200 started.
+<-><->
+      
+l.148 ...beide $\epsilon$-alternierend oder fast $
+                                                  \epsilon$-alternierend sin...
+
+Not a real error.
+
+! Preview: Snippet 200 ended.(282168+0x266013).
+<-><->
+      
+l.148 ...psilon$-alternierend oder fast $\epsilon$
+                                                  -alternierend sind. Also $...
+
+Not a real error.
+
+[200]
+! Preview: Snippet 201 started.
+<-><->
+      
+l.148 ...fast $\epsilon$-alternierend sind. Also $
+                                                  \deg(\sigma)=2$
+Not a real error.
+
+! Preview: Snippet 201 ended.(491520+163840x3101350).
+<-><->
+      
+l.148 ...-alternierend sind. Also $\deg(\sigma)=2$
+                                                  
+Not a real error.
+
+[201]
+! Preview: Snippet 202 started.
+<-><->
+      
+l.149 \item Wenn $
+                  \sigma$ Dimension $d$ hat und Trägerhemispäre $H^\epsilo...
+
+Not a real error.
+
+! Preview: Snippet 202 ended.(282168+0x397994).
+<-><->
+      
+l.149 \item Wenn $\sigma$
+                          Dimension $d$ hat und Trägerhemispäre $H^\epsilo...
+
+Not a real error.
+
+[202]
+! Preview: Snippet 203 started.
+<-><->
+      
+l.149 \item Wenn $\sigma$ Dimension $
+                                     d$ hat und Trägerhemispäre $H^\epsilo...
+
+Not a real error.
+
+! Preview: Snippet 203 ended.(455111+0x341106).
+<-><->
+      
+l.149 \item Wenn $\sigma$ Dimension $d$
+                                        hat und Trägerhemispäre $H^\epsilo...
+
+Not a real error.
+
+[203]
+! Preview: Snippet 204 started.
+<-><->
+      
+l.149 ...Dimension $d$ hat und Trägerhemispäre $
+                                                  H^\epsilon_d$, sowie fast ...
+
+Not a real error.
+
+! Preview: Snippet 204 ended.(447828+185604x850354).
+<-><->
+      
+l.149 ... hat und Trägerhemispäre $H^\epsilon_d$
+                                                  , sowie fast $\epsilon$-al...
+
+Not a real error.
+
+[204]
+! Preview: Snippet 205 started.
+<-><->
+      
+l.149 ...erhemispäre $H^\epsilon_d$, sowie fast $
+                                                  \epsilon$-alternierend ist...
+
+Not a real error.
+
+! Preview: Snippet 205 ended.(282168+0x266013).
+<-><->
+      
+l.149 ...�re $H^\epsilon_d$, sowie fast $\epsilon$
+                                                  -alternierend ist, dann ha...
+
+Not a real error.
+
+[205]
+! Preview: Snippet 206 started.
+<-><->
+      
+l.149 ...t $\epsilon$-alternierend ist, dann hat $
+                                                  \sigma$ genau zwei $\epsil...
+
+Not a real error.
+
+! Preview: Snippet 206 ended.(282168+0x397994).
+<-><->
+      
+l.149 ...ilon$-alternierend ist, dann hat $\sigma$
+                                                   genau zwei $\epsilon$-alt...
+
+Not a real error.
+
+[206]
+! Preview: Snippet 207 started.
+<-><->
+      
+l.149 ...erend ist, dann hat $\sigma$ genau zwei $
+                                                  \epsilon$-alternierende Fa...
+
+Not a real error.
+
+! Preview: Snippet 207 ended.(282168+0x266013).
+<-><->
+      
+l.149 ..., dann hat $\sigma$ genau zwei $\epsilon$
+                                                  -alternierende Facetten (d...
+
+Not a real error.
+
+[207]
+! Preview: Snippet 208 started.
+<-><->
+      
+l.149 ...hält keine komplementäre Kante). Also $
+                                                  \deg(\sigma)=2$.
+Not a real error.
+
+! Preview: Snippet 208 ended.(491520+163840x3101350).
+<-><->
+      
+l.149 ...plementäre Kante). Also $\deg(\sigma)=2$
+                                                  .
+Not a real error.
+
+[208]
+! Preview: Snippet 209 started.
+<-><->
+      
+l.150 \item Wenn nun zuletzt $
+                              \sigma$ wieder $d$-dimensional ist und alterni...
+
+Not a real error.
+
+! Preview: Snippet 209 ended.(282168+0x397994).
+<-><->
+      
+l.150 \item Wenn nun zuletzt $\sigma$
+                                      wieder $d$-dimensional ist und alterni...
+
+Not a real error.
+
+[209]
+! Preview: Snippet 210 started.
+<-><->
+      
+l.150 \item Wenn nun zuletzt $\sigma$ wieder $
+                                              d$-dimensional ist und alterni...
+
+Not a real error.
+
+! Preview: Snippet 210 ended.(455111+0x341106).
+<-><->
+      
+l.150 \item Wenn nun zuletzt $\sigma$ wieder $d$
+                                                -dimensional ist und alterni...
+
+Not a real error.
+
+[210]
+! Preview: Snippet 211 started.
+<-><->
+      
+l.150 ...mensional ist und alternierend (egal ob $
+                                                  +$ oder $-$) und als Träg...
+
+Not a real error.
+
+! Preview: Snippet 211 ended.(382293+54613x509726).
+<-><->
+      
+l.150 ...nsional ist und alternierend (egal ob $+$
+                                                   oder $-$) und als Träger...
+
+Not a real error.
+
+[211]
+! Preview: Snippet 212 started.
+<-><->
+      
+l.150 ... ist und alternierend (egal ob $+$ oder $
+                                                  -$) und als Trägerhemisph...
+
+Not a real error.
+
+! Preview: Snippet 212 ended.(382293+54613x509726).
+<-><->
+      
+l.150 ...st und alternierend (egal ob $+$ oder $-$
+                                                  ) und als Trägerhemisphä...
+
+Not a real error.
+
+[212]
+! Preview: Snippet 213 started.
+<-><->
+      
+l.150 ...+$ oder $-$) und als Trägerhemisphäre $
+                                                  H^\epsilon_d$ hat, dann ha...
+
+Not a real error.
+
+! Preview: Snippet 213 ended.(447828+185604x850354).
+<-><->
+      
+l.150 ...und als Trägerhemisphäre $H^\epsilon_d$
+                                                   hat, dann hat im Falle $0...
+
+Not a real error.
+
+[213]
+! Preview: Snippet 214 started.
+<-><->
+      
+l.150 ...e $H^\epsilon_d$ hat, dann hat im Falle $
+                                                  0<d<n$ das Simplex $\sigma...
+
+Not a real error.
+
+! Preview: Snippet 214 ended.(455111+25623x2809769).
+<-><->
+      
+l.150 ...epsilon_d$ hat, dann hat im Falle $0<d<n$
+                                                   das Simplex $\sigma$ auch...
+
+Not a real error.
+
+[214]
+! Preview: Snippet 215 started.
+<-><->
+      
+l.150 ..., dann hat im Falle $0<d<n$ das Simplex $
+                                                  \sigma$ auch wieder zwei N...
+
+Not a real error.
+
+! Preview: Snippet 215 ended.(282168+0x397994).
+<-><->
+      
+l.150 ...hat im Falle $0<d<n$ das Simplex $\sigma$
+                                                   auch wieder zwei Nachbarn...
+
+Not a real error.
+
+[215]
+! Preview: Snippet 216 started.
+<-><->
+      
+l.150 ...uch wieder zwei Nachbarn, den einen als $
+                                                  \epsilon$-alternierende Fa...
+
+Not a real error.
+
+! Preview: Snippet 216 ended.(282168+0x266013).
+<-><->
+      
+l.150 ...r zwei Nachbarn, den einen als $\epsilon$
+                                                  -alternierende Facette (Ec...
+
+Not a real error.
+
+[216]
+! Preview: Snippet 217 started.
+<-><->
+      
+l.150 ...eren durch weiterlaufen vom Inneren von $
+                                                  \sigma$ aus in Richtung $\...
+
+Not a real error.
+
+! Preview: Snippet 217 ended.(282168+0x397994).
+<-><->
+      
+l.150 ...rch weiterlaufen vom Inneren von $\sigma$
+                                                   aus in Richtung $\epsilon...
+
+Not a real error.
+
+[217]
+! Preview: Snippet 218 started.
+<-><->
+      
+l.150 ...om Inneren von $\sigma$ aus in Richtung $
+                                                  \epsilon e_{d+1}$.
+Not a real error.
+
+! Preview: Snippet 218 ended.(282168+152917x1540307).
+<-><->
+      
+l.150 ...sigma$ aus in Richtung $\epsilon e_{d+1}$
+                                                  .
+Not a real error.
+
+[218]
+! Preview: Snippet 219 started.
+<-><->
+      
+l.151 Im Falle $
+                d=0$ oder $d=n$ fällte jeweils einer dieser Nachbarn weg.
+Not a real error.
+
+! Preview: Snippet 219 ended.(455111+0x1542593).
+<-><->
+      
+l.151 Im Falle $d=0$
+                     oder $d=n$ fällte jeweils einer dieser Nachbarn weg.
+Not a real error.
+
+[219]
+! Preview: Snippet 220 started.
+<-><->
+      
+l.151 Im Falle $d=0$ oder $
+                           d=n$ fällte jeweils einer dieser Nachbarn weg.
+Not a real error.
+
+! Preview: Snippet 220 ended.(455111+0x1608282).
+<-><->
+      
+l.151 Im Falle $d=0$ oder $d=n$
+                                fällte jeweils einer dieser Nachbarn weg.
+Not a real error.
+
+[220]
+! Preview: Snippet 221 started.
+<-><->
+      
+l.154 Damit besteht der Graph $
+                               G$ nur aus Pfaden und Kreisen. Wobei eine Eck...
+
+Not a real error.
+
+! Preview: Snippet 221 ended.(447828+0x515276).
+<-><->
+      
+l.154 Damit besteht der Graph $G$
+                                  nur aus Pfaden und Kreisen. Wobei eine Eck...
+
+Not a real error.
+
+[221]
+! Preview: Snippet 222 started.
+<-><->
+      
+l.154 ...aus Pfaden und Kreisen. Wobei eine Ecke $
+                                                  \sigma$ genau dann Eckengr...
+
+Not a real error.
+
+! Preview: Snippet 222 ended.(282168+0x397994).
+<-><->
+      
+l.154 ...den und Kreisen. Wobei eine Ecke $\sigma$
+                                                   genau dann Eckengrad 1 ha...
+
+Not a real error.
+
+[222]
+! Preview: Snippet 223 started.
+<-><->
+      
+l.154 ...sigma$ genau dann Eckengrad 1 hat, wenn $
+                                                  \sigma$ ein alternierendes...
+
+Not a real error.
+
+! Preview: Snippet 223 ended.(282168+0x397994).
+<-><->
+      
+l.154 ...genau dann Eckengrad 1 hat, wenn $\sigma$
+                                                   ein alternierendes $n$-Si...
+
+Not a real error.
+
+[223]
+! Preview: Snippet 224 started.
+<-><->
+      
+l.154 ...1 hat, wenn $\sigma$ ein alternierendes $
+                                                  n$-Simplex ist, oder $\sig...
+
+Not a real error.
+
+! Preview: Snippet 224 ended.(282168+0x393370).
+<-><->
+      
+l.154 ...hat, wenn $\sigma$ ein alternierendes $n$
+                                                  -Simplex ist, oder $\sigma...
+
+Not a real error.
+
+[224]
+! Preview: Snippet 225 started.
+<-><->
+      
+l.154 ...in alternierendes $n$-Simplex ist, oder $
+                                                  \sigma$ ein $0$-Siplex ist...
+
+Not a real error.
+
+! Preview: Snippet 225 ended.(282168+0x397994).
+<-><->
+      
+l.154 ...rnierendes $n$-Simplex ist, oder $\sigma$
+                                                   ein $0$-Siplex ist. Die e...
+
+Not a real error.
+
+[225]
+! Preview: Snippet 226 started.
+<-><->
+      
+l.154 ...ndes $n$-Simplex ist, oder $\sigma$ ein $
+                                                  0$-Siplex ist. Die einzige...
+
+Not a real error.
+
+! Preview: Snippet 226 ended.(422343+0x327681).
+<-><->
+      
+l.154 ...es $n$-Simplex ist, oder $\sigma$ ein $0$
+                                                  -Siplex ist. Die einzigen ...
+
+Not a real error.
+
+[226]
+! Preview: Snippet 227 started.
+<-><->
+      
+l.154 ...sigma$ ein $0$-Siplex ist. Die einzigen $
+                                                  0$-Simplizes, die tatsäch...
+
+Not a real error.
+
+! Preview: Snippet 227 ended.(422343+0x327681).
+<-><->
+      
+l.154 ...gma$ ein $0$-Siplex ist. Die einzigen $0$
+                                                  -Simplizes, die tatsächli...
+
+Not a real error.
+
+[227]
+! Preview: Snippet 228 started.
+<-><->
+      
+l.154 ...es, die tatsächlich in unserem Graphen $
+                                                  G$ auftauchen sind aber $\...
+
+Not a real error.
+
+! Preview: Snippet 228 ended.(447828+0x515276).
+<-><->
+      
+l.154 ..., die tatsächlich in unserem Graphen $G$
+                                                   auftauchen sind aber $\{e...
+
+Not a real error.
+
+[228]
+! Preview: Snippet 229 started.
+<-><->
+      
+l.154 ...nserem Graphen $G$ auftauchen sind aber $
+                                                  \{e_0\}$ und $\{-e_0\}$.
+Not a real error.
+
+! Preview: Snippet 229 ended.(491520+163840x1254518).
+<-><->
+      
+l.154 ...raphen $G$ auftauchen sind aber $\{e_0\}$
+                                                   und $\{-e_0\}$.
+Not a real error.
+
+[229]
+! Preview: Snippet 230 started.
+<-><->
+      
+l.154 ... $G$ auftauchen sind aber $\{e_0\}$ und $
+                                                  \{-e_0\}$.
+Not a real error.
+
+! Preview: Snippet 230 ended.(491520+163840x1764244).
+<-><->
+      
+l.154 ...auchen sind aber $\{e_0\}$ und $\{-e_0\}$
+                                                  .
+Not a real error.
+
+[230]
+! Preview: Snippet 231 started.
+<-><->
+      
+l.156 Über jeden Pfad hinweg bleibt das $
+                                          \epsilon$ 'jedoch konstant'. Damit...
+
+Not a real error.
+
+! Preview: Snippet 231 ended.(282168+0x266013).
+<-><->
+      
+l.156 ...r jeden Pfad hinweg bleibt das $\epsilon$
+                                                   'jedoch konstant'. Damit ...
+
+Not a real error.
+
+[231]
+! Preview: Snippet 232 started.
+<-><->
+      
+l.156 ...och konstant'. Damit können die beiden $
+                                                  0$-Simplizes nicht durch e...
+
+Not a real error.
+
+! Preview: Snippet 232 ended.(422343+0x327681).
+<-><->
+      
+l.156 ...h konstant'. Damit können die beiden $0$
+                                                  -Simplizes nicht durch ein...
+
+Not a real error.
+
+[232]
+! Preview: Snippet 233 started.
+<-><->
+      
+l.156 ... nicht durch einen Pfad verbunden sein ($
+                                                  -1\neq 1$).
+Not a real error.
+
+! Preview: Snippet 233 ended.(455111+127430x2038894).
+<-><->
+      
+l.156 ...rch einen Pfad verbunden sein ($-1\neq 1$
+                                                  ).
+Not a real error.
+
+[233]
+! Preview: Snippet 234 started.
+<-><->
+      
+l.159 Damit folgt jedoch dass die Anzahl der $
+                                              +$-alternierenden $n$-Simplize...
+
+Not a real error.
+
+! Preview: Snippet 234 ended.(382293+54613x509726).
+<-><->
+      
+l.159 Damit folgt jedoch dass die Anzahl der $+$
+                                                -alternierenden $n$-Simplize...
+
+Not a real error.
+
+[234]
+! Preview: Snippet 235 started.
+<-><->
+      
+l.159 ... dass die Anzahl der $+$-alternierenden $
+                                                  n$-Simplizes ungerade ist,...
+
+Not a real error.
+
+! Preview: Snippet 235 ended.(282168+0x393370).
+<-><->
+      
+l.159 ...ass die Anzahl der $+$-alternierenden $n$
+                                                  -Simplizes ungerade ist, d...
+
+Not a real error.
+
+[235]
+! Preview: Snippet 236 started.
+<-><->
+      
+l.159 ...mplizes ungerade ist, denn durch den in $
+                                                  \{e_0\}$ startenden Pfad e...
+
+Not a real error.
+
+! Preview: Snippet 236 ended.(491520+163840x1254518).
+<-><->
+      
+l.159 ...ungerade ist, denn durch den in $\{e_0\}$
+                                                   startenden Pfad erhält m...
+
+Not a real error.
+
+[236]
+! Preview: Snippet 237 started.
+<-><->
+      
+l.161 ... noch zu erwähnen, dass die Anzahl der $
+                                                  -$-alternierenden $n$-Simp...
+
+Not a real error.
+
+! Preview: Snippet 237 ended.(382293+54613x509726).
+<-><->
+      
+l.161 ...och zu erwähnen, dass die Anzahl der $-$
+                                                  -alternierenden $n$-Simpli...
+
+Not a real error.
+
+[237]
+! Preview: Snippet 238 started.
+<-><->
+      
+l.161 ... dass die Anzahl der $-$-alternierenden $
+                                                  n$-Simplizes in $G$ diesel...
+
+Not a real error.
+
+! Preview: Snippet 238 ended.(282168+0x393370).
+<-><->
+      
+l.161 ...ass die Anzahl der $-$-alternierenden $n$
+                                                  -Simplizes in $G$ dieselbe...
+
+Not a real error.
+
+[238]
+! Preview: Snippet 239 started.
+<-><->
+      
+l.161 ...der $-$-alternierenden $n$-Simplizes in $
+                                                  G$ dieselbe ist (denn unte...
+
+Not a real error.
+
+! Preview: Snippet 239 ended.(447828+0x515276).
+<-><->
+      
+l.161 ...r $-$-alternierenden $n$-Simplizes in $G$
+                                                   dieselbe ist (denn unter ...
+
+Not a real error.
+
+[239]
+! Preview: Snippet 240 started.
+<-><->
+      
+l.161 ...mplizes in $G$ dieselbe ist (denn unter $
+                                                  x\mapsto-x$ werden $+$-alt...
+
+Not a real error.
+
+! Preview: Snippet 240 ended.(382293+54613x2278279).
+<-><->
+      
+l.161 ...$G$ dieselbe ist (denn unter $x\mapsto-x$
+                                                   werden $+$-alternierende ...
+
+Not a real error.
+
+[240]
+! Preview: Snippet 241 started.
+<-><->
+      
+l.161 ...lbe ist (denn unter $x\mapsto-x$ werden $
+                                                  +$-alternierende Simplizes...
+
+Not a real error.
+
+! Preview: Snippet 241 ended.(382293+54613x509726).
+<-><->
+      
+l.161 ...e ist (denn unter $x\mapsto-x$ werden $+$
+                                                  -alternierende Simplizes a...
+
+Not a real error.
+
+[241]
+! Preview: Snippet 242 started.
+<-><->
+      
+l.161 ... werden $+$-alternierende Simplizes auf $
+                                                  -$-alternierende abgebilde...
+
+Not a real error.
+
+! Preview: Snippet 242 ended.(382293+54613x509726).
+<-><->
+      
+l.161 ...erden $+$-alternierende Simplizes auf $-$
+                                                  -alternierende abgebildet ...
+
+Not a real error.
+
+[242]
+! Preview: Snippet 243 started.
+<-><->
+      
+l.165 ...at dann als Ecken vom Grade 1 genau die $
+                                                  0$-Simplizes und alternier...
+
+Not a real error.
+
+! Preview: Snippet 243 ended.(422343+0x327681).
+<-><->
+      
+l.165 ... dann als Ecken vom Grade 1 genau die $0$
+                                                  -Simplizes und alternieren...
+
+Not a real error.
+
+[243]
+! Preview: Snippet 244 started.
+<-><->
+      
+l.165 ...au die $0$-Simplizes und alternierenden $
+                                                  n$-Simplizes, sowie fast a...
+
+Not a real error.
+
+! Preview: Snippet 244 ended.(282168+0x393370).
+<-><->
+      
+l.165 ... die $0$-Simplizes und alternierenden $n$
+                                                  -Simplizes, sowie fast alt...
+
+Not a real error.
+
+[244]
+! Preview: Snippet 245 started.
+<-><->
+      
+l.168 \section
+              {Wenn noch etwas Zeit bleibt ... }
+Not a real error.
+
+! Preview: Snippet 245 ended.(655359+0x26105517).
+<-><->
+      
+l.168 \section{Wenn noch etwas Zeit bleibt ... }
+                                                
+Not a real error.
+
+[245
+
+]
+! Preview: Snippet 246 started.
+<-><->
+      
+l.170 ...rachtet man diejenigen Pfade im Graphen $
+                                                  G$, die mit der in $\spher...
+
+Not a real error.
+
+! Preview: Snippet 246 ended.(447828+0x515276).
+<-><->
+      
+l.170 ...chtet man diejenigen Pfade im Graphen $G$
+                                                  , die mit der in $\sphere^...
+
+Not a real error.
+
+[246]
+! Preview: Snippet 247 started.
+<-><->
+      
+l.170 ...en Pfade im Graphen $G$, die mit der in $
+                                                  \sphere^n_1$ eingebetteten...
+
+Not a real error.
+
+! Preview: Snippet 247 ended.(451470+162667x720824).
+<-><->
+      
+l.170 ...Graphen $G$, die mit der in $\sphere^n_1$
+                                                   eingebetteten niederdimen...
+
+Not a real error.
+
+[247]
+! Preview: Snippet 248 started.
+<-><->
+      
+l.170 ...ingebetteten niederdimensionalen Späre $
+                                                  S_{n-1}:=H^+_{n-1}\cup H^-...
+
+Not a real error.
+
+! Preview: Snippet 248 ended.(564338+229372x6358132).
+<-><->
+      
+l.170 ...Späre $S_{n-1}:=H^+_{n-1}\cup H^-_{n-1}$
+                                                   nichtleeren Schnitt haben...
+
+Not a real error.
+
+[248]
+! Preview: Snippet 249 started.
+<-><->
+      
+l.170 ...ibt es nicht - denn jede Komponente von $
+                                                  G$ hat ein alternierendes ...
+
+Not a real error.
+
+! Preview: Snippet 249 ended.(447828+0x515276).
+<-><->
+      
+l.170 ...t es nicht - denn jede Komponente von $G$
+                                                   hat ein alternierendes $n...
+
+Not a real error.
+
+[249]
+! Preview: Snippet 250 started.
+<-><->
+      
+l.170 ...mponente von $G$ hat ein alternierendes $
+                                                  n-$-Simplex in sich). Der ...
+
+Not a real error.
+
+! Preview: Snippet 250 ended.(382293+54613x903096).
+<-><->
+      
+l.170 ...nente von $G$ hat ein alternierendes $n-$
+                                                  -Simplex in sich). Der Sch...
+
+Not a real error.
+
+[250]
+! Preview: Snippet 251 started.
+<-><->
+      
+l.170 ...sich). Der Schnitt eines solchen Pfades $
+                                                  p$ mit $S_{n-1}$ ist ein e...
+
+Not a real error.
+
+! Preview: Snippet 251 ended.(282168+127431x329728).
+<-><->
+      
+l.170 ...ch). Der Schnitt eines solchen Pfades $p$
+                                                   mit $S_{n-1}$ ist ein ent...
+
+Not a real error.
+
+[251]
+! Preview: Snippet 252 started.
+<-><->
+      
+l.170 ...er Schnitt eines solchen Pfades $p$ mit $
+                                                  S_{n-1}$ ist ein entsprech...
+
+Not a real error.
+
+! Preview: Snippet 252 ended.(447828+152917x1429433).
+<-><->
+      
+l.170 ...tt eines solchen Pfades $p$ mit $S_{n-1}$
+                                                   ist ein entsprechender Pf...
+
+Not a real error.
+
+[252]
+! Preview: Snippet 253 started.
+<-><->
+      
+l.170 ...chender Pfad des entsprechenden Graphen $
+                                                  G'$ in der Einschränkung ...
+
+Not a real error.
+
+! Preview: Snippet 253 ended.(492688+0x699141).
+<-><->
+      
+l.170 ...nder Pfad des entsprechenden Graphen $G'$
+                                                   in der Einschränkung von...
+
+Not a real error.
+
+[253]
+! Preview: Snippet 254 started.
+<-><->
+      
+l.170 ... Graphen $G'$ in der Einschränkung von $
+                                                  T$ auf $S_{n-1}$.
+Not a real error.
+
+! Preview: Snippet 254 ended.(447828+0x473999).
+<-><->
+      
+l.170 ...raphen $G'$ in der Einschränkung von $T$
+                                                   auf $S_{n-1}$.
+Not a real error.
+
+[254]
+! Preview: Snippet 255 started.
+<-><->
+      
+l.170 ... $G'$ in der Einschränkung von $T$ auf $
+                                                  S_{n-1}$.
+Not a real error.
+
+! Preview: Snippet 255 ended.(447828+152917x1429433).
+<-><->
+      
+l.170 ... der Einschränkung von $T$ auf $S_{n-1}$
+                                                  .
+Not a real error.
+
+[255]
+! Preview: Snippet 256 started.
+<-><->
+      
+l.172 Damit sieht man, dass alle $
+                                  +$- oder $-$-alternierenden $n$-Simplexe i...
+
+Not a real error.
+
+! Preview: Snippet 256 ended.(382293+54613x509726).
+<-><->
+      
+l.172 Damit sieht man, dass alle $+$
+                                    - oder $-$-alternierenden $n$-Simplexe i...
+
+Not a real error.
+
+[256]
+! Preview: Snippet 257 started.
+<-><->
+      
+l.172 Damit sieht man, dass alle $+$- oder $
+                                            -$-alternierenden $n$-Simplexe i...
+
+Not a real error.
+
+! Preview: Snippet 257 ended.(382293+54613x509726).
+<-><->
+      
+l.172 Damit sieht man, dass alle $+$- oder $-$
+                                              -alternierenden $n$-Simplexe i...
+
+Not a real error.
+
+[257]
+! Preview: Snippet 258 started.
+<-><->
+      
+l.172 ... dass alle $+$- oder $-$-alternierenden $
+                                                  n$-Simplexe in $G$, die mi...
+
+Not a real error.
+
+! Preview: Snippet 258 ended.(282168+0x393370).
+<-><->
+      
+l.172 ...ass alle $+$- oder $-$-alternierenden $n$
+                                                  -Simplexe in $G$, die mit ...
+
+Not a real error.
+
+[258]
+! Preview: Snippet 259 started.
+<-><->
+      
+l.172 ...oder $-$-alternierenden $n$-Simplexe in $
+                                                  G$, die mit einem Simplex ...
+
+Not a real error.
+
+! Preview: Snippet 259 ended.(447828+0x515276).
+<-><->
+      
+l.172 ...er $-$-alternierenden $n$-Simplexe in $G$
+                                                  , die mit einem Simplex in...
+
+Not a real error.
+
+[259]
+! Preview: Snippet 260 started.
+<-><->
+      
+l.172 ...mplexe in $G$, die mit einem Simplex in $
+                                                  G'$ verbunden sind (über ...
+
+Not a real error.
+
+! Preview: Snippet 260 ended.(492688+0x699141).
+<-><->
+      
+l.172 ...exe in $G$, die mit einem Simplex in $G'$
+                                                   verbunden sind (über ein...
+
+Not a real error.
+
+[260]
+! Preview: Snippet 261 started.
+<-><->
+      
+l.172 ...G'$ verbunden sind (über einen Pfad in $
+                                                  G$) jeweils eindeutig mit ...
+
+Not a real error.
+
+! Preview: Snippet 261 ended.(447828+0x515276).
+<-><->
+      
+l.172 ...$ verbunden sind (über einen Pfad in $G$
+                                                  ) jeweils eindeutig mit ei...
+
+Not a real error.
+
+[261]
+! Preview: Snippet 262 started.
+<-><->
+      
+l.172 ...fad in $G$) jeweils eindeutig mit einem $
+                                                  (n-1)$-Simplex in $G'$ ide...
+
+Not a real error.
+
+! Preview: Snippet 262 ended.(491520+163840x2031767).
+<-><->
+      
+l.172 ... $G$) jeweils eindeutig mit einem $(n-1)$
+                                                  -Simplex in $G'$ identifiz...
+
+Not a real error.
+
+[262]
+! Preview: Snippet 263 started.
+<-><->
+      
+l.172 ... eindeutig mit einem $(n-1)$-Simplex in $
+                                                  G'$ identifiziert werden k...
+
+Not a real error.
+
+! Preview: Snippet 263 ended.(492688+0x699141).
+<-><->
+      
+l.172 ...ndeutig mit einem $(n-1)$-Simplex in $G'$
+                                                   identifiziert werden kön...
+
+Not a real error.
+
+[263]
+! Preview: Snippet 264 started.
+<-><->
+      
+l.172 ...en (nämlich mit dem, zu welchem sie in $
+                                                  G$ den kleinsten Abstand h...
+
+Not a real error.
+
+! Preview: Snippet 264 ended.(447828+0x515276).
+<-><->
+      
+l.172 ... (nämlich mit dem, zu welchem sie in $G$
+                                                   den kleinsten Abstand hab...
+
+Not a real error.
+
+[264]
+! Preview: Snippet 265 started.
+<-><->
+      
+l.172 ... Damit ist die Summe der alternierenden $
+                                                  n$-Simplizes in jeder Dime...
+
+Not a real error.
+
+! Preview: Snippet 265 ended.(282168+0x393370).
+<-><->
+      
+l.172 ...amit ist die Summe der alternierenden $n$
+                                                  -Simplizes in jeder Dimens...
+
+Not a real error.
+
+[265]
+! Preview: Snippet 266 started.
+<-><->
+      
+l.175 Dazu zählt man einfach in $
+                                  \ints_2$ die $+$- und $-$-alternierenden $...
+
+Not a real error.
+
+! Preview: Snippet 266 ended.(451470+98303x730911).
+<-><->
+      
+l.175 Dazu zählt man einfach in $\ints_2$
+                                           die $+$- und $-$-alternierenden $...
+
+Not a real error.
+
+[266]
+! Preview: Snippet 267 started.
+<-><->
+      
+l.175 Dazu zählt man einfach in $\ints_2$ die $
+                                                +$- und $-$-alternierenden $...
+
+Not a real error.
+
+! Preview: Snippet 267 ended.(382293+54613x509726).
+<-><->
+      
+l.175 Dazu zählt man einfach in $\ints_2$ die $+$
+                                                  - und $-$-alternierenden $...
+
+Not a real error.
+
+[267]
+! Preview: Snippet 268 started.
+<-><->
+      
+l.175 ...t man einfach in $\ints_2$ die $+$- und $
+                                                  -$-alternierenden $n$-Simp...
+
+Not a real error.
+
+! Preview: Snippet 268 ended.(382293+54613x509726).
+<-><->
+      
+l.175 ...man einfach in $\ints_2$ die $+$- und $-$
+                                                  -alternierenden $n$-Simpli...
+
+Not a real error.
+
+[268]
+! Preview: Snippet 269 started.
+<-><->
+      
+l.175 ...ints_2$ die $+$- und $-$-alternierenden $
+                                                  n$-Simplizes in der Halbsp...
+
+Not a real error.
+
+! Preview: Snippet 269 ended.(282168+0x393370).
+<-><->
+      
+l.175 ...ts_2$ die $+$- und $-$-alternierenden $n$
+                                                  -Simplizes in der Halbsph�...
+
+Not a real error.
+
+[269]
+! Preview: Snippet 270 started.
+<-><->
+      
+l.175 ...renden $n$-Simplizes in der Halbsphäre $
+                                                  H^+_n$. Dazu definiert man...
+
+Not a real error.
+
+! Preview: Snippet 270 ended.(521815+162016x1033102).
+<-><->
+      
+l.175 ... $n$-Simplizes in der Halbsphäre $H^+_n$
+                                                  . Dazu definiert man zunä...
+
+Not a real error.
+
+[270]
+! Preview: Snippet 271 started.
+<-><->
+      
+l.175 ...iniert man zunächst die Homomorphismen $
+                                                  \alpha:C_n(T,\ints_2)\to\i...
+
+Not a real error.
+
+! Preview: Snippet 271 ended.(491520+163840x5512768).
+<-><->
+      
+l.175 ...phismen $\alpha:C_n(T,\ints_2)\to\ints_2$
+                                                  , $\sum_{\sigma\in S}{\sig...
+
+Not a real error.
+
+[271]
+! Preview: Snippet 272 started.
+<-><->
+      
+l.175 ...smen $\alpha:C_n(T,\ints_2)\to\ints_2$, $
+                                                  \sum_{\sigma\in S}{\sigma}...
+
+Not a real error.
+
+! Preview: Snippet 272 ended.(491524+231327x10299674).
+<-><->
+      
+l.175 ...sigma\in S:\sigma \text{alternierend}\}}$
+                                                   und $\beta:C_{n-1}(T,\int...
+
+Not a real error.
+
+[272]
+! Preview: Snippet 273 started.
+<-><->
+      
+l.175 ...in S:\sigma \text{alternierend}\}}$ und $
+                                                  \beta:C_{n-1}(T,\ints_2)\t...
+
+Not a real error.
+
+! Preview: Snippet 273 ended.(491520+163840x6167219).
+<-><->
+      
+l.175 ... und $\beta:C_{n-1}(T,\ints_2)\to\ints_2$
+                                                  ,  $\sum_{\sigma\in S}{\si...
+
+Not a real error.
+
+[273]
+! Preview: Snippet 274 started.
+<-><->
+      
+l.175 ... $\beta:C_{n-1}(T,\ints_2)\to\ints_2$,  $
+                                                  \sum_{\sigma\in S}{\sigma}...
+
+Not a real error.
+
+! Preview: Snippet 274 ended.(491524+231327x11319117).
+<-><->
+      
+l.175 ...gma\in S:\sigma +\text{-alternierend}\}}$
+                                                  . Dann realisiert man schn...
+
+Not a real error.
+
+[274]
+! Preview: Snippet 275 started.
+<-><->
+      
+l.175 ...\}}$. Dann realisiert man schnell, dass $
+                                                  \alpha=\beta\bound_n$, den...
+
+Not a real error.
+
+! Preview: Snippet 275 ended.(455111+127431x2405410).
+<-><->
+      
+l.175 ... man schnell, dass $\alpha=\beta\bound_n$
+                                                  , denn für die Erzeuger p...
+
+Not a real error.
+
+[275]
+! Preview: Snippet 276 started.
+<-><->
+      
+l.175 ...man realisiert, dass ein alternierendes $
+                                                  n$-Simplex genau eine $+$-...
+
+Not a real error.
+
+! Preview: Snippet 276 ended.(282168+0x393370).
+<-><->
+      
+l.175 ...n realisiert, dass ein alternierendes $n$
+                                                  -Simplex genau eine $+$-al...
+
+Not a real error.
+
+[276]
+! Preview: Snippet 277 started.
+<-><->
+      
+l.175 ...n alternierendes $n$-Simplex genau eine $
+                                                  +$-alternierende Facette h...
+
+Not a real error.
+
+! Preview: Snippet 277 ended.(382293+54613x509726).
+<-><->
+      
+l.175 ...alternierendes $n$-Simplex genau eine $+$
+                                                  -alternierende Facette hat...
+
+Not a real error.
+
+[277]
+! Preview: Snippet 278 started.
+<-><->
+      
+l.175 ...�t für ein eingesetztes alternierendes $
+                                                  n$-Simplex gilt. Anderenfa...
+
+Not a real error.
+
+! Preview: Snippet 278 ended.(282168+0x393370).
+<-><->
+      
+l.175 ... für ein eingesetztes alternierendes $n$
+                                                  -Simplex gilt. Anderenfall...
+
+Not a real error.
+
+[278]
+! Preview: Snippet 279 started.
+<-><->
+      
+l.175 ...ndes $n$-Simplex gilt. Anderenfalls ist $
+                                                  \alpha$ immer 0 und $\beta...
+
+Not a real error.
+
+! Preview: Snippet 279 ended.(282168+0x421661).
+<-><->
+      
+l.175 ...$-Simplex gilt. Anderenfalls ist $\alpha$
+                                                   immer 0 und $\beta$ ebens...
+
+Not a real error.
+
+[279]
+! Preview: Snippet 280 started.
+<-><->
+      
+l.175 .... Anderenfalls ist $\alpha$ immer 0 und $
+                                                  \beta$ ebenso, denn der ei...
+
+Not a real error.
+
+! Preview: Snippet 280 ended.(455111+127431x405276).
+<-><->
+      
+l.175 ...renfalls ist $\alpha$ immer 0 und $\beta$
+                                                   ebenso, denn der einzige ...
+
+Not a real error.
+
+[280]
+! Preview: Snippet 281 started.
+<-><->
+      
+l.175 ...$ ebenso, denn der einzige Fall, in dem $
+                                                  \beta\bound_n$ noch nicht ...
+
+Not a real error.
+
+! Preview: Snippet 281 ended.(455111+127431x1109943).
+<-><->
+      
+l.175 ... der einzige Fall, in dem $\beta\bound_n$
+                                                   noch nicht 0 sein kann is...
+
+Not a real error.
+
+[281]
+! Preview: Snippet 282 started.
+<-><->
+      
+l.175 ...n ist, wenn man ein fast alternierendes $
+                                                  n$-Simplex einsetzt. Diese...
+
+Not a real error.
+
+! Preview: Snippet 282 ended.(282168+0x393370).
+<-><->
+      
+l.175 ...ist, wenn man ein fast alternierendes $n$
+                                                  -Simplex einsetzt. Dieses ...
+
+Not a real error.
+
+[282]
+! Preview: Snippet 283 started.
+<-><->
+      
+l.175 ...ären Kanten, also entweder 2 oder kein $
+                                                  +$-alternierendes $(n-1)$-...
+
+Not a real error.
+
+! Preview: Snippet 283 ended.(382293+54613x509726).
+<-><->
+      
+l.175 ...ren Kanten, also entweder 2 oder kein $+$
+                                                  -alternierendes $(n-1)$-Si...
+
+Not a real error.
+
+[283]
+! Preview: Snippet 284 started.
+<-><->
+      
+l.175 ...entweder 2 oder kein $+$-alternierendes $
+                                                  (n-1)$-Simplex als Facette.
+Not a real error.
+
+! Preview: Snippet 284 ended.(491520+163840x2031767).
+<-><->
+      
+l.175 ...er 2 oder kein $+$-alternierendes $(n-1)$
+                                                  -Simplex als Facette.
+Not a real error.
+
+[284]
+! Preview: Snippet 285 started.
+<-><->
+      
+l.177 Damit ergibt sich nun $
+                             \alpha(c)=\beta\bound_n(c)=\beta(b)$ (wobei $c$...
+
+Not a real error.
+
+! Preview: Snippet 285 ended.(491520+163840x6062150).
+<-><->
+      
+l.177 ...nun $\alpha(c)=\beta\bound_n(c)=\beta(b)$
+                                                   (wobei $c$ die Summe aus ...
+
+Not a real error.
+
+[285]
+! Preview: Snippet 286 started.
+<-><->
+      
+l.177 ...ha(c)=\beta\bound_n(c)=\beta(b)$ (wobei $
+                                                  c$ die Summe aus allen $n$...
+
+Not a real error.
+
+! Preview: Snippet 286 ended.(282168+0x283611).
+<-><->
+      
+l.177 ...(c)=\beta\bound_n(c)=\beta(b)$ (wobei $c$
+                                                   die Summe aus allen $n$-S...
+
+Not a real error.
+
+[286]
+! Preview: Snippet 287 started.
+<-><->
+      
+l.177 ...beta(b)$ (wobei $c$ die Summe aus allen $
+                                                  n$-Simplexen in $H^+_n$ se...
+
+Not a real error.
+
+! Preview: Snippet 287 ended.(282168+0x393370).
+<-><->
+      
+l.177 ...ta(b)$ (wobei $c$ die Summe aus allen $n$
+                                                  -Simplexen in $H^+_n$ sei ...
+
+Not a real error.
+
+[287]
+! Preview: Snippet 288 started.
+<-><->
+      
+l.177 ...c$ die Summe aus allen $n$-Simplexen in $
+                                                  H^+_n$ sei und $b$ die Sum...
+
+Not a real error.
+
+! Preview: Snippet 288 ended.(521815+162016x1033102).
+<-><->
+      
+l.177 ... Summe aus allen $n$-Simplexen in $H^+_n$
+                                                   sei und $b$ die Summe all...
+
+Not a real error.
+
+[288]
+! Preview: Snippet 289 started.
+<-><->
+      
+l.177 ... allen $n$-Simplexen in $H^+_n$ sei und $
+                                                  b$ die Summe aller $(n-1)$...
+
+Not a real error.
+
+! Preview: Snippet 289 ended.(455111+0x281258).
+<-><->
+      
+l.177 ...llen $n$-Simplexen in $H^+_n$ sei und $b$
+                                                   die Summe aller $(n-1)$-S...
+
+Not a real error.
+
+[289]
+! Preview: Snippet 290 started.
+<-><->
+      
+l.177 ... in $H^+_n$ sei und $b$ die Summe aller $
+                                                  (n-1)$-Simplexe in $S_{n-1...
+
+Not a real error.
+
+! Preview: Snippet 290 ended.(491520+163840x2031767).
+<-><->
+      
+l.177 ...^+_n$ sei und $b$ die Summe aller $(n-1)$
+                                                  -Simplexe in $S_{n-1}=\bou...
+
+Not a real error.
+
+[290]
+! Preview: Snippet 291 started.
+<-><->
+      
+l.177 ...$b$ die Summe aller $(n-1)$-Simplexe in $
+                                                  S_{n-1}=\bound H^+_n$). Da...
+
+Not a real error.
+
+! Preview: Snippet 291 ended.(521815+162016x3720682).
+<-><->
+      
+l.177 ...(n-1)$-Simplexe in $S_{n-1}=\bound H^+_n$
+                                                  ). Daraus folgt, dass die ...
+
+Not a real error.
+
+[291]
+! Preview: Snippet 292 started.
+<-><->
+      
+l.177 ...lgt, dass die Anzahl der alternierenden $
+                                                  n$-Simplexe in der oberen ...
+
+Not a real error.
+
+! Preview: Snippet 292 ended.(282168+0x393370).
+<-><->
+      
+l.177 ...t, dass die Anzahl der alternierenden $n$
+                                                  -Simplexe in der oberen He...
+
+Not a real error.
+
+[292]
+! Preview: Snippet 293 started.
+<-><->
+      
+l.177 ...er antipodalen Symmetrie der Anzahl der $
+                                                  +$-alternierenden $n$-Simp...
+
+Not a real error.
+
+! Preview: Snippet 293 ended.(382293+54613x509726).
+<-><->
+      
+l.177 ... antipodalen Symmetrie der Anzahl der $+$
+                                                  -alternierenden $n$-Simple...
+
+Not a real error.
+
+[293]
+! Preview: Snippet 294 started.
+<-><->
+      
+l.177 ...etrie der Anzahl der $+$-alternierenden $
+                                                  n$-Simplexe der ganzen Sph...
+
+Not a real error.
+
+! Preview: Snippet 294 ended.(282168+0x393370).
+<-><->
+      
+l.177 ...rie der Anzahl der $+$-alternierenden $n$
+                                                  -Simplexe der ganzen Sphä...
+
+Not a real error.
+
+[294]
+! Preview: Snippet 295 started.
+<-><->
+      
+l.177 ...häre entspricht, gleich der Anzahl der $
+                                                  +$-alternierenden $(n-1)$-...
+
+Not a real error.
+
+! Preview: Snippet 295 ended.(382293+54613x509726).
+<-><->
+      
+l.177 ...�re entspricht, gleich der Anzahl der $+$
+                                                  -alternierenden $(n-1)$-Si...
+
+Not a real error.
+
+[295]
+! Preview: Snippet 296 started.
+<-><->
+      
+l.177 ...leich der Anzahl der $+$-alternierenden $
+                                                  (n-1)$-Simplexe in einer D...
+
+Not a real error.
+
+! Preview: Snippet 296 ended.(491520+163840x2031767).
+<-><->
+      
+l.177 ...der Anzahl der $+$-alternierenden $(n-1)$
+                                                  -Simplexe in einer Dimensi...
+
+Not a real error.
+
+[296]
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 518 strings out of 491376
+ 6850 string characters out of 6117515
+ 90434 words of memory out of 5000000
+ 5868 multiletter control sequences out of 15000+600000
+ 9331 words of font info for 35 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 22i,10n,22p,1085b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on _region_.pdf (296 pages, 185894 bytes).
+PDF statistics:
+ 1016 PDF objects out of 1200 (max. 8388607)
+ 697 compressed objects within 7 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+% UNICODE-MATH EXAMPLE FILE
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass{article}
+
+\input{../Config/math-xetex.tex}%%%
+% Load fontspec and define a document font:
+\usepackage{fontspec}
+% \setmainfont{TeX Gyre Pagella}
+\usepackage{mathenv}
+
+% Load unicode-math and define a math font:
+\usepackage{unicode-math}
+%\setmathfont[math-style=ISO]{texgyrepagella-math.otf}
+% \usepackage{bm}
+\usepackage{tikz-cd}
+
+
+\begin{document}
+\title{An example of \textsf{unicode-math}}
+\author{Will Robertson\\\texttt{wspr81@gmail.com}}
+\maketitle
+
+This is an example of the \textsf{unicode-math} package.
+It allows you to write maths with Unicode input and to use fonts that contain Unicode mathematical glyphs. Follow along in the source code to see how it works.
+
+After loading the package and selecting a font, you shouldn't need to change much to continue to write maths as always.
+\[
+   F(s)=\mathscr L \{f(t)\}=\int_0^\infty \mathrm e^{-st}f(t)\,\mathrm d t 
+\]
+
+The style of Latin and Greek letters is set up by default to match the output of standard \LaTeX: Latin letters and Greek lowercase letters are italic, and Greek uppercase letters are upright. These can be configured with the \texttt{math-style} package option.
+
+One very important feature to recognise is that bold maths now works consistently for both Latin and Greek letters. By default, \verb|\mathbf| will turn a Latin letter bold and upright, and a Greek letter will remain italic and also become bold. For example:
+\[
+  \mathbf{a} = a\,\mathbf{I} \qquad \mathbf{\beta} = \beta\,\mathbf{I}
+\]
+This behaviour can be configured with the \texttt{bold-style} package option.
+
+In the examples above, I've used \LaTeX\ commands to input characters like \verb|\beta|, \verb|\infty|, and so on. These may now be typed directly into the source of the document:
+\[
+   ð‰ = âˆ‡Ã—ð‡ \qquad ð = Î¼â‚€(ðŒ + ð‡)
+\]
+\[
+  âˆ«â‚€Â³ xâ¿Ï†â‚â‚‚(x)\,â…†x
+\]
+It does not matter if you use upright or italic characters; they will be normalised according to the setting of the \texttt{math-style} and \texttt{bold-style} options.
+
+And that's\label{2345} a brief introduction to the package. Please see the documentation for further details. This is a new package; feedback, suggestions, and bug reports are all most welcome.
+\ref{2345}
+%\bf Hallo bla $has$
+
+$\stackrel{4}{=} \underbrace{\bigsqcup\limits_{i=0}^{\infty} \stackrel{\phi}{\twoheadleftarrow}}_{324} \stackrel{.}{\rightarrow}$ 
+\begin{tikzcd}
+A\arrow{d}
+\arrow{r}[near start]{\phi}[near end]{\psi}
+& B \arrow[red]{d}{\xi}\\
+C \arrow[red]{r}[blue]{\eta} & D
+\end{tikzcd}
+%%%
+\\
+$\scA\scB\scC\scD\scE\scF\scG\scH\scI\scJ\scK\scL\scN\scM\scO\scP\scQ\scR\scS\scT\scU\scV\scW\scX\scY\scZ$\\
+$\sca\scb\scc\scd\sce\scf\scg\sch\sci\scj\sck\scl\scn\scm\sco\scp\scq\scr\scs\sct\scu\scv\scw\scx\scy\scz$\\
+$\fkA\fkB\fkC\fkD\fkE\fkF\fkG\fkH\fkI\fkJ\fkK\fkL\fkN\fkM\fkO\fkP\fkQ\fkR\fkS\fkT\fkU\fkV\fkW\fkX\fkY\fkZ$\\
+$\fka\fkb\fkc\fkd\fke\fkf\fkg\fkh\fki\fkj\fkk\fkl\fkn\fkm\fko\fkp\fkq\fkr\fks\fkt\fku\fkv\fkw\fkx\fky\fkz$\\
+$\bfA\bfB\bfC\bfD\bfE\bfF\bfG\bfH\bfI\bfJ\bfK\bfL\bfN\bfM\bfO\bfP\bfQ\bfR\bfS\bfT\bfU\bfV\bfW\bfX\bfY\bfZ$\\
+$\bfa\bfb\bfc\bfd\bfe\bff\bfg\bfh\bfi\bfj\bfk\bfl\bfn\bfm\bfo\bfp\bfq\bfr\bfs\bft\bfu\bfv\bfw\bfx\bfy\bfz$\\
+%%%
+$\to\into\onto$
+$\catprod\catcoprod$
+
+\part{Grundlagen}
+
+\section{Gruppenaxiome}
+
+Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{-1},1}$, derart dass folgende Identitäten gelten
+\begin{itemize}
+        \item $(a\compose b)\compose c = a\compose (b\compose c)$ (Assoziativität)
+        \item $a^{-1}\compose a = a\compose a^{-1} = 1$ (Inversenabblildung)
+    \item $a\compose 1 = 1\compose a = a$ (neutrales Element)
+\end{itemize}
+
+\begin{theorem}
+    Hallo
+\end{theorem}
+
+\section{Die \person{Sylow}'schnen Sätze}
+
+Eine natürliche Frage, welche sich aus dem Theorem von \person{Lagrange} ergibt, welche Aussagen über die Anzahl und Art der
+Untergruppen von Ordnung $n$ einer endlichen Gruppe $G$ getroffen werden können.
+Für $n\not\divides \size G$ ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
+ist jene Anzahl im Falle $n\divides \size G$ genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
+Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\Aut m$ sieht, denn wählt man nun $n$ als eine Zyklizität
+erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\Aut m$ dieser Ordnung.
+ist es ob bei einer endlichen Gruppe $G$ der
+
+Tatsächlich lassen sich aber befriedigende Aussagen treffen, falls $n=p^e$ die Potenz einer Primzahl $p$ ist. Diese werden
+gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
+
+\begin{definition}[$p$-Gruppe]
+    Sei $G$ eine Gruppe derart, dass jedes Element $g\in G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
+    Primzahl sei.
+\end{definition}
+
+\begin{remark}
+    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche $p$-Gruppe selbst von
+    Primzahlpotenzordnung $p^e$ ist.
+\end{remark}
+%
+\begin{theorem}[Existenz von $p$-Untergruppen jeder Ordnung]
+    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\set{U\leq G}[\size U=p^e]}$ gilt dann
+    $$
+    N_{p^e} = 1 \mod p
+    $$
+\end{theorem}
+%
+\begin{proof}
+    Wir betrachten die Aktion von $G$ auf den $p^e$-elementigen Untermengen von $\cast G \to \Set$ welche gegeben wird durch
+    elementweise Rechtsmultiplikation. Die Bahnengleichung für diese Aktion wird dann zu
+    $$
+    \size {\binom {\cast G \to \Set} {p^e}} = \sum_i {\size {G/\stab A_i}},
+    $$
+    wobei $A_i$ Repräsentanten der $G$-Bahnen sind.
+    Für $A_i\into \cast G \to \Set$, $\size {A_i}=p^e$ gilt allerdings dann $A_i \cast (\stab A_i) \to \Set=A_i$, also ist $A_i$ eine disjunkte
+    Vereinigung von Linksnebenklassen von $\stab A_i$ und mithin $\size {\stab A_i}\divides p^e$. Betrachten wir also obige
+    gleichung modulo $pn$, so folgt
+    $$
+    \binom {p^e n}{p^e} = n N_{p^e} \mod pn, 
+    $$
+    denn alle Terme, in denen $\stab A_i<p^e$ ist in obiger Gleichung entfallen und die übrigen Terme zählen genau für jede
+    $p^e$-elementige Untergruppe von $G$ ihre Linksnebenklassen (derer gibt es $n$).
+    Daraus folgt
+    $$
+    \frac 1 n \binom {p^e n}{p^e} = \binom {p^e n-1} {p^e-1} = N_{p^e} \mod p,
+    $$
+    wobei der Ausdruck auf der Linken Seite gleich 1 ist modulo $p$. Dies sieht man einerseits daran, dass dies für die zyklische
+    Gruppe mit $p^e n$ Elementen gilt, andererseits lässt sich auch das Theorem von \person{Lucas} (TODO : REF) auf den letzten
+    Binomialkoeffizienten anwenden. Wir erhalten dann
+    $$
+    N_{p^e} = \binom {p^e n - 1} {p^e -1} = {\binom {p-1} {p-1}}^e = 1 \mod p.
+    $$
+\end{proof}
+
+\begin{theorem}
+    Jede endliche Gruppe $G$ hat $p$-\person{Sylow}-Gruppen. Für jede $p$-Untergruppe $U$ und eine $p$-\person{Sylow}-Gruppe von
+    $G$ gibt es ein Element $g\in G$, sodass $U\into P^g$. Insbesondere sind alle $p$-\person{Sylow}-Gruppen konjugiert zueinander
+    und ihre Anzahl ist $\size {G/N_G P}. 
+\end{theorem}
+\end{document}
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:

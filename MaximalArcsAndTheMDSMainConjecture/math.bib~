@@ -1,0 +1,63 @@
+@article{notexmaxkmarcsodd,
+    author = "Simeon Ball and Aart Blukhuis and Francesco Mazzocca",
+    title = "Maximal arcs in Desarguesian planes of odd order do
+    not exist",
+    year = "1996",
+    journal = "Combinatorica",
+    volume = "17",
+    number = "3",
+    pages = "31-41"
+    }
+
+@article{classexcopolys,
+    author = "Karl-Uwe Schmidt and Florian Caullery",
+    title = "On the classification of hyperovals",
+    year = "2014",
+    origin = "ARXIV",
+    publications = "eprint arXiv:1403.2880"
+    }
+@book{handbookincgeo,
+author = "F. Buekenhout and others",
+    title = "Handbook of Incidence Geometry",
+    year = "???",
+   }
+
+
+@article{zas,
+    author = "Thomas Zaslavsky",
+    title = "Facing up to arrangements: face-count formulas for partitions of space by hyperplanes.",
+    journal = "Memoirs of the American Mathematical Society",
+    volume = "1",
+issue = "1",
+number = "154",
+year = "1975"
+}
+
+@article{mdsmainconjball1,
+    author = "Simeon Ball",
+    title = "On sets of vectors of a finte vectors space in which every subset of basis size is a basis",
+    journal = "??",
+    volume = "??",
+issue = "??",
+number = "??",
+year = "2010"
+}
+
+@article{ball2012sets,
+  title={On sets of vectors of a finite vector space in which every subset of basis size is a basis II},
+  author={Ball, Simeon and De Beule, Jan},
+  journal={Designs, Codes and Cryptography},
+  volume={65},
+  number={1-2},
+  pages={5--14},
+  year={2012},
+  publisher={Springer}
+}
+
+
+
+%%% Local variables:
+%%% mode: bibtex
+%%% End:
+
+    

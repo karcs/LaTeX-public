@@ -1,0 +1,17 @@
+# Fdb version 3
+["dvips"] 0 "AGWgraph1.dvi" "AGWgraph1.ps" "AGWgraph1" 0
+  "AGWgraph1.dvi" 0 -1 0 "latex"
+  (generated)
+  "AGWgraph1.ps"
+["latex"] 1373642708 "AGWgraph1.tex" "AGWgraph1.dvi" "AGWgraph1" 1373642708
+  "/usr/share/texlive/texmf-var/web2c/pdftex/latex.fmt" 1372772097 3681220 87b8f01f3a2b25cd04e04ee80e850ad3 ""
+  "/usr/share/texlive/texmf/web2c/texmf.cnf" 1367258146 31298 0eec582831b8f7f2d77edabacc7b7538 ""
+  "AGWgraph1.aux" 1373642707 8 a94a2480d3289e625eea47cd1b285758 ""
+  "AGWgraph1.tex" 1373642708 11079 4a62d3e8a740a0b7cd6e93c45cd18961 ""
+  (generated)
+  "AGWgraph1.dvi"
+  "AGWgraph1.log"
+["ps2pdf"] 0 "AGWgraph1.ps" "AGWgraph1.pdf" "AGWgraph1" 0
+  "AGWgraph1.ps" 0 -1 0 "dvips"
+  (generated)
+  "AGWgraph1.pdf"

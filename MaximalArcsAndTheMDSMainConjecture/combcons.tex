@@ -1,0 +1,222 @@
+\section{Combinatorics of sets in finite projective space}%
+\makeatletter%
+\def\@currentlabel{Section \thesection}%
+\makeatother% TODO better section command
+\label{sec-combcons}
+%
+\subsection{$(k,m)$-arcs in projective planes}
+
+We start with some objects in the projective plane --- however we introduce them a bit more generally.
+
+\begin{definition}[$(k,m)$-arc]
+    Let $P$ be a projective space of order $q$. Then a set $\cA$ will be called a \keyword{$(k,m)$-arc} if $\card{\cA}=k$ and any line $l$ of
+    $P$ intersects $\cA$ in at most $m$ points.
+\end{definition}
+
+\begin{definition}[$(m,n)$-secant]
+    Let $\cS\setleq P$ be a subset of some projective space $P$. Then a subspace of (projective) dimension $n$ intersecting $\cS$ in exactly $m$ points is called an \keyword{$(m,n)$-secant} of $\cS$. In the case we are dropping the $n$ we mean a line. Moreover, a $2$-secant will also be denoted as a \keyword{bisecant}, a $1$-secant as a \keyword{tangent} and a $0$-secant as an \keyword{external line}.
+\end{definition} 
+%%%%%%%%
+\begin{remark}
+    Thus a $(k,m)$-arc in a plane $\pi$ is just a $k$-set having no $m'$-secants for $m'>m$.
+\end{remark}
+
+A very natural question (and also the main question in this entire thesis but stated for different objects) is clearly which values $k$ can be attained for a given order $q$ of the plane and parameter $m$.
+
+A simple bound for $k$ is given by the following general fact
+
+\begin{lemma}[size of $(k,m)$-arcs]\label{kmarc-size}
+    Let $\emptyset\neq\cA\setleq P$ be a $(k,m)$-arc and the space $P$ be of order $q$ and dimension $n$.
+    Then it holds that
+    $$
+        k = \card\cA \leq \binom[q]{n}{1}(m-1)+1
+    $$
+    where equality occurs if and only if any line in $P$ meets $\cS$ in either $0$ or $m$ points. 
+\end{lemma}
+%%%%%%%%
+\begin{proof}
+    Pick a point $p\in\cA$. There are $\binom[q]{n}{1}$ lines through $p$ each of which carries at most $m-1$ other points of $\cS$.
+    This gives the desired bound and conversely if this bound is attained a line passing through an arbitrary point $p\in \cS$ must clearly pass through $m-1$ other points of $\cA$.
+\end{proof}
+
+However, whether or not this bound is actually attained is no simple question, already in the case where $n=2$, disregarding the cases where $m=q+1$ or $m=1$ (the above estimate requires $\cA$ not to be empty).
+
+\begin{definition}\label{kmarc-def}
+    A $(k,m)$-arc in projective space $P$ is called \keyword[maximal $(k,m)$-arc]{maximal} if it attains the bound of the \autoref{kmarc-size}.
+    It is called \keyword[complete $(k,m)$-arc]{complete} if it is maximal with respect to inclusion among all $(k,m)$-arcs in $P$.
+\end{definition}
+
+We might apologize for this somehow confusing definition by refering to the literature. Actually, to revisit this last question one
+may observe that it sufficies to answer it in small dimensions (when $q$ is odd we will see that it sufficies to answer this question for $n=2$ for which \person{Thas} conjectured in 1975 that there are no maximal $(k,m)$-arcs in odd planes, which was proven by \person{S. Ball}, \person{A. Blukhuis} and \person{F. Mazzocca} in~\cite{ball1997maxkmarcs}).
+
+\begin{lemma}
+    Let $\cA$ be a maximal $(k,m)$-arc in projective space $P$ and $P'\leq P$ having non-empty intersection with $\cA$. Then the points of $\cA$ lying in $P'$ form another maximal $(k',m)$-arc.
+\end{lemma}
+
+\begin{proof}
+    Using \autoref{kmarc-size}, we obtain that for any point $p\in \cA\setmeet P'$ all lines through $p$ contain $m$ points showing that $\cA\setmeet P'$ is maximal by that same fact.
+\end{proof}
+
+It is thus clear that the non-existence of maximal $(k,m)$-arcs in some dimension implies the non-existence in all higher dimensions (for Desarguian spaces).
+
+We now turn to the case of a projective plane.
+
+\begin{lemma}[dual $(k,m)$-arc]\label{kmarc-dual}
+    Let $\cA$ be a maximal $(k,m)$-arc in the plane $\pi$ such that $\cA\not\in\set{\emptyset,\pi}$ and $\cA'$ be the set of external lines of $\cA$. Then $\cA'$ is a maximal $(k',\frac{q}{m})$-arc in the dual plane (in particular $m\divides q$).
+\end{lemma}
+
+\begin{proof}
+    Let $E_p$ be a set of external lines of $\cA$ intersecting at $p\in\pi\setminus\cA$. Let $L_p$ be the lines incident with $p$.
+    Then we have that $\card{L_p\setminus E_p}m=k$ since $\cA$ is maximal (\autoref{kmarc-size}).
+    Thus we deduce that
+    $$
+    \card{E_p}=\binom[q]{2}{1}-\frac{k}{m}=\frac{(q+1)m-((q+1)(m-1)+1)}{m}=\frac{q}{m}.
+    $$
+    Lastly, we may compute $k'$ by a double counting argument
+    $$
+    \eqalign{
+        k'
+        & = \frac{1}{q+1}\sum_{p\in P\setminus\cA}{\card{E_p}}= \frac{q}{m}\frac{q^2+q+1-(qm+m-q)}{q+1}\cr
+        & = \frac{q(q+1)}{m}-q,}
+    $$
+    as through every point in $P\setminus\cA$ pass $q/m$ external lines, and any of these external lines carries $q+1$ points.
+\end{proof}
+
+Hence, non-trivial maximal arcs can only exist for $m\divides q$. Indeed, this is the case for $q$ even, as in this case one can construct the so called \person{Denniston} arcs.
+
+\begin{lemma}
+    Let $\pi=\P\field{q}^3$ be a Desarguian projective plane of order $q=2^e$. Then there exist maximal $(k,m)$-arcs for each $m\divides q$. 
+\end{lemma}
+
+\begin{proof}
+    Consider the affine plane $\field{q}^2$ embedded in $\pi$. Since $m\divides q$ there as a subgroup $H\setleq\field{q}$ of order $m$ of the additive group (which is an elementary Abelian $p$-group). Choose an irreducible homogeneous quadratic polynomial $\gamma(X,Y)$ on $\field{q}^2$. Then $\cA:=\set{(x,y)\in\field{q}^2}[\gamma(x,y)\in H]$ defines a maximal $(k,m)$-arc.
+    Any affine line which is parameterized by $l:x\mapsto(x,\alpha x+\beta)$ (w.l.o.g.~we can express $y$ as a function of $x$) plugged into the equation $\gamma(X,Y)=aX^2+bXY+cY^2\in H$ gives an equation of the type $(a+b\alpha+c\alpha^2)x^2+b\beta+c\beta^2\in H$ where the coefficient in front of $x$ cannot vanish since otherwise $\gamma$ would admit a projective zero $\gen{(1,\alpha)}$. But this equation clearly has exactly $\card H=m$ solutions (since the \person{Frobenius} map $x\mapsto x^2$ is a bijection). Thus any affine line intersects $\cA$ in $m$ points and the line at infinity does not intersect $\cA$ at all.
+\end{proof}
+
+This is the proof from~\cite[p. 120]{handbookincgeokmarcs} with some additional notes.
+
+As a corollary of \autoref{kmarc-dual} it follows that there are no $(q+2)$-arcs in planes of odd order --- a first (however simple) result which hints to the MDS main conjecture.
+
+However, in even planes things are quiet different.
+We discuss this next.
+
+\subsection{Ovals and hyperovals}
+
+\begin{definition}[oval]
+    Let $\pi$ be a projective plane $\pi$ of order $q$. An oval $\cO$ in $\pi$ is a $(q+1)$-arc in $\pi$.  
+\end{definition}
+
+We already mentioned it, but to fix it as a fact, we have the following
+
+\begin{lemma}[maximality of ovals if $q$ odd] 
+    Let $\cO$ be an oval in a projective plane $\pi$ of odd order $q$.
+    Then $\cO$ is a maximal arc.
+\end{lemma}
+
+\begin{proof} Apply \autoref{kmarc-dual} for $m=2$ and $q$ odd.
+\end{proof}
+
+The more interesting object we want to discuss briefly is introduced by
+
+\begin{definition}[hyperoval]
+    Let $\pi$ be an even plane. A $(q+2)$-arc $\cO$ is called \keyword{hyperoval}.
+\end{definition}
+
+\begin{remark}
+    Clearly, an oval is a maximal $(q+2,2)$-arc.
+\end{remark}
+
+\begin{lemma}
+    Let $\pi$ be an even plane, and $\cO$ be an oval. Then $\cO$ uniquely extends to a hyperoval by a point $n\in\pi$ called the \keyword{nucleus} of $\cO$.
+\end{lemma}
+
+\begin{proof}
+    We have to show that all $q+1$ tangents of $\cO$ meet in a unique point. Let $p\in\pi\setminus\cO$, and let $t_p$ be the number of tangents of $\cO$ and $s_p$ the number of secants of $\cO$ passing through $p$. Thus as $\card{\cO}=q+1$ we have by a double counting argument
+    $$
+    q+1 \cong 2s_p+t_p \mod 2
+    $$
+    showing that the number of tangents passing through $p$ is odd (so non-zero). Thus the $q+1$ tangents cover $q^2+q+1$ points which shows that they must intersect in a unique point $n$. This follows from the more general fact that $k$ lines $\cL$ in the projective plane cover at most $kq+1$ points where equality occurs if and only if they are concurrent. It can be demonstrated by the three double counting identities in which $p_i$ denotes the number of points lying in exactly $i$ of these lines
+    $$
+    \sum_{i=1}^k{p_i}=N,\
+    \sum_{i=1}^k{ip_i}=k(q+1)\textrm{ and }\sum_{i=1}^k{i(i-1)p_i}=k(k-1)
+    $$
+    where we count the number of points of $\Setjoin\cL$, the pairs $(l,p)$ of lines of $\cL$ and points $\Setjoin\cL$ where $l$ is incident with $p$ and the pairs $(l,l')\in\cL^2$ of distinct (intersecting) lines.
+    Subtracting the first from the second identity and multiplying the result by $k$ yields
+    $$
+    \sum_{i=1}^k{k(i-1)p_i}=k(k(q+1)-N)\geq \sum_{i=1}^k{i(i-1)p_i}=k(k-1)
+    $$
+    where equality occurs if and only if $p_i=0$ for $i=2,\ldots,k-1$ and so $p_k=1$. In that case $N=kq+1$.
+\end{proof}%%
+
+For the sake of completeness, we prove another fact about hyperovals in Desarguian planes.
+
+\begin{lemma}
+    Let $\cO$ be a hyperoval in a Desarguian plane $\pi$. Then $\cO$ is $\PGL$-equivalent to some oval admitting a representation\footnote{here by a representation we mean a system of representatives of the one-dimensional subspaces}
+    $$
+    \cC:=\set{e_1,e_2}\setjoin\set{\begin{pmatrix} 1\\ z\\ f(z)\end{pmatrix}}[z\in\field{q}],
+    $$
+    where $f(z)$ is an \keyword{$\cO$-polynomial}, i.e. $x\mapsto f(x)$ and $h\mapsto\frac{f(x+h)-f(x)}{h}$ permute $\field{q}$ and $\units{\field{q}}$, respectively.
+    Moreover, one may assume that $f(0)=0$ and $f(1)=1$.
+\end{lemma}
+
+\begin{proof}
+    It is well-known that the projective general linear group $\PGL(n,\field{q})$ acts transitively on the $(n+1)$-sets in general position of $\P \field{q}^n$. Thus we may assume that the four vectors $e_0,e_1,e_2$ and $e_0+e_1+e_2$ are part of our representation (using an appropriate element of $\PGL(3,\field{q})$).
+    Using an appropriate scalar, we can achieve that the first coordinates of all vectors apart from $e_1$ and $e_2$ are one (as they are not zero for otherwise the corresponding vector would be coplanar with $e_1$ and $e_2$). Since otherwise two of these vectors would be coplanar with $e_1$ the third coordinates of them must all be distinct. For the same reason, the second coordinates of two of these vectors must also be distinct else they would be coplanar with $e_2$. Hence, $f$ is defined and a permutation.
+    Lastly, evaluating the determinants of of triples of vectors in which $e_1$ and $e_2$ do not occur we obtain
+    $$
+    \det\begin{pmatrix} 1& 1& 1\\ a& b& c\\ f(a)& f(b)& f(c)\end{pmatrix} = (a-c)f(b)+(b-a)f(c)+(c-b)f(a)\neq 0 
+    $$
+    which leads to
+    $$
+    (f(a)-f(b))(a-c) \neq (f(a)-f(c))(a-b)
+    $$
+    or equivalently $h\mapsto \frac{f(x+h)-f(x)}{h}$ is injective for all $x\in\field{q}$.
+\end{proof}
+
+Using this fact the following hyperovals are natural to discover and \person{B. Segre} was the first who did.
+
+\begin{corollary}[translation hyperovals]
+    Let $q=2^e$. Then the set
+    $$
+    \cC:=\set{e_1,e_2}\setjoin\set{\begin{pmatrix} 1\\ z\\ f(z)\end{pmatrix}}[z\in\field{q}],
+    $$
+    where $f(z)=z^{2^i}$ is a representation of a hyperoval if and only if $i\meet e=1$.
+\end{corollary}
+
+\begin{proof}
+    Clearly, as $f$ is a field automorphism, it is a permutation polynomial. Moreover, the map $h\mapsto \frac{f(x+h)-f(x)}{h}=h^{2^i-1}$ is injective if and only if $(2^i-1)\meet(2^e-1)=2^{i\meet e}-1=1$ which holds if and only if $i\meet e=1$ (here we use that $\units{\field{q}}$ is cyclic).
+\end{proof}
+
+Other hyperovals, which can be discovered in a similar manner are given by the subsequent corollary.
+
+\begin{corollary}
+    The polynomial $f(z)=z^6$ is an $\cO$-polynomial over $\field{q}$ where $q=2^e$ and $e$ is odd.
+\end{corollary}
+
+\begin{proof}
+    The equation $x^3-y^3$ factors into $(x-y)(x^2+xy+y^2)$. But the equation $x^2+xy+y^2$ is irreducible for $e$ odd since otherwise the field extension $\field{q}/\field{2}$ would have even degree. Thus $x\mapsto x^2$ and $x\mapsto x^3$ are injective and so $f$ as their composition.
+    
+    Now we show that $f_x:h\mapsto \frac{f(x+h)-f(x)}{h}={(x^2+xh+h^2)}^2h$ is injective on $\units{\field{q}}$ (in fact it is injective as a polynomial on the whole $\field{q}$). The expression
+    $$
+    \frac{f_x(h)-f_x(h')}{h-h'} = x^4+x^2(h^2+hh'+h'^2)+(h^4+h^3h'+h^2h'^2+hh'^3+h'^4)
+    $$
+    as a polynomial has only the trivial zero $(x,h,h')=(0,0,0)$ we can write it as ${(x^2+\alpha x+\beta)}^2$ for
+    $$
+    \alpha={(h^2+hh'+h'^2)}^{q/2}
+    $$ and
+    $$
+    \beta={(h^4+h^3h'+h^2h'^2+hh'^3+h'^4)}^{q/2}
+    $$ (here we use again the fact that the \person{Frobenius} map is surjective for finite fields).
+    Substituting $a:=h+h'$ and $b:={(hh')}^{q/2}$ we get $\alpha=a+b$ and $\beta=a^2+ab+b^2$.
+    Assume now that $p=x^2+\alpha x+\beta$ factors. Then its zeros must be of the form $a+c$ and $b+c$ (since their sum is $a+b$). Moreover, by \person{Vieta}'s formulae they must satisfy
+    $$
+    (a+c)(b+c)=ab+(a+b)c+c^2=a^2+ab+b^2
+    $$
+    implying that $c^2+(a+b)c+{(a+b)}^2=0$. But this is possible only if $c=a+b=0$ since $x^2+xy+y^2$ was irreducible over our field. However $a=b$ implies that $h^2+hh'+h'^2=0$ which holds only for $h=h'=0$. So $x=0$.
+\end{proof}
+
+The classification of $\cO$-polynomials (which is equivalent to the classification of hyperovals) is still far from being complete. Indeed, one knows a few infinite families of $\cO$-polynomials and their disjointness for large enough values of $q$. For more information on this subject consult~\cite{caullery2014classexchypero}.
+
+
+%%% test1\makeatother
+%% Pop context command must be global%%%%%%%%%%

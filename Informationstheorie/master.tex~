@@ -1,0 +1,361 @@
+\documentclass{article}
+
+\input{../Config/german.tex}
+\usepackage[de]{mathenv}
+\input{../Config/math.tex}
+\usepackage{tikz}
+\usepackage{booktabs}
+
+\begin{document}
+
+\person{Gallager}-symmetrisch
+schwach-symmetrisch
+stark symmetrisch (Zeilen sind Permutationen voneinander) (somit \person{Gallager}- und schwach-symmetrisch)
+
+25
+\begin{exercise}
+    Die folgenden Kanalmatrizen
+    $$
+    \begin{pmatrix}
+        1/8 & 3/8 & 3/8 & 1/8\\
+        3/8 & 3/8 & 3/8 & 1/8
+    \end{pmatrix}
+    $$
+    ist stark symmetrisch.
+    $$
+    \begin{pmatrix}
+        2/3 & 1/3 & 0\\
+        0 & 1/3 & 2/3
+    \end{pmatrix}
+    $$
+    schwach und \person{Gallager}-symmetrisch, aber nicht stark.
+    $$
+    \begin{pmatrix}
+        0.7 & 0.2 & 0.1\\
+        0.2 & 0.1 & 0.7
+    \end{pmatrix}
+    $$
+    hat keine Symmetrie.
+    $$
+    \begin{pmatrix}
+        0.1 & 0.2 & 0.3 & 0.4\\
+        0.2 & 0.1 & 0.4 & 0.3
+    \end{pmatrix}
+    $$
+    \person{Gallager}-symmetrisch.
+    $$
+    \begin{pmatrix}
+        0.3 & 0.2 & 0.5\\
+        0.2 & 0.5 & 0.3\\
+        0.5 & 0.3 & 0.2
+    \end{pmatrix}
+    $$
+    stark symmetrisch.
+    $$
+    \begin{pmatrix}
+        p & 1-p & 0 & 0\\
+        1-p & p & 0 & 0\\
+        0 & 0 & q & 1-q\\
+        0 & 0 & 1-q & q
+    \end{pmatrix}
+    $$
+    ist stark symmetrisch für $p=1-q$ sonst nichts.
+    $$
+    \begin{pmatrix}
+        0.1 & 0.2 & 0.3 & 0.4\\
+        0.2 & 0.4 & 0.3 & 0.1\\
+        0.3 & 0.1 & 0.2 & 0.4\\
+        0.4 & 0.3 & 0.2 & 0.1
+    \end{pmatrix}
+    $$
+    ist nur schwach symmetrisch.
+\end{exercise}
+
+26
+\begin{exercise}
+    
+\end{exercise}
+
+\begin{solution}
+    Gegeben ist eine Kanalfolge $K_1$, $K_2$ mit $X_1$ am Eingang und $Y_1$ am Ausgang.
+    \begin{tasks}
+            \item $$C_1=\max_{p_{X_1}}{\rest{I(X_1,Y_1)}_{p_{X_1}}},$$ dabei sei $p'^\ast_{X_1}$ die optimale Verteilung zu Kanal 1.
+        $$C=\rest{I(X_1,Y_2)}_{p^\ast_{X_1}},$$ mit $p^\ast_{X_1}$ die optimale Verteilung für den Gesamtkanal.
+        Nun gilt laut Datenverarbeitungsungleichung
+        $$
+        C = \rest{I(X_1,Y_2)}_{p^\ast_{X_1}} \leq \rest{I(X_1,Y_1)}_{p^\ast_{X_1}}\leq \rest{I(X_1,Y_1)}_{p'^\ast_{X_1}}=C_1 
+        $$
+            \item Die Kanalmatrix vom Gesamtkanal ermittelt sich zu
+        $$
+        K = K_1 K_2.
+        $$
+            \item Gegeben sind zwei symmetrische Binärkanäle (BSC) mit Fehlerwahrscheinlichkeit $\epsilon_1$, Damit
+        $$
+        K_1 =
+        \begin{pmatrix}
+            1-\epsilon_1 & \epsilon_1\\
+            \epsilon_1 & 1-\epsilon_1
+        \end{pmatrix}
+        $$
+        analog ergibt sich
+        $$
+        K_2 =
+        \begin{pmatrix}
+            1-\epsilon_2 & \epsilon_2\\
+            \epsilon_2 & 1-\epsilon_2
+        \end{pmatrix}.
+        $$
+        Die Kanalmatrix des Gesamtkanals eine Matrix
+        $$
+        K = K_1 K_2 =
+        \begin{pmatrix}
+            1-\epsilon & \epsilon\\
+            \epsilon & 1-\epsilon
+        \end{pmatrix}
+        $$
+        mit $\epsilon = \epsilon_1(1-\epsilon_2)+\epsilon_2(1-\epsilon_1)$.
+        D.h.~die Gesamtkanalkapazität ist BSC mit Fehlerwahrscheinlichkeit $\epsilon$.
+        Also laut Script (3.19)
+        $$
+        C = 1- H_b(\epsilon).
+        $$
+            \item Wieder wird ein symmetrischer Binärkanal $K_1$ (BSC) mit einem Binärkanal mit Auslöschung (BEC) hintereinandergeschaltet:
+        $$
+K_1 =
+\begin{pmatrix}
+    1-\epsilon_2 & \epsilon_2 & 0\\
+    0 & \epsilon_2 & 1-\epsilon_2
+\end{pmatrix}
+$$
+Matrixmultiplikation liefert dann
+$$
+K =
+\begin{pmatrix}
+    (1-\epsilon_2)(1-\epsilon_1) & \epsilon_2 & \epsilon_1(1-\epsilon_2)\\
+     \epsilon_1(1-\epsilon_2) & \epsilon_2 & (1-\epsilon_2)(1-\epsilon_1)
+\end{pmatrix}.
+$$
+
+Diese ist \person{Gallager}-symmetrisch, denn die Zeilen sind Permutationen voneinander und es existiert eine Zerlegung in stark symmetrische Matrizen. Die optimale Eingangsverteilung ist also die Gleichverteilung.
+Es berechnet sich dann $I(X_1,Y_2)=H(Y_2)-H(Y_2|X_1)$ für $X_1$ gleichverteilt. Es ergibt sich
+$$
+\begin{matrix}
+    Y_1 & 0 & \Delta & 1 \\
+    \midrule
+    p_{Y_2}(y_2) & \frac 1 2(1-\epsilon_2) & \epsilon_2 & \frac 1 2 (1-\epsilon_2)
+\end{matrix}
+$$
+also $H(Y_2)=(1-\epsilon_2)+H_b(\epsilon_2)$ und $H(Y_2|Y_1)=\frac 1 2 H(Y_2|X_1=0) + \frac 1 2 H(Y_2|X_1=1)=(1-\epsilon_2)H_b(\epsilon_1)+H_b(\epsilon_2)$. Also
+$$C=(1-\epsilon_2)(1-H_b(\epsilon_1)).$$
+Bei $\epsilon_1=0$ bleibt nur der BEC über, bei $\epsilon_2=0$ nur der BSC.
+    \end{tasks}
+\end{solution}
+27
+\begin{solution}
+    \begin{tasks}
+            \item Die Kanalmatrix für den Gesamtkanal ist zu ermitteln. Diese ergibt sich zu
+        $$
+        K = \alpha K_1 + (1-\alpha) K_2,
+        $$
+        da mit Wahrscheinlichkeit $\alpha$ der Kanal $K_1$ und mit $1-\alpha$ Kanal $K_2$ durchlaufen wird.
+            \item Für feste Eingangsverteilung ist die Transinformation $I$ konvex bzgl. der Kanalmatrix (1.24), d.h.
+        $$
+        I(p_X,\alpha K_1+(1-\alpha)K_2)\leq \alpha I(p_X,K_1)+(1-\alpha)I(p_x,K_2).
+        $$
+        mit $I(X,Y)=:I(p_X,K)$.
+        Sei $p_X^{(1)\ast}$ optimale Verteilung zu $K_1$ und
+        $p_X^{(2)\ast}$ optimale Verteilung zu $K_2$, sowie
+        $p^\ast$ optimale Verteilung zu $K$.
+        Daraus folgt
+        $$
+        \eqalign{
+            C & = I(p^\ast_X)\leq \alpha I(p^ast_X,K_1)+(1-\alpha) I(p^\ast_X,K_2)\cr
+            & \leq \alpha I(p^{(1)\ast}_X,K_1)+(1-\alpha)I(p^{(2)\ast}_X,K_2)\cr
+            & =\alpha C_1+(1-\alpha)C_2,}
+        $$
+        was die gesuchte Identität ist nach Definition der Informationskapazität.
+            \item Kanalmatrix für den Gesamtkanal (wieder zwei BSC's hintereinandergeschaltet) ergibt sich zu
+        $$
+        K = \alpha
+        \begin{pmatrix}
+            1-\epsilon_1 & \epsilon_1\\
+            \epsilon_1 & 1-\epsilon_1
+        \end{pmatrix}
+        +(1-\alpha)
+        \begin{pmatrix}
+            1-\epsilon_2 & \epsilon_2\\
+            \epsilon_2 & 1-\epsilon_2
+        \end{pmatrix}=
+        \begin{pmatrix}
+            1-\epsilon & \epsilon\\
+            \epsilon & 1-\epsilon
+        \end{pmatrix}
+        $$
+        mit $\epsilon=\alpha\epsilon_1+(1-\alpha)\epsilon_2$. D.h. der Gesamtkanal ist BSC mit Fehlerwahrscheinlichkeit $\epsilon$, damit laut Script $C = 1-H_b(\epsilon)$.
+    \end{tasks}
+\end{solution}
+
+\section{4. Hausaufgabe zur LV Informationstheorie (28-30)}\hfill{19.06.2014}
+\begin{exercise}[Stark- und schwach typische Sequenzen diskreter gedächtnisloser Quellen]
+    Gegeben ist eine diskrete Gedächtnislose Quelle $(U_k)_k$ mit einem binären Alphabet $\cU=\set{0,1}$. Die Auftrittswahrscheinlichkeit für das Symbol $0$ sei $q$.
+    \begin{align*}
+        s_1&=(00100)\\
+        s_2&=(10101)\\
+        s_3&=(10111)\\
+        s_4&=(11111)
+    \end{align*}
+    Entscheiden Sie für jede dieser Sequenzen, ob die Sequenz $\epsilon$-stark und oder $\epsilon$-schwach-typisch ist, wenn $\epsilon$ und $q$ folgende Werte haben.
+    \begin{tasks}
+            \item $\epsilon=0,15$, $q=1/3$.
+            \item $\epsilon=0,3$, $q=1/7$.
+    \end{tasks}
+\end{exercise}
+
+\begin{remark}
+    Die Sequenz ist \emph{schwach typisch}, wenn sie die Ungleichung $\abs{-\frac 1 n \log_2(p_{\cU}^{(n)}(u^{(n)})-H(U)}\leq \epsilon$ erfüllt, der erste Term heißt dabei empirische Entropie (Bezeichnung $\hat {H(U)}^{(n)}$). Ist die Sequenz stark typisch, so muss die Ungleichung $\abs{\frac 1 n N(a|u^{(n)})-p_U(a)}<\epsilon/\abs{U}$ für alle $a\in\cU$.
+\end{remark}
+
+\begin{solution}
+    Es gilt $p_U(s_1)=q^3{(1-q)}^2$, $p_U(s_2)=q^2{(1-q)}^3$, $p_U(s_3)=q{(1-q)}^4$, $p_U(s_4)={(1-q)}^5$.
+    \begin{tasks}
+            \item $\epsilon=0,15$, $q=1/3$, $p_U(s_1)=4/243$, $p_U(s_2)=8/243$, $p_U(s_3)=16/243$, $p_U(s_4)=32/243$.
+        Damit erhält man $\hat H(s_1)=1,185$bit, $\hat H(s_2)=0,985$bit, $\hat H(s_3)=0,785$bit und $\hat H(s_4)=$. Es ergibt sich also:
+        \begin{align*}
+            \abs{\hat H(s_1)-H(U)}&=0,267\\
+            \abs{\hat H(s_2)-H(U)}&=0,067\\
+            \abs{\hat H(s_3)-H(U)}&=0,133\\
+            \abs{\hat H(s_4)-H(U)}&=0,333
+        \end{align*}
+    
+    Damit ist der Abstand für $s_2, s_3$ kleiner als $\epsilon=0,15$ also sind sie schwach typisch.
+    Nun testen wir auf start-typisch.
+    \begin{align*}
+        \begin{matrix}
+            s_i & N(0|s_i) & N(1|s_i) & \abs{1/n N(a|s_i)-p_U(a)}\\
+            s_1 & 3 & 2 & \abs{3/5-1/3}=0,2667\\ 
+            s_2 & 2 & 3 & \abs{2/5-1/3}=0,067\\
+            s_3 & 1 & 4 & \abs{1/5-1/3}=0,133\\
+            s_4 & 0 & 5 & 1/3
+        \end{matrix}
+    \end{align*}
+    Damit sind $s_2,s_3$ stark- und und schwach-typisch. $s_1,s_4$ sind weder das eine noch das andere.
+    \begin{remark}
+        Im binären gilt $\abs{1/n N(0|s)-p_U(0)}=\abs{1/n N(1|s)-p_U(1)}$, da $\abs{1/nN(1|s)-p_U(1)}=\abs{1/n(n-N(1|s))-(1-p_U(0))}=\abs{1/n N(0|s)-p_U(0)}$.
+    \end{remark}
+    \item Analog berechnet man, dass hier $s_3$ stark und schwach typisch ist, $s_4$ nur stark typisch ist und $s_1,s_2$ beides nicht sind.
+\begin{remark}
+    Es sind also alle Kombinationen aus stark und schwach typisch möglich.
+\end{remark}
+\end{tasks}
+\end{solution}
+
+\begin{exercise}[Informationskapazität]
+    Gegeben seien zwei unabhängige Zufallsvariablen $X$ und $Z$ mit Alphabeten $\cX=\set{1,2,3}$. Die Zufallsgröße $Z$ besitzt die Wahrscheinlichkeitsdichte $p_Z$, die wie folgt gegeben ist:
+    $$
+    \begin{matrix}
+        z & 1 & 2 & 3\\
+        \midrule
+        p_z(\delta) & \epsilon & \delta & 1 -\delta-\epsilon
+    \end{matrix}.
+    $$
+    Es soll $\epsilon,\delta\in[0,1/2]$ gelten. Es sei $Y$ durch $Y:=X+Z \mod 3$ gegeben.
+    \begin{tasks}
+            \item Gib das Alphabet von $Y$ an.
+            \item Bestimme die Wahrscheinlichkeiten $p_{Y|X}(\arg|x)$ für alle $x\in\cX$.
+            \item Wir wollen nun $X$ und $Y$ als Eingang bzw.~Ausgang eineds DMC betrachten. Berechnen Sie die Informationskapazität diese DMC in Abhängigkeit von $\epsilon, \delta$ und geben Sie die zugehörige optimale Wahrscheinlichkeitsverteilung an.
+        \item Sei $\epsilon=\delta$, für welches $\epsilon$ nimmt nun die in der vorherigen Teilaufgabe berechnete Informationskapazität ihr Minimum und Maximum an.
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+        \item $\cY=\cX$.
+            \item Folgende Tabelle ergibt sich:
+        $$
+        \begin{matrix}
+            X & Z & X+Z & Y & P_{Y|X}(y|x)\\
+            \midrule
+            1 & 1 & 2 & 2 & \delta\\
+            1 & 2 & 3 & 2 & \epsilon\\
+            1 & 3 & 4 & 1 & 1-\delta-\epsilon\\
+            2 & 1 & 3 & 0 & \delta\\
+            2 & 2 & 4 & 1 & \epsilon\\
+            2 & 3 & 5 & 2 & 1-\delta-\epsilon\\
+            3 & 1 & 4 & 1 & \delta\\
+            3 & 2 & 5 & 2 & \epsilon\\
+            3 & 3 & 6 & 0 & 1-\delta-\epsilon
+        \end{matrix}
+        $$
+        Man hat also die Kanalmatrix:
+        $$
+        \begin{matrix}
+            p_{Y|X} (x,y) & 0 & 1 & 2\\
+            1 & \epsilon & 1-\delta-\epsilon & \delta\\
+            2 & \delta & \epsilon & 1-\delta-\epsilon\\
+            3 & 1-\delta-\epsilon & \delta & \epsilon
+        \end{matrix}.
+        $$
+            \item Der DMC ist symmetrisch. Die Informationskapazität wird durch Gleichverteilung am Eingang erreicht (Skript §3.21). Für die Kapazität gilt (§3.22)
+        $$
+        C = \log_2\card\cY - H(r)
+        $$
+        hier also:
+        $$
+        C = \log_2 3 - (-\epsilon\log_2\epsilon-\delta\log\delta-(1-\delta-\epsilon)\log_2(1-\delta-\epsilon).
+        $$
+        \item Hier $\epsilon=\delta$. Dann wird die Entropie maximal bei Gleichverteilung, die Kapazität also minimal für $\epsilon=\delta=1/3$.
+    $C_{\min}=0$. Die Entropie wird minimal für $\epsilon=0$, dann ist $C_{\max}=\log_2 3$.
+\end{tasks}
+\end{solution}
+
+\begin{exercise}[Hintereinanderschaltung von Multiplikationskanälen]
+    Gegeben sei ein diskreter gedächtnisloser Multiplikationskanal mit binärem Ein- und Ausgang ($X_1, Y_1$).
+    Das multiplikative Rauschen wird durch die vom Kanaleingang unabhängige zufallsgröße $Z_1$ mit binärem Alphabet $\cZ_1=\set{0,1}$ beschrieben, wobei $P(Z_1=1)=\epsilon_1$ sei.
+    \begin{tasks}
+        \item Bestimme die Kanalmatrix und die Informationskapazität.
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+            \item Siehe Aufgabe 16:
+        $$
+        K_1=
+        \begin{pmatrix}
+            1 & 0\\
+            1-\epsilon_1 & \epsilon_1
+        \end{pmatrix}
+        $$
+        Es gilt $C_1 = \max_{p_X}{I(x;y_1)} = \log_2(1+\epsilon_1{(1-\epsilon_1)}^{\frac{1-\epsilon_1}{\epsilon_1}})$bit mit
+            $$
+            p_X = \frac 1 {{(1-\epsilon_1)}^{\frac{\epsilon_1-1}{\epsilon_1}}+\epsilon_1}.
+            $$
+                \item Durch Hintereinanderschaltung zweier Kanäle entsteht die Gesamtkanalmatrix durch Multiplikation der beiden Teilkanalmatrizen ($K=K_1K_2$).
+            $$
+            K =
+            \begin{pmatrix}
+                1 & 0 \\
+                1-\epsilon_1 & \epsilon_1
+            \end{pmatrix}
+            \begin{pmatrix}
+                1 & 0 \\
+                1-\epsilon_2 & \epsilon_2
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+                1 & 0 \\
+                1-\epsilon & \epsilon
+            \end{pmatrix}
+            $$
+        \end{tasks}
+        mit $\epsilon=\epsilon_1\epsilon_2$. Gesamtkapazität berechnet sich nach derselben Formel
+        $$
+        C_{\ges} = \log_2(1+\epsilon{(1-\epsilon)}^{\frac{1-\epsilon}{\epsilon}}
+        $$
+        und
+        $$
+        p_X = \frac 1 {{(1-\epsilon)}^{\epsilon-1}{\epsilon}+\epsilon}.
+        $$
+        Der Gesamtkanal ist wieder ein $Z$-Kanal mit Parameter $\epsilon=\epsilon_1\epsilon_2$.
+\end{solution}
+\end{document}

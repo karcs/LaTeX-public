@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Symbols}{2}{section.1}
+\contentsline {section}{\numberline {2}Introduction}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Some definitions around polytopes}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}The idea of the proof}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Irreducible and primitive operators}{6}{subsection.2.3}
+\contentsline {section}{\numberline {3}The theorem}{6}{section.3}
+\contentsline {section}{\numberline {4}Collecting some ideas}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Proof of existence.}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}The map $\rho $}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}The $\rho $-invariant polytope (or simplex) $\mathaccentV {tilde}07E{B}$}{9}{subsection.4.3}
+\contentsline {paragraph}{The degraded case.}{10}{section*.2}
+\contentsline {subsection}{\numberline {4.4}The case $T$ being regular.}{10}{subsection.4.4}
+\contentsline {paragraph}{The case $\tau $ being itself a cycle.}{10}{section*.3}
+\contentsline {paragraph}{The general case.}{11}{section*.4}
+\contentsline {section}{\numberline {5}Some final lemmas}{11}{section.5}
+\contentsline {section}{\numberline {6}The proof}{12}{section.6}
+\contentsline {paragraph}{Algebraic multiplicity one and unicity.}{13}{section*.5}
+\contentsline {paragraph}{Strict maximum.}{13}{section*.6}
+\contentsline {paragraph}{Symmetry properties of $\sigma (T)$.}{13}{section*.7}
+\contentsline {section}{\numberline {7}Connection to weighted adjacency matrices of graphs}{13}{section.7}
+\contentsline {paragraph}{A little exercise.}{15}{section*.8}
+\contentsline {subparagraph}{Task.}{15}{section*.9}
+\contentsline {section}{\numberline {8}An appetizer at the end: The spectral radius of the infinite $d$-regular tree}{15}{section.8}
+\contentsline {paragraph}{The example.}{15}{section*.10}
+\contentsline {paragraph}{Remarks.}{17}{section*.11}

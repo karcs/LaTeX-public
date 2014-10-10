@@ -1,0 +1,37 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.7.2)  12 JUL 2013 17:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**AGWgraph1.tex
+(./AGWgraph1.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, po
+lish, finnish, italian, french, basque, bokmal, nynorsk, swedish, ukenglish, us
+englishmax, portuguese, danish, spanish, german, ngerman, swissgerman, hungaria
+n, dutch, russian, ukrainian, turkish, welsh, german-x-2012-05-30, ngerman-x-20
+12-05-30, friulan, icelandic, farsi, armenian, bulgarian, galician, afrikaans, 
+uppersorbian, romansh, indonesian, ethiopic, piedmontese, lithuanian, estonian,
+ coptic, arabic, latvian, croatian, catalan, slovak, slovenian, assamese, benga
+li, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, telugu
+, greek, interlingua, serbian, serbianc, romanian, turkmen, esperanto, latin, m
+ongolian, mongolianlmc, irish, kurmanji, ancientgreek, ibycus, pinyin, czech, s
+anskrit, loaded.
+! Undefined control sequence.
+l.4 \psset
+          {xunit=.5pt,yunit=.5pt,runit=.5pt}
+? 
+! Emergency stop.
+l.4 \psset
+          {xunit=.5pt,yunit=.5pt,runit=.5pt}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 493493
+ 134 string characters out of 3143522
+ 48373 words of memory out of 3000000
+ 3412 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 953 hyphenation exceptions out of 8191
+ 5i,0n,1p,68b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.

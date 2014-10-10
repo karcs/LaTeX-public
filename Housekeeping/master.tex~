@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[top=2in, bottom=1.5in, left=1in, right=1in]{geometry}
+
+\input{../Config/german.tex}
+
+
+\begin{document}
+\pagestyle{empty}
+\section*{Haushaltsplan}
+
+\subsection*{Grundlegende Regeln}
+
+\begin{itemize}
+        \item Jeder Mitbewohner ist für den gemeinsam genutzten Teil der Wohngemeinschaft gleichermaßen verantwortlich (d.h. Küche und Bad).
+    Dies umfasst regelmäßige Reinigung und nach Möglichkeit sauberes Hinterlassen entsprechender Örtlichkeiten.
+    \item Bezüglich der \textbf{Küche} umfasst die entsprechenden Pflichten
+    \begin{itemize}
+            \item Staubsaugen,
+            \item Abwaschen benutzten Geschirrs,
+            \item Reinigung des Ofens bei hoher Verschmutzung,
+            \item Reinigung des Herds bei hoher Verschmutzung,
+            \item regelmäßiges Leeren der Abfallbehälter und Reinigung selbiger bei hoher Verschmutzung,
+            \item Wischen bzw. Saugen oder Kehren des Fußbodens je nach Verschmutzung,
+            \item Einhaltung des eigenen Bereiches zur Aufbewahrung von Nahrungsmitteln,
+            \item wenn nötig Reinigung der Fenster.
+    \end{itemize}
+        \item Bezüglich des jeweils genutzten \textbf{Bades} umfasst der entsprechenden Aufgaben
+    \begin{itemize}
+            \item regelmäßige Reinigung von Dusche und Toilette, sowie des Waschbeckens,
+            \item Wischen des Bodens,
+            \item Beseitigung anfallender Abfälle (wie z.B. Klohrollen),
+            \item regelmäßiges Waschen des Duschvorhangs.
+    \end{itemize}
+        \item Absolut indiskutable \textbf{Tabus} sind
+    \begin{itemize}
+            \item das wochenlange Stehenlassen von (verdorbenen) Essensresten,
+            \item das Benutzen von Küchenutensilien ohne diese anschließend zu reinigen,
+            \item das Verteilen von erworbenen Lebensmitteln in der Küche, sodass diese später niemandem mehr zugeordnet werden können.
+            \item das übermäßige Horten von nicht eigenem Geschirr im eigenen Zimmer.
+    \end{itemize}
+        \item Bis auf Absprache darf Geschirr maximal ein bis zwei Tage herumstehen, alle für die Allgemeinheit zur Verfügung gestellten Arbeitsflächen sind frei zu halten (auch Fußboden und Herd).
+\end{itemize}
+
+\subsection*{Zeitplan}
+
+\paragraph{Küche.} Die Küche ist wöchentlich zu reinigen, wenn notwendig. Falls die Mitglieder der Wohngemeinschaft langfristig nicht in der Lage sind, selbige dauerhaft in einem einigermaßen benutzbaren Zustand zu halten, wird eine Einteilung für die Verantwortlichkeit zu Reinigung vorgenommen.
+
+\paragraph{Bad.} Das Bad ist zwei- bis dreiwöchentlich zu reinigen. 
+
+\end{document}

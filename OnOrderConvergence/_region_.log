@@ -1,0 +1,1557 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.10.25)  30 OCT 2013 16:08
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\nonstopmode\nofiles\PassOptionsToPackage{active,tightpage,auctex}{preview}\A
+tBeginDocument{\ifx\ifPreview\undefined\RequirePackage[displaymath,floats,graph
+ics,textmath,sections,footnotes]{preview}[2004/11/05]\fi} \input _region_.tex
+(./_region_.tex  !name(OnOrderConvergence.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks15
+\thm@bodyfont=\toks16
+\thm@headfont=\toks17
+\thm@notefont=\toks18
+\thm@headpunct=\toks19
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen103
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks22
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks23
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks24
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/mathabx/mathabx.sty
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup6
+\symmathb=\mathgroup7
+\symmathx=\mathgroup8
+
+(/usr/share/texlive/texmf-dist/tex/generic/mathabx/mathabx.dcl
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
+.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
+.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+\mayacnter=\count99
+\mayacnta=\count100
+\mayacntb=\count101
+\mayacntc=\count102
+\mayawidth=\dimen112
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count103
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+\epsfxsize=\dimen115
+\epsfysize=\dimen116
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eepic/epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count104
+\d@lta=\count105
+\@delta=\dimen117
+\@@delta=\dimen118
+\@gridcnt=\count106
+\@joinkind=\count107
+\@dotgap=\dimen119
+\@ddotgap=\dimen120
+\@x@diff=\count108
+\@y@diff=\count109
+\x@diff=\dimen121
+\y@diff=\dimen122
+\@dotbox=\box28
+\num@segments=\count110
+\num@segmentsi=\count111
+\@datafile=\read1
+) (/usr/share/texlive/texmf-dist/tex/latex/eepic/eepic.sty
+Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
+\@gphlinewidth=\count112
+\@eepictcnt=\count113
+\@tempdimc=\dimen123
+\maxovaldiam=\dimen124
+\@filltype=\box29
+)
+\c@theorem=\count114
+
+No file _region_.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+(/usr/share/texmf/tex/latex/preview/preview.sty
+Package: preview 2010/02/14 11.87 (AUCTeX/preview-latex)
+
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen125
+)
+(/usr/share/texmf/tex/latex/preview/prauctex.def
+No auxiliary output files.
+
+
+\hbadness=\count115
+\hfuzz=\dimen126
+(/usr/share/texmf/tex/latex/preview/prauctex.cfg))
+(/usr/share/texmf/tex/latex/preview/prfootnotes.def)
+\pr@snippet=\count116
+\pr@box=\box30
+\pr@output=\toks27
+
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen127
+\scratchbox=\box31
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen128
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks29
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ !name(OnOrderConvergence.tex) !offset(-3) 
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+! Preview: Snippet 1 started.
+<-><->
+      
+l.90 \tableofcontents
+                     
+Not a real error.
+
+Preview: Tightpage -32891 -32891 32891 32891
+! Preview: Snippet 1 ended.(647495+0x22609920).
+<-><->
+      
+l.90 \tableofcontents
+                     
+Not a real error.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+No file _region_.toc.
+! Preview: Snippet 2 started.
+<-><->
+      
+l.92 \section
+             {Introduction}
+Not a real error.
+
+! Preview: Snippet 2 ended.(655359+0x22609920).
+<-><->
+      
+l.92 \section{Introduction}
+                           
+Not a real error.
+
+[2
+
+]
+! Preview: Snippet 3 started.
+<-><->
+      
+l.97 Let $
+          R$ be a Riesz-space and $(x_i)_{i\in I}$ a net in $R$. Then we cal...
+
+Not a real error.
+
+! Preview: Snippet 3 ended.(447828+0x502671).
+<-><->
+      
+l.97 Let $R$
+             be a Riesz-space and $(x_i)_{i\in I}$ a net in $R$. Then we cal...
+
+Not a real error.
+
+[3]
+! Preview: Snippet 4 started.
+<-><->
+      
+l.97 Let $R$ be a Riesz-space and $
+                                   (x_i)_{i\in I}$ a net in $R$. Then we cal...
+
+Not a real error.
+
+! Preview: Snippet 4 ended.(491400+163800x1863732).
+<-><->
+      
+l.97 Let $R$ be a Riesz-space and $(x_i)_{i\in I}$
+                                                   a net in $R$. Then we cal...
+
+Not a real error.
+
+[4]
+! Preview: Snippet 5 started.
+<-><->
+      
+l.97 ...iesz-space and $(x_i)_{i\in I}$ a net in $
+                                                  R$. Then we call $(x_i)_{i...
+
+Not a real error.
+
+! Preview: Snippet 5 ended.(447828+0x502671).
+<-><->
+      
+l.97 ...sz-space and $(x_i)_{i\in I}$ a net in $R$
+                                                  . Then we call $(x_i)_{i\i...
+
+Not a real error.
+
+[5]
+! Preview: Snippet 6 started.
+<-><->
+      
+l.97 ..._i)_{i\in I}$ a net in $R$. Then we call $
+                                                  (x_i)_{i\in I}$ O1-converg...
+
+Not a real error.
+
+! Preview: Snippet 6 ended.(491400+163800x1863732).
+<-><->
+      
+l.97 ... net in $R$. Then we call $(x_i)_{i\in I}$
+                                                   O1-convergent if and only...
+
+Not a real error.
+
+[6]
+! Preview: Snippet 7 started.
+<-><->
+      
+l.97 ...t if and only if there exists some point $
+                                                  x\in V$ and a net $(y_j)_{...
+
+Not a real error.
+
+! Preview: Snippet 7 ended.(447828+0x1612365).
+<-><->
+      
+l.97 ...d only if there exists some point $x\in V$
+                                                   and a net $(y_j)_{j\in J}...
+
+Not a real error.
+
+[7]
+! Preview: Snippet 8 started.
+<-><->
+      
+l.97 ...ere exists some point $x\in V$ and a net $
+                                                  (y_j)_{j\in J}$ in $R$ wit...
+
+Not a real error.
+
+! Preview: Snippet 8 ended.(491400+187504x1991698).
+<-><->
+      
+l.97 ... point $x\in V$ and a net $(y_j)_{j\in J}$
+                                                   in $R$ with $y_j\downarro...
+
+Not a real error.
+
+[8]
+! Preview: Snippet 9 started.
+<-><->
+      
+l.97 ...t $x\in V$ and a net $(y_j)_{j\in J}$ in $
+                                                  R$ with $y_j\downarrow 0$ ...
+
+Not a real error.
+
+! Preview: Snippet 9 ended.(447828+0x502671).
+<-><->
+      
+l.97 ...$x\in V$ and a net $(y_j)_{j\in J}$ in $R$
+                                                   with $y_j\downarrow 0$ su...
+
+Not a real error.
+
+[9]
+! Preview: Snippet 10 started.
+<-><->
+      
+l.97 ...$ and a net $(y_j)_{j\in J}$ in $R$ with $
+                                                  y_j\downarrow 0$ such that
+Not a real error.
+
+! Preview: Snippet 10 ended.(451776+187504x1616812).
+<-><->
+      
+l.97 ...j)_{j\in J}$ in $R$ with $y_j\downarrow 0$
+                                                   such that
+Not a real error.
+
+[10]
+! Preview: Snippet 11 started.
+<-><->
+      
+l.98 \begin{equation}
+                     
+Not a real error.
+
+! Preview: Snippet 11 ended.(679024+0x22609920).
+<-><->
+      
+l.100 \end{equation}
+                    
+Not a real error.
+
+[11]
+! Preview: Snippet 12 started.
+<-><->
+      
+l.103 ...is definition is just another mean than $
+                                                  \limsup$ (of $x_i$), whose...
+
+Not a real error.
+
+! Preview: Snippet 12 ended.(455111+127431x2006132).
+<-><->
+      
+l.103 ...ition is just another mean than $\limsup$
+                                                   (of $x_i$), whose existen...
+
+Not a real error.
+
+[12]
+! Preview: Snippet 13 started.
+<-><->
+      
+l.103 ...is just another mean than $\limsup$ (of $
+                                                  x_i$), whose existence we ...
+
+Not a real error.
+
+! Preview: Snippet 13 ended.(282168+98303x592744).
+<-><->
+      
+l.103 ...ust another mean than $\limsup$ (of $x_i$
+                                                  ), whose existence we cann...
+
+Not a real error.
+
+[13]
+! Preview: Snippet 14 started.
+<-><->
+      
+l.108 A net $
+             (x_i)_{i\in I}$ in a Riesz-space $R$ is called O2-convergent if...
+
+Not a real error.
+
+! Preview: Snippet 14 ended.(491400+163800x1863732).
+<-><->
+      
+l.108 A net $(x_i)_{i\in I}$
+                             in a Riesz-space $R$ is called O2-convergent if...
+
+Not a real error.
+
+[14]
+! Preview: Snippet 15 started.
+<-><->
+      
+l.108 A net $(x_i)_{i\in I}$ in a Riesz-space $
+                                               R$ is called O2-convergent if...
+
+Not a real error.
+
+! Preview: Snippet 15 ended.(447828+0x502671).
+<-><->
+      
+l.108 A net $(x_i)_{i\in I}$ in a Riesz-space $R$
+                                                  is called O2-convergent if...
+
+Not a real error.
+
+[15]
+! Preview: Snippet 16 started.
+<-><->
+      
+l.108 ... if and only if there exists some point $
+                                                  x\in V$ and a net $(y_i)_{...
+
+Not a real error.
+
+! Preview: Snippet 16 ended.(447828+0x1612365).
+<-><->
+      
+l.108 ... only if there exists some point $x\in V$
+                                                   and a net $(y_i)_{i\in I}...
+
+Not a real error.
+
+[16]
+! Preview: Snippet 17 started.
+<-><->
+      
+l.108 ...re exists some point $x\in V$ and a net $
+                                                  (y_i)_{i\in I}$ in $R$ wit...
+
+Not a real error.
+
+! Preview: Snippet 17 ended.(491400+163800x1810487).
+<-><->
+      
+l.108 ...point $x\in V$ and a net $(y_i)_{i\in I}$
+                                                   in $R$ with $y_i\downarro...
+
+Not a real error.
+
+[17]
+! Preview: Snippet 18 started.
+<-><->
+      
+l.108 ... $x\in V$ and a net $(y_i)_{i\in I}$ in $
+                                                  R$ with $y_i\downarrow 0$ ...
+
+Not a real error.
+
+! Preview: Snippet 18 ended.(447828+0x502671).
+<-><->
+      
+l.108 ...x\in V$ and a net $(y_i)_{i\in I}$ in $R$
+                                                   with $y_i\downarrow 0$ su...
+
+Not a real error.
+
+[18]
+! Preview: Snippet 19 started.
+<-><->
+      
+l.108 ... and a net $(y_i)_{i\in I}$ in $R$ with $
+                                                  y_i\downarrow 0$ such that
+Not a real error.
+
+! Preview: Snippet 19 ended.(451776+127816x1558860).
+<-><->
+      
+l.108 ...)_{i\in I}$ in $R$ with $y_i\downarrow 0$
+                                                   such that
+Not a real error.
+
+[19]
+! Preview: Snippet 20 started.
+<-><->
+      
+l.109 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 20 ended.(655360+0x22609920).
+<-><->
+      
+l.111 \end{equation}
+                    
+Not a real error.
+
+[20]
+! Preview: Snippet 21 started.
+<-><->
+      
+l.114 \section
+              {On finite dimensional Riesz-spaces}
+Not a real error.
+
+! Preview: Snippet 21 ended.(655359+183500x22609920).
+<-><->
+      
+l.114 \section{On finite dimensional Riesz-spaces}
+                                                  
+Not a real error.
+
+[21
+
+]
+! Preview: Snippet 22 started.
+<-><->
+      
+l.123 For some well-order $
+                           W$ and Riesz-spaces $R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+! Preview: Snippet 22 ended.(447828+0x709974).
+<-><->
+      
+l.123 For some well-order $W$
+                              and Riesz-spaces $R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+[22]
+! Preview: Snippet 23 started.
+<-><->
+      
+l.123 For some well-order $W$ and Riesz-spaces $
+                                                R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+! Preview: Snippet 23 ended.(447828+98303x876991).
+<-><->
+      
+l.123 ...ell-order $W$ and Riesz-spaces $R_\omega$
+                                                   ($\omega\in W$) we define...
+
+Not a real error.
+
+[23]
+! Preview: Snippet 24 started.
+<-><->
+      
+l.123 ...-order $W$ and Riesz-spaces $R_\omega$ ($
+                                                  \omega\in W$) we define th...
+
+Not a real error.
+
+! Preview: Snippet 24 ended.(447828+0x1851298).
+<-><->
+      
+l.123 ...nd Riesz-spaces $R_\omega$ ($\omega\in W$
+                                                  ) we define their direct l...
+
+Not a real error.
+
+[24]
+! Preview: Snippet 25 started.
+<-><->
+      
+l.124 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 25 ended.(1966099+0x22609920).
+<-><->
+      
+l.126 \end{equation}
+                    
+Not a real error.
+
+[25]
+! Preview: Snippet 26 started.
+<-><->
+      
+l.127 Here $
+            \leq_{\dirplus}$ is defined by
+Not a real error.
+
+! Preview: Snippet 26 ended.(381110+149006x944588).
+<-><->
+      
+l.127 Here $\leq_{\dirplus}$
+                             is defined by
+Not a real error.
+
+[26]
+! Preview: Snippet 27 started.
+<-><->
+      
+l.128 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 27 ended.(2503124+0x22609920).
+<-><->
+      
+l.130 \end{equation}
+                    
+Not a real error.
+
+[27]
+! Preview: Snippet 28 started.
+<-><->
+      
+l.131 and $
+           \bigtimes\limits^{\lex}$ denotes the lexicographic product of the...
+
+Not a real error.
+
+! Preview: Snippet 28 ended.(1006708+163844x728168).
+<-><->
+      
+l.131 and $\bigtimes\limits^{\lex}$
+                                    denotes the lexicographic product of the...
+
+Not a real error.
+
+[28]
+! Preview: Snippet 29 started.
+<-><->
+      
+l.137 For some well-order $
+                           W$ and Riesz-spaces $R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+! Preview: Snippet 29 ended.(447828+0x709974).
+<-><->
+      
+l.137 For some well-order $W$
+                              and Riesz-spaces $R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+[29]
+! Preview: Snippet 30 started.
+<-><->
+      
+l.137 For some well-order $W$ and Riesz-spaces $
+                                                R_\omega$ ($\omega\in W$) we...
+
+Not a real error.
+
+! Preview: Snippet 30 ended.(447828+98303x876991).
+<-><->
+      
+l.137 ...ell-order $W$ and Riesz-spaces $R_\omega$
+                                                   ($\omega\in W$) we define...
+
+Not a real error.
+
+[30]
+! Preview: Snippet 31 started.
+<-><->
+      
+l.137 ...-order $W$ and Riesz-spaces $R_\omega$ ($
+                                                  \omega\in W$) we define th...
+
+Not a real error.
+
+! Preview: Snippet 31 ended.(447828+0x1851298).
+<-><->
+      
+l.137 ...nd Riesz-spaces $R_\omega$ ($\omega\in W$
+                                                  ) we define their direct p...
+
+Not a real error.
+
+[31]
+! Preview: Snippet 32 started.
+<-><->
+      
+l.143 Let $
+           R$ be a finite-dimensional Riesz-space. Then we have a unique rep...
+
+Not a real error.
+
+! Preview: Snippet 32 ended.(447828+0x502671).
+<-><->
+      
+l.143 Let $R$
+              be a finite-dimensional Riesz-space. Then we have a unique rep...
+
+Not a real error.
+
+[32]
+! Preview: Snippet 33 started.
+<-><->
+      
+l.144 of $
+          R$ as
+Not a real error.
+
+! Preview: Snippet 33 ended.(447828+0x502671).
+<-><->
+      
+l.144 of $R$
+             as
+Not a real error.
+
+[33]
+! Preview: Snippet 34 started.
+<-><->
+      
+l.145 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 34 ended.(1858500+0x22609920).
+<-><->
+      
+l.147 \end{equation}
+                    
+Not a real error.
+
+[34]
+! Preview: Snippet 35 started.
+<-><->
+      
+l.148 for archimedian subspaces $
+                                 R_i$ of $R$ and a finite index set (well-or...
+
+Not a real error.
+
+! Preview: Snippet 35 ended.(447828+98303x715796).
+<-><->
+      
+l.148 for archimedian subspaces $R_i$
+                                      of $R$ and a finite index set (well-or...
+
+Not a real error.
+
+[35]
+! Preview: Snippet 36 started.
+<-><->
+      
+l.148 for archimedian subspaces $R_i$ of $
+                                          R$ and a finite index set (well-or...
+
+Not a real error.
+
+! Preview: Snippet 36 ended.(447828+0x502671).
+<-><->
+      
+l.148 for archimedian subspaces $R_i$ of $R$
+                                             and a finite index set (well-or...
+
+Not a real error.
+
+[36]
+! Preview: Snippet 37 started.
+<-><->
+      
+l.148 ...$R$ and a finite index set (well-order) $
+                                                  I$.
+Not a real error.
+
+! Preview: Snippet 37 ended.(447828+0x339512).
+<-><->
+      
+l.148 ...$ and a finite index set (well-order) $I$
+                                                  .
+Not a real error.
+
+[37]
+
+LaTeX Warning: Reference `chargen' on page 2 undefined on input line 151.
+
+! Preview: Snippet 38 started.
+<-><->
+      
+l.153 ...ormulation of archimedian property] Let $
+                                                  V$ be an Archimedian order...
+
+Not a real error.
+
+! Preview: Snippet 38 ended.(447828+0x527929).
+<-><->
+      
+l.153 ...mulation of archimedian property] Let $V$
+                                                   be an Archimedian ordered...
+
+Not a real error.
+
+[38]
+! Preview: Snippet 39 started.
+<-><->
+      
+l.153 ...n Archimedian ordered vectorspace. Then $
+                                                  V^+$ contains no non-trivi...
+
+Not a real error.
+
+! Preview: Snippet 39 ended.(517848+0x962917).
+<-><->
+      
+l.153 ...chimedian ordered vectorspace. Then $V^+$
+                                                   contains no non-trivial a...
+
+Not a real error.
+
+[39]
+! Preview: Snippet 40 started.
+<-><->
+      
+l.153 ...bspace. If we require additionally that $
+                                                  V$ is a vector lattice, th...
+
+Not a real error.
+
+! Preview: Snippet 40 ended.(447828+0x527929).
+<-><->
+      
+l.153 ...pace. If we require additionally that $V$
+                                                   is a vector lattice, then...
+
+Not a real error.
+
+[40]
+! Preview: Snippet 41 started.
+<-><->
+      
+l.157 ...rom the negated archimedian property of $
+                                                  V$ ($V^+=\{v\in V:v>0\}$
+Not a real error.
+
+! Preview: Snippet 41 ended.(447828+0x527929).
+<-><->
+      
+l.157 ...m the negated archimedian property of $V$
+                                                   ($V^+=\{v\in V:v>0\}$
+Not a real error.
+
+[41]
+! Preview: Snippet 42 started.
+<-><->
+      
+l.157 ...he negated archimedian property of $V$ ($
+                                                  V^+=\{v\in V:v>0\}$
+Not a real error.
+
+! Preview: Snippet 42 ended.(517848+163800x6086654).
+<-><->
+      
+l.157 ...ian property of $V$ ($V^+=\{v\in V:v>0\}$
+                                                  
+Not a real error.
+
+[42]
+! Preview: Snippet 43 started.
+<-><->
+      
+l.158 \begin{equation}
+                      
+Not a real error.
+
+! Preview: Snippet 43 ended.(714456+0x22609920).
+<-><->
+      
+l.160 \end{equation}
+                    
+Not a real error.
+
+[43
+
+]
+! Preview: Snippet 44 started.
+<-><->
+      
+l.161 ...use we just proved the equivalence with $
+                                                  u\in V^+$). WRONG Now if $...
+
+Not a real error.
+
+! Preview: Snippet 44 ended.(517848+0x2047963).
+<-><->
+      
+l.161 ...st proved the equivalence with $u\in V^+$
+                                                  ). WRONG Now if $V$ is a l...
+
+Not a real error.
+
+[44]
+! Preview: Snippet 45 started.
+<-><->
+      
+l.161 ...ivalence with $u\in V^+$). WRONG Now if $
+                                                  V$ is a lattice and there ...
+
+Not a real error.
+
+! Preview: Snippet 45 ended.(447828+0x527929).
+<-><->
+      
+l.161 ...alence with $u\in V^+$). WRONG Now if $V$
+                                                   is a lattice and there is...
+
+Not a real error.
+
+[45]
+! Preview: Snippet 46 started.
+<-><->
+      
+l.161 ...is some one dimensional affine subspace $
+                                                  \field u+v$ in $V^+$, we m...
+
+Not a real error.
+
+! Preview: Snippet 46 ended.(451470+53510x1917709).
+<-><->
+      
+l.161 ... dimensional affine subspace $\field u+v$
+                                                   in $V^+$, we may say w.l....
+
+Not a real error.
+
+[46]
+! Preview: Snippet 47 started.
+<-><->
+      
+l.161 ...nsional affine subspace $\field u+v$ in $
+                                                  V^+$, we may say w.l.o.g. ...
+
+Not a real error.
+
+! Preview: Snippet 47 ended.(517848+0x962917).
+<-><->
+      
+l.161 ...nal affine subspace $\field u+v$ in $V^+$
+                                                  , we may say w.l.o.g. that...
+
+Not a real error.
+
+[47]
+! Preview: Snippet 48 started.
+<-><->
+      
+l.161 ...u+v$ in $V^+$, we may say w.l.o.g. that $
+                                                  u^+>0$. Then one checks ea...
+
+Not a real error.
+
+! Preview: Snippet 48 ended.(517848+2346x2011515).
+<-><->
+      
+l.161 ...n $V^+$, we may say w.l.o.g. that $u^+>0$
+                                                  . Then one checks easily t...
+
+Not a real error.
+
+[48]
+! Preview: Snippet 49 started.
+<-><->
+      
+l.161 ...at $u^+>0$. Then one checks easily that $
+                                                  \field u^+ + v\subset V^+$...
+
+Not a real error.
+
+! Preview: Snippet 49 ended.(517848+53510x4189294).
+<-><->
+      
+l.161 ...s easily that $\field u^+ + v\subset V^+$
+                                                   and thus we are done by t...
+
+Not a real error.
+
+[49]
+
+LaTeX Warning: Reference `eq1' on page 2 undefined on input line 161.
+
+! Preview: Snippet 50 started.
+<-><->
+      
+l.165 With $
+            V$ not being a lattice, the equivalence fails by the example $V=...
+
+Not a real error.
+
+! Preview: Snippet 50 ended.(447828+0x527929).
+<-><->
+      
+l.165 With $V$
+               not being a lattice, the equivalence fails by the example $V=...
+
+Not a real error.
+
+[50]
+! Preview: Snippet 51 started.
+<-><->
+      
+l.165 ...e, the equivalence fails by the example $
+                                                  V=\reels^2$ and $V^+=\{0\}...
+
+Not a real error.
+
+! Preview: Snippet 51 ended.(533465+0x2168928).
+<-><->
+      
+l.165 ...valence fails by the example $V=\reels^2$
+                                                   and $V^+=\{0\}\cup \reels...
+
+Not a real error.
+
+[51]
+! Preview: Snippet 52 started.
+<-><->
+      
+l.165 ...e fails by the example $V=\reels^2$ and $
+                                                  V^+=\{0\}\cup \reels^+\tim...
+
+Not a real error.
+
+! Preview: Snippet 52 ended.(517848+163800x5730026).
+<-><->
+      
+l.165 ...and $V^+=\{0\}\cup \reels^+\times \reels$
+                                                  .
+Not a real error.
+
+[52]
+! Preview: Snippet 53 started.
+<-><->
+      
+l.169 A Riesz space $
+                     R$ is archimedian if and only if $R^+$ does not contain...
+
+Not a real error.
+
+! Preview: Snippet 53 ended.(447828+0x502671).
+<-><->
+      
+l.169 A Riesz space $R$
+                        is archimedian if and only if $R^+$ does not contain...
+
+Not a real error.
+
+[53]
+! Preview: Snippet 54 started.
+<-><->
+      
+l.169 ...space $R$ is archimedian if and only if $
+                                                  R^+$ does not contain a no...
+
+Not a real error.
+
+! Preview: Snippet 54 ended.(517848+0x937659).
+<-><->
+      
+l.169 ...e $R$ is archimedian if and only if $R^+$
+                                                   does not contain a non-tr...
+
+Not a real error.
+
+[54]
+! Preview: Snippet 55 started.
+<-><->
+      
+l.176 ...pecially, every archimedian Riesz-space $
+                                                  R$ with $\dim{R}=n\in\nats...
+
+Not a real error.
+
+! Preview: Snippet 55 ended.(447828+0x502671).
+<-><->
+      
+l.176 ...cially, every archimedian Riesz-space $R$
+                                                   with $\dim{R}=n\in\nats$ ...
+
+Not a real error.
+
+[55]
+! Preview: Snippet 56 started.
+<-><->
+      
+l.176 ... every archimedian Riesz-space $R$ with $
+                                                  \dim{R}=n\in\nats$ has exa...
+
+Not a real error.
+
+! Preview: Snippet 56 ended.(455111+0x4154411).
+<-><->
+      
+l.176 ... Riesz-space $R$ with $\dim{R}=n\in\nats$
+                                                   has exactly $n$ main rays.
+Not a real error.
+
+[56]
+! Preview: Snippet 57 started.
+<-><->
+      
+l.176 ...R$ with $\dim{R}=n\in\nats$ has exactly $
+                                                  n$ main rays.
+Not a real error.
+
+! Preview: Snippet 57 ended.(282168+0x393370).
+<-><->
+      
+l.176 ... with $\dim{R}=n\in\nats$ has exactly $n$
+                                                   main rays.
+Not a real error.
+
+[57]
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3212 strings out of 493307
+ 40589 string characters out of 6139904
+ 101266 words of memory out of 5000000
+ 6594 multiletter control sequences out of 15000+600000
+ 17821 words of font info for 63 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 37i,6n,26p,632b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on _region_.pdf (57 pages, 90622 bytes).
+PDF statistics:
+ 233 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

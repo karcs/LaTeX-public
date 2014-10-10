@@ -1,0 +1,13 @@
+\documentclass[a4paper]{article}
+\input{../Config/german.tex}
+
+\begin{document}
+\paragraph{Zielgruppe:} Bachelorstudenten der Mathematik und Physik ab dem 3. Semester, Masterstudenten, u.a. Interessierte
+\paragraph{Klassifizierung:} Studentisches Seminar (fakultativ für die meisten StudentInnen)
+\paragraph{Inhalt:} Ausgewählte Resultate der endlichen Gruppentheorie unter besonderer Berücksichtigung der einfachen endlichen Gruppen
+\paragraph{Leistungsnachweis:} keiner
+\paragraph{Leiter:} Jakob Schneider ({\tt jakob.schneider@tu-dresden.de})
+\paragraph{Literatur:} The Finite Simple Groups (R. A. Wilson), Endliche Gruppen I---III (B. Huppert) 
+\paragraph{Zeit/Ort:} nach Absprache mit potentellen Teilnehmern
+\paragraph{Erstes Treffen:}
+\end{document}

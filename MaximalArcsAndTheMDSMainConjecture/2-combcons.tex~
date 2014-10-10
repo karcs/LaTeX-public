@@ -1,0 +1,199 @@
+\section{Combinatorial consideration of sets in finite projective space}
+
+\subsection{$(k,m)$-arcs in projective planes}
+
+We start with some objects in the projective plane.
+
+\begin{definition}[$(k,m)$-arc]
+    Let $P$ be a projective space of order $q$. Then a set $\cA$ will be called a \keyword{$(k,m)$-arc} if $\card{\cA}=k$ and any line $l$ of
+    $\pi$ intersects $\cA$ in at most $m$ pionts.
+\end{definition}
+
+\begin{definition}[$(m,n)$-secant]
+    Let $\cS\setleq P$ be a subset of some projective space $P$. Then a subspace of (projective) dimension $n$ intersecting $\cS$ in exactly $m$ points is called an \keyword{$(m,n)$-secant} of $\cS$. In the case we are dropping the $n$ we mean a line. Moreover, a $2$-secant will also be denoted as \keyword{bisecant}, a $1$-secant as \keyword{tangent} and a $0$-secant as \keyword{external line}.
+\end{definition} 
+
+\begin{remark}
+    Thus a $(k,m)$-arc in a plane $\pi$ is just a $k$-set having no $m'$-secants for $m'>m$.
+\end{remark}
+
+A very natural question (and also the main question in this entire thesis but stated for different objects) is clearly which values $k$ can attain for a given order $q$ of the plane and parameter $m$.
+
+A simple bound for $k$ is given by the following general fact
+
+\begin{lemma}[size of $(k,m)$-arcs]\label{kmarcs:lem1}
+    Let $\emptyset\neq\cA\subset P$ be a $(k,m)$-arc and the space $P$ be of order $q$ and dimension $n$.
+    Then it holds that
+    \begin{equation}
+        k=\card{\cA} \leq \binom[q]{n}{1}(m-1)+1
+    \end{equation}
+    where equality occurs if and only if any line in $P$ meets $\cS$ in either $0$ or $m$ points. 
+\end{lemma}
+
+\begin{proof}
+    Pick a point $p\in\cA$. There are $\binom[q]{n}{1}$ lines through $p$ each of which carries at most $m-1$ other points of $\cS$.
+    This gives the desired bound and conversely if this bound is attained a line passing through an arbitrary point $p\in \cS$ must clearly pass through $m-1$ other points of $\cA$.
+\end{proof}
+
+However, whether or not this bound is actually attained is no simple question already in the case where $n=2$ disregarding the cases where $m=q+1$ or $m=1$ (the above estimate requires $\cA$ to be not empty). 
+
+\begin{definition}
+    A $(k,m)$-arc in projective space $P$ is called \keyword{maximal} if it attains the bound of the \autoref{kmarcs:lem1}.
+    It is called \keyword{complete} if it is maximal with respect to inclusion among all $(k,m)$-arcs in $P$.
+\end{definition}
+
+We might apologize for this somehow confusing definition by refering to the literature. Actually, to revisit this last last question
+may observe that it sufficies to answer it in small dimensions (when $q$ is odd we will see that it sufficies to answer this question for $n=2$ for which \person{Thas} conjectured in \textbf{TODO:Ref} that there are no maximal $(k,m)$-arcs in odd planes, which was proven by \person{Ball}, \person{Blukhuis} et al.\ in \textbf{TODO:Ref}).
+
+\begin{lemma}
+    Let $\cA$ be a maximal $(k,m)$-arc in projective space $P$ and $P'\in\Sub(P)$ having non-empty intersection with $\cA$. Then the points of $\cA$ lying in $P'$ form another maximal $(k',m)$-arc.
+\end{lemma}
+
+\begin{proof}
+    Using \ref{kmarcs:lem1}, we have that for any point $p\in \cA\setmeet P'$ it holds that all lines through $p$ contain $m$ points whosing that $\cA\setmeet P'$ is maximal by that same fact.
+\end{proof}
+
+It is thus clear that the non-existence of maximal $(k,m)$-arcs in some dimension implies the non-existence in all higher dimensions (for Desarguian spaces).
+
+We now turn to the case of a projective plane.
+
+\begin{lemma}[dual $(k,m)$-arc]\label{kmarcs:lem2}
+    Let $\cA$ be a $(k,m)$-arc in the plane $\pi$ such that $\cA\not\in\set{\emptyset,\pi}$ and $\cA'$ be the set of external lines of $\cA$. Then $\cA'$ is a $(k',\frac{q}{m})$-arc in the dual plane and maximal if and only if $\cA$ is maximal (especially, then $m\divides q$).
+\end{lemma}
+
+\begin{proof}
+    Let $E_p$ be a set of external lines of $\cA$ intersecting at $p\in\pi\setminus\cA$. Let $L_p$ be the lines incident with $p$.
+    Then we have that $\card{L_p\setminus E_p}m\geq k$ with equality for any point $p\in\pi\setminus\cA$ if and only if $\cA$ is maximal (\ref{kmarcs:lem1}).
+    Thus we get that
+    $$\card{E_p}\leq \binom[q]{2}{1}-\frac{k}{m}\leq \frac{(q+1)m-((q+1)(m-1)+1)}{m}=\frac{q}{m}.$$
+    Equality holds for all $p\in\pi\setminus\cA$ if and only if $\cA$ is maximal.
+    Lastly, we may compute $k'$ by a double counting argument
+    \begin{align*}
+        k' & = \frac{1}{q+1}\sum_{p\in P\setminus\cA}{\card{E_p}}\leq \frac{q}{m}\frac{q^2+q+1-(qm+m-q)}{q+1} \\
+           & = \frac{q(q+1)}{m}-q.
+    \end{align*}
+\end{proof}
+
+We now introduce another concept which in coincides with the one of a $(k,m)$-arc in dimension two for $m=2$.
+
+\begin{definition}[$k$-arc]
+    A $k$-set $\cA\setleq \PG{n}{\field{q}}$ is called a \keyword{projective $k$-arc} if no $n+1$ points of $\cA$ lie in a common hyperplane.
+    A set $\cA'\setleq \field{q}^{n+1}$ such that $\set{\gen{s}:s\in\cA'}$ is a projective $k$-arc and $\gen{s}\neq\gen{s'}$ for $s,s'\in\cA'$ is called an \keyword{affine representation} of the arc $\cA$.
+    Analogously, a $k$-set $\cA\setleq \field{q}^n$ is called an \keyword{affine $k$-arc} if any $n+1$ points are affinely independent.
+\end{definition}
+
+\begin{remark}
+    We shall drop the parameter $k$ and the distinction between \emph{projective} and \emph{affine} arc in most cases when these things are clear from the context.
+\end{remark}
+
+As a corollary of \ref{kmarcs:lem2} it follows that there are no $(q+2)$-arcs for in planes of odd order. This is, as the reader will notice later, a first (however simple) result which hints to the MDS main conjecture.
+
+However, in even planes, things are quiet different.
+This is what we discuss next.
+
+\subsection{Ovals and hyperovals}
+
+\begin{definition}[oval]
+    Let $\pi$ be a projective plane $\pi$ of order $q$. An oval $\cO$ in $\pi$ is a $(q+1)$-arc in $\pi$.  
+\end{definition}
+
+We already mentioned it, but to fix it as a fact, we have the following
+
+\begin{lemma}[maximality of ovals if $q$ odd] 
+    Let $\cO$ be an oval in a projective plane $\pi$ of odd order $q$.
+    Then $\cO$ is a maximal arc.
+\end{lemma}
+
+\begin{proof} Apply \ref{kmarcs:lem2} for $m=2$ and $q$ odd.
+\end{proof}
+
+The more interesting object we wanted to discuss briefly is
+
+\begin{definition}[hyperoval]
+    Let $\pi$ be an even plane. A $(q+2)$-arc $\cO$ is called \keyword{hyperoval}.
+\end{definition}
+
+\begin{remark}
+    Clearly, an oval is a maximal $(q+2,2)$-arc.
+\end{remark}
+
+\begin{lemma}
+    Let $\pi$ be an even plane, and $\cO$ be an oval. Then $\cO$ uniquely extends to a hyperoval by a point $n\in\pi$ called the \keyword{nucleus} of $\cO$.
+\end{lemma}
+
+\begin{proof}
+    We have to show that all $q+1$ tangents of $\cO$ meet in a unique point. Let $p\in\pi\setminus\cO$, and let $t_p$ be the number of tangents on $\cO$ and $s_p$ the number of secants on $\cO$ passing through $p$. Thus as $\card{\cO}=q+1$ we have by double counting argument
+    $$
+    q+1 \cong 2s_p+t_p \mod 2.
+    $$
+    showing that the number of tangents passing through $p$ is odd (so non-zero). Thus the $q+1$ tangents cover $q^2+q+1$ pints which shows that they must intersect in a unique point $n$ which follows form the more general fact that $k$ lines in the projective plane cover at most $kq+1$ where equality occurs if and only if they are concurrent. This fact can be demonstrated by the three double counting identities in which $t_i$ denotes the number of points of the union of lines lying in exactly $i$ of them
+    $$
+    \sum_{i=1}^k{t_i}=N
+    $$
+    and
+    $$
+    \sum_{i=1}^k{it_i}=k(q+1)
+    $$
+    and
+    $$
+    \sum_{i=1}^k{i(i-1)t_i}=k(k-1)
+    $$
+    where subtracting the first from the second and multiplying the result by $k$ results in
+    $$
+    \sum_{i=1}^k{k(i-1)t_i}=k(k(q+1)-N)\geq \sum_{i=1}^k{i(i-1)t_i}=k(k-1)
+    $$
+    where equality occurs if and only if $t_i=0$ for $i=2,\ldots,k-1$ and $t_k=1$. In that case $N=kq+1$.    
+\end{proof}
+
+For the sake of completeness, we proof another fact about hyperovals in Desarguian planes.
+
+\begin{lemma}
+    Let $\cO$ be a hyperoval in a Desarguian plane $\pi$. Then $\cO$ is $\PGL$-equivalent to some oval admitting an affine representation
+    $$
+    \cC:=\set{e_1,e_2}\setjoin\set{\begin{pmatrix} 1\\ z\\ f(z)\end{pmatrix}:z\in\field{q}},
+    $$
+    where $f(z)$ is an \keyword{$\cO$-polynomial}, i.e. $x\mapsto f(x)$ and $h\mapsto\frac{f(x+h)-f(x)}{h}$ permute $\field{q}$.
+    Moreover, one may assume that $f(0)=0$ and $f(1)=1$.
+\end{lemma}
+
+\begin{proof}
+    It is well-known that $\PGL(n,\field{q})$ acts sharply transitive on the $(n+1)$-sets in general position of $\proj(\field{q}^n)$. Thus we may assume that the four vectors $e_1,e_2,e_3$ and $e_1+e_2+e_3$ are part of our representation (using an appropriate element if $\PGL$).
+    Using an appropriate scalar we thus may assume that the first coordinates of these vectors are one. Since otherwise two of these vectors would be colinear with $\gen{e_3}$ the second coordinates of them must all be distinct.
+    Evaluating the determinants we get
+    $$
+    \det\begin{pmatrix} 0& 1& 1\\ 1& a& b\\ 0& f(a)& f(b)\end{pmatrix} = f(a)-f(b)\neq 0
+    $$
+    and so $f$ is a permutation polynomial and that
+    $$
+    \det\begin{pmatrix} 1& 1& 1\\ a& b& c\\ f(a)& f(b)& f(c)\end{pmatrix} = (a-c)f(b)+(b-a)f(c)+(c-b)f(a)\neq 0 
+    $$
+    which leads to
+    $$
+    (f(a)-f(b))(a-c) \neq (f(a)-f(c))(a-b)
+    $$
+    or equivalently $h\mapsto \frac{f(x+h)-f(x)}{h}$ is injective for all $x\in\field{q}$.
+\end{proof}
+
+Using this fact the following hyperovals are natural to discover and \person{Segre} was the first who did.
+
+\begin{corollary}[translation hyperovals]
+    Let $q=2^e$. Then the set
+    $$
+    \cC:=\set{e_1,e_2}\setjoin\set{\begin{pmatrix} 1\\ z\\ f(z)\end{pmatrix}:z\in\field{q}},
+    $$
+    where $f(z)=z^{2^i}$ is a hyperoval if and only if $i\meet e=1$.
+\end{corollary}
+
+\begin{proof}
+    Clearly, as $f$ is a field automorphism, it is a permutation polynomial. Moreover, the map $h\mapsto \frac{f(x+h)-f(x)}{h}=h^{2^i-1}$ is injective if and only if $(2^i-1)\meet(2^e-1)=2^{i\meet e}-1=1$ which holds if and only if $i\meet e=1$ (here we use that $\units{\field{q}}$ is cyclic).
+\end{proof}
+
+Other hyperovals, which can be discovered in a similar manner are
+
+\begin{corollary}
+    The polynomial $f(z)=z^6$ is an $\cO$-polynomial in $\field{q}$ where $q=2^e$ and $e$ is odd.
+\end{corollary}
+
+\begin{proof}
+    The equation $x^3-y^3$ factors into $(x-y)(x^2+xy+y^2)$. But the equation $x^2+x+1$ is irreducible for $e$ odd since otherwise the field extension $\field{q}/\field{2}$ would have even degree. Now $h\mapsto \frac{f(x+h)-f(x)}{h}={(x^2+xh+h^2)}^3h^2$
+\end{proof}

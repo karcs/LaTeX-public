@@ -1,0 +1,26 @@
+
+\begin{lemma}[Segre's lemma of tangents, simplified version]
+
+\end{lemma}
+
+\begin{proof}
+    The (probably) simplest proof is by induction on $\card{\cA}$.
+    for $\card\cA=n-1$ choose $b\in \field{q}^n\setminus\gen\cA$ and define
+    $$
+    T_A:=\prod_{\lambda\in\field{q}}{(\dual{a}+\lambda\dual{b})}
+    $$
+    where $\set{a}=\cA\setminus A$ and $\dual b, \dual a$ mean elements from the dual basis of $\cA\setjoin\set{b}$. For $x_1,x_2,X$ we get that
+    $$
+    T_{X\setjoin\set{x_1}}(x_2)=1=T_{X\setjoin\set{x_2}}(x_1)
+    $$
+    as desired.
+        For the induction step assume that $\card{\cA}\geq n$. Set $a:=\min{\cA}$ and define the tangent polynomials $T^{\cA}_Y$ via the tangent polynomials $T^{\cA'}_{Y'}$ ($\cA':=\cA\setminus\set{a}$, $Y\setleq \cA$, $Y'\setleq \cA'$, $\card Y=\card{Y'}=n-2$) by
+        $$
+        T^{\cA}_{Y'}:=\frac{T^{\cA'}_{Y'}}{\det(a,Y',\arg)}
+        $$
+        and
+        $$
+        T^{\cA}_{X\setjoin\set{a}}:=\frac{S_{X\setjoin \set{a}}}{\prod_{z\in\cA'\setminus X}\det(\set{a}\setjoin X,z,\arg)}
+        $$
+        (this is a definition since the symmetric algebra is a UFD). Her the polynomials $S_Y$ denote the product of all linear forms containing $Y$ appropriately chosen.
+\end{proof}

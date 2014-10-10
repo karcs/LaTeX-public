@@ -1,0 +1,446 @@
+\documentclass{article}
+\usepackage[de]{mathenv}
+\input{../Config/math.tex}
+\input{../Config/german.tex}
+\usepackage{framed}
+\usepackage{blindtext}
+
+\begin{document}
+30.05.2014
+
+\begin{definition} Eine Riemannsche Mannigfaltigkeit $M$ heißt ein Raum konstanter (Schnitt-)Krümmung, wenn es eine Zahl $\kappa$ mit $K_{\sigma}=\kappa$ for alle $2$-dimensionalen Unterräume $\sigma$ von Tangentialräumen von $M$. Eine solche Mannigfaltigkeit $M$ nennt man \keyword{elliptisch}, falls $\kappa>0$, \keyword{flach}, falls $\kappa=0$ bzw. \keyword{hyperbolisch} falls $\kappa<0$. 
+\end{definition}%%%%%%%%%%%%%%%%%
+
+\begin{example}
+    Der euklidische Raum $\reals^n$ ist ein flacher Raum, die sphäre $\sphere^n$ ist ein elliptischer Raum konstanter Krümmung.
+\end{example}
+
+Zur Erinnerung:
+Bezeichnungsmäßig galt $$
+R_1(X,Y)Z:=g(Y,Z)X-g(X,Z)Y,
+$$
+und
+$$
+\eqalign{
+    k_1(X,Y)
+    &:=g(r_1(X,Y)Y,X)\cr
+    &=g(g(Y,Y)X-g(X,Y)Y,X)=g(X,X)g(Y,Y)-{g(X,Y)}^2.
+}
+$$
+
+\begin{fact}\label{f39}
+    Falls die Schnittkrümmung $K_{\sigma}$ nur von $p$ aber nicht von $\sigma\setleq T_p M$ abhängt, also eine funktion $K:M\to\reals$ ist, dann gilt $R=K R_1$.
+\end{fact}
+
+\begin{proof}
+    Es galt $k(X,Y)=K k_1(X,Y)$. Die Formel zur Bestimmung von $R$ aus $k$ im Beweis von Lemma 3.7 ist eine Linearkombination von Termen der Form $k(aX+bY, cX+dY)$, ferner erfüllt $R_1(X,Y)Z$ dieselben Rechenregeln (1)--(4) aus Lemma 3.6 wie $R(X,Y)Z$, also $R=K R_1$ (da man $R$ aus $k$ in gleicher Weise extrahiert wie $R_1$ aus $k_1$).
+\end{proof}
+
+Insbesondere im Falle $n=2$ ist die Voraussetzung erfüllt, da es nur einen $2$-dimensionalen Unterraum von $T_p M$ gibt, also $R = K R_1$.
+
+für $n\geq 3$ gitl aber
+
+\begin{theorem}[\person{F. Schur}, 1886]\label{thmschur} Wenn die Schnittkrümmung $K_\sigma$ einer zusammenhängenden Mannigfaltigkeit der Dimension $n\geq 3$ nicht von der Richtung $\sigma$, sondern nur von dme Punkt $p$ abhängt, dann ist sie konstant (hängt auch nicht von dem Punkt ab).
+\end{theorem}
+
+Für den Beweis benötigen wir noch ein paar Vorbereitungen.
+
+\begin{definition}[Erweiterung des linearen Zusammenhangs auf $\fkF(M)$]
+    Für $f\in\fkF(M)$ bezeichne $\nabla_X f:= Xf\in \fkF(M)$.
+\end{definition}
+
+\begin{definition}[Kovariante Ableitung von Tensorfeldern]
+    Sie $\nabla$ ein linearer Zusammenhang und $A:\fkX_r(M)\to \fkX_s(M)$ ein Tensorfeld auf $M$ vom Typ $(r,s)$ mit $r\geq 1, s\in\set{0,1}$. Dann definieren wir die \keyword{kovariante Ableitung} von $A$ in Richtung $X$ durch
+    $$
+    \eqalign{
+        (\nabla_X A)(Y_1,\ldots,Y_r)
+        &:=\nabla(A(Y_1,\ldots,Y_r))\cr
+        &\qquad-\sum_{i=1}^r{A(Y_1,\ldots,Y_{i-1},\nabla_X Y_i,Y_{i+1},\ldots,Y_r)}.
+    }
+    $$
+    Im Falle $r=0$, $\nabla_X = Xf$.
+\end{definition}
+
+\begin{remark}
+    Es ist dann $\nabla_X A$ ein Tensorfeld desselben Typs wie $A$. Ferner ist $\nabla A$ mit $(\nabla A)(X,Y_1,\ldots,Y_r)=(\nabla_X a)(Y_1,\ldots,Y_r)$ ein Tensorfeld des Typs $(r+1,s)$.
+\end{remark}
+
+\begin{proof}
+    Wir müssen die $\fkF(M)$-Linearität von $\nabla A(X,Y_1,\ldots,Y_r)$. Additivität ist unmittelbar ersichtlich, da $A$ $r$-multilinear ist und $\nabla_X(Y+Z)=\nabla_X Y + \nabla_X Z$.
+    Zu zeigen ist $\fkF(M)$-Homogenität in jeder Komponente
+    $$
+    (\nabla_X A)(Y_1,\ldots,Y_{i-1},fY_i,Y_{i+1},\ldots,Y_r) = f (\nabla_X A)(Y_1,\ldots,Y_r).
+    $$
+    Es gilt
+    $$
+    \eqalign{
+        (\nabla_X A)(Y_1,\ldots,Y_{i-1}, f Y_i, Y_{i+1},\ldots,Y_r)
+        & = \nabla_X (fA(Y_1,\ldots,Y_r))\cr
+        &\qquad-\sum_{i=1}^r{fA(Y_1,\ldots,Y_{i-1}\nabla_X Y_i,Y_{i+1},\ldots, Y_r)}\cr
+        &\qquad-(Xf)(A(Y_1,\ldots,Y_r))\cr
+        & = (Xf) A(Y_1,\ldots,Y_r)\cr
+        &\qquad+f\nabla_X A(Y_1,\ldots,Y_r)\cr
+        &\qquad-f(\sum_{i=1}^r{A(Y_1,\ldots,Y_{i-1},\nabla_X Y_i, Y_{i+1},\ldots, Y_r)})\cr
+        &\qquad-(Xf)A(Y_1,\ldots,Y_r),
+    }
+    $$
+        wie gewünscht.
+        Fenrer ist
+        $$(\nabla A)(f X, Y_1,\ldots, Y_r) = (\nabla_{fX} A)(Y_1,\ldots,Y_r)=f(\nabla_X A)(Y_1,\ldots,Y_r)$$
+        und damit der zweite Teil der Bemerkung erfüllt.
+\end{proof}
+
+Nach lemma 3.5 hängt $\rest{(\nabla_X A)}_p(Y_1,\ldots,Y_r)$ nur von $\rest{Y_1}_p,\ldots,\rest{Y_r}_p$ ab.
+
+Daher kann $\rest{(\nabla_X A)}_p$ als multilineare Abbildung $T_p M \settimes \cdots \settimes T_p M \to {(T_p M)}^s$ aufgefasst werden.
+
+Wir führen die Schreibweise $(\nabla_X R)(Y,Z)V = \nabla_X(RY,Z)V)-R(\nabla_X Y,Z)-R(Y,\nabla_X Z)-R(Y,Z)\nabla_X V$. Weitere Rechenregeln für $R$.
+
+\begin{lemma}\label{lem312} Sei $\nabla$ ein torsionsfreier linearer Zusammenhang und $R$ der zugehörige Krümmungstensor. Dann gilt $(\nabla_X R)(Y,Z)V+(\nabla_Y R)(Z,X)V+(\nabla_Z R)(X,Y) V=0$ (zweite Biorchi Identität).
+\end{lemma}
+
+\begin{proof}
+    Der Beweis wird eine Übungsaufgabe sein \textbf{TODO} (Hinweis: Argumentieren Sie wie im Beweis von Lemma 3.6, aber ausführlich).
+\end{proof}
+
+\begin{fact}[Kovariante Ableitung von $g$]
+    für die (semi-)\person{Riemann}'sche Metrik $g$ und den zugehörigen \person{Levi-Civita}-Zusammenhang gilt:
+    \begin{align*}
+        (\nabla g)(X,Y,Z) &= \nabla_X(g(X,Y))-g(\nabla_X Y,Z)-g(Y,\nabla_X Z)\\
+        &= Xg(Y,Z)-g(\nabla_X Y,Z)-g(Y,\nabla_X Z)=0,
+    \end{align*}
+    da dies genau die Verträglichkeitsbedingung (6) aus Satz 3.2 darstellt ($X,Y,Z\in\fkX(M)$, also $\nabla g = 0$).
+\end{fact}
+
+\begin{fact}\label{f314}
+    Es gilt $\nabla_X R_1= 0$, wobei $R_1$ wie gehabt definiert sei ($R_1(X,Y)Z = g(Y,Z)X-g(X,Z)Y$). Beweis ist Aufgabe.
+\end{fact}
+
+Nun können wir den Beweis von \autoref{thmschur} führen.
+
+\begin{proof}[\autoref{thmschur}] Nach \autoref{f39} folgt $R = K R_1$ mit $K\in\fkF(M)$. Also
+    $$
+    (\nabla_X R)(Y,Z) V = K(\nabla_X R_1)(Y,Z) V + X(K) R_1(Y,Z) V \ \textrm{(nach \autoref{f314})}
+    $$
+    Wir zeigen nun $X(K)=0$ für alle $X\in\fkX(M)$. Für alle $X,Y,Z\in\fkX(M)$ gilt
+    \begin{align*}
+        (\nabla_X R)(Y,Z) V &= X(K)(g(Z,V)Y-g(Y,V)Z)\\
+        (\nabla_Y R)(Z,X) V &= Y(K)(g(X,V)Z-g(Z,V)X)\\
+        (\nabla_Z R)(X,Y) V &= X(K)(g(Y,V)X-g(X,V)Y).
+    \end{align*}
+    Nach \autoref{lem312} ist die Summe der drei Ausdrücke gleich 0, also
+    \begin{align*}
+        0 &= (Z(K)g(Y,V)-Y(K)g(Z,V))X+(X(K)g(Z,V)-Z(K)g(X,V))Y\\
+        &\quad +(Y(K)g(X,V)-X(K)g(Y,V))Z.
+    \end{align*}
+    Sie $X\in\fkX(M)$ beliebig. Da nach Voraussetzung die Dimension $n\geq 3$ ist, gibt es lokal (bzgl. $g$ orthogonale Vektorfelder $Y,Z$. Für $V=Y$ folgt $0=Z(K)X-X(K)Z$ also $X(K)=0$. Damit ist $K$ lokal konstant und wegen $M$ zusammenhängend global konstant.   
+\end{proof}
+
+\hfill{05.06.2014}
+
+\begin{definition}
+    Seien $(M,g)$, $(\tilde M, \tilde g)$ \person{Riemann}'sche Mannigfaltigkeit und $F:M\to\tilde M$ eine differenzierbar Abbildung. $F$ heißt eine \keyword{lokale Isometrie} (oder isometrisch), falls für alle $p\in M, X,Y\in T_p M$ gilt: $\tilde g_{F(p)}(\rest{DF}_p(X),\rest{DF}_p(Y))=g_p(X,Y)$. Eine \keyword{isometrischer Diffeomorphismus} heißt auch eine \keyword{Isometrie}. $F$ heißt \keyword{konform}, falls es eine Funktion $\lambda:M\to \reals^+$ gibt, sodass $\lambda(p)\neq 0$ und
+    $$
+    \rest{\tilde g}_p(\rest{DF}_p(X),\rest{DF}_p(Y))=\lambda(p)\rest{g}_p(X,Y)
+    $$
+    für alle $p\in M, X,Y\in T_p M$.
+\end{definition}
+
+Es gilt sogar:
+
+\begin{theorem}
+    Für je zwei \person{Riemann}'sche Mannigfaltigkeiten $(M,g)$, $(\tilde M, \tilde g)$ derselben Dimension mit derselben konstanten Krümmung gilt, dass es zu je zwei $p\in M, \tilde p\in\tilde M$ Umgebungen $O\in\cU(p), \tilde O\in\cU(\tilde p)$ gibt und eine Isometrie
+    $$
+    F:O\to \tilde O.
+    $$
+\end{theorem}
+
+\begin{definition}
+    Für einen linearen Zusammenhang $\nabla$ und den zugehörigen Krümmungstensor definiert man den \keyword{Ricci}-Tensor durch $\Ric(V,W):=\tr(R(\bullet,V)W)$ für $U,V,W\in T_p M$, $p\in M$.
+    $$
+    \rest{\Ric(V,W)}_p=\tr(U_p\mapsto R(U_p,V_p)W_p)
+    $$
+    für $U,V,W\in \fkX(M)$.
+\end{definition}
+
+Da die Spur eine lineare Abbildung vom Raum der Endomorphismen nach $\reals$ ist, ist $\Ric$ ein Tensor vom Type $(2,0)$ ($\tr(\lambda A+\mu B)=\lambda\tr A+\mu \tr B$.
+
+\begin{remark}
+    Aus einem Tensorfeld vom Typ $(r,1)$ erhält man somit durch Bildung der Spur ein Tensorfeld (Kontraktion) vom Typ $(r-1,0)$.
+\end{remark}
+
+Sei $M$ nun eine semi-\person{Riemann}'sche Mannigfaltigkeit und $E_1,\ldots, E_n$ eine Orthogonalbasis von $T_p M$ bzgl.~$g$, d.h. $g(E_i,E_j)=\epsilon_i\delta_{ij}$ mit $\epsilon_i\in\set{-1,1}$. Ein Vektor $X_p\in T_p M$ hat also bzgl.~der Basis $E_1,\ldots,E_n$ die Darstellung
+$$
+X_p=\sum_{i=1}^n\epsilon_ig_p(X,E_i)E_i.
+$$
+Auf der Diagonalen der Matrix der linearen Abbildung $U_p\mapsto R(U_p,V_p)W_p$ bzgl.~der Basis $E_1,\ldots,E_n$ stehen also die Elemente $\epsilon_i g_p(R(E_i,V_p)W_p,E_i)$. Also
+$$
+{\Ric(V,W)}_p=\sum_{i=1}^n{\epsilon_i g_p(R(E_i,V_p)W_p,E_i)}.
+$$
+Wir würden eigentlich gerne noch einmal die Spur bilden, aber Achtung (!) die Spur einer Bilinearform ist apriori nicht sinnvoll (basisabhängig). Aber man definiert die Spur einer Biliniearform bzgl.~einer nicht entarteten symmetrischen Bilinearform $g$ als $\tr A$, wobei $A$ die eindeutig bestimmte lineare Abbildung ist mit $\beta(X,Y)=g(X,AY)$.
+
+Für eine Pseudo-ON-Basis $E_1,\ldots,E_n$ bzgl.~$g$, g.h. $g(E_i,E_j)=\epsilon\delta_{ij}$ ergibt sich
+$$
+\tr A = \sum_{i=1}^n{\epsilon_i g(E_i,A E_i)} = \sum_{i=1}^n{\epsilon_i\beta(E_i,E_i)}
+$$ 
+Die Skalarkrümmung $s$ einer semi-\person{Riemann}'schen Mannigfaltigkeit ist definiert als die Spur bzgl.~$g$, also
+$$
+s(p):=\tr(A_p)
+$$
+mit
+$$
+\Ric(X_p,Y_p)=g(X_p,AY_p),
+$$
+also für eine Pseudo-ON-Basis $E_1,\ldots,E_n$ von $T_p M$ bzgl. $g$:
+\begin{framed}
+$$
+s(p)=\sum_{i=1}^n{\epsilon_i\Ric(E_i,E_i)}=\sum_{i=1}^n{\epsilon_i\epsilon_j g(R(E_i,E_j)E_j,E_i)}.
+$$
+\end{framed}
+
+\begin{definition}
+    Die \keyword{\person{Ricci}-Krümmung} von $M$ in Richtung $V$ mit $g(V,V)\neq 0$ ist definiert als
+    $$
+    \ric(V):=\frac{\Ric(V,V)}{g(V,V)}.
+    $$
+    Es gilt also für eine Pseudo-ON-Basis $E_1,\ldots,E_n$ bzgl.~$g$, dass
+    $$
+    s=\sum_{i=1}^n{\ric(E_i)}.
+    $$
+\end{definition}
+
+Im Zusammenhang mit Differenzialgeometrie I:
+
+Sei $X_1,\ldots,X_n$ eine ON-Basis von Hauptkrümmungsrichtungen zu Hauptkrümmungen $k_1,\ldots,k_n$ einer parametrisierten Hyperfläche. Dann ist $g(X_i,X_j)=\delta_{ij}$, $LX_i=k_i X_i$ ($L$ \person{Weingarten}-Abbildung).
+$$
+g(R(X_i,x_j)X_k,X_l)=g(g(LX_j,X_k)LX_i-g(LX_i,X_k)LX_j,X_l)=k_ik_j\delta_{jk}\delta_{il}-k_ik_j\delta_{ik}\delta_{jl},
+$$
+wobei wir die \person{Gauß}-Gleichungen in koordinatenfreier Form benutzt haben.
+Also
+$$
+g(R(X_i,X_j)X_k,X_l)=
+\begin{cases}
+    k_i k_j&: \textrm{falls $j=k$ und $i=l$ und $i\neq j$}\\
+    -k_i k_j&: \textrm{falls $i=k$ und $j=l$ und $i\neq j$}\\
+        0&:\textrm{sonst}
+\end{cases}
+$$
+Und weiterhin
+$$
+K(X_i,X_j)=k_i k_j \textrm{für $i\neq j$}. 
+$$
+Zum \person{Ricci}-Tensor ergibgt sich
+$$
+\Ric(X_i,X_j)=
+\begin{cases}
+    k_i\sum_{l=1, l\neq i}^n{k_l}\ \textrm{falls $i=j$}\\
+    0\ \textrm{sonst}
+\end{cases}
+$$
+und damit
+$$
+\ric(X_i)=k_i\sum_{j=1,j\neq i}^n{k_j}.
+$$
+Für die Skalarkrümmung ergibt sich weiterhin
+$$
+s=\sum_{i=1}^n\sum_{\substack{j=1\\ i\neq j}}^n{k_i k_j}=n(n-1)K_2,
+$$
+wobei $K_2$ die zweite elementarsymmetrische Krümmung ist.
+
+\hfill{13.06.2014}
+
+\section{Übung --- Teil 3}
+
+\begin{exercise}
+    Seien $\nabla, \tilde\nabla$ lineare Zusammenhänge auf einer Mannigfaltigkeit $M$. Zeige:
+    \begin{tasks}
+            \item Es ist $\nabla - \tilde\nabla$ ein Tensorfeld vom Typ $(2,1)$.
+        \item Es ist $\tau:\fkX(M)\settimes\fkX(M)\to\fkX(M)$ mit $\tau(X,Y):=\nabla_X Y - \nabla_Y X - [X,Y]$ ein Tensorfeld vom Typ $(2,1)$.
+    \end{tasks}
+\end{exercise}
+
+\begin{solution}
+    \begin{tasks}
+        \item
+        Die Additivität in beiden Komponenten von $\nabla - \tilde\nabla$ folgt sogleich aus der Additivität von $\nabla$ und $\tilde \nabla$ in diesen. In der ersten Komponente sind $\nabla$ und $\tilde \nabla$ sogar $\fkF(M)$-linear, damit auch ihre Differenz. Für die zweite Komponente berechnet man
+        $$
+        {(\nabla-\tilde\nabla)}_X {fY}=f\nabla_X Y+X(f)Y-f\tilde\nabla_X Y -X(f)Y.
+        $$
+        Also ist der Ausdruck auch in dieser Komponente $\fkF(M)$-homogen und damit linear.
+            \item
+        Es ist offensichtlich, dass $\tau(X,Y)=-\tau(Y,X)$, also $\tau$ schiefsymmetrisch (was wegen $\rchar\reals\neq 2$ äquivalent zu alternierend ist). Wir zeigen $\fkF(M)$-Homogenität in einer Komponente (aufgrund der Schiefsymmetrie gilt sie dann auch in der anderen). Additivität in beiden Komponenten ist trivial, da alle Ausdrücke aus denen $\tau$ kombiniert wird biadditiv sind.
+        $$
+        \eqalign{
+            &\nabla_{fX} Y -\nabla_Y {fX} - [fX,Y]=f\nabla_X Y - f\nabla_Y X - Y(f)X - (fX)Y+Y(fX)\cr
+            & =f\tau(X,Y)-Y(f)X+Y(f)X  
+        }
+        $$
+        wie gewünscht.
+    \end{tasks}
+\end{solution}
+
+\begin{exercise}
+    Sei $\nabla$ ein linearer Zusammenhang auf der Mannigfaltigkeit $M$.
+    Setze $R:{\fkX(M)}^3\to\fkX(M)$ mit $R(X,Y)Z:=\nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z -\nabla{[X,Y]} Z$. Zeige, dass $R$ ein Tensorfeld ist (\person{Riemann}'scher Krümmungstensor).
+\end{exercise}
+
+\begin{solution}
+    Es ist $R$ offensichtlich antisymmetrisch in $X$ und $Y$. Additivität in jeder Komponente ist wieder trivial, da alle auftretende Ausdrücke in der Definition von $R$ diese Eigenschaft haben.
+    Für $\fkF(M)$-Homogenität in $X$ (und damit $Y$) rechnen wir:
+    \begin{align*}
+        R(fX,Y) & = f\nabla_X\nabla_Y-\nabla_Y(f\nabla_X)-\nabla_{f[X,Y]-Y(f)X}\\
+        & = f(\nabla_X\nabla_Y-\nabla_Y\nabla_X-\nabla_{[X,Y]})-Y(f)\nabla_X+Y(f)\nabla_X,
+    \end{align*}
+    was das gewünschte Resultat ist.
+    Für die $\fkF(M)$-Homogenität in $Z$ berechnet man:
+    \begin{align*}
+        R(X,Y)(fZ) & = f\nabla_X\nabla_Y Z+X(f)\nabla_Y Z+Y(f)\nabla_X Z+XY(f) Z\\
+        & \quad -f\nabla_Y\nabla_X Z-Y(f)\nabla_X Z-X(f)\nabla_Y Z-YX(f) Z\\
+        & \quad -f\nabla_{[X,Y]} Z-[X,Y](f) Z = fR(X,Y) Z.
+    \end{align*}
+    Alle Terme, welche `unerwünscht' sind, heben sich hinweg.
+\end{solution}
+
+\begin{exercise}
+    Gib ein Beispiel einer $4$-dimensionalen semi-\person{Riemann}'schen Mannigfaltigkeit $M$ mit Signatur $(3,1)$ an und eine $3$-dimensionale Untermannigfaltigkeit, die mit der induzierten Biliniearform keine semi-\person{Riemann}'sche Mannigfaltigkeit ist.
+\end{exercise}
+
+\begin{solution}%% falsch
+    Wir wählen den $\reals^4$ mit den Karten $\phi:U\to U$, $u\mapsto u$ ($U\setleq \reals^4$ offen). Als Untermannigfaltigkeit wählen wir den linearen Unterraum $\ker(\dual x_1+\dual x_2+\dual x_3 - \sqrt 3\dual x_4)$. Es enthält dann dieser Raum den bzgl. $g$ isotropen Vektor $(1,1,1,\sqrt 3)$. Damit ist die induzierte Biliniearform auf dem Unterraum jedoch in jedem Punkt entartet.
+\end{solution}
+
+\begin{exercise}
+    Definiere das Produkt $M_1\settimes M_2$ in natürlicher Weise für $M_i$ differenzierbare Mannigfaltigkeit ($i=1,2$). Zeige, dass $M_1\settimes M_2$ eine differenzierbare Mannigfaltigkeit ist und $\pi_i:M_1\settimes M_2\to M_i$ Submersionen sind.
+\end{exercise}
+
+\begin{solution}
+    Wir setzen die zugrundeliegende Menge von $M_1\settimes M_2$ gleich mit dem kartesischen Produkt der Mengen von $M_1$ und $M_2$. Gleichzeitig setzen wir auch die Kartenabbildungen $\phi_{\alpha,\beta}:=\phi^1_{\alpha}\settimes\phi^2_{\beta}$, wobei $\phi^1_{\alpha},\phi^2_{\beta}$ Karten von $M_1$ bzw. $M_2$ sind.
+    Es ist dann klar, dass
+    $$
+    \bigsetjoin_{\alpha,\beta}{\dom{\phi_{\alpha,\beta}}}=\bigsetjoin_{\alpha,\beta}{\dom\phi^1_{\alpha}\settimes\dom\phi^2_{\beta}}=M_1\settimes M_2.
+    $$
+    Andererseits gilt auch, dass
+    $$
+    \im\phi_{\alpha,\beta}\setmeet\im\phi_{\alpha',\beta'}=\im\phi^1_{\alpha}\setmeet\im\phi^1_{\alpha'}\settimes\im\phi^1_{\beta}\setmeet\im\phi^1_{\beta'},
+    $$
+    was als Produkt zweier offener Mengen offen in der Produkttopologie ist ($\reals^n$ sind so definiert, dass die darauf erklärte Topologie genau die $n$-te Potenz der Topologie auf $\reals$ ist).
+    Weiter ist die Komposition $\phi_{\alpha,\beta}\compose\phi_{\alpha',\beta'}$ auch differenzierbare Abbildung, da sie gleich dem Produkt der Abbildungen $\phi^1_{\alpha}\compose{(\phi^1_{\alpha'})}^{-1}$ und $\phi^2_{\beta}\compose{(\phi^2_{\beta'})}^{-1}$ ist und ein solches Produkt wieder differenzierbar ist (die Ableitung ist gegeben durch
+    $$
+    \begin{pmatrix}
+        J_1 & 0\\
+        0 & J_2
+    \end{pmatrix},
+    $$ wobei $J_i$ die entsprechenden Ableitungen der ersten bzw.\ zweiten Funktion sind.
+    Nun muss noch gezeigt werden, dass $\pi_i$ Submersionen sind.
+    Dafür benötigen wir, dass $\phi^i_{\alpha'}\compose\pi_i\compose\phi_{\alpha,\beta}^{-1}$ überall surjektives Differential hat. Diese Abbildung ist jedoch einfach nur die Projektion $(x_1,x_2)\mapsto x_i$, welche klarerweise surjektives Differential in jedem Punkte hat (denn sie ist schon linear und `surjektiv').
+\end{solution}
+
+\begin{exercise}
+    Seien $M,N$ glatte Mannigfaltigkeiten und $F:M\to N$ Submersion. Zeige, dass für alle $q\in N$ gilt: $F^{-1}(q)$ ist Untermannigfaltigkeit von $M$.
+\end{exercise}
+
+\begin{solution}
+    TODO
+\end{solution}
+
+\begin{exercise}
+    Gegeben sei die Abbildung $\Phi:\sphere^2\to\reals^6$ mit
+    $$
+    \Phi(X_1,X_2,X_3)=(X_1^2,X_2^2,X_3^2,\sqrt 2X_1X_2,\sqrt 2X_1X_3,\sqrt 2X_2X_3).
+    $$
+    \begin{tasks}
+            \item Zeige, dass $\im\Phi\setleq \sphere^5$ und $\im\Phi$ in einer $4$-dimensionalen Sphäre vom Radius $\sqrt{\frac 2 3}$ liegt.
+            \item Zeige, $\Phi$ ist Immersion.
+            \item Bestimme die von $\Phi$ induzierte \person{Riemann}'sche Metrik auf $\sphere^2$.
+    \end{tasks}
+\end{exercise}
+%%% to much space here%%% --- reason is enumerate spacing%%%%
+
+\begin{solution}
+    \begin{tasks}
+            \item Es gilt
+        $$
+        X_1^4+X_2^4+X_3^4+2 X_1^2X_2^2+2 X_1^2X_3^2+2X_2^2X_3^2={(X_1^2+X_2^2+X_3^2)}^2.
+        $$
+        Damit liegt $\im\Phi$ in $\sphere^5$, da $(X_1,X_2,X_3)\in\sphere^2$.
+        Weiterhin ist klar, dass die Hyperebene $\ker (\dual x_1+\dual x_2+\dual x_3 -1)$ ebenfalls $\im\Phi$ enthält. Der Schnitt dieser mit der $\sphere^5$ ist eine $4$-dimensionale Sphäre mit Mittelpunkt
+        $$(1/3,1/3,1/3, 0, 0, 0)$$
+        und Radius $\sqrt{{(1-\frac 1 3)}^2+\frac 1 {3^2}+\frac 1 {3^2}}=\sqrt{\frac 2 3}$.
+            \item Wir können die obere Halbsphäre (und auch jede andere Halbsphäre nach Koordinatentransformation) parametrisieren durch
+        $$
+        \phi^{-1}(X_1,X_2)=(X_1,X_2,\sqrt{1-X_1^2-X_2^2}).
+        $$
+        Damit ist
+        $$
+        \Psi\compose\phi^{-1}(X_1,X_2)=(X_1^2,X_2^2,1-X_1^2-X_2^2,\sqrt 2X_1 X_2,\sqrt 2X_1\sqrt{1-X_1^2-X_2^2},\sqrt 2 X_2\sqrt{1-X_1^2-X_2^2}).
+        $$
+        Das Differential dieser  Abbildung ist offensichtlich injektiv, da die Ableitung gegeben ist durch
+        $$
+        \begin{pmatrix}
+            2X_1 & 0\\
+            0 & 2X_2\\
+            -2X_1 & -2X_2\\
+            \sqrt 2X_2 & \sqrt 2X_1\\
+            \sqrt 2 \frac{1-2X_1^2-X_2^2}{\sqrt{1-X_1^2-X_2^2}} &-\sqrt 2\frac{X_1X_2}{\sqrt{1-X_1^2-X_2^2}}\\
+            -\sqrt 2\frac{X_1X_2}{\sqrt{1-X_1^2-X_2^2}} & \sqrt 2 \frac{1-X_1^2-2X_2^2}{\sqrt{1-X_1^2-X_2^2}}
+        \end{pmatrix}.
+        $$
+        Von den Untermatrizen aus erster und dritter, bzw.\ zweiter und vierter Zeile ist immer eine regulär außer $X_1=X_2=0$.
+        In diesem Falle ist jedoch die Matrix aus fünfter und sechster Zeile regulär. Damit ist $\Phi$ Immersion.
+        \item TODO
+    \end{tasks}
+\end{solution}
+
+\hfill{19.06.2014}
+Sei $(M,g)$ zusammenghängend (semi-)\person{Riemann}'sche Mannigfaltigkeit.
+
+\begin{definition}
+    Sei $c:I\to M$ eine differenzierbare Kurve. Eine differenzierbare Abbildung $X:I\to TM$ heißt Vektorfeld längs $c$, falls $x(t)\in T_{c(t)}M$ (d.h. $\pi\compose X=c$).
+    Weiter sei $\cX$ der Vektorraum der Vektorfelder.
+\end{definition}
+
+\begin{theorem}
+    Sei $(M,g)$ (semi-)\person{Riemann}'sche Mannigfaltigkeit mit \person{Levi-Civita}-Zusammenhang $\nabla$, $C:I\to M$ Kurve. Dann gibt es genau eine $\reals$-lineare Abbildung $\frac\nabla{\diff t}:\cX_c\to\cX_c$ mit $x\mapsto \frac{\nabla x}{\d t}$ mit
+    \begin{properties}
+            \item $$
+        \frac{\nabla}{\d t}(f\cdot x)=f' x+\frac{\nabla x}{\diff t} \text{ ($\forall x\in\cX_c, f\in \cF_c$) }
+        $$
+            \item $$
+        \rest{\frac{\nabla Y\compose c}{\diff t}}_{t=t_0} = \nabla_{c'(t_0)} \text{ $Y\in\cX_c$ } 
+        $$
+    \end{properties}
+\end{theorem}
+
+\begin{proof}
+    Eindeutigkeit: lokal um $c_0(t)\in M$ wähle Karte $X(t)=\sum_{i=1}^n{\alpha_i(t)\rest{\partial_i}_{c(t)}}$, also $\frac{\nabla X}{\diff{t}}(t_0)=\sum_{i=1}^n{(\alpha_i'\rest{\partial_i}_{c(t_0)}+\nabla_{c'(t_0)}{\partial_i})}$. Zur Existenz nimmt man selbiges als Definition.
+\end{proof}
+
+\begin{lemma}
+    Es gilt folgende Produktregel für $\frac{\nabla}{\diff{t}}:\cX_c\to\cX_c$. Für alle $X,Y\in\cX_c$ haben wir
+    $$
+    \rest{\frac{\diff}{\diff{t}}}_{c(t_0)}{g(X(t),Y(t))}=g_{c(t_0)}(\frac{\nabla X}{\diff t}X(t),Y(t)}
+    $$
+\end{lemma}
+
+\begin{proof}
+    lokal: $X=\sum{\alpha_i(\partial_i\compose c)$, $Y=\sum{\beta_j(\partial_j\compose c)}$.
+        Dann $\rest{\frac{\diff}{\diff t}}_{t=t_0}{g(X(t),Y(t))}=$
+\end{proof}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

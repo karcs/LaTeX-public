@@ -1,0 +1,423 @@
+% author: Jakob Schneider
+% email: jakob.schneider@tu-dresden.de
+% my personal maths package
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MATH PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% only package needed
+\usepackage{unicode-math}
+
+
+% ===== Set quick commands for math letters ================================================================
+% calagraphic letters (only upper case available; standard)
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+% bold math letters (standard)
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+% fractal math letters (standard)
+\newcommand{\fkA}{\mathfrak{A}}
+\newcommand{\fkB}{\mathfrak{B}}
+\newcommand{\fkC}{\mathfrak{C}}
+\newcommand{\fkD}{\mathfrak{D}}
+\newcommand{\fkE}{\mathfrak{E}}
+\newcommand{\fkF}{\mathfrak{F}}
+\newcommand{\fkG}{\mathfrak{G}}
+\newcommand{\fkH}{\mathfrak{H}}
+\newcommand{\fkI}{\mathfrak{I}}
+\newcommand{\fkJ}{\mathfrak{J}}
+\newcommand{\fkK}{\mathfrak{K}}
+\newcommand{\fkL}{\mathfrak{L}}
+\newcommand{\fkM}{\mathfrak{M}}
+\newcommand{\fkN}{\mathfrak{N}}
+\newcommand{\fkO}{\mathfrak{O}}
+\newcommand{\fkP}{\mathfrak{P}}
+\newcommand{\fkQ}{\mathfrak{Q}}
+\newcommand{\fkR}{\mathfrak{R}}
+\newcommand{\fkS}{\mathfrak{S}}
+\newcommand{\fkT}{\mathfrak{T}}
+\newcommand{\fkU}{\mathfrak{U}}
+\newcommand{\fkV}{\mathfrak{V}}
+\newcommand{\fkW}{\mathfrak{W}}
+\newcommand{\fkX}{\mathfrak{X}}
+\newcommand{\fkY}{\mathfrak{Y}}
+\newcommand{\fkZ}{\mathfrak{Z}}
+\newcommand{\fka}{\mathfrak{a}}
+\newcommand{\fkb}{\mathfrak{b}}
+\newcommand{\fkc}{\mathfrak{c}}
+\newcommand{\fkd}{\mathfrak{d}}
+\newcommand{\fke}{\mathfrak{e}}
+\newcommand{\fkf}{\mathfrak{f}}
+\newcommand{\fkg}{\mathfrak{g}}
+\newcommand{\fkh}{\mathfrak{h}}
+\newcommand{\fki}{\mathfrak{i}}
+\newcommand{\fkj}{\mathfrak{j}}
+\newcommand{\fkk}{\mathfrak{k}}
+\newcommand{\fkl}{\mathfrak{l}}
+\newcommand{\fkm}{\mathfrak{m}}
+\newcommand{\fkn}{\mathfrak{n}}
+\newcommand{\fko}{\mathfrak{o}}
+\newcommand{\fkp}{\mathfrak{p}}
+\newcommand{\fkq}{\mathfrak{q}}
+\newcommand{\fkr}{\mathfrak{r}}
+\newcommand{\fks}{\mathfrak{s}}
+\newcommand{\fkt}{\mathfrak{t}}
+\newcommand{\fku}{\mathfrak{u}}
+\newcommand{\fkv}{\mathfrak{v}}
+\newcommand{\fkw}{\mathfrak{w}}
+\newcommand{\fkx}{\mathfrak{x}}
+\newcommand{\fky}{\mathfrak{y}}
+\newcommand{\fkz}{\mathfrak{z}}
+
+% script math symbols (only uppercase; package: mathrsfs)
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CATEGORY THEORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ===== Category theory concepts =====================================================
+
+\newcommand{\Ob}{\operatorname{Ob}}
+\newcommand{\Mor}{\operatorname{Mor}}
+
+\newcommand{\ccoprod}{\bigsqcup}
+\newcommand{\cprod}{\bigsqcap}
+\newcommand{\cincl}{\operatorname{incl}}
+\newcommand{\cproj}{\operatorname{pr}}
+
+
+% ===== Define standard categories ===================================================
+
+% Define sets
+\newcommand{\Set}{\mathbf{Set}}
+
+% Define groups (optarg: properties such as -> abelian, noetherian (acc), artinian (dcc) etc.)
+\newcommand{\Grp}[1][\empty]{\if\empty{#1}{\mathbf{Grp}}\else{\mathbf{Grp}_{#1}}}
+% Define rings
+\newcommand{\Rg}[1][\empty]{\if\empty{#1}{\mathbf{Rg}}\else{\mathbf{Rg}_{#1}}}
+% Standard rings
+% integral domains
+\newcommand{\ID}{\mathbf{ID}}
+% unique factorization domains
+\newcommand{\UFD}{\mathbf{UFD}}
+% principal ideal domains
+\newcommand{\PID}{\mathbf{PID}}
+
+% Define modules over a group or ring
+\newcommand{\Mod}[1]{\mathbf{Mod}_{#1}}
+% Define vector space over a field
+\newcommand{\Vec}[1]{\mathbf{Vec}_{#1}}
+
+% when cases
+\newcommand{\otherwise}{\text{otherwise}}
+
+% new concepts
+\newcommand{\new}[1]{\emph{#1}}
+
+% replace the bar command by overline when argument just one character (shorter and better)
+\renewcommand{\bar}{\overline}
+
+% groups and algebras
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\Sub}{\operatorname{Sub}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\rk}{\operatorname{rk}} % rank of a group module/ lattice
+
+% groups
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\isom}{\cong}
+\newcommand{\divides}{|}
+
+% common algebraic objects
+\newcommand{\reals}{\mathbb{R}} 			% real numbers
+\newcommand{\nats}{\mathbb{N}} 				% natural numbers
+\newcommand{\ints}{\mathbb{Z}} 				% integers
+\newcommand{\rats}{\mathbb{Q}}				% rationals
+\newcommand{\complex}{\mathbb{C}}			% complex numbers
+\newcommand{\field}[1]{\mathbb{F}_{#1}}  		% finite field
+\newcommand{\cards}{\boldsymbol{Cn}}                     % The cardinal numbers
+\newcommand{\ords}{\boldsymbol{On}}                      % The ordinal numbers
+
+% graphs
+\newcommand{\KG}[2]{\operatorname{KG}(#1,#2)}                     % Knesergraph
+
+\newcommand{\uvect}{\boldsymbol{e}}
+
+% new operators and relations
+
+%%%%%%%%%%%%%%%%%%%
+% complex numbers %
+%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\Re}{\operatorname{Re}}		% real part
+\renewcommand{\Im}{\operatorname{Im}}		% imaginary part
+\newcommand{\sgn}{\operatname{sgn}}				% the sign operator (0 for 0)
+
+%%%%%%%%%%%%%%%%
+% reel numbers %
+%%%%%%%%%%%%%%%%
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+
+%%%%%%%%%%%%%%%%%%
+% set operations %
+%%%%%%%%%%%%%%%%%%
+
+\newcommand{\intersect}{\cap}			% intersect to sets
+\newcommand{\setjoin}{\cup}				% join two sets
+\newcommand{\setmeet}{\cap}                     % intersect to sets
+\newcommand{\union}{\bigcup}			% the union of sets ... subscripts to be added
+\newcommand{\distunion}{\dot{\bigcup}}	% disjoint union of sets ... subscripts to be added
+\newcommand{\intersection}{\bigcap}		% intersection of sets
+\newcommand{\powerset}{\mathcal{P}}		% powerset ... to be customized
+\newcommand{\card}[1]{\left|#1\right|}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% composition operations of structures %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\setprod}{\bigtimes}			% setproduct - needed
+\newcommand{\dirprod}{\bigotimes} 			% direct product for groups and spaces
+\newcommand{\dirtimes}{\otimes}				% direct multiply for groups and spaces
+\newcommand{\dirsum}{\bigoplus} 			% direct sum for groups and spaces
+\newcommand{\dirplus}{\oplus}				% direct add for groups and spaces
+\newcommand{\inprod}[2]{\left\langle #1,#2 \right\rangle}
+
+%%%%%%%%%%%%%%
+% categories %
+%%%%%%%%%%%%%%
+
+% combinatorics
+%%
+
+\newcommand{\binom}[3][\empty]{\if\empty{#1}{{#2 \choose #3}}\else{{#2 \choose #3}_{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% metric spaces and normed spaces and vector spaces %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\dist}{\operatorname{dist}}				% distance operator ... dist(A,b), where A is a set and b a point
+\newcommand{\diam}{\operatorname{diam}}	% diameter operator for sets
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}	% norm in a normed space ... subscript to be added
+\newcommand{\conv}{\operatorname{conv}} 			% convex hull - vectorspaces
+\newcommand{\lin}{\operatorname{lin}} 				% linear hull - vectorspaces
+\newcommand{\aff}{\operatorname{aff}}				% affine hull - vectorspaces
+
+%%%%%%%%%%%%%%%%%%%%%%
+% operators in rings %
+%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lcm}{\operatorname{lcm}}				% least common multiple - in euclidean rings
+\renewcommand{\gcd}{\operatorname{gcd}}				% greatest command devisor - in euclidean rings
+\newcommand{\res}{\operatorname{res}}				% residue of p mod q is res(p,q)
+\newcommand{\mod}{\text{ mod }}
+
+%%%%%%%%%%%%%%%%%%%
+% logical symbols %
+%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\impliedby}{\Leftarrow}				% reverse implicatoin arrow
+\newcommand{\implies}{\Rightarrow}				% implication
+\newcommand{\equival}{\Leftrightarrow}				% equivalence
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% functions - elementary symbols %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\rest}[1]{\left. #1\right\vert}		% restriction of a function to a set / also used as restriction in other terms like differential expressions / evaluation of a function
+\renewcommand{\to}{\rightarrow}							% arrow between domain and image
+\newcommand{\dom}{\operatorname{dom}}					% domain of a function
+\newcommand{\im}{\operatorname{im}}						% image of a function
+\newcommand{\compose}{\circ}							% compose two functions
+\newcommand{\cont}{\operatorname{C}}					% continuous functions from a domain into the reels or complex numbers 
+
+%%%%%%%%%%%%%%%%%%%%
+% groups - symbols %
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\stab}{\operatorname{stab}}					% the stabilizer ... subscripts to be added
+\newcommand{\orb}{\operatorname{orb}} 					% orbit ... subscrit to be added (group)
+\newcommand{\gen}[1]{\langle #1\rangle}					% generate ... kind of hull operator ---- to be thought of !!!!!!!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% matrices and linear operators %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\diag}{\operatorname{diag}}				% diagonal matrix or operator
+\newcommand{\Eig}[1]{\operatorname{Eig}_{#1}}		% eigenspace for a certain eigenvalie		
+\newcommand{\trace}{\operatorname{tr}}				% trace of a matrix
+\newcommand{\trans}{\top} 							% transponse matrix
+
+%%%%%%%%%%%%%
+% constants %
+%%%%%%%%%%%%%
+
+\renewcommand{\i}{\boldsymbol{i}}			% imaginary unit
+\newcommand{\e}{\boldsymbol{e}}				% the Eulerian constant
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% limit operators and arrows %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\upto}{\uparrow}				% convergence from above
+\newcommand{\downto}{\downarrow}			% convergence from below
+
+%%
+% other
+%%
+\newcommand{\cind}{\operatorname{Ind}}		% Cauchy index
+\newcommand{\sgnc}{\sigma}					% sign changes
+\newcommand{\wnumb}{\omega}					% winding number
+\newcommand{\cfunc}{\operatorname{Cf}}		% Cauchy function of a compact curve in complex\setminus\{0\}
+
+
+% evaluation of a function as a difference or single value
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\conj}[1]{\overline{#1}}
+\renewcommand{\d}{\operatorname{d}}
+
+%%%%% test
+\newcommand{\distjoin}{\mathaccent\cdot\cup}	% to be modified (name)
+\newcommand{\cl}{\operatorname{cl}}				% topological closure
+\newcommand{\sphere}{\mathbb{S}} % n-sphere
+\newcommand{\ball}{\mathbb{B}} % n-ball
+\newcommand{\bound}{\partial}
+\newcommand{\bigmeet}{\operatorname{\bigwedge}}
+\newcommand{\bigjoin}{\operatorname{\bigvee}}
+\newcommand{\rchar}{\operatorname{char}}              % characteristic of a ring
+\newcommand{\lgor}{\vee}                               % logical
+\newcommand{\lgand}{\wedge}
+\newcommand{\iso}{\cong}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\row}{\operatorname{row}}
+\newcommand{\cone}{\operatorname{cone}}
+\newcommand{\comp}{\operatorname{comp}}
+\newcommand{\proj}{\operatorname{P}}
+\newcommand{\PG}[2]{\operatorname{PG}(#1,#2)}           % projective space
+\newcommand{\meet}{\wedge}
+\newcommand{\join}{\vee}
+\newcommand{\col}{\operatorname{col}}
+\newcommand{\vol}{\operatorname{vol}}
+%arrangements
+\newcommand{\tpert}{\operatorname{tpert}}
+\renewcommand{\epsilon}{\varepsilon}
+% groups
+\newcommand{\symgr}{\operatorname{Sym}}
+\newcommand{\symalg}{\operatorname{S}}
+\newcommand{\extalg}{\operatorname{\Lambda}}
+\newcommand{\extpow}[1]{\operatorname{\Lambda}^{#1}}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 

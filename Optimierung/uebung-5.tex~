@@ -1,0 +1,23 @@
+\begin{solution}
+    Es soll $z=c^\topx+d^\top y\to\min$ bei
+    $$
+    Ax+By\leq a,
+    $$
+    $$
+    Cx+Dy = b,
+    $$
+    $$
+    x\geq 0,\ y \text{ frei}
+    $$
+    erreicht werden.
+    Idee ist es die Aufgabe in die duale Form zu überführen:
+    $z=\tilde c^\top \tilde x\to\min$ bei
+    $$
+    \tilde Ax\geq  \tilde b,\ \tilde x\geq 0
+    $$
+    Dafür ist dann die duale Aufgabe bekannt:
+    $$
+    \tilde b^\top\to\max\text{ bei } 
+    $$
+    
+\end{solution}

@@ -223,14 +223,17 @@
 \def\@End[#1]{\ifx#1\empty\mathop\mathrm{End}\else\mathop\mathrm{End}\nolimits_{#1}\fi}
 
 % ===== arrows
-\def\into{\rightarrowtail}% mono
-\def\onto{\twoheadrightarrow}% epi
+\def\monoto{\rightarrowtail}% mono
+\def\epito{\twoheadrightarrow}% epi
+\def\isoto{\leftrightarrow}
 \def\to{\rightarrow}% morphism
 
 
 %\newcommand{\coprod}{\bigsqcup}
-\newcommand{\catprod}{\bigsqcap}
-\newcommand{\catcoprod}{\bigsqcup}
+\def\product{\bigsqcap}
+\def\binproduct{\sqcap}
+\def\coproduct{\bigsqcup}
+\def\bincoproduct{\sqcup}
 \newcommand{\incl}{\mathop\mathrm{incl}}
 \newcommand{\proj}{\mathop\mathrm{pr}}
 
@@ -239,6 +242,27 @@
 % Define sets
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Lat}{\mathbf{Lat}}
+\newcommand{\Poset}{\mathbf{Poset}}
+
+
+% commutator operator for groups and Lie-Algebras
+\def\commutator#1#2{\left[#1,#2\right]}
+
+% commutator group
+\def\commutatorgroup#1#2\in#3{\gen{\commutator{\cast#1\to\Set}{\cast#2\to\Set}}\in{\Sub#3}}
+% commutator series (first argument - group - second index)
+\def\commutatorseries#1#2{#1^{(#2)}}
+\def\lowercentralseries#1#2{\gamma_#2{#1}}
+\def\uppercentralseries#1#2{\Gamma_#2{#1}}
+
+% groups
+\newcommand\centre{\mathrm{Z}}
+\newcommand{\ord}{\mathop\mathrm{ord}}
+\newcommand{\divides}{|}
+\newcommand\normalizer{\mathrm{N}}
+
+
 % Define set-builder operator (equivalent to gen for algebras)
 %\newcommand{\set}[2][\empty]{\ifx#1\empty\left\{1\right\}\else\left\{2\right\}_{#1}\fi}% to change
 \makeatletter
@@ -265,7 +289,6 @@
 \newcommand{\face}{\mathop\mathrm{F}}
 \newcommand{\Pol}{\mathop\mathrm{Pol}}
 \newcommand{\Inv}{\mathop\mathrm{Inv}}
-\def\struct#1{\gen{#1}}
 
 \let\originaltimes\times%
 \renewcommand{\times}{\mathbin{\sqcap}}
@@ -334,6 +357,14 @@
 \def\Vec{\mathbf{Vec}}%
 \def\Aff{\mathbf{Aff}}
 
+% forgetful functor
+\def\cast#1\to#2{#1_#2}
+% free functor
+\def\lift#1\to#2{#1^#2}
+
+\renewenvironment{cases}{%
+\left\lbrace\begin{array}{ll}}
+{\end{array}\right.}
 % when cases
 \def\otherwise{\textrm{otherwise}}
 
@@ -353,6 +384,7 @@
 % groups and algebras and categories
 \newcommand{\Con}{\mathop{\mathrm{Con}}\nolimits}
 \newcommand{\Sub}{\mathop{\mathrm{Sub}}\nolimits}
+\newcommand{\Quot}{\mathop{\mathrm{Quot}}\nolimits}
 \newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
 \newcommand{\Out}{\mathop{\mathrm{Out}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
@@ -393,10 +425,9 @@
 \newelement{Si}
 \makeatother
 
+% accumulator
+\def\acc#1{\mathop{#1}}
 
-% groups
-\newcommand{\ord}{\mathop\mathrm{ord}}
-\newcommand{\divides}{|}
 
 % common algebraic objects
 \newcommand{\reals}{\mathbb{R}} 			% real numbers
@@ -405,7 +436,7 @@
 \newcommand{\rats}{\mathbb{Q}}				% rationals
 \newcommand{\complex}{\mathbb{C}}			% complex numbers
 \newcommand{\field}[1]{\mathbb{F}_{#1}}  		% finite field
-\newcommand{\cards}{\boldsymbol{Cn}}                     % The cardinal numbers
+\newcommand{\cardinals}{\mathbf{Cn}}                     % The cardinal numbers
 \newcommand{\ords}{\boldsymbol{On}}                      % The ordinal numbers
 
 % graphs
@@ -438,7 +469,7 @@
 \newcommand{\setmeet}{\cap}% intersect to sets
 \newcommand{\Setjoin}{\bigcup}% the union of sets
 \newcommand{\Setmeet}{\bigcap}% intersection of sets
-\newcommand{\card}[1]{\left\vert{#1}\right\vert}
+\newcommand{\size}[1]{\left\vert{#1}\right\vert}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % composition operations of structures %
@@ -467,7 +498,7 @@
 % combinatorics
 %%
 
-\newcommand{\binom}[3][\empty]{\if\empty{#1}{{#2 \choose #3}}\else{{#2 \choose #3}_{#1}}}
+\newcommand{\binom}[2]{\left(\begin{array}{c}#1\\  #2\end{array}\right)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % metric spaces and normed spaces and vector spaces %
@@ -518,6 +549,13 @@
 \newcommand{\orb}[1][]{\ifx&#1&\mathrm{orb}\else\mathrm{orb}_{#1}\fi} 					% orbit ... subscrit to be added (group)
 \newcommand{\gen}[2][\empty]{\ifx#1\empty{\left\langle#2\right\rangle}\else{\left\langle#2\right\rangle_{#1}}\fi}					% generate ... kind of hull operator ---- to be thought of !!!!!!!
 \def\cogen#1{\left\rangle#1\right\langle}
+
+% generated substructure
+\def\gen#1\in#2{\left\langle#1\right\rangle_{#2}} 
+
+% mathematical structure (type)
+\def\struct#1{\left\langle#1\right\rangle}
+
 
 \def\Clo{\mathrm{Clo}}
 \def\Loc{\mathrm{Loc}}

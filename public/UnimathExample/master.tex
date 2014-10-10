@@ -1,4 +1,3 @@
-
 %%%%%%%%%%%%%%%%%%%%%%%
 % UNICODE-MATH EXAMPLE FILE
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -86,10 +85,68 @@ Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{
     Hallo
 \end{theorem}
 
-%\begin{remarks}
-%    \item dsf
-%\end{remarks}
+\section{Die \person{Sylow}'schnen Sätze}
 
+Eine natürliche Frage, welche sich aus dem Theorem von \person{Lagrange} ergibt, welche Aussagen über die Anzahl und Art der
+Untergruppen von Ordnung $n$ einer endlichen Gruppe $G$ getroffen werden können.
+Für $n\not\divides \size G$ ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
+ist jene Anzahl im Falle $n\divides \size G$ genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
+Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\Aut m$ sieht, denn wählt man nun $n$ als eine Zyklizität
+erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\Aut m$ dieser Ordnung.
+ist es ob bei einer endlichen Gruppe $G$ der
+
+Tatsächlich lassen sich aber befriedigende Aussagen treffen, falls $n=p^e$ die Potenz einer Primzahl $p$ ist. Diese werden
+gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
+
+\begin{definition}[$p$-Gruppe]
+    Sei $G$ eine Gruppe derart, dass jedes Element $g\in G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
+    Primzahl sei.
+\end{definition}
+
+\begin{remark}
+    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche $p$-Gruppe selbst von
+    Primzahlpotenzordnung $p^e$ ist.
+\end{remark}
+%
+\begin{theorem}[Existenz von $p$-Untergruppen jeder Ordnung]
+    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\set{U\leq G}[\size U=p^e]}$ gilt dann
+    $$
+    N_{p^e} = 1 \mod p
+    $$
+\end{theorem}
+%
+\begin{proof}
+    Wir betrachten die Aktion von $G$ auf den $p^e$-elementigen Untermengen von $\cast G \to \Set$ welche gegeben wird durch
+    elementweise Rechtsmultiplikation. Die Bahnengleichung für diese Aktion wird dann zu
+    $$
+    \size {\binom {\cast G \to \Set} {p^e}} = \sum_i {\size {G/\stab A_i}},
+    $$
+    wobei $A_i$ Repräsentanten der $G$-Bahnen sind.
+    Für $A_i\into \cast G \to \Set$, $\size {A_i}=p^e$ gilt allerdings dann $A_i \cast (\stab A_i) \to \Set=A_i$, also ist $A_i$ eine disjunkte
+    Vereinigung von Linksnebenklassen von $\stab A_i$ und mithin $\size {\stab A_i}\divides p^e$. Betrachten wir also obige
+    gleichung modulo $pn$, so folgt
+    $$
+    \binom {p^e n}{p^e} = n N_{p^e} \mod pn, 
+    $$
+    denn alle Terme, in denen $\stab A_i<p^e$ ist in obiger Gleichung entfallen und die übrigen Terme zählen genau für jede
+    $p^e$-elementige Untergruppe von $G$ ihre Linksnebenklassen (derer gibt es $n$).
+    Daraus folgt
+    $$
+    \frac 1 n \binom {p^e n}{p^e} = \binom {p^e n-1} {p^e-1} = N_{p^e} \mod p,
+    $$
+    wobei der Ausdruck auf der Linken Seite gleich 1 ist modulo $p$. Dies sieht man einerseits daran, dass dies für die zyklische
+    Gruppe mit $p^e n$ Elementen gilt, andererseits lässt sich auch das Theorem von \person{Lucas} (TODO : REF) auf den letzten
+    Binomialkoeffizienten anwenden. Wir erhalten dann
+    $$
+    N_{p^e} = \binom {p^e n - 1} {p^e -1} = {\binom {p-1} {p-1}}^e = 1 \mod p.
+    $$
+\end{proof}
+
+\begin{theorem}
+    Jede endliche Gruppe $G$ hat $p$-\person{Sylow}-Gruppen. Für jede $p$-Untergruppe $U$ und eine $p$-\person{Sylow}-Gruppe von
+    $G$ gibt es ein Element $g\in G$, sodass $U\into P^g$. Insbesondere sind alle $p$-\person{Sylow}-Gruppen konjugiert zueinander
+    und ihre Anzahl ist $\size {G/N_G P}. 
+\end{theorem}
 \end{document}
 
 

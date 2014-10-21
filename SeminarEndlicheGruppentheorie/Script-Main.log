@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.7)  10 OCT 2014 12:24
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.21)  21 OCT 2014 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -963,32 +963,54 @@ Package: mathenv 2014/06/11 v0.1
 \c@exercise=\count170
 \c@solution=\count171
 \c@casei=\count172
+)
+(/home/jakob/texmf/tex/latex/layer.sty
+Package: layer 2014/06/11 v0.1
+\counter@chapter=\count173
+\counter@section=\count174
+
+Runaway argument?
+{
+! Paragraph ended before \layerformat was complete.
+<to be read again> 
+                   \par 
+l.93     \par
+             %
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Too many }'s.
+l.94 }
+      %
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
 ) (./Script-Main.aux)
 \openout1 = `Script-Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 20.
-
-(/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 21.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 21.
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *** you should *not* be loading the inputenc package
 *** XeTeX expects the source to be in UTF8 encoding
@@ -1006,108 +1028,16 @@ LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/m/n' will be
 (Font)              scaled to size 7.39993pt on input line 22.
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/m/n' will be
 (Font)              scaled to size 5.49994pt on input line 22.
- (./Grundlagen-Sylowsche-Sätze.tex
-Overfull \hbox (11.71426pt too wide) in paragraph at lines 3--3
-\EU1/TeXGyrePagella(0)/bx/n/20.74 iUnterobjekte und Quotientenobjekte 
- []
+ [1
 
-[1
-
-]
-
-LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(0)/bx/n' undefined
-(Font)              using `EU1/texgyrepagella-math.otf(0)/m/n' instead on input
- line 57.
-
-
-LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' undefined
-(Font)              using `EU1/texgyrepagella-math.otf(1)/m/n' instead on input
- line 57.
-
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 7.40016pt on input line 57.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 5.5001pt on input line 57.
-
-LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' undefined
-(Font)              using `EU1/texgyrepagella-math.otf(2)/m/n' instead on input
- line 57.
-
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 7.39993pt on input line 57.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 5.49994pt on input line 57.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 10.00015pt on input line 67.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 9.99985pt on input line 67.
-
-Overfull \hbox (0.58565pt too wide) in paragraph at lines 79--84
-\EU1/TeXGyrePagella(0)/m/n/10 Linksnebenklassen von $[][][][][]$ und mithin $[]
-[] [][][][]$. Betrachten wir also obige
- []
-
-[2] [3]
-Overfull \hbox (3.54893pt too wide) in paragraph at lines 144--148
-\EU1/TeXGyrePagella(0)/bx/n/10 Definition 0.2 (Subnormalenverband, Subnormalenr
-eihe).  \EU1/TeXGyrePagella(0)/m/n/10 Ein Unterverband
- []
-
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 155.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 155.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 155.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 155.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 155.
-LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 155.
-
-Overfull \hbox (11.29637pt too wide) in paragraph at lines 171--173
-\EU1/TeXGyrePagella(0)/bx/n/10 Definition 0.5 (Kommutatorreihe).  \EU1/TeXGyreP
-agella(0)/m/n/10 Wir definieren die \EU1/TeXGyrePagella(0)/m/it/10 Kommutatorre
-ihe $[][][][]$
- []
-
-[4]
-Overfull \hbox (0.71564pt too wide) in paragraph at lines 192--194
-\EU1/TeXGyrePagella(0)/m/n/10 bezeichnet wird. Sie stellt in gewissem Sinne ein
-e Verallgemeinerung der Eigen-
- []
-
-[5]
-Overfull \hbox (5.73424pt too wide) in paragraph at lines 276--276
-\EU1/TeXGyrePagella(0)/bx/n/20.74 ixMinimale Normalteiler und charak-
- []
-
-[6]
-Overfull \hbox (3.74559pt too wide) in paragraph at lines 296--298
-\EU1/TeXGyrePagella(0)/bx/n/10 Satz 0.8 (Charakterisierung charakteristisch ein
-facher Gruppen).  \EU1/TeXGyrePagella(0)/m/it/10 Eine Gruppe
- []
-
-
-Overfull \hbox (1.20894pt too wide) in paragraph at lines 301--307
-\EU1/TeXGyrePagella(0)/m/it/10 Beweis. \EU1/TeXGyrePagella(0)/m/n/10 Sei $[][][
-]$ charakteristisch einfach und $[][][]$ minimaler Normalteiler. Die Bilder
- []
-
-) [7] (./Script-Main.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- )
-(\end occurred when \if on line 33 was incomplete) 
+] (./Script-Main.aux) ) 
 Here is how much of TeX's memory you used:
- 30564 strings out of 493727
- 611011 string characters out of 6147890
- 687147 words of memory out of 5000000
- 33505 multiletter control sequences out of 15000+600000
- 8326 words of font info for 66 fonts, out of 8000000 for 9000
+ 30447 strings out of 493727
+ 607042 string characters out of 6147889
+ 674606 words of memory out of 5000000
+ 33414 multiletter control sequences out of 15000+600000
+ 5878 words of font info for 41 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 74i,14n,84p,10423b,1344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,12n,84p,10423b,893s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Script-Main.pdf (7 pages).
+Output written on Script-Main.pdf (1 page).

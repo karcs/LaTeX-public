@@ -1,6 +1,7 @@
 (TeX-add-style-hook "Script-Main"
  (lambda ()
     (TeX-run-style-hooks
+     "layer"
      "mathenv"
      "de"
      "tikz-cd"
@@ -10,6 +11,5 @@
      "art10"
      "article"
      ""
-     "../Config/math-xetex"
-     "Grundlagen-Sylowsche-Sätze")))
+     "../Config/math-xetex")))
 

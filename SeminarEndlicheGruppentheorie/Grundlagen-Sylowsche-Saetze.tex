@@ -1,0 +1,484 @@
+\part{Grundlagen}
+
+\section{Verbände}
+
+\begin{definition}
+    Die Kategorie der Verbände
+\end{definition}
+
+\section{Kategorien}
+
+In diesem Abschnitt werden die nötigen kategorientheoretischen Kenntnisse (bzw.~Terminologie) bereitgestellt, welche für die
+Gruppentheorie (von einem modernen Standpunkt aus) unentbehrlich sind.
+
+\subsection{Terminale und finale Objekte}
+
+\begin{definition}[initiale und terminale Objekte]
+    Sei $\bfA$ eine Kategorie. Dann heißt ein Objekt $T:\bfA$ \keyword{terminal}\as{{terminales Objekt}{koinitiales Objekt}}, falls es für jedes andere Objekt $O:\bfA$ genau
+    einen Morphismus $\alpha:O\to T$ gibt. Mit anderen Worten: $T$ ist maximal bezüglich der transitiven Relation $\to$.
+    In analoger Weise heißt $I$ ein \keyword{initiales}\as{{initiales Objekt}{koterminales Objekt}}, falls es für jedes $O:\bfA$
+    genau einen Morphismus $\beta:I\to O$ gibt. Mit anderen Worten: $I$ ist minimal bezüglich der transitiven Relation $\to$. 
+\end{definition}
+
+\begin{definition}[Nullobjekt]
+    Ein Objekt $0:\bfA$ heißt \keyword{Nullobjekt}\as{{Nullobjekt}}, falls $0$ sowohl initial als auch terminal ist.
+\end{definition}
+
+\subsection{Initiale und terminale Pfeile und Nullpfeile}
+
+\begin{definition}[Initiale und terminale Pfeile]
+    Ein Pfeil $\gamma:A\to B$ heißt \keyword{terminaler Morphismus}\as{{terminaler Morphismus}{konstanter Morphismus}}, falls $\alpha\gamma=\beta\gamma$
+    für alle $\alpha,\beta:\to A$. Analog heißt $\gamma$ \keyword{initialer Morphismus}\as{{initialer Morphismus}{kokonstanter Morphismus}}, falls
+    $\gamma\alpha=\gamma\beta$ für $\alpha,\beta:B\to$ (d.h. $\dual\gamma$ ist konstant in $\dual\bfA$).
+\end{definition}
+
+\begin{remark}
+    Initiale und terminale Pfeile sind genau die initialen und terminalen Objekte in der Morphismenkategorie von $\bfA$. 
+\end{remark}
+
+\begin{definition}[Nullpfeil]
+    Ein Pfeil $0:A\to B$ heißt \keyword{Nullmorphismus}\as{{Nullmorphismus}}, falls er konstant und kokonstant zugleich ist.
+\end{definition}
+
+\begin{remark}
+    Nullpfeile sind genau die Nullobjekte in der Morphismenkategorie von $\bfA$.
+\end{remark}
+
+\begin{remark}
+    Gibt es ein Nullobjekt $0:\bfA$, so auch ein kanonischen Nullmorphismus zwischen Objekten $A,B:\bfA$ via $A\to 0\to B$, wobei
+    die beiden Morphismen aufgrund der Nullobjekteigenschaft schon eindeutig sind. 
+\end{remark}
+
+\subsection{Kerne und Kokerne}
+
+\begin{definition}[Kern und Kokern]
+Sei $\alpha:A\to_\bfA B$ ein Morphismus. Dann wird ist der \keyword{Kern}\as{{Kern eines Morphismus}} $\ker\phi$ das Unterobjekt mit der universellen Eigenschaft, dass jedes
+Unterobjekt $U$ von $A$ gilt, dass $U\alpha=\interpret 0\in{\subobjects A}$, dann gilt $\ker\phi\leq U$.
+In analoger Weise definieren wir den \keyword{Kokern}\as{{Kokern}} $\cokernel \alpha$ von $\alpha$ als das Quotientenbojekt $Q$ von $B$, welches die
+Eigenschaft hat, dass $\alpha Q=\interpret 0\in{\cosubobjects A}$ gilt $\cokernel \alpha\leq Q$.
+\end{definition}
+
+\subsection{Unterobjekte und Quotientenobjekte}
+
+\begin{definition}
+    Sei $\bfA$ eine Kategorie. Der Verband der \keyword{Unterobjekte}\as{{Unterobjekt}} $\subobjects A$ für jedes Objekt $A:\bfA$ als die
+    Isomorphieklassen der Kategorie $\monoto_\bfA A$ (also $\monoto_\bfA A/\isoto$).
+    Analog definieren wir den Verband der \keyword{Quotientenobjekte}\as{{Quotientenobjekt}{Kounterobjekt}} von $A$ als $\cosubobjects A$ durch die Isomorphieklassen von $A\epito_\bfA/\isoto$.
+\end{definition}
+
+\begin{remark}
+    Die beiden Konzepte sind also genau dual zueinander.
+\end{remark}
+
+\subsection{Normale Unterobjekte und konormale Quotientenobjekte}
+
+\begin{definition}[Normales Unterobjekt und konormales Quotientenobjekt]
+        Ein Unterobjekt $N$ von $A$ heißt \keyword{normal}\as{{normales Unterobjekt}}, falls es einen Morphismus $\alpha:A\to$ gibt, sodass $N=\ker\alpha$.
+        Ein Quotientenobjekt $Q$ heißt \keyword{konormal}\as{{konormales Quotientenobjekt}}, falls es einen Morphismus $\beta:\to\alpha$ gibt mit $\cokernel \beta=Q$.
+\end{definition}
+
+\subsection{Bilder}
+
+\begin{definition}
+    Sei $\alpha:A\to B$ ein Morphismus, dann bezeichnet $image \alpha$ das induzierte Unterobjekt von $\alpha$.
+\end{definition}
+
+\subsection{Normale Morphismen}
+
+\begin{definition}
+    Ein Morphismus $\alpha:A\interpret\to\in\bfA B$ heißt \keyword{normal}\as{{normaler Morphismus}}, falls $\image\alpha$ ein
+    normales Unterobjekt von $B$ ist.
+\end{definition}
+
+\subsection{Morphiesätze}
+
+\begin{theorem}
+    Sei $\bfA$ eine Kategorie mit Bildern und Kernen. Sei $\phi:A\interpret\to\in\bfA B$ ein Morphismus. Dann gibt es ein Objekt
+    $C$ mit $\pi:A\epito C$, $\iota:C\monoto B$, sodass $\phi = \pi\iota$. 
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+\section{Produkte und Koprodukte}
+
+Sei $\bfB\monoto\bfA$ eine Unterkategorie. 
+
+
+\section{Gruppenaxiome}
+
+Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{-1},1}$, derart dass folgende Identitäten gelten
+\begin{itemize}
+        \item $(a\compose b)\compose c = a\compose (b\compose c)$ (Assoziativität)
+        \item $a^{-1}\compose a = a\compose a^{-1} = 1$ (Inversenabblildung)
+    \item $a\compose 1 = 1\compose a = a$ (neutrales Element)
+\end{itemize}
+
+\begin{theorem}
+    Hallo
+\end{theorem}
+
+\section{Aufsteigende und absteigende Kettenbedingung}
+
+\begin{definition}
+    Sei $P:\poset$. Dann genügt $P$ der \keyword{aufsteigenden Kettenbedingung}\as{{aufsteigende
+            Kettenbedingung}{\person{Noether}'sche Eigenschaft}}, wenn jede aufsteigende Kette nach endlich vielen Gliedern
+    abbricht. Analog genügt $P$ der \keyword{absteigenden Kettenbedingung}\as{{absteigende Kettenbedingung}{\person{Artin}'sche Eigenschaft}} 
+\end{definition}
+
+\begin{theorem}[Charakterisierung von endlicher Erzeugbarkeit]
+    Sei $A$ eine Algebra. Die folgenden Aussagen sind äquivalent
+    \begin{statements}
+            \item $A$ ist endlich erzeugt.
+            \item $\subobjects A$ genügt der aufsteigenden Kettenbedingung.
+            \item Jedes Unterobjekt $U:\subobjects A$, $U\neq A$ liegt in einem maximalen Unterobjekt.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    \begin{implications}
+            \item Ist $A$ endlich erzeugt und $C$ eine aufsteigende Kette in $\subobjects A$, dann wird $C$ stationär.
+            \item
+        \item blub
+    \end{implications}
+\end{proof}
+
+\section{Die \person{Sylow}'schnen Sätze}
+
+Eine natürliche Frage, welche sich aus dem Theorem von \person{Lagrange} ergibt, welche Aussagen über die Anzahl und Art der
+Untergruppen von Ordnung $n$ einer endlichen Gruppe $G$ getroffen werden können.
+Für $n\not\divides \size G$ ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
+ist jene Anzahl im Falle $n\divides \size G$ genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
+Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\Aut m$ sieht, denn wählt man nun $n$ als eine Zyklizität
+erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\Aut m$ dieser Ordnung.
+ist es ob bei einer endlichen Gruppe $G$ der
+
+Tatsächlich lassen sich aber befriedigende Aussagen treffen, falls $n=p^e$ die Potenz einer Primzahl $p$ ist. Diese werden
+gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
+
+\begin{definition}[$p$-Gruppe]
+    Sei $G$ eine Gruppe derart, dass jedes Element $g\in G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
+    Primzahl sei.
+\end{definition}
+
+\begin{remark}
+    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche $p$-Gruppe selbst von
+    Primzahlpotenzordnung $p^e$ ist.
+\end{remark}
+%
+\begin{theorem}[Existenz von $p$-Untergruppen jeder Ordnung]
+    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\hull{U\leq G:\size U=p^e\in\set}}$ gilt dann
+    $$
+    N_{p^e} = 1 \mod p
+    $$
+\end{theorem}
+%
+\begin{proof}
+    Wir betrachten die Aktion von $G$ auf den $p^e$-elementigen Untermengen von $\cast G \to \set$ welche gegeben wird durch
+    elementweise Rechtsmultiplikation. Die Bahnengleichung für diese Aktion wird dann zu
+    $$
+    \size {\binom {\cast G \to \set} {p^e}} = \sum_i {\size {G/\stab A_i}},
+    $$
+    wobei $A_i$ Repräsentanten der $G$-Bahnen sind.
+    Für $A_i\monoto \cast G \to \set$, $\size {A_i}=p^e$ gilt allerdings dann $A_i \cast (\stab A_i) \to \set=A_i$, also ist $A_i$ eine disjunkte
+    Vereinigung von Linksnebenklassen von $\stab A_i$ und mithin $\size {\stab A_i}\divides p^e$. Betrachten wir also obige
+    gleichung modulo $pn$, so folgt
+    $$
+    \binom {p^e n}{p^e} = n N_{p^e} \mod pn, 
+    $$
+    denn alle Terme, in denen $\stab A_i<p^e$ ist in obiger Gleichung entfallen und die übrigen Terme zählen genau für jede
+    $p^e$-elementige Untergruppe von $G$ ihre Linksnebenklassen (derer gibt es $n$).
+    Daraus folgt
+    $$
+    \frac 1 n \binom {p^e n}{p^e} = \binom {p^e n-1} {p^e-1} = N_{p^e} \mod p,
+    $$
+    wobei der Ausdruck auf der Linken Seite gleich 1 ist modulo $p$. Dies sieht man einerseits daran, dass dies für die zyklische
+    Gruppe mit $p^e n$ Elementen gilt, andererseits lässt sich auch das Theorem von \person{Lucas} (TODO : REF) auf den letzten
+    Binomialkoeffizienten anwenden. Wir erhalten dann
+    $$
+    N_{p^e} = \binom {p^e n - 1} {p^e -1} = {\binom {p-1} {p-1}}^e = 1 \mod p.
+    $$
+\end{proof}
+
+{\bfseries\scshape Text}
+
+\begin{theorem}
+    Jede endliche Gruppe $G$ hat $p$-\person{Sylow}-Gruppen. Für jede $p$-Untergruppe $U$ und eine $p$-\person{Sylow}-Gruppe von
+    $G$ gibt es ein Element $g\in G$, sodass $U\monoto P^g$. Insbesondere sind alle $p$-\person{Sylow}-Gruppen konjugiert zueinander
+    und ihre Anzahl ist $\size {G/N_G P}$. 
+\end{theorem}
+
+\section{Die Sätze von \person{Hall}}%
+
+Die Sätze von \person{Hall} stellen eine Verallgemeinerung der \person{Sylow}'schen Sätze für auflösbare Gruppen dar. Entsprechende
+Untergruppen nennt man auch \person{Hall}-Untergruppen.
+
+\begin{theorem}[\person{Hall}'sches Theorem]
+    Sei $G$ auflösbar und $\size G = mn$ mit teilerfremden $m$ und $n$. Dann gilt
+    \begin{statements}
+        \item Sei $U$ eine Untergruppe mit $\size U \divides m$ und $M$ eine Untergruppe der Ordnung $m$, dann gibt es ein $g\in G$
+    sodass $U\leq M^g$.
+        \item Für die Anzahl der Untergruppen der Ordnung $m$ von $G$ gilt:
+    $$
+    N_m = 1 \mod \rad m
+    $$
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    Der Beweis erfolgt per Induktion nach der Anzahl $k$ der Primfaktoren von $m$. Für $k=1$ gilt die Aussage schlicht aufgrund der
+    \person{Sylow}'schen Sätze auch ohne Auflösbarkeit von $G$.
+    
+\end{proof}
+
+\begin{theorem}[\person{Frattini}-Argument]
+    Sie $G$ eine Gruppe und $N\leq_{\normalsubobjects G} G$. Weiter sei $P$ eine Untergruppe von $N$ derart, dass alle zu $P$ isomorphen
+    Untergruppen in $H$ konjugiert sind (also z.B.~$P$ eine $p$-\person{Sylow}-Gruppe). Dann gilt
+    $G = \normalizer_G P N$.
+\end{theorem}
+
+\begin{proof}
+    Für $g\in G$ ist $P^g$ isomorph zu $P$ und gleichermaßen Untergruppe von $N$, da $N$ normal in $G$ liegt. Also sind $P$ und $P^g$ in $N$
+    konjugiert und es folgt $P^{gn}=P$ für geignetes $n\in N$. Damit ist aber $gn\in \normalizer_G P$ und somit auch $g\in N
+    \normalizer_G P$.
+\end{proof}
+
+\section{Auflösbarkeit von Gruppen}
+
+\begin{definition}[Subnormalenverband, Subnormalenreihe]
+    Ein Unterverband $\bfU$ von $\subobjects G$ Subnormalenverband, falls für alle $U\in \bfU$ gilt
+    $U\in\normalsubobjects \Meet_{V>U}V$. Ist ein solcher Verband isomorph zu einem Unterverband von $\cast \nats \to \lattice$, so nennen wir Ihn
+    eine Subnormalenreihe. 
+\end{definition}
+
+\begin{definition}[Auflösbare Gruppe]
+    Eine Gruppe $G$ heißt \keyword{auflösbar}\as{{auflösbare Gruppe}}, falls es einen Subnormalenverband von $G$ gibt, derart, dass
+    $$
+    \Meet_{V>U} V / U\ \textrm{kommutativ}
+    $$
+    für alle $U\in\bf U$. \keyword{endlich auflösbar}\as{{endliche auflösbare Gruppe}}\footnote{Dies meint auflösbar im herkömmlichen Sinne.}
+\end{definition}
+
+\begin{definition}[Kommutatoruntergruppe]
+    Seien $\bfU\leq\cast \subobjects G\to \set$. Dann bezeichnen wir mit $\commutatorsubgroup \bfA$ die
+    \keyword{Kommutatoruntergruppe}\as{{Kommutatorgruppe}} von der Gruppen in $\bfA$. Sie wird erzeugt durch alle Kommutatoren $\commutator a b$ für $a\in
+    A$, $b\in B$, $A,B\in\bfA$. 
+\end{definition}
+
+\begin{lemma}
+    Die Kommutatoruntergruppe $\commutatorsubgroup \bfA$ ist charakterisiert durch folgende univerelle Eigenschaft.
+    Sei $N$ ein Normalteiler von $\hull\bfA$ derart, dass unter der kanonischen Projektion $\pi:\hull\bfA\to\hull\bfA/N$ die
+    Bilder der Elemente von $\bfA$ paarweise elementweise kommutieren, d.h. $\commutatorsubgroup
+    {\image{\iota_A\pi},\image{\iota_B\pi}}=1$, wobei $\iota_A$ bzw. $\iota_B$ die Inklusionen von Untergruppen $A,B\in\bfA$ sind,
+    dann ist $\commutatorsubgroup \bfA\leq N$ und in äquivalenterweise gibt es einen eindeutigen Morphismus $\pi'$, sodass
+    $\pi=p\pi'$ mit $p:\hull\bfA\to\hull\bfA/N$ die kanonische Abbildung.
+\end{lemma}
+
+\begin{proof}
+    Der Beweis folgt aus dem allgemeineren Kontext (TODO).
+\end{proof}
+
+\begin{definition}[Kommutatorreihe]
+    Wir definieren die \keyword{Kommutatorreihe}\as{{Kommutatorreihe}} $\sequence{\commutatorseries G i}_{i\in \nats}$ einer Gruppe $G$ als
+    $$\commutatorseries G 0 \defeq G,\ \commutatorseries G {i+1} \defeq \commutatorsubgroup {\commutatorseries G i,\commutatorseries G i} \ (i\in\nats).$$
+    Weiterhin setzen wir $\commutatorseries G \omega \defeq \Meet_{i\in\nats} \commutatorseries G i$ und bezeichnen es als
+    \keyword{perfekten Kern}\as{{perfekter Kern}} von $G$.
+\end{definition}
+
+\begin{lemma}
+    Eine Gruppe $G$ ist genau dann endlich auflösbar, falls ihre Kommutatorreihe nach endlich vielen Schritten in $1$ endet.
+    Sie ist genau dann $\omega$-auflösbar, falls ihr perfekter Kern gleich $1$ ist.
+\end{lemma}
+
+\begin{proof}
+    Sei $\bfG$
+\end{proof}
+
+\section{Der Satz von \person{Jordan}-\person{Hölder}}
+
+\subsection{Das \person{Zassenhaus}-Theorem (Schmetterlings-Theorem)}
+
+\begin{theorem}[Schmetterlingslemma]
+    Sei $A\interpret\leq\in{\normalsubobjects G} B$ und $C\interpret\leq\in{\normalsubobjects G} D$, dann gilt
+    $$
+    \quotientobject(B\meet D)\join A\over{(B\meet C)\join A}
+    \isoto
+    \quotientobject(B\meet D)\over{(B\meet C)\join (A\meet D)} 
+    \isoto
+    \quotientobject(B\meet D)\join C\over{(A\meet D)\join C}.
+    $$
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Verfeinerungssatz von \person{Schreier}]
+    Seien $A$ und $B$ Normalketten. Dann existiert eine Verfeinerung.
+\end{theorem}
+
+\begin{theorem}[\person{Jordan}-\person{Hölder}'sches Theorem] 
+    
+\end{theorem}
+
+\section{Nilpotenz von Gruppen}
+
+Im folgenden betrachten wir eine Eigenschaft von Gruppen die mit \keyword{Nilpotenz}\as{{Nilpotenz}} bezeichnet wird. Sie stellt in gewissem Sinne
+eine Verallgemeinerung der Eigenschaft einer Gruppe dar, kommutativ zu sein. Dies gilt in dem Sinne, dass die nilpotenten Gruppen
+von Klasse 1 genau die abelschen Gruppen sind.
+
+\begin{definition}[Normalreihe]
+    Eine \keyword{Normalkette}\as{{Normalkette}} von $G$ ist eine Kette im Normalenverband $\normalsubobjects G$.
+\end{definition}
+
+\begin{definition}[Zentralkette]
+    Ein Normalkette $\bfC$ heißt \keyword{Zentralkette}\as{{Zentralkette}}, wenn für alle $C,D\in\bfC$ mit $C\lessdot D$ gilt, dass $D/C$ im Zentrum
+    von $G/C$ liegt oder in äquivalenterweise $\commutatorsubgroup {G, D} \leq C$.
+\end{definition}
+
+\begin{definition}[Untere Zentralreihe $\gamma_i$]
+    Die \keyword{untere Zentralkette}\as{{untere Zentralkette}} $\hull{\lowercentralseries G i:i\in\nats}\in\set$ ist definiert als
+    $$
+    \lowercentralseries G 0 = G,\ \lowercentralseries G {i+1} = \commutatorsubgroup {G,\lowercentralseries G i} \for i\in\nats    
+    $$
+    und
+    $$
+    \lowercentralseries G \omega \defeq \Meet \lowercentralseries G i.
+    $$
+\end{definition}
+
+\begin{definition}[obere Zentralreihe]
+    Die \keyword{obere Zentralreihe}\as{{obere Zentralreihe}} $\hull{\uppercentralseries G i:i\in\nats}\in\set$ ist definiert durch
+    $$
+    \uppercentralseries G 0 = 1,\ \uppercentralseries G {i+1}/\uppercentralseries G i = \centre (G/\uppercentralseries G i) \for
+    i\in\nats 
+    $$
+    und
+    $$
+    \uppercentralseries G \omega \defeq \Join \uppercentralseries G i.
+    $$
+\end{definition}
+
+\begin{lemma}[charakterisierende Eigenschaft der unteren Zentralreihe]
+    Sei $\sequence{C_i}_{i\in\nats}$ eine aufsteigende Zentralreihe einer Gruppe $G$, dann gilt $\gamma_i G\leq C_i$ ($i\geq 0$). 
+\end{lemma}
+
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ haben wir $\gamma_0 G= G= C_0$. 
+    Für $i\in\nats$ gilt weiterhin $\gamma_{i+1} G = [G,\gamma_i G]\leq [G,C_i]\leq C_{i+1}$ (da $C_i/C_{i+1}\leq \centre
+    (G/C_{i+1})$). Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\sequence{\gamma_i G}_{i\in
+        I}$ nachzuweisen.
+    Diese ist jedoch leicht zu überprüfen durch $\gamma_{i+1}=[G, \gamma_i G]\leq \gamma_{i+1}$, also liegt $\gamma_i
+    G/\gamma_{i+1} G$ im Zentrum von $G/\gamma_{i+1} G$.    
+\end{proof}
+
+
+\begin{lemma}[charakterisierende Eigenschaft der oberen Zentralreihe]
+    Sei $\sequence{C_i}_{i\in\nats}$ eine monotone Zentralreihe, dann gilt
+    $$
+    G_i\leq Z_i G
+    $$
+    und insbesondere ist $\sequence{Z_i G}_{i\in\nats}$ wirklich eine Zentralreihe.
+\end{lemma}
+
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ gilt $Z_0 G = G = C_0$. Für $i\in\nats$ gilt weiterhin $C_{i+1}/C_i\leq\centre (G/C_i)$, was
+    gleichbedeutend ist mit $[C_{i+1},G]\leq C_i$. Damit gilt aber $[C_{i+1},G]\leq Z_i G$ womit andererseits folgt, dass
+    $C_{i+1}\leq Z_{i+1} G$. Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\sequence{Z_i
+        G}_{i\in I}$ nachzuweisen. Diese folgt aber nach Definition trivial, denn $Z_{i+1} G/Z_i G=\centre (G/Z_i)\leq\centre(G/Z_i)$.
+\end{proof}
+
+\begin{definition}[Nilpotenz]
+    Eine Gruppe $G$ heißt \keyword{nilpotent}\as{{nilotente Gruppe}}, falls es eine monotone Zentralreihe gibt, die gegen $G$ konvergiert und
+    ..., falls es eine antitone Zentralreihe gibt, die gegen $1$ konvergiert. 
+\end{definition}
+
+\begin{theorem}[Charakterisierung von Nilpotenz]
+    Die folgenden Aussagen sind für eine endliche Gruppe $G$ äquivalent.
+    \begin{statements}
+            \item $G$ ist nilpotent.
+            \item Die untere Zentralreihe endet mit der trivialen Gruppe: $\exists n\in\nats:\gamma_n G = 1$.
+            \item Die obere Zentralreihe von $G$ endet mit $G$: $\exists n\in\nats : Z_n G = G$.
+            \item Für $U\in\subobjects G$, $U\neq G$ gilt $U<N_G U$.
+            \item Für $U\in\subobjects G$, $U\neq 1$ gilt $[G,U]<U$.
+            \item Jede maximale Untergruppe von $G$ ist normal in $G$.
+            \item $G$ ist das direkte Produkt seine $p$-\person{Sylow}-Gruppe.
+            \item Je zwei Elemente von koprimer Ordnung kommutieren.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    \begin{statements}
+        \item Sei $P$ eine maximale $p$-Untergruppe, dann folgt aus $\normalizer_G P < G$, dass $\normalizer^2_G P = \normalizer_G
+    P$. Also ist $G$ nicht nilpotent.
+    \end{statements}
+\end{proof}
+
+\section{Die \person{Frattini}-Gruppe}
+
+\begin{definition}
+    Sei $G$ eine Gruppe mit der Eigenschaft, dass jede echte Untergruppe in einer maximalen Untergruppe liegt. Dann wird die \person{Frattini}-Gruppe $\Phi G$ definiert als der Durchschnitt aller maximalen Untegruppen von $G$.
+\end{definition}
+
+\begin{lemma}
+    Die \person{Frattini}-Gruppe einer Gruppe $G$ ist charakteristische Untergruppe.
+\end{lemma}
+
+\begin{proof}
+    Jeder Gruppenautomorphismus von $G$ induziert einen Verbandsautomorphismus von $\subobjects G$. Unter diesem werden die maximalen
+    Untergruppen auf sich abgebildet. Also $\Phi G^\alpha=\Phi G$.
+\end{proof}
+
+\begin{lemma}
+    Genau dann gilt Element $g\in\Phi G$, falls für jede Menge $X\setleq \cast G\to \set$ gilt $\hull{g,X}\in G=G \implies \hull X\in G = G$. 
+\end{lemma}
+
+\begin{proof}
+    Sei $\hull{g,X}\in G = G$ aber $\hull X \in G < G$, dann existiert eine maximale Untergruppe $M$ von $G$, sodass $\hull X \in
+    G\leq M$, also $g\not\in M\geq \Phi G$.
+    Andererseits sei $M$ eine maximale Untergruppe, dann gilt $\hull{g,M}\in G= M<G$, also $g\in M$.
+\end{proof}
+
+\section{Minimale Normalteiler und charakteristisch einfache Gruppen}
+
+\begin{lemma}[Zusammenspiel  zwischen normal und charakteristisch]\label{nor-char-implies-nor}
+    Sei $C$ charakteristisch in $N$ und $N$ normal in $G$. Dann ist $N$ normal in $G$.
+\end{lemma}
+
+\begin{proof}
+Jede Konjugation (innere Automorphismus) in $G$ lässt $C$ fix, beschränkt sich also zu einem Automorphismus von $N$. Damit lässt
+sie auch $C$ fest, nach Definition von charakteristisch.    
+\end{proof}
+
+\begin{lemma}
+    Sei $N$ ein minimaler Normalteiler einer Gruppe $G$. Dann ist $N$ charakteristisch einfach.
+\end{lemma}
+
+\begin{proof}
+    Sei $1<C$ eine charakteristische Untergruppe von $N$. Dann ist nach \ref{nor-char-implies-nor} auch $C$ normal in $G$. Nach
+    Minimalität von $N$ folgt $N\leq C$ somit also $N=C$. Also ist $N$ charakteristisch einfach.
+\end{proof}
+
+\begin{theorem}[Charakterisierung charakteristisch einfacher Gruppen]
+    Eine Gruppe $G$ mit minimalem Normalteiler $N$ ist genau dann charakteristisch einfach, falls $N$ einfach ist und sie eine Potenz von $N$ ist.
+\end{theorem}
+
+\begin{proof}
+    Sei $G$ charakteristisch einfach und $N$ minimaler Normalteiler. Die Bilder von $N$ unter $\Aut G$ erzeugen eine nicht-triviale
+    charakteristische Untergruppe von $G$, also ganz $G$. Sind weiter $N$ und $M$ zwei solcher Bilder, dann gilt $N = M$ oder
+    $N\meet M = 1$, da $N\meet M\leq N$ ein Normalteiler von $G$ ist. Also folgt für verschiedene $N$ und $M$, dass
+    $\commutatorsubgroup M N \leq M\meet N = 1$, somit $M$ und $N$ elementweise kommutieren. Damit ist $G$ das Produkt all
+    jener Bilder, da diese --- wie schon erwähnt --- $G$ erzeugen. Weiter muss dann $N$ einfach sein, da jeder Normalteiler $L$ von
+    $N$ aufgrund der Produktdarstellung von $G$, dann auch normal in $G$ liegt.
+
+    Für die Rückrichtung nehmen wir an, dass $G = \product S_i$.
+\end{proof}
+
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% TeX-engine: xetex
+%%% TeX-master: "Script-Main"
+%%% End: 

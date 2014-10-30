@@ -1,10 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 % UNICODE-MATH EXAMPLE FILE
 %%%%%%%%%%%%%%%%%%%%%%%
-%
+
 \documentclass{article}
 
-\input{../Config/math-xetex.tex}%%%
+%%% for math stuff
+\input{../Config/math-xetex.tex}
+
+%%% for index stuff
+\input{../Config/index.tex}
+
 % Load fontspec and define a document font:
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Pagella}
@@ -15,11 +20,20 @@
 % \usepackage{bm}
 \usepackage{tikz-cd}
 \usepackage[de]{mathenv}
+<<<<<<< HEAD
+\usepackage{layer}
 %\usepackage{bold-extra}
 
 \begin{document}
+\part{Hallo}
+=======
+\usepackage{layer}%
 
-$\stackrel{4}{=} \underbrace{\bigsqcup\limits_{i=0}^{\infty} \stackrel{\phi}{\twoheadleftarrow}}_{324} \stackrel{.}{\rightarrow}$ 
+\begin{document}
+
+\input{Grundlagen-Sylowsche-Saetze.tex}
+>>>>>>> c1d48e7caae96a375be2509215619a30b9e92023
+
 \begin{tikzcd}
 A\arrow{d}
 \arrow{r}[near start]{\phi}[near end]{\psi}
@@ -36,8 +50,10 @@ $\bfA\bfB\bfC\bfD\bfE\bfF\bfG\bfH\bfI\bfJ\bfK\bfL\bfN\bfM\bfO\bfP\bfQ\bfR\bfS\bf
 $\bfa\bfb\bfc\bfd\bfe\bff\bfg\bfh\bfi\bfj\bfk\bfl\bfn\bfm\bfo\bfp\bfq\bfr\bfs\bft\bfu\bfv\bfw\bfx\bfy\bfz$\\
 %%%
 $\to\monoto\epito$
-$\catprod\catcoprod$
-\input{Grundlagen-Sylowsche-Sätze}
+<<<<<<< HEAD
+%\input{Grundlagen-Sylowsche-Sätze}
+=======
+>>>>>>> c1d48e7caae96a375be2509215619a30b9e92023
 \end{document}
 
 

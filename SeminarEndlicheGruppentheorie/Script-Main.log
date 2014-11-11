@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.7)  19 OCT 2014 09:30
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.7)  21 OCT 2014 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,44 +1043,44 @@ nderen Worten: $[][][]$ ist maximal bezüglich
 
 LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(0)/bx/n' undefined
 (Font)              using `EU1/texgyrepagella-math.otf(0)/m/n' instead on input
- line 160.
+ line 161.
 
 
 LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' undefined
 (Font)              using `EU1/texgyrepagella-math.otf(1)/m/n' instead on input
- line 160.
+ line 161.
 
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 7.40016pt on input line 160.
+(Font)              scaled to size 7.40016pt on input line 161.
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 5.5001pt on input line 160.
+(Font)              scaled to size 5.5001pt on input line 161.
 
 LaTeX Font Warning: Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' undefined
 (Font)              using `EU1/texgyrepagella-math.otf(2)/m/n' instead on input
- line 160.
+ line 161.
 
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 7.39993pt on input line 160.
+(Font)              scaled to size 7.39993pt on input line 161.
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 5.49994pt on input line 160.
+(Font)              scaled to size 5.49994pt on input line 161.
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(1)/bx/n' will be
-(Font)              scaled to size 10.00015pt on input line 170.
+(Font)              scaled to size 10.00015pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/texgyrepagella-math.otf(2)/bx/n' will be
-(Font)              scaled to size 9.99985pt on input line 170.
+(Font)              scaled to size 9.99985pt on input line 171.
 
-Overfull \hbox (0.58565pt too wide) in paragraph at lines 182--187
+Overfull \hbox (0.58565pt too wide) in paragraph at lines 183--188
 \EU1/TeXGyrePagella(0)/m/n/10 Linksnebenklassen von $[][][][][]$ und mithin $[]
 [] [][][][]$. Betrachten wir also obige
  []
 
 [4] [5]
-Overfull \hbox (16.89325pt too wide) in paragraph at lines 249--253
+Overfull \hbox (16.89325pt too wide) in paragraph at lines 250--254
 \EU1/TeXGyrePagella(0)/m/n/10 band $[][][]$ von $[][] [][]$ Subnormalenverband,
  falls für alle $[][] [] [][]$ gilt $[][] [] [] [][] [][]$.
  []
 
 
-Overfull \hbox (24.19643pt too wide) in paragraph at lines 282--284
+Overfull \hbox (24.19643pt too wide) in paragraph at lines 283--285
 \EU1/TeXGyrePagella(0)/bx/n/10 Definition 0.16 (Kommutatorreihe).  \EU1/TeXGyre
 Pagella(0)/m/n/10 Wir definieren die \EU1/TeXGyrePagella(0)/m/it/10 Kommutatorr
 eihe[] $[][][][]$
@@ -1088,7 +1088,7 @@ eihe[] $[][][][]$
 
 [6]
 ! Undefined control sequence.
-l.305     \quotientobject
+l.306     \quotientobject
                          (B\meet D)\join A\over{(B\meet C)\join A}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1097,7 +1097,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.307     \quotientobject
+l.308     \quotientobject
                          (B\meet D)\over{(B\meet C)\join (A\meet D)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1106,14 +1106,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Ambiguous; you need another { and }.
-l.307     \quotientobject(B\meet D)\over
+l.308     \quotientobject(B\meet D)\over
                                         {(B\meet C)\join (A\meet D)}
 I'm ignoring this fraction specification, since I don't
 know whether a construction like `x \over y \over z'
 means `{x \over y} \over z' or `x \over {y \over z}'.
 
 ! Undefined control sequence.
-l.309     \quotientobject
+l.310     \quotientobject
                          (B\meet D)\join C\over{(A\meet D)\join C}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1122,78 +1122,25 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Ambiguous; you need another { and }.
-l.309     \quotientobject(B\meet D)\join C\over
+l.310     \quotientobject(B\meet D)\join C\over
                                                {(A\meet D)\join C}.
 I'm ignoring this fraction specification, since I don't
 know whether a construction like `x \over y \over z'
 means `{x \over y} \over z' or `x \over {y \over z}'.
 
-
-Overfull \hbox (7.53677pt too wide) in paragraph at lines 327--330
-[]\EU1/TeXGyrePagella(0)/m/n/10 Im folgenden betrachten wir eine Eigenschaft vo
-n Gruppen die mit \EU1/TeXGyrePagella(0)/m/it/10 Nilpotenz[]
- []
-
-
-Overfull \hbox (0.71564pt too wide) in paragraph at lines 327--330
-\EU1/TeXGyrePagella(0)/m/n/10 bezeichnet wird. Sie stellt in gewissem Sinne ein
-e Verallgemeinerung der Eigen-
- []
-
-
-Overfull \hbox (11.09534pt too wide) in paragraph at lines 340--342
-\EU1/TeXGyrePagella(0)/bx/n/10 Definition 0.19 (Untere Zentralreihe $[][][][]$)
-.  \EU1/TeXGyrePagella(0)/m/n/10 Die \EU1/TeXGyrePagella(0)/m/it/10 untere Zent
-ralkette[] $[][] [][]
- []
-
-
-LaTeX Warning: Command \" invalid in math mode on input line 343.
-
-Missing character: There is no ü in font cmmi10!
-[7]
-
-LaTeX Warning: Command \" invalid in math mode on input line 354.
-
-Missing character: There is no ü in font cmmi10!
-Missing character: There is no ⨝ in font [texgyrepagella-math.otf]/OT:script=ma
-th;language=DFLT;!
-[8] [9]
-
-LaTeX Warning: Reference `nor-char-implies-nor' on page 10 undefined on input l
-ine 459.
-
-
-Overfull \hbox (8.74559pt too wide) in paragraph at lines 463--465
-\EU1/TeXGyrePagella(0)/bx/n/10 Satz 0.12 (Charakterisierung charakteristisch ei
-nfacher Gruppen).  \EU1/TeXGyrePagella(0)/m/it/10 Eine Gruppe
- []
-
-
-Overfull \hbox (1.20894pt too wide) in paragraph at lines 468--474
-\EU1/TeXGyrePagella(0)/m/it/10 Beweis. \EU1/TeXGyrePagella(0)/m/n/10 Sei $[][][
-]$ charakteristisch einfach und $[][][]$ minimaler Normalteiler. Die Bilder
- []
-
-) [10] (./Script-Main.aux)
+) [7] (./Script-Main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  )
-(\end occurred when \if on line 111 was incomplete) 
+(\end occurred when \if on line 112 was incomplete) 
 Here is how much of TeX's memory you used:
- 30545 strings out of 493727
- 610474 string characters out of 6147890
- 681272 words of memory out of 5000000
- 33480 multiletter control sequences out of 15000+600000
+ 30544 strings out of 493727
+ 610452 string characters out of 6147890
+ 681225 words of memory out of 5000000
+ 33479 multiletter control sequences out of 15000+600000
  8334 words of font info for 67 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  74i,12n,84p,10420b,1065s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Script-Main.pdf (10 pages).
+Output written on Script-Main.pdf (7 pages).

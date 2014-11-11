@@ -1,32 +1,9 @@
-
-%My personal maths package
-%\bibliography{Bibliography.bib}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% MATH PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% very good package
-%\usepackage{mathtools}
-
-%%% font stuff
-\usepackage[T1]{fontenc}        % for capitals in section /paragraph etc.
-\usepackage[utf8]{inputenc}     % use utf8 symbols in code
-
-\usepackage{unicode-math}%\usepackage{mathtools}
-%\mathtoolsset{showonlyrefs}
-% further alternative math packages: unicode-math, abx-math
-% \usepackage{bm} : need a new concept for this
-\usepackage{xargs}
-
-% standard packages
-% \usepackage{color} % for color
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% MATH ALPHABETS & SYMBOLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is file `mathtoolbox.sty',
+\ProvidesPackage{mathtoolbox}
 
 % w: http://milde.users.sourceforge.net/LUCR/Math/math-font-selection.xhtml
+
+\RequirePackage{unicode-math}
 
 % ===== Quick commands for math letters ================================================================
 % calagraphic letters (only upper case available; standard)
@@ -639,7 +616,7 @@
 \newcommand{\sphere}{\mathbb{S}} % n-sphere
 \newcommand{\ball}{\mathbb{B}} % n-ball
 \newcommand{\bound}{\partial}
-\newcommandx{\rchar}[1][1=\empty]{\mathop\mathrm{char}\brackets{#1}}              % characteristic of a ring
+\def\characteristic#1{\mathop\mathrm{char}}
 \newcommand{\lgor}{\vee}                               % logical
 \newcommand{\lgand}{\wedge}
 \newcommand{\codim}{\mathop\mathrm{codim}}
@@ -674,15 +651,14 @@
 %}{%
 %  \popQED\endtrivlist\@endpefalse
 %}
-\makeatother
+%\makeatother
 
 
 
 %%% environment test with enumerates
-
+\endinput
     
 
 % Local variables:
-% mode: tex
+% mode: latex
 % End:
-

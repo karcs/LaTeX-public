@@ -1,19 +1,6 @@
-%%
-%% This is file `prettyref.sty',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% prettyref.dtx  (with options: `style')
-%% 
-%% Copyright (c) 1995 Kevin Ruland
-%% 
-%%
-%% prettyref v3.0
-%%
-%% Copyright 1995,1998.  by Kevin Ruland kevin@rodin.wustl.edu
-%%
-\ProvidesPackage{mathenv}[2014/06/11 v0.1]
+% This is file `mathenvironment.sty',
+
+\ProvidesPackage{mathenvironment}[2014/06/11 v0.1]
 
 %%%%%%%%%%%%%%%%%%%
 % PACKAGE OPTIONS %
@@ -25,39 +12,36 @@
 % english (default)
 \DeclareOption{en}{
     % big math environments
-    \def\@theoremname{Theorem}
-    \def\@remarkname{Remark}
-    \def\@remarkon{on}
-    \def\@conclusionname{Conclusion}
-    \def\@propositionname{Proposition}
-    \def\@proofname{Proof}
-    \def\@proofof{of}
-    \def\@lemmaname{Lemma}
-    \def\@corollaryname{Corollary}
-    \def\@corollaryof{of}
-    \def\@definitionname{Definition}
-    \def\@conjecturename{Conjecture}
-    \def\@problemname{Problem}
-    \def\@conventionname{Convention}
-    \def\@notationname{Notation}
-    \def\@genassumptionsname{General assumptions}
+    \def\theoremname{Theorem}
+    \def\remarkname{Remark}
+    \def\remarkon{on}
+    \def\conclusionname{Conclusion}
+    \def\propositionname{Proposition}
+    \def\proofname{Proof}
+    \def\proofof{of}
+    \def\lemmaname{Lemma}
+    \def\corollaryname{Corollary}
+    \def\corollaryof{of}
+    \def\definitionname{Definition}
+    \def\conjecturename{Conjecture}
+    \def\problemname{Problem}
+    \def\conventionname{Convention}
+    \def\notationname{Notation}
     
     % smaller environments
-    \def\@statementname{Statement}
-    \def\@equationname{Equation}
-    \def\@diagramname{Diagram}
-    \def\@chaptername{Chapter}
-    \def\@sectionname{Section}
-    \def\@tablename{Table}
-    \def\@figurename{Figure}
+    \def\statementname{Statement}
+    \def\equationname{Equation}
+    \def\diagramname{Diagram}
+    \def\tablename{Table}
+    \def\figurename{Figure}
     % exercises and solutions
-    \def\@exercisename{Exercise}
-    \def\@solutionname{Solution}
-    \def\@solutionof{of}
-    \def\@casename{Case}
+    \def\exercisename{Exercise}
+    \def\solutionname{Solution}
+    \def\solutionof{of}
+    \def\casename{Case}
     
-    \def\@examplename{Example}
-    \def\@factname{Fact}
+    \def\examplename{Example}
+    \def\factname{Fact}
     % general names
     \def\@pagename{page}
     \def\@pageabbrev{p.}
@@ -66,40 +50,37 @@
 % german
 \DeclareOption{de}{
     % Matheumgebungen
-    \def\@theoremname{Satz}
-    \def\@remarkname{Bemerkung}
-    \def\@conclusionname{Zusammenfassung}
-    \def\@remarkon{zu}
-    \def\@proofname{Beweis}
-    \def\@propositionname{Proposition}
-    \def\@proofof{von}
-    \def\@lemmaname{Lemma}
-    \def\@corollaryname{Korollar}
-    \def\@corollaryof{von}
-    \def\@definitionname{Definition}
-    \def\@conjecturename{Vermutung}
-    \def\@casename{Fall}
-    \def\@conventionname{Konvention}
-    \def\@notationname{Notation}
-    \def\@genassumptionsname{Generalvoraussetzung}
+    \def\theoremname{Satz}
+    \def\remarkname{Bemerkung}
+    \def\conclusionname{Zusammenfassung}
+    \def\remarkon{zu}
+    \def\proofname{Beweis}
+    \def\propositionname{Proposition}
+    \def\proofof{von}
+    \def\lemmaname{Lemma}
+    \def\corollaryname{Korollar}
+    \def\corollaryof{von}
+    \def\definitionname{Definition}
+    \def\conjecturename{Vermutung}
+    \def\casename{Fall}
+    \def\conventionname{Konvention}
+    \def\notationname{Notation}
     
     
     % kleinere Matheumgebungen
-    \def\@statementname{Aussage}
-    \def\@equationname{Gleichung}
-    \def\@diagramname{Diagramm}
-    \def\@chaptername{Kapitel}
-    \def\@sectionname{Abschnitt}
-    \def\@tablename{Tabelle}
-    \def\@figurename{Abbildung}
+    \def\statementname{Aussage}
+    \def\equationname{Gleichung}
+    \def\diagramname{Diagramm}
+    \def\tablename{Tabelle}
+    \def\figurename{Abbildung}
     
     % Aufgaben, Übungen, Lösungen
-    \def\@problemname{Aufgabe}
-    \def\@exercisename{\"Ubung}
-    \def\@solutionname{L\"osung}
+    \def\problemname{Aufgabe}
+    \def\exercisename{\"Ubung}
+    \def\solutionname{L\"osung}
 
-    \def\@examplename{Beispiel}
-    \def\@factname{Fakt}
+    \def\examplename{Beispiel}
+    \def\factname{Fakt}
     % allgemeines
     \def\@pagename{Seite}
     \def\@pageabbrev{S.}
@@ -351,9 +332,6 @@
 \def\pagename{\@pagename}
 \def\pageabbrev{\@pageabbrev}
 
-\newsection{chapter}{Chapter}
-\newsection{section}{Section}
-\setcounterformat{section}{\romannumeral\the\counter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%% math environment %%%
@@ -445,36 +423,33 @@
 %% TODO: possibility to declare a single problem/exercise or a bunch (via item-like structure)
 
 %% theorem environment
-\newmathenvironment{theorem}{\@theoremname}[section]
+\newmathenvironment{theorem}{\theoremname}[section]
 \def\theorembodyfont{\it}%
 
 %% remark environment
-\newmathenvironment{remark}{\@remarkname}[theorem]
-\def\remarkon{\@remarkon}
+\newmathenvironment{remark}{\remarkname}[theorem]
+\def\remarkon{\remarkon}
 \def\theremark{\arabic{remark}}
 \def\remarkheadertext{\remarkname\space\theremark\ifx\remarktitlename\empty\else\space\remarkon\space\remarktitlename\fi}
 
 %% conclusion environment
-\newmathenvironment{conclusion}{\@conclusionname}[section]
+\newmathenvironment{conclusion}{\conclusionname}[section]
 
 %% convention
-\newmathenvironment{convention}{\@conventionname}[section]
-
-\newmathenvironment{genassumptions}{\@genassumptionsname}[section]
-\def\genassumptionsheadertext{\genassumptionsname}
+\newmathenvironment{convention}{\conventionname}[section]
 
 %% notation
-\newmathenvironment{notation}{\@notationname}[section]
+\newmathenvironment{notation}{\notationname}[section]
 
 %% proposition environment
-\newmathenvironment{proposition}{\@propositionname}[section]
+\newmathenvironment{proposition}{\propositionname}[section]
 
 %% proof environment
-\newmathenvironment{proof}{\@proofname}[section]
+\newmathenvironment{proof}{\proofname}[section]
 \def\proofheaderfont{\itshape}%
-\def\proofof{\@proofof}
+\def\proofof{\proofof}
 \def\proofheadertext{\proofname\ifx\prooftitlename\empty\else\space\proofof\space\prooftitlename\fi}
-\def\proofendmark{$\square$}
+\def\proofendmark{$q.e.d.$}
 \def\proofbodyfont{}
 \def\proofbodycommands{\def\paragraph{\@startsection{paragraph}{4}{\z@}
     {.5ex plus .05ex minus .025ex}{-.66em}{\normalsize\itshape}}%
@@ -483,35 +458,35 @@
 }
 
 %% lemma environment
-\newmathenvironment{lemma}{\@lemmaname}[section]
+\newmathenvironment{lemma}{\lemmaname}[section]
 \def\lemmabodyfont{\it}%
 
 %% definition environment
-\newmathenvironment{definition}{\@definitionname}[section]
+\newmathenvironment{definition}{\definitionname}[section]
 
 %% example environment
-\newmathenvironment{example}{\@examplename}[section]
+\newmathenvironment{example}{\examplename}[section]
 
 %% fact environment
-\newmathenvironment{fact}{\@factname}[section]
+\newmathenvironment{fact}{\factname}[section]
 
 %% conjecture environment
-\newmathenvironment{conjecture}{\@conjecturename}[section]
+\newmathenvironment{conjecture}{\conjecturename}[section]
 
 %% problem environment
-\newmathenvironment{problem}{\@problemname}[section]
+\newmathenvironment{problem}{\problemname}[section]
 
 %% corollary environment
-\newmathenvironment{corollary}{\@corollaryname}[theorem]
-\def\corollaryof{\@corollaryof}
+\newmathenvironment{corollary}{\corollaryname}[theorem]
+\def\corollaryof{\corollaryof}
 \def\thecorollary{\arabic{corollary}}
 
 %% exercise environment
-\newmathenvironment{exercise}{\@exercisename}[section]
+\newmathenvironment{exercise}{\exercisename}[section]
 
 %% solutionenvironment (similar to proof environment)
-\newmathenvironment{solution}{\@solutionname}[section]
-\def\solutionof{\@solutionof}
+\newmathenvironment{solution}{\solutionname}[section]
+\def\solutionof{\solutionof}
 \def\solutionheaderfont{\proofheaderfont}
 \def\solutionheadertext{\solutionname\ifx\solutiontitlename\empty\else\space\solutionof\space\solutiontitlename\fi}
 \def\solutionbodyfont{\proofbodyfont}
@@ -520,9 +495,9 @@
 %% enumerate style in mathenvs
 
 % with roman numerals for statements environment
-\def\@statementsenumstyle{\def\theenumi{(\Roman{enumi})}\def\theenumii{(\roman{enumii})}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+\def\statementsenumstyle{\def\theenumi{(\Roman{enumi})}\def\theenumii{(\roman{enumii})}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
 
-\def\@casebycaseenumstyle{\def\theenumi{\it\@casename \arabic{enumi}.}\def\theenumii{\it\@casename \arabic{enumi}.\arabic{enumii}.}\def\theenumiii{\it\@casename \arabic{enumi}.\arabic{enumii}\arabic{enumiii}.}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
+\def\casebycaseenumstyle{\def\theenumi{\it\casename \arabic{enumi}.}\def\theenumii{\it\casename \arabic{enumi}.\arabic{enumii}.}\def\theenumiii{\it\casename \arabic{enumi}.\arabic{enumii}\arabic{enumiii}.}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
 
 % with letters for tasks environment
 \def\@tasksenumstyle{\def\theenumi{(\alph{enumi})}\def\theenumii{\alph{enumii}.}\def\labelenumi{\theenumi}\def\labelenumii{\theenumii}}
@@ -536,16 +511,16 @@
 %\def\@renewitem{\let\@olditem\item{\def\item[##1]{\@olditem\gdef\@currentlabelname{##1}}}}
 
 \newenvironment{statements}{\begingroup%
-    \@statementsenumstyle%
+    \statementsenumstyle%
     \begin{enumerate}%
     }{%
     \end{enumerate}\endgroup%
 }%
-\newenvironment{properties}{\begin{enumerate}\@statementsenumstyle}{\end{enumerate}}
+\newenvironment{properties}{\begin{enumerate}\statementsenumstyle}{\end{enumerate}}
 \newenvironment{tasks}{\begin{enumerate}\@tasksenumstyle}{\end{enumerate}}
 \newenvironment{steps}{\begin{enumerate}}{\end{enumerate}}
 \newcounter{casei}
-\def\casebycaselabel#1{{\hspace{\labelsep}\emph{\@casename\space#1.}}}
+\def\casebycaselabel#1{{\hspace{\labelsep}\emph{\casename\space#1.}}}
 \newenvironment{casebycase}{%
     \let\descriptionlabel\casebycaselabel%
     \description%
@@ -651,8 +626,8 @@
     \expandafter\expandafter\expandafter{%
         \expandafter\@fourthoffour#2}}%
 
-%\let\@chapter\@@chapter
-%\def\@chapter{\@@chapter
+%\let\chapter\chapter
+%\def\chapter{\chapter
 %    \let\@currentlabelcontext\@@currentlabelcontext%
 %    \def\@currentlabelcontext{Hallo \@@currentlabelcontext}}
 

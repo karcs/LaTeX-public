@@ -1,44 +1,20 @@
 \documentclass{article}
+%%
+%\usepackage[de]{mathenvironment}
+%\usepackage[de]{mathbook}%
 
-%% for math stuff
-\input{../Config/math-xetex.tex}
 %%% german language
-\input{../Config/german.tex}
+%\input{../Config/german.tex}
 
 %%% for index stuff
-\input{../Config/index.tex}
+%\input{../Config/index.tex}
 
-% Load fontspec and define a document font:
-\usepackage{fontspec}
-\setmainfont{TeX Gyre Pagella}
+\usepackage{tokenlist}
+\begin{document}%
 
-%% Load unicode-math and define a math font:
-\usepackage{unicode-math}
-\setmathfont[math-style=ISO]{texgyrepagella-math.otf}
-% \usepackage{bm}
-%\usepackage{tikz-cd}
-\usepackage[de]{mathenv}
-%
-\usepackage{layer}
-\begin{document}
-%%\theoremtitle%
-%\section{Hallo}
-Hallo
-%\input{Grundlagen-Sylowsche-Saetze}
-\newtoks\list
-\def\a{ab}
-\eprepend\a\to\list%
-\eprepend\a\to\list%
-\eprepend\a\to\list%
-%\pop\list\into\b%%%
-\the\list%
-HEAD:\expandafter\head\the\list%%
-TAIL:\expandafter\tail\the\list%
-
-\act
-\end{document}
-
-
+\end{document}%%%
+%%%%%
+%%
 %%% Local Variables: 
 %%% coding: utf-8
 %%% mode: latex

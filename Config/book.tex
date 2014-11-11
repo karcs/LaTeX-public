@@ -1,0 +1,72 @@
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%
+% DOCUMENT SETUP %
+%%%%%%%%%%%%%%%%%%
+
+
+%new layer : part
+\newlayer{part}{\partname}
+% new layer : chapter
+\newlayer{chapter}{\chaptername}%
+\addsublayer{chapter}\to{part}
+% new layer : section
+\newlayer{section}{\sectionname}%
+\addsublayer{section}\to{chapter}
+% new layer : subsection
+\newlayer{subsection}{\subsectionname}
+\addsublayer{subsection}\to{section}
+% new layer : paragraph
+\newlayer{paragraph}{\paragraphname}
+\addsublayer{paragraph}\to{section}
+% new layer : subparagraph
+\newlayer{subparagraph}{\subparagraphname}
+\addsublayer{subparagraph}\to{paragraph}
+
+% set counter formats
+\setcounterformat{part}{\the\partcounter}
+\setcounterformat{chapter}{\the\chaptercounter}
+\setcounterformat{section}{\the\sectioncounter}
+\setcounterformat{subsection}{\the\subsectioncounter}
+
+% set composite counterformats
+\setcompositecounterformat{part}{\getcounter{part}}
+\setcompositecounterformat{chapter}{\getcounter{chapter}}
+\setcompositecounterformat{section}{\getcounter{section}}
+\setcompositecounterformat{subsection}{\getcounter{section}.\getcounter{subsection}}
+\setcompositecounterformat{paragraph}{}
+\setcompositecounterformat{subparagraph}{}
+
+% set layer format for section
+\setlayerformat{part}{%
+    \par
+    \medskip\noindent {\bf\Huge\getcompositecounter{part}\hspace{\labelsep}\gettitle{part}}%
+    \par%
+    }%
+\setlayerformat{section}{%
+    \par%
+    \medskip\noindent {\bf\Large\getcompositecounter{section}\hspace{\labelsep}\gettitle{section}}%
+    \par%
+    \vspace{1em}%
+}%
+\setlayerformat{subsection}{%
+    \par%
+    \medskip\noindent {\bf\large\getcompositecounter{subsection}\hspace{\labelsep}\gettitle{subsection}}%
+    \par%
+    \vspace{0.5em}%
+}
+\setlayerformat{chapter}{%
+    \cleardoublepage%
+    \medskip\noindent {\bf\huge\getcompositecounter{chapter}\hspace{\labelsep}\gettitle{chapter}}%
+    \par%
+    \vspace{\parskip}%
+}%
+
+% ENVIRONMENTS
+\newenvironment{theorem}{Theorem}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

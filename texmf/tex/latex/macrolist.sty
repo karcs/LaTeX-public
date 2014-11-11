@@ -1,0 +1,51 @@
+%% This is file `macrolist.sty',
+\ProvidesPackage{macrolist}
+
+% append #1 to macro #2
+\def\append#1\to#2{%
+    \expandafter\def\expandafter#2\expandafter{#2#1}%
+}%
+
+% prepend #1 to macro #2
+\def\prepend#1\to#2{%
+    \expandafter\def\expandafter#2\expandafter{\expandafter#1#2}%
+}%
+
+% pop #1 into macro #2
+\def\pop#1\into#2{%
+    \ifx#1\empty%
+    \errmessage{\string\pop\space macro could not
+        finish. Macro list is empty.}%
+    \else%
+    \expandafter\split#1\head#2\tail#1%
+    \fi%
+}%
+
+% split #1#2 into head #3 and tail #4
+\def\split#1#2\head#3\tail#4{%
+    \def#3{#1}%
+    \def#4{#2}%
+}%
+
+% differ lists
+
+\def\diff#1\against#2{%
+    \begingroup%
+    \def\tmpa{}%
+    \loop%
+    \ifx#1\empty%
+    \def\tmpa{}%
+    \else%
+    \pop#1\into\tmpa%
+    \fi%
+    \ifx#2\empty%
+    \def\tmpb{}%
+    \else%
+    \pop#2\into\tmpb%
+    \fi%
+    \ifx\tmpa\tmpb%
+    \repeat%
+    \tmpa#1%
+    \endgroup%
+}%
+

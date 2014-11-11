@@ -1,0 +1,160 @@
+\documentclass{article}
+
+%% for math stuff
+\input{../Config/math-xetex.tex}
+%%% german language
+\input{../Config/german.tex}
+
+%%% for index stuff
+\input{../Config/index.tex}
+
+% Load fontspec and define a document font:
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+
+%% Load unicode-math and define a math font:
+\usepackage{unicode-math}
+\setmathfont[math-style=ISO]{texgyrepagella-math.otf}
+% \usepackage{bm}
+%\usepackage{tikz-cd}
+\usepackage[de]{mathenv}
+%
+\usepackage{layer}
+\begin{document}
+
+% 4. Abschnitt (30.10.2014)
+\section{Modulare Arithmetik}
+
+Sei $R$ ein kommutativer Ring, $m\in R$, $\langle m\rangle\defeq mR$ das von $m$ erzeugte Ideal.
+Betrachte die ``Restklassen modulo $m$''
+$$
+R/\langle m\rangle\defeq R/mR\defeq R/\sim_m\defeq\{[f]_m:f\in R\}
+$$
+wobei $a\sim_m b \defequiv a-b\in mR$. Schreibe auch, dass $f\equiv g \mod m$.
+
+\begin{remark}
+    Die Äquivalenzrelation $\sim_m$ ist eine Kongruenz auf $(R,+,\cdot)$, das heißt
+    $$
+    a\sim a', b\sim b'\implies a+b\sim a'+b', ab\sim a'b' \forall a,b,a'b'\in R
+    $$
+    (da $mR$ (beidseitiges) Ideal ist). Durch kanonische Abbildung $\pi:R\rightarrow R/\sim$,
+    $f\mapsto[f]_\sim$ werden Verknüpfungen auf $R/\sim$ definiert durch
+    $$
+    [a+b]\defeq [a+b], [a][b]\defeq [ab].
+    $$
+    Dies ist wohldefiniert, Ringgesetze gelten.
+\end{remark}
+
+\begin{definition}
+    $(R/\langle m\rangle, +, \cdot)$ \emph{Restklassenring} von $R$ bezüglich $m\in R$.
+\end{definition}
+
+\begin{notation}
+    $\integer_m\defeq \integer/m\integer$
+\end{notation}
+
+Wir rechnen wir mit Restklassen? Benötige Representantensystem für $R/\sim$.
+Falls $R=\integer$, kleinste nicht-negative Element in $f$, also $0\leq f<m$.
+Falls $R=F[X]$, Element kleinsten Grades in $f+mR$, also $\deg f<\deg m$.
+
+Rechenoperationen:
+$$
+[a]\ast[b]\defeq [a\ast b], \ast\in\{+,\cdot,-\}
+$$
+1.\ berechne $a\ast b$ in $R$ ($=\integer$ oder $F[X]$).
+2.\ finde Representant für $[a\ast b]$: Division durch $m$ mit Rest $a\ast b=qm+r$, $dr<dm$, $d$
+Gradfunktion.
+
+\begin{example}
+    $\integer_5[X]/\langle X^3-x+2\rangle$. Ich möchte z.B.~wissen, was $(4X+1)(3X^2+2X) \mod
+ m$.
+ Dies ist $3X^4+X^2+2X$, was kongruent ist zu $X^2+4X+1$.
+\end{example}
+
+\paragraph{Inversion}
+
+\begin{theorem}
+    Sei $R$ euklidischer Ring, $m\in R$. In $R/\langle m\rangle$ ist $a \mod m$ Einheit genau
+    dann, wenn $\gcd(a,m)=1$. Und zwar: Ist beim EEA $sa+tm=1$. Dann ist $a^{-1}\mod m=s\mod
+    m$. bzw.~$[a]^{-1}=[s]$.
+\end{theorem}
+
+\begin{example}
+    In $\integer_29$ sei $a=12$. $29=2\cdot 12+5$, $12=2\cdot 5+2$, $5=2\cdot 2+1$\implies
+    $1=5-2\cdot 2=5-2\cdot(12-2\cdot 5)=5\cdot 5 -2\cdot 12= 5\cdot(29-2\cdot 12)-2\cdot
+    12=5\cdot 29-12\cdot 12$. Also $12^{-1}\mod 29 = 17 \mod 29$.
+\end{example}
+
+\begin{corollary}
+    Ist $m\not\in R^\ast$ irreduzible, dann ist $R/\langle m\rangle$ ein Körper, da $\langle m\rangle$ maximales Ideal ist.
+\end{corollary}
+
+\begin{example}[endliche Körper]
+    Für $p\in \integer$ Primzahl ist $\field p\defeq \integer_p$. Für $f\in\field p[X]$, $\deg
+    f=n$, $f$ irreduzibel $\field p[X]/\langle f\rangle$ Körper mit $q\defeq p^n$
+    Elementen. Elemente repräsentiert durch Polynome in $\field p[X]$ vom Grad $<n$.
+    $$
+    \left\{\sum_{i=1}^{n-1}{a_i X^i} \mod f\right\}
+    $$
+\end{example}
+
+Theorie der endlichen Körper: nächstes Mal.
+
+Arithmetik in $\field {p^n}$ in $\field p$-Operationen.
+
+\begin{itemize}
+        \item Add/Sub.: $n$ $\field{p}$-Operationen.
+        \item Mul.: $4n^2+O(n)$ $\field p$-Op. ($2n^2+O(n)$ for Polynom-Multiplikation)
+    $2n^2+O(n)$ für Division mit Rest 
+        \item Inv.: $6n^2+O(n)$ $\field p$-Operationen env. euklid. Alg. (EEA)
+\end{itemize}
+
+Alle Operationen in $O(n^2)$ $\field p$-Operationen.
+
+Analog in $\integer_p$, in $O((\log p)^2)$ Wortoperationen. Zusammen für $q=p^n$ Verknüpfungen
+in $\field q$ ausführbar in Laufzeit $O((\log q)^2)$.
+
+\paragraph{Potenzieren.} Algorithmus `square-and-multiply'
+
+\begin{itemize}
+        \item $a\in(M,\ast)$ Monoid
+        \item output: $a^n$
+\end{itemize}
+
+\begin{enumerate}
+        \item schreibe $n=\sum_{i=0}^k{n_i 2^i}$. $n_k=1$.
+        \item Berechne alle werte $a^{2^i}$ für $i=0,\ldots,k$. Multipliziere die entsprechenden
+    Elemente zusammen.
+    For $i=k-1\ldots 0$ do
+    if $n_i = 1:$ $b_i\defeq b_{i+1}\ast b_{i+1}\ast a$
+    else: $b_i\defeq b_{i+1}\ast b_{i+1}$.
+\end{enumerate}
+
+\begin{example}
+    $n=13$, $13=8+4+1$. $k=3$, $n_0=n_2=n_3=1$,$n_1=0$.
+    $b_3=a, b_2=b_3^2\ast a=a^2\ast a=a^3$.
+    $b_1=b_2^2=a^6$, $b_0=b_1^2\ast a=a^{12}\ast a=a^{13}$.
+\end{example}
+
+\paragraph{Laufzeit:} Höchstens $k\leq \log_2 n$ mal je $1\times$ Quadrieren, $1\times$
+Multiplizieren.
+
+Alternative Inversion in $\field q$:
+$ G=\field q^{\ast} $
+Gruppe mit $n\defeq q-1$ Elemente $\implies \forall a\in G:a^n=1$, d.h.~$a^{-1}=a^{n-1}$. Also
+berechne (für $a\in\field a^{\ast}$): $a^{q-2}$ mit `square-and-multiply'.
+
+Benötigt: $O((\log q)^3)$ Wortoperation, d.h. EEA ist vorzuziehen.
+
+
+
+
+\end{document}
+
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:

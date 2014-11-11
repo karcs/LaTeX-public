@@ -1,0 +1,117 @@
+%% This is file `mathbook.sty',
+\ProvidesPackage{mathbook}[2014/06/11 v0.1]
+
+%%%%%%%%%%%%%%%%%%%%%
+% REQUIRED PACKAGES %
+%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{layer}
+\RequirePackage{color}
+\RequirePackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\RequirePackage{mathtoolbox}
+\setmathfont[math-style=ISO]{TeX Gyre Pagella Math}
+
+%\RequirePackage[ngerman]{babel}
+%\RequirePackage[utf8]{inputenc}
+    
+
+%%%%%%%%%%%%%%%%%%%
+% PACKAGE OPTIONS %
+%%%%%%%%%%%%%%%%%%%
+
+% declare options
+
+% language
+% english (default)
+\DeclareOption{en}{
+    \def\partname{Part}
+    \def\chaptername{Chapter}
+    \def\sectionname{Section}
+    \def\subsectionname{Subsection}
+    \def\paragraphname{Paragraph}
+    \def\subparagraphname{Subparagraph}
+}
+
+% german
+\DeclareOption{de}{
+    % import german packages
+    \def\partname{Teil}
+    \def\chaptername{Kapitel}
+    \def\sectionname{Abschnitt}
+    \def\subsectionname{Unterabschnitt}
+    \def\paragraphname{Absatz}
+    \def\subparagraphname{Unterabsatz}
+}
+
+% declare default settings
+\ExecuteOptions{en}
+
+% terminate option processing
+\ProcessOptions\relax
+
+%%%%%%%%%%%%%%%%%%
+% DOCUMENT SETUP %
+%%%%%%%%%%%%%%%%%%
+
+%new layer : part
+\newlayer{part}{\partname}
+% new layer : chapter
+\newlayer{chapter}{\chaptername}%
+\addsublayer{chapter}\to{part}
+% new layer : section
+\newlayer{section}{\sectionname}%
+\addsublayer{section}\to{chapter}
+% new layer : subsection
+\newlayer{subsection}{\subsectionname}
+\addsublayer{subsection}\to{section}
+% new layer : paragraph
+\newlayer{paragraph}{\paragraphname}
+\addsublayer{paragraph}\to{section}
+% new layer : subparagraph
+\newlayer{subparagraph}{\subparagraphname}
+\addsublayer{subparagraph}\to{paragraph}
+
+% set counter formats
+\setcounterformat{part}{\the\partcounter}
+\setcounterformat{chapter}{\the\chaptercounter}
+\setcounterformat{section}{\the\sectioncounter}
+\setcounterformat{subsection}{\the\subsectioncounter}
+
+% set composite counterformats
+\setcompositecounterformat{part}{\getcounter{part}}
+\setcompositecounterformat{chapter}{\getcounter{chapter}}
+\setcompositecounterformat{section}{\getcounter{section}}
+\setcompositecounterformat{subsection}{\getcounter{section}.\getcounter{subsection}}
+\setcompositecounterformat{paragraph}{}
+\setcompositecounterformat{subparagraph}{}
+
+% set layer format for section
+\setlayerheaderformat{part}{%
+    \par
+    \medskip\noindent {\bfseries\Huge\getcompositecounter{part}\hspace{\labelsep}\gettitle{part}}%
+    \par%
+    }%
+\setlayerheaderformat{section}{%
+    \par%
+    \medskip\noindent {\bfseries\Large\getcompositecounter{section}\hspace{\labelsep}\gettitle{section}}%
+    \par%
+    \vspace{1em}%
+}%
+\setlayerheaderformat{subsection}{%
+    \par%
+    \medskip\noindent {\bfseries\large\getcompositecounter{subsection}\hspace{\labelsep}\gettitle{subsection}}%
+    \par%
+    \vspace{0.5em}%
+}
+\setlayerheaderformat{chapter}{%
+    \cleardoublepage%
+    \medskip\noindent {\color{blue}\bfseries\huge\getcompositecounter{chapter}\hspace{\labelsep}\gettitle{chapter}}%
+    \par%
+    \vspace{\parskip}%
+}%
+
+% ENVIRONMENTS %
+%\newenvironment{theorem}{Theorem}
+
+\endinput

@@ -1,0 +1,92 @@
+% story.tex, with special characters converted to Unicode, and Zapfino font declarations
+%\input mathbook.tex
+%
+%
+\font\body="Latin Modern Math" at 12pt \body
+\font\title="TeX Gyre Pagella" at 12pt
+\font\author="TeX Gyre Pagella" at 10pt
+\font\math="TeX Gyre Pagella Math" at 10pt
+\textfont0=\math
+
+\def\UnicodeMathSymbol#1#2#3#4{%
+\begingroup%
+\def\mathord{0}%
+\def\mathop{1}%
+\def\mathbin{2}%
+\def\mathrel{3}%
+\def\mathopen{4}%
+\def\mathclose{5}%
+\def\mathpunct{6}%
+\def\mathalpha{7}%
+\def\mathfence{0}
+\def\mathaccent{0}
+\def\mathbotaccent{0}
+\def\mathover{0}
+\def\mathunder{0}
+\edef\act{\noexpand\Umathchardef\noexpand#2=#3 0 #1}%
+\expandafter%
+\endgroup%
+\act%
+}%      
+
+\input unicode-math-table
+        
+TEST:
+$$\sum_{i=0}^n$$
+$$\mitA$$
+
+\def\newcounter#1{%
+\expandafter\def\csname #1counter\endcsname{0}%
+}%
+
+\def\incrementcounter#1{%
+\begingroup%
+\def\tmpcount{\expandafter\numexpr\csname #1counter\endcsname+1\relax}%
+\edef\act{\noexpand\def\expandafter\noexpand\csname #1counter\endcsname{\the\tmpcount}}%
+\expandafter%
+\endgroup%
+\act%
+}%
+
+\newcounter{theorem}
+\begingroup%
+\incrementcounter{theorem}
+\endgroup%
+\incrementcounter{theorem}
+
+\theoremcounter%
+
+
+
+
+\hrule
+\vskip 1in
+\centerline{\title A \ SHORT \ STORY}
+\vskip 6pt
+\centerline{\author by A. U. Thor}
+\vskip .5cm
+Once upon a time, in a distant galaxy called Ööç,
+there lived a computer named R.~J. Drofnats.
+\the\count0{\count0=3}
+\the\count0%
+\def\a{546}
+\def\count{\numexpr\a+1\relax}
+\edef\a{\the\count}%
+A:\a\the\count
+\the\count
+Mr.~Drofnats—or “R. J.,” as he preferred to be called—was happiest when he was at work
+typesetting beautiful documents.
+\vskip 1in
+\hrule
+
+$\leftarrow$
+
+$$sdfsdf$$
+\bye
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% coding: utf-8
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:

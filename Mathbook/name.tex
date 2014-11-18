@@ -1,0 +1,23 @@
+% This is file `name.sty',
+
+% 0 REQUIRED PACKAGES
+
+% NAMES OF LAYERS AND ENVIRONMENTS
+
+% to get and set the (current) name of a layer
+% it is stored in \csname #1name\endcsname
+
+% set name name of layer #1 or environment
+\def\setname#1#2{%
+    \expandafter\def\csname #1name\endcsname{#2}%
+}%
+
+% get name of layer #1 or environment
+\def\getname#1{%
+    \csname #1name\endcsname%
+}%
+
+% get name of current layer or environment
+\def\name{%
+    \expandafter\csname\layer name\endcsname%
+}%

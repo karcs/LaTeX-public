@@ -1,0 +1,32 @@
+% This is file `context.tex'
+
+% CONTEXT
+
+% EXPLANATION: The \context variable 
+
+% 0 REQUIRED PACKAGES
+
+\input{tokenlist}
+\input{counter}
+
+\newtokens{context}%
+
+% get the current context
+\def\getcontext{%
+    \gettokens{context}%
+}%
+
+% differ context list #1 against #2 
+\def\diffcontext#1\against#2{%
+    \begingroup%
+    \newtokens{tmp}%
+    \diffentries#1\against#2\into{tmp}%
+    \edef\act{\gettokens{tmp}}%
+    \expandafter
+    \endgroup%
+    \act%
+}%
+
+%%% Local Variables: 
+%%% mode: plain-tex
+%%% End: 

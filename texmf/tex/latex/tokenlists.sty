@@ -1,0 +1,79 @@
+%% This is file `tokenlist.sty',
+\ProvidesPackage{tokenlist}[2014/06/11 v0.1]
+
+%% terminate option processing
+\ProcessOptions\relax
+
+%%%%%%%%%%%%%%%%%
+% 1 TOKEN LISTS %
+%%%%%%%%%%%%%%%%%
+
+% prepend token #1 to token list #2
+\def\prepend#1\to#2{%
+    \toks0={#1}%
+    \edef\act{\noexpand#2={\the\toks0 \the#2}}%
+    \act}
+
+% prepend expanded token #1 to token list #2
+\def\eprepend#1\to#2{%
+    \edef\act{\noexpand#2={{#1} \the#2}}%
+    \act}
+
+% globally prepend expanded token #1 to token list #2
+\def\xprepend#1\to#2{%
+    \edef\act{\noexpand#2={{#1} \the#2}}%
+    \global\act}
+
+% globally prepend token #1 to token list #2
+\def\gprepend#1\to#2{%
+    \toks0={#1}%
+    \edef\act{\noexpand#2={\the\toks0 \the#2}}%
+    \global\act}
+
+% pop first element of token list #2 into #1
+% if #2 is empty let it empty and set #1 as empty
+\def\pop#1\into#2{%
+    \expandafter\ifx\the#1\empty%
+    \def#2{}
+    \else
+    \edef\act{\noexpand\@split\the#1%
+        \noexpand\head\noexpand#2\noexpand\tail\noexpand#1}%
+    \act%
+    \fi}
+
+\def\split#1\head#2\tail#3{%
+    
+    }%
+
+% split a non-empty token list into head and tail
+\def\@split#1#2\head#3\tail#4{%
+    #4={#2}\def#3{#1}%
+}%
+
+
+% drop the first element of #1
+\def\dropfirst#1{%
+    \expandafter\unless\expandafter\ifx\the#1\empty%
+    \edef\act{\noexpand#1=\expandafter\tail\the#1}%
+    \act%
+    \fi}%
+
+
+% get head of list
+\def\head#1#2{#1}
+
+% get tail of list
+\def\tail#1#2{#2}
+
+% remove token from token list
+%\def\remove#1\from{%
+%    \loop%
+%    \expandafter\pop\csname #1subcounters\endcsname\into\tmp%
+%    \unless\ifx\tmp\empty%
+%    \expandafter\expandafter\expandafter\global\expandafter\csname \tmp counter\endcsname=0%
+%    % reset the subcounters of subcounter \tmp
+%    \resetsubcounters{\tmp}%
+%    \repeat%
+%    }
+
+\endinput

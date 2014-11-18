@@ -1,0 +1,18 @@
+% This is file `title.sty',
+\ProvidesPackage{title}
+
+% TITLES OF LAYERS AND ENVIRONMENTS
+
+% to get and set the (current) title of a layer or environment
+% it is stored in \csname #1title \endcsname
+
+% set title
+\def\settitle#1#2{%
+    \expandafter\def\csname #1title\endcsname{#2}%
+}%
+
+% get title
+\def\gettitle#1{%
+    \csname #1title\endcsname%
+}%
+

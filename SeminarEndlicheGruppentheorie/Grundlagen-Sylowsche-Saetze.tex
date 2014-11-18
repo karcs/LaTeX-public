@@ -1,15 +1,269 @@
 \part{Grundlagen}
 
-\section{Verbände}
+\section{Symbole, Wörter, Ausdrücke, Formeln, Typen}
+
+\subsection{Formeln}
+
+Die folgenden Begriffe sind von essentieller Natur.
+
+\begin{definition}[Wort]
+    Ein Wort ist eine Kette von Symbolen eines gewissen Alphabets.
+\end{definition}
+
+\begin{example}
+    Es sind beispielsweise $XYZ$, $a\instanceof b$, $a\to b$ Wörter.
+\end{example}
+
+\begin{definition}[Ausdruck]
+    Ein Ausdruck ist ein gewissen syntaktischen Regeln genügendes Wort (d.h.~aus einer
+    entsprechenden Grammatik ableitbar).
+\end{definition}
+
+\begin{example}
+    Es ist beispielsweise $a\instanceof b$ ein Ausdruck, $a::b$ jedoch nicht.
+\end{example}
+
+Auf die im Folgenden verwendeten syntaktischen Regeln wollen wir nicht im Detail eingehen.
+
+\begin{definition}[Formel]
+    Eine Formel ist ein gewissen semantischen Regeln genügender Ausdruck (d.h.~aus Typaxiomen ableitbar).
+\end{definition}
+
+Die verwendeten semantischen Regeln wollen wir hier ebenfalls nicht im Detail besprechen.
+
+\begin{convention}[impliziter Kontext]
+    Oftmals werden die Typen der in einer Formel auftretenden
+Variablen nicht explizit notiert, sondern entweder vorher erwähnt oder implizit als bekannt
+vorausgesetzt.
+\end{convention}
+
+\begin{example}[Assoziativität]
+    Es gilt zum Beispiel die Formel
+    $$
+    (ab)c=a(bc)
+    $$
+    mit dem impliziten Kontext, dass $a$, $b$ und $c$ Instanzen einer Gruppe sind (d.h.~    $a,b,c\instanceof G\instanceof \group$).
+\end{example}
+
+\begin{convention}[Interpretation von Formeln]
+    In Formeln werden Variablen immer von links nach rechts
+interpretiert. Bei stärker bindenden Terminalen werden diese zuerst interpretiert.
+\end{convention}
+
+\begin{example}
+    $$
+    ab+cd
+    $$
+    wird interpretiert als $(ab)+(cd)$, da das implizite Terminal der Aneinanderreihung stärker
+    bindet als das Terminal $+$. Hierbei können $a$, $b$ und $c$ zum Beispiel Elemente eines
+    Ringes sein (d.h.~$a,b,c:R:\ring$).
+\end{example}
+
+Im Rahmen jedes sinnvollen Mathematikbuches werden also Formeln studiert und hergeleitet, welche
+auf einer gewissen Axiomatik basieren.
+
+Nun wenden wir uns den Symbolen genauer zu.
+
+\subsection{Variablen und Terminale}
+
+Ein jedes Symbol in einer Formel ist entweder eine Variable, d.h.~ein Symbol, dessen
+Substitution durch ein beliebiges anderes Symbol, welches dem gleichen Kontext genügt, wieder zu einer gültigen Formel führt, oder ein
+Terminal, d.h.~ein Symbol, das sich nicht weiter ersetzen lässt (möglicherweise führt die Substitution
+auch zu einer gültigen Formel, dies ist aber apriori nicht gewährleistet).
+
+\begin{notation}[Variablen und Terminale]
+    Variablen werden im Rahmen dieses Skriptes ausschließlich als \textit{nicht fette} Buchstaben notiert. 
+    Alle Zahlen, Relationensymbole, Operatorsymbole sind Terminale. Ist ein Buchstabe oder Wort
+    \textbf{fett} notiert, so handelt es sich ebenfalls ein Terminal. Wörter zeichnen sich dabei
+    als solche aus, indem sie aufrecht notiert werden.
+    Das \keyword{implizite Terminal}\as{{implizites Terminal}} ist gegeben durch die
+    Aneinanderreihung zweier Ausdrücke.
+\end{notation}
+
+\begin{example}[implizites Terminal]
+    Der Ausdruck
+    $$
+    ab
+    $$
+    beinhaltet das implizite Terminal (der Kontext kann hier z.B.~$a,b:R:\ring$ sein).
+\end{example}
+
+\subsection{Typen und Instanzen}
+
+Formal ist ein Typ schlicht ein Symbol. Andererseits kann ein Symbol einen Typ haben und
+definiert gleichermaßen einen selbigen (ob es
+Objekte dieses Types tatsächlich gibt, ist eine Frage, die man sich gemeinhin nicht stellt).
+
+\begin{notation}
+    Wir notieren `$A$ ist vom Typ $B$' oder genauer `$A$ ist Instanz des Typs $B$' durch
+$A\instanceof B$.
+\end{notation}
+
+Ein Typ zeichnet sich nun aus durch eine gewissen Satz an Regeln.
+
+\begin{example}[Gruppen]
+    Der Typ der Gruppe hat folgende Eigenschaften:
+    $$
+    a,b\instanceof G\instanceof\group\implies ab\instanceof G
+    $$
+    $$
+    a,b,c\instanceof G\instanceof \group\implies (ab)c\interpret=\in G a(bc)
+    $$
+    $$
+    a\instanceof G\instanceof\group\implies \power a\operation\exponent{-1}\instanceof G
+    $$
+    $$
+    G\instanceof\group\implies \interpret 1\in G\instanceof G,\interpret 1\in G a=a
+    $$
+    $$
+    \interpret 1\in G a\equals a
+    $$
+    $$
+    a\power a\operation\exponent{-1}=
+    $$
+    definiert für
+    $G\instanceof\group$, $a,b,c\instanceof G$, dann ist $ab,a^{-1}\instanceof G$ und beispielsweise $(ab)c=a(bc)$. 
+\end{example}
+
+
+Eines der wichtigsten Symbole ist das Gleichheitszeichen. Hier gibt es nun zwei verschiedene
+Gleichheiten:
+
+Typengleichheit zweier Typen $b$ und $c$ gilt, falls $a:b$ und $a:c$ äquivalent sind.
+Formal
+$$
+b\equals c.
+$$
+
+Instanzengleichheit im Bezug auf einen Typ (d.h.~in einem gewissen Kontext) zweier Symbole
+$a\instanceof c$
+und $b\instanceof c$ heißt, dass $a$ und $b$ sich als Instanz des Typs $c$ gleich verhält, d.h.~wir
+können in jedem Ausdruck, in dem $b$ bzw.~$c$ als Instanz von $c$ interpretiert werden beide
+durcheinander ersetzen.
+
+Notationsmäßig haben wir:
+$$
+a\as c\equals b
+$$
+
+
+\begin{definition}[Subinstanzen]
+    Sei $a:c$ und $b:c$, und folgt aus $d:a$, dass $d:b$, dann nennen wir $a$ eine Unterinstanz
+    von $b$ im Bezug auf den Typ $c$.
+\end{definition}
 
 \begin{definition}
-    Die Kategorie der Verbände
+    Die Größe eines Typs $a$ ist, falls sie existiert, die Anzahl seiner Instanzen. Sie wird mit
+    $\size a$ bezeichnet.
 \end{definition}
+
+\subsection{Morphismen}
+
+\begin{definition}[Morphismen]
+    Seien $a,b\instanceof A$, dann definieren wir den Typ $a\to b$ der $A$-Morphismen von
+    $a$ nach $b$ durch die folgenden Regeln.
+    $$
+    \alpha\instanceof a\to b, \beta\instanceof b\to c\implies \alpha\beta\instanceof a\to c
+    $$
+    $$
+    (\alpha\beta)\gamma=\alpha(\beta\gamma)
+    $$
+    $$
+    d\instanceof a\implies d\alpha\instanceof b
+    $$
+    Alle Regeln die den Typ $a$ definieren gelten ebenfalls, wenn darin jede Instanz $d$ des
+    Typs $a$ durch $d\alpha$ ersetzt wird, und jedes $a$ durch $b$.
+\end{definition}
+
+\section{Geordnete Mengen und Verbände}
+
+\begin{definition}
+    Der Typ Verband $\lattice$ ist gegeben durch die folgenden Festsetzungen.
+    Für $a,b,c:V:\lattice$ gilt
+    $$
+    a\join(b\join c)\equals (a\join b)\join c
+    $$
+    $$
+    a\join b=b\join a
+    $$
+    $$
+    a\join(a\meet b)=a, 
+    $$
+    $$
+    a\join a=a
+    $$
+\end{definition}
+
+\begin{definition}[modularer Verband]
+    Ein Verband $V$ heißt modular, falls
+    $$
+    (a\meet b)\join c
+    $$
+\end{definition}
+
+\begin{definition}[Kette und Reihe]
+    Sei $P:\poset$ eine geordnete Menge. Ein Unterobjekt $K:\subobject V\in\poset$ heißt Kette, falls $K$ total geordnet
+    ist. $K$ heißt Reihe, falls $K$ diskret ist, d.h.~die durch die Ordnung induzierte Topologie
+    ist diskret (was bedeutet, dass für $x:K$, falls $x$ nicht maximal ist ein $y:K$ existiert
+    mit $x\lessdot y$ und analog, falls $x$ nicht minimal ist ein $z:K$ mit $z\lessdot x$ existiert). 
+\end{definition}
+
+\begin{definition}[Maximums- und Minimumsbedingung]
+    Sei $P:\poset$. Dann genügt $P$ der \keyword{Maximumsbedingung}\as{{aufsteigende
+            Reihenbedingung}{\person{Noether}'sche Eigenschaft}}, wenn jedes nichtleere Unterobjekt von $P$ ein Maximum
+    hat. Analog genügt $P$ der \keyword{Minimumsbedingung}\as{{absteigende
+            Reihenbedingung}{\person{Artin}'sche Eigenschaft}}, wenn jedes Unterobjekt von $P$
+    ein minimales Element hat.
+\end{definition}
+
+\begin{lemma}[Äquivelente Beschreibungen der Maximums- und Minimumsbedingung]
+    Die folgenden Aussagen sind äquivalent
+    \begin{statements}
+            \item $P$ genügt der Maximumsbedingung
+            \item Jede Kette von $P$ hat ein größtes Element.
+            \item Jede Reihe von $P$ hat ein größtes Element.
+    \end{statements}
+\end{lemma}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Charakterisierung von endlicher Erzeugbarkeit]
+    Sei $a:b$. Die folgenden Aussagen sind äquivalent
+    \begin{statements}
+            \item $a$ ist endlich erzeugt im Bezug auf $b$.
+            \item $\subinstances a\in b$ genügt der aufsteigenden Reihenbedingung.
+            \item Jede Unterinstanz von $a$ im Bezug auf $b$ liegt in einer maximalen Subinstanz
+        von $a$ im Bezug auf $b$ enthalten.
+    \end{statements}
+\end{theorem}%%
+
+\begin{proof}
+    \begin{implications}
+            \item Ist $a$ endlich erzeugt und $c_i$ mit $i:\naturalnumber$ eine
+        aufsteigende Reihe in $\subinstances a\in
+        b$. Dann gibt es $n:\naturalnumber$ und $a_1,\ldots,a_n:a$, sodass $\hull
+        a_1,\ldots,a_n\in{\subinstances a\in b}=a$
+            \item
+        \item blub
+    \end{implications}
+\end{proof}%
+
 
 \section{Kategorien}
 
 In diesem Abschnitt werden die nötigen kategorientheoretischen Kenntnisse (bzw.~Terminologie) bereitgestellt, welche für die
 Gruppentheorie (von einem modernen Standpunkt aus) unentbehrlich sind.
+
+\subsection{Logische Kategorie}
+
+\begin{definition}[Logische Kategorie]
+    Eine Kategorie heißt \keyword{logisch}\as{{logische Kategorie}}, falls für jedes Paar von
+    Objekten $a,b$ höchstens ein Morphismus $\alpha\instanceof a\interpret\to\in \bfL b$. 
+\end{definition}
+
+
 
 \subsection{Terminale und finale Objekte}
 
@@ -24,7 +278,7 @@ Gruppentheorie (von einem modernen Standpunkt aus) unentbehrlich sind.
     Ein Objekt $0:\bfA$ heißt \keyword{Nullobjekt}\as{{Nullobjekt}}, falls $0$ sowohl initial als auch terminal ist.
 \end{definition}
 
-\subsection{Initiale und terminale Pfeile und Nullpfeile}
+\subsection{Initiale und terminale Morphismen und Nullmorphismen}
 
 \begin{definition}[Initiale und terminale Pfeile]
     Ein Pfeil $\gamma:A\to B$ heißt \keyword{terminaler Morphismus}\as{{terminaler Morphismus}{konstanter Morphismus}}, falls $\alpha\gamma=\beta\gamma$
@@ -54,7 +308,7 @@ Gruppentheorie (von einem modernen Standpunkt aus) unentbehrlich sind.
 
 \begin{definition}[Kern und Kokern]
 Sei $\alpha:A\to_\bfA B$ ein Morphismus. Dann wird ist der \keyword{Kern}\as{{Kern eines Morphismus}} $\ker\phi$ das Unterobjekt mit der universellen Eigenschaft, dass jedes
-Unterobjekt $U$ von $A$ gilt, dass $U\alpha=\interpret 0\in{\subobjects A}$, dann gilt $\ker\phi\leq U$.
+Unterobjekt $U$ von $A$ gilt, dass $U\alpha=\interpret 0\in{\subobject A\in\bfA}$, dann gilt $\ker\phi\leq U$.
 In analoger Weise definieren wir den \keyword{Kokern}\as{{Kokern}} $\cokernel \alpha$ von $\alpha$ als das Quotientenbojekt $Q$ von $B$, welches die
 Eigenschaft hat, dass $\alpha Q=\interpret 0\in{\cosubobjects A}$ gilt $\cokernel \alpha\leq Q$.
 \end{definition}
@@ -62,7 +316,7 @@ Eigenschaft hat, dass $\alpha Q=\interpret 0\in{\cosubobjects A}$ gilt $\cokerne
 \subsection{Unterobjekte und Quotientenobjekte}
 
 \begin{definition}
-    Sei $\bfA$ eine Kategorie. Der Verband der \keyword{Unterobjekte}\as{{Unterobjekt}} $\subobjects A$ für jedes Objekt $A:\bfA$ als die
+    Sei $\bfA$ eine Kategorie. Der Verband der \keyword{Unterobjekte}\as{{Unterobjekt}} $\subobject A\in\bfA$ für jedes Objekt $A:\bfA$ als die
     Isomorphieklassen der Kategorie $\monoto_\bfA A$ (also $\monoto_\bfA A/\isoto$).
     Analog definieren wir den Verband der \keyword{Quotientenobjekte}\as{{Quotientenobjekt}{Kounterobjekt}} von $A$ als $\cosubobjects A$ durch die Isomorphieklassen von $A\epito_\bfA/\isoto$.
 \end{definition}
@@ -81,7 +335,7 @@ Eigenschaft hat, dass $\alpha Q=\interpret 0\in{\cosubobjects A}$ gilt $\cokerne
 \subsection{Bilder}
 
 \begin{definition}
-    Sei $\alpha:A\to B$ ein Morphismus, dann bezeichnet $image \alpha$ das induzierte Unterobjekt von $\alpha$.
+    Sei $\alpha:A\to B$ ein Morphismus, dann bezeichnet $\image \alpha$ das induzierte Unterobjekt von $\alpha$.
 \end{definition}
 
 \subsection{Normale Morphismen}
@@ -98,9 +352,9 @@ Eigenschaft hat, dass $\alpha Q=\interpret 0\in{\cosubobjects A}$ gilt $\cokerne
     $C$ mit $\pi:A\epito C$, $\iota:C\monoto B$, sodass $\phi = \pi\iota$. 
 \end{theorem}
 
-\begin{proof}
-    
-\end{proof}
+%\begin{proof}
+%    Blub
+%\end{proof}
 
 \section{Produkte und Koprodukte}
 
@@ -109,7 +363,7 @@ Sei $\bfB\monoto\bfA$ eine Unterkategorie.
 
 \section{Gruppenaxiome}
 
-Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{-1},1}$, derart dass folgende Identitäten gelten
+Unter einer Gruppe verstehen wir eine Struktur vom Typ $\group$, derart dass folgende Identitäten gelten
 \begin{itemize}
         \item $(a\compose b)\compose c = a\compose (b\compose c)$ (Assoziativität)
         \item $a^{-1}\compose a = a\compose a^{-1} = 1$ (Inversenabblildung)
@@ -122,54 +376,58 @@ Unter einer Gruppe verstehen wir eine Struktur vom Typ $\Grp=\struct{\compose,^{
 
 \section{Aufsteigende und absteigende Kettenbedingung}
 
-\begin{definition}
-    Sei $P:\poset$. Dann genügt $P$ der \keyword{aufsteigenden Kettenbedingung}\as{{aufsteigende
-            Kettenbedingung}{\person{Noether}'sche Eigenschaft}}, wenn jede aufsteigende Kette nach endlich vielen Gliedern
-    abbricht. Analog genügt $P$ der \keyword{absteigenden Kettenbedingung}\as{{absteigende Kettenbedingung}{\person{Artin}'sche Eigenschaft}} 
-\end{definition}
+\section{Der Satz von \person{Lagrange}}
 
-\begin{theorem}[Charakterisierung von endlicher Erzeugbarkeit]
-    Sei $A$ eine Algebra. Die folgenden Aussagen sind äquivalent
-    \begin{statements}
-            \item $A$ ist endlich erzeugt.
-            \item $\subobjects A$ genügt der aufsteigenden Kettenbedingung.
-            \item Jedes Unterobjekt $U:\subobjects A$, $U\neq A$ liegt in einem maximalen Unterobjekt.
-    \end{statements}
+\begin{theorem}[Satz von \person{Lagrange}]
+    Sei $G$ eine Gruppe und $U$ eine Untergruppe. Dann definiert
+    $
+    a\sim b
+    \define\equivalent
+    a\cast U\to\set = b\cast U\to\set
+    $
+    eine reguläre Äquivalenzrelation, d.h.~jede Äquivalenzklasse ist gleich groß.
+    Es gilt also
+    $$
+    \size G = \size U \size {\cosubobject G\over \sim}.
+    $$
+    Speziell gilt $\size G \epito \size U$. 
 \end{theorem}
 
-\begin{proof}
-    \begin{implications}
-            \item Ist $A$ endlich erzeugt und $C$ eine aufsteigende Kette in $\subobjects A$, dann wird $C$ stationär.
-            \item
-        \item blub
-    \end{implications}
-\end{proof}
+\section{Der Satz von \person{Lucas}}
 
+\begin{theorem}
+    Sei $p$ eine Primzahl. Dann gilt
+    $$
+    {m \choose n} = \product {{m_i} \choose {n_i}}
+    $$
+    wobei $m=\sum \power m_i p\operation\exponent i$
+\end{theorem}
+%
 \section{Die \person{Sylow}'schnen Sätze}
 
 Eine natürliche Frage, welche sich aus dem Theorem von \person{Lagrange} ergibt, welche Aussagen über die Anzahl und Art der
-Untergruppen von Ordnung $n$ einer endlichen Gruppe $G$ getroffen werden können.
-Für $n\not\divides \size G$ ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
-ist jene Anzahl im Falle $n\divides \size G$ genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
-Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\Aut m$ sieht, denn wählt man nun $n$ als eine Zyklizität
-erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\Aut m$ dieser Ordnung.
+Untergruppen von Ordnung $n\instanceof\naturalnumber$ einer endlichen Gruppe $G$ getroffen werden können.
+Falls $n$ die Zahl $\size G$ nicht teilt, ist selbige Anzahl nach dem Theorem von \person{Lagrange} (TODO: REF) gleich null. Ist $G$ zyklisch, so
+ist jene Anzahl im entgegengesetzten Falle genau eins. Tatsächlich muss es aber für $n\divides \size G$ keine Untergruppen dieser
+Ordnung geben, was man am leichtesten an der symmetrischen Gruppe $\auto m$ sieht, denn wählt man nun $n$ als eine Zyklizität
+erzwingende Zahl, sodass $m<n\divides m!$, dann gibt es offensichtlich keine Untergruppen von $\auto m$ dieser Ordnung.
 ist es ob bei einer endlichen Gruppe $G$ der
 
 Tatsächlich lassen sich aber befriedigende Aussagen treffen, falls $n=p^e$ die Potenz einer Primzahl $p$ ist. Diese werden
 gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
 
-\begin{definition}[$p$-Gruppe]
-    Sei $G$ eine Gruppe derart, dass jedes Element $g\in G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
-    Primzahl sei.
+\begin{definition}[Primärgruppe]
+    Sei $G$ eine Gruppe derart, dass jedes Element $g\instanceof G$ eine Primzahlpotenz $p^{e_g}$ als Ordnung hat (wobei $p$ eine feste
+    Primzahl sei). Dann heißt $G$ \keyword{Primärgruppe}\as{{$p$-Gruppe}{Primärgruppe}} zur Primzahl $p$.
 \end{definition}
 
 \begin{remark}
-    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche $p$-Gruppe selbst von
+    Eine triviale Konsequenz der \person{Sylow}'schen Theoreme wird es sein, dass jede endliche Primärgruppe selbst von
     Primzahlpotenzordnung $p^e$ ist.
 \end{remark}
 %
-\begin{theorem}[Existenz von $p$-Untergruppen jeder Ordnung]
-    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\hull{U\leq G:\size U=p^e\in\set}}$ gilt dann
+\begin{theorem}[Existenz von Primäruntergruppen jeder Ordnung]
+    Sei $G$ eine endliche Gruppe mit $\size G = p^e n$. Für die Anzahl $N_{p^e}\defeq \size{\hull{U\leq G:\size U=p^e}\in\set}$ gilt dann
     $$
     N_{p^e} = 1 \mod p
     $$
@@ -179,26 +437,26 @@ gemeinhin als \person{Sylow}'sche Sätze bezeichnet.
     Wir betrachten die Aktion von $G$ auf den $p^e$-elementigen Untermengen von $\cast G \to \set$ welche gegeben wird durch
     elementweise Rechtsmultiplikation. Die Bahnengleichung für diese Aktion wird dann zu
     $$
-    \size {\binom {\cast G \to \set} {p^e}} = \sum_i {\size {G/\stab A_i}},
+    \size {{\cast G \to \set} \choose {p^e}} = \sum_i {\size {G/\stab A_i}},
     $$
     wobei $A_i$ Repräsentanten der $G$-Bahnen sind.
     Für $A_i\monoto \cast G \to \set$, $\size {A_i}=p^e$ gilt allerdings dann $A_i \cast (\stab A_i) \to \set=A_i$, also ist $A_i$ eine disjunkte
     Vereinigung von Linksnebenklassen von $\stab A_i$ und mithin $\size {\stab A_i}\divides p^e$. Betrachten wir also obige
     gleichung modulo $pn$, so folgt
     $$
-    \binom {p^e n}{p^e} = n N_{p^e} \mod pn, 
+    {{p^e n} \choose {p^e}} = n N_{p^e} \mod pn, 
     $$
     denn alle Terme, in denen $\stab A_i<p^e$ ist in obiger Gleichung entfallen und die übrigen Terme zählen genau für jede
     $p^e$-elementige Untergruppe von $G$ ihre Linksnebenklassen (derer gibt es $n$).
     Daraus folgt
     $$
-    \frac 1 n \binom {p^e n}{p^e} = \binom {p^e n-1} {p^e-1} = N_{p^e} \mod p,
+    \frac 1 n {{p^e n} \choose {p^e}} = {{p^e n-1} \choose {p^e-1}} = N_{p^e} \mod p,
     $$
     wobei der Ausdruck auf der Linken Seite gleich 1 ist modulo $p$. Dies sieht man einerseits daran, dass dies für die zyklische
     Gruppe mit $p^e n$ Elementen gilt, andererseits lässt sich auch das Theorem von \person{Lucas} (TODO : REF) auf den letzten
     Binomialkoeffizienten anwenden. Wir erhalten dann
     $$
-    N_{p^e} = \binom {p^e n - 1} {p^e -1} = {\binom {p-1} {p-1}}^e = 1 \mod p.
+    N_{p^e} = {{p^e n - 1} \choose {p^e -1}} = {{p-1} \choose {p-1}}^e = 1 \mod p.
     $$
 \end{proof}
 
@@ -248,8 +506,8 @@ Untergruppen nennt man auch \person{Hall}-Untergruppen.
 \section{Auflösbarkeit von Gruppen}
 
 \begin{definition}[Subnormalenverband, Subnormalenreihe]
-    Ein Unterverband $\bfU$ von $\subobjects G$ Subnormalenverband, falls für alle $U\in \bfU$ gilt
-    $U\in\normalsubobjects \Meet_{V>U}V$. Ist ein solcher Verband isomorph zu einem Unterverband von $\cast \nats \to \lattice$, so nennen wir Ihn
+    Ein Unterverband $\bfU$ von $\subobject G\in\group$ Subnormalenverband, falls für alle $U\in \bfU$ gilt
+    $U\in\normalsubobjects \Meet_{V>U}V$. Ist ein solcher Verband isomorph zu einem Unterverband von $\cast \naturalnumber \to \lattice$, so nennen wir Ihn
     eine Subnormalenreihe. 
 \end{definition}
 
@@ -262,18 +520,19 @@ Untergruppen nennt man auch \person{Hall}-Untergruppen.
 \end{definition}
 
 \begin{definition}[Kommutatoruntergruppe]
-    Seien $\bfU\leq\cast \subobjects G\to \set$. Dann bezeichnen wir mit $\commutatorsubgroup \bfA$ die
+    Seien $\bfU\leq\cast \subobject G\in\group\to \set$. Dann bezeichnen wir mit $\commutatorsubgroup \bfA$ die
     \keyword{Kommutatoruntergruppe}\as{{Kommutatorgruppe}} von der Gruppen in $\bfA$. Sie wird erzeugt durch alle Kommutatoren $\commutator a b$ für $a\in
     A$, $b\in B$, $A,B\in\bfA$. 
 \end{definition}
 
 \begin{lemma}
     Die Kommutatoruntergruppe $\commutatorsubgroup \bfA$ ist charakterisiert durch folgende univerelle Eigenschaft.
-    Sei $N$ ein Normalteiler von $\hull\bfA$ derart, dass unter der kanonischen Projektion $\pi:\hull\bfA\to\hull\bfA/N$ die
+    Sei $N$ ein Normalteiler von $\hull\bfA\in G$ derart, dass unter der kanonischen Projektion
+    $\pi:\hull\bfA\in G\to\hull\bfA/N\in G$ die
     Bilder der Elemente von $\bfA$ paarweise elementweise kommutieren, d.h. $\commutatorsubgroup
     {\image{\iota_A\pi},\image{\iota_B\pi}}=1$, wobei $\iota_A$ bzw. $\iota_B$ die Inklusionen von Untergruppen $A,B\in\bfA$ sind,
     dann ist $\commutatorsubgroup \bfA\leq N$ und in äquivalenterweise gibt es einen eindeutigen Morphismus $\pi'$, sodass
-    $\pi=p\pi'$ mit $p:\hull\bfA\to\hull\bfA/N$ die kanonische Abbildung.
+    $\pi=p\pi'$ mit $p:\hull\bfA\in G\to\hull\bfA/N\in G$ die kanonische Abbildung.
 \end{lemma}
 
 \begin{proof}
@@ -281,9 +540,9 @@ Untergruppen nennt man auch \person{Hall}-Untergruppen.
 \end{proof}
 
 \begin{definition}[Kommutatorreihe]
-    Wir definieren die \keyword{Kommutatorreihe}\as{{Kommutatorreihe}} $\sequence{\commutatorseries G i}_{i\in \nats}$ einer Gruppe $G$ als
-    $$\commutatorseries G 0 \defeq G,\ \commutatorseries G {i+1} \defeq \commutatorsubgroup {\commutatorseries G i,\commutatorseries G i} \ (i\in\nats).$$
-    Weiterhin setzen wir $\commutatorseries G \omega \defeq \Meet_{i\in\nats} \commutatorseries G i$ und bezeichnen es als
+    Wir definieren die \keyword{Kommutatorreihe}\as{{Kommutatorreihe}} $\sequence{\commutatorseries G i}_{i\in \naturalnumber}$ einer Gruppe $G$ als
+    $$\commutatorseries G 0 \defeq G,\ \commutatorseries G {i+1} \defeq \commutatorsubgroup {\commutatorseries G i,\commutatorseries G i} \ (i\in\naturalnumber).$$
+    Weiterhin setzen wir $\commutatorseries G \omega \defeq \Meet_{i\in\naturalnumber} \commutatorseries G i$ und bezeichnen es als
     \keyword{perfekten Kern}\as{{perfekter Kern}} von $G$.
 \end{definition}
 
@@ -298,16 +557,33 @@ Untergruppen nennt man auch \person{Hall}-Untergruppen.
 
 \section{Der Satz von \person{Jordan}-\person{Hölder}}
 
+\subsection{Das Modularitätsgesetz}
+
+In der Verbandstheorie sind modulare Verbände gewissermaßen eine Abschwächung von distributiven
+Verbänden.
+
+\begin{lemma}
+    Seien $A,B,C$ Untergruppen von $G$ und $C\leq A$, dann gilt
+    $$
+    \cast(A\meet B)\to\set \cast C\to\set=\cast A\to\set\meet\cast B\to\set\cast C\to\set.
+    $$
+\end{lemma}
+
+\begin{proof}
+    Sei $bc:A$, dann ist auch $b:A$, da $c:A$.
+    Andererseits ...
+\end{proof}
+
 \subsection{Das \person{Zassenhaus}-Theorem (Schmetterlings-Theorem)}
 
 \begin{theorem}[Schmetterlingslemma]
     Sei $A\interpret\leq\in{\normalsubobjects G} B$ und $C\interpret\leq\in{\normalsubobjects G} D$, dann gilt
     $$
-    \quotientobject(B\meet D)\join A\over{(B\meet C)\join A}
+    \cosubobject(B\meet D)\join A\over{(B\meet C)\join A}
     \isoto
-    \quotientobject(B\meet D)\over{(B\meet C)\join (A\meet D)} 
+    \cosubobject(B\meet D)\over{(B\meet C)\join (A\meet D)} 
     \isoto
-    \quotientobject(B\meet D)\join C\over{(A\meet D)\join C}.
+    \cosubobject(B\meet D)\join C\over{(A\meet D)\join C}.
     $$
 \end{theorem}
 
@@ -315,6 +591,175 @@ Untergruppen nennt man auch \person{Hall}-Untergruppen.
     
 \end{proof}
 
+<<<<<<< HEAD
+=======
+\begin{theorem}[Verfeinerungssatz von \person{Schreier}]
+    Seien $A$ und $B$ Normalketten. Dann existiert eine Verfeinerung.
+\end{theorem}
+
+\begin{theorem}[\person{Jordan}-\person{Hölder}'sches Theorem] 
+    
+\end{theorem}
+
+\section{Nilpotenz von Gruppen}
+
+Im Folgenden betrachten wir eine Eigenschaft von Gruppen die mit
+\keyword{Nilpotenz}\as{{Nilpotenz}} bezeichnet wird. Sie stellt in gewissem Sinne
+eine Verallgemeinerung der Eigenschaft einer Gruppe dar, kommutativ zu sein. Dies gilt in dem Sinne, dass die nilpotenten Gruppen
+von Klasse 1 genau die abelschen Gruppen sind.
+
+\begin{definition}[Normalkette, Normalreihe]
+    Eine \keyword{Normalkette}\as{{Normalkette}} von $G$ ist eine Kette im Normalenverband
+    $\normalsubobjects G$, ebenso ist eine \keyword{Normalreihe}\as{{Normalreihe}} eine Reihe im Normalenverband
+    $\normalsubobjects G$.
+\end{definition}
+
+\begin{definition}[Zentralkette]
+    Ein Normalreihe $\C$ heißt \keyword{Zentralreihe}\as{{Zentralreihe}}, wenn für alle
+    $a,b\instanceof C$ mit $a\lessdot b$ gilt, dass $b/a$ im Zentrum
+    von $G/a$ liegt oder in äquivalenterweise $\commutatorsubgroup {G, b} \leq a$.
+\end{definition}
+
+\begin{definition}[Untere Zentralreihe $\gamma_i$]
+    Die \keyword{untere Zentralkette}\as{{untere Zentralkette}} $\hull{\lowercentralseries G i:i\in\naturalnumber}\in\set$ ist definiert als
+    $$
+    \lowercentralseries G 0 = G,\ \lowercentralseries G {i+1} = \commutatorsubgroup {G,\lowercentralseries G i} \for i\in\naturalnumber   
+    $$
+    und
+    $$
+    \lowercentralseries G \omega \defeq \Meet \lowercentralseries G i.
+    $$
+\end{definition}
+
+\begin{definition}[obere Zentralreihe]
+    Die \keyword{obere Zentralreihe}\as{{obere Zentralreihe}} $\hull{\uppercentralseries G i:i\in\naturalnumber}\in\set$ ist definiert durch
+    $$
+    \uppercentralseries G 0 = 1,\ \uppercentralseries G {i+1}/\uppercentralseries G i = \centre (G/\uppercentralseries G i) \for
+    i\in\naturalnumber
+    $$
+    und
+    $$
+    \uppercentralseries G \omega \defeq \Join \uppercentralseries G i.
+    $$
+\end{definition}
+
+\begin{lemma}[charakterisierende Eigenschaft der unteren Zentralreihe]
+    Sei $\sequence{C_i}_{i\in\naturalnumber}$ eine aufsteigende Zentralreihe einer Gruppe $G$, dann gilt $\gamma_i G\leq C_i$ ($i\geq 0$). 
+\end{lemma}
+
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ haben wir $\gamma_0 G= G= C_0$. 
+    Für $i\in\naturalnumber$ gilt weiterhin $\gamma_{i+1} G = [G,\gamma_i G]\leq [G,C_i]\leq C_{i+1}$ (da $C_i/C_{i+1}\leq \centre
+    (G/C_{i+1})$). Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\sequence{\gamma_i G}_{i\in
+        I}$ nachzuweisen.
+    Diese ist jedoch leicht zu überprüfen durch $\gamma_{i+1}=[G, \gamma_i G]\leq \gamma_{i+1}$, also liegt $\gamma_i
+    G/\gamma_{i+1} G$ im Zentrum von $G/\gamma_{i+1} G$.    
+\end{proof}
+
+
+\begin{lemma}[charakterisierende Eigenschaft der oberen Zentralreihe]
+    Sei $\sequence{C_i}_{i\in\naturalnumber}$ eine monotone Zentralreihe, dann gilt
+    $$
+    G_i\leq Z_i G
+    $$
+    und insbesondere ist $\sequence{Z_i G}_{i\in\naturalnumber}$ wirklich eine Zentralreihe.
+\end{lemma}
+
+\begin{proof}
+    Mit Induktion nach $i$. Für $i=0$ gilt $Z_0 G = G = C_0$. Für $i\in\naturalnumber$ gilt weiterhin $C_{i+1}/C_i\leq\centre (G/C_i)$, was
+    gleichbedeutend ist mit $[C_{i+1},G]\leq C_i$. Damit gilt aber $[C_{i+1},G]\leq Z_i G$ womit andererseits folgt, dass
+    $C_{i+1}\leq Z_{i+1} G$. Damit ist die Induktion abgeschlossen und es verbleibt die Zentralreiheneigenschaft von $\sequence{Z_i
+        G}_{i\in I}$ nachzuweisen. Diese folgt aber nach Definition trivial, denn $Z_{i+1} G/Z_i G=\centre (G/Z_i)\leq\centre(G/Z_i)$.
+\end{proof}
+
+\begin{definition}[Nilpotenz]
+    Eine Gruppe $G$ heißt \keyword{nilpotent}\as{{nilotente Gruppe}}, falls es eine monotone Zentralreihe gibt, die gegen $G$ konvergiert und
+    ..., falls es eine antitone Zentralreihe gibt, die gegen $1$ konvergiert. 
+\end{definition}
+
+\begin{theorem}[Charakterisierung von Nilpotenz]
+    Die folgenden Aussagen sind für eine endliche Gruppe $G$ äquivalent.
+    \begin{statements}
+            \item $G$ ist nilpotent.
+            \item Die untere Zentralreihe endet mit der trivialen Gruppe: $\exists n\in\naturalnumber:\gamma_n G = 1$.
+            \item Die obere Zentralreihe von $G$ endet mit $G$: $\exists n\in\naturalnumber : Z_n G = G$.
+            \item Für $U\in\subobject G\in\group$, $U\neq G$ gilt $U<N_G U$.
+            \item Für $U\in\subobject G\in\group$, $U\neq 1$ gilt $[G,U]<U$.
+            \item Jede maximale Untergruppe von $G$ ist normal in $G$.
+            \item $G$ ist das direkte Produkt seine $p$-\person{Sylow}-Gruppe.
+            \item Je zwei Elemente von koprimer Ordnung kommutieren.
+    \end{statements}
+\end{theorem}
+
+\begin{proof}
+    \begin{statements}
+        \item Sei $P$ eine maximale $p$-Untergruppe, dann folgt aus $\normalizer_G P < G$, dass $\normalizer^2_G P = \normalizer_G
+    P$. Also ist $G$ nicht nilpotent.
+    \end{statements}
+\end{proof}
+
+\section{Die \person{Frattini}-Gruppe}
+
+\begin{definition}
+    Sei $G$ eine Gruppe mit der Eigenschaft, dass jede echte Untergruppe in einer maximalen Untergruppe liegt. Dann wird die \person{Frattini}-Gruppe $\Phi G$ definiert als der Durchschnitt aller maximalen Untegruppen von $G$.
+\end{definition}
+
+\begin{lemma}
+    Die \person{Frattini}-Gruppe einer Gruppe $G$ ist charakteristische Untergruppe.
+\end{lemma}
+
+\begin{proof}
+    Jeder Gruppenautomorphismus von $G$ induziert einen Verbandsautomorphismus von $\subobject G\in\group$. Unter diesem werden die maximalen
+    Untergruppen auf sich abgebildet. Also $\Phi G^\alpha=\Phi G$.
+\end{proof}
+
+\begin{lemma}
+    Genau dann gilt Element $g\in\Phi G$, falls für jede Menge $X\setleq \cast G\to \set$ gilt $\hull{g,X}\in G=G \implies \hull X\in G = G$. 
+\end{lemma}
+
+\begin{proof}
+    Sei $\hull{g,X}\in G = G$ aber $\hull X \in G < G$, dann existiert eine maximale Untergruppe $M$ von $G$, sodass $\hull X \in
+    G\leq M$, also $g\not\in M\geq \Phi G$.
+    Andererseits sei $M$ eine maximale Untergruppe, dann gilt $\hull{g,M}\in G= M<G$, also $g\in M$.
+\end{proof}
+
+\section{Minimale Normalteiler und charakteristisch einfache Gruppen}
+
+\begin{lemma}[Zusammenspiel  zwischen normal und charakteristisch]\label{nor-char-implies-nor}
+    Sei $C$ charakteristisch in $N$ und $N$ normal in $G$. Dann ist $N$ normal in $G$.
+\end{lemma}
+
+\begin{proof}
+Jede Konjugation (innere Automorphismus) in $G$ lässt $C$ fix, beschränkt sich also zu einem Automorphismus von $N$. Damit lässt
+sie auch $C$ fest, nach Definition von charakteristisch.    
+\end{proof}
+
+\begin{lemma}
+    Sei $N$ ein minimaler Normalteiler einer Gruppe $G$. Dann ist $N$ charakteristisch einfach.
+\end{lemma}
+
+\begin{proof}
+    Sei $1<C$ eine charakteristische Untergruppe von $N$. Dann ist nach \ref{nor-char-implies-nor} auch $C$ normal in $G$. Nach
+    Minimalität von $N$ folgt $N\leq C$ somit also $N=C$. Also ist $N$ charakteristisch einfach.
+\end{proof}
+
+\begin{theorem}[Charakterisierung charakteristisch einfacher Gruppen]
+    Eine Gruppe $G$ mit minimalem Normalteiler $N$ ist genau dann charakteristisch einfach, falls $N$ einfach ist und sie eine Potenz von $N$ ist.
+\end{theorem}
+
+\begin{proof}
+    Sei $G$ charakteristisch einfach und $N$ minimaler Normalteiler. Die Bilder von $N$ unter $\auto G$ erzeugen eine nicht-triviale
+    charakteristische Untergruppe von $G$, also ganz $G$. Sind weiter $N$ und $M$ zwei solcher Bilder, dann gilt $N = M$ oder
+    $N\meet M = 1$, da $N\meet M\leq N$ ein Normalteiler von $G$ ist. Also folgt für verschiedene $N$ und $M$, dass
+    $\commutatorsubgroup M N \leq M\meet N = 1$, somit $M$ und $N$ elementweise kommutieren. Damit ist $G$ das Produkt all
+    jener Bilder, da diese --- wie schon erwähnt --- $G$ erzeugen. Weiter muss dann $N$ einfach sein, da jeder Normalteiler $L$ von
+    $N$ aufgrund der Produktdarstellung von $G$, dann auch normal in $G$ liegt.
+
+    Für die Rückrichtung nehmen wir an, dass $G = \product S_i$.
+\end{proof}
+
+
+>>>>>>> 904d16883160461bb36852603db193bf53794fc3
 
 %%% Local Variables:
 %%% coding: utf-8

@@ -397,8 +397,10 @@
     }%
     % body
     \global\@namedef{#1bodyfont}{}
+    \global\@namedef{#1bodenvironment}{}
     \global\@namedef{#1body}{%
         \@nameuse{#1bodyfont}%
+        \@nameuse{#1bodyenvironment}%
     }%
     % symbol at the end of environment
     \global\@namedef{#1endmark}{}%
@@ -454,6 +456,9 @@
 \def\theremark{\arabic{remark}}
 \def\remarkheadertext{\remarkname\space\theremark\ifx\remarktitlename\empty\else\space\remarkon\space\remarktitlename\fi}
 
+%% remarks environment
+
+
 %% conclusion environment
 \newmathenvironment{conclusion}{\@conclusionname}[section]
 
@@ -474,7 +479,7 @@
 \def\proofheaderfont{\itshape}%
 \def\proofof{\@proofof}
 \def\proofheadertext{\proofname\ifx\prooftitlename\empty\else\space\proofof\space\prooftitlename\fi}
-\def\proofendmark{$\square$}
+\def\proofendmark{$\QED$}
 \def\proofbodyfont{}
 \def\proofbodycommands{\def\paragraph{\@startsection{paragraph}{4}{\z@}
     {.5ex plus .05ex minus .025ex}{-.66em}{\normalsize\itshape}}%

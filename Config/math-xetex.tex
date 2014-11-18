@@ -28,10 +28,6 @@
 
 % w: http://milde.users.sourceforge.net/LUCR/Math/math-font-selection.xhtml
 
-% abbreviations
-\def\LHS{left hand side}
-\def\RHS{right hand side}
-
 % ===== Quick commands for math letters ================================================================
 % calagraphic letters (only upper case available; standard)
 \newcommand{\scA}{\mathcal{A}}
@@ -86,7 +82,6 @@
 \newcommand{\scx}{\mathcal{x}}
 \newcommand{\scy}{\mathcal{y}}
 \newcommand{\scz}{\mathcal{z}}
-
 
 % bold math letters (standard)
 \newcommand{\bfA}{\mathbf{A}}
@@ -197,24 +192,8 @@
 \newcommand{\fkz}{\mathfrak{z}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% BOLD MATH IN BOLD TEXT ENVIRONMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% for bold math in bold text (e.g. sections)
-\makeatletter
-\g@addto@macro\bfseries{\boldmath}
-
-\def\brackets#1{\ifx#1\empty\else\left(#1\right)\fi}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% CATEGORY THEORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% ===== Category theory concepts =====================================================
-
-
-
-
 
 % Define set-builder operator (equivalent to gen for algebras)
 %\newcommand{\set}[2][\empty]{\ifx#1\empty\left\{1\right\}\else\left\{2\right\}_{#1}\fi}% to change
@@ -235,15 +214,9 @@
 
 % morphisms in categories
 % define interval operator: o - open, c - closed
-\newcommand{\intervalcc}[2]{\left[#1,#2\right]}
-\newcommand{\intervalco}[2]{\left[#1,#2\right)}
-\newcommand{\intervaloc}[2]{\left(#1,#2\right]}
-\newcommand{\intervaloo}[2]{\left(#1,#2\right)}
+\def\interval#1#2#3#4{}
 
-\newcommand{\inter}{\mathop\mathrm{int}}
-\newcommand{\face}{\mathop\mathrm{F}}
-\newcommand{\Pol}{\mathop\mathrm{Pol}}
-\newcommand{\Inv}{\mathop\mathrm{Inv}}
+
 
 \let\originaltimes\times%
 \renewcommand{\times}{\mathbin{\sqcap}}
@@ -256,6 +229,7 @@
 \newcommand{\congeq}{\trianglerighteq}
 \newcommand{\conlt}{\lhd}
 \newcommand{\congt}{\rhd}
+\def\define#1{\mathrel{\mathrel{\mathop:}\mkern-1.2mu#1}}
 \newcommand{\defeq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu=}}
 \newcommand{\eqdef}{\mathrel{=\mkern-1.2mu\mathrel{\mathop:}}}
 \newcommand{\defdoteq}{\mathrel{\mathrel{\mathop:}\mkern-1.2mu\doteq}}
@@ -282,7 +256,6 @@
 \newcommand{\fin}{\mathrm{fin}}
 
 % Define groups (optarg: properties such as -> abelian, noetherian (acc), artinian (dcc) etc.)
-\newcommand{\Grp}[1][\empty]{\if\empty{#1}{\mathbf{Grp}}\else{\mathbf{Grp}_{#1}}}
 \def\PGL{\mathrm{PGL}}
 \def\PGammaL{\mathrm{P\Gamma L}}
 \def\GL{\mathrm{GL}}
@@ -374,11 +347,11 @@
 
 
 % common algebraic objects
-\newcommand{\reals}{\mathbb{R}} 			% real numbers
-\newcommand{\nats}{\mathbb{N}} 				% natural numbers
-\newcommand{\ints}{\mathbb{Z}} 				% integers
-\newcommand{\rats}{\mathbb{Q}}				% rationals
-\newcommand{\complex}{\mathbb{C}}			% complex numbers
+\def\realnumber{\mathbb{R}} 			% real numbers
+\def\naturalnumber{\mathbb{N}} 				% natural numbers
+\def\integer{\mathbb{Z}} 				% integers
+\def\rationalnumber{\mathbb{Q}}				% rationals
+\def\complexnumber{\mathbb{C}}			% complex numbers
 \newcommand{\field}[1]{\mathbb{F}_{#1}}  		% finite field
 \newcommand{\cardinals}{\mathbf{Cn}}                     % The cardinal numbers
 \newcommand{\ords}{\boldsymbol{On}}                      % The ordinal numbers
@@ -442,7 +415,7 @@
 % combinatorics
 %%
 
-\newcommand{\binom}[2]{\left(\begin{array}{c}#1\\  #2\end{array}\right)}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % metric spaces and normed spaces and vector spaces %
@@ -489,6 +462,8 @@
 % groups - symbols %
 %%%%%%%%%%%%%%%%%%%%
 
+\def\factorial#1{{#1}!}
+
 \newcommand{\stab}[1][]{\if&#1{\mathop\mathrm{stab}}&\else{\mathop\mathrm{stab}_{#1}}\fi}					% the stabilizer ... subscripts to be added
 
 \newcommand{\orb}[1][]{\ifx&#1&\mathrm{orb}\else\mathrm{orb}_{#1}\fi} 					% orbit ... subscrit to be added (group)
@@ -512,6 +487,23 @@
 \newcommand{\rightsemidirprod}[1][]{\ifx#1\empty\rtimes\else{\rtimes_{#1}}\fi}
 \newcommand{\normalisor}[2][]{\ifx#1\empty{\mathrm{N}\left(#2\right)}\else{\mathrm{N}_{#1} \left(#2\right)}\fi}
 
+%%%%%%%%%%%
+%% Types %%
+%%%%%%%%%%%
+
+\def\instanceof{:}
+\def\ofmetatype{::}
+\def\type#1{(#1)}
+%%%%%%%%%
+% Types %
+%%%%%%%%%
+
+\def\subinstances#1\in#2{\mathrm{Sub}_{#2}{#1}}
+% Gleichheit als Typ
+\def\equals{=}
+% Gleichheit als Instanzen eines Typs
+\def\as#1\equals{\stackrel{#1}{\equiv}}
+
 %%%%%%%%%%%%%%
 % Categories %
 %%%%%%%%%%%%%%
@@ -523,27 +515,41 @@
 \def\codomain{\mathop{\dual{\mathrm{dom}}}}
 \def\domain{\mathop{\mathrm{dom}}}
 \def\normalsubobjects{\mathop{\mathrm{Con}}}
-\def\subobjects{\mathop{\mathrm{Sub}}}
+\def\subobject#1\in#2{\mathop{\mathrm{Sub}_{#2}}{#1}}
 \def\cosubobjects{\mathop{\dual{\mathrm{Sub}}}}
 \def\cosubobject#1\over#2{\frac{#1}{#2}}
 
 % morphisms
 \def\monoto{\rightarrowtail}% mono
 \def\epito{\twoheadrightarrow}% epi
-\def\isoto{\leftrightarrow}
+\def\isoto{\leftrightarrow}% iso
 \def\to{\rightarrow}% morphism
+\def\auto{\cwcirclearrow}
 \def\interpret#1\in#2{{#1}_{#2}}
 
 % standard categories
 \def\set{\mathbf{\mathrm{Set}}}
-\def\topspace{\mathbf{\mathrm{Top}}}
-\def\lattice{\mathbf{\mathrm{Lat}}}
+\def\topspace{\mathbf{Top}}
+\def\lattice{\mathbf{Lat}}
 \def\poset{\mathbf{Poset}}
 \def\ring{\mathbf{Rng}}
+\def\category{\mathbf{Cat}}
+\def\group{\mathbf{Grp}}
+\def\cyclicgroup{\mathbf{Cyc}}
+\def\logic{\mathbf{Log}}
+
+% power the binary operator #1 to #2 
+\def\power#1\to#2{#1#2}
+\def\power#1\operation#2\exponent#3{{#1}^{{#3}{#2}}}
+
+\def\multinomialcoefficient#1#2{\left(\begin{array}{#1}\\ {#2}\end{array}\right)}
+
+%%%%%%%%
+%% Logic
+%%%%%%%%
+\def\equivalent{\Leftrightarrow}
 
 
-\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
-\newcommand{\Out}{\mathop{\mathrm{Out}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\rk}{\mathop{\mathrm{rk}}\nolimits} % rank of a group module/ lattice
 
@@ -562,11 +568,7 @@
 
 
 % generated substructure
-\def\hull#1{\left\langle#1\right\rangle} 
-
-% mathematical structure (type)
-\def\struct#1{\left\langle#1\right\rangle}
-
+\def\hull#1\in#2{\left\langle{#1}\right\rangle_{#2}} 
 
 \def\Clo{\mathrm{Clo}}
 \def\Loc{\mathrm{Loc}}
@@ -661,17 +663,17 @@
 
 
 
-\newcommandx{\homl}[3][1=1,2=2,3=3]{\ifx#1\empty{\mathrm{Hom}}\else{\mathrm{Hom}_{#1}}\fi(#2,#3)}
-\newenvironment{myproofof}[1]{\par
-  \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \trivlist
-  \item[\hskip\labelsep
-        \bfseries
-    Proof of #1\@addpunct{.}]\ignorespaces
-}{%
-  \popQED\endtrivlist\@endpefalse
-}
+%\newcommandx{\homl}[3][1=1,2=2,3=3]{\ifx#1\empty{\mathrm{Hom}}\else{\mathrm{Hom}_{#1}}\fi(#2,#3)}
+%\newenvironment{myproofof}[1]{\par
+%  \pushQED{\qed}%
+%  \normalfont \topsep6\p@\@plus6\p@\relax
+%  \trivlist
+%  \item[\hskip\labelsep
+%        \bfseries
+%    Proof of #1\@addpunct{.}]\ignorespaces
+%}{%
+%  \popQED\endtrivlist\@endpefalse
+%}
 \makeatother
 
 

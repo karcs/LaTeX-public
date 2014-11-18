@@ -1,0 +1,251 @@
+
+%% This is file `sections.sty',
+
+\ProvidesPackage{tokenlist}[2014/06/11 v0.1]
+
+
+%%%%%%%%%%%%%%%%%%%
+% PACKAGE OPTIONS %
+%%%%%%%%%%%%%%%%%%%
+
+%% terminate option processing
+\ProcessOptions\relax
+
+%%%%%%%%%%%%%%%%%
+% 1 TOKEN LISTS %
+%%%%%%%%%%%%%%%%%
+
+% 1.1 NEW LIST
+
+% create a new token list
+\def\newtokens#1{%
+    \expandafter\newtoks\csname #1toks\endcsname% is empty by default
+    \expandafter\def\csname the#1tokens\endcsname{\the\csname #1toks\endcsname}%
+}%
+
+% get the token list
+\def\gettokens#1{%
+    \csname the#1tokens\endcsname%
+}%
+
+% set token list
+\def\settokens#1#2{%
+    \csname #1toks\endcsname={#2}%
+}%
+
+% 1.2 PREPEND AND APPEND A TOKEN
+
+% prepend token #1 to token list #2
+\def\prepend#1\to#2{%
+    \begingroup%
+    \newtoks\tmp%
+    \tmp={#1}%
+    \edef\act{\csname #2toks\endcsname={\the\tmp\csname the#2tokens\endcsname}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+\def\prependentry#1\to#2{%
+    \begingroup%
+    \newtoks\tmp%
+    \tmp={#1}%
+    \edef\act{\csname #2toks\endcsname={\noexpand\entry{\the\tmp}\csname the#2tokens\endcsname}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+% prepend expanded token #1 to token list #2
+\def\eprepend#1\to#2{%
+    \begingroup%
+    \edef\act{\csname #2toks\endcsname={{#1}\csname the#2tokens\endcsname}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+% prepend expanded token #1 to token list #2
+\def\eprependentry#1\to#2{%
+    \begingroup%
+    \edef\act{\csname #2toks\endcsname={\noexpand\entry{#1}\csname the#2tokens\endcsname}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+
+% append token #1 to token list #2
+\def\append#1\to#2{%
+    \begingroup%
+    \newtoks\tmp%
+    \tmp={#1}%
+    \edef\act{\csname #2toks\endcsname={\csname the#2tokens\endcsname\the\tmp}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+\def\appendentry#1\to#2{%
+    \begingroup%
+    \newtoks\tmp%
+    \tmp={#1}%
+    \edef\act{\csname #2toks\endcsname={\csname the#2tokens\endcsname\noexpand\entry{\the\tmp}}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+% append expanded token #1 to token list #2
+\def\eappend#1\to#2{%
+    \begingroup%
+    \edef\act{\csname #2toks\endcsname={\csname the#2tokens\endcsname{#1}}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+\def\eappendentry#1\to#2{%
+    \begingroup%
+    \edef\act{\csname #2toks\endcsname={\csname the#2tokens\endcsname\noexpand\entry{#1}}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+% 1.3 SPLIT LISTS
+
+% split a non-empty expanded token list into head and tail
+\def\split#1#2\head#3\tail#4{%
+    #4={#2}%
+    \def#3{#1}%
+}%
+
+\def\splitentry\entry#1#2\head#3\tail#4{%
+    #4={#2}%
+    \def#3={#1}%
+}%
+    
+% 1.4 POP A TOKEN
+
+% pop first element of token list #1 into #2
+% if token list #1 is empty then throw an error message
+\def\pop#1\into#2{%
+    \begingroup%
+    \edef\tmpa{\csname the#1tokens\endcsname}%
+    \ifx\tmpa\empty%
+    \errmessage{\string\pop\space macro could not finish being applied to an empty token list.}%
+    \fi%
+    \edef\act{%
+        \noexpand\split\csname the#1tokens\endcsname%
+        \noexpand\head\noexpand#2\noexpand\tail\csname #1toks\endcsname%
+    }%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+\def\popentry#1\into#2{%
+    \begingroup%
+    \edef\tmpa{\csname the#1tokens\endcsname}
+    \ifx\tmpa\empty%
+    \errmessage{\string\pop\space macro could not finish being applied to an empty token list.}%
+    \fi%
+    \edef\act{%
+        \noexpand\splitentry\csname the#1tokens\endcsname%
+        \noexpand\head\noexpand#2\noexpand\tail\csname #1toks\endcsname%
+    }%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+
+% POP LAST ELEMENT OF A LIST
+
+% has an error in it
+
+% EXPLANATION: use \tmpinit to store the
+% initial part of the list #1 locally and
+% \tmphead to store the head of the
+% local version of #1 (which is a suffix of
+% the initial #1).
+% Finally use \tmpheadtoks to store the
+% tokens of the macro \tmphead and \act to
+% make the new definitions.
+\def\poplast#1\into#2{%
+    \begingroup%
+    \edef\tmp{\the#1}%
+    \ifx\tmp\empty%
+    \errmessage{\string\poplast\space command
+        could not finish. The token list is
+        empty.}%
+    \else%
+    \newtoks\tmpinit%
+    \tmpinit={}
+    \loop%
+    \pop#1\into\tmphead%
+    \edef\tmp{\the#1}%
+    TMPHEAD:\tmphead%
+    \unless\ifx\tmp\empty%
+    \expandafter\append\expandafter{\tmphead}\to\tmpinit%
+    \repeat%
+    \fi%
+    \newtoks\tmpheadtoks%
+    \expandafter\tmpheadtoks\expandafter=\expandafter{\tmphead}
+    \edef\act{\noexpand#1={\the\tmpinit} \noexpand\def\noexpand#2{\the\tmpheadtoks}}
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+
+
+% 1.4 LAST ELEMENT
+
+% get last element of list
+\def\last#1{%
+    \begingroup% keep things local
+    \def\tail{#1}%
+    \loop%
+    \expandafter\@split\tail(head:)\head(tail:)\tail%
+    \unless\ifx\tail\empty%
+    \repeat%
+    \head%
+    \endgroup%
+}%
+
+    
+% differ two token lists #1 and #2 and write the result into #3%
+\def\diffentries#1\against#2\into#3{%
+    \begingroup% keep things local
+    \newif\ifcondition%
+    \loop% start the diff loop
+    \edef\tmpa{\csname the#1tokens\endcsname}%
+    \edef\tmpb{\csname the#2tokens\endcsname}%
+    \unless\ifx\tmpa\empty%
+    \unless\ifx\tmpb\empty%
+    \popentry{#1}\into\tmpheada%
+    \popentry{#2}\into\tmpheadb%
+    \ifx\tmpheada\tmpheadb%
+    \conditiontrue%
+    \else%
+    \expandafter\prependentry{\tmpheada}\to{#1}%
+    \expandafter\prependentry{\tmpheadb}\to{#2}%
+    \conditionfalse%
+    \fi%
+    \else%
+    \conditionfalse%
+    \fi%
+    \else%
+    \conditionfalse%
+    \fi%
+    \ifcondition%
+    \repeat%
+    \edef\act{\csname #3toks\endcsname={\csname the#1toks\endcsname}}%
+    \expandafter%
+    \endgroup%
+    \act%
+}%
+
+\endinput

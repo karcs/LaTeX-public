@@ -1,0 +1,60 @@
+%% This is file `counter.tex',
+
+% 1 NEW COUNTER
+
+% declare new counter #1
+\def\newcounter#1{%
+% define new counter #1 macro
+\expandafter\def\csname #1counter\endcsname{0}%
+}%
+
+% 2 SET COUNTER
+
+% set the counter format of counter #1
+\def\setcounter#1#2{%
+\expandafter\def\csname #1counter\endcsname{#2}
+}%
+
+% 3 GET COUNTER
+
+% get (bare) counter #1
+\def\getcounter#1{%
+\csname #1counter\endcsname%
+}%
+
+% get (bare) counter of the current layer
+\def\counter{%
+\getcounter{\layer}%
+}%
+
+% get (bare) counter of the current layer
+\def\thecounter{%
+\getthecounter{\layer}%
+}%
+
+% 4 RESET COUNTER
+
+% reset counter function (sets counter #1 to zero)
+\def\resetcounter#1{%
+% reset counter #1
+\expandafter\def\csname #1counter\endcsname{0}
+}%
+
+% 5 INCREMENT COUNTER
+
+% increment counter (increases counter #1 by 1)
+\def\incrementcounter#1{%
+% increment counter #1
+\begingroup%
+\def\tmpcount{\expandafter\numexpr\csname #1counter\endcsname+1\relax}%
+\expandafter\edef\csname #1counter\endcsname{\the\tmpcount}%
+\edef\act{}%
+\expandafter%
+\endgroup%
+\act
+}%                                               
+
+
+%%% Local Variables: 
+%%% mode: plain-tex
+%%% End: 

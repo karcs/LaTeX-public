@@ -1,0 +1,13 @@
+% This is file `tree.sty',
+\ProvidesPackage{tree}
+\RequirePackage{tokenlist}
+
+% declare new tree #1
+\def\newtree#1{%
+    \expandafter\def\csname #1tree\endcsname{}
+}%
+
+% add token #1 to tree #2 as successor of #3
+\add#1\to#2\after#3{%
+    \if
+}%

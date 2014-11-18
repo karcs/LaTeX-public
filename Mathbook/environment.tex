@@ -1,0 +1,29 @@
+% This is file `environment.tex',
+
+% 0 REQUIRED PACKAGES 
+
+\input{counter}
+\input{layer}
+\input{title}
+
+% 1 ENVIRONMENTS
+
+% set the current environment
+\def\setenvironment#1{%
+    \def\environment{#1}%
+}%
+
+% get the current environment
+\def\getenvironment{%
+    \environment%
+}%
+
+\def\newenvironment#1#2{%
+    \newcounter{#1}
+    \expandafter\setheader{#1}{\getheader{default}}%
+    \expandafter\long\expandafter\def\csname #1\endcsname{%      
+        \begingroup%
+        \getheader{#1}%
+    }%
+    \expandafter\def\csname end#1\endcsname{\endgroup}
+}%

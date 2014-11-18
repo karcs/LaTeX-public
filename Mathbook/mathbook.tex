@@ -1,0 +1,97 @@
+%% This is file `mathbook.tex',
+
+% 0 REQUIRED PACKAGES
+
+\input header.tex
+\input name.tex
+\input layer.tex
+%\RequirePackage{color}
+%\RequirePackage{fontspec}
+%\setmainfont{TeX Gyre Pagella}
+%\RequirePackage{mathtoolbox}
+%\setmathfont[math-style=ISO]{TeX Gyre Pagella Math}
+
+%\RequirePackage[ngerman]{babel}
+%\RequirePackage[utf8]{inputenc}
+    
+% 1 PACKAGE OPTIONS
+
+% language
+
+% english (default)
+%\setname{part}{Part}%
+%\setname{chapter}{Chapter}%
+%\setname{section}{Section}%
+%\setname{subsection}{Subsection}%
+%\setname{paragraph}{Paragraph}%
+%\setname{subparagraph}{Subparagraph}%
+
+% german
+\setname{part}{Teil}%
+\setname{chapter}{Kapitel}%
+\setname{section}{Abschnitt}%
+\setname{subsection}{Unterabschnitt}%
+\setname{paragraph}{Absatz}%
+\setname{subparagraph}{Unterabsatz}%
+
+% 3 DOCUMENT SETUP
+
+%new layer : part
+\newlayer{part}%
+\setname{part}{Part}%
+\setheaderfont{part}{\bf}%
+\setheadersize{part}{\tenpoint}%
+\setheaderpreskip{part}{\vskip 5pt}%
+\setheaderpostskip{part}{\vskip 5pt}%
+\setheader{part}{\name\space\counter}%
+\setcounter{part}{\thepartcounter}%
+
+% new layer : chapter
+\newlayer{chapter}%
+\setname{chapter}{Chapter}%
+\setheaderfont{chapter}{\bf}%
+\setheadersize{chapter}{\tenpoint}%
+\setheaderpreskip{chapter}{\vskip 5pt}%
+\setheaderpostskip{chapter}{\vskip 5pt}%
+\setheader{chapter}{\name\space\counter}%
+\setcounter{chapter}{\thechaptercounter}%
+
+% new layer : section
+\newlayer{section}%
+\setname{section}{Section}%
+\setheaderfont{section}{\bf}%
+\setheadersize{section}{\tenpoint}%
+\setheaderpreskip{section}{\vskip 5pt}%
+\setheaderpostskip{section}{\vskip 5pt}%
+\setheader{section}{\counter\space\title}%
+\setcounter{section}{\thesectioncounter}%
+
+% new layer : subsection
+\newlayer{subsection}%
+\setname{subsection}{Subsection}%
+\setheaderfont{subsection}{\bf}%
+\setheadersize{subsection}{\tenpoint}%
+\setheaderpreskip{subsection}{\vskip 5pt}%
+\setheaderpostskip{subsection}{\vskip 5pt}%
+\setheader{subsection}{\counter\space\title}%
+\setcounter{subsection}{\thesectioncounter\thesubsectioncounter}%
+
+% new layer : paragraph
+\newlayer{paragraph}%
+\setname{paragraph}{Paragraph}%
+\setheaderfont{paragraph}{\bf}%
+\setheadersize{paragraph}{\tenpoint}
+\setheaderpreskip{paragraph}{\vskip 5pt}%
+\setheaderpostskip{paragraph}{\vskip 5pt}%
+\setheader{paragraph}{\title.}%
+\setcounter{paragraph}{\S\theparagraphcounter}%
+
+% new layer : subparagraph
+\newlayer{subparagraph}%
+\setname{subparagraph}{Subparagraph}%
+\setheaderfont{subparagraph}{\bf}%
+\setheaderpreskip{subparagraph}{\vskip 5pt}%
+\setheaderpostskip{subparagraph}{\vskip 5pt}%
+\setheadersize{subparagraph}{\tenpoint}
+\setheader{subparagraph}{\title.}%
+\setcounter{subparagraph}{\S\theparagraphcounter.\thesubparagraphcounter}%

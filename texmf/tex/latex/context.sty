@@ -1,0 +1,50 @@
+% This is file `context.sty'
+\ProvidesPackage{context}
+
+% Required Packages
+\RequirePackage{counter}
+
+%%%%%%%%%%%%%%%%%%%%% 
+%%% CONTEXT %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+%% working
+
+% (global) counter for the depth of context
+\newcounter{contextdepth}
+\setcounter{contextdepth}{0}
+
+% (global) token list storing the context
+\def\context@current{}%
+\def\contextitem@current{}% (global) current item
+
+% no getter/setter is given
+
+% diff context with current context
+\def\@diffcontext#1{%
+    \@diff#1(against:)\current@context%
+}%
+
+% push to context (as last element)
+% #1 is context item
+% #2 is context
+\def\pushcontextitem#1{%
+    \global\@app#1(to:)\context@current%
+}%
+
+% pop from context (last element)
+% #1 is contextitem
+% #2 is context
+\def\popcontextitem#1{%
+    \global\@poplast\context@current (into:)#1% pop last element from context copy into macro #1
+}%
+
+% first arg : environment in which the item was pushed
+% second arg : context item formatter
+% third arg : number of environment
+% fourth arg : title
+% third arg : page (style and number
+\def\makecontextitem#1#2#3#4#5{%
+    \csname makecontextitem@#1\endcsname#2#3#4
+}%
+\endinput

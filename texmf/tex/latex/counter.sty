@@ -1,0 +1,94 @@
+%% This is file `counter.sty',
+\ProvidesPackage{counter}
+\RequirePackage{tokenlist}
+
+% declare new counter #1
+\def\newcounter#1{%
+    % define new counter #1
+    \expandafter\newcount\csname #1counter\endcsname%
+    % set it to zero
+    \csname #1counter\endcsname=0%
+    % define subcounter list to counter #1
+    \expandafter\newtoks\csname #1subcounters\endcsname%
+    \csname #1subcounters\endcsname={}%
+}%
+
+% set the counter format of counter #1
+\def\setcounterformat#1#2{%
+    \expandafter\def\csname the#1counter\endcsname{#2}
+}%
+
+% set counter #1 to value #2
+\def\setcounter#1#2{%
+    % set counter #1 to #2
+    \csname #1counter\endcsname=#2
+    % reset subcounters of counter #1
+    \resetsubcounters{#1}
+}%
+
+% reset counter function (sets counter #1 to zero)
+\def\resetcounter#1{%
+    % reset counter #1
+    \csname #1counter\endcsname=0
+    % reset subcounters of counter #1
+    \resetsubcounters{#1}
+}%
+
+% increment counter (increases counter #1 by 1)
+\def\incrementcounter#1{%
+    % increment counter #1
+    \expandafter\advance\csname #1counter\endcsname by 1
+    % reset subcounters of counter #1
+    \resetsubcounters{#1}
+}%
+
+% add counter #1 to subcounters of counter #2
+\def\addsubcounter#1\to#2{%
+    \toks0={{#1}}%
+    \edef\act{%
+        \expandafter\noexpand\csname #2subcounters\endcsname={\the\toks0
+            \expandafter\the\csname #2subcounters\endcsname}}%
+    \act%
+    % clear local vars
+    \let\act\@undefined%
+}%
+
+% reset subcounters of counter #1
+\def\resetsubcounters#1{% problem : \tmp is
+                        % already used in
+                        % \pop \into macro
+                        % so use \tmpp
+    % find a general treatment for this
+    % problem (parameters in macros
+    % overwriting input parameters
+    \loop%
+    \expandafter\pop\csname #1subcounters\endcsname\into\tmpp%
+    \unless\ifx\tmpp\empty%
+    \expandafter\expandafter\expandafter\global\expandafter\csname \tmpp counter\endcsname=0%
+    % reset the subcounters of subcounter \tmp
+    \resetsubcounters{\tmpp}%
+    \repeat%
+    % reset local variables
+    \let\tmpp\@undefined
+}%
+
+% set the composite counter format
+\def\setcompositecounterformat#1#2{%
+    \expandafter\def\csname the#1compositecounter\endcsname{#2}%
+}%
+
+% get formatted counter
+\def\getcounter#1{%
+    \csname the#1counter\endcsname%
+}%
+
+% get composite counter
+\def\getcompositecounter#1{%
+    \csname the#1compositecounter\endcsname%
+}%
+
+%\def\setsubcounters#1#2{%
+%    \expandafter\def\csname #1subcounters\endcsname{#2}%
+%}%
+
+\endinput

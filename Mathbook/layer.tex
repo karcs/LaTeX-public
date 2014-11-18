@@ -1,0 +1,67 @@
+% This is file `layer.sty',
+
+% 0 REQUIRED PACKAGES
+
+\input counter.tex
+\input tokenlist.tex
+\input title.tex
+
+% 1 NEW LAYER
+
+% define new layer #1
+\def\newlayer#1{%
+    % introduce new counter for the layer
+    \newcounter{#1}%
+    % layer command (this is a document command) TODO
+    %\edef\cmd{\csname #1\endcsname}
+    %\edef\endcmd{\csname end#1\endcsname}
+    %\edef\act{%
+    %    \noexpand\def\cmd\noexpand}
+    \expandafter\long\expandafter\def\csname #1\endcsname##1{%
+        % set current layer to #1 and increment counter #1
+        \unless\ifx\layer\undefined%
+        \endgroup% end the current layer
+        \fi%
+        \incrementcounter{#1}%
+        \settitle{#1}{##1}%
+        \begingroup%
+        \setlayer{#1}%
+        \header%
+    }%
+    \expandafter\def\csname end#1\endcsname{%
+        \endgroup%
+    }%
+    \newtokens{#1sublayers}%
+}%
+
+% 2 GET AND SET LAYER
+
+% set the current layer
+\def\setlayer#1{%
+    \def\layer{#1}%
+}%
+
+% get the current layer
+\def\getlayer{%
+    \layer%
+}%
+
+% 3 SUBLAYERS
+
+% 3.1 ADD SUBLAYER
+
+% add sublayer #1 to layer #2
+\def\addsublayer#1\to#2{%
+    \prependentry{#1}\to{#2}%
+}%
+
+% 3.2 GET SUBLAYERS
+
+% get sublayers
+\def\getsublayers#1{%
+    \csname #1sublayers\endcsname%
+}%
+
+%%% Local Variables: 
+%%% mode: plain-tex
+%%% End: 

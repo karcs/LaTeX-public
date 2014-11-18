@@ -1,30 +1,41 @@
-%%%%%%%%%%%%%%%%%%%%%%%
-% UNICODE-MATH EXAMPLE FILE
-%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass{article}
+%
+%\usepackage[de]{mathenvironment}
+%\usepackage[de]{mathbook}%
 
-%%% for math stuff
-\input{../Config/math-xetex.tex}
+%%% german language
+%\input{../Config/german.tex}
 
 %%% for index stuff
-\input{../Config/index.tex}
+%\input{../Config/index.tex}
 
 % Load fontspec and define a document font:
-\usepackage{fontspec}
-\setmainfont{TeX Gyre Pagella}
+%\usepackage{fontspec}
+%\setmainfont{TeX Gyre Pagella}
 
 % Load unicode-math and define a math font:
-\usepackage{unicode-math}
-\setmathfont[math-style=ISO]{texgyrepagella-math.otf}
-% \usepackage{bm}
-\usepackage{tikz-cd}
-\usepackage[de]{mathenv}
-\usepackage{layer}%
+%\usepackage{unicode-math}
+%\setmathfont[math-style=ISO]{texgyrepagella-math.otf}
 
+\usepackage{mathbook}
+%\usepackage{number}
 \begin{document}
+\section{Hallo}
 
-\input{Grundlagen-Sylowsche-Saetze.tex}
+\subsection{Hallo}
+
+\section{Hallo}
+
+\subsection{Hallo}
+
+\subsection{Hallo}
+
+$$
+A+B\coprod\bigsqcup
+$$
+
+%\section%%
+%\input{Grundlagen-Sylowsche-Saetze.tex}
 
 \end{document}
 

@@ -1,0 +1,11 @@
+% This is file `header.sty',
+\ProvidesPackage{header}
+
+\def\setheader#1#2{%
+    \expandafter\def\csname #1header\endcsname{#2}%
+}%
+
+\def\getheader#1{%
+    \csname #1header\endcsname%
+}%
+

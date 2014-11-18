@@ -1,0 +1,99 @@
+% This is file `header.tex',
+
+% HEADERS OF LAYERS AND ENVIRONMENTS
+
+% set header of layer or environment #1
+\def\setheader#1#2{%
+    \expandafter\def\csname #1header\endcsname{#2}%
+}%
+
+% get header of layer or environment #1
+\def\getheader#1{%
+    \begingroup%
+    \expandafter\csname #1headerpreskip\endcsname%
+    \expandafter\csname #1headerfont\endcsname%
+    \expandafter\csname #1header\endcsname%
+    \expandafter\csname #1headerpostskip\endcsname%
+    \endgroup%
+}%
+
+% get the current header
+\def\header{%
+    \begingroup%
+    \expandafter\csname\layer 1headerpreskip\endcsname%
+    \expandafter\csname\layer headersize\endcsname%
+    \expandafter\csname\layer headerfont\endcsname%
+    \expandafter\csname\layer header\endcsname%
+    \expandafter\csname\layer headerpostskip\endcsname%
+    \endgroup%
+}%
+
+% HEADER FONT
+
+% set header font of layer or environment #1
+\def\setheaderfont#1#2{%
+    \expandafter\def\csname #1headerfont\endcsname{#2}%
+}%
+
+% get font of header of layer or environment #1
+\def\getheaderfont#1{%
+    \csname #1headerfont\endcsname%
+}%
+
+% get the font of current header
+\def\headerfont{%
+    \expandafter\csname\layer header\endcsname%
+}%
+
+% HEADER SIZE
+
+% set header size of layer or environment #1
+\def\setheadersize#1#2{%
+    \expandafter\def\csname #1headersize\endcsname{#2}%
+}%
+
+% get size of header of layer or environment #1
+\def\getheadersize#1{%
+    \csname #1headersize\endcsname%
+}%
+
+% get the size of current header
+\def\headersize{%
+    \expandafter\csname\layer header\endcsname%
+}%
+
+% SPACE BEFORE AND AFTER HEADER
+
+% set header preskip of layer or environment #1
+\def\setheaderpreskip#1#2{%
+    \expandafter\def\csname #1headerpreskip\endcsname{#2}%
+}%
+
+% get preskip of header of layer or environment #1
+\def\getheaderpreskip#1{%
+    \csname #1headerpreskip\endcsname%
+}%
+
+% get the preskip of current header
+\def\headerpreskip{%
+    \expandafter\csname\layer header\endcsname%
+}%
+
+% set header postskip of layer or environment #1
+\def\setheaderpostskip#1#2{%
+    \expandafter\def\csname #1headerpostskip\endcsname{#2}%
+}%
+
+% get postskip of header of layer or environment #1
+\def\getheaderpostskip#1{%
+    \csname #1headerpostskip\endcsname%
+}%
+
+% get the postskip of current header
+\def\headerpostskip{%
+    \expandafter\csname\layer header\endcsname%
+}%
+
+%%% Local Variables: 
+%%% mode: plain-tex
+%%% End: 

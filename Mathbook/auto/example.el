@@ -1,29 +1,11 @@
 (TeX-add-style-hook "example"
  (lambda ()
     (TeX-add-symbols
-     "body"
-     "title"
-     "author"
+     "regular"
      "math"
-     "UnicodeMathSymbol"
-     "mathord"
-     "mathop"
-     "mathbin"
-     "mathrel"
-     "mathopen"
-     "mathclose"
-     "mathpunct"
-     "mathalpha"
-     "mathfence"
-     "mathaccent"
-     "mathbotaccent"
-     "mathover"
-     "mathunder"
-     "newcounter"
-     "incrementcounter"
-     "tmpcount"
-     "a"
-     "count")
+     "fontsize"
+     "bf"
+     "fontstyle")
     (TeX-run-style-hooks
-     "unicode-math-table")))
+     "mathbook")))
 

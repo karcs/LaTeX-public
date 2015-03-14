@@ -1,7 +1,5 @@
 (TeX-add-style-hook "master"
  (lambda ()
-    (LaTeX-add-bibliographies
-     "math")
     (TeX-run-style-hooks
      "geometry"
      "outer=2cm"
@@ -24,14 +22,5 @@
      "../Config/math"
      "titlepage"
      "dedication"
-     "statutorydeclaration"
-     "acknowledgement"
-     "prelim"
-     "combcons"
-     "mdsmainconj"
-     "generichyperplanearr"
-     "reedsolomon"
-     "mdsmainconjnleqp"
-     "mdsmainconjknesgraph"
-     "summary")))
+     "statutorydeclaration")))
 

@@ -1,11 +1,10 @@
 % example.top
 \unprotect
-\nonstopmode
 \def\MPOSTformatswitch{-progname=metafun -mem=}
-\setupsystem[\c!n=3,\c!m=1]
+\setupsystem[\c!n=1,\c!m=1]
 \setupsystem[\c!method=2]
 \setupsystem[\c!type=linux]
-\setupsystem[\c!random=715]
+\setupsystem[\c!random=908]
 \setupsystem[inputfile=example.tex]
 \startsetups *runtime:options
 \setupoutput[pdftex]

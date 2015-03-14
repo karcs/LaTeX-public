@@ -1,0 +1,178 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
+
+(%i44) list0:append([0],makelist(1,i,0,7));
+(%o44)                    [0, 1, 1, 1, 1, 1, 1, 1, 1]
+(%i45) list4:append([1],makelist(gf_exp(x+1,4*i),i,0,7));
+(%o45)                    [1, 1, 2, 1, 2, 1, 2, 1, 2]
+(%i46) list3:append([0],makelist(gf_exp(x+1,3*i),i,0,7));
+(%o46)         [0, 1, 2 x + 1, x, x + 1, 2, x + 2, 2 x, 2 x + 2]
+(%i47) list2:append([0],makelist(gf_exp(x+1,2*i)+gf_mult(x+1,gf_exp(x+1,6*i)),i,0,7));
+(%o47) [0, x + 2, 3 x + 2, 2 x + 4, 3 x + 1, x + 2, 3 x + 2, 2 x + 4, 3 x + 1]
+(%i48) list1:append([0],makelist(gf_exp(x+1,2i),i,0,7));
+incorrect syntax: I is not an infix operator
+elist(gf_exp(x+1,2i)
+                  ^
+(%i48) list1:append([0],makelist(gf_exp(x+1,i),i,0,7));
+(%o48)         [0, 1, x + 1, 2 x, 2 x + 1, 2, 2 x + 2, x, x + 2]
+(%i49) matrix(list0,list1,list2,list3,list4);
+(%o49) 
+      [ 0    1       1        1        1       1       1        1        1    ]
+      [                                                                       ]
+      [ 0    1     x + 1     2 x    2 x + 1    2    2 x + 2     x      x + 2  ]
+      [                                                                       ]
+      [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1  x + 2  3 x + 2  2 x + 4  3 x + 1 ]
+      [                                                                       ]
+      [ 0    1    2 x + 1     x      x + 1     2     x + 2     2 x    2 x + 2 ]
+      [                                                                       ]
+      [ 1    1       2        1        2       1       2        1        2    ]
+(%i50) 
+(%i56) basis:matrix(list0,list1,list2,list3,list4);
+                    [ 0    1       1        1        1    ]
+                    [                                     ]
+                    [ 0    1     x + 1     2 x    2 x + 1 ]
+                    [                                     ]
+(%o56)              [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1 ]
+                    [                                     ]
+                    [ 0    1    2 x + 1     x      x + 1  ]
+                    [                                     ]
+                    [ 1    1       2        1        2    ]
+(%i57) nonclarc:gf_matmul(gf_matinv(basis),arc);
+`gf_matinv' is deprecated. 
+The user is asked to use `gf_invert_by_lu' instead.
+                 [ x + 1  2 x + 2  x + 1     1     1 ]
+                 [                                   ]
+                 [ x + 2  2 x + 1  x + 1     0     0 ]
+                 [                                   ]
+(%o57) gf_matmul([ x + 1   x + 1   x + 1     x     0 ], 
+                 [                                   ]
+                 [   1       1       0       1     0 ]
+                 [                                   ]
+                 [   x       0     x + 1  2 x + 2  0 ]
+     [ 0    1       1        1        1       1       1        1        1    ]
+     [                                                                       ]
+     [ 0    1     x + 1     2 x    2 x + 1    2    2 x + 2     x      x + 2  ]
+     [                                                                       ]
+     [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1  x + 2  3 x + 2  2 x + 4  3 x + 1 ])
+     [                                                                       ]
+     [ 0    1    2 x + 1     x      x + 1     2     x + 2     2 x    2 x + 2 ]
+     [                                                                       ]
+     [ 1    1       2        1        2       1       2        1        2    ]
+(%i58) nonclarc:gf_matmul(gf_matinv_by_lu(basis),arc);
+                                 [ 0    1       1        1        1    ]
+                                 [                                     ]
+                                 [ 0    1     x + 1     2 x    2 x + 1 ]
+                                 [                                     ]
+(%o58) gf_matmul(gf_matinv_by_lu([ 0  x + 2  3 x + 2  2 x + 4  3 x + 1 ]), 
+                                 [                                     ]
+                                 [ 0    1    2 x + 1     x      x + 1  ]
+                                 [                                     ]
+                                 [ 1    1       2        1        2    ]
+     [ 0    1       1        1        1       1       1        1        1    ]
+     [                                                                       ]
+     [ 0    1     x + 1     2 x    2 x + 1    2    2 x + 2     x      x + 2  ]
+     [                                                                       ]
+     [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1  x + 2  3 x + 2  2 x + 4  3 x + 1 ])
+     [                                                                       ]
+     [ 0    1    2 x + 1     x      x + 1     2     x + 2     2 x    2 x + 2 ]
+     [                                                                       ]
+     [ 1    1       2        1        2       1       2        1        2    ]
+(%i59) nonclarc
+^C^C
+Maxima encountered a Lisp error:
+
+ Console interrupt.
+
+Automatically continuing.
+To enable the Lisp debugger set *debugger-hook* to nil.
+(%i59) nonclarc;
+                                 [ 0    1       1        1        1    ]
+                                 [                                     ]
+                                 [ 0    1     x + 1     2 x    2 x + 1 ]
+                                 [                                     ]
+(%o59) gf_matmul(gf_matinv_by_lu([ 0  x + 2  3 x + 2  2 x + 4  3 x + 1 ]), 
+                                 [                                     ]
+                                 [ 0    1    2 x + 1     x      x + 1  ]
+                                 [                                     ]
+                                 [ 1    1       2        1        2    ]
+     [ 0    1       1        1        1       1       1        1        1    ]
+     [                                                                       ]
+     [ 0    1     x + 1     2 x    2 x + 1    2    2 x + 2     x      x + 2  ]
+     [                                                                       ]
+     [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1  x + 2  3 x + 2  2 x + 4  3 x + 1 ])
+     [                                                                       ]
+     [ 0    1    2 x + 1     x      x + 1     2     x + 2     2 x    2 x + 2 ]
+     [                                                                       ]
+     [ 1    1       2        1        2       1       2        1        2    ]
+(%i60) gf_matinv_by_lu(basis)
+^C
+Maxima encountered a Lisp error:
+
+ Console interrupt.
+
+Automatically continuing.
+To enable the Lisp debugger set *debugger-hook* to nil.
+(%i60) gf_matinv_by_lu(basis);
+                           [ 0    1       1        1        1    ]
+                           [                                     ]
+                           [ 0    1     x + 1     2 x    2 x + 1 ]
+                           [                                     ]
+(%o60)     gf_matinv_by_lu([ 0  x + 2  3 x + 2  2 x + 4  3 x + 1 ])
+                           [                                     ]
+                           [ 0    1    2 x + 1     x      x + 1  ]
+                           [                                     ]
+                           [ 1    1       2        1        2    ]
+(%i61) gf_matinv(basis);
+`gf_matinv' is deprecated. 
+The user is asked to use `gf_invert_by_lu' instead.
+                     [ x + 1  2 x + 2  x + 1     1     1 ]
+                     [                                   ]
+                     [ x + 2  2 x + 1  x + 1     0     0 ]
+                     [                                   ]
+(%o61)               [ x + 1   x + 1   x + 1     x     0 ]
+                     [                                   ]
+                     [   1       1       0       1     0 ]
+                     [                                   ]
+                     [   x       0     x + 1  2 x + 2  0 ]
+(%i62) inv_basis:gf_matinv(basis);
+`gf_matinv' is deprecated. 
+The user is asked to use `gf_invert_by_lu' instead.
+                     [ x + 1  2 x + 2  x + 1     1     1 ]
+                     [                                   ]
+                     [ x + 2  2 x + 1  x + 1     0     0 ]
+                     [                                   ]
+(%o62)               [ x + 1   x + 1   x + 1     x     0 ]
+                     [                                   ]
+                     [   1       1       0       1     0 ]
+                     [                                   ]
+                     [   x       0     x + 1  2 x + 2  0 ]
+(%i63) nonclarc:gf_matmul(inv_basis,arc);
+                 [ x + 1  2 x + 2  x + 1     1     1 ]
+                 [                                   ]
+                 [ x + 2  2 x + 1  x + 1     0     0 ]
+                 [                                   ]
+(%o63) gf_matmul([ x + 1   x + 1   x + 1     x     0 ], 
+                 [                                   ]
+                 [   1       1       0       1     0 ]
+                 [                                   ]
+                 [   x       0     x + 1  2 x + 2  0 ]
+     [ 0    1       1        1        1       1       1        1        1    ]
+     [                                                                       ]
+     [ 0    1     x + 1     2 x    2 x + 1    2    2 x + 2     x      x + 2  ]
+     [                                                                       ]
+     [ 0  x + 2  3 x + 2  2 x + 4  3 x + 1  x + 2  3 x + 2  2 x + 4  3 x + 1 ])
+     [                                                                       ]
+     [ 0    1    2 x + 1     x      x + 1     2     x + 2     2 x    2 x + 2 ]
+     [                                                                       ]
+     [ 1    1       2        1        2       1       2        1        2    ]
+(%i64) nonclarc:gf_matmult(inv_basis,arc);
+                 [ 1  0  0  0  0    2 x    1  2 x + 2  x + 2 ]
+                 [                                           ]
+                 [ 0  1  0  0  0  2 x + 2  2  2 x + 2    x   ]
+                 [                                           ]
+(%o64)           [ 0  0  1  0  0  2 x + 1  2    2 x    x + 1 ]
+                 [                                           ]
+                 [ 0  0  0  1  0     2     2     1       2   ]
+                 [                                           ]
+                 [ 0  0  0  0  1  2 x + 2  1  2 x + 1  x + 1 ]
